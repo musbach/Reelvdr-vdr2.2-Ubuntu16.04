@@ -1,0 +1,6 @@
+/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf      var/lib/vdr/plugins/burn/fonts/Vera.ttf
+usr/share/vdr-plugin-burn/menu-button.png                var/lib/vdr/plugins/burn/menu-button.png
+usr/share/vdr-plugin-burn/menu-silence.mp2               var/lib/vdr/plugins/burn/menu-silence.mp2
+usr/share/vdr-plugin-burn/menu-bg.png                    var/lib/vdr/plugins/burn/menu-bg.png
+usr/share/vdr-plugin-burn/ProjectX.ini                   var/lib/vdr/plugins/burn//ProjectX.ini
+

@@ -1,0 +1,23 @@
+--- osd.h	(revision 15412)
++++ osd.h	(revision 15413)
+@@ -287,6 +287,10 @@
+ #endif /* REELVDR */
+   uint level;
+   bool active;
++#ifdef USE_YAEPG
++public:
++  tArea vidWin;
++#endif /* YAEPG */
+ protected:
+   cOsd(int Left, int Top, uint Level);
+        ///< Initializes the OSD with the given coordinates.
+@@ -429,6 +433,9 @@
+ #endif /* REELVDR */
+   virtual void Flush(void);
+        ///< Actually commits all data to the OSD hardware.
++#ifdef USE_PINPLUGIN
++  static bool pinValid;
++#endif /* PINPLUGIN */
+   };
+ 
+ class cOsdProvider {

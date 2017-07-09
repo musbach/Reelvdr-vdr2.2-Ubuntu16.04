@@ -1,0 +1,9 @@
+Package: reelvdr-pi-formatdisk
+Version: 0.3.2
+Section: reel
+Priority: important
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-formatdisk
+Description: disk format plugin for the ReelBox needed to prepare a HD
+ prepares Harddisk or other device (i.e. USB-Stick) for use in the ReelBox

@@ -1,0 +1,12 @@
+Package: reelvdr-baseconfig
+Version: 1.74
+Section: reel
+Priority: important
+Architecture: i386
+Depends: locales, wakeonlan
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Conflicts: reelvdr-pi-channelscan (<= 0.6.1.1), reelbox (<< 1.32)
+Source: reelvdr-baseconfig
+Description: basic configuration files for ReelBox VDR
+ includes all configuration files for the ReelBox VDR
+

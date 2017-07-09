@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone='no'?>
+<service-group>
+   <name replace-wildcards="yes">%h</name>
+   <service protocol="ipv4">
+      <type>_reelboxAVG._tcp</type>
+      <port>2001</port>
+   </service>
+</service-group>
+

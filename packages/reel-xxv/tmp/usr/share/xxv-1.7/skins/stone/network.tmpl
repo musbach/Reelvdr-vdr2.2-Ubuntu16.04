@@ -1,0 +1,116 @@
+<!-- Network Template -->
+<?% IF ! global.bodyinc.defined;global.bodyinc = 1 %?>
+<body class="frame">
+<?% INCLUDE status.inc %?>
+<?% INCLUDE header.inc %?>
+<div id="body">
+<?% END %?>
+<?%
+    USE date;
+    statusfiles = [];
+
+    FILTER null;
+        fields = data.shift;
+
+        timestamps = [];
+        FOREACH row IN data;
+            iname = row.0.split(':').first;
+
+            rxbytes.${iname} = [];
+            txbytes.${iname} = [];
+            rxerror.${iname} = [];
+            txerror.${iname} = [];
+
+            oldentry.${iname} = [];
+        END;
+
+        FOREACH row IN data;
+            IF ot != row.5;
+             t = date.format(row.5, '%H:%M');
+             timestamps.push(t);
+             ot = row.5;
+            END; 
+
+                iname = row.0.split(':').first;
+
+                UNLESS oldentry.${iname}.size;
+                    oldentry.${iname} = row;
+                END;
+
+                bytes = row.1 - oldentry.${iname}.1;
+                rxbytes.${iname}.push(bytes / (1024*1024));
+
+                bytes = row.3 - oldentry.${iname}.3;
+                txbytes.${iname}.push(bytes / (1024*1024));
+
+                oldentry.${iname} = row;
+        END;
+
+        FOREACH iname IN rxbytes.keys.sort;
+
+            # Data ...
+            d = [
+                 timestamps,
+                 rxbytes.${iname},
+                 txbytes.${iname}
+            ];
+
+            USE my_graph = GD.Graph.lines(375,375);
+
+            # Xsteps
+            steps = timestamps.size div 5;
+            label = gettext('Traffic on Interface');
+            y_label = gettext('MB')
+            label = "${label} ${iname} (${y_label})";
+            my_graph.set(
+                    x_label_skip => steps,
+                    x_long_ticks => 1,
+
+                    y_long_ticks => 1,
+
+                    line_width   => 2,
+                    box_axis     => 1,
+                    boxclr       => '#FFFFFF',
+                    fgclr        => '#BBBBBB'
+                    legend_placement => 'BO',
+                    legend_spacing => 5,
+            );
+            my_graph.set_title_font(param.font,10);
+            my_graph.set_y_label_font(param.font,10);
+            my_graph.set_x_label_font(param.font,10);
+            my_graph.set_x_axis_font(param.font,6);
+            my_graph.set_y_axis_font(param.font,6);
+            my_graph.set_legend( fields.1, fields.3);
+            file = writefile("status_network_${iname}.gif", my_graph.plot(d).gif );
+            statusfiles.push([ label , file ]);
+        END;
+    END;
+ %?>
+
+
+<?% IF param.headingText %?>
+<h1><?% param.headingText %?></h1>
+<?% END %?>
+
+<?% FOREACH file IN statusfiles %?>
+<div class="areabegin">
+<table class="areatable" summary="">
+  <tr>
+    <td class="areahead">
+      <div class="areahead">
+        <?% file.0 %?>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="areatext">
+      <div style="text-align:center;" >
+        <img src="<?% file.1 %?>" alt="<?% file.0 %?>" />
+      </div>
+    </td>
+  </tr>
+  <tr><td class="areabottom"></td></tr>
+</table>
+</div>
+<?% END %?>
+<div class="areaclose"></div>

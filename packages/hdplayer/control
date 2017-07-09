@@ -1,0 +1,10 @@
+Package: hdplayer
+Version: 3.27
+Section: reel
+Priority: optional
+Architecture: i386
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: hdplayer
+Description: ReelBox hdplayer for the ReelBox HD extension
+ Is required to run Reel HDTV extension card on ReelVDR
+

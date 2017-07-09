@@ -1,0 +1,73 @@
+Yet another convert tool (for VDR)
+----------------------------------
+
+Requirements
+
+To use yacoto you need (beside VDR recordings and some disk space):
+
+- yacoto-scripts package
+- Lots of tools depending on the scripts package
+- vdr
+- For status information bgprocess is used,
+  http://www.htpc-forum.de/download/vdr-bgprocess-0.1.0.tgz
+  Thanks to reelmultimedia !
+
+
+Installation:
+
+- Unpack the source to <vdr-source-dir/PLUGINS/src/> and run make all
+
+- These patches are supported and will be activated with the belonging DEFINES:
+  Liemikuutio   / USE_LIEMIKUUTIO
+  SortRecords   / USE_SORTRECORDS
+  GraphTFT      / USE_GRAPHTFT
+  PinPlugin     / USE_PINPLUGIN
+  WareagleIcons / USE_WAREAGLEICON
+
+- The directory containing the scripts (default: /etc/vdr/plugins/yacoto)
+  can be changed in Make.config with the variable YAC_CONF_DIR
+
+- Do what the script package recommends !
+
+
+Usage:
+
+- Hopefully self-explanatory  ;)
+
+Caution:
+Merging of several recordings to one file is not really tested and not recommended :)
+
+
+Configuration:
+
+- Settinge for the conversion are made within the plugin or via Menu->Settings->Plugins->yacoto
+
+
+Some Internals
+
+When starting vdr 
+   YAC_CONF_DIR/yac_admin.sh -start
+is called.
+If the settings are saved
+   YAC_CONF_DIR/yac_admin.sh -save
+will be executed.
+
+If a conversion is started, the plugin calls:
+   YAC_CONF_DIR/yac_start.sh <recording~audio_parms> [ <recording~audio_parms> ] ...
+
+Yacoto looks for a yacoto.log in the recording directory. If it exists the recording will be marked as done.
+The scripts have to take care of this file.
+
+
+Acknowledgements:
+
+Many thanks to all enabling me to build this plugin, first of all to Klaus Schmidinger for VDR !
+Also many thanks to the companies Reelmultimedia and Xeatre for their support !
+
+
+Report wishes, bugs etc here:
+http://redmine.gen2vdr.org/
+
+or in VDR-Portal or HTPC-Forum
+
+Helmut Auer ( http://htpc-forum.de/index.php?url=about.php )

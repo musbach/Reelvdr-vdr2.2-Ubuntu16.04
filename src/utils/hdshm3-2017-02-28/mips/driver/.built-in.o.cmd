@@ -1,0 +1,1 @@
+cmd_/usr/src/reelbox/testing/src/utils/hdshm3/mips/driver/built-in.o :=  rm -f /usr/src/reelbox/testing/src/utils/hdshm3/mips/driver/built-in.o; mipsel-linux-gnu-ar rcs /usr/src/reelbox/testing/src/utils/hdshm3/mips/driver/built-in.o

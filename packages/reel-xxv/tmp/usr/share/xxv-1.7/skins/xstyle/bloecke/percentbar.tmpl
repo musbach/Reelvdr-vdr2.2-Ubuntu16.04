@@ -1,0 +1,21 @@
+<?% barexp = barwidth / 100;
+    IF color_switch;
+        ground = "images/bar_green.png";
+        over = "images/bar_red.png";
+    ELSE;
+        ground = "images/bar_red.png";
+        over = "images/bar_green.png";
+    END;
+     %?>
+
+<div align="center" style='position:absolute'>
+    <img src="<?% ground %?>" width="<?% barwidth %?>" title='<?% percent div 1 %?>%'>
+    <div style='position:absolute; top:0px; left:0px; clip:rect(0px, <?% ( percent * barexp ) div 1 %?>px, 50px, 0px)'>
+    <img src="<?% over %?>" width="<?% barwidth %?>" title='<?% percent div 1 %?>%'>
+    </div>
+    <?% IF barwidth > 200 %?>
+    <div style='position:absolute; top:10px; right:<?% 15 %?>px; color:#FFFFFF;font-weight:bold'>
+    <?% percent div 1 | format "%02d" %?>%<?% IF eta %?> (<?% eta %?>)<?% END %?>
+    </div>
+    <?% END %?>
+</div>

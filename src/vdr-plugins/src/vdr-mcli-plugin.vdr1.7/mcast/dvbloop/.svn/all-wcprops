@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/repos/dvbloop/!svn/ver/50
+END
+dvblo_adap_ca.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/dvbloop/!svn/ver/50/dvblo_adap_ca.c
+END
+dvblo_adap.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/repos/dvbloop/!svn/ver/36/dvblo_adap.h
+END
+TODO.txt
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/repos/dvbloop/!svn/ver/1/TODO.txt
+END
+dvblo_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/repos/dvbloop/!svn/ver/26/dvblo_util.c
+END
+dvblo_adap_ca.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/dvbloop/!svn/ver/37/dvblo_adap_ca.h
+END
+dvblo_char.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/repos/dvbloop/!svn/ver/50/dvblo_char.c
+END
+dvblo_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/repos/dvbloop/!svn/ver/44/dvblo_test.c
+END
+dvblo_adap_fe.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/dvbloop/!svn/ver/50/dvblo_adap_fe.c
+END
+dvblo_ioctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/repos/dvbloop/!svn/ver/48/dvblo_ioctl.h
+END
+dvblo.c
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/repos/dvbloop/!svn/ver/50/dvblo.c
+END
+dvblo_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/repos/dvbloop/!svn/ver/28/dvblo_util.h
+END
+dvblo_char.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/repos/dvbloop/!svn/ver/28/dvblo_char.h
+END
+dvblo_adap_fe.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/dvbloop/!svn/ver/28/dvblo_adap_fe.h
+END
+dvblo.h
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/repos/dvbloop/!svn/ver/50/dvblo.h
+END
+.indent.pro
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/repos/dvbloop/!svn/ver/28/.indent.pro
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/repos/dvbloop/!svn/ver/16/README.txt
+END
+dvblo_adap.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/repos/dvbloop/!svn/ver/50/dvblo_adap.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/repos/dvbloop/!svn/ver/49/Makefile
+END

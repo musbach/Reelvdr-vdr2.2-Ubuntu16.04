@@ -1,0 +1,11 @@
+<!-- confirm -->
+<tr>
+    <td>
+        <?% data.msg %?>
+    </td>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <input type="radio" name="<?% data.NAME %?>" value="y" <?% 'checked="checked"' IF val == 'y' %?> /><?% gettext("yes") %?>&nbsp;
+        <input type="radio" name="<?% data.NAME %?>" value="n" <?% 'checked="checked"' IF val == 'n' %?> /><?% gettext("no") %?>
+    </td>
+</tr>

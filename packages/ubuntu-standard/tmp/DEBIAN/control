@@ -1,0 +1,15 @@
+Package: ubuntu-standard
+Version: 1.39-11-19
+Section: base
+Priority: optional
+Architecture: i386
+Depends: cron, dosfstools, file, ftp, hdparm, iptables, lshw, lsof, memtest86+, psmisc, reiserfsprogs, strace, telnet, time, wget
+Recommends: mtr-tiny, openssh-client
+Installed-Size: 8,6K
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: ubuntu-meta
+Description: The ReelBox standard system
+ This package depends on all of the packages in the ReelBox standard system.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.

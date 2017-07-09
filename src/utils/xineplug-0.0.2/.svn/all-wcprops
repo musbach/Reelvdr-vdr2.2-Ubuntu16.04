@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2
+END
+plugin.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/plugin.c
+END
+mpeg_videodec.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/mpeg_videodec.h
+END
+VideoStreamParser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/VideoStreamParser.cpp
+END
+VdrXineMpIf.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/VdrXineMpIf.h
+END
+VideoStreamParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/VideoStreamParser.h
+END
+ReadBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/ReadBuffer.cpp
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/utils.h
+END
+spu.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/spu.c
+END
+ReadBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/ReadBuffer.h
+END
+spu.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/spu.h
+END
+reel_video_overlay.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/reel_video_overlay.h
+END
+spu_If.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/spu_If.c
+END
+audio_out.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/audio_out.c
+END
+xine_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/xine_decoder.c
+END
+mpeg_videodec.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/mpeg_videodec.c
+END
+spu_If.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/spu_If.h
+END
+debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/debug.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/Makefile
+END
+audio_out.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/audio_out.h
+END
+xine_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/utils/xineplug-0.0.2/xine_decoder.h
+END

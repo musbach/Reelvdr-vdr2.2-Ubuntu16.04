@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+ [
+  <!ENTITY dhfirstname "<firstname>Tobias</firstname>">
+  <!ENTITY dhsurname   "<surname>Grimm</surname>">
+  <!ENTITY date        "April 05, 2010">
+  <!ENTITY dhdate      "<date>&date;</date>">
+  <!ENTITY dhsection   "<manvolnum>1</manvolnum>">
+  <!ENTITY dhemail     "<email>tg@e-tobi.net</email>">
+  <!ENTITY dhusername  "Tobias Grimm">
+  <!ENTITY dhucpackage "<refentrytitle>xxvd</refentrytitle>">
+  <!ENTITY dhpackage   "XXV">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+  <!ENTITY gpl         "&gnu; <acronym>GPL</acronym>">
+ ]
+>
+
+<refentry>
+  <refentryinfo>
+    <address>&dhemail;</address>
+    <author>&dhfirstname; &dhsurname;</author>
+    <copyright>
+      <year>2005 - 2010</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>&dhucpackage; &dhsection;</refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+    <refpurpose>means "Xtreme eXtension for VDR" and is a central service for 
+                the administration of the VDR and his environment.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>xxvd</command>
+      <arg><option>--configfile=</option><replaceable>FILE</replaceable></arg>
+      <arg><option>--logfile=</option><replaceable>FILE</replaceable></arg>
+      <arg><option>--pidfile=</option><replaceable>FILE</replaceable></arg>
+      <arg><option>--localedir=</option><replaceable>DIRECTORY</replaceable></arg>
+      <arg><option>--moduledir=</option><replaceable>DIRECTORY</replaceable></arg>
+      <arg><option>--docudir=</option><replaceable>DIRECTORY</replaceable></arg>
+      <arg><option>--poddir=</option><replaceable>DIRECTORY</replaceable></arg>
+      <arg><option>--htmldir=</option><replaceable>DIRECTORY</replaceable></arg>
+      <arg><option>--fontdir=</option><replaceable>DIRECTORY</replaceable></arg>
+      <arg><option>--newsmods=</option><replaceable>DIRECTORY</replaceable></arg>
+      <arg><option>--newstmpl=</option><replaceable>DIRECTORY</replaceable></arg>
+      <arg><option>--xmltv=</option><replaceable>DIRECTORY</replaceable></arg>
+      <arg><option>--verbose=</option><replaceable>LEVEL</replaceable></arg>
+      <arg><option>--version</option></arg>
+      <arg><option>--nofork</option></arg>
+      <arg><option>--kill</option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+
+    <para><command>&dhucpackage;</command> is daemon behind &dhpackage;.
+    &dhpackage; provides a central service to administer VDR, it's contain  
+    a http daemon, a telnet server and a WAP server among other services.
+    And is extendable by plugins and skins. &dhpackage; allows to manage
+    timers, auto timers, channels, recordings and much more provided by VDR</para>
+  </refsect1>
+  <refsect1>
+    <title>OPTIONS</title>
+    <variablelist>
+      <varlistentry>
+        <term>--configfile=<replaceable class="parameter">FILE</replaceable></term>
+        <listitem>
+          <para>Use <filename>FILE</filename> as config file for &dhpackage;.
+          The config file is modified by &dhpackage;, so it shall not be read-only.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--logfile=<replaceable class="parameter">FILE</replaceable>.</term>
+        <listitem>
+          <para>Output all log messages to <filename>FILE</filename>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--pidfile=<replaceable class="parameter">FILE</replaceable></term>
+        <listitem>
+          <para>Write process id of &dhucpackage; daemon to <filename>FILE</filename>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--localedir=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para>Search for locales in <filename>DIRECTORY</filename>. 
+          <filename>DIRECTORY</filename> should contain the typical locales structure
+          with &dhpackage;'s translations. (eg. de/LC_MESSAGES/xxv.mo)</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--moduledir=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para>Search for modules (plugins) in <filename>DIRECTORY</filename>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--docudir=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para><filename>DIRECTORY</filename> with template files used for generate documentation.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--poddir=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para>Generate the selfdocumentation files in <filename>DIRECTORY</filename>.
+                Documentation files are generated by &dhpackage;, so it shall be writable.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--htmldir=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para>&dhpackage; searchs for it's html templates in <filename>DIRECTORY</filename>.
+          Each subdirectory in <filename>DIRECTORY</filename> is seen as a set of
+          templates (Skin).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--fontdir=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para>&dhpackage; searchs usable fonts in <filename>DIRECTORY</filename>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--contrib=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para>&dhpackage; use some external scripts in <filename>DIRECTORY</filename>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--newsmods=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para>&dhucpackage; search for news modules (news plugins) in <filename>DIRECTORY</filename>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--newstmpl=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para>&dhpackage; searches for news templates in <filename>DIRECTORY</filename>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--xmltv=<replaceable class="parameter">DIRECTORY</replaceable></term>
+        <listitem>
+          <para>In this <filename>DIRECTORY</filename> &dhpackage; searchs usable files or templates to import epg data from xmltv sources.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--verbose=<replaceable class="parameter">LEVEL</replaceable></term>
+        <listitem>
+          <para>Select the verbose <emphasis>LEVEL</emphasis> of the logged 
+          messages of &dhpackage;.
+           </para>
+            <itemizedlist>
+                <listitem><para> 0 - Don't log messages</para></listitem>
+                <listitem><para> 1 - Errors only</para></listitem>
+                <listitem><para> 2 - Messages depends user action</para></listitem>
+                <listitem><para> 3 - More events</para></listitem>
+                <listitem><para> 5 - Lots of messages</para></listitem>
+                <listitem><para>&gt;5 - Messages with dump of caller stack</para></listitem>
+            </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--version</term>
+        <listitem>
+          <para>Display the version number and exit.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--nofork</term>
+        <listitem>
+          <para>Debug mode: don't fork to the background.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--kill</term>
+        <listitem>
+          <para>Kill daemon &dhucpackage;.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>AUTHOR</title>
+    <para>This manual page was written by &dhusername; &lt;&dhemail;&gt;.</para>
+    <para>(&date;)</para>
+  </refsect1>
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
+
+

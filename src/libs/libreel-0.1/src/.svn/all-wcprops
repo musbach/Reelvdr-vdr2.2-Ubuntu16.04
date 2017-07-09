@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/reelbox/!svn/ver/7/testing/src/libs/libreel-0.1/src
+END
+tools.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/7/testing/src/libs/libreel-0.1/src/tools.cc
+END
+tools.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libreel-0.1/src/tools.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libreel-0.1/src/Makefile
+END

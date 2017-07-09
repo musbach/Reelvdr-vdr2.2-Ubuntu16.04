@@ -1,0 +1,7 @@
+libmediatomb_a-atrailers_content_handler.o: \
+ ../src/atrailers_content_handler.cc /usr/include/stdc-predef.h \
+ ../autoconfig.h
+
+/usr/include/stdc-predef.h:
+
+../autoconfig.h:

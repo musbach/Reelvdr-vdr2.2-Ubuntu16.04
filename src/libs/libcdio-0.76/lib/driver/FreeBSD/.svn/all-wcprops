@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/FreeBSD
+END
+freebsd.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/FreeBSD/freebsd.h
+END
+freebsd_ioctl.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/FreeBSD/freebsd_ioctl.c
+END
+freebsd.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/FreeBSD/freebsd.c
+END
+freebsd_cam.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/FreeBSD/freebsd_cam.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/FreeBSD/Makefile
+END

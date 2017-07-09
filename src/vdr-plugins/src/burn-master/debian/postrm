@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+# Remove counters directory
+if [ "$1" = "purge" ]; then
+    /bin/rm -rf /var/lib/vdr/plugins/burn/counters
+fi
+
+#DEBHELPER#

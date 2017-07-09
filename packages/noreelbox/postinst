@@ -1,0 +1,248 @@
+#!/bin/sh
+
+. /etc/default/sysconfig
+. /etc/default/globals
+
+myln () {
+src="$2"
+target="$3"
+
+	if [ ! -L $target ]; then
+		ln -f $*
+	fi
+}
+
+if [ -x /etc/init.d/hdparm ]; then
+	/usr/sbin/update-rc.d hdparm defaults
+	/etc/init.d/hdparm restart
+fi
+
+if [ -x /usr/bin/lsb_release ] && [ $(lsb_release -rs | cut -f1 -d.) -ge 10 ]; then
+	MODPROBE_HAS_CONF=".conf"
+	UBUNTU10="true"
+else
+	MODPROBE_HAS_CONF=""
+	UBUNTU10="false"
+fi
+
+#add ftp user and group
+
+if ! grep -q ^ftpusers: /etc/group ; then
+	addgroup --gid 49 ftpusers
+fi
+
+if ! grep -q ^ftp: /etc/passwd ; then
+	adduser --home /media --shell /bin/false --no-create-home --uid 49 --gid 49 \
+	--disabled-login --gecos "ftp user" ftp
+	adduser ftp ftpusers
+fi
+
+if ! grep -q ^reel /etc/passwd ; then
+	adduser --home /media --shell /bin/false --no-create-home --uid 1000 \
+	--disabled-login --gecos "reel user" reel
+	adduser reel ftpusers
+fi
+
+if ! grep ftp /etc/group | grep -q reel ; then
+	adduser reel ftpusers
+fi
+
+# set mode and group ownership for local recordings/media files
+for i in  music pictures recordings video ; do
+	[ -d $i ] || continue
+	chmod g+ws /media/hd/$i
+	chgrp ftpusers /media/hd/$i
+done
+
+#ftp end
+
+# DHCP and NFS Timeout
+cat > /etc/dhcp3/dhclient.conf << EOF
+# Configuration file for /sbin/dhclient, which is included in Debian's
+#	dhcp3-client package.
+#
+# This is a sample configuration file for dhclient. See dhclient.conf's
+#	man page for more information about the syntax of this file
+#	and a more comprehensive list of the parameters understood by
+#	dhclient.
+#
+# Normally, if the DHCP server provides reasonable information and does
+#	not leave anything out (like the domain name, for example), then
+#	few changes must be made to this file, if any.
+#
+
+send host-name "<hostname>";
+#send dhcp-client-identifier 1:0:a0:24:ab:fb:9c;
+#send dhcp-lease-time 3600;
+#supersede domain-name "fugue.com home.vix.com";
+#prepend domain-name-servers 127.0.0.1;
+request subnet-mask, broadcast-address, time-offset, routers,
+    domain-name, domain-name-servers, host-name,
+	netbios-name-servers, netbios-scope;
+timeout 7;
+retry 3;
+reboot 3;
+select-timeout 2;
+initial-interval 1;
+#script "/etc/dhcp3/dhclient-script";
+#media "-link0 -link1 -link2", "link0 link1";
+#reject 192.33.137.209;
+
+#alias {
+#  interface "eth0";
+#  fixed-address 192.5.5.213;
+#  option subnet-mask 255.255.255.255;
+#}
+
+#lease {
+#  interface "eth0";
+#  fixed-address 192.33.137.200;
+#  medium "link0 link1";
+#  option host-name "andare.swiftmedia.com";
+#  option subnet-mask 255.255.255.0;
+#  option broadcast-address 192.33.137.255;
+#  option routers 192.33.137.250;
+#  option domain-name-servers 127.0.0.1;
+#  renew 2 2000/1/12 00:00:01;
+#  rebind 2 2000/1/12 00:00:01;
+#  expire 2 2000/1/12 00:00:01;
+#}
+EOF
+
+# write hostname to dhclient.conf
+sed s/'send host-name.*'/"send host-name \"$HOSTNAME\";"/ -i /etc/dhcp3/dhclient.conf
+
+
+# fstab entry for dvd drive
+if grep -q "/dev/scd0" /etc/fstab ; then
+	sed -i s%"/dev/scd0"%"/dev/dvd"% /etc/fstab
+fi
+
+echo "creating init levels for ReelBox sanity checks"
+update-rc.d -f reel-rules remove >/dev/null
+update-rc.d sanitycheck-reel defaults 4 96
+
+echo "creating init levels for Reel NetServer wakeup call (WOL)"
+update-rc.d netserver_wol start 41 S .
+
+
+# automatically say yes to question on fsck
+sed -i s/FSCKFIX=.*/FSCKFIX=yes/ /etc/default/rcS
+
+
+if RbMini ; then
+
+	if [ -f /oldroot/linuxrc ] && [ -f /root/tmp/linuxrc ]; then
+		OLDVER=`grep VERSNUM /oldroot/linuxrc| awk '{ print $3 }'`
+		[ -z $OLDVER ] && OLDVER=0
+		NEWVER=`grep VERSNUM /root/tmp/linuxrc| awk '{ print $3 }'`
+		if [ "$NEWVER" -gt "$OLDVER" ]; then
+			echo " Updating linuxrc to V `grep Version /root/tmp/linuxrc| awk '{ print $3 }'`"
+			install -p -m 755 /root/tmp/linuxrc /oldroot/linuxrc
+		fi
+	fi
+
+	# rsyslogd need ~10s for startup.
+	# TODO: check why
+	# TODO: replace by busybox ringbuffer syslog?
+	if [ -f /etc/init.d/rsyslog ] && ! grep -q -- "--background" /etc/init.d/rsyslog; then
+		sed -i s/"start-stop-daemon --start.*"/"start-stop-daemon --start --background --quiet --pidfile \$PIDFILE --exec \$DAEMON \-- \$DAEMON_ARGS"/ /etc/init.d/rsyslog
+	fi
+
+	#NFS Server does not start on RB NCL, but idmapd is only required for NFS v4
+	if RbMini ; then
+		sed -i s/NEED_IDMAPD=.*/NEED_IDMAPD=no/ /etc/default/nfs-common
+	fi
+
+else # RB AVG
+	# check/fix xterm double-click marking
+	if [ -f /etc/X11/app-defaults/XTerm ] && ! grep -q ^*charClass /etc/X11/app-defaults/XTerm ; then
+		echo "fixing default xterm settings"
+		echo "*charClass: 33:48,35:48,37-38:48,43-47:48,57:48,61:48,63-64:48,95:48,126:48" >> /etc/X11/app-defaults/XTerm
+	fi
+
+# check swap
+	if grep -q sda3 /proc/partitions && [ -z "`blkid /dev/sda3`" ]; then
+		echo "Re-creating broken swap on /dev/sda3"
+		fdisk -l /dev/sda | grep sda3 | grep -qi "Linux swap" && \
+			mkswap /dev/sda3
+		echo error: $?
+		swapon -a
+		echo "RESUME=/dev/sda3" > /etc/initramfs-tools/conf.d/resume
+	fi
+
+
+	if grep -q bridge_ports /etc/network/interfaces && ! grep -q bridge_maxwait /etc/network/interfaces ; then
+		sed -i "/^bridge_ports/abridge_maxwait 3" /etc/network/interfaces
+	fi
+
+	if $UBUNTU10 ; then
+		#echo "==> Ubuntu 10 changes"
+		if ! grep -q acpi_enforce_resources /etc/default/grub ; then
+			echo "changing grub/kernel commandline for ACPI resources"
+			if grep -q ^GRUB_CMDLINE_LINUX= /etc/default/grub ; then
+				sed -i s/^GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"acpi_enforce_resources=lax\"/ /etc/default/grub
+			else
+				echo 'GRUB_CMDLINE_LINUX="acpi_enforce_resources=lax"' >> /etc/default/grub
+				#"quiet splash"
+			fi
+		fi
+
+		echo "setting uvesafb"
+		if ! grep -q ^uvesafb /etc/initramfs-tools/modules ; then
+			echo 'uvesafb' >> /etc/initramfs-tools/modules
+		fi
+
+		echo "Add Fix for Logitech diNovo Edge"
+		if ! grep -q "hidraw" /lib/udev/rules.d/70-hid2hci.rules ; then
+			sed s/KERNEL==\"hiddev\\\*\"/KERNEL==\"hidraw*\"/ -i /lib/udev/rules.d/70-hid2hci.rules
+		fi
+
+		echo "Update grub kernel commandline"
+		if grep -q ^GRUB_CMDLINE_LINUX_DEFAULT= /etc/default/grub ; then
+			sed -i s/^GRUB_CMDLINE_LINUX_DEFAULT=.*/"GRUB_CMDLINE_LINUX_DEFAULT=\"nomodeset quiet splash video=uvesafb\""/ /etc/default/grub
+		else
+			echo 'GRUB_CMDLINE_LINUX_DEFAULT="nomodeset quiet splash video=uvesafb"' >> /etc/default/grub
+		fi
+		update-initramfs -u
+		update-grub
+
+		#update tftpd-hpa.conf which doesn't work by default
+		[ -f /etc/init/tftpd-hpa.conf ] && cp -a /etc/default/tftpd-hpa.conf /etc/init/tftpd-hpa.conf
+	else # Ubuntu 9 or less
+		# set nfs timeout
+		sed s/"TIMEOUT=900"/"TIMEOUT=300"/ -i /etc/init.d/waitnfs.sh
+
+		# create the mountpoint(s) on system startup if they don't exist
+		if ! grep -q "mount_prep_local" /etc/init.d/mountall.sh ; then
+			echo "patching /etc/init.d/mountall.sh"
+			sed -i "/pre_mountall/a\\\t. /etc/init.d/mount_prep_local" /etc/init.d/mountall.sh
+		fi
+
+		# blacklist console framebuffer
+		if ! grep -q "blacklist fbcon" /etc/modprobe.d/blacklist${MODPROBE_HAS_CONF} ; then
+			echo "Blacklisting fbcon module"
+			echo "blacklist fbcon" >> /etc/modprobe.d/blacklist${MODPROBE_HAS_CONF}
+			update-initramfs -u
+		fi
+
+		if ! grep -q "blacklist airprime" /etc/modprobe.d/blacklist${MODPROBE_HAS_CONF} && [ "$release_check" = "8.04" ]; then
+			echo "Blacklisting airprime module"
+			echo "blacklist airprime" >> /etc/modprobe.d/blacklist${MODPROBE_HAS_CONF}
+		fi
+
+		echo "Add Volume fix for Logitech diNovo Edge"
+		if ! grep -q "options snd-hda-intel model=w2jc" /etc/modprobe.d/alsa-base${MODPROBE_HAS_CONF} ; then
+			echo  "options snd-hda-intel model=w2jc" >> /etc/modprobe.d/alsa-base${MODPROBE_HAS_CONF}
+		fi
+
+		echo "Add Support for Logitech diNovo Mini"
+		if ! grep -q "options usbhid quirks=0x046d:0xc71f:0x00080000" /etc/modprobe.d/options${MODPROBE_HAS_CONF} ; then
+			echo  "options usbhid quirks=0x046d:0xc71f:0x00080000" >> /etc/modprobe.d/options${MODPROBE_HAS_CONF}
+		fi
+	fi # Ubuntu 6-9
+
+fi # RB AVG
+
+exit 0
+

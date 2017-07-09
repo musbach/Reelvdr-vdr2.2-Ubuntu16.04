@@ -1,0 +1,112 @@
+<?%
+    USE date;
+    statusfiles = {};
+    fields = data.shift;
+
+    FILTER null;
+        name = 'memory_stat';
+        swapdata = [];
+        activedata = [];
+        cacheddata = [];
+        inactivedata = [];
+        timestamps = [];
+        FOREACH row IN data;
+            t = date.format(row.6, '%H:%M');
+            timestamps.push(t);
+            activedata.push(row.2 / (1024));
+            inactivedata.push(row.3 / (1024));
+            cacheddata.push(row.4 / (1024));
+            swapdata.push(row.5 / (1024));
+        END;
+
+        # Data ...
+        d = [
+             timestamps ,
+             activedata ,
+             inactivedata
+             cacheddata ,
+             swapdata
+        ];
+
+        USE my_graph = GD.Graph.lines(500,300);
+
+        # Xsteps
+        steps = data.size div 5;
+
+        label = gettext('Memory usage since');
+        label = "${label} ${d.first.first}";
+        my_graph.set(
+                title => label,
+                x_label_skip => steps,
+                x_long_ticks => 1,
+
+                y_label => gettext('Memory usage in MB'),
+                y_long_ticks => 1,
+
+                line_width   => 2,
+                box_axis     => 1,
+                boxclr       => '#FFFFCC',
+                fgclr        => '#BBBBBB'
+                legend_placement => 'RD',
+                legend_spacing => 5,
+        );
+        my_graph.set_title_font(param.font,10);
+        my_graph.set_y_label_font(param.font,10);
+        my_graph.set_x_label_font(param.font,10);
+        my_graph.set_x_axis_font(param.font,6);
+        my_graph.set_y_axis_font(param.font,6);
+        my_graph.set_legend( fields.2, fields.3, fields.4, fields.5 );
+        statusfiles.$name = writefile("status_${name}.gif", my_graph.plot(d).gif );
+        END;
+
+        # ------------------- Piegraph für Speicher
+        row = data.last;
+        FILTER null;
+        name = 'memory_now';
+        MemTotal = row.0 div 1024;
+        MemFree = row.1 div 1024;
+        Active = row.2 div 1024;
+        Cached = row.4 div 1024;
+        Inactive = row.3 div 1024;
+        Swapped = row.5 div 1024;
+
+        d2 = [
+            [ "${fields.2} ${Active} MB","${fields.3} ${Inactive} MB","${fields.4} ${Cached} MB","${fields.5} ${Swapped} MB","${fields.1} ${MemFree} MB"],
+            [ row.2, row.3, row.4, row.5, row.1 ]
+        ];
+
+        USE my_graph = GD.Graph.pie(400, 300);
+        label = fields.0;
+        label = "${label} ${MemTotal} MB";
+        my_graph.set(
+                title => label,
+                axislabelclr => 'black',
+                pie_height => 25,
+                transparent => 0,
+        );
+        my_graph.set_title_font(param.font,10);
+        my_graph.set_label_font(param.font,10);
+        my_graph.set_value_font(param.font,8);
+        statusfiles.$name = writefile("status_${name}.gif", my_graph.plot(d2).gif );
+      END;
+ %?>
+<!-- Vitals Template -->
+<?% IF param.headingText %?>
+<table width=100%><tr><td class='tableheader'><h3><?% param.headingText %?></h3>
+<?% END %?>
+<table border="0" width="95%">
+<tr>
+    <td colspan=2 align=center>
+        <img src="<?% statusfiles.memory_now %?>">
+    </td>
+</tr>
+<tr>
+    <td colspan=2 align=center>
+        <img src="<?% statusfiles.memory_stat %?>">
+    </td>
+</tr>
+</table>
+<?% IF param.headingText %?>
+</td></tr></table>
+<p>
+<?% END %?>

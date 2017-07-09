@@ -1,0 +1,9 @@
+/* local_tweaks_1G.hcfg
+ *
+ * This file contains the changes necessary to use the 
+ * memory_layout_1G configuration file.
+ *
+ */
+
+platform.software.drivers.smd.core.frame_buffer_properties.region_height = 4544
+

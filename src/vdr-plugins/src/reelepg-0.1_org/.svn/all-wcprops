@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1
+END
+service.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/service.h
+END
+pngutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/pngutils.c
+END
+config.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/config.c
+END
+timeline.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/timeline.c
+END
+font.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/font.c
+END
+pngutils.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/pngutils.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/config.h
+END
+font.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/font.h
+END
+timeline.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/timeline.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/README
+END
+HISTORY
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/HISTORY
+END
+ReelSkin.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/ReelSkin.h
+END
+reelepg.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/reelepg.c
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/COPYING
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/Makefile
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/reelepg-0.1/common.h
+END

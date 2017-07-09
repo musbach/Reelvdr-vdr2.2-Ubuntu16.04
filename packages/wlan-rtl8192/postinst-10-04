@@ -1,0 +1,12 @@
+#!/bin/sh
+
+depmod -a
+depmod -a 2.6.32-29-generic
+depmod -a 2.6.32-31-generic
+depmod -a 2.6.32-33-generic
+depmod -a 2.6.32-36-generic
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

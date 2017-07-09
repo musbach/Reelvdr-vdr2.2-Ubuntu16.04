@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# RC: most of this code is taken from SDK PC25.0, /etc/init.d/graphics
+
+setup_symlink() {
+    if [ $# -ne 2 ]; then
+        echo "ERROR(setup_symlink): Invalid number of variables."
+        exit 1
+    fi
+
+    CORE_DIR="$1"
+    LINK_NAME="$2"
+    TARGET=$CORE_DIR/`basename $2`
+    TARGET_PATH=`dirname $2`/$TARGET
+
+    if [ -f $TARGET_PATH ]; then
+        ln -sfv $TARGET $LINK_NAME
+    fi
+}
+
+setup_symlinks() {
+    setup_symlink $1 /lib/libpvrPVR2D_DRIWSEGL.so
+    setup_symlink $1 /lib/libegl4ogl.so
+    setup_symlink $1 /lib/libPVROGL_MESA.so
+
+    setup_symlink $1 /usr/lib/dri/pvr_dri.so
+    #setup_symlink $1 /usr/lib/xorg/modules/drivers/pvr_drv.so
+    ln -sfv /usr/lib/xorg/intelce/drivers/$1/pvr_drv.so /usr/lib/xorg/modules/drivers/pvr_drv.so
+}
+
+
+### start
+
+cp -a /etc/X11/xorg.conf.reel /etc/X11/xorg.conf
+
+SOC_NAME=`get_soc_info_utility NAME STRING 2>/dev/null`
+[ -n $? ] && SOC_NAME=SOC_NAME_CE4100
+
+# Setup the symbol links for the driver binaries according to the SOC.
+case $SOC_NAME in
+    "SOC_NAME_CE3100" | "SOC_NAME_CE4100" | "SOC_NAME_CE4200" )
+	    setup_symlinks sgx535
+	    ;;
+    "SOC_NAME_CE5300" )
+	    # Select the SGX545 core based on the device's PCI revision ID
+	    GRAPHICS_BUS_ADDR=`pci_query -find ven_id=0x8086,dev_id=0x089b`
+	    if [ $? -eq 0 ]; then
+		GRAPHICS_PCI_REV=`pci_query -read dev_addr=$GRAPHICS_BUS_ADDR,offset=0x8,size=0x1`
+		if [ $? -eq 0 ]; then
+		    if [ $GRAPHICS_PCI_REV = "0" ]; then
+			setup_symlinks sgx545a
+		    else
+			setup_symlinks sgx545
+		    fi
+		else
+		    echo "Could not read graphics PCI revision"
+		    exit 1;
+		fi
+	    else
+		echo "Could not find graphics PCI device"
+		exit 1;
+	    fi
+	    ;;
+    *)
+	    echo "Unknown SOC type."
+	    ;;
+esac
+
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

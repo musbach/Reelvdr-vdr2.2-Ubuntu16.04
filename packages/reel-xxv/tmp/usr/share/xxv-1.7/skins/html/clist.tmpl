@@ -1,0 +1,163 @@
+<!-- clist -->
+<?% ######################################################################## %?>
+<?% enableform = allow('cdelete') && data.size > 1  %?>
+<?% ######################################################################## %?>
+<?% IF param.sortable.defined %?>
+    <?% IF cgi.param('__sortby') %?>
+        <?% sortby = cgi.param('__sortby') %?>
+        <?% sortby = "&amp;__sortby=${sortby}" %?>
+        <?% orderby = cgi.param('__desc') %?>
+        <?% orderby = "${sortby}&amp;__desc=${orderby}" %?>
+    <?% END %?>
+    <?% cmd = cgi.param('cmd') %?>
+    <?% IF cgi.param('data') %?>
+        <?% daten = url( cgi.param('data') ) %?>
+        <?% daten = "&amp;data=${daten}" %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SortItem %?>
+        <?% "<strong>" IF cgi.param('__sortby') == row %?>
+        <a href="?cmd=<?% cmd %?><?% daten %?>&amp;__sortby=<?% row %?>&amp;__desc=<?% IF cgi.param('__sortby') == row && cgi.param('__desc') == 1 %?>0<?% ELSE %?>1<?% END %?>" >
+        <?% chop(label,trunc) %?>
+        </a>
+        <?% "</strong>" IF cgi.param('__sortby') == row %?>
+        <?% "<strong>" IF cgi.param('__sortby') == row && cgi.param('__desc') == 0 %?>
+        <a href="?cmd=<?% cmd %?><?% daten %?>&amp;__sortby=<?% row %?>&amp;__desc=0" ><img src="images/asc.png"></a>
+        <?% "</strong>" IF cgi.param('__sortby') == row && cgi.param('__desc') == 0 %?>
+        <?% "<strong>" IF cgi.param('__sortby') == row && cgi.param('__desc') == 1 %?>
+        <a href="?cmd=<?% cmd %?><?% daten %?>&amp;__sortby=<?% row %?>&amp;__desc=1" ><img src="images/desc.png"></a>
+        <?% "</strong>" IF cgi.param('__sortby') == row && cgi.param('__desc') == 1 %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+<a href="?cmd=switch&amp;data=<?% id %?>" title="<?% gettext("Switch to channel") %?>">[S]</a>&nbsp;
+<?%- IF allow('cedit') -%?>
+<a href="?cmd=cedit&amp;data=<?% id %?>" title="<?% gettext("Edit channel") %?>">[E]</a>&nbsp;
+<?%- END -%?>
+<?%- IF allow('cdelete') -%?>
+<a href="javascript:sure(document.KanalListe, '<?% gettext("Would you like to delete this channel?") %?>\n\'<?% escape(name) %?>\' ?','?cmd=cdelete&amp;data=<?% id %?>')"
+   title="<?% gettext("Delete channel") %?>" >[D]</a>
+<?%- END -%?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK Item %?>
+        <tr<?% ' bgcolor="#F5F5F5"' IF loop.count mod 2 == 0 %?>>
+          <td>
+            <?% IF enableform %?>
+        			<input type="checkbox" value="<?% id %?>" name="<?% name %?>" />
+             <?% END %?>
+          </td>
+          <td>
+<?% IF allow('cedit') %?>
+            <a href="?cmd=cedit&amp;data=<?% id %?>">
+<?% END %?>
+            <?% POS %?>.<?% name %?>
+<?% IF allow('cedit') %?>
+            </a>
+<?% END %?>
+          </td>
+          <td>
+            <?% frequency %?>
+          </td>
+          <td>
+            <?% parameters %?>
+          </td>
+          <td>
+            <?% source %?>
+          </td>
+          <!--<td>
+            <?% srate %?>
+          </td>-->
+          <td>
+            <?% chop(VPID,16) %?>
+          </td>
+          <td>
+            <?% chop(APID,16) %?>
+          </td>
+          <td>
+            <?% chop(TPID,16) %?>
+          </td>
+          <td>
+            <?% chop(CA,16) %?>
+          </td>
+          <td align="right">
+            <?% PROCESS RowButtons %?>
+           </td>
+        </tr>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% IF cgi.param('data') != "" %?>
+    <?% search = cgi.param('data') %?>
+<?% END %?>
+<h1>
+    <?% gettext("Channels") %?>
+    <?% IF search.defined %?> : "<?% search %?>"
+    <?% END %?>
+</h1>
+    <p>
+      <form name="KanalListe">
+<?% INCLUDE 'widgets/referer.tmpl'%?>
+<?% IF allow( 'cnew' ) %?>
+      <a href="?cmd=cnew">
+        [<?% gettext("Create new channel") %?>]
+      </a>
+<?% END %?>
+<?% IF allow( 'cupdate' ) %?>
+     <a href="?cmd=cupdate">
+        [<?% gettext("Update channels") %?>]
+      </a>
+<?% END %?>
+    <?% gettext("Search for channels") %?> :
+            <input type="hidden" name="cmd" value="clist" />
+            <input type="text" name="data" size="18" <?% IF search.defined %?>value="<?% search %?>"<?% END %?> />
+        </form>
+    </p>
+<?% IF enableform %?>
+    <p>
+        <a href="#" onclick="selAll(document.clist,1)">[<?% gettext("Select all") %?>]</a>&nbsp;
+        <a href="#" onclick="selAll(document.clist,0)">[<?% gettext("Unselect all") %?>]</a>&nbsp;
+        <a href="#" onclick="reverse(document.clist)">[<?% gettext("Reverse select") %?>]</a>&nbsp;
+        <a href="#" onclick="Delete('<?% gettext("Would you like to delete these channels?") %?>',
+                            '<?% gettext("Nothing selected!") %?>','cdelete',document.clist)">
+                            [<?% gettext("Delete channels") %?>]
+        </a>
+    </p>
+<?% END %?>
+
+
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+<form name="clist" action="">
+    <table border="0" cellspacing="0" cellpadding="0"  summary="" width="100%">
+    <tr><th width="20"><?% PROCESS SortItem row="POS" label="" trunc=5 %?></th>
+        <th width="120"><?% PROCESS SortItem row="Name" label=gettext('Name') trunc=20 %?></th>
+        <th><?% PROCESS SortItem row="Frequency"  label=gettext('Transponder frequency') trunc=6 %?></th>
+        <th><?% PROCESS SortItem row="Parameters"  label=gettext('Various parameters, depending on signal source') trunc=8 %?></th>
+        <th><?% PROCESS SortItem row="Source" label=gettext('Source') trunc=6  %?></th>
+        <th><?% PROCESS SortItem row="VPID" label=gettext('Video PID (VPID)') trunc=10  %?></th>
+        <th><?% PROCESS SortItem row="APID" label=gettext('Audio PID (APID)') trunc=10  %?></th>
+        <th><?% PROCESS SortItem row="TPID" label=gettext('Teletext PID (TPID)') trunc=10  %?></th>
+        <th><?% PROCESS SortItem row="CA" label=gettext('Conditional access (CA)') trunc=10  %?></th>
+        <th width="64" align="right"></th>
+    </tr>
+    <?% FOREACH zeile IN data %?>
+        <?% id=zeile.0;name=zeile.1;frequency=zeile.2;parameters=zeile.3;source=zeile.4;srate=zeile.5;VPID=zeile.6;APID=zeile.7;TPID=zeile.8;CA=zeile.9;SID=zeile.10;NID=zeile.11;TID=zeile.12;RID=zeile.13;GRP=zeile.14;POS=zeile.15;CGRP=zeile.16;HOST=zeile.17; %?>
+        <?% IF not sortby.defined && OLDHOST != HOST  %?>
+            <tr>
+                <td colspan=10 bgcolor='#CCCCCC'><b><?% gettext("Video disk recorder") %?> : <?% HOST %?></b></td>
+            <tr>
+        <?% OLDHOST = HOST %?>
+        <?% END %?>
+        <?% IF not sortby.defined && CGRP != CGRP_OLD %?>
+            <tr>
+                <td colspan=10 bgcolor='#DDDDDD'><b><?% CGRP %?></b></td>
+            <tr>
+        <?% END %?>
+        <?% PROCESS Item %?>
+        <?% CGRP_OLD = CGRP %?>
+    <?% END %?>
+   </table>
+</form>
+<?% END %?>
+

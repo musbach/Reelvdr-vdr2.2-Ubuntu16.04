@@ -1,0 +1,10 @@
+Package: netceiver-client
+Version: 1.0-reel28
+Section: reel
+Priority: important
+Architecture: armel
+Depends: libmcli, libxml2, libxml2-utils, tnftp
+Suggests: dvbloop
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: netceiver-client
+Description: Client for the Reel NetCeiver

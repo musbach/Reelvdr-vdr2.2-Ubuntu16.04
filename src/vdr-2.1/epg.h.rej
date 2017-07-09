@@ -1,0 +1,12 @@
+--- epg.h	(revision 15412)
++++ epg.h	(revision 15413)
+@@ -163,6 +163,9 @@
+   void DropOutdated(time_t SegmentStart, time_t SegmentEnd, uchar TableID, uchar Version);
+   void Cleanup(time_t Time);
+   void Cleanup(void);
++#ifdef USE_DDEPGENTRY
++  const cEvent *GetPreviousEvent(cEvent *Event) const; //:EW
++#endif /* DDEPGENTRY */
+   cEvent *AddEvent(cEvent *Event);
+   void DelEvent(cEvent *Event);
+   void HashEvent(cEvent *Event);

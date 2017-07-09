@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio
+END
+version.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/version.h.in
+END
+paranoia.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/paranoia.h
+END
+cdda.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/cdda.h
+END
+cdtext.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/cdtext.h
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/Makefile.in
+END
+scsi_mmc.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/scsi_mmc.h
+END
+rock.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/rock.h
+END
+sector.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/sector.h
+END
+device.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/device.h
+END
+audio.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/audio.h
+END
+cdio_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/cdio_config.h
+END
+track.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/track.h
+END
+types.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/types.h
+END
+ds.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/ds.h
+END
+xa.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/xa.h
+END
+cd_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/cd_types.h
+END
+read.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/read.h
+END
+mmc.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/mmc.h
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/util.h
+END
+dvd.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/dvd.h
+END
+cdio.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/cdio.h
+END
+iso9660.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/iso9660.h
+END
+disc.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/disc.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/Makefile.am
+END
+bytesex.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/bytesex.h
+END
+bytesex_asm.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/bytesex_asm.h
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/version.h
+END
+logging.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/logging.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/include/cdio/Makefile
+END

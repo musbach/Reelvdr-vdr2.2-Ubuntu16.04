@@ -1,0 +1,46 @@
+<!-- help -->
+<?% BLOCK item %?>
+        <td>
+            <?% long %?> ( <?% short %?> )
+        </td>
+        <td>
+            <a href="?cmd=<?% short %?>">
+            <font class="title"><?% desc %?></font>
+            </a>
+        </td>
+<?% END %?>
+
+
+<h1>XXV - Version <?% version %?></h1>
+<p><?% data.shift %?></p>
+<?% IF data.size > 1 %?>
+<table summary=""  width="100%">
+    <?% FOREACH zeile IN data %?>
+    <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+    <tr<?% " class='two'" IF loop.count mod 2 == 0 %?>>
+        <?% short=zeile.0;long=zeile.1;modul=zeile.2;desc=zeile.3 %?>
+        <?% IF allow(long) %?>
+		<?% IF !old.defined || modul != old %?>
+        <?% IF old.defined; %?>
+  	</tr>
+  	<tr>
+       <?% END %?>
+        <td colspan="12">
+            <h2>
+                <a href="?cmd=doc&amp;data=<?% modul %?>">
+                    <?% modul %?>
+                </a>
+           </h2>
+        </td>
+    </tr>
+    <tr>
+    <?% END %?>
+    <?% IF allow(long) %?>
+        <?% PROCESS item %?>
+    <?% END %?>
+    <?% old = modul %?>
+    </tr>
+    <?% END %?>
+    <?% END %?>
+</table>
+<?% END %?>

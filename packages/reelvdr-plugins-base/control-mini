@@ -1,0 +1,10 @@
+Package: reelvdr-plugins-base
+Version: 1.7.21.19470
+Section: reel
+Priority: important
+Architecture: armel
+Depends: dosfstools, jfsutils, libavahi-client3, libmysqlclient15off, libparted1.8-10, libtag1c2a, libudev0, mjpegtools, netpbm, pmount, lsscsi
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-plugins-base
+Description: Required plugins for the ReelBox vdr
+ Required plugins for the ReelVDR

@@ -1,0 +1,924 @@
+Binary files vdr-plugin-mcli/.git/index and vdr-plugin-mcli-2.1.x/.git/index differ
+diff -upr vdr-plugin-mcli/.git/logs/HEAD vdr-plugin-mcli-2.1.x/.git/logs/HEAD
+--- vdr-plugin-mcli/.git/logs/HEAD	2014-07-13 11:16:50.013565123 +0200
++++ vdr-plugin-mcli-2.1.x/.git/logs/HEAD	2014-07-13 10:46:15.484027961 +0200
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 f34679e27acdd4fcd4441895db65b86ea42365db root <root@server.(none)> 1405243010 +0200	clone: from git://projects.vdr-developer.org/vdr-plugin-mcli.git
++0000000000000000000000000000000000000000 f34679e27acdd4fcd4441895db65b86ea42365db root <root@server.fritz.box> 1382433825 +0200	clone: from git://projects.vdr-developer.org/vdr-plugin-mcli.git
+diff -upr vdr-plugin-mcli/.git/logs/refs/heads/master vdr-plugin-mcli-2.1.x/.git/logs/refs/heads/master
+--- vdr-plugin-mcli/.git/logs/refs/heads/master	2014-07-13 11:16:50.013565123 +0200
++++ vdr-plugin-mcli-2.1.x/.git/logs/refs/heads/master	2014-07-13 10:46:15.484027961 +0200
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 f34679e27acdd4fcd4441895db65b86ea42365db root <root@server.(none)> 1405243010 +0200	clone: from git://projects.vdr-developer.org/vdr-plugin-mcli.git
++0000000000000000000000000000000000000000 f34679e27acdd4fcd4441895db65b86ea42365db root <root@server.fritz.box> 1382433825 +0200	clone: from git://projects.vdr-developer.org/vdr-plugin-mcli.git
+diff -upr vdr-plugin-mcli/.git/logs/refs/remotes/origin/HEAD vdr-plugin-mcli-2.1.x/.git/logs/refs/remotes/origin/HEAD
+--- vdr-plugin-mcli/.git/logs/refs/remotes/origin/HEAD	2014-07-13 11:16:50.013565123 +0200
++++ vdr-plugin-mcli-2.1.x/.git/logs/refs/remotes/origin/HEAD	2014-07-13 10:46:15.484027961 +0200
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 f34679e27acdd4fcd4441895db65b86ea42365db root <root@server.(none)> 1405243010 +0200	clone: from git://projects.vdr-developer.org/vdr-plugin-mcli.git
++0000000000000000000000000000000000000000 f34679e27acdd4fcd4441895db65b86ea42365db root <root@server.fritz.box> 1382433825 +0200	clone: from git://projects.vdr-developer.org/vdr-plugin-mcli.git
+diff -upr vdr-plugin-mcli/HISTORY vdr-plugin-mcli-2.1.x/HISTORY
+--- vdr-plugin-mcli/HISTORY	2014-07-13 11:16:50.014565126 +0200
++++ vdr-plugin-mcli-2.1.x/HISTORY	2014-07-13 11:11:25.230767304 +0200
+@@ -1,10 +1,25 @@
+ VDR Plugin 'mcli' Revision History
+ ----------------------------------
+ 
+-2008-12-18: Version 0.0.1
+-
+-- Initial revision.
++2014-07-12
++- mhorwath debug 2.1.x issue http://projects.vdr-developer.org/issues/1709 , little message cleanup, added cam info at startup, fixed compile warning  
+ 
++2013-09-20
++- Hoppaz applied svn diff -r188:189 from https://svn.baycom.de/repos/vdr-mcli-plugin/ : r189 | fliegl | 2013-09-19 21:26:55 +0200 (Do, 19. Sep 2013) | 2 Zeilen , Add LGPL license for all tools (including netcvdvbip)
++ 
++2013-09-18
++- hsteinhaus explicitely define API_SOCK to resolve compile problems using Debian/Ubuntu tools (reason why OS-depended define does not work is not fully understood)
++- hsteinhaus explicitely set -fPIC for the plugin to resolve Debian build problems
++- Hoppaz fixed makefile netcv2dvbip du to link error
++- Hoppaz added netcv2dvbip revision 188 from https://svn.baycom.de/repos/vdr-mcli-plugin/mcast/netcv2dvbip
++- hsteinhaus Resolved issue #1504 - compile problems related to overloading of const methods of the cDevice interface
++- Hoppaz removed obsolete .svn directories
++- Hoppaz patch svn-pull.patch.txt applied
++- Hoppaz patch new_make_format.patch.txt applied
++- Hoppaz patch signal_strength.patch.txt applied
++ 
+ 2010-06-23:
++- Moved the mcli-library to LGPL-2.1-license.
+ 
+-- Moved the mcli-library to LGPL-2.1-license.
+\ No newline at end of file
++2008-12-18: Version 0.0.1
++- Initial revision.
+diff -upr vdr-plugin-mcli/Makefile vdr-plugin-mcli-2.1.x/Makefile
+--- vdr-plugin-mcli/Makefile	2014-07-13 11:16:50.014565126 +0200
++++ vdr-plugin-mcli-2.1.x/Makefile	2014-07-13 10:46:15.483027959 +0200
+@@ -39,6 +39,9 @@ APIVERSION = $(call PKGCFG,apiversion)
+ ARCHIVE = $(PLUGIN)-$(VERSION)
+ PACKAGE = vdr-$(ARCHIVE)
+ 
++### The name of the shared object file:
++
++SOFILE = libvdr-$(PLUGIN).so
+ 
+ ### Includes and Defines (add further entries here):
+ 
+diff -upr vdr-plugin-mcli/device.c vdr-plugin-mcli-2.1.x/device.c
+--- vdr-plugin-mcli/device.c	2014-07-13 11:16:50.015565128 +0200
++++ vdr-plugin-mcli-2.1.x/device.c	2014-07-13 10:46:15.485027964 +0200
+@@ -59,15 +59,17 @@ cMcliDevice::cMcliDevice (void)
+ 	m_tuned = false;
+ 	StartSectionHandler ();
+ #ifdef USE_VDR_PACKET_BUFFER
++	//printf ("Mcli::%s: USING VDR PACKET BUFFER \n", __FUNCTION__);
+ 	m_PB = new cRingBufferLinear(MEGABYTE(4), TS_SIZE, false, "MCLI_TS");
+ 	m_PB->SetTimeouts (0, 100);
+ 	delivered = false;
+ #else
++	//printf ("Mcli::%s: USING INTERNAL MCLI PACKET BUFFER \n", __FUNCTION__);
+ 	m_PB = new cMyPacketBuffer (10000 * TS_SIZE, 10000);
+ 	m_PB->SetTimeouts (0, CLOCKS_PER_SEC * 20 / 1000);
+ #endif
+ 	m_filters = new cMcliFilters ();
+-//	printf ("cMcliDevice: got device number %d\n", CardIndex () + 1);
++
+ 	m_pidsnum = 0;
+ 	m_mcpidsnum = 0;
+ 	m_filternum = 0;
+@@ -84,13 +86,16 @@ cMcliDevice::cMcliDevice (void)
+ 	m_tunerref = NULL;
+ 	m_camref = NULL;
+ 	InitMcli ();
++
++	printf ("Mcli::%s: DVB got device number %d\n", __FUNCTION__, CardIndex () + 1);
++
+ }
+ 
+ cMcliDevice::~cMcliDevice ()
+ {
+ 	LOCK_THREAD;
+ 	StopSectionHandler ();
+-	printf ("Device %d gets destructed\n", CardIndex () + 1);
++	printf ("Mcli::%s: DVB %d gets destructed\n", __FUNCTION__, CardIndex () + 1);
+ 	Cancel (0);
+ 	m_locked.Broadcast ();
+ 	ExitMcli ();
+@@ -199,14 +204,14 @@ bool cMcliDevice::SetTempDisable (bool n
+ 		if(GetCaEnable()) {
+ 			SetCaEnable(false);
+ #ifdef DEBUG_TUNE
+-			printf("Releasing CAM on %d (%s) (disable, %d)\n",CardIndex()+1, m_chan.Name(), now);
++			printf("Mcli::%s: Releasing CAM on device %d (%s) (disable, %d)\n", __FUNCTION__, CardIndex()+1, m_chan.Name(), now);
+ #endif
+ 			m_mcli->CAMFree(m_camref);
+ 			m_camref = NULL;
+ 		}
+ 		if(m_tunerref) {
+ #ifdef DEBUG_TUNE
+-			printf("Releasing tuner on %d (%s)\n",CardIndex()+1, m_chan.Name());
++			printf("Mcli::%s: Releasing tuner on device %d (%s)\n", __FUNCTION__, CardIndex()+1, m_chan.Name());
+ #endif			
+ 			m_mcli->TunerFree(m_tunerref, false);
+ 			m_tunerref = NULL;
+@@ -242,9 +247,9 @@ int cMcliDevice::HandleTsData (unsigned
+ 	}
+ #else
+ #ifdef USE_VDR_PACKET_BUFFER
+-	if(m_PB->Free() < len) {
++	if((size_t)m_PB->Free() < len) { // m_PB->Free() returns an unsigned int
+ 		m_PB->Clear();
+-		if(Receiving(true))  isyslog("MCLI: HandleTsData buffer overflow [%d] %s", CardIndex()+1, m_chan.Name());
++		if(Receiving(true))  isyslog("Mcli::%s: buffer overflow [%d] %s", __FUNCTION__, CardIndex()+1, m_chan.Name());
+ 	}
+ 	return m_PB->Put(buffer, len);
+ #else
+@@ -305,7 +310,7 @@ bool cMcliDevice::ProvidesSource (int So
+ 		}
+ 	} 
+ #ifdef DEBUG_TUNE_EXTRA
+-	printf ("ProvidesSource:%d Type:%d Pos:%d -> %d\n", CardIndex () + 1, type, pos, ret);
++	printf ("Mcli::%s: DVB:%d Type:%d Pos:%d -> %d\n", __FUNCTION__, CardIndex () + 1, type, pos, ret);
+ #endif
+ 	return ret;
+ }
+@@ -315,6 +320,7 @@ bool cMcliDevice::ProvidesTransponder (c
+ 	if (!m_enable) {
+ 		return false;
+ 	}
++ 	
+ #if VDRVERSNUM < 10702	
+ 	bool s2=Channel->Modulation() == QPSK_S2 || Channel->Modulation() == PSK8;
+ #elif VDRVERSNUM < 10714	
+@@ -329,6 +335,11 @@ bool cMcliDevice::ProvidesTransponder (c
+ 	bool s2=dtp.System() == DVB_SYSTEM_2;
+ #endif	
+ 	bool ret=ProvidesSource (Channel->Source ());
++
++        //printf ("Mcli::%s: DEBUG 'Channel->Parameters()' -> (%u) \n", __FUNCTION__, Channel->Parameters() );
++        //printf ("Mcli::%s: DEBUG 's2=dtp.System() == DVB_SYSTEM_2' -> (%d)=(%d) == (%d) \n", __FUNCTION__, s2, dtp.System(), DVB_SYSTEM_2 );
++        //printf ("Mcli::%s: DEBUG 'Channel->Source ()' -> (%u) \n", __FUNCTION__, Channel->Source () );
++
+ 	if(ret) {
+ 		int pos;
+ 		int type;
+@@ -349,8 +360,9 @@ bool cMcliDevice::ProvidesTransponder (c
+ 			}
+ 		}
+ 	}
++
+ #ifdef DEBUG_TUNE_EXTRA
+-	printf ("ProvidesTransponder:%d S2:%d %s@%p -> %d\n", CardIndex () + 1, s2, Channel->Name (), this, ret);
++	printf ("Mcli::%s: DVB:%d S2:%d %s@%p -> %d\n", __FUNCTION__, CardIndex () + 1, s2, Channel->Name (), this, ret);
+ #endif
+ 	return ret;
+ }
+@@ -414,23 +426,38 @@ bool cMcliDevice::ProvidesChannel (const
+ 	}
+ 	if(!CheckCAM(Channel, false)) {
+ #ifdef DEBUG_TUNE
+-		printf ("ProvidesChannel:%d Channel:%s, Prio:%d this->Prio:%d m_chan.Name:%s -> %d\n", CardIndex () + 1, Channel->Name (), Priority, this->Priority (), m_chan.Name(), false);
++		printf ("Mcli::%s: DVB:%d Channel(%p):%s, Prio:%d this->Prio:%d m_chan.Name:%s -> %d\n", __FUNCTION__, CardIndex () + 1, Channel, Channel->Name (), Priority, this->Priority (), m_chan.Name(), false);
+ #endif
+ 		return false;
+ 	}
+ 	if(ProvidesTransponder(Channel)) {
++		//printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * 'ProvidesTransponder(Channel)' is True\n", CardIndex () + 1, Channel, Channel->Name ());
+ 		result = hasPriority;
++
++		//printf ("Mcli::ProvidesChannel: DEBUG result %d hasPriority %d\n", result, hasPriority);
++
+ 		if (Priority >= 0 && Receiving (true))
+ 		{
++	                //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * 'Priority >= 0 && Receiving (true)' is True\n", CardIndex () + 1, Channel, Channel->Name ());
++
+ 			if (!IsTunedToTransponder(Channel)) {
+ 				needsDetachReceivers = true;
++	                        //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * '!IsTunedToTransponder(Channel)' is True\n", CardIndex () + 1, Channel, Channel->Name ());
++
+ 			} else {
+ 				result = true;
++                                //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * '!IsTunedToTransponder(Channel)' is False * result = true ***** OK\n", CardIndex () + 1, Channel, Channel->Name ());
+ 			}
++
++		} else {
++                        //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * 'Priority >= 0 && Receiving (true)' is False\n", CardIndex () + 1, Channel, Channel->Name ());
+ 		}
++	} else {
++                //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * 'ProvidesTransponder(Channel)' is False\n", CardIndex () + 1, Channel, Channel->Name ());
+ 	}
++
+ #ifdef DEBUG_TUNE
+-	printf ("ProvidesChannel:%d Channel:%s, Prio:%d this->Prio:%d m_chan.Name:%s NeedsDetachReceivers:%d -> %d\n", CardIndex () + 1, Channel->Name (), Priority, this->Priority (), m_chan.Name(), needsDetachReceivers, result);
++	printf ("Mcli::%s: DVB:%d Channel(%p):%s, Prio:%d this->Prio:%d m_chan.Name:%s NeedsDetachReceivers:%d -> %d\n", __FUNCTION__, CardIndex () + 1, Channel, Channel->Name (), Priority, this->Priority (), m_chan.Name(), needsDetachReceivers, result);
+ #endif
+ 	if (NeedsDetachReceivers) {
+ 		*NeedsDetachReceivers = needsDetachReceivers;
+@@ -452,10 +479,17 @@ void cMcliDevice::TranslateTypePos(int &
+ 	
+ 	pos=abs(n);
+ 	
++#if VDRVERSNUM < 20100
++	// Changed the sign of the satellite position value in cSource to reflect the standard
++	// of western values being negative. The new member function cSource::Position() can be
++	// used to retrieve the orbital position of a satellite.
++	// see changelog vdr2.1.1 * found by horwath@dayside.net
+ 	if (n > 0 ){
+ 		pos = -pos;
+ 	}
+ #endif
++
++#endif
+ 	if (pos) {
+ 		pos += 1800;
+ 	} else {
+@@ -463,13 +497,17 @@ void cMcliDevice::TranslateTypePos(int &
+ 	}
+ 	
+ 	type = Source & cSource::st_Mask;
++
++        //printf("MCLI DEBUG type %d, cSource::stCable %d, cSource::stSat %d, cSource::stTerr %d \n", type, cSource::stCable, cSource::stSat, cSource::stTerr );
++        //printf("MCLI DEBUG FE_QAM %d, FE_QPSK %d, FE_OFDM %d \n", FE_QAM, FE_QPSK, FE_OFDM);
++       
+ 	switch(type) {
++                case cSource::stSat:
++                        type = FE_QPSK;
++                        break;
+ 		case cSource::stCable: 
+ 			type = FE_QAM;
+ 			break;
+-		case cSource::stSat:
+-			type = FE_QPSK;
+-			break;
+ 		case cSource::stTerr:
+ 			type = FE_OFDM;
+ 			break;
+@@ -488,7 +526,7 @@ bool cMcliDevice::SetChannelDevice (cons
+ 	is_scan = !strlen(Channel->Name()) && !strlen(Channel->Provider());
+ 	
+ #ifdef DEBUG_TUNE
+-	printf ("SetChannelDevice:%d Channel(%p):%s, Provider:%s, Source:%d, LiveView:%s, IsScan:%d, m_chan.Name:%s\n", CardIndex () + 1, Channel, Channel->Name (), Channel->Provider (), Channel->Source (), LiveView ? "true" : "false", is_scan, m_chan.Name());
++	printf ("Mcli::%s: DVB:%d Channel(%p):%s, Provider:%s, Source:%d, LiveView:%s, IsScan:%d, m_chan.Name:%s\n", __FUNCTION__, CardIndex () + 1, Channel, Channel->Name (), Channel->Provider (), Channel->Source (), LiveView ? "true" : "false", is_scan, m_chan.Name());
+ #endif
+ 	if (!m_enable) {
+ 		return false;
+@@ -505,7 +543,7 @@ bool cMcliDevice::SetChannelDevice (cons
+ 	bool cam_force=true;
+ 	if(cam_force && !CheckCAM(Channel, true)) {
+ #ifdef DEBUG_TUNE
+-		printf("No CAM on %d available even after tried to steal one\n", CardIndex () + 1);
++		printf("Mcli::%s: No CAM on DVB %d available even after tried to steal one\n", __FUNCTION__, CardIndex () + 1);
+ #endif
+ 		return false;
+ 	}
+@@ -520,7 +558,7 @@ bool cMcliDevice::SetChannelDevice (cons
+ 		}
+ 		if(!(m_camref=m_mcli->CAMAlloc(NULL, slot))) {
+ #ifdef DEBUG_TUNE
+-			printf("failed to get CAM on %d\n",CardIndex () + 1);
++			printf("Mcli::%s: failed to get CAM on DVB %d\n", __FUNCTION__, CardIndex () + 1);
+ #endif
+ 			if(cam_force) {
+ 				return false;
+@@ -581,7 +619,7 @@ bool cMcliDevice::SetChannelDevice (cons
+ 		m_chan = *Channel;
+ 
+ #ifdef DEBUG_TUNE
+-                printf("Already tuned to transponder on %d\n",CardIndex () + 1);
++                printf("Mcli::%s: Already tuned to transponder on DVB %d\n", __FUNCTION__, CardIndex () + 1);
+ #endif
+ 		return true;
+ 	} else {
+@@ -715,7 +753,7 @@ bool cMcliDevice::SetChannelDevice (cons
+ //		printf("add dummy pid 0 @ %p\n", this);
+ 	}
+ #ifdef DEBUG_PIDS
+-	printf ("%p SetChannelDevice: Pidsnum:%d m_pidsnum:%d\n", m_r, m_mcpidsnum, m_pidsnum);
++	printf ("Mcli::%s: %p Pidsnum:%d m_pidsnum:%d\n", __FUNCTION__, m_r, m_mcpidsnum, m_pidsnum);
+ 	for (int i = 0; i < m_mcpidsnum; i++) {
+ 		printf ("Pid:%d\n", m_pids[i].pid);
+ 	}
+@@ -745,7 +783,7 @@ bool cMcliDevice::HasLock (int TimeoutMs
+ bool cMcliDevice::SetPid (cPidHandle * Handle, int Type, bool On)
+ {
+ #ifdef DEBUG_TUNE
+-	printf ("SetPid %d Pid:%d (%s), Type:%d, On:%d, used:%d sid:%d ca_enable:%d channel_ca:%d\n",  CardIndex () + 1, Handle->pid, m_chan.Name(), Type, On, Handle->used, m_chan.Sid(), GetCaEnable(), m_chan.Ca (0));
++	printf ("Mcli::%s: DVB:%d Pid:%d (%s), Type:%d, On:%d, used:%d sid:%d ca_enable:%d channel_ca:%d\n", __FUNCTION__, CardIndex () + 1, Handle->pid, m_chan.Name(), Type, On, Handle->used, m_chan.Sid(), GetCaEnable(), m_chan.Ca (0));
+ #endif
+ 	dvb_pid_t pi;
+ 	memset (&pi, 0, sizeof (dvb_pid_t));
+@@ -787,7 +825,7 @@ bool cMcliDevice::SetPid (cPidHandle * H
+ 	}
+ 	m_mcpidsnum = recv_pids_get (m_r, m_pids);
+ #ifdef DEBUG_PIDS
+-	printf ("%p SetPid: Pidsnum:%d m_pidsnum:%d m_filternum:%d\n", m_r, m_mcpidsnum, m_pidsnum, m_filternum);
++	printf ("Mcli::%s: %p Pidsnum:%d m_pidsnum:%d m_filternum:%d\n", __FUNCTION__, m_r, m_mcpidsnum, m_pidsnum, m_filternum);
+ 	for (int i = 0; i < m_mcpidsnum; i++) {
+ 		printf ("Pid:%d\n", m_pids[i].pid);
+ 	}
+@@ -798,14 +836,14 @@ bool cMcliDevice::SetPid (cPidHandle * H
+ 
+ bool cMcliDevice::OpenDvr (void)
+ {
+-//	printf ("OpenDvr\n");
++	printf ("Mcli::%s:\n", __FUNCTION__);
+ 	m_dvr_open = true;
+ 	return true;
+ }
+ 
+ void cMcliDevice::CloseDvr (void)
+ {
+-//	printf ("CloseDvr\n");
++	printf ("Mcli::%s:\n", __FUNCTION__);
+ 	m_dvr_open = false;
+ }
+ 
+@@ -849,7 +887,7 @@ bool cMcliDevice::GetTSPacket (uchar * &
+ 				}
+ 			}
+ 			m_PB->Del(Count);
+-			esyslog("cMcliDevice::GetTSPacket: skipped %d bytes to sync on TS packet on device %d", Count, CardIndex());
++			esyslog("Mcli::%s: skipped %d bytes to sync on TS packet on DVB %d", __FUNCTION__, Count, CardIndex());
+ 			return true;
+ 		}
+ 		delivered = true;
+@@ -882,7 +920,7 @@ int cMcliDevice::OpenFilter (u_short Pid
+ 	recv_pid_add (m_r, &pi);
+ 	m_mcpidsnum = recv_pids_get (m_r, m_pids);
+ #ifdef DEBUG_PIDS
+-	printf ("%p OpenFilter: Pidsnum:%d m_pidsnum:%d\n", m_r, m_mcpidsnum, m_pidsnum);
++	printf ("Mcli::%s: %p Pidsnum:%d m_pidsnum:%d\n", __FUNCTION__, m_r, m_mcpidsnum, m_pidsnum);
+ 	for (int i = 0; i < m_mcpidsnum; i++) {
+ 		printf ("Pid:%d\n", m_pids[i].pid);
+ 	}
+Only in vdr-plugin-mcli-2.1.x/mcast/client: .dependencies
+Only in vdr-plugin-mcli-2.1.x/mcast/netcv2dvbip: channels.m3u
+Only in vdr-plugin-mcli-2.1.x/mcast/tool: .dependencies
+diff -upr vdr-plugin-mcli/mcli.c vdr-plugin-mcli-2.1.x/mcli.c
+--- vdr-plugin-mcli/mcli.c	2014-07-13 11:16:50.021565143 +0200
++++ vdr-plugin-mcli-2.1.x/mcli.c	2014-07-13 10:46:15.484027961 +0200
+@@ -20,6 +20,7 @@
+ #include "mcli.h"
+ #include <sstream>
+ 
++
+ static int reconf = 0;
+ 
+ //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@@ -332,7 +333,7 @@ int cPluginMcli::CAMPoolAdd(netceiver_in
+ 					cp->max = 1;
+ 					break;
+ 				case CA_MULTI_TRANSPONDER:
+-					cp->max = nci->cam[j].max_sids/* - nci->cam[j].use_sids*/;
++					cp->max = nci->cam[j].max_sids;
+ 					break;
+ 			}
+ 		} else {
+@@ -379,7 +380,7 @@ cam_pool_t *cPluginMcli::CAMAvailable (c
+ 	}
+ #ifdef DEBUG_RESOURCES
+ 	if(ret) {
+-		printf("CAMAvailable %s %d -> %s %d\n", uuid, slot, ret->uuid, ret->slot);
++		printf("Mcli::%s: Available CAM [%s]:%d -> [%s]:%d\n", __FUNCTION__, uuid, slot, ret->uuid, ret->slot);
+ 	}
+ #endif
+ 	if(lock) {
+@@ -387,42 +388,50 @@ cam_pool_t *cPluginMcli::CAMAvailable (c
+ 	}
+ 	return ret;
+ }
++
+ cam_pool_t *cPluginMcli::CAMAlloc (const char *uuid, int slot)
+ {
+ 	LOCK_THREAD;
+-#ifdef DEBUG_RESOURCES
+-	printf ("Alloc CAM %s %d\n", uuid, slot);
+-#endif
+-	cam_pool_t *cp;
++	cam_pool_t *cp = NULL;
+ 	if ((cp = CAMAvailable (uuid, slot, false))) {
+ 		cp->use++;
+-		return cp;
+ 	}
+-	return NULL;
++
++#ifdef DEBUG_RESOURCES
++        if(cp) {
++		printf ("Mcli::%s: AllocateCAM [%s]:%d -> [%s]:%d\n", __FUNCTION__, uuid, slot, cp->uuid, cp->slot);
++        } else {
++		printf ("Mcli::%s: AllocateCAM [%s]:%d -> FAIL\n", __FUNCTION__, uuid, slot);
++	}
++#endif
++
++	return cp;
+ }
++
+ int cPluginMcli::CAMFree (cam_pool_t *cp)
+ {
+ 	LOCK_THREAD;
+ #ifdef DEBUG_RESOURCES
+-	printf ("FreeCAM %s %d\n", cp->uuid, cp->slot);
++	printf ("Mcli::%s: FreeCAM [%s]:%d\n", __FUNCTION__, cp->uuid, cp->slot);
+ #endif
+ 	if (cp->use > 0) {
+ 		cp->use--;
+ 	}
+ 	return cp->use;
+ }
++
+ bool cPluginMcli::CAMSteal(const char *uuid, int slot, bool force)
+ {
+ 		for (cMcliDeviceObject * d = m_devs.First (); d; d = m_devs.Next (d)) {
+ 			cam_pool_t *cp=d->d()->GetCAMref();
+ 			if(d->d()->Priority()<0 && d->d()->GetCaEnable() && (slot == -1 || slot == cp->slot)) {
+ #ifdef DEBUG_RESOURCES
+-				printf("Can Steal CAM on slot %d from %d\n", slot, d->d()->CardIndex()+1);
++				printf("Mcli::%s: Can Steal CAM on slot %d from DVB %d\n", __FUNCTION__, slot, d->d()->CardIndex()+1);
+ #endif
+ 				if(force) {
+ 					d->d ()->SetTempDisable (true);
+ #ifdef DEBUG_RESOURCES
+-					printf("Stole CAM on slot %d from %d\n", slot, d->d()->CardIndex()+1);
++					printf("Mcli::%s: Stole CAM on slot %d from DVB %d\n", __FUNCTION__, cp->slot, d->d()->CardIndex()+1);
+ #endif
+ 				}
+ 				return true;
+@@ -437,9 +446,13 @@ satellite_list_t *cPluginMcli::TunerFind
+ 		return NULL;
+ 	}
+ 
++	//for (int i = 0; i < nc_info->sat_list_num; i++) {
++	//	printf("Mcli::%s: Satlist Name %s\n", __FUNCTION__, nc_info->sat_list[i].Name);
++	//}	
++
+ 	for (int i = 0; i < nc_info->sat_list_num; i++) {
+ 		if (!strcmp (SatelliteListName, nc_info->sat_list[i].Name)) {
+-//			printf ("found uuid in sat list %d\n", i);
++			//printf ("found uuid in sat list %d\n", i);
+ 			return nc_info->sat_list + i;
+ 		}
+ 	}
+@@ -451,25 +464,29 @@ bool cPluginMcli::SatelitePositionLookup
+ 	if(satlist == NULL) {
+ 		return false;
+ 	}
++
+ 	for(int i=0; i<satlist->sat_num;i ++) {
+ 		satellite_info_t *s=satlist->sat+i;
++
++		//printf("Mcli::%s: Satlist Pos %d s->type %d s->Name %s s->SatPos %d LNB%d UNI%d ROT%d\n", __FUNCTION__, pos, s->type, s->Name,  s->SatPos, SAT_SRC_LNB, SAT_SRC_UNI, SAT_SRC_ROTOR);
++
+ 		switch(s->type){
+ 			case SAT_SRC_LNB:
+ 			case SAT_SRC_UNI:
+ 				if(pos == s->SatPos) {
+-//					printf("satlist found\n");
++					//printf("satlist found\n");
+ 					return true;
+ 				}
+ 				break;
+ 			case SAT_SRC_ROTOR:
+ 				if(pos>=s->SatPosMin && pos <=s->SatPosMax) {
+-//					printf("satlist found\n");
++					//printf("satlist found\n");
+ 					return true;
+ 				}
+ 				break;
+ 		}
+ 	}
+-//	printf("satlist not found\n");
++	//printf("satlist not found\n");
+ 
+ 	return false;
+ }
+@@ -477,11 +494,12 @@ bool cPluginMcli::SatelitePositionLookup
+ bool cPluginMcli::TunerSatelitePositionLookup(tuner_pool_t *tp, int pos) const
+ {
+ 	if((tp->type != FE_QPSK) && (tp->type != FE_DVBS2)) {
+-		return true;
++		return true; // if not DVB-S or DVB-S2 return true
+ 	}
+ 	if(pos == NO_SAT_POS) {
+ 		return true;
+ 	}
++
+ 	nc_lock_list ();
+ 	netceiver_info_list_t *nc_list = nc_get_list ();
+ 	satellite_list_t *satlist=NULL;
+@@ -498,9 +516,13 @@ bool cPluginMcli::TunerSatelitePositionL
+ 	}
+ 	bool ret;
+ 	if(satlist == NULL) {
++                printf("Mcli::%s: No Satlist found \n", __FUNCTION__);
+ 		ret = false;
+ 	} else {
+ 		ret=SatelitePositionLookup(satlist, pos);
++		if (!ret) {
++			printf("Mcli::%s: Pos %d not found in Satlist \n", __FUNCTION__, pos);
++		}		
+ 	}
+ 	nc_unlock_list ();
+ 	return ret;
+@@ -585,20 +607,23 @@ tuner_pool_t *cPluginMcli::TunerAvailabl
+ 	if(lock) {
+ 		Lock();
+ 	}
+-//	printf("TunerAvailable: %d %d\n",type, pos);
++
++	printf("Mcli::%s: Testing for tuner type %d pos %d\n", __FUNCTION__, type, pos);
++
+ 	if (TunerCountByType (type) == m_cmd.tuner_type_limit[type]) {
++
+ #ifdef DEBUG_RESOURCES
+-		//printf("Type %d limit (%d) reached\n", type, m_cmd.tuner_type_limit[type]);
++		printf("Mcli::%s: type %d limit (%d) reached\n", __FUNCTION__, type, m_cmd.tuner_type_limit[type]);
+ #endif
+ 		if(lock) {
+ 			Unlock();
+ 		}
++
+ 		return NULL;
+ 	}
+ 
+ 	for(int i=0; i<TUNER_POOL_MAX; i++) {
+ 		tp=m_tuner_pool+i;
+-//		printf("Tuner %d(%p), type %d, inuse %d\n", i, tp, tp->type, tp->inuse);
+ 
+ 		if(tp->inuse) {
+ 			continue;
+@@ -606,17 +631,24 @@ tuner_pool_t *cPluginMcli::TunerAvailabl
+ 		if(tp->type != type) {
+ 			continue;
+ 		}
++#ifdef DEBUG_RESOURCES
++                printf("Mcli::%s: Tuner %d(%p), type %d, inuse %d\n", __FUNCTION__, i, tp, tp->type, tp->inuse);
++#endif
+ 		if(TunerSatelitePositionLookup(tp, pos)) {
+-//			printf("TunerAvailable: %d/%p\n",i,tp);
+ 			if(lock) {
+ 				Unlock();
+ 			}
++		        printf("Mcli::%s: Tuner %d(%p) available\n", __FUNCTION__, i, tp);
++
+ 			return tp;
+ 		}
+ 	}
+ 	if(lock) {
+ 		Unlock();
+ 	}
++
++        printf("Mcli::%s: No tuner available\n", __FUNCTION__);
++
+ 	return NULL;
+ }
+ 
+@@ -630,7 +662,7 @@ tuner_pool_t *cPluginMcli::TunerAlloc(fe
+ 	if(tp) {
+ 		tp->inuse=true;
+ #ifdef DEBUG_RESOURCES
+-		printf("TunerAlloc: %p type %d\n",tp, tp->type);
++		printf("Mcli::%s: %p [%s], Type %d\n", __FUNCTION__, tp, tp->uuid, tp->type);
+ #endif
+ 		if(lock) {
+ 			Unlock();
+@@ -650,7 +682,7 @@ bool cPluginMcli::TunerFree(tuner_pool_t
+ 	if(tp->inuse) {
+ 		tp->inuse=false;
+ #ifdef DEBUG_RESOURCES
+-		printf("TunerFree: %p type %d\n",tp, tp->type);
++		printf("Mcli::%s: %p [%s], Type %d\n", __FUNCTION__, tp, tp->uuid, tp->type);
+ #endif
+ 		if(lock) {
+ 			Unlock();
+@@ -667,9 +699,8 @@ void cPluginMcli::Action (void)
+ {
+ 	netceiver_info_list_t *nc_list = nc_get_list ();
+ //	printf ("Looking for netceivers out there....\n");
+-#if 1 //ndef REELVDR
+ 	bool channel_switch_ok = false;
+-#endif
++
+ #define NOTIFY_CAM_CHANGE 1
+ #ifdef NOTIFY_CAM_CHANGE
+     int cam_stats[CAM_POOL_MAX] = { 0 };
+@@ -683,7 +714,7 @@ void cPluginMcli::Action (void)
+ 	bool netCVChanged;
+ 
+ 	while (Running ()) {
+-        netCVChanged = false;
++		netCVChanged = false;
+ 		Lock ();
+ 		if(!InitMcli()) {
+ 			usleep (250 * 1000);
+@@ -695,21 +726,55 @@ void cPluginMcli::Action (void)
+ 
+ 		for (int n = 0; n < nc_list->nci_num; n++) {
+ 			netceiver_info_t *nci = nc_list->nci + n;
++
++			//printf("cPluginMcli::Action: NCI Cam_Num: %d\n", nci->cam_num);
++
+ 			if ((now - nci->lastseen) > MCLI_DEVICE_TIMEOUT) {
+ 				if(CAMPoolDel(nci->uuid)) {
+-					printf  ("mcli: Remove CAMs from NetCeiver %s\n", nci->uuid);
+-					isyslog ("mcli: Remove CAMs from NetCeiver %s\n", nci->uuid);
+-                    netCVChanged = true;
++					printf  ("Mcli::%s: Remove CAMs from NetCeiver: [%s]\n", __FUNCTION__, nci->uuid);
++					netCVChanged = true;
+ 				}
+ 			} else {
+ 				int cpa = CAMPoolAdd(nci);
+ 				if(cpa==1) {
+-					printf ("mcli: Add CAMs from NetCeiver %s -> %d\n", nci->uuid, cpa);
+-					isyslog ("mcli: Add CAMs from NetCeiver %s -> %d\n", nci->uuid, cpa);
+-                    netCVChanged = true;
++					printf ("Mcli::%s: Add CAMs from NetCeiver: [%s] -> %d\n", __FUNCTION__, nci->uuid, cpa);
++					netCVChanged = true;
+ 				}
+ 			}
+ 
++                        if (netCVChanged) {
++				for(int j = 0; j < nci->cam_num; j++) {
++
++					const char *camstate;
++					const char *cammode;
++
++					switch(nci->cam[j].status) {
++						case DVBCA_CAMSTATE_MISSING: 
++							camstate="MISSING"; break;
++						case DVBCA_CAMSTATE_INITIALISING:
++							camstate="INIT"; break;
++						case DVBCA_CAMSTATE_READY:
++							camstate="READY"; break;
++					}
++					switch(nci->cam[j].flags) {
++						case CA_SINGLE:
++							cammode="CA_SINGLE"; break;
++						case CA_MULTI_SID:
++							cammode="CA_MULTI_SID"; break;
++						case CA_MULTI_TRANSPONDER:
++							cammode="CA_MULTI_TRANSPONDER"; break;
++					}
++
++					if (nci->cam[j].status != DVBCA_CAMSTATE_MISSING) {
++						printf("Mcli::%s: Slot:%d CamModule '%s' State:%s Mode:%s\n", __FUNCTION__, j, nci->cam[j].menu_string, camstate, cammode);
++					} else {
++						printf("Mcli::%s: Slot:%d CamModule State:%s\n", __FUNCTION__, j, camstate);
++					}
++				}
++			}
++
++
++
+ #if NOTIFY_CAM_CHANGE
+             if (n == 0) {
+                 for(int j = 0; j < nci->cam_num && j < CAM_POOL_MAX; j++) {
+@@ -741,17 +806,17 @@ void cPluginMcli::Action (void)
+ 				if (((now - nci->lastseen) > MCLI_DEVICE_TIMEOUT) || (nci->tuner[i].preference < 0) || !strlen (nci->tuner[i].uuid)) {
+ 					if (t) {
+ 						int pos=TunerPoolDel(t);
+-						printf  ("mcli: Remove Tuner %s [%s] @ %d\n", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, pos);
+-						isyslog ("mcli: Remove Tuner %s [%s] @ %d", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, pos);
+-                        netCVChanged = true;
++						printf  ("Mcli::%s: Remove Tuner %s [%s] @ %d\n", __FUNCTION__, nci->tuner[i].fe_info.name, nci->tuner[i].uuid, pos);
++						//isyslog ("cPluginMcli::Action: Remove Tuner %s [%s] @ %d", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, pos);
++						netCVChanged = true;
+ 					}
+ 					continue;
+ 				}
+ 				if (!t) {
+ 					tpa=TunerPoolAdd(nci->tuner+i);
+-					printf ("mcli: Add Tuner: %s [%s], Type %d @ %d\n", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, nci->tuner[i].fe_info.type, tpa);
+-					isyslog ("mcli: Add Tuner: %s [%s], Type %d @ %d", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, nci->tuner[i].fe_info.type, tpa);
+-                    netCVChanged = true;
++					printf ("Mcli::%s: Add Tuner: %s [%s], Type %d @ %d\n", __FUNCTION__, nci->tuner[i].fe_info.name, nci->tuner[i].uuid, nci->tuner[i].fe_info.type, tpa);
++					//isyslog ("cPluginMcli::Action: Add Tuner: %s [%s], Type %d @ %d", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, nci->tuner[i].fe_info.type, tpa);
++					netCVChanged = true;
+ 				}
+ 			}
+ 		}
+@@ -759,10 +824,10 @@ void cPluginMcli::Action (void)
+ 		Unlock ();
+ 		UpdateDevices();
+ 
+-        //RC: disabled, see mantis #995
+-        //if (netCVChanged) {
+-        //    cPluginManager::CallAllServices("NetCeiver changed");
+-        //}
++		if (netCVChanged) {
++			//RC: disabled, see mantis #995
++			//cPluginManager::CallAllServices("NetCeiver changed");
++		}
+         
+ //TB: reelvdr itself tunes if the first tuner appears, don't do it twice
+ #if 1 //ndef REELVDR
+@@ -770,7 +835,7 @@ void cPluginMcli::Action (void)
+ 			if (!channel_switch_ok) {	// the first tuner that was found, so make VDR retune to the channel it wants...
+ 				cChannel *ch = Channels.GetByNumber (cDevice::CurrentChannel ());
+ 				if (ch) {
+-                    printf("cDevice::PrimaryDevice ()%p\n", cDevice::PrimaryDevice ());
++					printf("Mcli::%s: cDevice::PrimaryDevice (%p)\n", __FUNCTION__, cDevice::PrimaryDevice ());
+ 					channel_switch_ok = cDevice::PrimaryDevice ()->SwitchChannel (ch, true);
+ 				}
+ 			}
+@@ -801,8 +866,8 @@ bool cPluginMcli::Initialize (void)
+ 
+ bool cPluginMcli::Start (void)
+ {
+-//	printf ("cPluginMcli::Start\n");
+-	isyslog("mcli v"MCLI_PLUGIN_VERSION" started");
++	printf ("Mcli::%s:\n", __FUNCTION__);
++	isyslog("Mcli v"MCLI_PLUGIN_VERSION" started");
+ #ifdef REELVDR
+     if (access("/dev/dvb/adapter0", F_OK) != 0) //TB: this line allows the client to be used with usb-sticks without conflicts
+ #endif
+@@ -813,7 +878,7 @@ bool cPluginMcli::Start (void)
+ 
+ void cPluginMcli::Stop (void)
+ {
+-//	printf ("cPluginMcli::Stop\n");
++	printf ("Mcli::%s:\n", __FUNCTION__);
+ 	cThread::Cancel (0);
+ 	for (cMcliDeviceObject * d = m_devs.First (); d; d = m_devs.Next (d)) {
+ 		d->d ()->SetEnable (false);
+@@ -823,12 +888,12 @@ void cPluginMcli::Stop (void)
+ 
+ void cPluginMcli::Housekeeping (void)
+ {
+-	// printf ("cPluginMcli::Housekeeping\n");
++//	printf ("Mcli::%s:\n", __FUNCTION__);
+ }
+ 
+ void cPluginMcli::MainThreadHook (void)
+ {
+-//      printf("cPluginMcli::MainThreadHook\n");
++//      printf ("Mcli::%s:\n", __FUNCTION__);
+ 	if (reconf) {
+ 		reconfigure ();
+ 		reconf = 0;
+@@ -846,14 +911,14 @@ void cPluginMcli::MainThreadHook (void)
+ 
+ cString cPluginMcli::Active (void)
+ {
+-//	printf ("cPluginMcli::Active\n");
++//      printf ("Mcli::%s:\n", __FUNCTION__);
+ 	// Return a message string if shutdown should be postponed
+ 	return NULL;
+ }
+ 
+ time_t cPluginMcli::WakeupTime (void)
+ {
+-//	printf ("cPluginMcli::WakeupTime\n");
++//      printf ("Mcli::%s:\n", __FUNCTION__);
+ 	// Return custom wakeup time for shutdown script
+ 	return 0;
+ }
+@@ -904,7 +969,7 @@ void cPluginMcli::UpdateDevices() {
+ 
+ cOsdObject *cPluginMcli::MainMenuAction (void)
+ {
+-//	printf ("cPluginMcli::MainMenuAction\n");
++//      printf ("Mcli::%s:\n", __FUNCTION__);
+ 	// Perform the action when selected from the main VDR menu.
+ 	return new cCamMenu (&m_cmd);
+ }
+@@ -912,14 +977,14 @@ cOsdObject *cPluginMcli::MainMenuAction
+ 
+ cMenuSetupPage *cPluginMcli::SetupMenu (void)
+ {
+-//	printf ("cPluginMcli::SetupMenu\n");
++//      printf ("Mcli::%s:\n", __FUNCTION__);
+ 	// Return a setup menu in case the plugin supports one.
+ 	return new cMenuSetupMcli (&m_cmd);
+ }
+ 
+ bool cPluginMcli::SetupParse (const char *Name, const char *Value)
+ {
+-//      printf ("cPluginMcli::SetupParse\n");
++//      printf ("Mcli::%s:\n", __FUNCTION__);
+ 	if (!strcasecmp (Name, "DVB-C") && m_cmd.tuner_type_limit[FE_QAM] == MCLI_MAX_DEVICES)
+ 		m_cmd.tuner_type_limit[FE_QAM] = atoi (Value);
+ 	else if (!strcasecmp (Name, "DVB-T") && m_cmd.tuner_type_limit[FE_OFDM] == MCLI_MAX_DEVICES)
+@@ -935,7 +1000,8 @@ bool cPluginMcli::SetupParse (const char
+ 
+ bool cPluginMcli::Service (const char *Id, void *Data)
+ {
+-	//printf ("cPluginMcli::Service: \"%s\"\n", Id);
++	//printf ("Mcli::%s: \"%s\"\n", __FUNCTION__, Id);
++
+ 	mclituner_info_t *infos = (mclituner_info_t *) Data;
+ 
+ 	if (Id && strcmp (Id, "GetTunerInfo") == 0) {
+@@ -952,7 +1018,7 @@ bool cPluginMcli::Service (const char *I
+ 				strcpy (infos->name[j], nci->tuner[i].fe_info.name);
+ 				infos->type[j] = nci->tuner[i].fe_info.type;
+ 				infos->preference[j++] = nci->tuner[i].preference;
+-				//printf("Tuner: %s\n", nci->tuner[i].fe_info.name);
++				printf("Mcli::%s: Tuner: %s\n", __FUNCTION__, nci->tuner[i].fe_info.name);
+ 			}
+ 		}
+ 		nc_unlock_list ();
+@@ -1015,7 +1081,7 @@ bool cPluginMcli::Service (const char *I
+ 
+ const char **cPluginMcli::SVDRPHelpPages (void)
+ {
+-//	printf ("cPluginMcli::SVDRPHelpPages\n");
++//	printf ("Mcli::%s:\n", __FUNCTION__);
+ 	// Return help text for SVDRP commands this plugin implements
+ 	static const char *HelpPages[] = {
+                 "GETTC\n"        "    List available tuners.",
+@@ -1027,6 +1093,8 @@ const char **cPluginMcli::SVDRPHelpPages
+ 
+ cString cPluginMcli::SVDRPCommand (const char *Command, const char *Option, int &ReplyCode)
+ {
++//      printf ("Mcli::%s:\n", __FUNCTION__);
++
+         typedef struct nrTuners
+         {
+             int sat;
+@@ -1035,7 +1103,6 @@ cString cPluginMcli::SVDRPCommand (const
+             int terr;
+         } nrTuners_t;
+ 
+-//	printf ("cPluginMcli::SVDRPCommand\n");
+ 	// Process SVDRP commands this plugin implements
+ 
+ 	if (strcasecmp (Command, "REINIT") == 0) {
+diff -upr vdr-plugin-mcli/mcli.h vdr-plugin-mcli-2.1.x/mcli.h
+--- vdr-plugin-mcli/mcli.h	2014-07-13 11:16:50.021565143 +0200
++++ vdr-plugin-mcli-2.1.x/mcli.h	2014-07-13 10:46:15.484027961 +0200
+@@ -16,8 +16,8 @@
+ #include "device.h"
+ #include "cam_menu.h"
+ 
+-#define MCLI_DEVICE_VERSION "0.9.1"
+-#define MCLI_PLUGIN_VERSION "0.9.1"
++#define MCLI_DEVICE_VERSION "0.9.2"
++#define MCLI_PLUGIN_VERSION "0.9.2"
+ #define MCLI_PLUGIN_DESCRIPTION trNOOP ("NetCeiver Client Application")
+ #define MCLI_SETUPMENU_DESCRIPTION trNOOP ("NetCeiver Client Application")
+ #define MCLI_MAINMENU_DESCRIPTION trNOOP ("Common Interface")
+Only in vdr-plugin-mcli-2.1.x/po: de_DE.mo
+diff -upr vdr-plugin-mcli/po/de_DE.po vdr-plugin-mcli-2.1.x/po/de_DE.po
+--- vdr-plugin-mcli/po/de_DE.po	2014-07-13 11:16:50.022565146 +0200
++++ vdr-plugin-mcli-2.1.x/po/de_DE.po	2014-07-13 10:46:15.484027961 +0200
+@@ -7,7 +7,7 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: vdr-mcli 1.0\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2012-08-31 10:32+0200\n"
++"POT-Creation-Date: 2013-10-22 11:28+0200\n"
+ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: German <reelbox-devel@mailings.reelbox.org>\n"
+@@ -62,10 +62,6 @@ msgstr "nicht möglich wegen gemischter
+ msgid "Save"
+ msgstr "Speichern"
+ 
+-#, c-format
+-msgid "Waiting for a free tuner (%s)"
+-msgstr "Auf einen freien Tuner wird gewartet (%s)"
+-
+ msgid "DVB-C"
+ msgstr "DVB-C"
+ 
+@@ -85,3 +81,7 @@ msgstr "'%s'-Modul bereit"
+ #, c-format
+ msgid "Module '%s' removed"
+ msgstr "'%s'-Modul entfernt"
++
++#, c-format
++msgid "Waiting for a free tuner (%s)"
++msgstr "Auf einen freien Tuner wird gewartet (%s)"
+Only in vdr-plugin-mcli-2.1.x/po: mcli.pot
+Only in vdr-plugin-mcli-2.1.x/po: nl_NL.mo
+diff -upr vdr-plugin-mcli/po/nl_NL.po vdr-plugin-mcli-2.1.x/po/nl_NL.po
+--- vdr-plugin-mcli/po/nl_NL.po	2014-07-13 11:16:50.022565146 +0200
++++ vdr-plugin-mcli-2.1.x/po/nl_NL.po	2014-07-13 10:46:15.484027961 +0200
+@@ -7,7 +7,7 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: vdr-mcli 1.0\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2012-08-31 10:32+0200\n"
++"POT-Creation-Date: 2013-10-22 11:28+0200\n"
+ "PO-Revision-Date: 2011-09-07 17:59+0100\n"
+ "Last-Translator: TechNL <technl@gmx.net>\n"
+ "Language-Team: German <reelbox-devel@mailings.reelbox.org>\n"
+@@ -62,10 +62,6 @@ msgstr "mogelijk omdat verschillende CAM
+ msgid "Save"
+ msgstr "Opslaan"
+ 
+-#, c-format
+-msgid "Waiting for a free tuner (%s)"
+-msgstr "Wachten tot tuner voor (%s) beschikbaar komt"
+-
+ msgid "DVB-C"
+ msgstr "DVB-C"
+ 
+@@ -85,3 +81,7 @@ msgstr "Module '%s' gereed"
+ #, c-format
+ msgid "Module '%s' removed"
+ msgstr "Module '%s' verwijderd"
++
++#, c-format
++msgid "Waiting for a free tuner (%s)"
++msgstr "Wachten tot tuner voor (%s) beschikbaar komt"

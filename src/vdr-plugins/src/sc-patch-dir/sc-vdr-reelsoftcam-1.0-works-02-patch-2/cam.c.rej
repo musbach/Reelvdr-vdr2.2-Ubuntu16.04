@@ -1,0 +1,143 @@
+--- cam.c	2014-04-29 15:09:34.165738565 +0200
++++ cam.c	2014-04-29 15:11:14.005734922 +0200
+@@ -1890,7 +1890,7 @@
+   bool dr=cam->IsSoftCSA(false) || ScSetup.ConcurrentFF>0;
+   if(dr!=doReply && !IsDecrypting()) {
+     PRINTF(L_CORE_CI,"%s.%d: doReply changed, reset triggered",devId,slot);
+-    Reset(false);
++    ResetSlot(false);
+     doReply=dr;
+     }
+   if(checkTimer.TimedOut()) {
+@@ -2330,7 +2330,7 @@
+ {
+   cMutexLock lock(&ciMutex);
+   PRINTF(L_CORE_CI,"%s: reset of slot %d requested",devId,Slot);
+-  return slots[Slot] ? slots[Slot]->Reset():false;
++  return slots[Slot] ? slots[Slot]->ResetSlot():false;
+ }
+ 
+ eModuleStatus cCam::ModuleStatus(int Slot)
+@@ -2799,10 +2799,19 @@
+ :stall(MAX_STALL_MS)
+ {
+   devId=DevId;
++#ifndef LIBDVBCSA
+   cs=get_suggested_cluster_size();
+   PRINTF(L_CORE_CSA,"%s: clustersize=%d rangesize=%d",devId,cs,cs*2+5);
+   range=MALLOC(unsigned char *,(cs*2+5));
+   memset(keys,0,sizeof(keys));
++#else
++  cs = dvbcsa_bs_batch_size();
++  PRINTF(L_CORE_CSA,"%d: batch_size=%d", devId, cs);
++  cs_tsbbatch_even = (dvbcsa_bs_batch_s *) malloc((cs + 1) * sizeof(struct dvbcsa_bs_batch_s));
++  cs_tsbbatch_odd = (dvbcsa_bs_batch_s *) malloc((cs + 1) * sizeof(struct dvbcsa_bs_batch_s));
++  memset(cs_key_even, 0, sizeof(cs_key_even));
++  memset(cs_key_odd, 0, sizeof(cs_key_odd));
++#endif
+   memset(pidmap,0,sizeof(pidmap));
+   ResetState();
+ }
+@@ -2871,13 +2901,21 @@
+       }
+     LDUMP(L_CORE_CSA,ca_descr->cw,8,"%s.%d: %4s key set",devId,idx,ca_descr->parity?"odd":"even");
+     if(ca_descr->parity==0) {
++#ifndef LIBDVBCSA
+       set_even_control_word(keys[idx],ca_descr->cw);
++#else
++      dvbcsa_bs_key_set(ca_descr->cw, cs_key_even[idx]);
++#endif
+       if(!CheckNull(ca_descr->cw,8)) flags[idx]|=FL_EVEN_GOOD|FL_ACTIVITY;
+       else PRINTF(L_CORE_CSA,"%s.%d: zero even CW",devId,idx);
+       wait.Broadcast();
+       }
+     else {
++#ifndef LIBDVBCSA
+       set_odd_control_word(keys[idx],ca_descr->cw);
++#else
++      dvbcsa_bs_key_set(ca_descr->cw, cs_key_odd[idx]);
++#endif
+       if(!CheckNull(ca_descr->cw,8)) flags[idx]|=FL_ODD_GOOD|FL_ACTIVITY;
+       else PRINTF(L_CORE_CSA,"%s.%d: zero odd CW",devId,idx);
+       wait.Broadcast();
+@@ -2896,24 +2934,80 @@
+   return true;
+ }
+ 
++#ifdef LIBDVBCSA
++unsigned char ts_packet_get_payload_offset(unsigned char *ts_packet)
++{
++  if (ts_packet[0] != TS_SYNC_BYTE)
++    return 0;
++
++  unsigned char adapt_field   = (ts_packet[3] &~ 0xDF) >> 5; // 11x11111
++  unsigned char payload_field = (ts_packet[3] &~ 0xEF) >> 4; // 111x1111
++
++  if (!adapt_field && !payload_field)     // Not allowed
++    return 0;
++
++  if (adapt_field)
++  {
++    unsigned char adapt_len = ts_packet[4];
++    if (payload_field && adapt_len > 182) // Validity checks
++      return 0;
++    if (!payload_field && adapt_len > 183)
++      return 0;
++    if (adapt_len + 4 > TS_SIZE)  // adaptation field takes the whole packet
++      return 0;
++    return 4 + 1 + adapt_len;     // ts header + adapt_field_len_byte + adapt_field_len
++  }
++  else
++  {
++    return 4; // No adaptation, data starts directly after TS header
++  }
++}
++#endif
++
+ bool cDeCSA::Decrypt(unsigned char *data, int len, bool force)
+ {
+   cMutexLock lock(&mutex);
++#ifndef LIBDVBCSA
++  if (!range)
++#else
++  if (!cs_tsbbatch_even || !cs_tsbbatch_odd)
++#endif
++  {
++    PRINTF(L_CORE_CSA,"%s: Error allocating memory for DeCSA", __FUNCTION__);
++    return false;
++  }
++
++#ifndef LIBDVBCSA
+   int r=-2, ccs=0, currIdx=-1;
+   bool newRange=true;
+   range[0]=0;
++#else
++  int ccs = 0, currIdx = -1;
++  int payload_len, offset;
++  int cs_fill_even = 0;
++  int cs_fill_odd = 0;
++#endif
+   len-=(TS_SIZE-1);
+   int l;
+   for(l=0; l<len; l+=TS_SIZE) {
+     if(data[l]!=TS_SYNC_BYTE) {       // let higher level cope with that
+       PRINTF(L_CORE_CSA,"%s: garbage in TS buffer",devId);
++#ifndef LIBDVBCSA
+       if(ccs) force=true;             // prevent buffer stall
++#endif
+       break;
+       }
+     unsigned int ev_od=data[l+3]&0xC0;
+     if(ev_od==0x80 || ev_od==0xC0) { // encrypted
++#ifdef LIBDVBCSA
++      offset = ts_packet_get_payload_offset(data + l);
++      payload_len = TS_SIZE - offset;
++#endif
+       int idx=pidmap[((data[l+1]<<8)+data[l+2])&(MAX_CSA_PIDS-1)];
+       if(currIdx<0 || idx==currIdx) { // same or no index
++#ifdef LIBDVBCSA
++        data[l + 3] &= 0x3f;    // consider it decrypted now
++#endif
+         currIdx=idx;
+         if(ccs==0 && ev_od!=even_odd[idx]) {
+           even_odd[idx]=ev_od;

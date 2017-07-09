@@ -1,0 +1,82 @@
+<?% USE date %?>
+<?% channel1st = param.channels.0;
+    channel = channel1st.0;
+    channelhash = channel1st.1;
+    channelitem = 1;
+    FOREACH ch IN param.channels;
+        IF cgi.param('data') == ch.1 || cgi.param('data') == ch.0 || param.current == ch.1;
+            channel = ch.0;
+            channelhash = ch.1;
+            channelitem = loop.count;
+            LAST;
+        END;
+    END; 
+%?>
+<card id="first" title="<?% channel | truncate(32)| html %?>">
+    <p>
+    <select name="channel" ivalue="<?% channelitem %?>" >
+    <?% FOREACH ch IN param.channels %?>
+        <option value="<?% loop.count %?>"><?% ch.0 | html %?></option>
+        <?% IF loop.count >= global.MaxChannelsProgram;LAST;END %?>
+    <?% END %?>
+    </select><br />
+    <a href="?cmd=<?% cgi.param('cmd') %?>&amp;data=\$channel"><img src="images/apply.wbm" alt="<?% gettext("Apply") %?>" /></a>
+<?% IF data.size > 1 %?>
+    <a href="#p1"><img src="images/forward.wbm" alt="<?% gettext("Forward") %?>" /></a>
+<?% END %?>
+    <a href="#index"><img src="images/home.wbm" alt="<?% gettext("Menu") %?>" /></a>
+    </p>
+</card>
+<?% ######################################################################## %?>
+<?% BLOCK item %?>
+    <?% "<i>" IF param.timers.${id} %?>
+    <?% IF global.ShowCardTitle %?>
+        <?% channel | truncate(15)| html %?>
+    <br />
+    <?% END %?>
+    <?% datum | html %?><br />
+    <?% start %?> - <?% stop %?><br />
+    <b><?% title | truncate(20) | html %?></b><?% IF subtitle %?><br /><?% subtitle | truncate(20) | html%?><?% END %?>
+    <br />
+    <?% IF global.ShowDescription %?>
+    <?% desc | truncate(50) | html %?><br />
+    <?% END %?>
+    <?% "</i>" IF param.timers.${id} %?>
+        <a href="?cmd=s&amp;data=<?% title | uri | html | replace ('~','%7E') %?>"><img src="images/find.wbm" alt="<?% gettext("Search") %?>" /></a>
+    <?% IF allow('switch') %?>
+        <a href="?cmd=sw&amp;data=<?% channel %?>"><img src="images/watch.wbm" alt="<?% gettext("Switch") %?>" /></a>
+    <?% END %?>
+    <?% IF param.timers.${id} && allow('tedit') %?>
+        <a href="?cmd=te&amp;data=<?% param.timers.${id}.Id %?>"><img src="images/onoff.wbm" alt="<?% gettext("Edit this timer") %?>" /></a>
+    <?% ELSIF allow('tnew') %?>
+        <a href="?cmd=tn&amp;data=<?% id %?>"><img src="images/record.wbm" alt="<?% gettext("To record") %?>" /></a>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% skip = cgi.param('offset') || 1 %?>
+<?% offset = skip + global.MaxCards %?>
+<?% IF data.size > skip %?>
+<?% fields = data.shift %?>
+   	<?% FOREACH zeile IN data %?>
+        <?% IF loop.count < skip;NEXT;END %?>
+        <?% title=zeile.1;subtitle=zeile.2;start=zeile.3;stop=zeile.4;datum=zeile.5;desc=zeile.6 %?>
+    	<?% IF id.defined %?>
+        <a href="#p<?% loop.count %?>"><img src="images/forward.wbm" alt="<?% gettext("Forward") %?>" /></a>
+        <a href="#index"><img src="images/home.wbm" alt="<?% gettext("Menu") %?>" /></a>
+    </p>
+</card>
+        <?% END %?>
+<card id="p<?% loop.count %?>" title="<?% channel | truncate(15)| html %?>">
+        <?% id=zeile.0 %?>
+    <p>
+		<?% PROCESS item %?>
+        <?% count =  loop.count + 1 %?>
+        <?% IF count >= offset;LAST;END %?>
+    <?% END %?>
+    <?% IF count < data.size %?>
+        <a href="?cmd=<?% cgi.param('cmd') %?>&amp;data=<?% cgi.param('data') %?>&amp;offset=<?% offset %?>#p<?% offset %?>"><img src="images/forward.wbm" alt="<?% gettext("Forward") %?>" /></a>
+    <?% END %?>
+        <a href="#index"><img src="images/home.wbm" alt="<?% gettext("Menu") %?>" /></a>
+    </p>
+</card>
+<?% END %?>

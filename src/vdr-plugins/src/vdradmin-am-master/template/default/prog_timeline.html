@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="scroller">
+
+<head>
+	<meta http-equiv="refresh" content="600; URL=vdradmin.pl?aktion=prog_timeline" />
+	<meta http-equiv="content-type" content="text/html;charset=<?% charset %?>" />
+	<title>VDRAdmin-AM - <?% gettext('Timeline') %?></title>
+	<link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% IF usercss %?>
+		<link href="user.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% END %?>
+	<script type="text/javascript" language="JavaScript1.2" src="library.js"></script>
+
+<?%- 
+	USE date;
+	show_hours = config.ZEITRAHMEN || 1; # Zeitrahmen der angezeigt werden soll in Stunden
+	times      = config.TIMES.split(',\s*');
+	px_per_min = 3; # Make it configurable?
+	
+	# now_sec   is the requested browser time  in seconds since 1970
+	# start_sec is the start time of the table in seconds since 1970
+	# end_sec   is the end   time of the table in seconds since 1970
+	# end_min   is the end   time of the table in minutes since start of the table
+	# diff_sec  is the offset from start_sec to now_sec
+	diff_sec = now_sec % 1800; # time since last 30 minutes interval
+	start_sec = now_sec - diff_sec;
+	end_min = 60 * show_hours;
+	end_sec = start_sec + (end_min * 60);
+
+-%?>
+
+<!-- TimeLine: start_sec="<?% date.format(start_sec, '%H:%M') %?>" request="<?% date.format(date.now, '%H:%M') %?>" end_sec="<?% date.format(end_sec, '%H:%M') %?>" -->
+	<style type="text/css">
+		table.prgname {
+			border-width:1px;
+			border-style:none;
+			border-spacing:0px;
+			padding:0px;
+			margin:0px;
+			text-align:left;
+			table-layout:fixed;
+			overflow:hidden;
+		}
+		td.prgname {
+			margin: 0 2px;
+			overflow:hidden;
+		}
+
+		.prgtable, .timertable {
+			border-width: 1px 1px 0px 1px;
+			border-style: solid none none solid;
+			border-spacing:0px;
+			padding:0px;
+			margin:0px;
+			text-align:left;
+			table-layout:fixed;
+			overflow:hidden;
+		}
+		td.prgtable,
+		td.timertable {
+			padding: 0 2px;
+			overflow:hidden;
+		}
+
+		#bigtable { position:absolute; top:0; left: 0; z-index: 1; }
+	</style>
+
+	<script type="text/javascript" language="JavaScript1.2">
+		var show_tooltips = <?% config.TL_TOOLTIP ? "true" : "false" %?>;
+	</script>
+<?% IF config.TL_TOOLTIP %?>
+	<script type="text/javascript" language="JavaScript1.2" src="infobox.js"></script>
+<?% END %?>
+	<script type="text/javascript" language="JavaScript1.2" src="timeline.js"></script>
+	<script type="text/javascript" language="JavaScript1.2">
+		var trans = new Translation("<?% gettext('now') %?>", 
+		                          "<?% gettext('o\'clock') %?>", 
+		                          "<?% gettext('to') %?>");
+		var redraw_w;
+		var redraw_h;
+		
+		function Redraw() 
+		{
+			if (redraw_w != GetWindowW() || redraw_h != GetWindowH())
+			{
+				Go('<?% nowurl %?>&time=<?% date.format(now_sec, '%H:%M') %?>');
+			}
+		}
+		
+		function AddEvent(counter, vdr_id, epg_id, start_sec, stop_sec, title, timer, summary)
+		{
+			var e = new EPGEvent(epg_id, start_sec, stop_sec, title, timer, summary);
+<?% IF config.TL_TOOLTIP %?>
+			maketip("VDR-" + vdr_id + "-" + counter, title, 
+					 "<?% gettext('Duration:') %?> " + e.start_str + " - " + e.stop_str
+					 + " (" + Div(stop_sec - start_sec, 60) + " <?% gettext('min') %?>)");
+<?% END %?>
+			return e;
+		}
+		
+		function Go(x) 
+		{
+			if(x =="nothing") {
+				document.forms[0].reset();
+				document.forms[0].elements[0].blur();
+				return;
+			} else {
+				parent.frames[1].location.href = x;
+				document.forms[0].elements[0].blur();
+			}
+		}
+	</script>
+</head>
+
+<body id="prog_timeline">
+<?% IF config.TL_TOOLTIP %?>
+	<div id="infodiv" style="position:absolute; visibility:hidden; z-index:20; top:0px; left:0px;"></div>
+<?% END %?>
+	<script type="text/javascript" language="JavaScript">
+		window.onresize = Redraw;
+		redraw_w = GetWindowW();
+		redraw_h = GetWindowH();
+
+		var channels = new Array();
+		var events;
+<?%
+      index = 0;
+		FOREACH name = shows2.keys.nsort;
+			counter = 0;
+%?>
+			events = new Array();
+<?%
+			FOREACH show = shows2.${name};
+%?>
+				events[<?% counter %?>] = AddEvent(<?% counter %?>, <?% show.vdr_id %?>, "<?% show.anchor %?>", <?% show.start %?>, <?% show.stop %?>, "<?% show.title | html %?>", <?% show.timer %?>, <?% show.summary ? 1 : 0 %?>);
+<?%
+				counter = counter + 1;
+			END;
+%?>
+			channels[<?% index %?>] = new ChannelInfo(<?% show.vdr_id %?>, "<?% shows.${name}.first.progname %?>", "<?% shows.${name}.first.proglink %?>", events);
+<?%
+			index = index + 1;
+		END;
+%?>
+	</script>
+
+	<form action="<?% nowurl %?>" method="get" name="FormName">
+		<script type="text/javascript" language="JavaScript1.2">
+			var tl = new TimeLine(<?% now_sec %?>, "<?% nowurl %?>", <?% px_per_min %?>, <?% end_min %?>);
+			var popup_width = <?% config.GUI_POPUP_WIDTH %?>;
+			var popup_height = <?% config.GUI_POPUP_HEIGHT %?>;
+		</script>
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="heading">
+			<tr>
+				<td class="col_title">
+					<h1><?% date.format(now_sec, "%A,") %?>&nbsp;<?% now %?>&nbsp;<?% gettext('o\'clock') %?></h1>
+				</td>
+				<td class="col_other">
+					<?% gettext('Channel group:') %?> 
+					<select name="select_wanted_channels" size="1" class="submit" onchange="window.open(this.options[this.selectedIndex].value, '_self')">
+<?% FOREACH ch_grp = ch_groups %?> 
+						<option value="<?% ch_grp.url %?>" <?% IF ch_grp.selected %?>selected="selected"<?% END %?> ><?% ch_grp.title %?></option>
+<?% END %?>
+					</select>
+					&nbsp;
+					<?% gettext('What\'s on:') %?>&nbsp;
+					<select name="Auswahl" class="submit" onchange="Go(this.form.Auswahl.options[this.form.Auswahl.options.selectedIndex].value)">
+<?% select_now = (now == date.format(date.now, '%H:%M')) %?>
+						<script type="text/javascript" language="JavaScript1.2">
+							BuildOption("", 0, "-");
+							BuildOption("", <?% select_now ? 1 : 0 %?>, "<?% gettext('now') %?>");
+<?% FOREACH timer = times %?>
+	<?% timer_o_dopp = timer | replace('\:', '') %?>
+							BuildOption("<?% timer_o_dopp %?>", <?% !select_now && (now == timer) ? 1 : 0 %?>, "<?% timer %?>");
+<?% END %?>
+						</script>
+					</select>
+					&nbsp;&nbsp;<?% gettext('at:') %?>&nbsp;
+					<input type="text" name="time" size="5" value="<?% now | html %?>" />
+					&nbsp;<?% gettext('o\'clock') %?>
+					<input type="hidden" name="aktion" value="prog_timeline" />
+					<script type="text/javascript" language="JavaScript1.2">
+						BuildHiddenFrameInput();
+					</script>
+				</td>
+			</tr>
+		</table>
+
+<?% IF error_msg %?>
+		<div class="error"><?% error_msg %?></div>
+<?% END %?>
+
+<?% IF shows.size() > 0 %?>
+		<script type="text/javascript" language="JavaScript1.2">
+			BuildContent();
+		</script>
+		<p>
+			<noscript>
+				<center>
+				<h1><?% gettext('You need JavaScript to use the timeline!') %?></h1>
+				</center>
+			</noscript>
+		</p>
+<?% ELSE %?>
+		<div id="content">
+			<div class="warning"><?% gettext('No EPG information available') %?></div>
+		</div>
+<?% END %?>
+	</form>
+</body>
+</html>

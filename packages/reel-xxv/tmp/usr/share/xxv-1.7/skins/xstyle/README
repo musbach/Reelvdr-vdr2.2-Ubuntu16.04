@@ -1,0 +1,12 @@
+Das ist ein Template-basierter Skin für das Projekt xxv.
+http://xpix.dieserver.de/content/vdr/xxv/
+
+Die Installation erfolgt durch entpacken,
+innerhalb des xxv-skin Verzeichnisses. 
+
+dann den Konfigurationsparameter in xxvd.cfg anpassen
+
+[HTTPD]
+HtmlRoot=myskin
+
+

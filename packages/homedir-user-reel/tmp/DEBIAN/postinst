@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ -d /media/hd/home ] || mkdir /media/hd/home
+tar --preserve -zxf /usr/share/reel/homedir/home-reel.tar.gz -C /media/hd/home/
+
+exit 0
+

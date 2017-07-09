@@ -1,0 +1,107 @@
+femon.o: femon.c ../../../vdr/include/vdr/menu.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/positioner.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr/include/vdr/remote.h femoncfg.h femonreceiver.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/receiver.h \
+ femonosd.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/status.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/transfer.h \
+ ../../../vdr/include/vdr/tools.h svdrpservice.h femonservice.h \
+ femontools.h femon.h
+femonosd.o: femonosd.c femoncfg.h femonreceiver.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/receiver.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/positioner.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ femontools.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/tools.h femonosd.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/status.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/recording.h \
+ ../../../vdr/include/vdr/timers.h ../../../vdr/include/vdr/themes.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/transfer.h \
+ ../../../vdr/include/vdr/receiver.h svdrpservice.h \
+ ../../../vdr/include/vdr/s2reel_compat.h \
+ ../../../vdr/include/vdr/config.h symbols/device.xpm symbols/stereo.xpm \
+ symbols/monoleft.xpm symbols/monoright.xpm symbols/zero.xpm \
+ symbols/one.xpm symbols/two.xpm symbols/three.xpm symbols/four.xpm \
+ symbols/five.xpm symbols/svdrp.xpm symbols/ar11.xpm symbols/ar169.xpm \
+ symbols/ar2211.xpm symbols/ar43.xpm symbols/ntsc.xpm symbols/pal.xpm \
+ symbols/dolbydigital.xpm symbols/dolbydigital20.xpm \
+ symbols/dolbydigital51.xpm symbols/lock.xpm symbols/signal.xpm \
+ symbols/carrier.xpm symbols/viterbi.xpm symbols/sync.xpm \
+ symbols/lock_red.xpm symbols/signal_red.xpm symbols/carrier_red.xpm \
+ symbols/viterbi_red.xpm symbols/sync_red.xpm
+femonreceiver.o: femonreceiver.c femontools.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/tools.h \
+ femoncfg.h femonreceiver.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/config.h
+femoncfg.o: femoncfg.c femoncfg.h
+femontools.o: femontools.c femonreceiver.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/receiver.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/positioner.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ femonosd.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/status.h ../../../vdr/include/vdr/player.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/transfer.h ../../../vdr/include/vdr/receiver.h \
+ ../../../vdr/include/vdr/tools.h svdrpservice.h femontools.h

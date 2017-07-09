@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: <reelbox-devel@mailings.reelbox.org>\n"
+"POT-Creation-Date: 2014-11-02 18:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, c-format
+msgid "%s: %s"
+msgstr ""
+
+msgid "Error uploading keymap"
+msgstr ""
+
+msgid "Press any key to use pre-loaded keymap"
+msgstr ""
+
+msgid "User-supplied keymap will be used"
+msgstr ""
+
+msgid "Remote control test - press and hold down any key"
+msgstr ""
+
+msgid "RC5 protocol detected"
+msgstr ""
+
+msgid "RC5 protocol detected (inverted signal)"
+msgstr ""
+
+msgid "RCMM protocol detected"
+msgstr ""
+
+msgid "RCMM protocol detected (inverted signal)"
+msgstr ""
+
+msgid "No remote control detected"
+msgstr ""

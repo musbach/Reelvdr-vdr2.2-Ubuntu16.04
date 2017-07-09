@@ -1,0 +1,200 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Alberto Carraro <bertocar@tin.it>, 2001
+# Antonio Ospite <ospite@studenti.unina.it>, 2003
+# Sean Carlos <seanc@libero.it>, 2005
+# Dario Croci <spaeleus@croci.org>, 2009
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-bouquets 1.0\n"
+"Report-Msgid-Bugs-To: <reelbox-devel@mailings.reelbox.org>\n"
+"POT-Creation-Date: 2011-05-23 17:47+0200\n"
+"PO-Revision-Date: 2009-06-20 14:08+0100\n"
+"Last-Translator: Spaeleus <spaeleus@croci.org>\n"
+"Language-Team: www.linsat.net - Italy <spaeleus@croci.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Select channels with OK"
+msgstr "Seleziona canali con OK"
+
+msgid "Customize channels: "
+msgstr "Personalizza canali"
+
+msgid "Favorites: "
+msgstr "Favoriti: "
+
+msgid "encrypted radio channels"
+msgstr "canali radio criptati"
+
+msgid "free radio channels"
+msgstr "canali radio liberi"
+
+msgid "radio channels"
+msgstr "canali radio"
+
+msgid "encrypted TV channels"
+msgstr "Canali TV criptati"
+
+msgid "free TV channels"
+msgstr "Canali TV liberi"
+
+msgid "TV channels"
+msgstr "Canali TV"
+
+msgid "encrypted channels"
+msgstr "canali criptati"
+
+msgid "free channels"
+msgstr "canali liberi"
+
+msgid "HD channels"
+msgstr "canali HD"
+
+msgid "non HD channels"
+msgstr "canali SD"
+
+msgid "all channels"
+msgstr "tutti i canali"
+
+msgid "Select channels with blue key"
+msgstr "Seleziona canali col tasto Blu"
+
+msgid "Up/Dn for new location - OK to move"
+msgstr "Su/Giù per nuova locazione - OK per spostare"
+
+msgid "Channel is being used by a timer!"
+msgstr "Il canale è in uso da un timer!"
+
+msgid "Delete channel?"
+msgstr "Cancellare il canale?"
+
+msgid "Channel deleted"
+msgstr "Canale cancellato"
+
+msgid "Delete channels?"
+msgstr "Cancellare i canali?"
+
+msgid "Channels deleted"
+msgstr "Canali cancellati"
+
+msgid "Channels have been moved"
+msgstr "I canali sono stati spostati"
+
+msgid "Favorites"
+msgstr "Favoriti"
+
+msgid "Add to Favorites?"
+msgstr "Aggiungere ai Favoriti?"
+
+msgid "Button$New"
+msgstr "Nuovo"
+
+msgid "Bouquets"
+msgstr "Bouquets"
+
+msgid "Button$Customize"
+msgstr "Personalizza"
+
+msgid "Move"
+msgstr "Spostare"
+
+msgid "Move up/down for new position - then press 'Insert'"
+msgstr "Sposta su/giù per nuova posizione - poi premi 'Inserire'"
+
+msgid "Move up/down for new position - then press 'OK'"
+msgstr "Sposta su/giù per nuova posizione - poi premi 'OK'"
+
+msgid "Channels"
+msgstr "Canali"
+
+msgid "Customize Bouquets"
+msgstr "Personalizza Bouquets"
+
+msgid "New"
+msgstr "Nuovo"
+
+msgid "Delete Bouquet?"
+msgstr "Cancellare il Bouquet?"
+
+msgid "Edit Bouquet"
+msgstr "Modifica il Bouquet?"
+
+msgid "Add Bouquet"
+msgstr "Aggiungere Bouquet"
+
+msgid "CI-Slot for this Bouquet"
+msgstr "Slot-CI per questo Bouquet"
+
+msgid "Bouquet starts with number"
+msgstr "Bouquet inizia col numero"
+
+msgid "Note:"
+msgstr "Note:"
+
+msgid "Select CI-Slot for this Bouquet."
+msgstr "Seleziona Slot-CI per questo Bouquet"
+
+msgid "Select channelnumber for first channel inside this bouquet"
+msgstr "Seleziona numero canale per primo canale dentro questo bouquet"
+
+msgid "Symbolrate"
+msgstr "SymbolRate"
+
+msgid "System-ID"
+msgstr "System-ID"
+
+msgid "CI-Slot"
+msgstr "Slot-CI"
+
+msgid "No CAM at"
+msgstr "No CAM a"
+
+msgid "upper slot"
+msgstr "slot superiore"
+
+msgid "lower slot"
+msgstr "slot inferiore"
+
+msgid "channellist"
+msgstr "lista canali"
+
+msgid "current bouquet"
+msgstr "bouquet corrente"
+
+msgid "bouquet list"
+msgstr "lista bouquet"
+
+msgid "Channellist: set filters"
+msgstr "Lista canale: set filtri"
+
+msgid "Please select the content of the channellist"
+msgstr "Seleziona il contenuto della lista canali"
+
+msgid "All channels"
+msgstr "Tutti i canali"
+
+msgid "Only TV channels"
+msgstr "Solo canali TV"
+
+msgid "Only radio channels"
+msgstr "Solo canali radio"
+
+msgid "non encrypted channels"
+msgstr "canali non criptati"
+
+msgid "Setup.OSD$Channellist starts with"
+msgstr "Lista canali inizia con"
+
+msgid "non encrypted TV channels"
+msgstr "canali TV non criptati"
+
+msgid "Channellist"
+msgstr "Lista canali"

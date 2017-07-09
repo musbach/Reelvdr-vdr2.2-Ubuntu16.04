@@ -1,0 +1,102 @@
+--- recording.c	(revision 15412)
++++ recording.c	(revision 15413)
+@@ -66,6 +69,9 @@
+ #define MAX_LINK_LEVEL  6
+ 
+ bool VfatFileSystem = false;
++#ifdef USE_LIEMIEXT
++bool DirOrderState = false;
++#endif /* LIEMIEXT */
+ int InstanceId = 0;
+ 
+ cRecordings DeletedRecordings(true);
+@@ -869,7 +887,14 @@
+         s++;
+      else
+         s = name;
++#ifdef USE_LIEMIEXT
++     if (Original) {
++#endif /* LIEMIEXT */
++#ifdef USE_WAREAGLEICON
++     titleBuffer = strdup(cString::sprintf("%02d.%02d.%02d%c%02d:%02d%s%c%s",
++#else
+      titleBuffer = strdup(cString::sprintf("%02d.%02d.%02d%c%02d:%02d%c%c%s",
++#endif /* WAREAGLEICON */
+                             t->tm_mday,
+                             t->tm_mon + 1,
+                             t->tm_year % 100,
+@@ -1390,14 +1492,74 @@
+   return NULL;
+ }
+ 
++#ifdef USE_JUMPPLAY
++// --- cMarksReload ----------------------------------------------------------
++
++#define MARKS_RELOAD_MS 10000
++
++time_t cMarksReload::lastsavetime = 0;
++
++cMarksReload::cMarksReload(const char *RecordingFileName)
++:recDir(RecordingFileName)
++{
++  struct stat sbuf;
++  cRecording rec(recDir);
++  if (Load(recDir, rec.FramesPerSecond(), rec.IsPesRecording()) &&
++      stat(FileName(), &sbuf) == 0)
++     lastmodtime = sbuf.st_mtime;
++  else
++     lastmodtime = 0;
++  nextreload.Set(MARKS_RELOAD_MS - cTimeMs::Now() % MARKS_RELOAD_MS);
++}
++
++bool cMarksReload::Reload(void)
++{
++  // Check the timestamp of marks.vdr in 10 seconds intervals
++  // Independent but synchronized reloading of marks in two threads
++  if ((Setup.ReloadMarks && nextreload.TimedOut()) ||
++      lastsavetime > lastmodtime) {
++     nextreload.Set(MARKS_RELOAD_MS - cTimeMs::Now() % MARKS_RELOAD_MS);
++     struct stat sbuf;
++     if (stat(FileName(), &sbuf) == 0 && sbuf.st_mtime != lastmodtime) {
++        lastmodtime = sbuf.st_mtime;
++        cRecording rec(recDir);
++        if (Load(recDir, rec.FramesPerSecond(), rec.IsPesRecording()))
++           return true;
++        }
++     }
++  return false;
++}
++
++bool cMarksReload::Save(void)
++{
++  bool ok = cMarks::Save();
++  struct stat sbuf;
++  if (ok && stat(FileName(), &sbuf) == 0)
++     lastsavetime = lastmodtime = sbuf.st_mtime;
++  return ok;
++}
++#endif /* JUMPPLAY */
++
+ // --- cRecordingUserCommand -------------------------------------------------
+ 
+ const char *cRecordingUserCommand::command = NULL;
+ 
++#ifdef USE_DVLRECSCRIPTADDON
++void cRecordingUserCommand::InvokeCommand(const char *State, const char *RecordingFileName, char *chanName)
++#else
+ void cRecordingUserCommand::InvokeCommand(const char *State, const char *RecordingFileName)
++#endif /* DVLRECSCRIPTADDON */
+ {
+   if (command) {
++#ifdef USE_DVLRECSCRIPTADDON
++     cString cmd;
++     if (chanName != NULL)
++        cmd = cString::sprintf("%s %s \"%s\" \"%s\"", command, State, *strescape(RecordingFileName, "\\\"$"), chanName);
++     else
++        cmd = cString::sprintf("%s %s \"%s\"", command, State, *strescape(RecordingFileName, "\\\"$"));
++#else
+      cString cmd = cString::sprintf("%s %s \"%s\"", command, State, *strescape(RecordingFileName, "\\\"$"));
++#endif /* DVLRECSCRIPTADDON */
+      isyslog("executing '%s'", *cmd);
+      SystemExec(cmd);
+      }

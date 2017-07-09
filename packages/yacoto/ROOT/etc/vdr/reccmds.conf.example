@@ -1,0 +1,14 @@
+In MPEG2 umwandeln         : /etc/vdr/yacoto/yac.sh mpeg2
+In XVid umwandeln          : /etc/vdr/yacoto/yac.sh xvid
+In H264 umwandeln          : /etc/vdr/yacoto/yac.sh h264
+In YouTube Format umwandeln: /etc/vdr/yacoto/yac.sh youtube
+In MP3 umwandeln           : /etc/vdr/yacoto/yac.sh mp3
+In OggVorbis umwandeln     : /etc/vdr/yacoto/yac.sh ogg
+Status der Umwandlung      : /etc/vdr/yacoto/status.sh
+Stream Information         : /etc/vdr/yacoto/setstream.sh mpeg2
+  MP2 Spur1 waehlen        : /etc/vdr/yacoto/setstream.sh --mp=1
+  MP2 Spur2 waehlen        : /etc/vdr/yacoto/setstream.sh --mp=2
+  MP2 Spur3 waehlen        : /etc/vdr/yacoto/setstream.sh --mp=3
+  DD Spur1 waehlen         : /etc/vdr/yacoto/setstream.sh --dd=1
+  DD Spur2 waehlen         : /etc/vdr/yacoto/setstream.sh --dd=1
+  Alle Tonspuren (crazy)   : /etc/vdr/yacoto/setstream.sh --all 

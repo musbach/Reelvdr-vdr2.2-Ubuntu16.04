@@ -1,0 +1,14 @@
+Index: timers.h
+===================================================================
+--- timers.h	(revision 15388)
++++ timers.h	(revision 15389)
+@@ -53,6 +53,9 @@
+   bool InVpsMargin(void) const { return inVpsMargin; }
+   uint Flags(void) const { return flags; }
+   const cChannel *Channel(void) const { return channel; }
++#ifdef REELVDR
++  void SetChannel(cChannel *chan) { channel = chan; }
++#endif /* REELVDR */
+   time_t Day(void) const { return day; }
+   int WeekDays(void) const { return weekdays; }
+   int Start(void) const { return start; }

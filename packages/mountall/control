@@ -1,0 +1,12 @@
+Package: optpkg-skeleton
+Version: 1.0.0
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: optpkg-skeleton
+Description: skeleton/sample for creating optional pkgs
+ use this as a starting point if you want to create you own pkgs
+Description-de: skelett/Beispiel um optionales Pakete (pkgs) zu erstellen
+ Du kannst dieses Skelett nutzen, um eigene, optionale Pakete für die RB
+ zu erstellen.

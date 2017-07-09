@@ -1,0 +1,19 @@
+Index: osdbase.h
+===================================================================
+--- osdbase.h	(revision 15428)
++++ osdbase.h	(revision 15429)
+@@ -106,8 +106,14 @@
+   };
+ 
+ class cOsdMenu : public cOsdObject, public cList<cOsdItem> {
++#ifdef REELVDR
++public:
++  static cSkinDisplayMenu *displayMenu;
+ private:
++#else
++private:
+   static cSkinDisplayMenu *displayMenu;
++#endif
+   static int displayMenuCount;
+   static int displayMenuItems;
+   char *title;

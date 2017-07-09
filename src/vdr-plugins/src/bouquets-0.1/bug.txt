@@ -1,0 +1,13 @@
+changed in MenuEditBouquet.c: channelE->ForceCaIds((const int *)&caids);  
+to
+channelE->SetCaIds((const int *)&caids);
+
+Change in vdr/channels.c:
+#ifdef REELVDR // seperates SetCaIds into two functions SetCaIds and ForceCaIds
+   ForceCaIds(CaIds);
+ }
+
+ void cChannel::ForceCaIds(const int *CaIds)
+ {
+#endif
+

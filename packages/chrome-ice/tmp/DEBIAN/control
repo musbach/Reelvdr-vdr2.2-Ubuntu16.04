@@ -1,0 +1,12 @@
+Package: chrome-ice
+Version: 15.0.0-21
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 48M
+Source: chrome-ice
+Depends: libnss3-1d
+Provides: www-browser
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Description: Chrome browser adjusted and with extensions for the ReelBox ICE
+Description-de: Chrome browser mit Anpassungen für ReelBox ICE platform

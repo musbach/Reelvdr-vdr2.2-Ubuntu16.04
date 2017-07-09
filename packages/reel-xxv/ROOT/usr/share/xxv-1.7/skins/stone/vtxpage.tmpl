@@ -1,0 +1,106 @@
+<!-- VTXTemplate -->
+<?% IF ! global.bodyinc.defined;global.bodyinc = 1 %?>
+<body class="frame">
+<!-- ###### Seite ###### -->
+<?% IF data.0 >= 1 %?>
+<?% channel = data.0.3 %?>
+<?% url = "?cmd=vt&amp;channel=${channel}" %?>
+<?% END %?>
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Selection",20) %?></td></tr>
+    <tr>
+        <td class="sidetext">
+            <form action="">
+                <select size="5" name='chan' onchange="di('?cmd=vt&amp;channel=',this.form.chan.options[this.form.chan.options.selectedIndex].value)">
+                	<?% FOREACH ch IN param.channels %?>
+                	    <option value="<?% ch.1 %?>" <?% 'selected="selected"' IF channel == ch.1 %?>><?% ch.0 %?></option>
+                	<?% END %?>
+                </select>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% IF channel %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Page",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <form method="post" action="<?% url %?>">
+        <input type="text" name="page" size="18" value="<?% param.page %?>" />
+    </form>
+    </td>
+    </tr>
+    <tr>
+        <td class="sidetext">
+        <a href="<?% url %?>">
+        <img src="images/home.<?% global.imagetyp %?>" alt="" title="<?% gettext('First page') %?>" />
+        </a>&nbsp;<a href="<?% url %?>">
+        <?% gettext('First page',20) %?>
+        </a>
+    <br />
+<?% BLOCK VTXItem %?>    
+        <?% IF page %?><a href="<?% url %?>&amp;page=<?% page %?>"><?% END %?>
+            <img src="images/<?% image %?>.<?% global.imagetyp %?>" alt="" title="<?% label %?>" />
+        <?% "</a>" IF page %?>
+        &nbsp;
+        <?% IF page %?><a href="<?% url %?>&amp;page=<?% page %?>"><?% END %?>
+        <?% IF !page %?><font class="deactive"><?% END %?>
+        <?% label %?>
+        <?% IF !page %?></font><?% END %?>
+        <?% "</a>" IF page %?>
+    <br />
+<?% END %?>
+
+    <?% PROCESS VTXItem page=data.0.4 image='back'    label=gettext('Previous page',20) %?>
+    <?% PROCESS VTXItem page=data.0.5 image='forward' label=gettext('Next page',20) %?>
+        </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Search",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <form method="post" action="?cmd=vs&amp;channel=${channel}">
+    	<input type="text" name="data" size="18" value="" />
+    </form>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>
+<div id="body">
+<h1><?% gettext("Teletext") %?></h1>
+<?% END %?>
+    <?% FOREACH zeile IN data %?>
+       <?% id=zeile.0;page=zeile.1;subpage=zeile.2;channels=zeile.3;prev=zeile.4;next=zeile.5;mtime=zeile.6 %?>
+<div class="areabegin" id="<?% id %?>">
+  <table class="areatable" summary="">
+      <tr><td class="areahead"><?% gettext("Page") %?>&nbsp;<?% page; IF subpage > 0 %?>/<?% subpage; END %?></td></tr>
+      <tr>
+          <td class="areatext" align="center">
+              <table summary="" align="center">
+                  <tr>
+                      <td id="vt"> 
+                          <?% zeile.7 %?>
+                     </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      <tr><td class="areabottom"></td></tr>
+  </table>
+</div>
+    <?% END %?>
+

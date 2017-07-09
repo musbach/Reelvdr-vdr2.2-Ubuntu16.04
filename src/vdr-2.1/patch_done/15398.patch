@@ -1,0 +1,81 @@
+Index: vdr.c
+===================================================================
+--- vdr.c	(revision 15397)
++++ vdr.c	(revision 15398)
+@@ -373,6 +373,9 @@
+ 
+   static struct option long_options[] = {
+       { "audio",    required_argument, NULL, 'a' },
++#ifdef REELVDR
++      { "buffer",   required_argument, NULL, 'b' },
++#endif /* REELVDR */
+       { "config",   required_argument, NULL, 'c' },
+       { "daemon",   no_argument,       NULL, 'd' },
+       { "device",   required_argument, NULL, 'D' },
+@@ -408,6 +411,12 @@
+         switch (c) {
+           case 'a': AudioCommand = optarg;
+                     break;
++#ifdef REELVDR
++          case 'b': BufferDirectory = optarg;
++                    if(optarg && *optarg && optarg[strlen(optarg)-1] == '/')
++                       optarg[strlen(optarg)-1] = 0;
++                    break;
++#endif /* REELVDR */
+           case 'c': ConfigDirectory = optarg;
+                     break;
+           case 'd': DaemonMode = true; break;
+@@ -602,6 +611,9 @@
+      if (DisplayHelp) {
+         printf("Usage: vdr [OPTIONS]\n\n"          // for easier orientation, this is column 80|
+                "  -a CMD,   --audio=CMD    send Dolby Digital audio to stdin of command CMD\n"
++#ifdef REELVDR
++               "  -b DIR,   --buffer=DIR   use DIR as LiveBuffer directory\n"
++#endif
+                "  -c DIR,   --config=DIR   read config files from DIR (default: %s)\n"
+                "  -d,       --daemon       run in daemon mode\n"
+                "  -D NUM,   --device=NUM   use only the given DVB device (NUM = 0, 1, 2...)\n"
+@@ -766,8 +778,15 @@
+ 
+   // Configuration data:
+ 
++#ifdef REELVDR
+   if (!ConfigDirectory)
++     ConfigDirectory = VideoDirectory;
++  if (!BufferDirectory)
++     BufferDirectory = VideoDirectory;
++#else
++  if (!ConfigDirectory)
+      ConfigDirectory = DEFAULTCONFDIR;
++#endif
+ 
+   cPlugin::SetConfigDirectory(ConfigDirectory);
+   cThemes::SetThemesDirectory(AddDirectory(ConfigDirectory, "themes"));
+Index: videodir.c
+===================================================================
+--- videodir.c	(revision 15397)
++++ videodir.c	(revision 15398)
+@@ -20,6 +20,9 @@
+ #include "tools.h"
+ 
+ const char *VideoDirectory = VIDEODIR;
++#ifdef REELVDR
++const char *BufferDirectory = NULL;
++#endif /* REELVDR */
+ 
+ class cVideoDirectory {
+ private:
+Index: videodir.h
+===================================================================
+--- videodir.h	(revision 15397)
++++ videodir.h	(revision 15398)
+@@ -14,6 +14,9 @@
+ #include "tools.h"
+ 
+ extern const char *VideoDirectory;
++#ifdef REELVDR
++extern const char *BufferDirectory;
++#endif /* REELVDR */
+ 
+ cUnbufferedFile *OpenVideoFile(const char *FileName, int Flags);
+ int CloseVideoFile(cUnbufferedFile *File);

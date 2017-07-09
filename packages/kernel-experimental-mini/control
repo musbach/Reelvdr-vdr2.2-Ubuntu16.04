@@ -1,0 +1,10 @@
+Package: kernel-experimental
+Version: 2.6.18.5.9
+Section: reel
+Priority: optional
+Architecture: armel
+Conflicts: kernel-experimental
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: kernel-experimental
+Description: Latest experimental kernel update for the ReelBox Netclient
+  Don't install unless you know why

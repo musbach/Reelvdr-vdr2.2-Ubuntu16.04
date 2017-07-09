@@ -1,0 +1,6 @@
+REMUX_TYPE="remux_convert"  #~Remux mode~F~5~ ~
+AUDIO_SOURCE="mp2"         #~Audio source~F~5~ ~
+VMAXBITRATE="1000"         #~Video max. bitrate~I~5~500,3000~
+VBITRATE="700"             #~Video bitrate~I~5~100,2000~
+ABITRATE="128"             #~Audio bitrate~I~5~40,256~
+SCALE="320x240"            #~Scale~L~10~320x240,640x480~

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sparc
+END
+dsputil_vis.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sparc/dsputil_vis.c
+END
+vis.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sparc/vis.h
+END

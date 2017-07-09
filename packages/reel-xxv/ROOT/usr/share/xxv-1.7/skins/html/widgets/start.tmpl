@@ -1,0 +1,30 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	 "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title><?% IF param.title.defined;param.title;ELSE %?>XXV - <?% user %?><?% END %?></title>
+<?% IF allow('request') %?>
+    <link rel="alternate" type="application/rss+xml" title="RSS-News 1.0" href="?cmd=request&data=rss&__version=1">
+    <link rel="alternate" type="application/rss+xml" title="RSS-News 2.0" href="?cmd=request&data=rss&__version=2">
+<?% END %?>
+    <link rel="search" type="application/opensearchdescription+xml" href="?cmd=opensearch" title="<?% gettext("Search with XXV") %?>" />
+    <meta http-equiv="Content-Type" content="text/html; charset=<?% charset %?>">
+    <meta name="generator" content="XXV System - Version: <?% version %?>" />
+<!-- Styles -->
+    <link href="style/style.css" type="text/css" rel="stylesheet"   />
+<?% IF call == 'vtxpage' %?>
+    <link href="style/vtxgfx.css" type="text/css" rel="stylesheet" />
+<?% END %?>
+<!-- Javascript -->
+    <script type="text/javascript" src="javascript/global.js"></script>
+    <script type="text/javascript" src="javascript/XHConn.js"></script>
+    <script type="text/javascript" src="javascript/tooltip.js"></script>
+    <base target="Daten">
+</head>
+<body>
+
+<?% INCLUDE 'skin.cfg' %?>
+<?%# INCLUDE 'help.tmpl' %?>
+
+<div class="content">

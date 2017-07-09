@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="<?% charset %?>"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de">
+<head>
+    <title>XXV</title>
+    <meta http-equiv="content-type" content="text/html; charset=<?% charset %?>" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="robots" content="noindex,noarchive,nofollow" />
+<?% IF info.http_useragent.match('.*MSIE.*') && !info.http_useragent.match('.*Opera.*');
+    global.imagetyp = "gif";
+ELSE;
+    global.imagetyp = "png";
+END %?>
+<style type="text/css">
+<!--
+    <?% INCLUDE style.css %?>
+-->
+</style>
+</head>
+<!-- WaitTemplate -->
+<body id="frame">
+<div id="body">
+<?% percent = (data.current / data.maximum) * 100 %?>
+<?% step = data.maximum / data.steps %?>
+<?% c = -1 %?>
+   <h1><?% data.msg %?></h1>
+            <table align="center">
+                <td><img src="images/wait.gif" alt="" /></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <?% WHILE c <= data.steps %?>
+                    <?% c = c + 1 %?>
+                      <?% color = (step * c) <= data.current ? "wait_full" : "wait_clear" %?>
+                             <td class="<?% color %?>">&nbsp;&nbsp;&nbsp;</td>
+                    <?% END %?>
+                            <td>&nbsp;<b><?% percent div 1 | format "%02d" %?>%</b> (<?% data.eta %?>)</td>
+             </table>
+</div>
+<!-- ###### Kopfzeile ###### -->
+<?% IF ! global.iframe.defined %?>
+<div id="header">
+  <div id="logo">
+     <?% IF allow( 'reload' ) %?>
+        <a href="?cmd=reload" title="Reload">
+            <img src="images/logo.<?% global.imagetyp %?>" alt="" />
+        </a>
+     <?% ELSE %?>
+        <img src="images/logo.<?% global.imagetyp %?>" alt="" />
+     <?% END %?>
+  </div>
+  <div id="headerNav">
+      &middot; 
+      <?% IF allow( 'n' ) %?>        <a accesskey="n" class="headerNav" href="?cmd=n"><?% gettext("Running now") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'p' ) %?>        <a accesskey="p" class="headerNav" href="?cmd=p"><?% gettext("Program guide") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'al' ) %?>       <a accesskey="a" class="headerNav" href="?cmd=al"><?% gettext("Autotimer") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'tl' ) %?>       <a accesskey="t" class="headerNav" href="?cmd=tl"><?% gettext("Timers") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'rl' ) %?>       <a accesskey="r" class="headerNav" href="?cmd=rl"><?% gettext("Recordings") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'vc' ) %?>       <a accesskey="v" class="headerNav" href="?cmd=vc"><?% gettext("Teletext") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'ml' ) %?>       <a accesskey="m" class="headerNav" href="?cmd=ml"><?% gettext("Music") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'r' ) %?>        <a accesskey="f" class="headerNav" href="?cmd=r"><?% gettext("Remote") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'sa' ) %?>       <a accesskey="s" class="headerNav" href="?cmd=sa"><?% gettext("Status") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'ce' ) %?>       <a accesskey="c" class="headerNav" href="?cmd=ce"><?% gettext("Preferences") %?></a> &middot;
+      <?% ELSIF allow( 'uprefs' ) %?><a accesskey="u" class="headerNav" href="?cmd=uprefs"><?% gettext("Own settings") %?></a> &middot; 
+      <?% END %?>
+      <?% IF allow( 'logout' ) %?>   <a accesskey="q" class="headerNav" href="?cmd=logout"><?% gettext("Logout") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'help' ) %?>     <a accesskey="h" class="headerNav" href="?cmd=help">?</a> &middot; <?% END %?>
+  </div>
+</div>
+<?% END %?>
+<!-- ###### Ende ###### -->
+    </body>
+</html>

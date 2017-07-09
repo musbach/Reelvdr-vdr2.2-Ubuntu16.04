@@ -1,0 +1,38 @@
+<h1><?% gettext("Commands list") %?></h1>
+<!-- TableTemplate -->
+<?% IF param.headingText %?>
+<table width=100%><tr><td class='tableheader'><h3><?% param.headingText %?></h3>
+<?% END %?>
+<table border="0" width="95%">
+<?% fields = data.shift %?>
+    <tr>
+    <?% FOREACH field IN fields %?>
+        <?% NEXT IF field.match('^__') %?>
+        <th>
+            <nobr><?% field %?>
+            <?% IF param.sortable %?>
+            <a href="?cmd=<?% cgi.param('cmd') %?>&__sortby=<?% field %?>&__desc=0"><img src="images/asc.png"></a>
+            <a href="?cmd=<?% cgi.param('cmd') %?>&__sortby=<?% field %?>&__desc=1"><img src="images/desc.png"></a>
+            <?% END %?>
+            </nobr>
+        </th>
+    <?% END %?>
+    </tr>
+    <?% FOREACH zeile IN data %?>
+    <tr>
+        <?% c = -1 %?>
+        <?% FOREACH field IN zeile %?>
+            <?% c = c + 1 %?>
+            <?% NEXT IF fields.$c.match('^__') %?>
+            <td>
+            <a href='?cmd=cmd&data=<?% zeile.first %?>'>
+            <?% field.replace('\|', '<p>').replace('\n', '<br>') %?></td>
+            </a>
+        <?% END %?>
+    </tr>
+    <?% END %?>
+</table>
+<?% IF param.headingText %?>
+</td></tr></table>
+<p>
+<?% END %?>

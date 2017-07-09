@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="<?% charset %?>"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?% verbose = 0 %?>
+<?% compressed = 0 %?>
+<?% lang = locale.split('_') %?>
+<html xmlns="http://www.w3.org/1999/xhtml" <?% IF lang.1 %?>xml:lang="<?% lang.0 %?>" lang="<?% lang.0 %?>"<?% ELSE %?>xml:lang="en" lang="en"<?% END %?>>
+<head>
+    <link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="extjs/resources/css/xtheme-default.css" id="theme" />
+    <link rel="stylesheet" type="text/css" href="jason.css" />
+    <link rel="stylesheet" type="text/css" href="vtxgfx.css" />
+    <link rel="stylesheet" type="text/css" href="ux/multiselect.css" />
+    <link rel="stylesheet" type="text/css" href="ux/Carousel.css" />
+    <script language="javascript" type="text/javascript"> 
+      var configuration = {
+         periods  : [ "<?% getModule('EPG').periods.replace(',','","') %?>" ]
+        ,monitorWidth : <?% getModule('GRAB').xsize %?>
+        ,monitorHeight : <?% getModule('GRAB').ysize %?>
+        ,streamWidth : <?% getModule('STREAM').width %?>
+        ,streamHeight : <?% getModule('STREAM').height %?>
+        ,streamWidget : "<?% getModule('STREAM').widget %?>"
+        ,pageSize : 100
+      };
+      var contentText = {
+      <?% h = 1;WHILE h < 16;c = h | format "%x";ct = getModule('EPG').content(c) %?>
+      <?% IF ct;IF h>1 %?>
+      ,<?% END %?>0x<?% c %?> : "<?% ct %?>"
+      <?% l = 0;WHILE l < 16;c = ((16 * h) + l) | format "%x" ; ct = getModule('EPG').content(c) %?>
+      <?% IF ct %?>
+      ,0x<?% c %?>: "<?% ct %?>"
+      <?% END;l = l + 1;END;END;h = h + 1;END %?>
+      };
+    </script>
+    <meta name="generator" content="XXV System - Version: <?% version %?>" />
+    <meta http-equiv="content-type" content="text/html; charset=<?% charset %?>" />
+    <meta http-equiv="cache-control" content="cache" />
+    <meta http-equiv="pragma" content="cache" />
+    <meta name="robots" content="noindex,noarchive,nofollow" />
+    <title>JaSON</title>
+</head>
+<body scroll="no">
+<?% IF verbose == 0 %?>
+<div id="loading-mask">
+<div class="ext-el-mask-msg" id="loading">
+<div class="loading-indicator"><img src="extjs/resources/images/default/shared/blue-loading.gif" width="32" height="32" style="margin-right:8px;" align="absmiddle"/>
+<span id="loading-text">
+<?% gettext("Please wait ...") %?>
+</span>
+</div>
+</div>
+</div>
+
+<?% END %?>
+<?% IF compressed != 0 %?>
+<?% scripts = [ 'all.js' ] %?>
+<?% ELSE %?>
+  <?% PERL %?>
+  # load files from files.lst
+  my $scripts = $context->include('files.lst');
+  my @script = split(/\\\n/,$scripts);
+  shift(@script); # Remove FILES =
+  map { 
+    $_ =~ s/^\s+//;
+    $_ =~ s/\s+$//;
+  } @script;
+  $stash->set(scripts => \@script);
+  <?% END %?>
+<?% IF verbose != 0;scripts.1 = "ext-3.0.3/ext-all-debug.js";END %?>
+<?% END %?>
+<?% FOREACH script IN scripts %?>
+<script type="text/javascript" src="<?% script %?>"></script>
+<?% END %?>
+<?% IF lang.1 %?>
+<!-- Use : <?% lang.0 %?> -->
+<script type="text/javascript" src="extjs/locale/ext-lang-<?% lang.0 %?>.js"></script>
+<script type="text/javascript" src="locale/lang-<?% lang.0 %?>.js"></script>
+<?% END %?>
+<?% # Fields required for history management %?>
+<form id="history-form" class="x-hidden">
+    <input type="hidden" id="x-history-field" />
+    <iframe id="x-history-frame"></iframe>
+</form>
+<?% # Template used for EPG Items %?>
+<div id="preview-tpl" style="display:none;">
+  <div class="preview-header">
+      <div class="preview-topic">
+        <h3 class="preview-title">{content:this.getTitle}</h3><h4 class="preview-shorttitle">{content:this.getSubtitle}</h4>
+      </div>
+      <div class="preview-channel">{content:this.getChannel}</div><div class="preview-date">{day:date} {start} - {stop}</div>
+  </div>
+  <div class="preview-body">{content:this.getBody}</div>
+  <div class="preview-footer">{content:this.getFooter}</div>
+</div>
+</body>
+</html>

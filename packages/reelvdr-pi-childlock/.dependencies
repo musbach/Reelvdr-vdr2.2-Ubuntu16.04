@@ -1,0 +1,2 @@
+tmp/etc/vdr/plugins/pin/channellocks.conf: /usr/src/reelbox/testing/src/etc/vdr/plugins/pin/channellocks.conf
+tmp/usr/lib/vdr/libvdr-pin.so.2.1.6: /usr/src/reelbox/testing/src/vdr-plugins/lib/libvdr-pin.so.2.1.6

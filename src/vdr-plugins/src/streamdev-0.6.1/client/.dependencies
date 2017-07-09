@@ -1,0 +1,250 @@
+streamdev-client.o: streamdev-client.c streamdev-client.h ../common.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/positioner.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/spu.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/themes.h ../tools/socket.h \
+ ../tools/tools.h ../tools/source.h ../client/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h ../client/socket.h \
+ ../tools/socket.h ../client/setup.h ../client/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h
+device.o: device.c ../client/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/positioner.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/spu.h ../client/socket.h \
+ ../tools/socket.h ../tools/tools.h ../tools/source.h ../common.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/themes.h ../tools/socket.h \
+ ../client/setup.h ../client/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h ../tools/select.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/timers.h
+filter.o: filter.c ../client/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h ../client/socket.h \
+ ../tools/socket.h ../tools/tools.h ../tools/source.h ../common.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/positioner.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/spu.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/themes.h ../tools/socket.h \
+ ../client/setup.h ../tools/select.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h
+setup.o: setup.c /usr/src/reelbox/testing/src/vdr/include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/positioner.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/spu.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/themes.h ../client/setup.h \
+ ../common.h /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/menuitems.h \
+ ../tools/socket.h ../tools/tools.h ../tools/source.h ../client/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h ../client/socket.h \
+ ../tools/socket.h ../client/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h
+socket.o: socket.c ../tools/select.h ../tools/tools.h ../client/socket.h \
+ ../tools/socket.h ../tools/source.h ../common.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/positioner.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/spu.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/themes.h ../tools/socket.h \
+ ../client/setup.h
+common.o: ../common.c \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/thread.h ../common.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/positioner.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/spu.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr/include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr/include/vdr/themes.h ../tools/socket.h \
+ ../tools/tools.h ../tools/source.h ../tools/select.h

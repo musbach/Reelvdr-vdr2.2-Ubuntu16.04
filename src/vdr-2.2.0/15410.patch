@@ -1,0 +1,176 @@
+Index: menu.c
+===================================================================
+--- menu.c	(revision 15409)
++++ menu.c	(revision 15410)
+@@ -2641,6 +2641,9 @@
+ 
+ class cMenuSetupEPG : public cMenuSetupBase {
+ private:
++#ifdef USE_NOEPG
++  const char *noEPGModes[2];
++#endif /* USE_NOEPG */
+   int originalNumLanguages;
+   int numLanguages;
+   void Setup(void);
+@@ -2663,6 +2666,11 @@
+ {
+   int current = Current();
+ 
++#ifdef USE_NOEPG
++  noEPGModes[0] = tr("blacklist");
++  noEPGModes[1] = tr("whitelist");
++#endif /* USE_NOEPG */
++
+   Clear();
+ 
+   Add(new cMenuEditIntItem( tr("Setup.EPG$EPG scan timeout (h)"),      &data.EPGScanTimeout));
+@@ -2676,6 +2684,9 @@
+   for (int i = 0; i < numLanguages; i++)
+       // TRANSLATORS: note the singular!
+       Add(new cMenuEditStraItem(tr("Setup.EPG$Preferred language"),    &data.EPGLanguages[i], I18nLanguages()->Size(), &I18nLanguages()->At(0)));
++#ifdef USE_NOEPG
++  Add(new cMenuEditStraItem(tr("Setup.EPG$Mode of noEPG-Patch"),       &data.noEPGMode, 2, noEPGModes));
++#endif /* USE_NOEPG */
+ 
+   SetCurrent(Get(current));
+   Display();
+Index: eit.c
+===================================================================
+--- eit.c	(revision 15409)
++++ eit.c	(revision 15410)
+@@ -24,8 +24,27 @@
+ class cEIT : public SI::EIT {
+ public:
+   cEIT(cSchedules *Schedules, int Source, u_char Tid, const u_char *Data, bool OnlyRunningStatus = false);
++#ifdef USE_NOEPG
++private:
++  bool allowedEPG(tChannelID kanalID);
++#endif /* USE_NOEPG */
+   };
+ 
++#ifdef USE_NOEPG
++bool cEIT::allowedEPG(tChannelID kanalID) {
++  bool found = false;
++  bool rc = false;
++
++  if (::Setup.noEPGList && strstr(::Setup.noEPGList, kanalID.ToString()))
++     found = true;
++
++  if ((Setup.noEPGMode == 1 && found) || (Setup.noEPGMode == 0 && !found))
++     rc = true;
++
++  return rc;
++}
++#endif /* USE_NOEPG */
++
+ cEIT::cEIT(cSchedules *Schedules, int Source, u_char Tid, const u_char *Data, bool OnlyRunningStatus)
+ :SI::EIT(Data, false)
+ {
+@@ -36,6 +55,13 @@
+   cChannel *channel = Channels.GetByChannelID(channelID, true);
+   if (!channel)
+      return; // only collect data for known channels
++#ifdef USE_NOEPG
++  // only use epg from channels not blocked by noEPG-patch
++  tChannelID kanalID;
++  kanalID = channel->GetChannelID();
++  if (!allowedEPG(kanalID))
++     return;
++#endif /* USE_NOEPG */
+ 
+   cSchedule *pSchedule = (cSchedule *)Schedules->GetSchedule(channel, true);
+ 
+Index: config.c
+===================================================================
+--- config.c	(revision 15409)
++++ config.c	(revision 15410)
+@@ -479,6 +479,10 @@
+   InitialVolume = -1;
+   ChannelsWrap = 0;
+   EmergencyExit = 1;
++#ifdef USE_NOEPG
++  noEPGMode = 0;
++  noEPGList = NULL;
++#endif /* USE_NOEPG */
+ #ifdef REELVDR
+   LiveBuffer = 0;
+   LiveBufferSize = 30;
+@@ -504,9 +508,25 @@
+ #endif /* REELVDR */
+ }
+ 
++#ifdef USE_NOEPG
++cSetup::~cSetup()
++{
++  if (noEPGList)
++     free(noEPGList);
++}
++#endif /* USE_NOEPG */
++
+ cSetup& cSetup::operator= (const cSetup &s)
+ {
+   memcpy(&__BeginData__, &s.__BeginData__, (char *)&s.__EndData__ - (char *)&s.__BeginData__);
++#ifdef USE_NOEPG
++  if (noEPGList) {
++     free(noEPGList);
++     noEPGList = NULL;
++     }
++  if (s.noEPGList)
++     noEPGList = strdup(s.noEPGList);
++#endif /* USE_NOEPG */
+   return *this;
+ }
+ 
+@@ -693,6 +713,13 @@
+   else if (!strcasecmp(Name, "InitialVolume"))       InitialVolume      = atoi(Value);
+   else if (!strcasecmp(Name, "ChannelsWrap"))        ChannelsWrap       = atoi(Value);
+   else if (!strcasecmp(Name, "EmergencyExit"))       EmergencyExit      = atoi(Value);
++#ifdef USE_NOEPG
++  else if (!strcasecmp(Name, "noEPGMode"))           noEPGMode          = atoi(Value);
++  else if (!strcasecmp(Name, "noEPGList")) {
++     free(noEPGList);
++     noEPGList = Value ? strdup(Value) : NULL;
++     }
++#endif /* USE_NOEPG */
+ #ifdef REELVDR
+   else if (!strcasecmp(Name, "LiveBuffer"))          LiveBuffer         = atoi(Value);
+   else if (!strcasecmp(Name, "LiveBufferSize"))      LiveBufferSize     = atoi(Value);
+@@ -813,6 +840,10 @@
+   Store("InitialVolume",      InitialVolume);
+   Store("ChannelsWrap",       ChannelsWrap);
+   Store("EmergencyExit",      EmergencyExit);
++#ifdef USE_NOEPG
++  Store("noEPGMode",          noEPGMode);
++  Store("noEPGList",          noEPGList ? noEPGList : "");
++#endif /* USE_NOEPG */
+ #ifdef REELVDR
+   Store("LiveBuffer",         LiveBuffer);
+   Store("LiveBufferSize",     LiveBufferSize);
+Index: config.h
+===================================================================
+--- config.h	(revision 15409)
++++ config.h	(revision 15410)
+@@ -311,6 +311,9 @@
+   int InitialVolume;
+   int ChannelsWrap;
+   int EmergencyExit;
++#ifdef USE_NOEPG
++  int noEPGMode;
++#endif /* USE_NOEPG */
+ #ifdef REELVDR
+   int LiveBuffer;
+   int LiveBufferSize;
+@@ -337,7 +340,13 @@
+   int ExpertNavi;
+ #endif /* REELVDR */
+   int __EndData__;
++#ifdef USE_NOEPG
++  char *noEPGList; // pointer not to be flat-copied
++#endif /* USE_NOEPG */
+   cSetup(void);
++#ifdef USE_NOEPG
++  ~cSetup();
++#endif /* USE_NOEPG */
+   cSetup& operator= (const cSetup &s);
+   bool Load(const char *FileName);
+   bool Save(void);

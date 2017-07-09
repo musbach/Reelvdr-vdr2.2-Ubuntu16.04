@@ -1,0 +1,10 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "purge" ]; then
+    update-rc.d hdshm-modules remove >/dev/null
+    update-rc.d decypher remove >/dev/null
+    update-rc.d shmnet remove >/dev/null
+fi
+

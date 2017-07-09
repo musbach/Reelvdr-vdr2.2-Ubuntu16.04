@@ -1,0 +1,5 @@
+#!/bin/sh
+
+
+rm -f /root/.xine/catalog.cache || exit 0
+

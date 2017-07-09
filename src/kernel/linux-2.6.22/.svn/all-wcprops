@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22
+END
+kernel
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/kernel
+END
+crypto
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/crypto
+END
+.config
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/.config
+END
+net
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/net
+END
+sound
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/sound
+END
+block
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/block
+END
+Module.symvers
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/Module.symvers
+END
+init
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/init
+END
+lib
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/lib
+END
+security
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/security
+END
+fs
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/fs
+END
+mm
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/mm
+END
+usr
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/usr
+END
+ipc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/ipc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/Makefile
+END
+arch
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/arch
+END
+drivers
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/drivers
+END

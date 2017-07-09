@@ -1,0 +1,11 @@
+Package: reelvdr-baseconfig-channels
+Version: 1.23
+Section: reel
+Priority: important
+Architecture: all
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Conflicts: reelvdr-baseconfig (<< 1.66)
+Source: reelvdr-baseconfig-channels
+Description: basic channellists for ReelBox VDR
+ includes default channellists for the ReelBox VDR
+

@@ -1,0 +1,89 @@
+shoutcast.o: shoutcast.c ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h menu.h \
+ ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/debugmacros.h radioStations.h setup.h \
+ ../../../vdr/include/vdr/menuitems.h
+menu.o: menu.c menu.h ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/debugmacros.h \
+ radioStations.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/remote.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/interface.h ../../../vdr/include/vdr/remote.h \
+ ../../../vdr/include/vdr/svdrp.h setup.h ../xinemediaplayer/services.h \
+ ../../../vdr/include/vdr/keys.h
+radioStations.o: radioStations.c ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/skins.h \
+ radioStations.h
+setup.o: setup.c setup.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h menu.h \
+ ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/debugmacros.h radioStations.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/menuitems.h

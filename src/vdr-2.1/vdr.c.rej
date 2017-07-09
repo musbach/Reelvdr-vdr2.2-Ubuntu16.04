@@ -1,0 +1,107 @@
+--- vdr.c	(revision 15412)
++++ vdr.c	(revision 15413)
+@@ -803,7 +803,12 @@
+   RecordingCommands.Load(AddDirectory(ConfigDirectory, "reccmds.conf"));
+   SVDRPhosts.Load(AddDirectory(ConfigDirectory, "svdrphosts.conf"), true);
+   Keys.Load(AddDirectory(ConfigDirectory, "remote.conf"));
++#ifdef USE_ALTERNATECHANNEL
++  KeyMacros.Load(AddDirectory(ConfigDirectory, "keymacros.conf"), true) &&
++    Channels.LoadAlternativeChannels(AddDirectory(ConfigDirectory, "channel_alternative.conf"));
++#else
+   KeyMacros.Load(AddDirectory(ConfigDirectory, "keymacros.conf"), true);
++#endif /* ALTERNATECHANNEL */
+   Folders.Load(AddDirectory(ConfigDirectory, "folders.conf"));
+ 
+   if (!*cFont::GetFontFileName(Setup.FontOsd)) {
+@@ -1147,6 +1152,21 @@
+            Recordings.Update();
+            DeletedRecordings.Update();
+            }
++#ifdef USE_MCLI
++        cPlugin *mcliPlugin = cPluginManager::GetPlugin("mcli");
++        if (mcliPlugin) {
++           if (!ShutdownHandler.countdown) { // if kPower has been pressed, cMenuShutdown takes precedence over other menus
++              cOsdObject *MyMenu = mcliPlugin->AltMenuAction();
++              if (MyMenu) { // is there any cam-menu waiting?
++                 DELETE_MENU;
++                 if (cControl::Control())
++                    cControl::Control()->Hide();
++                    Menu = MyMenu;
++                    Menu->Show();
++                 }
++              }
++           }
++#endif /* MCLI */
+         // CAM control:
+         if (!Menu && !cOsd::IsOpen())
+            Menu = CamControl();
+@@ -1157,6 +1177,9 @@
+         cOsdObject *Interact = Menu ? Menu : cControl::Control();
+         eKeys key = Interface->GetKey(!Interact || !Interact->NeedsFastResponse());
+         if (ISREALKEY(key)) {
++#ifdef USE_PINPLUGIN
++           cStatus::MsgUserAction(key, Interact);
++#endif /* PINPLUGIN */
+            EITScanner.Activity();
+            // Cancel shutdown countdown:
+            if (ShutdownHandler.countdown)
+@@ -1249,10 +1272,16 @@
+                      cControl::Control()->Hide();
+                   cPlugin *plugin = cPluginManager::GetPlugin(PluginName);
+                   if (plugin) {
++#ifdef USE_PINPLUGIN
++                  if (!cStatus::MsgPluginProtected(plugin)) {
++#endif /* PINPLUGIN */
+                      Menu = plugin->MainMenuAction();
+                      if (Menu)
+                         Menu->Show();
+                      }
++#ifdef USE_PINPLUGIN
++                     }
++#endif /* PINPLUGIN */
+                   else
+                      esyslog("ERROR: unknown plugin '%s'", PluginName);
+                   }
+@@ -1442,13 +1471,26 @@
+                   Channels.SwitchTo(PreviousChannel[PreviousChannelIndex ^= 1]);
+                   break;
+                   }
++#ifdef USE_VOLCTRL
++             // Left/Right volume control
++#else
+              // Direct Channel Select:
+              case k1 ... k9:
+              // Left/Right rotates through channel groups:
++#endif /* VOLCTRL */
+              case kLeft|k_Repeat:
+              case kLeft:
+              case kRight|k_Repeat:
+              case kRight:
++#ifdef USE_VOLCTRL
++                  if (Setup.LRVolumeControl && Setup.LRChannelGroups < 2) {
++                     cRemote::Put(NORMALKEY(key) == kLeft ? kVolDn : kVolUp, true);
++                     break;
++                     }
++                  // else fall through
++             // Direct Channel Select:
++             case k1 ... k9:
++#endif /* VOLCTRL */
+              // Previous/Next rotates through channel groups:
+              case kPrev|k_Repeat:
+              case kPrev:
+@@ -1466,9 +1508,15 @@
+              // Instant resume of the last viewed recording:
+              case kPlay:
+                   if (cReplayControl::LastReplayed()) {
++#ifdef USE_PINPLUGIN
++                     if (cStatus::MsgReplayProtected(0, cReplayControl::LastReplayed(), 0, false) == false) {
++#endif /* PINPLUGIN */
+                      cControl::Shutdown();
+                      cControl::Launch(new cReplayControl);
+                      }
++#ifdef USE_PINPLUGIN
++                     }
++#endif /* PINPLUGIN */
+                   break;
+              default:    break;
+              }

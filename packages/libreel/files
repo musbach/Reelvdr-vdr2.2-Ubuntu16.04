@@ -1,0 +1,7 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+# src rel. to $(SRCDIR)			dest					type	owner.group
+#libs/graphlcd-base-0.1.3/glcddrivers/libglcddrivers.so.1.0.0	usr/lib/libglcddrivers.so.1.0.0		lib
+#libs/graphlcd-base-0.1.3/glcdgraphics/libglcdgraphics.so.1.0.0	usr/lib/libglcdgraphics.so.1.0.0	lib
+libs/libreel/src/libreel.so	usr/lib/libreel.so	lib
+libs/libreel/src/tools.h	usr/include/reel/tools.h	cfg	

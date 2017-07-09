@@ -1,0 +1,11 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)			dest			type	owner.group
+etc/init/decypher.conf			-			cfg
+etc/modprobe.d/reel-hdshm		etc/modprobe.d/reel-hdshm.conf
+etc/udev/rules.d/56-hdshm.rules
+utils/hdshm3/x86/hdboot/hdboot		usr/sbin/hdboot		exe
+utils/hdshm3/x86/hdctrld/hdctrld	usr/sbin/hdctrld	exe
+utils/hdshm3/x86/hdfbctl/hdfbctl	usr/sbin/hdfbctl	exe
+utils/hdfbshot/hdfbshot			usr/sbin/hdfbshot	exe
+utils/hdshm3/x86/shmnetd/shmnetd	usr/sbin/shmnetd	exe

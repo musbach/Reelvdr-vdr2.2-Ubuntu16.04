@@ -1,0 +1,23 @@
+#!/bin/sh
+
+
+myln () {
+src="$2"
+target="$3"
+
+	if [ ! -L $target ]; then
+		ln -f $*
+	fi
+}
+
+# smb_client is obsolete, done by automounter
+#echo "creating init levels for Samba (Windows NW) Client"
+#if [ ! -L /etc/rc2.d/S18smb_client ] && [ -L /etc/rc2.d/S??smb_client ] ; then
+#	update-rc.d -f smb_client remove
+#fi
+#update-rc.d smb_client defaults 18 82
+
+echo "creating init levels for setup-shares"
+update-rc.d setup-shares defaults 18 82
+
+exit 0

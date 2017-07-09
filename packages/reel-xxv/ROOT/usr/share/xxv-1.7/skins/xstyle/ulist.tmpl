@@ -1,0 +1,45 @@
+<!-- TableTemplate -->
+<h1><?% gettext("User administration") %?></h1>
+
+<div id="navcontainer">
+<ul id="navlist">
+    <li><a href="?cmd=unew"><?% gettext("Create new account for user") %?></a></li>
+</ul>
+</div>
+<p>
+
+<table border="0" width="95%">
+<form name='UserList'>
+<?% INCLUDE 'widgets/referer.tmpl' %?>
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <th><?% field %?></th>
+        <?% END %?>
+        </tr>
+        <?% x = -1 %?>
+        <?% FOREACH zeile IN data %?>
+        <?% x = x + 1 %?>
+        <tr class="<?% myclass %?>" <?% IF (x mod 2) != 0 %?>bgcolor='#F5F5F5'<?% END %?>>
+            <?% c = 0 %?>
+            <?% FOREACH field IN zeile %?>
+                <?% c = c + 1 %?>
+                <?% IF c == 1; # Id Field %?>
+                <td>
+                    <a title="<?% gettext("Edit account of user") %?>" href="?cmd=uedit&amp;data=<?% zeile.0 %?>">
+                        <img src='images/edit.png'></a>&nbsp;
+                    <a title="<?% gettext("Delete user account") %?>"
+                       href="#" onclick="sure(document.UserList, '<?% gettext("Would you like to delete this user account?") %?>: <?% escape(zeile.1) %?>','?cmd=udelete&amp;data=<?% zeile.0 %?>')">
+                    <img src='images/delete.png'>
+                    </a>
+                </td>
+                <?% ELSE %?>
+                <td><?% field %?></td>
+                <?% END %?>
+            <?% END %?>
+        </tr>
+        <?% END %?>
+<?% END %?>
+</form>
+</table>

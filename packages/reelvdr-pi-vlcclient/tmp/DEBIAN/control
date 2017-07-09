@@ -1,0 +1,19 @@
+Package: reelvdr-pi-vlcclient
+Version: 0.2.0
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-vlcclient
+Description: A streaming client using VLC as server.
+ VLC on-the-fly re-encodes every video it can to MPEG2-TS and stream
+ it to a client - this plugin - which displays it.
+ .
+ Written by:                  Tobias Bratfisch <tobias@reel-multimedia.com>
+ Project's homepage:          http://www.reelbox.org
+Description-de: Streaming-Client der VLC als Server benötigt
+ VLC konvertiert jedes ihm bekannte Videoformat in MPEG2-TS und streamt
+ es gleichzeitig an einen Client - dieses Plugin - welches es dann abspielt.
+ .
+ Written by:                  Tobias Bratfisch <tobias@reel-multimedia.com>
+ Project's homepage:          http://www.reelbox.org

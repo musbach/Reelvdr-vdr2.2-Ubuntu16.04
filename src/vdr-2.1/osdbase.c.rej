@@ -1,0 +1,147 @@
+--- osdbase.c	(revision 15412)
++++ osdbase.c	(revision 15413)
+@@ -15,7 +15,7 @@
+ #include "status.h"
+ #ifdef REELVDR
+ #include "help.h"
+-#endif /*REELVDR*/
++#endif
+ 
+ // --- cOsdItem --------------------------------------------------------------
+ 
+@@ -98,6 +98,9 @@
+ {
+   isMenu = true;
+   digit = 0;
++#ifdef USE_LIEMIEXT
++  key_nr = -1;
++#endif /* LIEMIEXT */
+   hasHotkeys = false;
+   title = NULL;
+   SetTitle(Title);
+@@ -118,6 +121,9 @@
+   free(status);
+   displayMenu->Clear();
+   cStatus::MsgOsdClear();
++#ifdef USE_GRAPHTFT
++  cStatus::MsgOsdMenuDestroy();
++#endif /* GRAPHTFT */
+   if (!--displayMenuCount)
+      DELETENULL(displayMenu);
+ }
+@@ -140,7 +146,11 @@
+         digit = -1; // prevents automatic hotkeys - input already has them
+      if (digit >= 0) {
+         digit++;
++#ifdef USE_LIEMIEXT
++        buffer = cString::sprintf(" %2d%s %s", digit, (digit > 9) ? "" : " ", s);
++#else
+         buffer = cString::sprintf(" %c %s", (digit < 10) ? '0' + digit : ' ' , s);
++#endif /* LIEMIEXT */
+         s = buffer;
+         }
+      }
+@@ -322,6 +332,9 @@
+   displayMenu->SetMessage(mtStatus, NULL);
+   displayMenu->Clear();
+   cStatus::MsgOsdClear();
++#ifdef USE_GRAPHTFT
++  cStatus::MsgOsdMenuDisplay(MenuKind());
++#endif /* GRAPHTFT */
+   displayMenu->SetTabs(cols[0], cols[1], cols[2], cols[3], cols[4]);//XXX
+   displayMenu->SetTitle(title);
+   cStatus::MsgOsdTitle(title);
+@@ -569,20 +582,79 @@
+      }
+ }
+ 
++#ifdef USE_LIEMIEXT
++#define MENUKEY_TIMEOUT 1500
++#endif /* LIEMIEXT */
++
+ eOSState cOsdMenu::HotKey(eKeys Key)
+ {
++#ifdef USE_LIEMIEXT
++  bool match = false;
++  bool highlight = false;
++  int  item_nr;
++  int  i;
++
++  if (Key == kNone) {
++     if (lastActivity.TimedOut())
++        Key = kOk;
++     else
++        return osContinue;
++     }
++  else {
++     lastActivity.Set(MENUKEY_TIMEOUT);
++     }
++  for (cOsdItem *item = Last(); item; item = Prev(item)) {
++#else
+   for (cOsdItem *item = First(); item; item = Next(item)) {
++#endif /* LIEMIEXT */
+       const char *s = item->Text();
++#ifdef USE_LIEMIEXT
++      i = 0;
++      item_nr = 0;
++      if (s && (s = skipspace(s)) != '\0' && '0' <= s[i] && s[i] <= '9') {
++         do {
++            item_nr = item_nr * 10 + (s[i] - '0');
++            }
++         while ( !((s[++i] == '\t')||(s[i] == ' ')) && (s[i] != '\0') && ('0' <= s[i]) && (s[i] <= '9'));
++         if ((Key == kOk) && (item_nr == key_nr)) {
++#else
+       if (s && (s = skipspace(s)) != NULL) {
+          if (*s == Key - k1 + '1') {
++#endif /* LIEMIEXT */
+             current = item->Index();
+             RefreshCurrent();
+             Display();
+             cRemote::Put(kOk, true);
++#ifdef USE_LIEMIEXT
++            key_nr = -1;
++#endif /* LIEMIEXT */
+             break;
+             }
++#ifdef USE_LIEMIEXT
++         else if (Key != kOk) {
++            if (!highlight && (item_nr == (Key - k0))) {
++               highlight = true;
++               current = item->Index();
++               }
++            if (!match && (key_nr == -1) && ((item_nr / 10) == (Key - k0))) {
++               match = true;
++               key_nr = (Key - k0);
++               }
++            else if (((key_nr == -1) && (item_nr == (Key - k0))) || (!match && (key_nr >= 0) && (item_nr == (10 * key_nr + Key - k0)))) {
++               current = item->Index();
++               cRemote::Put(kOk, true);
++               key_nr = -1;
++               break;
++               }
++            }
++#endif /* LIEMIEXT */
+          }
+       }
++#ifdef USE_LIEMIEXT
++  if ((!match) && (Key != kNone)) {
++     key_nr = -1;
++     }
++#endif /* LIEMIEXT */
+   return osContinue;
+ }
+ 
+@@ -658,8 +730,13 @@
+         }
+      }
+   switch (Key) {
++#ifdef USE_LIEMIEXT
++    case kNone:
++    case k0...k9: return hasHotkeys ? HotKey(Key) : osUnknown;
++#else
+     case k0:      return osUnknown;
+     case k1...k9: return hasHotkeys ? HotKey(Key) : osUnknown;
++#endif /* LIEMIEXT */
+     case kUp|k_Repeat:
+     case kUp:   CursorUp();   break;
+     case kDown|k_Repeat:

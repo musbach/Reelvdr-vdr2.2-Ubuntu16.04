@@ -1,0 +1,9 @@
+Package: satip
+Version: 14.04.0-1.0.2-132
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 365K
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: satip
+Description: satip

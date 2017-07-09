@@ -1,0 +1,13 @@
+<!-- time -->
+<?% global.widgetcount = global.widgetcount + 1 %?>
+<tr<?% ' class="two"' IF global.widgetcount mod 2 == 0 %?>>
+        <?% INCLUDE widgets/topic.inc abbr=data.msg %?>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% IF data.readonly %?>
+        <?% val %?>
+        <?% ELSE %?>
+        <input style="width:80px;" type="text" name="<?% data.NAME %?>" value="<?% val %?>" />
+        <?% END %?>
+    </td>
+</tr>

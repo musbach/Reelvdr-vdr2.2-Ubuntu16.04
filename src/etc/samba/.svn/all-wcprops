@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/reelbox/!svn/ver/1/testing/src/etc/samba
+END
+smbpasswd
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/samba/smbpasswd
+END
+smb.conf
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/etc/samba/smb.conf
+END

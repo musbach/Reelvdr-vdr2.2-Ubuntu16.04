@@ -1,0 +1,218 @@
+VDR Plugin 'burn' Revision History
+----------------------------------
+
+2013-02-23: Version 0.2.2
+- fixed false DESTDIR in Makefile and added include of PLGCFG (reported by Zoolook@vdrportal.de)
+- added menu category to job_options_base to avoid confusion of skin plugins
+
+2013-02-15: Version 0.2.1
+- removed unneccesary i18n definitions to compile with 1.7.27+
+- fixed fsf address (thanks to marco@vdr-developer.org, bug #1086)
+- fixed "PRIO_PGRP not found" (thanks to marco@vdr-developer.org, bug #1085)
+- added support to sort recordings in VDR 1.7.29+
+- added support for VDR 1.7.33 (bug #1180)
+- minor target description update
+- fixed wrong unchangeable storemode in case of missing DVD writer device (bug #1187)
+- added support for Makefile of VDR 1.7.36+
+- fixed display of directories with MPEG2 and H.264 recordings
+
+2011-12-28: Version 0.2.0
+- fixed display of help keys in recordings menu when first entry is a directory (reported by Keine_Ahnung@vdr-portal.de)
+- added support for DMH Archive DVD with old video dir format (thanks to Keine_Ahnung@vdr-portal.de)
+- added support for dvdauthor 0.7.0 by exporting VIDEO_FORMAT
+
+2011-10-08: Version 0.2.0-beta7
+- fixed compiling on VDR 1.6
+- adapted to VDR 1.7.20 and removed erroneously introduced dependency on liemikuutio patch
+- removed video fifo which was only required by vdrsync.pl
+- removed deprecated direct member access if compiled with VDR 1.7.21+
+- fixed indention of folders in recording menu
+- adapted recordings menu to VDR 1.7.21 layout
+- fixed status menu updates
+- outsourced settings for Project X to vdrburn-dvd.conf (thanks to Keine_Ahnung@vdr-portal.de for the idea and code snippets)
+
+2011-08-08: Version 0.2.0-beta6
+- fixed building with ENABLE_DMH_ARCHIVE=1 (thanks to Ville Skyttä, bug #475)
+- Finnish translation update (provided by Ville Skyttä, feature #473)
+- Use /dev/dvdrw as writer device by default (suggested by Ville Skyttä, feature #474)
+- changed shell of vdrburn-dvd.sh from sh to bash (reported by tefans@vdr-portal.de)
+- fixed subtitles definition in DVDs without menus
+- updated Italian translation (thanks to Diego Pierotto, feature #492)
+- added Slovak translation (feature #557)
+- fixed resource leak in scanner.c and pes.c
+- do no longer hide H.264 recordings but display them unselectable (there might still be some older recordings 
+  which are not recognized as H.264 recordings if the component descriptor in the info file is uncorrect)
+- fixed unneccesssary relinking with "make all" (bug #482)
+- added default setting if subtitles should be used (caution: default is NO)
+- fixed renaming of spumux file for son subtitles
+- changed default Datadir to /tmp
+- added ionice -c 3 to all disk intensive tasks in vdrburn-dvd.sh
+- fixed invoking of vdrsync.pl if previously selected, removed remaining code (thanks to Ville Skyttä, bug #476, and copperhead@vdr-portal.de)
+- filter out streams which consist only of filler bytes (used as place holder PIDs)
+- track editor page has now a title to avoid crash of remoteosd plugin (thanks to mane77@vdr-portal.de for debugging)
+- refactored help key and ProcessKey of building menu 
+- added recording length (in minutes) to recordings menu
+- fixed possible segfault in status display
+
+2010-12-12: Version 0.2.0-beta5
+- updated DMH archive part of vdrburn-dvd/-archive.sh (thanks to copperhead@vdr-portal.de)
+- made DMH archive optional via compile switch. Enable with ENABLE_DMH_ARCHIVE=1 (thanks to copperhead@vdr-portal.de)
+- replaced offsetof by __builtin_offsetof in scanner.c as it caused problems on some distris (suggested by TomJoad@vdr-portal.de)
+- removed support for burning CDs (DVD structures on CD-R)
+- removed support for vdrsync.pl, use Project X instead
+- added 100MB spare space in requant factor calculation to avoid oversized ISO images
+- allowed all chars of VDR locale for titles
+- fixed renamed menu names being ignored (reported by mahlzeit@vdr-portal.de)
+- added recording title to track edit menu
+- converted all po files to UTF-8 (thanks to Ville Skyttä for the FI patch (Bug #415) which led to that)
+- replaced make with $(MAKE) in Makefile (Bug #542)
+
+2010-05-23: Version 0.2.0-beta4
+- fixed teletext page calculation (reported by Petri Helin)
+- refactored handling of subtitles (dvb and teletext). Subtitels are now intergrated in the standard job handling
+- hide recordings from selection which have H.264_AVC as stream content type in their component
+  description ("X 5 ..." in info(.vdr))
+- added Dutch translations (thanks to Carel Willemse)
+
+2010-04-10: Version 0.2.0-beta3
+- fixed cutting of PES recordings (reported by caps!@vdr-portal.de)
+- removed vdr-1.7.12-tpid-Parser.diff because it's no longer needed
+
+2010-04-05: Version 0.2.0-beta2
+- added support for ttxtsub plugin 0.2.0+ (dropping support for all earlier ttxtsubs releases)
+- automatically compile with ttxtsubs support if VDR supports it/is patched
+- added italian translations (thanks to Diego Pierotto)
+- added log messages where to find the detailed logfile dvd.log
+- added include of VDRs 1.7.13+ Make.global (optional for not breaking compatibility with earlier VDR versions)
+- fixed crash when no stream info in info file is present (reported by TEDDYXXL@vdr-portal.de)
+- beautified menu subpicture xml output
+- delete track from track list if it was announced in PMT but did not appear (reported by lini@vdr-portal.de)
+- fixed a memory leak which occurs only under rare circumstances and eats up all available memory and even more
+- fixed loading of marks for PES recordings (VDR 1.6.0 and 1.7.x)
+- fixed length calculation for recordings with an odd number of marks
+- fixed Project X options for multiple ttxt tracks
+
+2010-02-21: Version 0.2.0-beta1
+- rewrote line break for descriptions
+- added subtitle (the 'S'-entry from the info file) to the title menu
+- removed locale setting (interfered with VDR's locale settings when saving config file)
+- added support for mutliple SON subtitle tracks (thanks to Mikko Tuumanen)
+- dropped support for VDR version before 1.6.0. Now 1.6.0 is supported and version 1.7.11 or higher
+- refactored the TS stream recognition to support multiple audio streams with identical PES IDs
+- re-activated and adapted the option to demultiplex only the selected audio tracks
+- added support for lxdvdrip requantizer
+- implemented dvb subtitle selection (multiple subtitles are still experimental)
+- implemented teletext subtitle support (only for VDR 1.7.11+, VDR needs to be patched with 
+  vdr-1.7.12-tpid-Parser.diff which is supplied in the patches subdirectory)
+
+
+2009-06-27: Version 0.1.0-pre22-ff1
+- integrated the following patches:
+    * vdr-burn-0.1.0-pre22_i18n-gettext.diff.gz - UTF8 support for OSD
+    * vdr-burn-0.1.0-pre21-charset-vdr-1.5.diff - fixes Umlauts in DVD-Menus on UTF-8 systems
+    * vdr-burn-0.1.0-pre21-gcc43.diff - fixes for compilation with gcc 4.3
+    * vdr-burn-0.1.0-pre21-requantfactor.diff - corrects requant factor calculation for better DVD utilization
+    * vdr-burn-0.1.0-pre21-menu.diff - fixes SkipTitlemenu/SkipMainmenu typo
+    * vdr-burn-0.1.0pre21-missingvob.diff.gz - improves DVD player compatibility for DVDs without title menu by adding a dummy VOB
+- added basic support for TS recordings (which were invented by VDR 1.7.3)
+
+
+xxxx-xx-xx: Version 0.1.0 (not released)
+
+- clearing job after deleting last recording
+- implemented rudimentary skinning support (place menu-bg.png and/or 
+  menu-button.png into a directory such as $CONFIG/plugins/burn/skins/Skin_Name
+  where Skin_Name is the desired name. '_' will be replaced by ' ' when shown)
+- implemented audio track selection (press Ok on a recording item)
+- cleaned up menu code
+- added possibility to edit and restart canceled and aborted jobs (press Green
+  on such a job)
+- improved logging
+- improved communication with subprocesses
+- added osd message when job finishes or aborts
+- reduced steps necessary for dvd creation to two (needs the script 
+  vdrburn-dvd.sh and the program burn-buffers in $PATH)
+- added recordings display where recordings can be selected for burning
+  (there is no need for reccmds.conf and more)
+- improved progress display (should be much more accurate now)
+- most options can be pre-configured and hidden from job display in the plugin's
+  setup menu
+- added defining chaptermarks
+- implemented setting burning speed
+
+2004-12-05: Version 0.0.5
+
+- fixed some threading bugs (black screen problems)
+- fixed deletion of jobs after they finished (now done in Housekeeping)
+- implemented creation of isos (see README)
+- fixed compile problems with some versions of gcc > 3
+- added finnish language texts (thanks to Rolf Ahrenberg)
+
+2004-11-30: Version 0.0.4b
+
+- fixed menu tabbing for VDR >= 1.3.7
+
+2004-11-26: Version 0.0.4a
+
+- fixed starting sub-processes by closing duped file descriptors
+
+2004-11-19: Version 0.0.4
+
+- increased requant buffer
+- added check if there is enough disk space
+- added commandline option for datadir and dvd drive
+
+2004-08-10: Version 0.0.3
+
+- fixed the entry points in multipage main menus
+- improved removal of unused tempfiles
+- changed default editing mode to "insert" instead of "replace"
+- deleting characters "@%" after episode names
+
+2004-08-09: Version 0.0.2
+
+- after the plugin is called, the recording list and job attributes will be
+  remembered. new recordings can still be added
+- fixed a missing status initialisation
+
+2004-08-08: Version 0.0.1g
+
+- when using the supplied patch, vdr will not shutdown while burning
+
+2004-08-07: Version 0.0.1f
+
+- implemented multi-page title and main menus (means overlength summaries and
+  discs with more than 8 titles will be handled correctly)
+
+2004-08-05: Version 0.0.1e
+
+- implemented own image writer (makes gozer obsolete)
+- new image writer provides aligned texts and multi-page wrapping
+
+2004-07-32: Version 0.0.1d
+
+- fixed deletion of several leftover tempfiles
+- cleaning recording names now
+- implemented editing dvd title and recordings' titles
+- implemented sorting of recordings by evaluating timestamp when the recording
+  was marked
+- implemented a "move down" function for the recording list (green button)
+
+2004-07-26: Version 0.0.1c
+
+- fixed memory leak
+- fixed shell escaping
+- fixed display of current item in menu
+- some optical improvements in status display
+
+2004-07-24: Version 0.0.1b
+
+- fixed requant factor calculation
+- implemented setup menu
+- implemented iso-8859-1 to utf-8 conversion for utf-8 enabled gozer tools
+  (configurable)
+- added support for VDR 1.3.7+
+
+2004-07-22: Version 0.0.1
+
+- Initial revision.

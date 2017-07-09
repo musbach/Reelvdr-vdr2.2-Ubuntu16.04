@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc
+END
+libmpeg2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc/libmpeg2.txt
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc/Makefile.in
+END
+sample1.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc/sample1.c
+END
+sample2.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc/sample2.c
+END
+sample3.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc/sample3.c
+END
+sample4.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc/sample4.c
+END
+sample5.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc/sample5.c
+END
+sample6.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc/sample6.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/doc/Makefile.am
+END

@@ -1,0 +1,9 @@
+Package: wlan-rtl8192
+Version: 3.1.2590.4
+Section: reel
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: wlan-rtl8192
+Description: driver for the Realtek RTL8188CU(S), 8192CU WiFi chip and others
+Description-de: Treiber für den Realtek WLAN chip RTL8188CU(S), 8192CU und andere

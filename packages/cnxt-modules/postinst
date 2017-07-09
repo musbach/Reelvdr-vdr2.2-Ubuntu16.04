@@ -1,0 +1,18 @@
+#!/bin/sh
+
+#echo "creating module entries for HDTV extension module"
+#create /etc/modules entry
+#if ! grep -q hdshm /etc/modules ; then
+#	echo hdshm >> /etc/modules
+#fi
+
+depmod -a
+
+if [ -L /etc/rc2.d/S01cnxt-modules ] ; then
+	update-rc.d -f cnxt-modules remove >/dev/null
+fi
+
+#update-rc.d cnxt-modules defaults 01 89
+update-rc.d cnxt-modules start 06 S . stop 94 S .
+
+exit 0

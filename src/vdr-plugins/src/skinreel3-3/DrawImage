@@ -1,0 +1,902 @@
+alpha.c:                                unsigned int *tgtPixels = (unsigned int*)(osd->buffer + osd->bpp * OSD_WIDTH * y++ + x*osd->bpp);
+alpha.c:                                unsigned int *tgtPixels = (unsigned int*)(osd->buffer + osd->bpp * OSD_WIDTH * y++ + x*osd->bpp);
+displaychannel.c:  if ((Areas[0].bpp < 8 || ReelConfig.singleArea8Bpp) && osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea)) == oeOk) {
+displaychannel.c:    osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaychannel.c:    //TB: unnecessary: //osd->DrawRectangle(0, 0, osd->Width(), osd->Height(), clrTransparent);
+displaychannel.c:      eOsdError rc = osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaychannel.c:        osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaychannel.c:      eOsdError rc = osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaychannel.c:        osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaychannel.c:  osd->DrawImage(imgMenuHeaderLeft, xTitleLeft-10, yTitleTop, false);
+displaychannel.c:  osd->DrawImage(imgMenuHeaderCenterX, xTitleLeft + Roundness, yTitleTop, false, xTitleRight-xTitleLeft - 2 * Roundness,1);
+displaychannel.c:  osd->DrawImage(imgMenuHeaderRight, xTitleRight - Roundness , yTitleTop, false);
+displaychannel.c:  osd->DrawImage(imgMenuHeaderLeft, xLogoLeft-10, yTitleTop, false);
+displaychannel.c:  osd->DrawImage(imgMenuHeaderCenterX, xLogoLeft + Roundness, yTitleTop, false, xLogoRight-xLogoLeft - 2 * Roundness,1);
+displaychannel.c:  osd->DrawImage(imgMenuHeaderRight, xLogoRight - Roundness, yTitleTop, true);
+displaychannel.c:  osd->DrawRectangle(xEventNowLeft, yEventNowTop, xEventNowRight - 1, yEventNowBottom - 1, Theme.Color(clrBackground));
+displaychannel.c:    osd->DrawRectangle(xEventNextLeft, yEventNextTop, xEventNextRight - 1, yEventNextBottom - 1, Theme.Color(clrAltBackground));
+displaychannel.c:  osd->DrawImage(imgMenuFooterLeft, xBottomLeft-10, yBottomTop, false);
+displaychannel.c:  osd->DrawImage(imgMenuFooterCenterX, xBottomLeft + Roundness, yBottomTop, false, xBottomRight-xBottomLeft - 2 * Roundness,1);
+displaychannel.c:  osd->DrawImage(imgMenuFooterRight, xBottomRight - Roundness , yBottomTop, false);
+displaychannel.c:  osd->DrawImage(imgMenuFooterLeft, xLogoLeft-10, yBottomTop, false);
+displaychannel.c:  osd->DrawImage(imgMenuFooterCenterX, xLogoLeft + Roundness, yBottomTop, false, xLogoRight-xLogoLeft - 2 * Roundness,1);
+displaychannel.c:  osd->DrawImage(imgMenuFooterRight, xLogoRight - Roundness , yBottomTop, true);
+displaychannel.c:      osd->DrawRectangle(xLogoLeft, yLogoTop, xLogoRight - 1, yLogoBottom - 1, Theme.Color(clrBackground));
+displaychannel.c:      osd->DrawRectangle(xLogoDecoLeft, yLogoTop, xLogoDecoRight - 1, yLogoBottom - 1, Theme.Color(clrBackground));
+displaychannel.c:      osd->DrawImage(imgNoChannelIcon,xLogoLeft + (xLogoRight - xLogoLeft - IMGCHANNELLOGOWIDTH) / 2,
+displaychannel.c:    osd->DrawText(xName, y, Title, Theme.Color(clrTitleFg), clrTransparent, pFontOsdTitle, xDateLeft - SmallGap - xName - 3, yTitleBottom - y);
+displaychannel.c:  //osd->SetAntiAliasGranularity(255,255);
+displaychannel.c:  osd->DrawText(xNumber, yTitleTop+12, GetChannelNumber(Channel, Number),
+displaychannel.c:  osd->DrawImage(rec ? imgRecordingOn:imgRecordingOff, xSymbol,ys,true);
+displaychannel.c:  osd->DrawImage(imgAudio,xSymbol,ys,true);
+displaychannel.c:  osd->DrawImage(Channel->Dpid(0) ? imgDolbyDigitalOn:imgDolbyDigitalOff, xSymbol,ys,true);
+displaychannel.c:  osd->DrawImage(Channel->Tpid()? imgTeletextOn: imgTeletextOff, xSymbol, ys, true);
+displaychannel.c:  osd->DrawImage(Channel->Ca()? imgEncryptedOn: imgEncryptedOff, xSymbol, ys, true);
+displaychannel.c:        case 0x0000: /* Reserved */ osd->DrawImage(imgFreetoair, xs, y, true); break;
+displaychannel.c:    osd->DrawText(xDateLeft - 125, yBottomTop - 5 + (yBottomBottom - yBottomTop)/2 - pFontDate->Height()/2, *cSource::ToString(Channel->Source()), Theme.Color(clrTitleFg), clrTransparent, pFontDate, 50, yBottomBottom - yBottomTop-10);
+displaychannel.c:     osd->DrawRectangle(xLogoLeft, yLogoTop, xLogoRight - 1, yLogoBottom - 1, Theme.Color(clrBackground)); // the real logo background
+displaychannel.c:     osd->DrawRectangle(xLogoDecoLeft, yLogoTop, xLogoDecoRight - 1, yLogoBottom - 1, Theme.Color(clrBackground));
+displaychannel.c:     osd->DrawImage(imgNoChannelIcon,xLogoLeft + (xLogoRight - xLogoLeft - IMGCHANNELLOGOWIDTH) / 2,
+displaychannel.c:     osd->DrawRectangle(xLogoLeft, yLogoTop, xLogoRight - 1, yLogoBottom - 1, Theme.Color(clrLogoBg)); // the real logo background
+displaychannel.c:     osd->DrawRectangle(xLogoDecoLeft, yLogoTop, xLogoDecoRight - 1, yLogoBottom - 1, Theme.Color(clrLogoBg));
+displaychannel.c:     osd->SetImagePath(imgUnbufferedEnum, logoPath.c_str());
+displaychannel.c:     osd->DrawImage(imgUnbufferedEnum, xLogoLeft + (xLogoRight - xLogoLeft - IMGCHANNELLOGOWIDTH) / 2,
+displaychannel.c:     osd->DrawRectangle(xLogoLeft, yLogoTop, xLogoRight - 1, yLogoBottom - 1, Theme.Color(clrBackground)); // the real logo background
+displaychannel.c:     osd->DrawRectangle(xLogoDecoLeft, yLogoTop, xLogoDecoRight - 1, yLogoBottom - 1, Theme.Color(clrBackground));
+displaychannel.c:     osd->DrawImage(imgNoChannelIcon,xLogoLeft + (xLogoRight - xLogoLeft - IMGCHANNELLOGOWIDTH) / 2,
+displaychannel.c:  osd->DrawRectangle(0, 0, osd->Width(), osd->Height(), clrTransparent);
+displaychannel.c:  osd->DrawRectangle(xEventNowLeft, yEventNowTop, xEventNowRight - 1, yEventNowBottom - 1, Theme.Color(clrBackground));
+displaychannel.c:  osd->DrawRectangle(xEventNextLeft, yEventNextTop, xEventNextRight - 1, yEventNextBottom - 1, Theme.Color(clrAltBackground));
+displaychannel.c:    osd->DrawText(xTimeLeft, yEventNowTop, e->GetTimeString(), Theme.Color(clrMenuTxtFg), clrTransparent, pFontTitle, xTimeWidth);
+displaychannel.c:    osd->DrawText(xTextLeft, yEventNowTop, e->Title(), Theme.Color(clrMenuTxtFg), clrTransparent, pFontTitle, xTextWidth);
+displaychannel.c:    osd->DrawText(xDurationLeft, yEventNowTop, sLen.str().c_str(), Theme.Color(clrMenuTxtFg), clrTransparent,
+displaychannel.c:    osd->DrawText(xTextLeft, yEventNowTop + lineHeightTitle, e->ShortText(),
+displaychannel.c:      osd->DrawText(xDurationLeft, yEventNowTop + lineHeightTitle, sNow.str().c_str(), Theme.Color(clrMenuItemNotSelectableFg),
+displaychannel.c:    osd->DrawRectangle(xBarLeft, yBarTop , xBarLeft+xBarLen, yBarTop+ yBarThickness, Theme.Color(clrProgressBarBg));//0x00222220);
+displaychannel.c:    osd->DrawRectangle(xBarLeft, yBarTop , x, yBarTop+ yBarThickness, Theme.Color(clrProgressBarFg));
+displaychannel.c:    osd->DrawText(xTimeLeft, yEventNextTop, e->GetTimeString(), Theme.Color(clrMenuTxtFg), clrTransparent, pFontTitle, xTimeWidth);
+displaychannel.c:    osd->DrawText(xTextLeft, yEventNextTop, e->Title(), Theme.Color(clrMenuTxtFg), clrTransparent, pFontTitle, xTextWidth);
+displaychannel.c:    osd->DrawText(xDurationLeft, yEventNextTop, sLen.str().c_str(), Theme.Color(clrMenuTxtFg), clrTransparent,
+displaychannel.c:        osd->DrawText(xDurationLeft, yEventNextTop + lineHeightTitle, sNext.str().c_str(), Theme.Color(clrMenuItemNotSelectableFg),
+displaychannel.c:    osd->DrawText(xTextLeft, yEventNextTop + lineHeightTitle, e->ShortText(),
+displaychannel.c:   //osd->DrawImage(imgMenuFooterLeft, xBottomLeft-10, yBottomTop, false);
+displaychannel.c:   osd->DrawImage(imgMenuFooterCenterX, xBottomLeft + Roundness, yBottomTop, false, xBottomRight-xBottomLeft - 2 * Roundness,1);
+displaychannel.c:   //osd->DrawImage(imgMenuFooterRight, xBottomRight - Roundness , yBottomTop, false);
+displaychannel.c:    osd->DrawImage(imgMessageIcon, x1,y0 + (y1 - y0)/2 - 17, true);
+displaychannel.c:   //osd->DrawImage(imgMessageIcon, x1,y0, true);
+displaychannel.c:    osd->DrawText(x1 + messageIconW + center_x_offset , y0 + (y1 - y0)/2 - pFontMessage->Height()/2 - 5, text_to_draw, colorfg, clrTransparent, pFontMessage);
+displaychannel.c:    //osd->DrawText(x1 + messageIconW, y0 + (y1 - y0)/2 - pFontMessage->Height()/2, Text, colorfg, clrTransparent, pFontMessage, x2 - x1 - messageIconW , y1 - y0, taCenter);
+displaychannel.c:        //osd->DrawImage(imgMenuFooterLeft, xBottomLeft-10, yBottomTop, false);
+displaychannel.c:        osd->DrawImage(imgMenuFooterCenterX, xBottomLeft + Roundness, yBottomTop, false, xBottomRight-xBottomLeft - 2 * Roundness,1);
+displaychannel.c:        //osd->DrawImage(imgMenuFooterRight, xBottomRight - Roundness , yBottomTop, false);
+displaychannel.c:osd->DrawImage(imgMenuFooterCenterX, xsSignalBar, yBottomTop, false, 90,1);
+displaychannel.c:   osd->DrawImage(imgChannelInfoFooterCenterX, xDateLeft-120, yBottomTop, false, 120,1);
+displaychannel.c:   osd->DrawText(xDateLeft-120, yBottomTop + (yBottomBottom - yBottomTop)/2 - pFontDate->Height()/2, txt, Theme.Color(clrTitleFg), 
+displaychannel.c:   osd->DrawImage(imgMenuFooterCenterX, xsSignalBar, yBottomTop, false, 120,1);
+displaychannel.c:    osd->DrawRectangle(xsSignalBar, yStr, xeSignalBar - 1, yStr + h , Theme.Color(clrSignalBg));
+displaychannel.c:    osd->DrawRectangle(xsSignalBar, ySnr, xeSignalBar - 1, ySnr + h , Theme.Color(clrSignalBg));
+displaychannel.c:        osd->DrawRectangle(xsSignalBar, yStr , xsSignalBar + str - 1, yStr + h , signalFgColor);
+displaychannel.c:        osd->DrawRectangle(xsSignalBar, ySnr , xsSignalBar + snr - 1, ySnr + h , signalFgColor);
+displaychannel.c:    osd->DrawImage(imgMenuFooterCenterX, xDateLeft, yBottomTop, false, xBottomRight - xDateLeft - Roundness,1);
+displaychannel.c:    osd->DrawImage(imgMenuFooterRight, xBottomRight - Roundness , yBottomTop, false);
+displaychannel.c:    osd->DrawText(xDateLeft, yBottomTop - 5 + (yBottomBottom - yBottomTop)/2 - pFontDate->Height()/2, date, Theme.Color(clrTitleFg), clrTransparent, pFontDate, w, yBottomBottom - yBottomTop-10);
+displaychannel.c:  osd->DrawImage(imgMenuHeaderCenterX, xSymbol, yTitleTop, false, CHANNELINFOSYMBOLWIDTH, 1);
+displaychannel.c:      osd->DrawImage(img43, xSymbol, ys, true);
+displaychannel.c:      osd->DrawImage(img169, xSymbol, ys, true);
+displaychannel.c:      osd->DrawImage(imgIconHd, xSymbol, ys, true);
+displaychannel.c:      osd->DrawImage(img43, xSymbol, ys, true);
+displaychannel.c:      osd->DrawImage(img169, xSymbol, ys, true);
+displaychannel.c:  osd->Flush();
+displaymenu.c:		osd->DrawText(x, y - nSqueeze + (lHeight - nSqueeze)*i, currLine, fFG, fBG, fFont, lWidth, lHeight, taLeft);
+displaymenu.c:  if (ReelConfig.singleArea8Bpp && osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea)) == oeOk) {
+displaymenu.c:    osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymenu.c:    eOsdError rc = osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymenu.c:      osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymenu.c:  osd->DrawImage(imgMenuBodyUpperPart, xBodyLeft, yBodyTop, false, xInfoRight - xBodyLeft-10, 1);
+displaymenu.c:  osd->DrawImage(imgMenuBodyLowerPart, xBodyLeft, yBodyTop+205, false, xInfoRight - xBodyLeft-10, 1);
+displaymenu.c:  osd->DrawImage(imgMenuBodyRightUpperPart, xInfoRight -10, yBodyTop, false);
+displaymenu.c:  osd->DrawImage(imgMenuBodyRightLowerPart, xInfoRight -10, yBodyTop+205, false);
+displaymenu.c:        osd->SetImagePath(imgUnbufferedEnum, path);
+displaymenu.c:        osd->DrawImage(imgUnbufferedEnum, x,y, true);
+displaymenu.c:                    osd->DrawText(x, y,
+displaymenu.c:                osd->DrawText(x, y,
+displaymenu.c:                osd->DrawImage(icon_enum, xt, y, true);
+displaymenu.c:              osd->Flush();
+displaymenu.c:              osd->DrawRectangle(x1, y1,
+displaymenu.c:              osd->SetImagePath(imgUnbufferedEnum, PngPath.c_str());
+displaymenu.c:              osd->DrawCropImage(imgUnbufferedEnum, x1, y1, x1, y1, x1 + W, y1 + H, false);
+displaymenu.c:              //osd->DrawRectangle(x1, y1,
+displaymenu.c:        osd->DrawImage(imgNoChannelIcon, x, y, true);
+displaymenu.c:        osd->DrawText(xSideLeft, y, Info->ShortText(),
+displaymenu.c:    osd->DrawText(xSideLeft, y,
+displaymenu.c:        osd->DrawText(xSideLeft, y,
+displaymenu.c:    osd->DrawImage(imgIconArchive, xt, y, true);
+displaymenu.c:    osd->DrawImage(imgIconCut, xt, y, true);
+displaymenu.c:            osd->SetImagePath(imgUnbufferedEnum, logoPath.c_str());
+displaymenu.c:            osd->DrawImage(imgUnbufferedEnum, x,y, true);
+displaymenu.c:        osd->DrawImage(imgNoChannelIcon, x, y, true);
+displaymenu.c:        osd->DrawText(xSideLeft + Roundness /*xs*/, yDateBottom, vps,
+displaymenu.c:            osd->SetImagePath(imgUnbufferedEnum, logoPath.c_str());
+displaymenu.c:            osd->DrawImage(imgUnbufferedEnum, x,y, true);
+displaymenu.c:        osd->DrawImage(imgNoChannelIcon, x, y, true);
+displaymenu.c:    //TB osd->DrawRectangle(xBodyLeft, yBodyTop, xHeadlineRight - 1, yHeadlineBottom - 1, Theme.Color(clrAltBackground));
+displaymenu.c:    osd->DrawText(xSideLeft, y, sstrDate.str().c_str(),
+displaymenu.c:    osd->DrawText( xPB + pbLength + 4*Gap, y , sstrDuration.str().c_str(),
+displaymenu.c:                osd->DrawText(xSideLeft, y, *sourceText,
+displaymenu.c:            osd->DrawText(xSideLeft, y, sl->At(i),
+displaymenu.c:    osd->DrawImage(imgMenuTitleBottom, xBodyLeft-Roundness, yMenuBottom, false);
+displaymenu.c:    osd->DrawImage(imgMenuTitleMiddle, xBodyLeft-Roundness, yMenuMiddle, false);
+displaymenu.c:    osd->DrawImage(imgMenuTitleTop, xBodyLeft-Roundness, yBodyTop, false);
+displaymenu.c:     /*osd->DrawRectangle(Roundness, yBodyTop,
+displaymenu.c:     osd->DrawImage(imgEmptyBannerBottom, xBodyLeft- Roundness, yMenuBottom, false);
+displaymenu.c:     osd->DrawImage(imgEmptyBannerMiddle, xBodyLeft- Roundness, yMenuMiddle, false);
+displaymenu.c:     osd->DrawImage(imgEmptyBannerTop, xBodyLeft- Roundness, yBodyTop, false);
+displaymenu.c:        osd->DrawImage(imgMenuBodyUpperPart, xBodyLeft, yBodyTop, false, xInfoRight - xBodyLeft - 1, 1);
+displaymenu.c:        osd->DrawImage(imgMenuBodyLowerPart, xBodyLeft, yBodyTop+205, false, xInfoRight - xBodyLeft - 1, 1);
+displaymenu.c:        osd->SaveRegion(xBodyLeft, yBodyTop, xInfoRight - xBodyLeft - 1, yBodyTop+410);
+displaymenu.c:        osd->RestoreRegion();
+displaymenu.c:            osd->DrawImage(imgMenuHighlightUpperPart, xBodyLeft-10, yBodyTop, false, xBodyLeft+IMGMENUWIDTH-19, 1);
+displaymenu.c:            osd->DrawImage(imgMenuHighlightLowerPart, xBodyLeft-10, yBodyTop+205, false, xBodyLeft+IMGMENUWIDTH-19, 1);
+displaymenu.c:       osd->DrawImage(imgMenuHighlightLeftUpperPart, 0, yBodyTop, false);
+displaymenu.c:       osd->DrawImage(imgMenuHighlightLeftLowerPart, 0, yBodyTop + 205, false);
+displaymenu.c:       osd->DrawImage(imgMenuBodyLeftUpperPart, 0, yBodyTop, false);
+displaymenu.c:       osd->DrawImage(imgMenuBodyLeftLowerPart, 0, yBodyTop + 205, false);
+displaymenu.c:            osd->DrawImage(imgMenuTitleBottom, xBodyLeft-10, yMenuBottom, false);
+displaymenu.c:            osd->DrawImage(imgMenuTitleMiddle, xBodyLeft-10, yMenuMiddle, false);
+displaymenu.c:            osd->DrawImage(imgMenuTitleTop, xBodyLeft-10, yBodyTop, false);
+displaymenu.c:            osd->DrawImage(imgMusicBodyBottom, xBodyLeft-10, yMenuBottom, false);
+displaymenu.c:            osd->DrawImage(imgMusicBodyMiddle, xBodyLeft-10, yMenuMiddle, false);
+displaymenu.c:            osd->DrawImage(imgMusicBodyTop, xBodyLeft-10, yBodyTop, false);
+displaymenu.c:            osd->DrawImage(imgEmptyBannerBottom, xBodyLeft- Roundness, yMenuBottom, false);
+displaymenu.c:            osd->DrawImage(imgEmptyBannerMiddle, xBodyLeft- Roundness, yMenuMiddle, false);
+displaymenu.c:            osd->DrawImage(imgEmptyBannerTop, xBodyLeft- Roundness, yBodyTop, false);
+displaymenu.c:    osd->SetImagePath(imgUnbufferedEnum, thumbnail_filename);
+displaymenu.c:    osd->DrawImage(imgUnbufferedEnum, leftTop_x, top_y, true, 1, 1);
+displaymenu.c:  osd->DrawImage(imgMenuHeaderLeft, 0, 0, false);
+displaymenu.c:  osd->DrawImage(imgMenuHeaderCenterX, Roundness*2, 0, false, xDateRight - 2*Roundness, 1);
+displaymenu.c:  osd->DrawImage(imgMenuHeaderRight, xDateRight - Roundness, 0, false);
+displaymenu.c:       osd->DrawText(/*xTitleLeft +*/10 + Roundness, y, Title,
+displaymenu.c:       osd->DrawText(x_coord, y, title_array, Theme.Color(clrTitleFg), clrTransparent,
+displaymenu.c:       osd->DrawRectangle(x_coord, py0 , x_coord + pg_length, py1, Theme.Color(clrProgressBarBg));
+displaymenu.c:       osd->DrawRectangle(x_coord, py0 , x_coord + (int)( pg_length* pg_count*1.0/pg_total ), py1, Theme.Color(clrProgressBarFg));
+displaymenu.c:       osd->DrawText(x_coord, y, title_array, Theme.Color(clrTitleFg), clrTransparent,
+displaymenu.c:  osd->DrawImage(imgMenuFooterLeft, 0, yFooterTop, false);
+displaymenu.c:  osd->DrawImage(imgMenuFooterCenterX, Roundness+10, yFooterTop, false, xFooterRight - 2*Roundness, 1);
+displaymenu.c:  osd->DrawImage(imgMenuFooterRight, xFooterRight - Roundness, yFooterTop, false);
+displaymenu.c:    osd->DrawImage(imgButtonBlueX, t3, yButtonsTop, true);
+displaymenu.c:    osd->DrawText(t3+12, yButtonsTop, Blue, Theme.Color(clrButtonBlueFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c:    osd->DrawImage(imgButtonYellowX, t2, yButtonsTop, true);
+displaymenu.c:    osd->DrawText(t2+12, yButtonsTop, Yellow, Theme.Color(clrButtonYellowFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c:  osd->DrawImage(imgButtonGreenX, t1, yButtonsTop, true);
+displaymenu.c:  osd->DrawText(t1+12, yButtonsTop, Green, Theme.Color(clrButtonGreenFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c:    osd->DrawImage(imgButtonRedX, t0, yButtonsTop, true);
+displaymenu.c:    osd->DrawText(t0+12, yButtonsTop, Red, Theme.Color(clrButtonRedFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c:  osd->DrawImage(HasKey(Keys, kInfo) ? imgIconHelpActive : imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c:  osd->DrawImage(imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c:            osd->DrawImage(imgMenuMessageLeft, 0, yMessageTop, false);
+displaymenu.c:            osd->DrawImage(imgMenuMessageCenterX, /*xMessageLeft +*/ Roundness, yMessageTop, false, xMessageRight-xMessageLeft/* - 2*Roundness*/,1);
+displaymenu.c:            osd->DrawImage(imgMenuMessageRight, xMessageRight-Roundness, yMessageTop, false);
+displaymenu.c:            osd->DrawImage(imgIconHelpActive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c:            osd->DrawImage(imgMenuMessageLeft, 0, yMessageTop, false);
+displaymenu.c:            osd->DrawImage(imgMenuMessageCenterX, /*xMessageLeft +*/ Roundness, yMessageTop, false, xMessageRight-xMessageLeft/* - 2*Roundness*/,1);
+displaymenu.c:            osd->DrawImage(imgMenuMessageRight, xMessageRight-Roundness, yMessageTop, false);
+displaymenu.c:            osd->DrawImage(imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c:            //  osd->SaveRegion(xMessageLeft, yMessageTop, xMessageRight, yMessageBottom); // cannot save regions
+displaymenu.c:                osd->DrawImage(imgMessageIcon, xMessageLeft + (xMessageRight-xMessageLeft - MessageWidth)/2 - 30 - 2*Gap, yMessageTop - Gap+2, true, 1, 1);
+displaymenu.c:                    osd->DrawText( xMessageLeft , yText /*yMessageTop*/, Text, colorfg, clrTransparent, pFontMessage, xMessageRight - xMessageLeft, 0, taCenter );
+displaymenu.c:                        osd->DrawText( _xMessageStart_ , yText/*yMessageTop*/, text1, colorfg, clrTransparent, pFontMessage, offset, 0, taCenter );
+displaymenu.c:                        osd->DrawText( _xMessageStart_ + offset , yText/*yMessageTop*/, text1, colorfg, clrTransparent, pFontMessage, xMessageRight- ( _xMessageStart_ + offset ),0,taLeft  );
+displaymenu.c:            // osd->RestoreRegion();
+displaymenu.c:            osd->DrawImage(imgMenuMessageLeft, 0, yMessageTop, false);
+displaymenu.c:            osd->DrawImage(imgMenuMessageCenterX, xMessageLeft /*+ Roundness*/, yMessageTop, false, xMessageRight-xMessageLeft /*- 2*Roundness*/,1);
+displaymenu.c:            osd->DrawImage(imgMenuMessageRight, xMessageRight-Roundness, yMessageTop, false);
+displaymenu.c:            osd->DrawImage(imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c:         osd->DrawCropImage(imgMenuBodyUpperPart, btnx, btny, btnx0, btny0, btnx1, btny1, false);
+displaymenu.c:         osd->DrawCropImage(imgMenuBodyUpperPart, btnx, btny, btnx0, btny0, btnx1, btny+205, false);
+displaymenu.c:         osd->DrawCropImage(imgMenuBodyLowerPart, btnx, btny+205, btnx0, btny+205, btnx1, btny1, false);
+displaymenu.c:         osd->DrawCropImage(imgMenuBodyLowerPart, btnx, btny+205, btnx0, btny0, btnx1, btny1, false);
+displaymenu.c:       osd->DrawRectangle(btnx0, btny0, btnx1, btny1, clrRed);
+displaymenu.c:       //osd->DrawRectangle(btnx, btny0, btnx1, btny1, clrWhite);
+displaymenu.c:       osd->DrawRectangle(btnx1-25, btny0-10, btnx1+45, btny1+10, clrWhite);
+displaymenu.c:       osd->DrawRectangle(btnx1-50, btny0-7, btnx1-25, btny1+7, clrWhite);
+displaymenu.c:       /* covers the whole area exactly: osd->DrawRectangle(xItemLeft-25, y-10, xItemRight-20, y+60, clrWhite); */
+displaymenu.c:       osd->DrawRectangle(btnx, btny0, btnx1, btny1+1, clrYellow);
+displaymenu.c:       osd->DrawRectangle(btnx1-25, btny0-10, btnx1+45, btny1+10, clrYellow);
+displaymenu.c:       osd->DrawRectangle(btnx1-55, btny0-8, btnx1-25, btny1+8, clrYellow);
+displaymenu.c:       /* covers the whole area: osd->DrawRectangle(xItemLeft-40, y-5, xItemRight-55, y+55, clrYellow); */
+displaymenu.c:       //osd->DrawRectangle(btnx, btny0, btnx1, btny1, clrGreen);
+displaymenu.c:       osd->DrawRectangle(btnx-45, btny0-12, btnx+18, btny1+12, clrGreen);
+displaymenu.c:       osd->DrawRectangle(btnx+18, btny0-5, btnx+40, btny1+7, clrGreen);
+displaymenu.c:       /* covers the whole area exactly: osd->DrawRectangle(xItemLeft-70, y-10, xItemRight-55, y+60, clrGreen); */
+displaymenu.c:       osd->DrawRectangle(btnx, btny0, btnx1, btny1+1, clrRed);
+displaymenu.c:       osd->DrawRectangle(btnx-45, btny0-12, btnx+20, btny1+12, clrRed);
+displaymenu.c:       osd->DrawRectangle(btnx+20, btny0-7, btnx+35, btny1+7, clrRed);
+displaymenu.c:       /* covers all exactly: osd->DrawRectangle(xItemLeft-40, y-5, xItemRight-55, y+55, clrRed); */
+displaymenu.c:       osd->DrawRectangle(xItemLeft, y, xItemRight-10, y+lineHeight, clrRed);
+displaymenu.c:       osd->DrawRectangle(xItemLeft-20, y, xItemRight-10, y+lineHeight, clrRed);
+displaymenu.c:       osd->DrawImage(imgButtonSmallActive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:       osd->DrawImage(imgButtonSmallInactive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:       osd->DrawImage(imgButtonSmallActive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:       osd->DrawImage(imgButtonSmallInactive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:            //osd->DrawImage (imgNumber, xItemLeft,y + (lineHeight - IMGNUMBERHEIGHT)/2  + "added number here for aligning the text and number images" , true );
+displaymenu.c:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonSmallActive, xItemLeft+10, y - 8 + (lineHeight - IMGNUMBERHEIGHT)/2, true);
+displaymenu.c:                osd->DrawImage(imgButtonSmallInactive, xItemLeft+10, y - 8 + (lineHeight - IMGNUMBERHEIGHT)/2, true);
+displaymenu.c:                osd->DrawImage(imgButtonActive, xItemLeft+10, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                osd->DrawImage(imgButtonInactive, xItemLeft+10, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                 osd->DrawImage(imgButtonBigActive, xbtn, 35 + y + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:                 osd->DrawImage(imgButtonInactive, xbtn, 38 + y + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c:        // osd->DrawRectangle(xt, y, xItemRight, y + lineHeight - 1, ColorBg);
+displaymenu.c:            case 't': osd->DrawImage(imgIconTimerpart, evx, y + 1, true); break; /* partial timer event */
+displaymenu.c:            case 'T': osd->DrawImage(imgIconTimer, evx, y + 1, true); break; /* timer event */
+displaymenu.c:            case 'R': osd->DrawImage(imgIconRecord, evx, y + 1, true); break; /* recording event (epgsearch) */
+displaymenu.c:            case 'V': osd->DrawImage(imgIconVps, evx, y + 1, true); break; /* vps event */
+displaymenu.c:            case 'S': osd->DrawImage(imgIconZappingtimer, evx, y + 1, true); break;
+displaymenu.c:              // osd->DrawImage(imgIconRunningnow, evx, y + 1, true);
+displaymenu.c:        osd->DrawText(xt, y, buffer, ColorFg, clrTransparent, pFontList, xItemRight - xt);
+displaymenu.c:          osd->DrawImage(imgIconArchive, xt + pFontList->Width(buffer), y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconNewrecording, xt + pFontList->Width(buffer) + IMGICONWIDTH, y + 1, true);
+displaymenu.c:          osd->DrawImage(imgIconNewrecording, xt + pFontList->Width(buffer), y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconFolder, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconPinProtect, xt+20, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconHdKey, xt, y+1, true);
+displaymenu.c:            osd->DrawImage(imgIconHd, xt, y+1, true);
+displaymenu.c:            osd->DrawImage(imgIconPinProtect, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconArchive, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconFolderUp, xt, y + 1, true);
+displaymenu.c:            osd->DrawText(xt, y, txt.c_str(), ColorFg, clrTransparent, pFontList, w, nMessagesShown ? std::min(yMessageTop - y, lineHeight) : 0 );
+displaymenu.c:            osd->DrawImage(imgIconFolder, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconNewrecording, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconCut, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconNewrecording, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconCut, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconArchive, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconCut, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconTimeractive, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconRecord, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconTimeractive, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconRecord, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconTimeractive, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconSkipnextrecording, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconRunningnow, xt, y + 1, true);
+displaymenu.c:          osd->DrawImage(imgIconHd, xt, y + 1, true);
+displaymenu.c:          osd->DrawImage(imgIconFavouriteFolder, xt, y + 1, true);
+displaymenu.c:          osd->DrawImage(imgIconFolder, xt, y + 1, true);
+displaymenu.c:          osd->DrawImage(imgIconTimeractive, xt, y + 1, true);
+displaymenu.c:          osd->DrawImage(imgIconRunningnow, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconFolderUp, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconArchive, xt, y + 1, true);
+displaymenu.c:            osd->DrawImage(imgIconNewrecording, xt, y + 1, true);
+displaymenu.c:        osd->DrawText(xt, y, s, ColorFg, clrTransparent, pFontList, (xt + pFontList->Width(s) < xItemRight) ? pFontList->Width(s)+1 : (xItemRight - xt - 1), nMessagesShown ? std::min(yMessageTop - y, lineHeight) : 0 );
+displaymenu.c:    osd->RestoreRegion();
+displaymenu.c:      osd->DrawText(xItemLeft + Roundness /*xs*/, yDateBottom, vps, Theme.Color(clrMenuTxtFg), clrTransparent, pFontDetailsDate, pFontDetailsDate->Width(vps), pFontDetailsDate->Height());
+displaymenu.c:  //TB osd->DrawRectangle(xItemLeft/*xBodyLeft*/, yBodyTop, xHeadlineRight - 1, yHeadlineBottom - 1, Theme.Color(clrAltBackground));
+displaymenu.c:  osd->DrawText(xItemLeft + Roundness, yHeadlineBottom, sstrDate.str().c_str(), Theme.Color(clrMenuItemNotSelectableFg), clrTransparent,
+displaymenu.c:      osd->DrawImage(imgIconVps, xx, yHeadlineBottom, true);
+displaymenu.c:      osd->DrawText(xx + 20, yHeadlineBottom, vps,
+displaymenu.c:  osd->DrawText( xPB + pbLength + 4*Gap, yHeadlineBottom + lineHeight, sstrDuration.str().c_str(),
+displaymenu.c:  osd->DrawRectangle(RECORDINGINFO_ZOOMED_IMAGE_XPOS - 2, RECORDINGINFO_ZOOMED_IMAGE_YPOS - (pFontOsdTitle->Height() + 4), RECORDINGINFO_ZOOMED_IMAGE_XPOS + RECORDINGINFO_ZOOMED_IMAGE_RESIZE_WIDTH + 2, RECORDINGINFO_ZOOMED_IMAGE_YPOS - 1, Theme.Color(clrBackground));
+displaymenu.c:  osd->DrawText(RECORDINGINFO_ZOOMED_IMAGE_XPOS + 5, RECORDINGINFO_ZOOMED_IMAGE_YPOS - (pFontOsdTitle->Height() + 2), sTitle.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, pFontOsdTitle);
+displaymenu.c:	    osd->Flush();
+displaymenu.c:  //osd->DrawRectangle(xItemLeft, yBodyTop, xHeadlineRight - 1, yHeadlineBottom - 1, Theme.Color(clrAltBackground));
+displaymenu.c:    osd->RestoreRegion();
+displaymenu.c:  osd->DrawText(xItemLeft + Gap, y, Title, Theme.Color(clrRecTitleFg), clrTransparent,
+displaymenu.c:  osd->DrawText(xItemLeft + Gap, yHeadlineBottom, sstrChannelName_Date.str().c_str(),
+displaymenu.c:      osd->DrawText(xItemLeft + Gap, y, Info->ShortText(), Theme.Color(clrMenuItemNotSelectableFg), clrTransparent,
+displaymenu.c:        osd->DrawRectangle(x - 2, y - 2, x + 2 + pic.Width(), y + 2 +  pic.Height(), Theme.Color(clrLogoBg));
+displaymenu.c:        osd->DrawRectangle(x - 1, y - 1, x + 1 + pic.Width(),y + 1 +  pic.Height(), Theme.Color(clrTitleBg));
+displaymenu.c:        osd->DrawImage(imgMenuHeaderCenterX, xDateLeft, 0, false, xDateRight - xDateLeft -Roundness,1); // to clean before drawing date
+displaymenu.c:        osd->DrawText(xDateLeft + SmallGap, yDateTop /*+ 5*/, date, Theme.Color(clrMenuTxtFg),
+displaymenu.c:                osd->SetImagePath(imgUnbufferedEnum+i, ReelConfig.curThumb[i].path);
+displaymenu.c:                    //osd->DrawRectangle( 0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW, clrTransparent);
+displaymenu.c:                    //TB: TODO osd->DrawRectangle( 0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW,  Theme.Color(clrBackground) );
+displaymenu.c:                    osd->DrawImage(imgImagesTitleTopX, 0, yBodyTop, false, 1, yBodyBottom - yBodyTop - IMGMENUHEIGHT*2 + 16  /* TB: todo fix 16 */); // repeat this image vertically
+displaymenu.c:                        osd->DrawImage(imgUnbufferedEnum+i, TX, TY, ReelConfig.curThumb[i].blend);
+displaymenu.c:                        osd->DrawImage(imgUnbufferedEnum+i, ReelConfig.curThumb[i].x, ReelConfig.curThumb[i].y, ReelConfig.curThumb[i].blend);
+displaymenu.c:                        osd->DrawImage(imgUnbufferedEnum+i, TX + TW - picSize[i].width, TY, ReelConfig.curThumb[i].blend);
+displaymenu.c:                        osd->DrawImage(imgUnbufferedEnum+i, ReelConfig.curThumb[i].x, ReelConfig.curThumb[i].y, ReelConfig.curThumb[i].blend);
+displaymenu.c:                            osd->DrawRectangle(TX - BW + TW - picSize[i].width, TY - BW, TX + TW, TY, BCOLOR); /* top */
+displaymenu.c:                            osd->DrawRectangle(TX - BW + TW - picSize[i].width, TY - BW, TX + TW - picSize[i].width, TY + picSize[i].height, BCOLOR); /* left */
+displaymenu.c:                            osd->DrawRectangle(TX + picSize[i].width + TW - picSize[i].width, TY - BW, TX + BW + TW, TY + picSize[i].height, BCOLOR); /* right */
+displaymenu.c:                            osd->DrawRectangle(TX - BW + TW - picSize[i].width, TY + picSize[i].height, TX + BW + TW, TY + BW + picSize[i].height, BCOLOR); /* bottom */
+displaymenu.c:                            osd->DrawRectangle(20, 313, 147, 314, BCOLOR1); /* top */
+displaymenu.c:                            osd->DrawRectangle(20, 313, 21, 438, BCOLOR1); /* left */
+displaymenu.c:                            osd->DrawRectangle(147, 313, 148, 440, BCOLOR1); /* right */
+displaymenu.c:                            osd->DrawRectangle(20, 439, 147, 440, BCOLOR1); /* bottom */
+displaymenu.c:                        osd->DrawImage(imgUnbufferedEnum+i, TX, TY, ReelConfig.curThumb[i].blend);
+displaymenu.c:                        osd->DrawImage(imgUnbufferedEnum+i, ReelConfig.curThumb[i].x, ReelConfig.curThumb[i].y, ReelConfig.curThumb[i].blend);
+displaymenu.c:                            osd->DrawRectangle(TX - BW, TY - BW, TX + picSize[i].width, TY, BCOLOR); /* top */
+displaymenu.c:                            osd->DrawRectangle(TX - BW, TY - BW, TX, TY + picSize[i].height, BCOLOR); /* left */
+displaymenu.c:                            osd->DrawRectangle(TX + picSize[i].width, TY - BW, TX + BW + picSize[i].width, TY + picSize[i].height, BCOLOR); /* right */
+displaymenu.c:                            osd->DrawRectangle(TX - BW, TY + picSize[i].height, TX + BW + picSize[i].width, TY + BW + picSize[i].height, BCOLOR); /* bottom */
+displaymenu.c:                            //osd->DrawRectangle(0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW, clrTransparent);
+displaymenu.c:                            //osd->DrawRectangle(0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW,  Theme.Color(clrBackground) );
+displaymenu.c:                            osd->DrawImage(imgImagesTitleTopX, 0, yBodyTop, false, 1, yBodyBottom - yBodyTop - IMGMENUHEIGHT*2 + 16); // repeat this image vertically
+displaymenu.c:                            //osd->DrawRectangle(TX - BW, TY - BW, TX + TW + BW, TY + TH + BW, Theme.Color(clrBackground));
+displaymenu.c:        osd->Flush();
+displaymenu.c:            osd->DrawText(22, 50 + i*40, ID3Tags.at(i).name.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, font);
+displaymenu.c:            osd->DrawText(22, 70 + i*40, ID3Tags.at(i).value.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, font);
+displaymenu.c:            //osd->DrawText(22, 50 + i*40, ID3Tags.at(i).name.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, font);
+displaymenu.c:            osd->DrawText(x, y,
+displaymenu.c:      osd->DrawImage(imgMenuBodyUpperPart, xScrollbarLeft, yBodyTop, false, xScrollbarRight-xScrollbarLeft, 1);
+displaymenu.c:      osd->DrawImage(imgMenuBodyLowerPart, xScrollbarLeft, yBodyTop+205, false, xScrollbarRight-xScrollbarLeft, 1);
+displaymenu.c.better-print:		osd->DrawText(x, y - nSqueeze + (lHeight - nSqueeze)*i, currLine, fFG, fBG, fFont, lWidth, lHeight, taLeft);
+displaymenu.c.better-print:  if (ReelConfig.singleArea8Bpp && osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea)) == oeOk) {
+displaymenu.c.better-print:    osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymenu.c.better-print:    eOsdError rc = osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymenu.c.better-print:      osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymenu.c.better-print:  osd->DrawImage(imgMenuBodyUpperPart, xBodyLeft, yBodyTop, false, xInfoRight - xBodyLeft-10, 1);
+displaymenu.c.better-print:  osd->DrawImage(imgMenuBodyLowerPart, xBodyLeft, yBodyTop+205, false, xInfoRight - xBodyLeft-10, 1);
+displaymenu.c.better-print:  osd->DrawImage(imgMenuBodyRightUpperPart, xInfoRight -10, yBodyTop, false);
+displaymenu.c.better-print:  osd->DrawImage(imgMenuBodyRightLowerPart, xInfoRight -10, yBodyTop+205, false);
+displaymenu.c.better-print:        osd->SetImagePath(imgUnbufferedEnum, path);
+displaymenu.c.better-print:        osd->DrawImage(imgUnbufferedEnum, x,y, true);
+displaymenu.c.better-print:                    osd->DrawText(x, y,
+displaymenu.c.better-print:                osd->DrawText(x, y,
+displaymenu.c.better-print:                osd->DrawImage(icon_enum, xt, y, true);
+displaymenu.c.better-print:              osd->Flush();
+displaymenu.c.better-print:              osd->DrawRectangle(x1, y1,
+displaymenu.c.better-print:              osd->SetImagePath(imgUnbufferedEnum, PngPath.c_str());
+displaymenu.c.better-print:              osd->DrawCropImage(imgUnbufferedEnum, x1, y1, x1, y1, x1 + W, y1 + H, false);
+displaymenu.c.better-print:              //osd->DrawRectangle(x1, y1,
+displaymenu.c.better-print:        osd->DrawImage(imgNoChannelIcon, x, y, true);
+displaymenu.c.better-print:        osd->DrawText(xSideLeft, y, Info->ShortText(),
+displaymenu.c.better-print:    osd->DrawText(xSideLeft, y,
+displaymenu.c.better-print:        osd->DrawText(xSideLeft, y,
+displaymenu.c.better-print:    osd->DrawImage(imgIconArchive, xt, y, true);
+displaymenu.c.better-print:    osd->DrawImage(imgIconCut, xt, y, true);
+displaymenu.c.better-print:            osd->SetImagePath(imgUnbufferedEnum, logoPath.c_str());
+displaymenu.c.better-print:            osd->DrawImage(imgUnbufferedEnum, x,y, true);
+displaymenu.c.better-print:        osd->DrawImage(imgNoChannelIcon, x, y, true);
+displaymenu.c.better-print:        osd->DrawText(xSideLeft + Roundness /*xs*/, yDateBottom, vps,
+displaymenu.c.better-print:            osd->SetImagePath(imgUnbufferedEnum, logoPath.c_str());
+displaymenu.c.better-print:            osd->DrawImage(imgUnbufferedEnum, x,y, true);
+displaymenu.c.better-print:        osd->DrawImage(imgNoChannelIcon, x, y, true);
+displaymenu.c.better-print:    //TB osd->DrawRectangle(xBodyLeft, yBodyTop, xHeadlineRight - 1, yHeadlineBottom - 1, Theme.Color(clrAltBackground));
+displaymenu.c.better-print:    osd->DrawText(xSideLeft, y, sstrDate.str().c_str(),
+displaymenu.c.better-print:    osd->DrawText( xPB + pbLength + 4*Gap, y , sstrDuration.str().c_str(),
+displaymenu.c.better-print:                osd->DrawText(xSideLeft, y, *sourceText,
+displaymenu.c.better-print:            osd->DrawText(xSideLeft, y, sl->At(i),
+displaymenu.c.better-print:    osd->DrawImage(imgMenuTitleBottom, xBodyLeft-Roundness, yMenuBottom, false);
+displaymenu.c.better-print:    osd->DrawImage(imgMenuTitleMiddle, xBodyLeft-Roundness, yMenuMiddle, false);
+displaymenu.c.better-print:    osd->DrawImage(imgMenuTitleTop, xBodyLeft-Roundness, yBodyTop, false);
+displaymenu.c.better-print:     /*osd->DrawRectangle(Roundness, yBodyTop,
+displaymenu.c.better-print:     osd->DrawImage(imgEmptyBannerBottom, xBodyLeft- Roundness, yMenuBottom, false);
+displaymenu.c.better-print:     osd->DrawImage(imgEmptyBannerMiddle, xBodyLeft- Roundness, yMenuMiddle, false);
+displaymenu.c.better-print:     osd->DrawImage(imgEmptyBannerTop, xBodyLeft- Roundness, yBodyTop, false);
+displaymenu.c.better-print:        osd->DrawImage(imgMenuBodyUpperPart, xBodyLeft, yBodyTop, false, xInfoRight - xBodyLeft - 1, 1);
+displaymenu.c.better-print:        osd->DrawImage(imgMenuBodyLowerPart, xBodyLeft, yBodyTop+205, false, xInfoRight - xBodyLeft - 1, 1);
+displaymenu.c.better-print:        osd->SaveRegion(xBodyLeft, yBodyTop, xInfoRight - xBodyLeft - 1, yBodyTop+410);
+displaymenu.c.better-print:        osd->RestoreRegion();
+displaymenu.c.better-print:            osd->DrawImage(imgMenuHighlightUpperPart, xBodyLeft-10, yBodyTop, false, xBodyLeft+IMGMENUWIDTH-19, 1);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuHighlightLowerPart, xBodyLeft-10, yBodyTop+205, false, xBodyLeft+IMGMENUWIDTH-19, 1);
+displaymenu.c.better-print:       osd->DrawImage(imgMenuHighlightLeftUpperPart, 0, yBodyTop, false);
+displaymenu.c.better-print:       osd->DrawImage(imgMenuHighlightLeftLowerPart, 0, yBodyTop + 205, false);
+displaymenu.c.better-print:       osd->DrawImage(imgMenuBodyLeftUpperPart, 0, yBodyTop, false);
+displaymenu.c.better-print:       osd->DrawImage(imgMenuBodyLeftLowerPart, 0, yBodyTop + 205, false);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuTitleBottom, xBodyLeft-10, yMenuBottom, false);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuTitleMiddle, xBodyLeft-10, yMenuMiddle, false);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuTitleTop, xBodyLeft-10, yBodyTop, false);
+displaymenu.c.better-print:            osd->DrawImage(imgMusicBodyBottom, xBodyLeft-10, yMenuBottom, false);
+displaymenu.c.better-print:            osd->DrawImage(imgMusicBodyMiddle, xBodyLeft-10, yMenuMiddle, false);
+displaymenu.c.better-print:            osd->DrawImage(imgMusicBodyTop, xBodyLeft-10, yBodyTop, false);
+displaymenu.c.better-print:            osd->DrawImage(imgEmptyBannerBottom, xBodyLeft- Roundness, yMenuBottom, false);
+displaymenu.c.better-print:            osd->DrawImage(imgEmptyBannerMiddle, xBodyLeft- Roundness, yMenuMiddle, false);
+displaymenu.c.better-print:            osd->DrawImage(imgEmptyBannerTop, xBodyLeft- Roundness, yBodyTop, false);
+displaymenu.c.better-print:    osd->SetImagePath(imgUnbufferedEnum, thumbnail_filename);
+displaymenu.c.better-print:    osd->DrawImage(imgUnbufferedEnum, leftTop_x, top_y, true, 1, 1);
+displaymenu.c.better-print:  osd->DrawImage(imgMenuHeaderLeft, 0, 0, false);
+displaymenu.c.better-print:  osd->DrawImage(imgMenuHeaderCenterX, Roundness*2, 0, false, xDateRight - 2*Roundness, 1);
+displaymenu.c.better-print:  osd->DrawImage(imgMenuHeaderRight, xDateRight - Roundness, 0, false);
+displaymenu.c.better-print:       osd->DrawText(/*xTitleLeft +*/10 + Roundness, y, Title,
+displaymenu.c.better-print:       osd->DrawText(x_coord, y, title_array, Theme.Color(clrTitleFg), clrTransparent,
+displaymenu.c.better-print:       osd->DrawRectangle(x_coord, py0 , x_coord + pg_length, py1, Theme.Color(clrProgressBarBg));
+displaymenu.c.better-print:       osd->DrawRectangle(x_coord, py0 , x_coord + (int)( pg_length* pg_count*1.0/pg_total ), py1, Theme.Color(clrProgressBarFg));
+displaymenu.c.better-print:       osd->DrawText(x_coord, y, title_array, Theme.Color(clrTitleFg), clrTransparent,
+displaymenu.c.better-print:  osd->DrawImage(imgMenuFooterLeft, 0, yFooterTop, false);
+displaymenu.c.better-print:  osd->DrawImage(imgMenuFooterCenterX, Roundness+10, yFooterTop, false, xFooterRight - 2*Roundness, 1);
+displaymenu.c.better-print:  osd->DrawImage(imgMenuFooterRight, xFooterRight - Roundness, yFooterTop, false);
+displaymenu.c.better-print:    osd->DrawImage(imgButtonBlueX, t3, yButtonsTop, true);
+displaymenu.c.better-print:    osd->DrawText(t3+12, yButtonsTop, Blue, Theme.Color(clrButtonBlueFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c.better-print:    osd->DrawImage(imgButtonYellowX, t2, yButtonsTop, true);
+displaymenu.c.better-print:    osd->DrawText(t2+12, yButtonsTop, Yellow, Theme.Color(clrButtonYellowFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c.better-print:  osd->DrawImage(imgButtonGreenX, t1, yButtonsTop, true);
+displaymenu.c.better-print:  osd->DrawText(t1+12, yButtonsTop, Green, Theme.Color(clrButtonGreenFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c.better-print:    osd->DrawImage(imgButtonRedX, t0, yButtonsTop, true);
+displaymenu.c.better-print:    osd->DrawText(t0+12, yButtonsTop, Red, Theme.Color(clrButtonRedFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c.better-print:  osd->DrawImage(HasKey(Keys, kInfo) ? imgIconHelpActive : imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.better-print:  osd->DrawImage(imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuMessageLeft, 0, yMessageTop, false);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuMessageCenterX, /*xMessageLeft +*/ Roundness, yMessageTop, false, xMessageRight-xMessageLeft/* - 2*Roundness*/,1);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuMessageRight, xMessageRight-Roundness, yMessageTop, false);
+displaymenu.c.better-print:            osd->DrawImage(imgIconHelpActive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuMessageLeft, 0, yMessageTop, false);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuMessageCenterX, /*xMessageLeft +*/ Roundness, yMessageTop, false, xMessageRight-xMessageLeft/* - 2*Roundness*/,1);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuMessageRight, xMessageRight-Roundness, yMessageTop, false);
+displaymenu.c.better-print:            osd->DrawImage(imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.better-print:            //  osd->SaveRegion(xMessageLeft, yMessageTop, xMessageRight, yMessageBottom); // cannot save regions
+displaymenu.c.better-print:                osd->DrawImage(imgMessageIcon, xMessageLeft + (xMessageRight-xMessageLeft - MessageWidth)/2 - 30 - 2*Gap, yMessageTop - Gap+2, true, 1, 1);
+displaymenu.c.better-print:                    osd->DrawText( xMessageLeft , yText /*yMessageTop*/, Text, colorfg, clrTransparent, pFontMessage, xMessageRight - xMessageLeft, 0, taCenter );
+displaymenu.c.better-print:                        osd->DrawText( _xMessageStart_ , yText/*yMessageTop*/, text1, colorfg, clrTransparent, pFontMessage, offset, 0, taCenter );
+displaymenu.c.better-print:                        osd->DrawText( _xMessageStart_ + offset , yText/*yMessageTop*/, text1, colorfg, clrTransparent, pFontMessage, xMessageRight- ( _xMessageStart_ + offset ),0,taLeft  );
+displaymenu.c.better-print:            // osd->RestoreRegion();
+displaymenu.c.better-print:            osd->DrawImage(imgMenuMessageLeft, 0, yMessageTop, false);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuMessageCenterX, xMessageLeft /*+ Roundness*/, yMessageTop, false, xMessageRight-xMessageLeft /*- 2*Roundness*/,1);
+displaymenu.c.better-print:            osd->DrawImage(imgMenuMessageRight, xMessageRight-Roundness, yMessageTop, false);
+displaymenu.c.better-print:            osd->DrawImage(imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.better-print:         osd->DrawCropImage(imgMenuBodyUpperPart, btnx, btny, btnx0, btny0, btnx1, btny1, false);
+displaymenu.c.better-print:         osd->DrawCropImage(imgMenuBodyUpperPart, btnx, btny, btnx0, btny0, btnx1, btny+205, false);
+displaymenu.c.better-print:         osd->DrawCropImage(imgMenuBodyLowerPart, btnx, btny+205, btnx0, btny+205, btnx1, btny1, false);
+displaymenu.c.better-print:         osd->DrawCropImage(imgMenuBodyLowerPart, btnx, btny+205, btnx0, btny0, btnx1, btny1, false);
+displaymenu.c.better-print:       osd->DrawRectangle(btnx0, btny0, btnx1, btny1, clrRed);
+displaymenu.c.better-print:       //osd->DrawRectangle(btnx, btny0, btnx1, btny1, clrWhite);
+displaymenu.c.better-print:       osd->DrawRectangle(btnx1-25, btny0-10, btnx1+45, btny1+10, clrWhite);
+displaymenu.c.better-print:       osd->DrawRectangle(btnx1-50, btny0-7, btnx1-25, btny1+7, clrWhite);
+displaymenu.c.better-print:       /* covers the whole area exactly: osd->DrawRectangle(xItemLeft-25, y-10, xItemRight-20, y+60, clrWhite); */
+displaymenu.c.better-print:       osd->DrawRectangle(btnx, btny0, btnx1, btny1+1, clrYellow);
+displaymenu.c.better-print:       osd->DrawRectangle(btnx1-25, btny0-10, btnx1+45, btny1+10, clrYellow);
+displaymenu.c.better-print:       osd->DrawRectangle(btnx1-55, btny0-8, btnx1-25, btny1+8, clrYellow);
+displaymenu.c.better-print:       /* covers the whole area: osd->DrawRectangle(xItemLeft-40, y-5, xItemRight-55, y+55, clrYellow); */
+displaymenu.c.better-print:       //osd->DrawRectangle(btnx, btny0, btnx1, btny1, clrGreen);
+displaymenu.c.better-print:       osd->DrawRectangle(btnx-45, btny0-12, btnx+18, btny1+12, clrGreen);
+displaymenu.c.better-print:       osd->DrawRectangle(btnx+18, btny0-5, btnx+40, btny1+7, clrGreen);
+displaymenu.c.better-print:       /* covers the whole area exactly: osd->DrawRectangle(xItemLeft-70, y-10, xItemRight-55, y+60, clrGreen); */
+displaymenu.c.better-print:       osd->DrawRectangle(btnx, btny0, btnx1, btny1+1, clrRed);
+displaymenu.c.better-print:       osd->DrawRectangle(btnx-45, btny0-12, btnx+20, btny1+12, clrRed);
+displaymenu.c.better-print:       osd->DrawRectangle(btnx+20, btny0-7, btnx+35, btny1+7, clrRed);
+displaymenu.c.better-print:       /* covers all exactly: osd->DrawRectangle(xItemLeft-40, y-5, xItemRight-55, y+55, clrRed); */
+displaymenu.c.better-print:       osd->DrawRectangle(xItemLeft, y, xItemRight-10, y+lineHeight, clrRed);
+displaymenu.c.better-print:       osd->DrawRectangle(xItemLeft-20, y, xItemRight-10, y+lineHeight, clrRed);
+displaymenu.c.better-print:       osd->DrawImage(imgButtonSmallActive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:       osd->DrawImage(imgButtonSmallInactive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:       osd->DrawImage(imgButtonSmallActive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:       osd->DrawImage(imgButtonSmallInactive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:            //osd->DrawImage (imgNumber, xItemLeft,y + (lineHeight - IMGNUMBERHEIGHT)/2  + "added number here for aligning the text and number images" , true );
+displaymenu.c.better-print:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonSmallActive, xItemLeft+10, y - 8 + (lineHeight - IMGNUMBERHEIGHT)/2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonSmallInactive, xItemLeft+10, y - 8 + (lineHeight - IMGNUMBERHEIGHT)/2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonActive, xItemLeft+10, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                osd->DrawImage(imgButtonInactive, xItemLeft+10, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                 osd->DrawImage(imgButtonBigActive, xbtn, 35 + y + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:                 osd->DrawImage(imgButtonInactive, xbtn, 38 + y + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.better-print:        // osd->DrawRectangle(xt, y, xItemRight, y + lineHeight - 1, ColorBg);
+displaymenu.c.better-print:            case 't': osd->DrawImage(imgIconTimerpart, evx, y + 1, true); break; /* partial timer event */
+displaymenu.c.better-print:            case 'T': osd->DrawImage(imgIconTimer, evx, y + 1, true); break; /* timer event */
+displaymenu.c.better-print:            case 'R': osd->DrawImage(imgIconRecord, evx, y + 1, true); break; /* recording event (epgsearch) */
+displaymenu.c.better-print:            case 'V': osd->DrawImage(imgIconVps, evx, y + 1, true); break; /* vps event */
+displaymenu.c.better-print:            case 'S': osd->DrawImage(imgIconZappingtimer, evx, y + 1, true); break;
+displaymenu.c.better-print:              // osd->DrawImage(imgIconRunningnow, evx, y + 1, true);
+displaymenu.c.better-print:        osd->DrawText(xt, y, buffer, ColorFg, clrTransparent, pFontList, xItemRight - xt);
+displaymenu.c.better-print:          osd->DrawImage(imgIconArchive, xt + pFontList->Width(buffer), y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconNewrecording, xt + pFontList->Width(buffer) + IMGICONWIDTH, y + 1, true);
+displaymenu.c.better-print:          osd->DrawImage(imgIconNewrecording, xt + pFontList->Width(buffer), y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconFolder, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconPinProtect, xt+20, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconHdKey, xt, y+1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconHd, xt, y+1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconPinProtect, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconArchive, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconFolderUp, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawText(xt, y, txt.c_str(), ColorFg, clrTransparent, pFontList, w, nMessagesShown ? std::min(yMessageTop - y, lineHeight) : 0 );
+displaymenu.c.better-print:            osd->DrawImage(imgIconFolder, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconNewrecording, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconCut, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconNewrecording, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconCut, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconArchive, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconCut, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconTimeractive, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconRecord, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconTimeractive, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconRecord, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconTimeractive, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconSkipnextrecording, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconRunningnow, xt, y + 1, true);
+displaymenu.c.better-print:          osd->DrawImage(imgIconHd, xt, y + 1, true);
+displaymenu.c.better-print:          osd->DrawImage(imgIconFavouriteFolder, xt, y + 1, true);
+displaymenu.c.better-print:          osd->DrawImage(imgIconFolder, xt, y + 1, true);
+displaymenu.c.better-print:          osd->DrawImage(imgIconTimeractive, xt, y + 1, true);
+displaymenu.c.better-print:          osd->DrawImage(imgIconRunningnow, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconFolderUp, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconArchive, xt, y + 1, true);
+displaymenu.c.better-print:            osd->DrawImage(imgIconNewrecording, xt, y + 1, true);
+displaymenu.c.better-print:        osd->DrawText(xt, y, s, ColorFg, clrTransparent, pFontList, (xt + pFontList->Width(s) < xItemRight) ? pFontList->Width(s)+1 : (xItemRight - xt - 1), nMessagesShown ? std::min(yMessageTop - y, lineHeight) : 0 );
+displaymenu.c.better-print:    osd->RestoreRegion();
+displaymenu.c.better-print:      osd->DrawText(xItemLeft + Roundness /*xs*/, yDateBottom, vps, Theme.Color(clrMenuTxtFg), clrTransparent, pFontDetailsDate, pFontDetailsDate->Width(vps), pFontDetailsDate->Height());
+displaymenu.c.better-print:  //TB osd->DrawRectangle(xItemLeft/*xBodyLeft*/, yBodyTop, xHeadlineRight - 1, yHeadlineBottom - 1, Theme.Color(clrAltBackground));
+displaymenu.c.better-print:  osd->DrawText(xItemLeft + Roundness, yHeadlineBottom, sstrDate.str().c_str(), Theme.Color(clrMenuItemNotSelectableFg), clrTransparent,
+displaymenu.c.better-print:      osd->DrawImage(imgIconVps, xx, yHeadlineBottom, true);
+displaymenu.c.better-print:      osd->DrawText(xx + 20, yHeadlineBottom, vps,
+displaymenu.c.better-print:  osd->DrawText( xPB + pbLength + 4*Gap, yHeadlineBottom + lineHeight, sstrDuration.str().c_str(),
+displaymenu.c.better-print:  osd->DrawRectangle(RECORDINGINFO_ZOOMED_IMAGE_XPOS - 2, RECORDINGINFO_ZOOMED_IMAGE_YPOS - (pFontOsdTitle->Height() + 4), RECORDINGINFO_ZOOMED_IMAGE_XPOS + RECORDINGINFO_ZOOMED_IMAGE_RESIZE_WIDTH + 2, RECORDINGINFO_ZOOMED_IMAGE_YPOS - 1, Theme.Color(clrBackground));
+displaymenu.c.better-print:  osd->DrawText(RECORDINGINFO_ZOOMED_IMAGE_XPOS + 5, RECORDINGINFO_ZOOMED_IMAGE_YPOS - (pFontOsdTitle->Height() + 2), sTitle.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, pFontOsdTitle);
+displaymenu.c.better-print:	    osd->Flush();
+displaymenu.c.better-print:  //osd->DrawRectangle(xItemLeft, yBodyTop, xHeadlineRight - 1, yHeadlineBottom - 1, Theme.Color(clrAltBackground));
+displaymenu.c.better-print:    osd->RestoreRegion();
+displaymenu.c.better-print:  osd->DrawText(xItemLeft + Gap, y, Title, Theme.Color(clrRecTitleFg), clrTransparent,
+displaymenu.c.better-print:  osd->DrawText(xItemLeft + Gap, yHeadlineBottom, sstrChannelName_Date.str().c_str(),
+displaymenu.c.better-print:      osd->DrawText(xItemLeft + Gap, y, Info->ShortText(), Theme.Color(clrMenuItemNotSelectableFg), clrTransparent,
+displaymenu.c.better-print:        osd->DrawRectangle(x - 2, y - 2, x + 2 + pic.Width(), y + 2 +  pic.Height(), Theme.Color(clrLogoBg));
+displaymenu.c.better-print:        osd->DrawRectangle(x - 1, y - 1, x + 1 + pic.Width(),y + 1 +  pic.Height(), Theme.Color(clrTitleBg));
+displaymenu.c.better-print:        osd->DrawImage(imgMenuHeaderCenterX, xDateLeft, 0, false, xDateRight - xDateLeft -Roundness,1); // to clean before drawing date
+displaymenu.c.better-print:        osd->DrawText(xDateLeft + SmallGap, yDateTop /*+ 5*/, date, Theme.Color(clrMenuTxtFg),
+displaymenu.c.better-print:                osd->SetImagePath(imgUnbufferedEnum+i, ReelConfig.curThumb[i].path);
+displaymenu.c.better-print:                    //osd->DrawRectangle( 0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW, clrTransparent);
+displaymenu.c.better-print:                    //TB: TODO osd->DrawRectangle( 0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW,  Theme.Color(clrBackground) );
+displaymenu.c.better-print:                    osd->DrawImage(imgImagesTitleTopX, 0, yBodyTop, false, 1, yBodyBottom - yBodyTop - IMGMENUHEIGHT*2 + 16  /* TB: todo fix 16 */); // repeat this image vertically
+displaymenu.c.better-print:                        osd->DrawImage(imgUnbufferedEnum+i, TX, TY, ReelConfig.curThumb[i].blend);
+displaymenu.c.better-print:                        osd->DrawImage(imgUnbufferedEnum+i, ReelConfig.curThumb[i].x, ReelConfig.curThumb[i].y, ReelConfig.curThumb[i].blend);
+displaymenu.c.better-print:                        osd->DrawImage(imgUnbufferedEnum+i, TX + TW - picSize[i].width, TY, ReelConfig.curThumb[i].blend);
+displaymenu.c.better-print:                        osd->DrawImage(imgUnbufferedEnum+i, ReelConfig.curThumb[i].x, ReelConfig.curThumb[i].y, ReelConfig.curThumb[i].blend);
+displaymenu.c.better-print:                            osd->DrawRectangle(TX - BW + TW - picSize[i].width, TY - BW, TX + TW, TY, BCOLOR); /* top */
+displaymenu.c.better-print:                            osd->DrawRectangle(TX - BW + TW - picSize[i].width, TY - BW, TX + TW - picSize[i].width, TY + picSize[i].height, BCOLOR); /* left */
+displaymenu.c.better-print:                            osd->DrawRectangle(TX + picSize[i].width + TW - picSize[i].width, TY - BW, TX + BW + TW, TY + picSize[i].height, BCOLOR); /* right */
+displaymenu.c.better-print:                            osd->DrawRectangle(TX - BW + TW - picSize[i].width, TY + picSize[i].height, TX + BW + TW, TY + BW + picSize[i].height, BCOLOR); /* bottom */
+displaymenu.c.better-print:                            osd->DrawRectangle(20, 313, 147, 314, BCOLOR1); /* top */
+displaymenu.c.better-print:                            osd->DrawRectangle(20, 313, 21, 438, BCOLOR1); /* left */
+displaymenu.c.better-print:                            osd->DrawRectangle(147, 313, 148, 440, BCOLOR1); /* right */
+displaymenu.c.better-print:                            osd->DrawRectangle(20, 439, 147, 440, BCOLOR1); /* bottom */
+displaymenu.c.better-print:                        osd->DrawImage(imgUnbufferedEnum+i, TX, TY, ReelConfig.curThumb[i].blend);
+displaymenu.c.better-print:                        osd->DrawImage(imgUnbufferedEnum+i, ReelConfig.curThumb[i].x, ReelConfig.curThumb[i].y, ReelConfig.curThumb[i].blend);
+displaymenu.c.better-print:                            osd->DrawRectangle(TX - BW, TY - BW, TX + picSize[i].width, TY, BCOLOR); /* top */
+displaymenu.c.better-print:                            osd->DrawRectangle(TX - BW, TY - BW, TX, TY + picSize[i].height, BCOLOR); /* left */
+displaymenu.c.better-print:                            osd->DrawRectangle(TX + picSize[i].width, TY - BW, TX + BW + picSize[i].width, TY + picSize[i].height, BCOLOR); /* right */
+displaymenu.c.better-print:                            osd->DrawRectangle(TX - BW, TY + picSize[i].height, TX + BW + picSize[i].width, TY + BW + picSize[i].height, BCOLOR); /* bottom */
+displaymenu.c.better-print:                            //osd->DrawRectangle(0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW, clrTransparent);
+displaymenu.c.better-print:                            //osd->DrawRectangle(0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW,  Theme.Color(clrBackground) );
+displaymenu.c.better-print:                            osd->DrawImage(imgImagesTitleTopX, 0, yBodyTop, false, 1, yBodyBottom - yBodyTop - IMGMENUHEIGHT*2 + 16); // repeat this image vertically
+displaymenu.c.better-print:                            //osd->DrawRectangle(TX - BW, TY - BW, TX + TW + BW, TY + TH + BW, Theme.Color(clrBackground));
+displaymenu.c.better-print:        osd->Flush();
+displaymenu.c.better-print:            osd->DrawText(22, 50 + i*40, ID3Tags.at(i).name.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, font);
+displaymenu.c.better-print:            osd->DrawText(22, 70 + i*40, ID3Tags.at(i).value.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, font);
+displaymenu.c.better-print:            //osd->DrawText(22, 50 + i*40, ID3Tags.at(i).name.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, font);
+displaymenu.c.better-print:            osd->DrawText(x, y,
+displaymenu.c.better-print:      osd->DrawImage(imgMenuBodyUpperPart, xScrollbarLeft, yBodyTop, false, xScrollbarRight-xScrollbarLeft, 1);
+displaymenu.c.better-print:      osd->DrawImage(imgMenuBodyLowerPart, xScrollbarLeft, yBodyTop+205, false, xScrollbarRight-xScrollbarLeft, 1);
+displaymenu.c.org:		osd->DrawText(x, y - nSqueeze + (lHeight - nSqueeze)*i, currLine, fFG, fBG, fFont, lWidth, lHeight, taLeft);
+displaymenu.c.org:  if (ReelConfig.singleArea8Bpp && osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea)) == oeOk) {
+displaymenu.c.org:    osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymenu.c.org:    eOsdError rc = osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymenu.c.org:      osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymenu.c.org:  osd->DrawImage(imgMenuBodyUpperPart, xBodyLeft, yBodyTop, false, xInfoRight - xBodyLeft-10, 1);
+displaymenu.c.org:  osd->DrawImage(imgMenuBodyLowerPart, xBodyLeft, yBodyTop+205, false, xInfoRight - xBodyLeft-10, 1);
+displaymenu.c.org:  osd->DrawImage(imgMenuBodyRightUpperPart, xInfoRight -10, yBodyTop, false);
+displaymenu.c.org:  osd->DrawImage(imgMenuBodyRightLowerPart, xInfoRight -10, yBodyTop+205, false);
+displaymenu.c.org:        osd->SetImagePath(imgUnbufferedEnum, path);
+displaymenu.c.org:        osd->DrawImage(imgUnbufferedEnum, x,y, true);
+displaymenu.c.org:                    osd->DrawText(x, y,
+displaymenu.c.org:                osd->DrawText(x, y,
+displaymenu.c.org:                osd->DrawImage(icon_enum, xt, y, true);
+displaymenu.c.org:              osd->Flush();
+displaymenu.c.org:              osd->DrawRectangle(x1, y1,
+displaymenu.c.org:              osd->SetImagePath(imgUnbufferedEnum, PngPath.c_str());
+displaymenu.c.org:              osd->DrawCropImage(imgUnbufferedEnum, x1, y1, x1, y1, x1 + W, y1 + H, false);
+displaymenu.c.org:              //osd->DrawRectangle(x1, y1,
+displaymenu.c.org:        osd->DrawImage(imgNoChannelIcon, x, y, true);
+displaymenu.c.org:        osd->DrawText(xSideLeft, y, Info->ShortText(),
+displaymenu.c.org:    osd->DrawText(xSideLeft, y,
+displaymenu.c.org:        osd->DrawText(xSideLeft, y,
+displaymenu.c.org:    osd->DrawImage(imgIconArchive, xt, y, true);
+displaymenu.c.org:    osd->DrawImage(imgIconCut, xt, y, true);
+displaymenu.c.org:            osd->SetImagePath(imgUnbufferedEnum, logoPath.c_str());
+displaymenu.c.org:            osd->DrawImage(imgUnbufferedEnum, x,y, true);
+displaymenu.c.org:        osd->DrawImage(imgNoChannelIcon, x, y, true);
+displaymenu.c.org:        osd->DrawText(xSideLeft + Roundness /*xs*/, yDateBottom, vps,
+displaymenu.c.org:            osd->SetImagePath(imgUnbufferedEnum, logoPath.c_str());
+displaymenu.c.org:            osd->DrawImage(imgUnbufferedEnum, x,y, true);
+displaymenu.c.org:        osd->DrawImage(imgNoChannelIcon, x, y, true);
+displaymenu.c.org:    //TB osd->DrawRectangle(xBodyLeft, yBodyTop, xHeadlineRight - 1, yHeadlineBottom - 1, Theme.Color(clrAltBackground));
+displaymenu.c.org:    osd->DrawText(xSideLeft, y, sstrDate.str().c_str(),
+displaymenu.c.org:    osd->DrawText( xPB + pbLength + 4*Gap, y , sstrDuration.str().c_str(),
+displaymenu.c.org:                osd->DrawText(xSideLeft, y, *sourceText,
+displaymenu.c.org:            osd->DrawText(xSideLeft, y, sl->At(i),
+displaymenu.c.org:    osd->DrawImage(imgMenuTitleBottom, xBodyLeft-Roundness, yMenuBottom, false);
+displaymenu.c.org:    osd->DrawImage(imgMenuTitleMiddle, xBodyLeft-Roundness, yMenuMiddle, false);
+displaymenu.c.org:    osd->DrawImage(imgMenuTitleTop, xBodyLeft-Roundness, yBodyTop, false);
+displaymenu.c.org:     /*osd->DrawRectangle(Roundness, yBodyTop,
+displaymenu.c.org:     osd->DrawImage(imgEmptyBannerBottom, xBodyLeft- Roundness, yMenuBottom, false);
+displaymenu.c.org:     osd->DrawImage(imgEmptyBannerMiddle, xBodyLeft- Roundness, yMenuMiddle, false);
+displaymenu.c.org:     osd->DrawImage(imgEmptyBannerTop, xBodyLeft- Roundness, yBodyTop, false);
+displaymenu.c.org:        osd->DrawImage(imgMenuBodyUpperPart, xBodyLeft, yBodyTop, false, xInfoRight - xBodyLeft - 1, 1);
+displaymenu.c.org:        osd->DrawImage(imgMenuBodyLowerPart, xBodyLeft, yBodyTop+205, false, xInfoRight - xBodyLeft - 1, 1);
+displaymenu.c.org:        osd->SaveRegion(xBodyLeft, yBodyTop, xInfoRight - xBodyLeft - 1, yBodyTop+410);
+displaymenu.c.org:        osd->RestoreRegion();
+displaymenu.c.org:            osd->DrawImage(imgMenuHighlightUpperPart, xBodyLeft-10, yBodyTop, false, xBodyLeft+IMGMENUWIDTH-19, 1);
+displaymenu.c.org:            osd->DrawImage(imgMenuHighlightLowerPart, xBodyLeft-10, yBodyTop+205, false, xBodyLeft+IMGMENUWIDTH-19, 1);
+displaymenu.c.org:       osd->DrawImage(imgMenuHighlightLeftUpperPart, 0, yBodyTop, false);
+displaymenu.c.org:       osd->DrawImage(imgMenuHighlightLeftLowerPart, 0, yBodyTop + 205, false);
+displaymenu.c.org:       osd->DrawImage(imgMenuBodyLeftUpperPart, 0, yBodyTop, false);
+displaymenu.c.org:       osd->DrawImage(imgMenuBodyLeftLowerPart, 0, yBodyTop + 205, false);
+displaymenu.c.org:            osd->DrawImage(imgMenuTitleBottom, xBodyLeft-10, yMenuBottom, false);
+displaymenu.c.org:            osd->DrawImage(imgMenuTitleMiddle, xBodyLeft-10, yMenuMiddle, false);
+displaymenu.c.org:            osd->DrawImage(imgMenuTitleTop, xBodyLeft-10, yBodyTop, false);
+displaymenu.c.org:            osd->DrawImage(imgMusicBodyBottom, xBodyLeft-10, yMenuBottom, false);
+displaymenu.c.org:            osd->DrawImage(imgMusicBodyMiddle, xBodyLeft-10, yMenuMiddle, false);
+displaymenu.c.org:            osd->DrawImage(imgMusicBodyTop, xBodyLeft-10, yBodyTop, false);
+displaymenu.c.org:            osd->DrawImage(imgEmptyBannerBottom, xBodyLeft- Roundness, yMenuBottom, false);
+displaymenu.c.org:            osd->DrawImage(imgEmptyBannerMiddle, xBodyLeft- Roundness, yMenuMiddle, false);
+displaymenu.c.org:            osd->DrawImage(imgEmptyBannerTop, xBodyLeft- Roundness, yBodyTop, false);
+displaymenu.c.org:    osd->SetImagePath(imgUnbufferedEnum, thumbnail_filename);
+displaymenu.c.org:    osd->DrawImage(imgUnbufferedEnum, leftTop_x, top_y, true, 1, 1);
+displaymenu.c.org:  osd->DrawImage(imgMenuHeaderLeft, 0, 0, false);
+displaymenu.c.org:  osd->DrawImage(imgMenuHeaderCenterX, Roundness*2, 0, false, xDateRight - 2*Roundness, 1);
+displaymenu.c.org:  osd->DrawImage(imgMenuHeaderRight, xDateRight - Roundness, 0, false);
+displaymenu.c.org:       osd->DrawText(/*xTitleLeft +*/10 + Roundness, y, Title,
+displaymenu.c.org:       osd->DrawText(x_coord, y, title_array, Theme.Color(clrTitleFg), clrTransparent,
+displaymenu.c.org:       osd->DrawRectangle(x_coord, py0 , x_coord + pg_length, py1, Theme.Color(clrProgressBarBg));
+displaymenu.c.org:       osd->DrawRectangle(x_coord, py0 , x_coord + (int)( pg_length* pg_count*1.0/pg_total ), py1, Theme.Color(clrProgressBarFg));
+displaymenu.c.org:       osd->DrawText(x_coord, y, title_array, Theme.Color(clrTitleFg), clrTransparent,
+displaymenu.c.org:  osd->DrawImage(imgMenuFooterLeft, 0, yFooterTop, false);
+displaymenu.c.org:  osd->DrawImage(imgMenuFooterCenterX, Roundness+10, yFooterTop, false, xFooterRight - 2*Roundness, 1);
+displaymenu.c.org:  osd->DrawImage(imgMenuFooterRight, xFooterRight - Roundness, yFooterTop, false);
+displaymenu.c.org:    osd->DrawImage(imgButtonBlueX, t3, yButtonsTop, true);
+displaymenu.c.org:    osd->DrawText(t3+12, yButtonsTop, Blue, Theme.Color(clrButtonBlueFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c.org:    osd->DrawImage(imgButtonYellowX, t2, yButtonsTop, true);
+displaymenu.c.org:    osd->DrawText(t2+12, yButtonsTop, Yellow, Theme.Color(clrButtonYellowFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c.org:  osd->DrawImage(imgButtonGreenX, t1, yButtonsTop, true);
+displaymenu.c.org:  osd->DrawText(t1+12, yButtonsTop, Green, Theme.Color(clrButtonGreenFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c.org:    osd->DrawImage(imgButtonRedX, t0, yButtonsTop, true);
+displaymenu.c.org:    osd->DrawText(t0+12, yButtonsTop, Red, Theme.Color(clrButtonRedFg), 0, pFontHelpKeys, w, yButtonsBottom - yButtonsTop, taCenter);
+displaymenu.c.org:  osd->DrawImage(HasKey(Keys, kInfo) ? imgIconHelpActive : imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.org:  osd->DrawImage(imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.org:            osd->DrawImage(imgMenuMessageLeft, 0, yMessageTop, false);
+displaymenu.c.org:            osd->DrawImage(imgMenuMessageCenterX, /*xMessageLeft +*/ Roundness, yMessageTop, false, xMessageRight-xMessageLeft/* - 2*Roundness*/,1);
+displaymenu.c.org:            osd->DrawImage(imgMenuMessageRight, xMessageRight-Roundness, yMessageTop, false);
+displaymenu.c.org:            osd->DrawImage(imgIconHelpActive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.org:            osd->DrawImage(imgMenuMessageLeft, 0, yMessageTop, false);
+displaymenu.c.org:            osd->DrawImage(imgMenuMessageCenterX, /*xMessageLeft +*/ Roundness, yMessageTop, false, xMessageRight-xMessageLeft/* - 2*Roundness*/,1);
+displaymenu.c.org:            osd->DrawImage(imgMenuMessageRight, xMessageRight-Roundness, yMessageTop, false);
+displaymenu.c.org:            osd->DrawImage(imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.org:            //  osd->SaveRegion(xMessageLeft, yMessageTop, xMessageRight, yMessageBottom); // cannot save regions
+displaymenu.c.org:                osd->DrawImage(imgMessageIcon, xMessageLeft + (xMessageRight-xMessageLeft - MessageWidth)/2 - 30 - 2*Gap, yMessageTop - Gap+2, true, 1, 1);
+displaymenu.c.org:                    osd->DrawText( xMessageLeft , yText /*yMessageTop*/, Text, colorfg, clrTransparent, pFontMessage, xMessageRight - xMessageLeft, 0, taCenter );
+displaymenu.c.org:                        osd->DrawText( _xMessageStart_ , yText/*yMessageTop*/, text1, colorfg, clrTransparent, pFontMessage, offset, 0, taCenter );
+displaymenu.c.org:                        osd->DrawText( _xMessageStart_ + offset , yText/*yMessageTop*/, text1, colorfg, clrTransparent, pFontMessage, xMessageRight- ( _xMessageStart_ + offset ),0,taLeft  );
+displaymenu.c.org:            // osd->RestoreRegion();
+displaymenu.c.org:            osd->DrawImage(imgMenuMessageLeft, 0, yMessageTop, false);
+displaymenu.c.org:            osd->DrawImage(imgMenuMessageCenterX, xMessageLeft /*+ Roundness*/, yMessageTop, false, xMessageRight-xMessageLeft /*- 2*Roundness*/,1);
+displaymenu.c.org:            osd->DrawImage(imgMenuMessageRight, xMessageRight-Roundness, yMessageTop, false);
+displaymenu.c.org:            osd->DrawImage(imgIconHelpInactive, xDateRight - 27, yButtonsTop, true);
+displaymenu.c.org:         osd->DrawCropImage(imgMenuBodyUpperPart, btnx, btny, btnx0, btny0, btnx1, btny1, false);
+displaymenu.c.org:         osd->DrawCropImage(imgMenuBodyUpperPart, btnx, btny, btnx0, btny0, btnx1, btny+205, false);
+displaymenu.c.org:         osd->DrawCropImage(imgMenuBodyLowerPart, btnx, btny+205, btnx0, btny+205, btnx1, btny1, false);
+displaymenu.c.org:         osd->DrawCropImage(imgMenuBodyLowerPart, btnx, btny+205, btnx0, btny0, btnx1, btny1, false);
+displaymenu.c.org:       osd->DrawRectangle(btnx0, btny0, btnx1, btny1, clrRed);
+displaymenu.c.org:       //osd->DrawRectangle(btnx, btny0, btnx1, btny1, clrWhite);
+displaymenu.c.org:       osd->DrawRectangle(btnx1-25, btny0-10, btnx1+45, btny1+10, clrWhite);
+displaymenu.c.org:       osd->DrawRectangle(btnx1-50, btny0-7, btnx1-25, btny1+7, clrWhite);
+displaymenu.c.org:       /* covers the whole area exactly: osd->DrawRectangle(xItemLeft-25, y-10, xItemRight-20, y+60, clrWhite); */
+displaymenu.c.org:       osd->DrawRectangle(btnx, btny0, btnx1, btny1+1, clrYellow);
+displaymenu.c.org:       osd->DrawRectangle(btnx1-25, btny0-10, btnx1+45, btny1+10, clrYellow);
+displaymenu.c.org:       osd->DrawRectangle(btnx1-55, btny0-8, btnx1-25, btny1+8, clrYellow);
+displaymenu.c.org:       /* covers the whole area: osd->DrawRectangle(xItemLeft-40, y-5, xItemRight-55, y+55, clrYellow); */
+displaymenu.c.org:       //osd->DrawRectangle(btnx, btny0, btnx1, btny1, clrGreen);
+displaymenu.c.org:       osd->DrawRectangle(btnx-45, btny0-12, btnx+18, btny1+12, clrGreen);
+displaymenu.c.org:       osd->DrawRectangle(btnx+18, btny0-5, btnx+40, btny1+7, clrGreen);
+displaymenu.c.org:       /* covers the whole area exactly: osd->DrawRectangle(xItemLeft-70, y-10, xItemRight-55, y+60, clrGreen); */
+displaymenu.c.org:       osd->DrawRectangle(btnx, btny0, btnx1, btny1+1, clrRed);
+displaymenu.c.org:       osd->DrawRectangle(btnx-45, btny0-12, btnx+20, btny1+12, clrRed);
+displaymenu.c.org:       osd->DrawRectangle(btnx+20, btny0-7, btnx+35, btny1+7, clrRed);
+displaymenu.c.org:       /* covers all exactly: osd->DrawRectangle(xItemLeft-40, y-5, xItemRight-55, y+55, clrRed); */
+displaymenu.c.org:       osd->DrawRectangle(xItemLeft, y, xItemRight-10, y+lineHeight, clrRed);
+displaymenu.c.org:       osd->DrawRectangle(xItemLeft-20, y, xItemRight-10, y+lineHeight, clrRed);
+displaymenu.c.org:       osd->DrawImage(imgButtonSmallActive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:       osd->DrawImage(imgButtonSmallInactive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:       osd->DrawImage(imgButtonSmallActive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:       osd->DrawImage(imgButtonSmallInactive, xItemLeft+10, y - 5 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:            //osd->DrawImage (imgNumber, xItemLeft,y + (lineHeight - IMGNUMBERHEIGHT)/2  + "added number here for aligning the text and number images" , true );
+displaymenu.c.org:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonActive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonInactive, xItemLeft, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonSmallActive, xItemLeft+10, y - 8 + (lineHeight - IMGNUMBERHEIGHT)/2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonSmallInactive, xItemLeft+10, y - 8 + (lineHeight - IMGNUMBERHEIGHT)/2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonActive, xItemLeft+10, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                osd->DrawImage(imgButtonInactive, xItemLeft+10, y - 10 + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                 osd->DrawImage(imgButtonBigActive, xbtn, 35 + y + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:                 osd->DrawImage(imgButtonInactive, xbtn, 38 + y + (lineHeight - IMGNUMBERHEIGHT)/2 -2, true);
+displaymenu.c.org:        // osd->DrawRectangle(xt, y, xItemRight, y + lineHeight - 1, ColorBg);
+displaymenu.c.org:            case 't': osd->DrawImage(imgIconTimerpart, evx, y + 1, true); break; /* partial timer event */
+displaymenu.c.org:            case 'T': osd->DrawImage(imgIconTimer, evx, y + 1, true); break; /* timer event */
+displaymenu.c.org:            case 'R': osd->DrawImage(imgIconRecord, evx, y + 1, true); break; /* recording event (epgsearch) */
+displaymenu.c.org:            case 'V': osd->DrawImage(imgIconVps, evx, y + 1, true); break; /* vps event */
+displaymenu.c.org:            case 'S': osd->DrawImage(imgIconZappingtimer, evx, y + 1, true); break;
+displaymenu.c.org:              // osd->DrawImage(imgIconRunningnow, evx, y + 1, true);
+displaymenu.c.org:        osd->DrawText(xt, y, buffer, ColorFg, clrTransparent, pFontList, xItemRight - xt);
+displaymenu.c.org:          osd->DrawImage(imgIconArchive, xt + pFontList->Width(buffer), y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconNewrecording, xt + pFontList->Width(buffer) + IMGICONWIDTH, y + 1, true);
+displaymenu.c.org:          osd->DrawImage(imgIconNewrecording, xt + pFontList->Width(buffer), y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconFolder, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconPinProtect, xt+20, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconHdKey, xt, y+1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconHd, xt, y+1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconPinProtect, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconArchive, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconFolderUp, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawText(xt, y, txt.c_str(), ColorFg, clrTransparent, pFontList, w, nMessagesShown ? std::min(yMessageTop - y, lineHeight) : 0 );
+displaymenu.c.org:            osd->DrawImage(imgIconFolder, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconNewrecording, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconCut, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconNewrecording, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconCut, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconArchive, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconCut, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconTimeractive, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconRecord, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconTimeractive, xt+IMGICONWIDTH, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconRecord, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconTimeractive, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconSkipnextrecording, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconRunningnow, xt, y + 1, true);
+displaymenu.c.org:          osd->DrawImage(imgIconHd, xt, y + 1, true);
+displaymenu.c.org:          osd->DrawImage(imgIconFavouriteFolder, xt, y + 1, true);
+displaymenu.c.org:          osd->DrawImage(imgIconFolder, xt, y + 1, true);
+displaymenu.c.org:          osd->DrawImage(imgIconTimeractive, xt, y + 1, true);
+displaymenu.c.org:          osd->DrawImage(imgIconRunningnow, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconFolderUp, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconArchive, xt, y + 1, true);
+displaymenu.c.org:            osd->DrawImage(imgIconNewrecording, xt, y + 1, true);
+displaymenu.c.org:        osd->DrawText(xt, y, s, ColorFg, clrTransparent, pFontList, (xt + pFontList->Width(s) < xItemRight) ? pFontList->Width(s)+1 : (xItemRight - xt - 1), nMessagesShown ? std::min(yMessageTop - y, lineHeight) : 0 );
+displaymenu.c.org:    osd->RestoreRegion();
+displaymenu.c.org:      osd->DrawText(xItemLeft + Roundness /*xs*/, yDateBottom, vps, Theme.Color(clrMenuTxtFg), clrTransparent, pFontDetailsDate, pFontDetailsDate->Width(vps), pFontDetailsDate->Height());
+displaymenu.c.org:  //TB osd->DrawRectangle(xItemLeft/*xBodyLeft*/, yBodyTop, xHeadlineRight - 1, yHeadlineBottom - 1, Theme.Color(clrAltBackground));
+displaymenu.c.org:  osd->DrawText(xItemLeft + Roundness, yHeadlineBottom, sstrDate.str().c_str(), Theme.Color(clrMenuItemNotSelectableFg), clrTransparent,
+displaymenu.c.org:      osd->DrawImage(imgIconVps, xx, yHeadlineBottom, true);
+displaymenu.c.org:      osd->DrawText(xx + 20, yHeadlineBottom, vps,
+displaymenu.c.org:  osd->DrawText( xPB + pbLength + 4*Gap, yHeadlineBottom + lineHeight, sstrDuration.str().c_str(),
+displaymenu.c.org:  osd->DrawRectangle(RECORDINGINFO_ZOOMED_IMAGE_XPOS - 2, RECORDINGINFO_ZOOMED_IMAGE_YPOS - (pFontOsdTitle->Height() + 4), RECORDINGINFO_ZOOMED_IMAGE_XPOS + RECORDINGINFO_ZOOMED_IMAGE_RESIZE_WIDTH + 2, RECORDINGINFO_ZOOMED_IMAGE_YPOS - 1, Theme.Color(clrBackground));
+displaymenu.c.org:  osd->DrawText(RECORDINGINFO_ZOOMED_IMAGE_XPOS + 5, RECORDINGINFO_ZOOMED_IMAGE_YPOS - (pFontOsdTitle->Height() + 2), sTitle.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, pFontOsdTitle);
+displaymenu.c.org:	    osd->Flush();
+displaymenu.c.org:  //osd->DrawRectangle(xItemLeft, yBodyTop, xHeadlineRight - 1, yHeadlineBottom - 1, Theme.Color(clrAltBackground));
+displaymenu.c.org:    osd->RestoreRegion();
+displaymenu.c.org:  osd->DrawText(xItemLeft + Gap, y, Title, Theme.Color(clrRecTitleFg), clrTransparent,
+displaymenu.c.org:  osd->DrawText(xItemLeft + Gap, yHeadlineBottom, sstrChannelName_Date.str().c_str(),
+displaymenu.c.org:      osd->DrawText(xItemLeft + Gap, y, Info->ShortText(), Theme.Color(clrMenuItemNotSelectableFg), clrTransparent,
+displaymenu.c.org:        osd->DrawRectangle(x - 2, y - 2, x + 2 + pic.Width(), y + 2 +  pic.Height(), Theme.Color(clrLogoBg));
+displaymenu.c.org:        osd->DrawRectangle(x - 1, y - 1, x + 1 + pic.Width(),y + 1 +  pic.Height(), Theme.Color(clrTitleBg));
+displaymenu.c.org:        osd->DrawImage(imgMenuHeaderCenterX, xDateLeft, 0, false, xDateRight - xDateLeft -Roundness,1); // to clean before drawing date
+displaymenu.c.org:        osd->DrawText(xDateLeft + SmallGap, yDateTop /*+ 5*/, date, Theme.Color(clrMenuTxtFg),
+displaymenu.c.org:                osd->SetImagePath(imgUnbufferedEnum+i, ReelConfig.curThumb[i].path);
+displaymenu.c.org:                    //osd->DrawRectangle( 0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW, clrTransparent);
+displaymenu.c.org:                    //TB: TODO osd->DrawRectangle( 0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW,  Theme.Color(clrBackground) );
+displaymenu.c.org:                    osd->DrawImage(imgImagesTitleTopX, 0, yBodyTop, false, 1, yBodyBottom - yBodyTop - IMGMENUHEIGHT*2 + 16  /* TB: todo fix 16 */); // repeat this image vertically
+displaymenu.c.org:                        osd->DrawImage(imgUnbufferedEnum+i, TX, TY, ReelConfig.curThumb[i].blend);
+displaymenu.c.org:                        osd->DrawImage(imgUnbufferedEnum+i, ReelConfig.curThumb[i].x, ReelConfig.curThumb[i].y, ReelConfig.curThumb[i].blend);
+displaymenu.c.org:                        osd->DrawImage(imgUnbufferedEnum+i, TX + TW - picSize[i].width, TY, ReelConfig.curThumb[i].blend);
+displaymenu.c.org:                        osd->DrawImage(imgUnbufferedEnum+i, ReelConfig.curThumb[i].x, ReelConfig.curThumb[i].y, ReelConfig.curThumb[i].blend);
+displaymenu.c.org:                            osd->DrawRectangle(TX - BW + TW - picSize[i].width, TY - BW, TX + TW, TY, BCOLOR); /* top */
+displaymenu.c.org:                            osd->DrawRectangle(TX - BW + TW - picSize[i].width, TY - BW, TX + TW - picSize[i].width, TY + picSize[i].height, BCOLOR); /* left */
+displaymenu.c.org:                            osd->DrawRectangle(TX + picSize[i].width + TW - picSize[i].width, TY - BW, TX + BW + TW, TY + picSize[i].height, BCOLOR); /* right */
+displaymenu.c.org:                            osd->DrawRectangle(TX - BW + TW - picSize[i].width, TY + picSize[i].height, TX + BW + TW, TY + BW + picSize[i].height, BCOLOR); /* bottom */
+displaymenu.c.org:                            osd->DrawRectangle(20, 313, 147, 314, BCOLOR1); /* top */
+displaymenu.c.org:                            osd->DrawRectangle(20, 313, 21, 438, BCOLOR1); /* left */
+displaymenu.c.org:                            osd->DrawRectangle(147, 313, 148, 440, BCOLOR1); /* right */
+displaymenu.c.org:                            osd->DrawRectangle(20, 439, 147, 440, BCOLOR1); /* bottom */
+displaymenu.c.org:                        osd->DrawImage(imgUnbufferedEnum+i, TX, TY, ReelConfig.curThumb[i].blend);
+displaymenu.c.org:                        osd->DrawImage(imgUnbufferedEnum+i, ReelConfig.curThumb[i].x, ReelConfig.curThumb[i].y, ReelConfig.curThumb[i].blend);
+displaymenu.c.org:                            osd->DrawRectangle(TX - BW, TY - BW, TX + picSize[i].width, TY, BCOLOR); /* top */
+displaymenu.c.org:                            osd->DrawRectangle(TX - BW, TY - BW, TX, TY + picSize[i].height, BCOLOR); /* left */
+displaymenu.c.org:                            osd->DrawRectangle(TX + picSize[i].width, TY - BW, TX + BW + picSize[i].width, TY + picSize[i].height, BCOLOR); /* right */
+displaymenu.c.org:                            osd->DrawRectangle(TX - BW, TY + picSize[i].height, TX + BW + picSize[i].width, TY + BW + picSize[i].height, BCOLOR); /* bottom */
+displaymenu.c.org:                            //osd->DrawRectangle(0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW, clrTransparent);
+displaymenu.c.org:                            //osd->DrawRectangle(0, yBodyTop, IMGMENUWIDTH, yBodyTop+TY+TH+2*BW,  Theme.Color(clrBackground) );
+displaymenu.c.org:                            osd->DrawImage(imgImagesTitleTopX, 0, yBodyTop, false, 1, yBodyBottom - yBodyTop - IMGMENUHEIGHT*2 + 16); // repeat this image vertically
+displaymenu.c.org:                            //osd->DrawRectangle(TX - BW, TY - BW, TX + TW + BW, TY + TH + BW, Theme.Color(clrBackground));
+displaymenu.c.org:        osd->Flush();
+displaymenu.c.org:            osd->DrawText(22, 50 + i*40, ID3Tags.at(i).name.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, font);
+displaymenu.c.org:            osd->DrawText(22, 70 + i*40, ID3Tags.at(i).value.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, font);
+displaymenu.c.org:            //osd->DrawText(22, 50 + i*40, ID3Tags.at(i).name.c_str(), Theme.Color(clrMenuTxtFg), clrTransparent, font);
+displaymenu.c.org:            osd->DrawText(x, y,
+displaymenu.c.org:      osd->DrawImage(imgMenuBodyUpperPart, xScrollbarLeft, yBodyTop, false, xScrollbarRight-xScrollbarLeft, 1);
+displaymenu.c.org:      osd->DrawImage(imgMenuBodyLowerPart, xScrollbarLeft, yBodyTop+205, false, xScrollbarRight-xScrollbarLeft, 1);
+displaymessage.c:    osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaymessage.c:    osd->DrawImage(imgMessageIcon, x1,y0+15, true);
+displaymessage.c:    osd->DrawText(x1 + messageIconW, y1, Text, colorfg, clrTransparent, font, x2 - x1 - messageIconW , 0, taCenter);
+displaymessage.c:       osd->Flush();
+displayreplay.c:  if ((Areas[0].bpp < 8 || ReelConfig.singleArea8Bpp) && osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea)) == oeOk) {
+displayreplay.c:    osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displayreplay.c:    int rc = osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displayreplay.c:      osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displayreplay.c:  osd->DrawRectangle(0, 0, osd->Width(), osd->Height(), clrTransparent);
+displayreplay.c:    osd->DrawRectangle(xProgressLeft, yProgressTop, xProgressRight - 1, yProgressBottom - 1, Theme.Color(clrReplayBarAreaBg));
+displayreplay.c:    osd->DrawImage(imgMenuFooterLeft, xBottomLeft-10, yBottomTop, false);
+displayreplay.c:    osd->DrawImage(imgMenuFooterCenterX, xBottomLeft + Roundness, yBottomTop,
+displayreplay.c:    osd->DrawImage(imgMenuFooterRight, xBottomRight - Roundness, yBottomTop, false);
+displayreplay.c:        osd->DrawText(start_x + 18 + Gap, icon_y, redText,
+displayreplay.c:        osd->DrawText(start_x + 18 + Gap, icon_y, greenText,
+displayreplay.c:        osd->DrawText(start_x + 18 + Gap, icon_y, yellowText,
+displayreplay.c:        osd->DrawText(start_x + 18 + Gap, icon_y, blueText,
+displayreplay.c:  osd->DrawImage(imgMenuHeaderLeft, xTitleLeft-10, yTitleTop, false);
+displayreplay.c:  osd->DrawImage(imgMenuHeaderCenterX, xTitleLeft + Roundness, yTitleTop, false, xTitleRight - xTitleLeft - Roundness*2);
+displayreplay.c:  osd->DrawImage(imgMenuHeaderRight, xTitleRight - Roundness, yTitleTop, false);
+displayreplay.c:    osd->DrawText(xTitleLeft + Roundness+10, yTitleTop+15, Title,
+displayreplay.c:    osd->DrawRectangle(xLogoLeft, yLogoTop, xLogoRight - 1, yLogoBottom - 1, clrTransparent);
+displayreplay.c:  osd->DrawRectangle(xLogoLeft, yLogoTop, xLogoRight, yBottomBottom, clrTransparent);
+displayreplay.c:    osd->DrawImage(Play?imgIconControlPlay:imgIconControlPause, xLogoLeft, yLogoTop, true);
+displayreplay.c:    osd->DrawImage(Forward?imgIconControlFastFwd+Speed:imgIconControlFastRew+Speed, xLogoLeft, yLogoTop, true);
+displayreplay.c:    osd->DrawImage(Forward?imgIconControlSkipFwd+Speed:imgIconControlSkipRew+Speed, xLogoLeft, yLogoTop, true);
+displayreplay.c:  osd->DrawBitmap(xProgressLeft + BigGap, yProgressTop + BigGap, pb);
+displayreplay.c:  osd->DrawImage(imgMenuFooterCenterX, xBottomLeft + Roundness, yBottomTop, false, w);
+displayreplay.c:  osd->DrawText(xBottomLeft + Roundness, yBottomTop-5, Current,
+displayreplay.c:    osd->DrawImage(imgMenuFooterCenterX, xBottomLeft + Roundness + w, yBottomTop, false, xBottomLeft + Roundness + nCurrentWidth);
+displayreplay.c:  osd->DrawImage(imgMenuFooterCenterX, xBottomRight - Roundness - w, yBottomTop, false, w);
+displayreplay.c:  osd->DrawText(xBottomRight - Roundness - w, yBottomTop-5, Total, Theme.Color(clrReplayTotal), clrTransparent, pFontReplayTimes, w, yBottomBottom - yBottomTop, taRight);
+displayreplay.c:  osd->DrawRectangle(xBottomLeft + (xBottomRight - xBottomLeft - nJumpWidth) / 2, yBottomTop+15, xBottomLeft + (xBottomRight - xBottomLeft - nJumpWidth) / 2 + nJumpWidth+3, yBottomTop + 16, clrTransparent); /* TB: without this line the DrawImage() in the line below cannot be seen???? */
+displayreplay.c:  osd->DrawImage( imgMenuFooterCenterX, xBottomLeft + space_btwn_icons, yBottomTop, false, space_btwn_icons*4, 1);
+displayreplay.c:    osd->DrawText(xBottomLeft + (xBottomRight - xBottomLeft - nJumpWidth) / 2, yBottomTop-5, Jump, Theme.Color(clrReplayModeJump), clrTransparent, pFontReplayTimes, nJumpWidth, yBottomBottom - yBottomTop, taLeft);
+displayreplay.c:        osd->DrawImage(imgMessageIcon, xBottomLeft + Roundness, yBottomTop, true);
+displayreplay.c:          osd->DrawText(x, y, Text,
+displayreplay.c:  osd->Flush();
+displaytracks.c:  if ((Areas[0].bpp < 8 || ReelConfig.singleArea8Bpp) && osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea)) == oeOk) {
+displaytracks.c:    osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaytracks.c:      int rc = osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaytracks.c:        osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaytracks.c:      int rc = osd->CanHandleAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaytracks.c:        osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displaytracks.c:  osd->DrawRectangle(0, 0, osd->Width(), osd->Height(), clrTransparent);
+displaytracks.c:  osd->DrawImage(imgMenuHeaderLeft, xTitleLeft-10, yTitleTop, false);
+displaytracks.c:  osd->DrawImage(imgMenuHeaderCenterX, xTitleLeft + Roundness, yTitleTop, false, xTitleRight-xTitleLeft - 2 * Roundness,1);
+displaytracks.c:  osd->DrawImage(imgMenuHeaderRight, xTitleRight - Roundness , yTitleTop, false);
+displaytracks.c:  osd->DrawText(xTitleLeft + Roundness, yTitleTop+15, Title,
+displaytracks.c:  osd->DrawRectangle(xListLeft, yListTop, xListRight - 1, yListBottom - 1, Theme.Color(clrBackground));
+displaytracks.c:  osd->DrawImage(imgMenuFooterLeft, xBottomLeft-10, yBottomTop, false);
+displaytracks.c:  osd->DrawImage(imgMenuFooterCenterX, xBottomLeft + Roundness, yBottomTop, false, xBottomRight-xBottomLeft - 2 * Roundness,1);
+displaytracks.c:  osd->DrawImage(imgMenuFooterRight, xBottomRight - Roundness , yBottomTop, false);
+displaytracks.c:  osd->DrawRectangle(xListLeft, y, xListRight-1, y + lineHeight, ColorBg);
+displaytracks.c:    osd->DrawImage(imgIconTimeractive, xListLeft + MarkerGap, y + MarkerGap-2, true);
+displaytracks.c:  osd->DrawText(xItemLeft, y + 5, Text, ColorFg, clrTransparent /*ColorBg*/, pFontListItem, xItemRight - xItemLeft-1, lineHeight);
+displaytracks.c:    //osd->DrawImage(imgIconAudio, xLogoLeft + (xLogoRight - xLogoLeft - 64) / 2, yLogoTop + (yLogoBottom - yLogoTop - 64) / 2, true);
+displaytracks.c:    osd->DrawText(xBottomLeft + Rounsvn dness, yBottomTop, date,
+displaytracks.c:  osd->Flush();
+displayvolume.c:    osd->SetAreas(Areas, sizeof(Areas) / sizeof(tArea));
+displayvolume.c:    osd->DrawRectangle(xVolumeBackBarLeft, yIconTop, xVolumeBackBarRight - 1, yIconBottom - 1, clrTransparent);
+displayvolume.c:    osd->Flush();
+Übereinstimmungen in Binärdatei libvdr-skinreel3.so
+mytextscroller.c:           osd->DrawCropImage(imgMenuBodyUpperPart, x, bodyTop, x, y, bodyRight-10, y+lineHeight, false);
+mytextscroller.c:           osd->DrawCropImage(imgMenuBodyLowerPart, x, bodyTop+205, x, y, bodyRight-10, y+lineHeight, false);
+mytextscroller.c:           osd->DrawCropImage(imgMenuBodyUpperPart, x, bodyTop, x, y, bodyRight-10, bodyTop+205, false);
+mytextscroller.c:           osd->DrawCropImage(imgMenuBodyLowerPart, x, bodyTop+205, x, bodyTop+205, bodyRight-10, y+lineHeight, false);
+mytextscroller.c:         osd->DrawText(left, y, textWrapper.GetLine(offset + i), colorFg, clrTransparent, font, width);
+reel.c:            osd->DrawRectangle(x, y, x_filled, y+progressbarheight, Theme.Color(clrProgressBarFg));
+reel.c:            osd->DrawRectangle(x_filled, y, x_right - 1, y+progressbarheight, Theme.Color(clrProgressBarBg));
+reel.c:            osd->DrawImage(imgPgBarLeft, x, y, true);
+reel.c:            osd->DrawImage(imgPgBarFilled, x+1, y, true, x_filled-x+1, 1);
+reel.c:            osd->DrawImage(imgPgBarEmpty, x_filled+1, y, true, x_right-x_filled, 1);
+reel.c:            osd->DrawImage(imgPgBarRight, x_right, y, true);
+reel.c:    osd->SetImagePath(imgEnumNum, m_path.c_str())
+reel.c:  osd->DrawImage(imgUnbufferedEnum, xLeft, yTop, blend, horRep, vertRep);
+Übereinstimmungen in Binärdatei reel.o
+texteffects.c://      osd->Flush();
+texteffects.c://        osd->DrawText(e->x, e->y, e->strText.c_str(), e->ColorFg, e->ColorBg, Font, e->Width, e->Height, e->Alignment);
+texteffects.c://      osd->DrawText(e->x, e->y, e->strText.c_str() + e->nOffset, e->ColorFg, e->ColorBg, Font, e->Width, e->Height);
+texteffects.c://      osd->DrawText(e->x, e->y, e->strText.c_str() + e->nOffset, e->ColorFg, e->ColorBg, Font, e->Width, e->Height, e->Alignment);
+texteffects.c://      osd->DrawText(e->x, e->y, e->strText.c_str() + e->nOffset, e->ColorBg, e->ColorBg, Font, e->Width, e->Height, e->Alignment);
+texteffects.c://      osd->DrawText(e->x, e->y, e->strText.c_str(),
+texteffects.c://    osd->DrawText(x, y, s ? s : "", ColorFg, ColorBg, Font, Width, Height, Alignment);
+texteffects.h:#define TE_MARQUEE(osd, id, x...) osd->DrawText(x)
+texteffects.h:#define TE_BLINK(osd, id, x...) osd->DrawText(x)
+texteffects.h:#define TE_TITLE(osd, id, s, Width, skin) osd->DrawTitle(s)

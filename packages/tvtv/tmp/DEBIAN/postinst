@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "creating init levels for Reel TvTv client daemon"
+update-rc.d reeltvtv defaults
+
+/etc/init.d/reeltvtv start
+

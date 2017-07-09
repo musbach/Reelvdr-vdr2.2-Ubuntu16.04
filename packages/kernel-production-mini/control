@@ -1,0 +1,10 @@
+Package: kernel-production
+Version: 2.6.18.5.9
+Section: reel
+Priority: optional
+Architecture: armel
+Replaces: kernel-experimental
+Conflicts: kernel-experimental
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: kernel-production
+Description: Latest productive kernel update for the ReelBox Netclient

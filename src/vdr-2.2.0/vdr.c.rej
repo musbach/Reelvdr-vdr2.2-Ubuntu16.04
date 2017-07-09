@@ -1,0 +1,18 @@
+--- vdr.c	(revision 15412)
++++ vdr.c	(revision 15413)
+@@ -1508,9 +1550,15 @@
+              // Instant resume of the last viewed recording:
+              case kPlay:
+                   if (cReplayControl::LastReplayed()) {
++#ifdef USE_PINPLUGIN
++                     if (cStatus::MsgReplayProtected(0, cReplayControl::LastReplayed(), 0, false) == false) {
++#endif /* PINPLUGIN */
+                      cControl::Shutdown();
+                      cControl::Launch(new cReplayControl);
+                      }
++#ifdef USE_PINPLUGIN
++                     }
++#endif /* PINPLUGIN */
+                   break;
+              default:    break;
+              }

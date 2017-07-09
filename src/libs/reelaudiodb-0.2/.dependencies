@@ -1,0 +1,25 @@
+analyzer.o: analyzer.c analyzer.h thread.h commondefs.h databasereader.h \
+ database.h databaseschema.h query.h databasewriter.h tools.h
+crawler.o: crawler.c crawler.h thread.h commondefs.h databasereader.h \
+ database.h databaseschema.h query.h databasewriter.h tools.h
+database.o: database.c database.h databaseschema.h query.h
+thread.o: thread.c thread.h tools.h
+databasereader.o: databasereader.c databasereader.h database.h \
+ databaseschema.h query.h
+databasewriter.o: databasewriter.c databasewriter.h database.h \
+ databaseschema.h query.h
+tools.o: tools.c tools.h thread.h
+searchapi.o: searchapi.c searchapi.h databasereader.h database.h \
+ databaseschema.h query.h createdatabaseinstance.h
+databasecleaner.o: databasecleaner.c databasecleaner.h thread.h \
+ databasereader.h database.h databaseschema.h query.h databasewriter.h \
+ tools.h
+databaseschema.o: databaseschema.c databaseschema.h
+query.o: query.c query.h
+createdatabaseinstance.o: createdatabaseinstance.c \
+ createdatabaseinstance.h database.h databaseschema.h query.h \
+ mysqldatabase.h thread.h sqlitedatabase.h
+mysqldatabase.o: mysqldatabase.c mysqldatabase.h database.h \
+ databaseschema.h query.h thread.h
+sqlitedatabase.o: sqlitedatabase.c sqlitedatabase.h database.h \
+ databaseschema.h query.h

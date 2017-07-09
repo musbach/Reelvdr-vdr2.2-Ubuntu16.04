@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+cp -f /usr/sbin/oscam /usr/sbin/`/usr/sbin/oscam -V | grep -i "version\:" | cut -d: -f2 |  sed -e 's/^[[:space:]]*//g'`
+
+exit 0

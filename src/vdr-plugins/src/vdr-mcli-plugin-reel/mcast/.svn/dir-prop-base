@@ -1,0 +1,7 @@
+K 13
+svn:externals
+V 45
+dvbloop https://svn.baycom.de/repos/dvbloop
+
+
+END

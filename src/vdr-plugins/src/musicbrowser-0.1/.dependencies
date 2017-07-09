@@ -1,0 +1,321 @@
+musicbrowser.o: musicbrowser.c ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/thread.h musicbrowser.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/player.h browserStatus.h playlist.h \
+ ../../../vdr/../vdr/osdbase.h ../filebrowser/filetools.h cover.h \
+ filecache.h convert.h ../../../vdr/../vdr/thread.h def.h browsermenu.h \
+ reel/searchapi.h browserItems.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../tinyxml/tinyxml.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../vdr/livebuffer.h structs.h browserbase.h \
+ ../xinemediaplayer/services.h ../../../vdr/../vdr/keys.h
+filecache.o: filecache.c ../../../vdr/../vdr/thread.h filecache.h \
+ ../filebrowser/stringtools.h filetools.h
+filetools.o: filetools.c ../filebrowser/stringtools.h filetools.h \
+ ../../../vdr/../vdr/thread.h
+browserItems.o: browserItems.c ../filebrowser/stringtools.h \
+ ../xinemediaplayer/services.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h browsermenu.h \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/player.h \
+ reel/searchapi.h browserItems.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../tinyxml/tinyxml.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../vdr/livebuffer.h playlist.h ../filebrowser/filetools.h \
+ structs.h browserbase.h browserStatus.h musicbrowser.h userIf.h \
+ ../../../vdr/../vdr/tools.h playlistIf.h optionsIf.h cover.h filecache.h \
+ convert.h ../../../vdr/../vdr/thread.h tools.h
+playlist.o: playlist.c browserItems.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../tinyxml/tinyxml.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../vdr/livebuffer.h reel/searchapi.h playlist.h \
+ ../filebrowser/filetools.h structs.h ../filebrowser/stringtools.h def.h
+convert.o: convert.c ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h convert.h \
+ ../../../vdr/../vdr/thread.h filecache.h def.h \
+ ../filebrowser/stringtools.h filetools.h
+browserbase.o: browserbase.c playlist.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../filebrowser/filetools.h \
+ ../filebrowser/stringtools.h userIf.h ../../../vdr/../vdr/tools.h \
+ structs.h browserbase.h browserItems.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../tinyxml/tinyxml.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../vdr/livebuffer.h reel/searchapi.h browserStatus.h \
+ ../../../vdr/../vdr/status.h
+browserStatus.o: browserStatus.c ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/player.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/remote.h def.h \
+ browserStatus.h playlist.h ../../../vdr/../vdr/osdbase.h \
+ ../filebrowser/filetools.h optionsIf.h structs.h userIf.h \
+ ../../../vdr/../vdr/tools.h filetools.h
+browsermenu.o: browsermenu.c ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/svdrp.h ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h browsermenu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/player.h reel/searchapi.h browserItems.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../vdr/livebuffer.h \
+ playlist.h ../filebrowser/filetools.h structs.h browserbase.h \
+ browserStatus.h musicbrowser.h userIf.h ../../../vdr/../vdr/tools.h \
+ def.h ../filebrowser/stringtools.h convert.h \
+ ../../../vdr/../vdr/thread.h filetools.h filecache.h tools.h \
+ ../xinemediaplayer/services.h ../../../vdr/../vdr/keys.h
+userIf.o: userIf.c browsermenu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/osdbase.h \
+ reel/searchapi.h browserItems.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../tinyxml/tinyxml.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../vdr/livebuffer.h playlist.h ../filebrowser/filetools.h \
+ structs.h browserbase.h browserStatus.h musicbrowser.h \
+ ../../../vdr/../vdr/plugin.h ../filebrowser/stringtools.h \
+ ../xinemediaplayer/services.h ../../../vdr/../vdr/keys.h def.h tools.h \
+ playlistIf.h userIf.h ../../../vdr/../vdr/tools.h optionsIf.h searchIf.h
+searchIf.o: searchIf.c searchIf.h userIf.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/tools.h structs.h \
+ playlist.h ../filebrowser/filetools.h browserItems.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/player.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../vdr/livebuffer.h \
+ reel/searchapi.h browsermenu.h ../../../vdr/../vdr/status.h \
+ browserbase.h browserStatus.h musicbrowser.h \
+ ../../../vdr/../vdr/plugin.h
+playlistIf.o: playlistIf.c userIf.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/tools.h structs.h \
+ playlist.h ../filebrowser/filetools.h optionsIf.h browsermenu.h \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/player.h \
+ ../../../vdr/../vdr/osdbase.h reel/searchapi.h browserItems.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../vdr/livebuffer.h \
+ browserbase.h browserStatus.h musicbrowser.h \
+ ../../../vdr/../vdr/plugin.h def.h ../filebrowser/stringtools.h \
+ playlistIf.h
+optionsIf.o: optionsIf.c userIf.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/tools.h structs.h \
+ playlist.h ../filebrowser/filetools.h browsermenu.h \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/player.h \
+ ../../../vdr/../vdr/osdbase.h reel/searchapi.h browserItems.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../vdr/livebuffer.h \
+ browserbase.h browserStatus.h musicbrowser.h \
+ ../../../vdr/../vdr/plugin.h searchIf.h playlistIf.h tools.h optionsIf.h
+cover.o: cover.c cover.h filecache.h convert.h \
+ ../../../vdr/../vdr/thread.h filetools.h ../filebrowser/stringtools.h \
+ /usr/include/taglib/fileref.h /usr/include/taglib/tfile.h \
+ /usr/include/taglib/taglib_export.h /usr/include/taglib/taglib.h \
+ /usr/include/taglib/taglib_config.h /usr/include/taglib/tag.h \
+ /usr/include/taglib/tstring.h /usr/include/taglib/tbytevector.h \
+ /usr/include/taglib/tiostream.h /usr/include/taglib/tstringlist.h \
+ /usr/include/taglib/tlist.h /usr/include/taglib/tlist.tcc \
+ /usr/include/taglib/trefcounter.h /usr/include/taglib/tbytevectorlist.h \
+ /usr/include/taglib/audioproperties.h /usr/include/taglib/tag.h \
+ /usr/include/taglib/id3v2tag.h /usr/include/taglib/tmap.h \
+ /usr/include/taglib/tmap.tcc /usr/include/taglib/id3v2framefactory.h \
+ /usr/include/taglib/id3v2frame.h /usr/include/taglib/id3v2header.h \
+ /usr/include/taglib/id3v2frame.h \
+ /usr/include/taglib/attachedpictureframe.h /usr/include/taglib/tfile.h \
+ /usr/include/taglib/mpegproperties.h /usr/include/taglib/mpegheader.h \
+ /usr/include/taglib/mpegfile.h /usr/include/taglib/mpegproperties.h

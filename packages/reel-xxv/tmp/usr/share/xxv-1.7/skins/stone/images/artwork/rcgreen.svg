@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg
+   xmlns:xml="http://www.w3.org/XML/1998/namespace"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="0.41"
+   sodipodi:docbase="/mnt/vdrsrc/xxv/devlop/XXV-Skins/stone/images/artwork"
+   sodipodi:docname="rcgreen.svg"
+   sodipodi:version="0.32"
+   id="svg602"
+   xml:space="preserve"
+   viewBox="0 0 24 24"
+   height="24pt"
+   width="32pt">
+  <defs
+     id="defs619" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg602"
+     inkscape:window-y="63"
+     inkscape:window-x="15"
+     inkscape:window-height="541"
+     inkscape:window-width="640"
+     inkscape:cy="12.000000"
+     inkscape:cx="16.000000"
+     inkscape:zoom="14.958333"
+     id="base" />
+  <g
+     transform="matrix(1.045016,0,0,1,-0.540192,0)"
+     style="fill-rule:nonzero;clip-rule:nonzero;stroke:#000000;stroke-miterlimit:4;"
+     id="Layer_x0020_3">
+    <path
+       id="path617"
+       d="M24,24H0V0h24v24z"
+       style="fill:none;stroke:none;" />
+  </g>
+  <rect
+     transform="translate(0.268881,0.111782)"
+     height="10"
+     width="10"
+     y="6.79154015"
+     x="6.63444138"
+     id="rect664"
+     style="font-size:12;fill-rule:evenodd;" />
+  <rect
+     transform="translate(0.268881,0.111782)"
+     height="10"
+     width="10"
+     y="6.98489571"
+     x="6.82779694"
+     id="rect665"
+     style="font-size:12;fill:#ffffff;fill-rule:evenodd;" />
+  <rect
+     transform="translate(0.268881,0.111782)"
+     height="10"
+     width="10"
+     y="6.88821983"
+     x="6.73112011"
+     id="rect666"
+     style="font-size:12;fill:#00ff00;fill-rule:evenodd;fill-opacity:1;" />
+  <metadata
+     id="metadata25">
+    <rdf:RDF
+       id="RDF26">
+      <cc:Work
+         id="Work27"
+         rdf:about="">
+        <dc:format
+           id="format28">image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+           id="type30" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

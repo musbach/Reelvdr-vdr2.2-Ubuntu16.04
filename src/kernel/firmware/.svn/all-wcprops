@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/reelbox/!svn/ver/1/testing/src/kernel/firmware
+END
+dvb-fe-tda10046.fw
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/firmware/dvb-fe-tda10046.fw
+END
+isl3890.1043
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/firmware/isl3890.1043
+END
+dvb-fe-cx24116.fw
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/kernel/firmware/dvb-fe-cx24116.fw
+END
+isl3890.1030
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/firmware/isl3890.1030
+END

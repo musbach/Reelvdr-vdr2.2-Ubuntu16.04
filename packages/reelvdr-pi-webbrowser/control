@@ -1,0 +1,11 @@
+Package: reelvdr-pi-webbrowser
+Version: 0.99.19262
+Section: reel
+Priority: important
+Architecture: i386
+Depends: firefox | www-browser | chrome-ice, matchbox-window-manager, reelvdr
+Recommends: reel-links2, flashplugin-installer
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-webbrowser
+Description: Start the Webbroser (Firefox or KDE Desktop) from ReelVdr
+ This is the Webbrowser plugin for the ReelVdr

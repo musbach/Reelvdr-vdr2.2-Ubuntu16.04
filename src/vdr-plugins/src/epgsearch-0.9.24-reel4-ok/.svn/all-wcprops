@@ -1,0 +1,791 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/32/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3
+END
+menu_timersdone.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_timersdone.h
+END
+svdrpclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/svdrpclient.h
+END
+menu_templateedit.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_templateedit.c
+END
+blacklist.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/blacklist.c
+END
+menu_main.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_main.c
+END
+uservars.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/uservars.c
+END
+menu_templateedit.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_templateedit.h
+END
+menu_main.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_main.h
+END
+blacklist.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/blacklist.h
+END
+uservars.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/uservars.h
+END
+epgsearchsetup.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchsetup.c
+END
+services.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/services.c
+END
+menu_quicksearch.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_quicksearch.c
+END
+epgsearchsetup.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchsetup.h
+END
+epgsearchmysql.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchmysql.c
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/COPYING
+END
+services.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/services.h
+END
+menu_quicksearch.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_quicksearch.h
+END
+epgsearchmysql.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchmysql.h
+END
+mainmenushortcut.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/mainmenushortcut.c
+END
+mainmenushortcut.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/mainmenushortcut.h
+END
+epgsearchservices.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchservices.h
+END
+recstatus.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/recstatus.c
+END
+recstatus.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/recstatus.h
+END
+epgsearch.cbp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearch.cbp
+END
+timerstatus.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/timerstatus.c
+END
+conflictcheck_thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conflictcheck_thread.c
+END
+timerstatus.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/timerstatus.h
+END
+conflictcheck_thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conflictcheck_thread.h
+END
+epgsearchonly.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchonly.c
+END
+menu_whatson.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_whatson.c
+END
+HISTORY.DE
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/HISTORY.DE
+END
+timer_thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/timer_thread.c
+END
+menu_searchresults.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/reelbox/!svn/ver/32/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_searchresults.c
+END
+menu_whatson.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_whatson.h
+END
+timer_thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/timer_thread.h
+END
+recdone.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/recdone.c
+END
+menu_searchresults.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_searchresults.h
+END
+recdone.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/recdone.h
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/INSTALL
+END
+epgsearch.layout
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearch.layout
+END
+quickepgsearch.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/quickepgsearch.c
+END
+epgsearch.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearch.c
+END
+switchtimer.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/switchtimer.c
+END
+README.DE
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/README.DE
+END
+epgsearch.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearch.h
+END
+switchtimer.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/switchtimer.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/README
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/main.c
+END
+menu_searchtemplate.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_searchtemplate.c
+END
+afuzzy.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/afuzzy.c
+END
+menu_search.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_search.c
+END
+switchtimer_thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/switchtimer_thread.c
+END
+menu_searchtemplate.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_searchtemplate.h
+END
+afuzzy.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/afuzzy.h
+END
+menu_search.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_search.h
+END
+switchtimer_thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/switchtimer_thread.h
+END
+menu_switchtimers.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_switchtimers.c
+END
+menu_switchtimers.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_switchtimers.h
+END
+createcats.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/createcats.c
+END
+epgsearch
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearch
+END
+epgsearchsvdrp.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchsvdrp.c
+END
+md5.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/md5.c
+END
+menu_commands.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_commands.c
+END
+timerdone.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/timerdone.c
+END
+md5.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/md5.h
+END
+menu_commands.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_commands.h
+END
+timerdone.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/timerdone.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/Makefile
+END
+menu_searchedit.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_searchedit.c
+END
+conflictcheckonly.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conflictcheckonly.c
+END
+noannounce.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/noannounce.c
+END
+menu_searchedit.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_searchedit.h
+END
+varparser.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/varparser.c
+END
+noannounce.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/noannounce.h
+END
+varparser.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/varparser.h
+END
+epgsearchcats.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchcats.c
+END
+INSTALL.DE
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/INSTALL.DE
+END
+menu_myedittimer.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_myedittimer.c
+END
+epgsearchcats.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchcats.h
+END
+menu_myedittimer.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_myedittimer.h
+END
+menu_announcelist.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_announcelist.c
+END
+menu_favorites.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_favorites.c
+END
+distance.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/distance.c
+END
+menu_announcelist.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_announcelist.h
+END
+menu_favorites.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_favorites.h
+END
+epgtimers.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgtimers.c
+END
+conflictcheck.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conflictcheck.c
+END
+distance.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/distance.h
+END
+menu_blacklistedit.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_blacklistedit.c
+END
+menu_dirselect.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_dirselect.c
+END
+conflictcheck.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/24/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conflictcheck.h
+END
+rcfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/rcfile.c
+END
+menu_event.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_event.c
+END
+menu_blacklistedit.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_blacklistedit.h
+END
+menu_dirselect.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_dirselect.h
+END
+rcfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/rcfile.h
+END
+menu_event.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_event.h
+END
+HISTORY
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/HISTORY
+END
+epgsearchcfg.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchcfg.c
+END
+menu_deftimercheckmethod.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_deftimercheckmethod.c
+END
+menu_conflictcheck.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_conflictcheck.c
+END
+menu_epgtimers.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_epgtimers.c
+END
+menu_recsdone.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_recsdone.c
+END
+epgsearchcfg.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchcfg.h
+END
+menu_deftimercheckmethod.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_deftimercheckmethod.h
+END
+menu_conflictcheck.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_conflictcheck.h
+END
+menu_epgtimers.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_epgtimers.h
+END
+menu_recsdone.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_recsdone.h
+END
+searchtimer_thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/searchtimer_thread.c
+END
+searchtimer_thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/searchtimer_thread.h
+END
+menu_searchactions.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_searchactions.c
+END
+templatefile.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/templatefile.c
+END
+menu_searchactions.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_searchactions.h
+END
+menu_blacklists.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_blacklists.c
+END
+templatefile.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/templatefile.h
+END
+confdloader.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/confdloader.c
+END
+mail.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/mail.c
+END
+epgsearchext.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchext.c
+END
+epgsearchtools.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchtools.c
+END
+changrp.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/changrp.c
+END
+menu_blacklists.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_blacklists.h
+END
+confdloader.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/confdloader.h
+END
+log.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/log.h
+END
+mail.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/mail.h
+END
+epgsearchext.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchext.h
+END
+epgsearchtools.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/epgsearchtools.h
+END
+changrp.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/changrp.h
+END
+menuitem_event.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menuitem_event.h
+END
+MANUAL
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/MANUAL
+END
+menu_timersdone.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/menu_timersdone.c
+END

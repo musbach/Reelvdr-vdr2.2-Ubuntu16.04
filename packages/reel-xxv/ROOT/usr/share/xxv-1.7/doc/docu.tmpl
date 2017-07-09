@@ -1,0 +1,93 @@
+=head1 NAME
+
+<?% UNLESS Name == 'General' %?>
+XXV::MODULES::<?% Name %?>
+<?% ELSE %?>
+<?% Name %?>
+<?% END %?>
+
+<?% UNLESS Name == 'General' %?>
+=head1 SYNOPSIS
+
+  <?%
+    IF Name.match('NEWS::');
+        MODUL = "XXV::OUTPUT::${Name}";
+    ELSE;
+        MODUL = "XXV::MODULES::${Name}";
+    END;
+  %?>
+  use <?% MODUL %?>
+  my $auto = <?% MODUL %?>->new(
+    -config => \$Config,
+    -dbh    => \$DBH,
+    -realbin=> \$RealBin,
+  );
+
+<?% ELSE %?>
+  ./bin/xxvd [--kill] [--configfile file] [--docu targetdir]
+
+<?% END %?>
+
+=head1 DESCRIPTION
+
+<?% Description %?>
+
+=head1 CONFIGURATION
+
+=over 4
+
+<?% FOREACH prefname = Preferences.keys.sort %?>
+<?% NEXT IF Preferences.$prefname.type == 'hidden' %?>
+
+=item * <?% prefname %?>
+
+<?% Preferences.$prefname.description %?>
+
+=over 4
+
+=item * default: <?% Preferences.$prefname.default %?>
+
+=item * type: <?% Preferences.$prefname.type %?>
+
+=item * required: <?% Preferences.$prefname.required ? "Yes" : "No" %?>
+
+=back
+
+<?% END %?>
+
+=back
+
+=head1 COMMANDS
+
+=over 4
+
+<?% FOREACH cmdname = Commands.keys.sort %?>
+<?% NEXT IF Commands.$cmdname.hidden == 'yes' %?>
+
+=item *  <?% cmdname %?> (<?% Commands.$cmdname.short %?>)
+
+<?% Commands.$cmdname.description %?>
+
+<?% END %?>
+
+=back
+
+=head1 REQUIREMENTS
+
+=over 4
+
+<?% FOREACH reqmod = Prereq.keys.sort %?>
+
+=item *  <?% reqmod %?>
+
+<?% Prereq.$reqmod %?>
+
+<?% END %?>
+
+=back
+
+=head1 SEE ALSO
+
+XXV
+
+=cut

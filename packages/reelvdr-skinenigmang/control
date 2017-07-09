@@ -1,0 +1,10 @@
+Package: reelvdr-skinenigmang
+Version: 0.0.5
+Section: reel
+Priority: optional
+Architecture: i386
+Depends: reelvdr
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-reelskin
+Description: Enigma skin (NG) for ReelVdr
+ This is the Enigma skin (NG) for the vdr

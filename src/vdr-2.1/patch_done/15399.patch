@@ -1,0 +1,61 @@
+Index: vdr.c
+===================================================================
+--- vdr.c	(revision 15398)
++++ vdr.c	(revision 15399)
+@@ -89,6 +89,9 @@
+ int ForceReloadDB = 0;
+ int DBCounter = 0;
+ #endif /* USEMYSQL */
++#ifdef REELVDR
++eOSState LastMenuMainFunc = osEnd;
++#endif
+ 
+ static int LastSignal = 0;
+ 
+@@ -1164,6 +1167,7 @@
+         // Keys that must work independent of any interactive mode:
+         switch (key) {
+           // Menu control:
++#ifndef REELVDR
+           case kMenu: {
+                key = kNone; // nobody else needs to see this key
+                bool WasOpen = Interact != NULL;
+@@ -1180,6 +1184,7 @@
+                   Menu = new cMenuMain;
+                }
+                break;
++#endif
+           // Info:
+           case kInfo: {
+                if (IsInfoMenu) {
+@@ -1205,12 +1210,30 @@
+                }
+                break;
+           // Direct main menu functions:
++#ifdef REELVDR
++          #define DirectMainFunction(function)                         \
++                  {                                                    \
++                     if(Menu)                                          \
++                       DELETE_MENU;                                    \
++                     else                                              \
++                       LastMenuMainFunc = osEnd;                       \
++                     if (cControl::Control())                          \
++                        cControl::Control()->Hide();                   \
++                     if (LastMenuMainFunc != function) {               \
++                        LastMenuMainFunc = function;                   \
++                        CREATE_MENU_MAIN(function,Menu);               \
++                     }                                                 \
++                  }                                                    \
++                  key = kNone; // nobody else needs to see this key
++          case kMenu:       DirectMainFunction(osUnknown); break;
++#else
+           #define DirectMainFunction(function)\
+             DELETE_MENU;\
+             if (cControl::Control())\
+                cControl::Control()->Hide();\
+             Menu = new cMenuMain(function);\
+             key = kNone; // nobody else needs to see this key
++#endif
+           case kSchedule:   DirectMainFunction(osSchedule); break;
+           case kChannels:   DirectMainFunction(osChannels); break;
+           case kTimers:     DirectMainFunction(osTimers); break;

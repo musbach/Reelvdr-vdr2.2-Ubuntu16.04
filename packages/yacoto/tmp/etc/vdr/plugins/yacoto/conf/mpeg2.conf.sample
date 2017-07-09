@@ -1,0 +1,2 @@
+REMUX_TYPE="remux_mpeg2"   #~Remux mode~F~5~ ~
+AUDIO_SOURCE="mp2"         #~Audio source~F~5~ ~

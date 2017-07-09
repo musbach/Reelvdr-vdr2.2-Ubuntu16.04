@@ -1,0 +1,14 @@
+Package: reelbox-devel
+Version: 1.2
+Section: reel
+Priority: optional
+Architecture: i386
+Depends: autoconf, automake, binutils, ccache, cdbs, dpatch, dh-buildinfo, gcc, g++, make, mtools, liba52-0.7.4-dev, libapt-front-dev, libasound2-dev, libavcodec-dev, libboost-iostreams-dev, libc6-dev, libcap-dev, libcdio-dev, libcddb2-dev, libcurl3-dev, libdirectfb-dev, libdbus-1-dev, libdbus-glib-1-dev, libdv-dev, libept-dev, libfreetype6-dev, libgtk2.0-dev, libgpmg1-dev, libhal-dev, libimlib2-dev, libmad0-dev, libjpeg-dev, libogg-dev, libnetpbm10, libpng-dev, libquicktime-dev, libssl-dev, libswscale-dev, libtool, libtag1-dev, libgd2-noxpm-dev | libgd2-xpm-dev, libxml2-dev, libvorbis-dev, linux-headers-generic, syslinux, debhelper, fakeroot, libxinerama-dev, libxt-dev, libaa1-dev, libcaca-dev, libmodplug-dev, libmagick9-dev, libesd0-dev, libgnomevfs2-dev, libartsc0-dev, liblircclient-dev, libpulse-dev, libsdl1.2-dev, libsmbclient-dev, libspeex-dev, libmng-dev, libmysqlclient15-dev, libsqlite3-dev, libusb-dev, libxine-dev, nasm, transfig, sgmltools-lite, subversion
+Recommends: bison, docbook-to-man, docbook-utils, flex, libdfb++-dev, libavformat-dev, libfuse-dev, libgphoto2-2-dev, libmagick++9-dev | libmagick++-dev, libmpeg2-4-dev, libpostproc-dev, libxv-dev, libxi-dev, manpages-dev, libxvmc-dev
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-devel
+Description: Development meta package for ReelBox II
+ This package depends on all of the packages needed to develop for the ReelBox II.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it is not be removed.

@@ -1,0 +1,12 @@
+REMUX_TYPE="remux_dvd"     #~Remux mode~F~5~ ~
+AUDIO_SOURCE="all"         #~Audio source~F~5~ ~
+BURN_DVD="0"               #~Burn video dvd~B~1~ ~
+CREATE_ISO="0"             #~Create iso image~B~0~ ~
+CREATE_VIDEO_TS="1"        #~Create video_ts~B~0~ ~
+BURN_SPEED="4"             #~Burn speed~I~2~1,20~
+CHAPTER_MIN="10"           #~Chapter each n minutes~I~2~0,30~
+CHAPTER_MARKS="0"          #~Chapter each mark~B~0~ ~
+DVD_MENU="Standard"        #~Menu~L~1~none,Doku,Kinder,Kino,Musik,Natur,Sport,Standard~
+SPLIT_MODE="titles"        #~Split films~L~1~titles,chapters~
+DVD_DEV="/dev/dvd"         #~Burn device~A~16~a-zA-Z/-_~
+DISC_SIZE="0"              #~Disc size~L~1~0,690,4472,7944~

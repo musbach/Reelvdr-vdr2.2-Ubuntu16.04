@@ -1,0 +1,14 @@
+<!-- confirm -->
+<?% global.widgetcount = global.widgetcount + 1 %?>
+<tr<?% ' class="two"' IF global.widgetcount mod 2 == 0 %?>>
+    <?% INCLUDE widgets/topic.inc abbr=data.msg %?>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <span style="white-space: nowrap">
+            <input type="radio" name="<?% data.NAME %?>" value="y" <?% 'checked="checked"' IF val == 'y' %?>/><?% gettext("yes") %?>
+        </span> 
+        <span style="white-space: nowrap">
+            <input type="radio" name="<?% data.NAME %?>" value="n" <?% 'checked="checked"' IF val == 'n' %?>/><?% gettext("no")  %?>
+        </span> 
+    </td>
+</tr>

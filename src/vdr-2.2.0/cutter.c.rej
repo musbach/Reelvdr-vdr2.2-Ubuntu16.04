@@ -1,0 +1,247 @@
+--- cutter.c	(revision 15412)
++++ cutter.c	(revision 15413)
+@@ -79,6 +92,22 @@
+ 
+ void cCuttingThread::Action(void)
+ {
++#ifdef USE_CUTTERLIMIT
++#ifdef USE_HARDLINKCUTTER
++  if (!Setup.HardLinkCutter)
++#endif /* HARDLINKCUTTER */
++  {
++    sched_param tmp;
++    tmp.sched_priority = CUTTER_PRIORITY;
++    if(!pthread_setschedparam(pthread_self(), SCHED_OTHER, &tmp))
++      printf("cCuttingThread::Action: cant set priority\n");
++  }
++
++  int bytes = 0;
++  int __attribute__((unused)) burst_size = CUTTER_MAX_BANDWIDTH * CUTTER_TIMESLICE / 1000; // max bytes/timeslice
++  cTimeMs __attribute__((unused)) t;
++#endif /* CUTTERLIMIT */
++
+   cMark *Mark = fromMarks.First();
+   if (Mark) {
+      fromFile = fromFileName->Open();
+@@ -90,6 +119,9 @@
+      Mark = fromMarks.Next(Mark);
+      off_t FileSize = 0;
+      int CurrentFileNumber = 0;
++#ifdef USE_HARDLINKCUTTER
++     bool SkipThisSourceFile = false;
++#endif /* HARDLINKCUTTER */
+      int LastIFrame = 0;
+      toMarks.Add(0);
+      toMarks.Save();
+@@ -108,12 +140,101 @@
+ 
+            // Read one frame:
+ 
++#ifdef USE_HARDLINKCUTTER
++           if (!fromIndex->Get(Index++, &FileNumber, &FileOffset, &Independent, &Length)) {
++              // Error, unless we're past last cut-in and there's no cut-out
++              if (Mark || LastMark)
++                 error = "index";
++              break;
++              }
++
++           if (FileNumber != CurrentFileNumber) {
++              fromFile = fromFileName->SetOffset(FileNumber, FileOffset);
++              fromFile->SetReadAhead(MEGABYTE(20));
++              CurrentFileNumber = FileNumber;
++              if (SkipThisSourceFile) {
++                 // At end of fast forward: Always skip to next file
++                 toFile = toFileName->NextFile();
++                 if (!toFile) {
++                    error = "toFile 4";
++                    break;
++                    }
++                 FileSize = 0;
++                 SkipThisSourceFile = false;
++                 }
++
++
++              if (Setup.HardLinkCutter && FileOffset == 0) {
++                 // We are at the beginning of a new source file.
++                 // Do we need to copy the whole file?
++
++                 // if !Mark && LastMark, then we're past the last cut-out and continue to next I-frame
++                 // if !Mark && !LastMark, then there's just a cut-in, but no cut-out
++                 // if Mark, then we're between a cut-in and a cut-out
++
++                 uint16_t MarkFileNumber;
++                 off_t MarkFileOffset;
++                 // Get file number of next cut mark
++                 if (!Mark && !LastMark
++                     || Mark
++                        && fromIndex->Get(Mark->position, &MarkFileNumber, &MarkFileOffset)
++                        && (MarkFileNumber != CurrentFileNumber)) {
++                    // The current source file will be copied completely.
++                    // Start new output file unless we did that already
++                    if (FileSize != 0) {
++                       toFile = toFileName->NextFile();
++                       if (!toFile) {
++                          error = "toFile 3";
++                          break;
++                          }
++                       FileSize = 0;
++                       }
++
++                    // Safety check that file has zero size
++                    struct stat buf;
++                    if (stat(toFileName->Name(), &buf) == 0) {
++                       if (buf.st_size != 0) {
++                          esyslog("cCuttingThread: File %s exists and has nonzero size", toFileName->Name());
++                          error = "nonzero file exist";
++                          break;
++                          }
++                       }
++                    else if (errno != ENOENT) {
++                       esyslog("cCuttingThread: stat failed on %s", toFileName->Name());
++                       error = "stat";
++                       break;
++                       }
++
++                    // Clean the existing 0-byte file
++                    toFileName->Close();
++                    cString ActualToFileName(ReadLink(toFileName->Name()), true);
++                    unlink(ActualToFileName);
++                    unlink(toFileName->Name());
++
++                    // Try to create a hard link
++                    if (HardLinkVideoFile(fromFileName->Name(), toFileName->Name())) {
++                       // Success. Skip all data transfer for this file
++                       SkipThisSourceFile = true;
++                       cutIn = false;
++                       toFile = NULL; // was deleted by toFileName->Close()
++                       }
++                    else {
++                       // Fallback: Re-open the file if necessary
++                       toFile = toFileName->Open();
++                       }
++                    }
++                 }
++              }
++
++           if (!SkipThisSourceFile) {
++#else
+            if (fromIndex->Get(Index++, &FileNumber, &FileOffset, &Independent, &Length)) {
+               if (FileNumber != CurrentFileNumber) {
+                  fromFile = fromFileName->SetOffset(FileNumber, FileOffset);
+                  fromFile->SetReadAhead(MEGABYTE(20));
+                  CurrentFileNumber = FileNumber;
+                  }
++#endif /* HARDLINKCUTTER */
+               if (fromFile) {
+                  int len = ReadFrame(fromFile, buffer,  Length, sizeof(buffer));
+                  if (len < 0) {
+@@ -130,19 +251,25 @@
+                  break;
+                  }
+               }
++#ifndef USE_HARDLINKCUTTER
+            else {
+               // Error, unless we're past the last cut-in and there's no cut-out
+               if (Mark || LastMark)
+                  error = "index";
+               break;
+               }
++#endif /* HARDLINKCUTTER */
+ 
+            // Write one frame:
+ 
+            if (Independent) { // every file shall start with an independent frame
+               if (LastMark) // edited version shall end before next I-frame
+                  break;
++#ifdef USE_HARDLINKCUTTER
++              if (!SkipThisSourceFile && FileSize > toFileName->MaxFileSize()) {
++#else
+               if (FileSize > maxVideoFileSize) {
++#endif /* HARDLINKCUTTER */
+                  toFile = toFileName->NextFile();
+                  if (!toFile) {
+                     error = "toFile 1";
+@@ -152,7 +279,11 @@
+                  }
+               LastIFrame = 0;
+ 
++#ifdef USE_HARDLINKCUTTER
++              if (!SkipThisSourceFile && cutIn) {
++#else
+               if (cutIn) {
++#endif /* HARDLINKCUTTER */
+                  if (isPesRecording)
+                     cRemux::SetBrokenLink(buffer, Length);
+                  else
+@@ -160,7 +291,11 @@
+                  cutIn = false;
+                  }
+               }
++#ifdef USE_HARDLINKCUTTER
++           if (!SkipThisSourceFile && toFile->Write(buffer, Length) < 0) {
++#else
+            if (toFile->Write(buffer, Length) < 0) {
++#endif /* HARDLINKCUTTER */
+               error = "safe_write";
+               break;
+               }
+@@ -195,9 +330,46 @@
+                     }
+                  }
+               else
++#ifdef USE_HARDLINKCUTTER
++                 LastMark = true; // After last cut-out: Write on until next I-frame, then exit
++#else
+                  LastMark = true;
++#endif /* HARDLINKCUTTER */
+               }
++
++#ifdef USE_CUTTERLIMIT
++#ifdef USE_HARDLINKCUTTER
++           if (!Setup.HardLinkCutter) {
++#endif /* HARDLINKCUTTER */
++           bytes += Length;
++           if(bytes >= burst_size) {
++             int elapsed = t.Elapsed();
++             int sleep = 0;
++
++#if CUTTER_REL_BANDWIDTH > 0 &&  CUTTER_REL_BANDWIDTH < 100
++             // stay under max. relative bandwidth
++
++             sleep = (elapsed * 100 / CUTTER_REL_BANDWIDTH) - elapsed;
++             //if(sleep<=0 && elapsed<=2) sleep = 1;
++             //if(sleep) esyslog("cutter: relative bandwidth limit, sleep %d ms (chunk %dk / %dms)", sleep, burst_size/1024, CUTTER_TIMESLICE);
++#endif
++             // stay under max. absolute bandwidth
++             if(elapsed < CUTTER_TIMESLICE) {
++               sleep = max(CUTTER_TIMESLICE - elapsed, sleep);
++               //if(sleep) esyslog("cutter: absolute bandwidth limit, sleep %d ms (chunk %dk / %dms)", sleep, burst_size/1024, CUTTER_TIMESLICE);
++             }
++
++             if(sleep>0)
++               cCondWait::SleepMs(sleep);
++             t.Set();
++             bytes = 0;
+            }
++#ifdef USE_HARDLINKCUTTER
++              }
++#endif /* HARDLINKCUTTER */
++#endif /* CUTTERLIMIT */
++
++           }
+      Recordings.TouchUpdate();
+      }
+   else
+@@ -219,6 +391,12 @@
+      error = false;
+      ended = false;
+      cRecording Recording(FileName);
++#ifdef USE_CUTTIME
++     cMarks FromMarks;
++     FromMarks.Load(FileName);
++     cMark *First=FromMarks.First();
++     if (First) Recording.SetStartTime(Recording.start+(int(First->position/Recording.FramesPerSecond()+30)/60)*60);
++#endif /* CUTTIME */
+      const char *evn = Recording.PrefixFileName('%');
+      if (evn && RemoveVideoFile(evn) && MakeDirs(evn, true)) {
+         // XXX this can be removed once RenameVideoFile() follows symlinks (see videodir.c)

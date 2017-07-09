@@ -1,0 +1,4 @@
+netcvrotor.o: netcvrotor.c netcvrotor.h netcvrotorservice.h netcvmenu.h
+netcvmenu.o: netcvmenu.c netcvmenu.h rotortools.h
+rotortools.o: rotortools.c rotortools.h
+i18n.o: i18n.c i18n.h

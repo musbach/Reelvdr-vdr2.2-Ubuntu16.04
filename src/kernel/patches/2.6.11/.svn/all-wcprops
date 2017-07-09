@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11
+END
+ac97-kconfig.diff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11/ac97-kconfig.diff
+END

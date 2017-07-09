@@ -1,0 +1,14 @@
+tmp/etc/init/fpleds.conf: /usr/src/reelbox/testing/src/etc/init/fpleds.conf
+tmp/etc/init/reelbox-control.conf: /usr/src/reelbox/testing/src/etc/init/reelbox-control.conf
+tmp/etc/init.d/set_wol: /usr/src/reelbox/testing/src/etc/init.d/set_wol
+tmp/usr/sbin/fpleds: /usr/src/reelbox/testing/src/etc/init.d/fpleds
+tmp/etc/udev/rules.d/50-reel_frontpanel.rules: /usr/src/reelbox/testing/src/etc/udev/rules.d/50-reel_frontpanel.rules
+tmp/etc/udev/rules.d/65-reelbox-fp.rules: /usr/src/reelbox/testing/src/etc/udev/rules.d/65-reelbox-fp.rules
+tmp/sbin/dev_frontpanel.sh: /usr/src/reelbox/testing/src/sbin/dev_frontpanel.sh
+tmp/sbin/reel_fp_progress: /usr/src/reelbox/testing/src/sbin/reel_fp_progress
+tmp/usr/sbin/shutdownwd.sh: /usr/src/reelbox/testing/src/sbin/shutdownwd.sh
+tmp/usr/sbin/reelbox-ctrld: /usr/src/reelbox/testing/src/utils/reelbox-control/reelbox-ctrld
+tmp/sbin/avr_flasher: /usr/src/reelbox/testing/src/utils/avr_flash/avr_flasher
+tmp/sbin/reelfpctl: /usr/src/reelbox/testing/src/utils/reelfpctl/reelfpctl
+tmp/usr/share/reel/frontpanel/reelfpctl1: /usr/src/reelbox/testing/src/utils/reelfpctl/reelfpctl1
+tmp/usr/share/reel/frontpanel/main.flash-1.20: /usr/src/reelbox/testing/src/utils/avr_flash/main.flash-1.20

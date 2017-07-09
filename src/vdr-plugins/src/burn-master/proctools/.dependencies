@@ -1,0 +1,13 @@
+logger.o: logger.cc logger.h functions.h format.h
+conlogger.o: conlogger.cc conlogger.h logger.h startable.h
+chain.o: chain.cc chain.h process.h environment.h functions.h \
+ shellescape.h shellprocess.h logger.h poller.h format.h
+environment.o: environment.cc environment.h logger.h
+process.o: process.cc process.h environment.h functions.h chain.h \
+ shellescape.h logger.h format.h
+shellprocess.o: shellprocess.cc shellprocess.h process.h environment.h \
+ functions.h shellescape.h format.h
+poller.o: poller.cc poller.h process.h environment.h functions.h logger.h \
+ format.h
+property.o: property.cc property.h
+shellescape.o: shellescape.cc format.h shellescape.h

@@ -1,0 +1,10 @@
+Package: libapt-pkg-libc6.9-6-4.7
+Version: 0.0.1-alpha1
+Section: reel
+Priority: optional
+Architecture: armel
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: libapt-pkg-libc6.9-6-4.7
+Provides: libapt-pkg-libc6.9-6-4.7
+Description: libapt-pkg-libc6.9-6-4.7
+

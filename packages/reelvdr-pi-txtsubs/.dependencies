@@ -1,0 +1,11 @@
+tmp/usr/lib/vdr/libvdr-ttxtsubs.so.2.1.6: /usr/src/reelbox/testing/src/vdr-plugins/lib/libvdr-ttxtsubs.so.2.1.6
+tmp/usr/share/locale/ca_ES/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/ca_ES/LC_MESSAGES/vdr-ttxtsubs.mo
+tmp/usr/share/locale/de_DE/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/de_DE/LC_MESSAGES/vdr-ttxtsubs.mo
+tmp/usr/share/locale/es_ES/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/es_ES/LC_MESSAGES/vdr-ttxtsubs.mo
+tmp/usr/share/locale/et_EE/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/et_EE/LC_MESSAGES/vdr-ttxtsubs.mo
+tmp/usr/share/locale/fi_FI/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/fi_FI/LC_MESSAGES/vdr-ttxtsubs.mo
+tmp/usr/share/locale/fr_FR/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/fr_FR/LC_MESSAGES/vdr-ttxtsubs.mo
+tmp/usr/share/locale/it_IT/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/it_IT/LC_MESSAGES/vdr-ttxtsubs.mo
+tmp/usr/share/locale/ru_RU/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/ru_RU/LC_MESSAGES/vdr-ttxtsubs.mo
+tmp/usr/share/locale/sv_SE/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/sv_SE/LC_MESSAGES/vdr-ttxtsubs.mo
+tmp/usr/share/locale/uk_UA/LC_MESSAGES/vdr-ttxtsubs.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/uk_UA/LC_MESSAGES/vdr-ttxtsubs.mo

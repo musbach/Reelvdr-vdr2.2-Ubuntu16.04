@@ -1,0 +1,32 @@
+#!/bin/sh
+set -e
+
+COUNTER=/var/lib/vdr/plugins/burn/counters/standard
+
+if [ "$1" = "configure" ]; then
+
+    if [ -d /srv/vdr/video.00 ]; then
+    /bin/mkdir -p /srv/vdr/video.00/iso
+    /bin/touch /srv/vdr/video.00/iso/.do_not_delete
+    /bin/chown vdr:vdr /srv/vdr/video.00/iso
+    /bin/chown vdr:vdr /srv/vdr/video.00/iso/.do_not_delete
+    fi
+
+    # Change owner of directory for temporary files
+    /bin/chown vdr:vdr /var/cache/vdr-plugin-burn || true
+
+    # Change owner of directory for grabbed backgrounds
+    /bin/chown vdr:vdr /var/lib/vdr/plugins/burn/skins/Grabbed || true
+
+    # Create standard counter if not exist
+    if [ ! -r $COUNTER ]; then
+        /bin/mkdir -p $(dirname $COUNTER)
+        /bin/cp -f /usr/share/vdr-plugin-burn/counters/standard $COUNTER || true
+        /bin/chown vdr:vdr $COUNTER || true
+    fi
+
+    # Make vdr a member of the groups required by the plugin
+    /bin/sh /usr/lib/vdr/vdr-groups.sh --add vdr-plugin-burn
+fi
+
+#DEBHELPER#

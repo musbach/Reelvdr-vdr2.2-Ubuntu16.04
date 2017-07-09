@@ -1,0 +1,10 @@
+Package: reel-editor
+Version: 0.1-reel-2
+Section: reel
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: channeledit
+Description: Channel Editor for ReelVDR
+ A ReelVDR Channneleditor
+

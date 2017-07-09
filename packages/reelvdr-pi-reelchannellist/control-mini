@@ -1,0 +1,9 @@
+Package: reelvdr-pi-reelchannellist
+Version: 0.0.9.4
+Section: reel
+Priority: optional
+Architecture: armel
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/reelchannellist
+Description: main channellist
+Description-de: Kanalliste/Favoriten

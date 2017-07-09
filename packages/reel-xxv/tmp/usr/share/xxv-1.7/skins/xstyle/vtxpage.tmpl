@@ -1,0 +1,43 @@
+<!-- vtx -->
+<?% IF data.0 >= 1 %?>
+<?% channel = data.0.3 %?>
+<?% url = "?cmd=vt&amp;channel=${channel}" %?>
+<?% END %?>
+<h1><?% gettext("Teletext") %?></h1>
+
+<table border="0">
+<tr><td><form>
+    <select name='chan' onChange="di(this.form.chan.options[this.form.chan.options.selectedIndex].value, '?cmd=vt&amp;channel=')">
+	<?% FOREACH ch IN param.channels %?>
+	    <option value="<?% ch.1 %?>" <?% "selected" IF channel == ch.1 %?>><?% ch.0 %?></option>
+	<?% END %?>
+    </select>
+    </form>
+</td>    
+  <?% IF channel %?>
+<td>
+    <form method="post" action="<?% url %?>">
+    	<?% gettext("Page") %?>:<input style='width:50px' type="text" name="page" size="5" value="<?% data.0.1 %?>">
+    </form>
+</td>
+<td>
+<form method="post" action="?cmd=vs&amp;channel=<?% channel %?>">
+	<?% gettext("Search") %?>:<input style='width:250px' type="text" name="data" size="10" value="">
+</form>
+</td>
+<?% END %?>
+</tr>
+</table>
+<?% IF channel %?>
+    <?% IF data.0.4 != 0 %?><a title="<?% gettext("First page") %?>" href="<?% url %?>"><img src='images/oben.png'></a><?% ELSE %?><span class="shadow"><img src='images/trans.gif'></span><?% END %?>&nbsp;
+    <?% IF data.0.4 != 0 %?><a title="<?% gettext("Previous page") %?>"href="<?% url %?>&amp;page=<?% data.0.4 %?>"><img src='images/schnell_back.png'></a><?% ELSE %?><span class="shadow"><img src='images/trans.gif'></span><?% END %?>&nbsp;
+    <?% IF data.0.5 != 0 %?><a title="<?% gettext("Next page") %?>"href="<?% url %?>&amp;page=<?% data.0.5 %?>"><img src='images/schnell_vor.png'></a><?% ELSE %?><span class="shadow"><img src='images/trans.gif'></span><?% END %?>
+<?% END %?>
+
+<br />
+<?% FOREACH zeile IN data %?>
+<?% id=zeile.0;page=zeile.1;subpage=zeile.2;channels=zeile.3;prev=zeile.4;next=zeile.5;mtime=zeile.6 %?>
+<div style="float:left; margin:5px;" id="<?% id %?>">
+  <h2><?% gettext("Page") %?>&nbsp;<?% page; IF subpage > 0 %?>/<?% subpage; END %?></h2>
+  <div id="vt">  <?% zeile.7 %?>
+  </div></div><?% END %?>

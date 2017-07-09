@@ -1,0 +1,4 @@
+pictures.o: pictures.c menu.h entry.h player.h
+entry.o: entry.c entry.h
+menu.o: menu.c menu.h entry.h player.h
+player.o: player.c player.h entry.h

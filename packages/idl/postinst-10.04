@@ -1,0 +1,26 @@
+#!/bin/sh
+
+depmod -a 2.6.39
+
+I2C_LIB_NAME=libidl_i2c.so
+I2C_SHIM_NAME=idl_i2c_shim
+I2C_SHIM_LIBNAME=libidl_i2c_shim.so
+I2C_LEGACY_LIBNAME=libidl_i2c.legacy.so
+
+SPI_LIB_NAME=libidl_spi.so
+SPI_SHIM_NAME=idl_spi_shim
+SPI_SHIM_LIBNAME=libidl_spi_shim.so
+SPI_LEGACY_LIBNAME=libidl_spi.legacy.so
+
+  # Load the linux I2c and shim modules
+  rm -f /usr/lib/${I2C_LIB_NAME}
+  ln -s /usr/lib/${I2C_SHIM_LIBNAME} /usr/lib/${I2C_LIB_NAME}
+
+  # Load the linux spi and shim modules
+  rm -f /usr/lib/${SPI_LIB_NAME}
+  ln -s /usr/lib/${SPI_SHIM_LIBNAME} /usr/lib/${SPI_LIB_NAME}
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

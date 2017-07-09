@@ -1,0 +1,11 @@
+--- vdr-plugin-burn-0.2.0~beta6.orig/setup.c
++++ vdr-plugin-burn-0.2.0~beta6/setup.c
+@@ -91,7 +91,7 @@ bool cBurnParameters::ProcessArgs(int ar
+ 			PROCTOOLS_INIT_PROPERTY( RemovePath,          false ),
+ 			PROCTOOLS_INIT_PROPERTY( CustomDiskSize,      200 ),
+ 			PROCTOOLS_INIT_PROPERTY( BurnSpeed,           0 ),
+-			PROCTOOLS_INIT_PROPERTY( RequantType,         requanttype_metakine ),
++			PROCTOOLS_INIT_PROPERTY( RequantType,         requanttype_transcode ),
+ 			PROCTOOLS_INIT_PROPERTY( PreserveLogFiles,    false ),
+ 			PROCTOOLS_INIT_PROPERTY( DefaultLanguage,     0 ),
+ 			PROCTOOLS_INIT_PROPERTY( MainMenuStatus,      true ),

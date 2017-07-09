@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#only for distributions < Ubuntu 10.04
+if [ ! -x /usr/bin/lsb_release ] || [ $(lsb_release -rs | cut -f1 -d.) -lt 10 ]; then
+
+echo "creating init levels for telnetd server daemon"
+if [ -L /etc/rc2.d/S20telnetd-reel ] ; then
+        update-rc.d -f telnetd-reel remove >/dev/null
+fi
+update-rc.d telnetd-reel defaults 01 99
+
+/etc/init.d/telnetd-reel start
+fi
+
+echo "Enable root login for telnet"
+sed 's/\(^auth.*\)pam_securetty.so/#\1pam_securetty.so/' -i /etc/pam.d/login
+

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/tool
+END
+tools.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/tool/tools.c
+END
+netcvupdate.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/105/mcast/tool/netcvupdate.c
+END
+netcvdiag.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/tool/netcvdiag.c
+END
+mcast.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/vdr-mcli-plugin/!svn/ver/79/mcast/tool/mcast.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/tool/Makefile
+END
+netcvlogview.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/tool/netcvlogview.c
+END

@@ -1,0 +1,41 @@
+--- mjpegtools-1.9.0rc3/mplex/inputstrm.cpp.org	2006-08-25 16:37:37.000000000 +0200
++++ mjpegtools-1.9.0rc3/mplex/inputstrm.cpp	2011-11-08 12:36:27.094847786 +0100
+@@ -23,6 +23,7 @@
+ 
+ #include <config.h>
+ #include <assert.h>
++#include <limits.h>
+ 
+ #include "mjpeg_types.h"
+ #include "inputstrm.hpp"
+--- mjpegtools-1.9.0rc3/mplex/main.cpp.org	2006-07-01 06:46:13.000000000 +0200
++++ mjpegtools-1.9.0rc3/mplex/main.cpp	2011-11-08 12:41:29.753848641 +0100
+@@ -27,6 +27,7 @@
+ 
+ #include <config.h>
+ #include <stdio.h>
++#include <string.h>
+ #ifdef HAVE_GETOPT_H
+ #include <getopt.h>
+ #endif
+--- mjpegtools-1.9.0rc3/mplex/multiplexor.cpp.org	2007-04-02 17:43:34.000000000 +0200
++++ mjpegtools-1.9.0rc3/mplex/multiplexor.cpp	2011-11-08 12:38:45.613849710 +0100
+@@ -22,6 +22,7 @@
+ #include <config.h>
+ #include <math.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ #include <mjpeg_types.h>
+ #include <mjpeg_logging.h>
+--- mjpegtools-1.9.0rc3/mplex/padstrm.cpp.org	2004-03-15 19:47:43.000000000 +0100
++++ mjpegtools-1.9.0rc3/mplex/padstrm.cpp	2011-11-08 12:40:16.758848019 +0100
+@@ -26,7 +26,7 @@
+ 
+ #include "padstrm.hpp"
+ 
+-
++#include <string.h>
+ 
+ //
+ // Generator for padding packets in a padding stream...

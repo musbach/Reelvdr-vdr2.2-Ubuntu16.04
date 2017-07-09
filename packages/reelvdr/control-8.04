@@ -1,0 +1,16 @@
+Package: reelvdr
+Version: 2.11
+Section: reel
+Priority: standard
+Architecture: i386
+Depends: ash-busybox, avahi-utils, dvb-utils, ffmpeg, noad, reel-vdradmin, reelvdr-baseconfig, reelvdr-baseconfig-channels, reelvdr-bin, reelvdr-plugins-base, reelvdr-pi-bouquets, reelvdr-pi-channelscan, reelvdr-pi-dpkg, reelvdr-pi-formatdisk, reelvdr-pi-graphlcd, reelvdr-pi-media, reelvdr-pi-netwatcher, reelvdr-pi-mcli, reelvdr-pi-remote, reelvdr-pi-skinreel3, reelvdr-plugins-dvd, reelvdr-langpack, reelvdr-tools
+Recommends: osd-color-themes, reelvdr-pi-reelblog, reelvdr-pi-pip, reelvdr-pi-webbrowser, reelvdr-pi-amarokstarter
+Suggests: reelvdr-pi-games, reelvdr-pi-reelepg, reelvdr-pi-timeline
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-bin
+Description: The ReelBox VDR
+ This package depends on all of the packages needed to run the ReelVDR on ReelBox.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+

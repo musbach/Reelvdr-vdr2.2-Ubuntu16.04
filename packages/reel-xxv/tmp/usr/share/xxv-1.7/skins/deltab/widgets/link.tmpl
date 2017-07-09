@@ -1,0 +1,11 @@
+<!-- Link -->
+<?% IF ! global.sidebar.defined %?>
+<?% global.sidebar = 1 %?>
+<div id="sidebar">
+    <p class="section"><?% data.text %?></p>
+    <p>
+        <a href="<?% reentities(data.url) %?>"><img src="images/forward.<?% global.imagetyp %?>" alt="<?% data.text %?>" title="<?% data.text %?>" /></a>&nbsp;
+        <a href="<?% reentities(data.url) %?>"><?% data.text %?></a>
+    </p>
+</div>
+<?% END %?>

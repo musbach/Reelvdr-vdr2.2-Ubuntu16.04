@@ -1,0 +1,26 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)				dest					type	owner.group
+etc/reel/p.rbmini.conf
+vdr-plugins/lib/libvdr-rbmini.so.2.1.6	usr/lib/vdr/libvdr-rbmini.so.2.1.6	lib	-
+vdr-2.1.6/locale/ca_ES/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/cs_CZ/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/da_DK/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/de_DE/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/el_GR/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/es_ES/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/et_EE/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/fi_FI/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/fr_FR/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/hr_HR/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/hu_HU/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/it_IT/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/nl_NL/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/nn_NO/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/pl_PL/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/pt_PT/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/ro_RO/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/ru_RU/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/sl_SI/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/sv_SE/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-rbmini.mo
+vdr-2.1.6/locale/tr_TR/LC_MESSAGES/vdr-rbmini.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-rbmini.mo

@@ -1,0 +1,12 @@
+Package: reelvdr-pi-skinreel3
+Version: 2.0.26-66
+Section: reel
+Priority: required
+Architecture: i386
+Installed-Size: 2,2M
+Depends: libcurl3-gnutls, libgraphicsmagick++-q16-12, reelvdr
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-skinreel3
+Description: Default Skin for the ReelBox Series
+ This is the default Skin for the ReelBox Series
+ needs softdevice / xineoutput / ReelBox to work

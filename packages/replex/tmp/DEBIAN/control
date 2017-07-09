@@ -1,0 +1,10 @@
+Package: replex
+Version: 0.1.6.8-reel3-21
+Section: reel
+Priority: important
+Architecture: i386
+Installed-Size: 135K
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: replex
+Description: replex is a tool for converting VDR recordings in DVD compatible format
+  replex is a tool for converting VDR recordings into DVD compatible format

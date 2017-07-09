@@ -1,0 +1,10 @@
+Package: reelvdr-pi-remote
+Version: 0.3.9.0
+Section: reel
+Priority: important
+Architecture: i386
+Conflicts: reelvdr-plugins-base (<< 1.4.29.16291), reelvdr-baseconfig (<< 1.67)
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-remote
+Description: remote plugin for the Reel VDR
+Description-de: remote (Fernbedienung) plugin für den Reel VDR

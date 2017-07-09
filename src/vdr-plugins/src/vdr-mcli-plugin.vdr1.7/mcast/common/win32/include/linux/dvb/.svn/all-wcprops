@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/vdr-mcli-plugin/!svn/ver/176/mcast/common/win32/include/linux/dvb
+END
+frontend.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/include/linux/dvb/frontend.h
+END
+ca.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/include/linux/dvb/ca.h
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/vdr-mcli-plugin/!svn/ver/176/mcast/common/win32/include/linux/dvb/version.h
+END
+dmx.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/include/linux/dvb/dmx.h
+END

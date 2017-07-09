@@ -1,0 +1,13 @@
+Package: reelvdr-tools-bin
+Version: 1.1-21
+Section: reel
+Priority: important
+Architecture: i386
+Installed-Size: 53K
+Recommends: gettext
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Conflicts: reelvdr-tools (<< 2.0), dvd-bremsen
+Source: reelvdr-tools-bin
+Description: Tools needed by the ReelBox vdr
+ Required tools for the ReelVDR. This is the architecture dependent part.
+

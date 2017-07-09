@@ -1,0 +1,83 @@
+--- device.c	2014-07-13 11:16:50.015565128 +0200
++++ device.c	2014-07-13 10:46:15.485027964 +0200
+@@ -59,15 +59,17 @@
+ 	m_tuned = false;
+ 	StartSectionHandler ();
+ #ifdef USE_VDR_PACKET_BUFFER
++	//printf ("Mcli::%s: USING VDR PACKET BUFFER \n", __FUNCTION__);
+ 	m_PB = new cRingBufferLinear(MEGABYTE(4), TS_SIZE, false, "MCLI_TS");
+ 	m_PB->SetTimeouts (0, 100);
+ 	delivered = false;
+ #else
++	//printf ("Mcli::%s: USING INTERNAL MCLI PACKET BUFFER \n", __FUNCTION__);
+ 	m_PB = new cMyPacketBuffer (10000 * TS_SIZE, 10000);
+ 	m_PB->SetTimeouts (0, CLOCKS_PER_SEC * 20 / 1000);
+ #endif
+ 	m_filters = new cMcliFilters ();
+-//	printf ("cMcliDevice: got device number %d\n", CardIndex () + 1);
++
+ 	m_pidsnum = 0;
+ 	m_mcpidsnum = 0;
+ 	m_filternum = 0;
+@@ -245,9 +250,9 @@
+ 	}
+ #else
+ #ifdef USE_VDR_PACKET_BUFFER
+-	if(m_PB->Free() < len) {
++	if((size_t)m_PB->Free() < len) { // m_PB->Free() returns an unsigned int
+ 		m_PB->Clear();
+-		if(Receiving(true))  isyslog("MCLI: HandleTsData buffer overflow [%d] %s", CardIndex()+1, m_chan.Name());
++		if(Receiving(true))  isyslog("Mcli::%s: buffer overflow [%d] %s", __FUNCTION__, CardIndex()+1, m_chan.Name());
+ 	}
+ 	return m_PB->Put(buffer, len);
+ #else
+@@ -424,23 +436,38 @@
+ 	}
+ 	if(!CheckCAM(Channel, false)) {
+ #ifdef DEBUG_TUNE
+-		printf ("ProvidesChannel:%d Channel:%s, Prio:%d this->Prio:%d m_chan.Name:%s -> %d\n", CardIndex () + 1, Channel->Name (), Priority, this->Priority (), m_chan.Name(), false);
++		printf ("Mcli::%s: DVB:%d Channel(%p):%s, Prio:%d this->Prio:%d m_chan.Name:%s -> %d\n", __FUNCTION__, CardIndex () + 1, Channel, Channel->Name (), Priority, this->Priority (), m_chan.Name(), false);
+ #endif
+ 		return false;
+ 	}
+ 	if(ProvidesTransponder(Channel)) {
++		//printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * 'ProvidesTransponder(Channel)' is True\n", CardIndex () + 1, Channel, Channel->Name ());
+ 		result = hasPriority;
++
++		//printf ("Mcli::ProvidesChannel: DEBUG result %d hasPriority %d\n", result, hasPriority);
++
+ 		if (Priority >= 0 && Receiving (true))
+ 		{
++	                //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * 'Priority >= 0 && Receiving (true)' is True\n", CardIndex () + 1, Channel, Channel->Name ());
++
+ 			if (!IsTunedToTransponder(Channel)) {
+ 				needsDetachReceivers = true;
++	                        //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * '!IsTunedToTransponder(Channel)' is True\n", CardIndex () + 1, Channel, Channel->Name ());
++
+ 			} else {
+ 				result = true;
++                                //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * '!IsTunedToTransponder(Channel)' is False * result = true ***** OK\n", CardIndex () + 1, Channel, Channel->Name ());
+ 			}
++
++		} else {
++                        //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * 'Priority >= 0 && Receiving (true)' is False\n", CardIndex () + 1, Channel, Channel->Name ());
+ 		}
++	} else {
++                //printf ("Mcli::ProvidesChannel: DEBUG DVB:%d Channel(%p):%s * 'ProvidesTransponder(Channel)' is False\n", CardIndex () + 1, Channel, Channel->Name ());
+ 	}
++
+ #ifdef DEBUG_TUNE
+-	printf ("ProvidesChannel:%d Channel:%s, Prio:%d this->Prio:%d m_chan.Name:%s NeedsDetachReceivers:%d -> %d\n", CardIndex () + 1, Channel->Name (), Priority, this->Priority (), m_chan.Name(), needsDetachReceivers, result);
++	printf ("Mcli::%s: DVB:%d Channel(%p):%s, Prio:%d this->Prio:%d m_chan.Name:%s NeedsDetachReceivers:%d -> %d\n", __FUNCTION__, CardIndex () + 1, Channel, Channel->Name (), Priority, this->Priority (), m_chan.Name(), needsDetachReceivers, result);
+ #endif
+ 	if (NeedsDetachReceivers) {
+ 		*NeedsDetachReceivers = needsDetachReceivers;
+@@ -870,7 +908,7 @@
+ 				}
+ 			}
+ 			m_PB->Del(Count);
+-			esyslog("cMcliDevice::GetTSPacket: skipped %d bytes to sync on TS packet on device %d", Count, CardIndex());
++			esyslog("Mcli::%s: skipped %d bytes to sync on TS packet on DVB %d", __FUNCTION__, Count, CardIndex());
+ 			return true;
+ 		}
+ 		delivered = true;

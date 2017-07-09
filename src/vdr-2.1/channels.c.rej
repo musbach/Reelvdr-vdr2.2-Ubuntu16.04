@@ -1,0 +1,245 @@
+--- channels.c	(revision 15412)
++++ channels.c	(revision 15413)
+@@ -13,11 +13,13 @@
+ #include "epg.h"
+ #include "libsi/si.h"
+ #include "timers.h"
++#ifdef USE_ALTERNATECHANNEL
++#include "tools.h"
++#endif /* ALTERNATECHANNEL */
+ #ifdef REELVDR
+ #include <vector>
+ #endif /*REELVDR*/
+ 
+-
+ // IMPORTANT NOTE: in the 'sscanf()' calls there is a blank after the '%d'
+ // format characters in order to allow any number of blanks after a numeric
+ // value!
+@@ -539,11 +572,28 @@
+         q += IntArrayToString(q, Channel->dpids, 10, Channel->dlangs, Channel->dtypes);
+         }
+      *q = 0;
++#ifdef USE_TTXTSUBS
++     const int TBufferSize = 5 + 1 + (MAXTXTPAGES * (3 + 1 + MAXLANGCODE1 + 1)) + 10; // '12345;150=deu,151=fin,...', +10: paranoia
++     char tpidbuf[TBufferSize];
++     q = tpidbuf;
++     q += snprintf(q, sizeof(tpidbuf), "%d", Channel->tpid);
++     if (Channel->fixedTtxtSubtitlePages > 0) {
++        q += snprintf(q, sizeof(tpidbuf) - (q - tpidbuf), ";");
++        for (int i = 0; i < Channel->fixedTtxtSubtitlePages; ++i) {
++            tTeletextSubtitlePage page = Channel->teletextSubtitlePages[i];
++            q += snprintf(q, sizeof(tpidbuf) - (q - tpidbuf), "%d=%s", page.PageNumber(), page.ttxtLanguage);
++            }
++        }
++#endif /* TTXTSUBS */
+      char caidbuf[MAXCAIDS * 5 + 10]; // 5: 4 digits plus delimiting ',', 10: paranoia
+      q = caidbuf;
+      q += IntArrayToString(q, Channel->caids, 16);
+      *q = 0;
++#ifdef USE_TTXTSUBS
++     buffer = cString::sprintf("%s:%d:%s:%s:%d:%s:%s:%s:%s:%d:%d:%d:%d\n", FullName, Channel->frequency, *Channel->parameters, *cSource::ToString(Channel->source), Channel->srate, vpidbuf, apidbuf, tpidbuf, caidbuf, Channel->sid, Channel->nid, Channel->tid, Channel->rid);
++#else
+      buffer = cString::sprintf("%s:%d:%s:%s:%d:%s:%s:%d:%s:%d:%d:%d:%d\n", FullName, Channel->frequency, *Channel->parameters, *cSource::ToString(Channel->source), Channel->srate, vpidbuf, apidbuf, Channel->tpid, caidbuf, Channel->sid, Channel->nid, Channel->tid, Channel->rid);
++#endif /* TTXTSUBS */
+      }
+   return buffer;
+ }
+@@ -577,8 +627,15 @@
+      char *parambuf = NULL;
+      char *vpidbuf = NULL;
+      char *apidbuf = NULL;
++#ifdef USE_TTXTSUBS
++     char *tpidbuf = NULL;
++#endif /* TTXTSUBS */
+      char *caidbuf = NULL;
++#ifdef USE_TTXTSUBS
++     int fields = sscanf(s, "%a[^:]:%d :%a[^:]:%a[^:] :%d :%a[^:]:%a[^:]:%a[^:]:%a[^:]:%d :%d :%d :%d ", &namebuf, &frequency, &parambuf, &sourcebuf, &srate, &vpidbuf, &apidbuf, &tpidbuf, &caidbuf, &sid, &nid, &tid, &rid);
++#else
+      int fields = sscanf(s, "%a[^:]:%d :%a[^:]:%a[^:] :%d :%a[^:]:%a[^:]:%d :%a[^:]:%d :%d :%d :%d ", &namebuf, &frequency, &parambuf, &sourcebuf, &srate, &vpidbuf, &apidbuf, &tpid, &caidbuf, &sid, &nid, &tid, &rid);
++#endif /* TTXTSUBS */
+      if (fields >= 9) {
+         if (fields == 9) {
+            // allow reading of old format
+@@ -678,6 +735,39 @@
+               dtypes[NumDpids] = 0;
+               }
+ 
++#ifdef USE_TTXTSUBS
++           if (tpidbuf) {
++              char *p;
++              fixedTtxtSubtitlePages = 0;
++              // 2001;150=deu,151=fin
++              if ((p = strchr(tpidbuf, ';')) != NULL) {
++                 char *q, *strtok_next;
++                 *p++ = 0;
++                 while ((q = strtok_r(p, ",", &strtok_next)) != NULL) {
++                       if (fixedTtxtSubtitlePages < MAXTXTPAGES) {
++                          int page;
++                          char *l = strchr(q, '=');
++                          if (l)
++                             *l++ = 0;
++                          if (sscanf(q, "%d", &page) == 1) {
++                             teletextSubtitlePages[fixedTtxtSubtitlePages] = tTeletextSubtitlePage(page);
++                             if (l)
++                                strn0cpy(teletextSubtitlePages[fixedTtxtSubtitlePages].ttxtLanguage, l, MAXLANGCODE1);
++                             fixedTtxtSubtitlePages++;
++                             }
++                          else
++                             esyslog("ERROR: invalid Teletext page!"); // no need to set ok to 'false'
++                          }
++                       else
++                          esyslog("ERROR: too many Teletext pages!"); // no need to set ok to 'false'
++                       p = NULL;
++                       }
++                 totalTtxtSubtitlePages = fixedTtxtSubtitlePages;
++                 }
++              if (sscanf(tpidbuf, "%d", &tpid) != 1)
++                 return false;
++              }
++#endif /* TTXTSUBS */
+            if (caidbuf) {
+               char *p = caidbuf;
+               char *q;
+@@ -714,6 +804,9 @@
+         free(sourcebuf);
+         free(vpidbuf);
+         free(apidbuf);
++#ifdef USE_TTXTSUBS
++        free(tpidbuf);
++#endif /* TTXTSUBS */
+         free(caidbuf);
+         free(namebuf);
+         if (!GetChannelID().Valid()) {
+@@ -790,52 +883,105 @@
+ #ifdef REELVDR
+ bool cChannels::Reload(const char *FileName, bool AllowComments, bool MustExist)
+ {
++
+   Timers.Save();
++
+   std::vector<tChannelID> channelIDs; //TB: remember the channelIDs of the timers, they don't survive loading the channellist
++
+   for (int i = 0; i<Timers.Count(); i++) {
+-    cTimer *timer = Timers.Get(i);
+-    if(timer->Channel())
+-      channelIDs.push_back(timer->Channel()->GetChannelID());
+-    //printf("timer: \"%s\" on channel nr %i: \"%s\"\n", timer->Event() ? timer->Event()->Title() : "(NULL)", timer->Channel() ? timer->Channel()->Number() : -1, timer->Channel() ? timer->Channel()->Name() : "(NULL)");
++      cTimer *timer = Timers.Get(i);
++      if(timer->Channel())
++        channelIDs.push_back(timer->Channel()->GetChannelID());
++      //printf("timer: \"%s\" on channel nr %i: \"%s\"\n", timer->Event() ? timer->Event()->Title() : "(NULL)", timer->Channel() ? timer->Channel()->Number() : -1, timer->Channel() ? timer->Channel()->Name() : "(NULL)");
+   }
++
+   cChannel *channel = new cChannel;
+   channel->Parse("VDR:1:H:0:27500:0:0:0:0:1:0:0:0");
++
+   cDevice::PrimaryDevice()->SwitchChannel(channel, true);
++
+   if (cConfig<cChannel>::Load(FileName, false, true)) {
+-    DeleteDuplicateChannels();
+-    ReNumber();
+-    if (Count()) {
+-      cDevice::PrimaryDevice()->SwitchChannel(1);
+-      //CheckTimers(tmpTimers);
+-      if(Setup.ReelboxModeTemp == eModeStandalone)
++     DeleteDuplicateChannels();
++     ReNumber();
++     if (Count()) {
++        cDevice::PrimaryDevice()->SwitchChannel(1);
++        //CheckTimers(tmpTimers);
++        if(Setup.ReelboxModeTemp == eModeStandalone)
+         //    Timers.Load(); // XXX Deletes all
+         for (int i = 0; i<Timers.Count(); i++) {
+-          cTimer *timer = Timers.Get(i);
+-          cChannel *chan = Channels.GetByChannelID(channelIDs.at(i));
+-          if (chan) {
+-            timer->SetChannel(chan);
+-          } else {
+-            chan = Channels.GetByChannelID(channelIDs.at(i), true);
++            cTimer *timer = Timers.Get(i);
++            cChannel *chan = Channels.GetByChannelID(channelIDs.at(i));
+             if (chan) {
+-              timer->SetChannel(chan);
+-            } else if(Setup.ReelboxMode != eModeClient) { //TB: do not delete the timer in client-mode, it could have a valid channel on the "AVG-server"
+-              Timers.Del(timer);
++                timer->SetChannel(chan);
++            } else {
++                chan = Channels.GetByChannelID(channelIDs.at(i), true);
++                if (chan) {
++                    timer->SetChannel(chan);
++                } else if(Setup.ReelboxMode != eModeClient) { //TB: do not delete the timer in client-mode, it could have a valid channel on the "AVG-server"
++                    Timers.Del(timer);
++                }
+             }
+-          }
+-          //printf("timer: \"%s\" on channel nr %i: \"%s\"\n", timer->Event() ? timer->Event()->Title() : "(NULL)", timer->Channel() ? timer->Channel()->Number() : -1, timer->Channel() ? timer->Channel()->Name() : "(NULL)");
++            //printf("timer: \"%s\" on channel nr %i: \"%s\"\n", timer->Event() ? timer->Event()->Title() : "(NULL)", timer->Channel() ? timer->Channel()->Number() : -1, timer->Channel() ? timer->Channel()->Name() : "(NULL)");
+         }
+ #ifdef NOEPG_CHANNELSCONF
+-      // build path to noepgchannels.conf from channels.conf path
+-      std::string sPath=FileName; int nPos = sPath.rfind('/'); sPath.erase(nPos + 1); sPath += NOEPG_CHANNELSCONF;
+-      SyncNoEPGChannels(sPath.c_str());       // After reading channels.conf synchronize n¦epg list
++        // build path to noepgchannels.conf from channels.conf path
++        std::string sPath=FileName; int nPos = sPath.rfind('/'); sPath.erase(nPos + 1); sPath += NOEPG_CHANNELSCONF;
++        SyncNoEPGChannels(sPath.c_str());       // After reading channels.conf synchronize n¦epg list
+ #endif /* NOEPG_CHANNELSCONF */
+-      return true;
+-    }
+-  }
++
++        return true;
++        }
++     }
++
+   return false;
++
+ }
+ #endif /*REELVDR*/
+ 
++#ifdef USE_ALTERNATECHANNEL
++bool cChannels::LoadAlternativeChannels(const char *FileName)
++{
++  FILE *fp;
++  char *line;
++  cReadLine ReadLine;
++  cChannel *origChannel;
++  tChannelID channelID;
++  if ((fp = fopen(FileName,"r"))==NULL)
++  {
++    esyslog("Can't open Alternative Channels-File <%s>",FileName);
++    return false;
++  }
++  while ((line = ReadLine.Read(fp)) != NULL)
++  {
++    if (line[0] != '#')
++    {
++      line=strtok(line, ";");
++      if (line != NULL)
++      {
++        channelID = tChannelID::FromString(line);
++        if (channelID == tChannelID::InvalidID)
++          dsyslog("Skipping invalid channel ID <%s>",line);
++        else {
++          origChannel = Channels.GetByChannelID(channelID);
++          if (!origChannel)
++            dsyslog("Skipping unknown channel ID <%s>",line);
++          else {
++            line=strtok(NULL, ";");
++            channelID = tChannelID::FromString(line);
++            if (channelID == tChannelID::InvalidID || !Channels.GetByChannelID(channelID))
++              dsyslog("Skipping invalid/unknown alternative channel ID <%s>",line);
++            else
++              origChannel->SetAlternativeChannelID(line);
++          }
++        }
++      }
++    }
++  } while (line != NULL);
++  fclose(fp);
++  return true;
++}
++#endif /* ALTERNATECHANNEL */
++
+ void cChannels::HashChannel(cChannel *Channel)
+ {
+   channelsHashSid.Add(Channel, Channel->Sid());

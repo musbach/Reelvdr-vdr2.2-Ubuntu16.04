@@ -1,0 +1,10 @@
+<!-- FormStart -->
+<?% IF data %?>
+<h1><?% data %?></h1>
+<?% END %?>
+<table border='0' width='95%' style="margin-top:15px">
+<form method="post" action="?cmd=<?% cgi.param('cmd') %?>">
+    <input type='hidden' name='data' value='<?% cgi.param('data') %?>'>
+    <input type='hidden' name='__action' value='save'>
+
+    <?% INCLUDE 'widgets/referer.tmpl' %?>

@@ -1,0 +1,26 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	 "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>XXV</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=<?% charset %?>">
+    <meta name="copyright" content="copyright 2004 Xpix">
+<style type="text/css">
+<!--
+
+    <?% INCLUDE style/style.css %?>
+
+-->
+</style>
+</head>
+<body>
+<!-- WaitTemplate -->
+<?% percent = (data.current / data.maximum) * 100 %?>
+<h1><?% data.msg %?></h1>
+<p>
+
+<?% INCLUDE 'bloecke/percentbar.tmpl' barwidth=300 percent=percent eta=data.eta %?>
+
+</body>
+</html>

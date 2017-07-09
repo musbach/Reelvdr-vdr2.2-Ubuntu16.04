@@ -1,0 +1,47 @@
+Upstream Homepage:
+    http://www.xeatre.de/community/burn/
+    http://firefly.vdr-developer.org/patches/vdr-burn-0.1.0-pre22-ff1.tgz
+
+Upstream Author:
+    Sascha Volkenandt <sascha at akv-soft dot de>
+    Christoph Haubrich <christoph.haubrich (AT) web.de>
+
+Debian Maintainers:
+    Tobias Grimm <tg@e-tobi.net>
+    Thomas Günther <tom@toms-cafe.de>
+    Thomas Schmidt <tschmidt@debian.org>
+    Andreas Wissel <dunar@darkmages.de>
+    Michael Mauksch <mandaxy@gmx.de>
+
+Copyright:
+    (C) 2004 - 2006 Sascha Volkenandt
+    (C) 2009        Christoph Haubrich
+
+Copyright for debian/pxsup2dast.c (http://www.guru-group.fi/~too/sw/m2vmp2cut/):
+    (C) 2005 - 2007 Tomi Ollila <too@iki.fi>
+
+Copyright (Debian packaging):
+    (C) 2005 - 2006 Andreas Wissel, Michael Mauksch
+    (C) 2005 - 2009 Tobias Grimm, Thomas Günther, Thomas Schmidt
+
+License:
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+    The complete text of the GNU General Public License can be found
+    in /usr/share/common-licenses/GPL-2 on most Debian systems.
+
+License (Debian packaging):
+    The Debian packaging is licensed under the GPL, version 2 or any
+    later version, see /usr/share/common-licenses/GPL-2.

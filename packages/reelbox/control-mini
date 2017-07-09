@@ -1,0 +1,13 @@
+Package: reelbox
+Version: 1.32
+Section: reel
+Priority: standard
+Architecture: armel
+Depends: cnxt-modules, netceiver-client, reelbox-frontpanel-mini, reelvdr
+Suggests: reel-umts
+Conflicts: reelvdr-baseconfig (<< 1.68)
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox
+Description: Meta package needed by the ReelBox
+ This package depends on all of the packages needed by the ReelBox hardware
+ (i.e. frontpanel, hd extension).

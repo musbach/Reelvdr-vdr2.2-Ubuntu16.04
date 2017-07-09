@@ -1,0 +1,31 @@
+sc.o: sc.c sc.h scsetup.h filter.h misc.h mcli_sc.h ../mcli/filter.h \
+ ../mcli/packetbuffer.h ../mcli/device.h ../mcli/mcliheaders.h \
+ ../mcli/mcli.h ../mcli/filter.h ../mcli/device.h ../mcli/cam_menu.h \
+ system.h data.h cam.h smartcard.h network.h opts.h i18n.h log-core.h \
+ log.h version.h
+data.o: data.c mcli_sc.h ../mcli/filter.h ../mcli/packetbuffer.h \
+ ../mcli/device.h ../mcli/mcliheaders.h ../mcli/mcli.h ../mcli/filter.h \
+ ../mcli/device.h ../mcli/cam_menu.h data.h misc.h override.h scsetup.h \
+ log-core.h log.h i18n.h
+filter.o: filter.c filter.h misc.h mcli_sc.h ../mcli/filter.h \
+ ../mcli/packetbuffer.h ../mcli/device.h ../mcli/mcliheaders.h \
+ ../mcli/mcli.h ../mcli/filter.h ../mcli/device.h ../mcli/cam_menu.h sc.h \
+ log-core.h log.h
+system.o: system.c sc.h system.h data.h misc.h override.h opts.h i18n.h \
+ log-core.h log.h
+misc.o: misc.c misc.h
+cam.o: cam.c FFdecsa/FFdecsa.h cam.h data.h misc.h mcli_sc.h \
+ ../mcli/filter.h ../mcli/packetbuffer.h ../mcli/device.h \
+ ../mcli/mcliheaders.h ../mcli/mcli.h ../mcli/filter.h ../mcli/device.h \
+ ../mcli/cam_menu.h scsetup.h filter.h system.h override.h log-core.h \
+ log.h mcli_sc.c crypto.h crypto-bn.h support/idea.h helper.h
+smartcard.o: smartcard.c smartcard.h data.h misc.h sc.h log-core.h log.h
+network.o: network.c network.h misc.h log-core.h log.h
+crypto.o: crypto.c crypto.h crypto-bn.h support/idea.h helper.h log.h \
+ misc.h support/i_cbc.c support/idea.h support/idea_lcl.h support/i_ecb.c \
+ support/i_skey.c
+system-common.o: system-common.c system-common.h data.h misc.h system.h \
+ smartcard.h crypto-bn.h
+parse.o: parse.c parse.h misc.h log.h
+log.o: log.c log.h misc.h
+override.o: override.c override.h data.h misc.h sc.h log-core.h log.h

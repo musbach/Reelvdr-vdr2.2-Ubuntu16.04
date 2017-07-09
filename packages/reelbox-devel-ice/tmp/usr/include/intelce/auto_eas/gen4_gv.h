@@ -1,0 +1,1184 @@
+#ifndef GV_REGOFFS_H
+#define GV_REGOFFS_H 1
+/*
+
+  This file is provided under a dual BSD/GPLv2 license.  When using or 
+  redistributing this file, you may do so under either license.
+
+  GPL LICENSE SUMMARY
+
+  Copyright(c) 2007-2009 Intel Corporation. All rights reserved.
+
+  This program is free software; you can redistribute it and/or modify 
+  it under the terms of version 2 of the GNU General Public License as
+  published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful, but 
+  WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License 
+  along with this program; if not, write to the Free Software 
+  Foundation, Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+  The full GNU General Public License is included in this distribution 
+  in the file called LICENSE.GPL.
+
+  Contact Information:
+    Intel Corporation
+    2200 Mission College Blvd.
+    Santa Clara, CA  97052
+
+  BSD LICENSE 
+
+  Copyright(c) 2007-2009 Intel Corporation. All rights reserved.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without 
+  modification, are permitted provided that the following conditions 
+  are met:
+
+    * Redistributions of source code must retain the above copyright 
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright 
+      notice, this list of conditions and the following disclaimer in 
+      the documentation and/or other materials provided with the 
+      distribution.
+    * Neither the name of Intel Corporation nor the names of its 
+      contributors may be used to endorse or promote products derived 
+      from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY 
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+
+
+/* Module GV CSR Definitions */
+/* WARNING: This file is Machine Generated using sven_csr.c */
+
+
+#define ROFF_GV_CONTROL	0x7000 /* Reset and Configuration */ 
+	#define BITFIELD_GV_CONTROL	 0x7000, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_CONTROL */
+	#define BLSB_GV_CONTROL_RESERVED0	8
+	#define BLSB_GV_CONTROL_WATCHDOG_TIMER_ENABLE	7
+	#define BLSB_GV_CONTROL_ATR	5
+	#define BLSB_GV_CONTROL_CW_PIO_SEL	3
+	#define BLSB_GV_CONTROL_RESERVED1	1
+	#define BLSB_GV_CONTROL_GV_RESET_I	0
+	/* Register Bit Widths for GV_CONTROL */
+	#define BWID_GV_CONTROL_RESERVED0	24
+	#define BWID_GV_CONTROL_WATCHDOG_TIMER_ENABLE	1
+	#define BWID_GV_CONTROL_ATR	2
+	#define BWID_GV_CONTROL_CW_PIO_SEL	2
+	#define BWID_GV_CONTROL_RESERVED1	2
+	#define BWID_GV_CONTROL_GV_RESET_I	1
+	/* Register Bit MASKS for GV_CONTROL */
+	#define BMSK_GV_CONTROL_RESERVED0	0xffffff00 /* Reserved */
+	#define BMSK_GV_CONTROL_WATCHDOG_TIMER_ENABLE	(1<<7) /* == 0x00000080: Enable counting of 32-bit free running down counter */
+	#define BMSK_GV_CONTROL_ATR	0x00000060 /* RISC access to all address space */
+	#define BMSK_GV_CONTROL_CW_PIO_SEL	0x00000018 /* Chipwatcher mux sel */
+	#define BMSK_GV_CONTROL_RESERVED1	0x00000006 /* Reserved */
+	#define BMSK_GV_CONTROL_GV_RESET_I	(1<<0) /* == 0x00000001: RISC Global vSparc Reset */
+	/* Register BITFIELD for GV_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_GV_CONTROL_RESERVED0	 0x7000, 8, 24, 0xffffff00
+	#define BITFIELD_GV_CONTROL_WATCHDOG_TIMER_ENABLE	 0x7000, 7, 1, 0x00000080
+	#define BITFIELD_GV_CONTROL_ATR	 0x7000, 5, 2, 0x00000060
+	#define BITFIELD_GV_CONTROL_CW_PIO_SEL	 0x7000, 3, 2, 0x00000018
+	#define BITFIELD_GV_CONTROL_RESERVED1	 0x7000, 1, 2, 0x00000006
+	#define BITFIELD_GV_CONTROL_GV_RESET_I	 0x7000, 0, 1, 0x00000001
+#define ROFF_GV_ICACHE_BASE_ADDRESS	0x7004 /* Instruction Cache base address */ 
+	#define BITFIELD_GV_ICACHE_BASE_ADDRESS	 0x7004, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_ICACHE_BASE_ADDRESS */
+	#define BLSB_GV_ICACHE_BASE_ADDRESS_BASE_ADDR	14
+	/* Register Bit Widths for GV_ICACHE_BASE_ADDRESS */
+	#define BWID_GV_ICACHE_BASE_ADDRESS_BASE_ADDR	18
+	/* Register Bit MASKS for GV_ICACHE_BASE_ADDRESS */
+	#define BMSK_GV_ICACHE_BASE_ADDRESS_BASE_ADDR	0xffffc000 /* Instruction code base system address */
+	/* Register BITFIELD for GV_ICACHE_BASE_ADDRESS - roff, lsb, width, mask */
+	#define BITFIELD_GV_ICACHE_BASE_ADDRESS_BASE_ADDR	 0x7004, 14, 18, 0xffffc000
+#define ROFF_GV_WATCHDOG_TIMER	0x7008 /* Watchdog Timer */ 
+	#define BITFIELD_GV_WATCHDOG_TIMER	 0x7008, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_WATCHDOG_TIMER */
+	#define BLSB_GV_WATCHDOG_TIMER_TIMER	0
+	/* Register Bit Widths for GV_WATCHDOG_TIMER */
+	#define BWID_GV_WATCHDOG_TIMER_TIMER	32
+	/* Register Bit MASKS for GV_WATCHDOG_TIMER */
+	#define BMSK_GV_WATCHDOG_TIMER_TIMER	0x00000000 /* 32 bit down counting watchdog timer */
+	/* Register BITFIELD for GV_WATCHDOG_TIMER - roff, lsb, width, mask */
+	#define BITFIELD_GV_WATCHDOG_TIMER_TIMER	 0x7008, 0, 32, 0x00000000
+#define ROFF_GV_CACHELINE_INVALIDATE0	0x7010 /* Icacheline invalidate mask */ 
+	#define BITFIELD_GV_CACHELINE_INVALIDATE0	 0x7010, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_CACHELINE_INVALIDATE0 */
+	#define BLSB_GV_CACHELINE_INVALIDATE0_CACHE_INVL_MSK	0
+	/* Register Bit Widths for GV_CACHELINE_INVALIDATE0 */
+	#define BWID_GV_CACHELINE_INVALIDATE0_CACHE_INVL_MSK	32
+	/* Register Bit MASKS for GV_CACHELINE_INVALIDATE0 */
+	#define BMSK_GV_CACHELINE_INVALIDATE0_CACHE_INVL_MSK	0x00000000 /* 32-bit mask for cacheline invalidate */
+	/* Register BITFIELD for GV_CACHELINE_INVALIDATE0 - roff, lsb, width, mask */
+	#define BITFIELD_GV_CACHELINE_INVALIDATE0_CACHE_INVL_MSK	 0x7010, 0, 32, 0x00000000
+#define ROFF_GV_CACHELINE_INVALIDATE1	0x7014 /* Icacheline invalidate mask */ 
+	#define BITFIELD_GV_CACHELINE_INVALIDATE1	 0x7014, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_CACHELINE_INVALIDATE1 */
+	#define BLSB_GV_CACHELINE_INVALIDATE1_CACHE_INVL_MSK	0
+	/* Register Bit Widths for GV_CACHELINE_INVALIDATE1 */
+	#define BWID_GV_CACHELINE_INVALIDATE1_CACHE_INVL_MSK	32
+	/* Register Bit MASKS for GV_CACHELINE_INVALIDATE1 */
+	#define BMSK_GV_CACHELINE_INVALIDATE1_CACHE_INVL_MSK	0x00000000 /* 32-bit mask for cacheline invalidate */
+	/* Register BITFIELD for GV_CACHELINE_INVALIDATE1 - roff, lsb, width, mask */
+	#define BITFIELD_GV_CACHELINE_INVALIDATE1_CACHE_INVL_MSK	 0x7014, 0, 32, 0x00000000
+#define ROFF_GV_CACHELINE_INVALIDATE2	0x7018 /* Icacheline invalidate mask */ 
+	#define BITFIELD_GV_CACHELINE_INVALIDATE2	 0x7018, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_CACHELINE_INVALIDATE2 */
+	#define BLSB_GV_CACHELINE_INVALIDATE2_CACHE_INVL_MSK	0
+	/* Register Bit Widths for GV_CACHELINE_INVALIDATE2 */
+	#define BWID_GV_CACHELINE_INVALIDATE2_CACHE_INVL_MSK	32
+	/* Register Bit MASKS for GV_CACHELINE_INVALIDATE2 */
+	#define BMSK_GV_CACHELINE_INVALIDATE2_CACHE_INVL_MSK	0x00000000 /* 32-bit mask for cacheline invalidate */
+	/* Register BITFIELD for GV_CACHELINE_INVALIDATE2 - roff, lsb, width, mask */
+	#define BITFIELD_GV_CACHELINE_INVALIDATE2_CACHE_INVL_MSK	 0x7018, 0, 32, 0x00000000
+#define ROFF_GV_DMA_SYSTEM_ADDRESS	0x7020 /* DMA system address */ 
+	#define BITFIELD_GV_DMA_SYSTEM_ADDRESS	 0x7020, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DMA_SYSTEM_ADDRESS */
+	#define BLSB_GV_DMA_SYSTEM_ADDRESS_SYS_ADDR	2
+	/* Register Bit Widths for GV_DMA_SYSTEM_ADDRESS */
+	#define BWID_GV_DMA_SYSTEM_ADDRESS_SYS_ADDR	30
+	/* Register Bit MASKS for GV_DMA_SYSTEM_ADDRESS */
+	#define BMSK_GV_DMA_SYSTEM_ADDRESS_SYS_ADDR	0xfffffffc /* 32-bit System address. It should be DWORD aligned */
+	/* Register BITFIELD for GV_DMA_SYSTEM_ADDRESS - roff, lsb, width, mask */
+	#define BITFIELD_GV_DMA_SYSTEM_ADDRESS_SYS_ADDR	 0x7020, 2, 30, 0xfffffffc
+#define ROFF_GV_DMA_LOCAL_ADDRESS	0x7024 /* DMA local address */ 
+	#define BITFIELD_GV_DMA_LOCAL_ADDRESS	 0x7024, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DMA_LOCAL_ADDRESS */
+	#define BLSB_GV_DMA_LOCAL_ADDRESS_RESERVED	16
+	#define BLSB_GV_DMA_LOCAL_ADDRESS_LCL_ADDR	2
+	/* Register Bit Widths for GV_DMA_LOCAL_ADDRESS */
+	#define BWID_GV_DMA_LOCAL_ADDRESS_RESERVED	16
+	#define BWID_GV_DMA_LOCAL_ADDRESS_LCL_ADDR	14
+	/* Register Bit MASKS for GV_DMA_LOCAL_ADDRESS */
+	#define BMSK_GV_DMA_LOCAL_ADDRESS_RESERVED	0xffff0000 /* Reserved */
+	#define BMSK_GV_DMA_LOCAL_ADDRESS_LCL_ADDR	0x0000fffc /* 16-bit local address It must be DOWRD aligned */
+	/* Register BITFIELD for GV_DMA_LOCAL_ADDRESS - roff, lsb, width, mask */
+	#define BITFIELD_GV_DMA_LOCAL_ADDRESS_RESERVED	 0x7024, 16, 16, 0xffff0000
+	#define BITFIELD_GV_DMA_LOCAL_ADDRESS_LCL_ADDR	 0x7024, 2, 14, 0x0000fffc
+#define ROFF_GV_DMA_CONTROL_STATUS	0x7028 /* DMA control and status register */ 
+	#define BITFIELD_GV_DMA_CONTROL_STATUS	 0x7028, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DMA_CONTROL_STATUS */
+	#define BLSB_GV_DMA_CONTROL_STATUS_RESERVED	23
+	#define BLSB_GV_DMA_CONTROL_STATUS_DMA_START	22
+	#define BLSB_GV_DMA_CONTROL_STATUS_DMA_DONE	21
+	#define BLSB_GV_DMA_CONTROL_STATUS_DMA_BUSY	20
+	#define BLSB_GV_DMA_CONTROL_STATUS_DMA_BURST	18
+	#define BLSB_GV_DMA_CONTROL_STATUS_BYTE_SWAP	17
+	#define BLSB_GV_DMA_CONTROL_STATUS_DMA_DIR	16
+	#define BLSB_GV_DMA_CONTROL_STATUS_DMA_SIZE	0
+	/* Register Bit Widths for GV_DMA_CONTROL_STATUS */
+	#define BWID_GV_DMA_CONTROL_STATUS_RESERVED	9
+	#define BWID_GV_DMA_CONTROL_STATUS_DMA_START	1
+	#define BWID_GV_DMA_CONTROL_STATUS_DMA_DONE	1
+	#define BWID_GV_DMA_CONTROL_STATUS_DMA_BUSY	1
+	#define BWID_GV_DMA_CONTROL_STATUS_DMA_BURST	2
+	#define BWID_GV_DMA_CONTROL_STATUS_BYTE_SWAP	1
+	#define BWID_GV_DMA_CONTROL_STATUS_DMA_DIR	1
+	#define BWID_GV_DMA_CONTROL_STATUS_DMA_SIZE	16
+	/* Register Bit MASKS for GV_DMA_CONTROL_STATUS */
+	#define BMSK_GV_DMA_CONTROL_STATUS_RESERVED	0xff800000 /* Reserved */
+	#define BMSK_GV_DMA_CONTROL_STATUS_DMA_START	(1<<22) /* == 0x00400000: Initiates DMA. This bit self clears */
+	#define BMSK_GV_DMA_CONTROL_STATUS_DMA_DONE	(1<<21) /* == 0x00200000: Inidcates completion of DMA */
+	#define BMSK_GV_DMA_CONTROL_STATUS_DMA_BUSY	(1<<20) /* == 0x00100000: Indicates DMA unit is busy */
+	#define BMSK_GV_DMA_CONTROL_STATUS_DMA_BURST	0x000c0000 /* Set maximum burst size to use on SAP bus */
+	#define BMSK_GV_DMA_CONTROL_STATUS_BYTE_SWAP	(1<<17) /* == 0x00020000: Byte swapped within a word during trasnfer */
+	#define BMSK_GV_DMA_CONTROL_STATUS_DMA_DIR	(1<<16) /* == 0x00010000: If set, transfer is from Local to system side */
+	#define BMSK_GV_DMA_CONTROL_STATUS_DMA_SIZE	0x0000ffff /* 16-bit DMA transfer count */
+	/* Register BITFIELD for GV_DMA_CONTROL_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_DMA_CONTROL_STATUS_RESERVED	 0x7028, 23, 9, 0xff800000
+	#define BITFIELD_GV_DMA_CONTROL_STATUS_DMA_START	 0x7028, 22, 1, 0x00400000
+	#define BITFIELD_GV_DMA_CONTROL_STATUS_DMA_DONE	 0x7028, 21, 1, 0x00200000
+	#define BITFIELD_GV_DMA_CONTROL_STATUS_DMA_BUSY	 0x7028, 20, 1, 0x00100000
+	#define BITFIELD_GV_DMA_CONTROL_STATUS_DMA_BURST	 0x7028, 18, 2, 0x000c0000
+	#define BITFIELD_GV_DMA_CONTROL_STATUS_BYTE_SWAP	 0x7028, 17, 1, 0x00020000
+	#define BITFIELD_GV_DMA_CONTROL_STATUS_DMA_DIR	 0x7028, 16, 1, 0x00010000
+	#define BITFIELD_GV_DMA_CONTROL_STATUS_DMA_SIZE	 0x7028, 0, 16, 0x0000ffff
+#define ROFF_GV_HOST_DOORBELL	0x7030 /* Host processor Doorbell register */ 
+	#define BITFIELD_GV_HOST_DOORBELL	 0x7030, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_HOST_DOORBELL */
+	#define BLSB_GV_HOST_DOORBELL_CMD	0
+	/* Register Bit Widths for GV_HOST_DOORBELL */
+	#define BWID_GV_HOST_DOORBELL_CMD	32
+	/* Register Bit MASKS for GV_HOST_DOORBELL */
+	#define BMSK_GV_HOST_DOORBELL_CMD	0x00000000 /* 32-bit software defined doorbell message */
+	/* Register BITFIELD for GV_HOST_DOORBELL - roff, lsb, width, mask */
+	#define BITFIELD_GV_HOST_DOORBELL_CMD	 0x7030, 0, 32, 0x00000000
+#define ROFF_GV_HOST_IPC_STATUS	0x7034 /* Host IPC Status register */ 
+	#define BITFIELD_GV_HOST_IPC_STATUS	 0x7034, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_HOST_IPC_STATUS */
+	#define BLSB_GV_HOST_IPC_STATUS_RESERVED	2
+	#define BLSB_GV_HOST_IPC_STATUS_DONE	1
+	#define BLSB_GV_HOST_IPC_STATUS_READY	0
+	/* Register Bit Widths for GV_HOST_IPC_STATUS */
+	#define BWID_GV_HOST_IPC_STATUS_RESERVED	30
+	#define BWID_GV_HOST_IPC_STATUS_DONE	1
+	#define BWID_GV_HOST_IPC_STATUS_READY	1
+	/* Register Bit MASKS for GV_HOST_IPC_STATUS */
+	#define BMSK_GV_HOST_IPC_STATUS_RESERVED	0xfffffffc /* Reserved */
+	#define BMSK_GV_HOST_IPC_STATUS_DONE	(1<<1) /* == 0x00000002: Mailbox is ready for next message */
+	#define BMSK_GV_HOST_IPC_STATUS_READY	(1<<0) /* == 0x00000001: Doorbell register is ready for next message */
+	/* Register BITFIELD for GV_HOST_IPC_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_HOST_IPC_STATUS_RESERVED	 0x7034, 2, 30, 0xfffffffc
+	#define BITFIELD_GV_HOST_IPC_STATUS_DONE	 0x7034, 1, 1, 0x00000002
+	#define BITFIELD_GV_HOST_IPC_STATUS_READY	 0x7034, 0, 1, 0x00000001
+#define ROFF_GV_DOORBELL	0x7038 /* Global vSparc Doorbell Register */ 
+	#define BITFIELD_GV_DOORBELL	 0x7038, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DOORBELL */
+	#define BLSB_GV_DOORBELL_CMD	0
+	/* Register Bit Widths for GV_DOORBELL */
+	#define BWID_GV_DOORBELL_CMD	32
+	/* Register Bit MASKS for GV_DOORBELL */
+	#define BMSK_GV_DOORBELL_CMD	0x00000000 /* 32-bit software defined doorbell message */
+	/* Register BITFIELD for GV_DOORBELL - roff, lsb, width, mask */
+	#define BITFIELD_GV_DOORBELL_CMD	 0x7038, 0, 32, 0x00000000
+#define ROFF_GV_IPC_STATUS	0x703c /* Global vSparc IPC Status Register */ 
+	#define BITFIELD_GV_IPC_STATUS	 0x703c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_IPC_STATUS */
+	#define BLSB_GV_IPC_STATUS_RESERVED	2
+	#define BLSB_GV_IPC_STATUS_DONE	1
+	#define BLSB_GV_IPC_STATUS_READY	0
+	/* Register Bit Widths for GV_IPC_STATUS */
+	#define BWID_GV_IPC_STATUS_RESERVED	30
+	#define BWID_GV_IPC_STATUS_DONE	1
+	#define BWID_GV_IPC_STATUS_READY	1
+	/* Register Bit MASKS for GV_IPC_STATUS */
+	#define BMSK_GV_IPC_STATUS_RESERVED	0xfffffffc /* Reserved */
+	#define BMSK_GV_IPC_STATUS_DONE	(1<<1) /* == 0x00000002: Mailbox is ready for next message */
+	#define BMSK_GV_IPC_STATUS_READY	(1<<0) /* == 0x00000001: Doorbell register is ready for next message */
+	/* Register BITFIELD for GV_IPC_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_IPC_STATUS_RESERVED	 0x703c, 2, 30, 0xfffffffc
+	#define BITFIELD_GV_IPC_STATUS_DONE	 0x703c, 1, 1, 0x00000002
+	#define BITFIELD_GV_IPC_STATUS_READY	 0x703c, 0, 1, 0x00000001
+#define ROFF_GV_SEC_STATUS	0x7040 /* GV Security Status Regsiter */ 
+	#define BITFIELD_GV_SEC_STATUS	 0x7040, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_SEC_STATUS */
+	#define BLSB_GV_SEC_STATUS_AV_BASE_ADDR	29
+	#define BLSB_GV_SEC_STATUS_RESERVED0	25
+	#define BLSB_GV_SEC_STATUS_AV_BASE_ADDR_LCK	24
+	#define BLSB_GV_SEC_STATUS_RESERVED1	2
+	#define BLSB_GV_SEC_STATUS_AGNT_TRSTD	1
+	#define BLSB_GV_SEC_STATUS_EXEN_ENBL	0
+	/* Register Bit Widths for GV_SEC_STATUS */
+	#define BWID_GV_SEC_STATUS_AV_BASE_ADDR	3
+	#define BWID_GV_SEC_STATUS_RESERVED0	4
+	#define BWID_GV_SEC_STATUS_AV_BASE_ADDR_LCK	1
+	#define BWID_GV_SEC_STATUS_RESERVED1	22
+	#define BWID_GV_SEC_STATUS_AGNT_TRSTD	1
+	#define BWID_GV_SEC_STATUS_EXEN_ENBL	1
+	/* Register Bit MASKS for GV_SEC_STATUS */
+	#define BMSK_GV_SEC_STATUS_AV_BASE_ADDR	0xe0000000 /* base address of the 512MB AV window */
+	#define BMSK_GV_SEC_STATUS_RESERVED0	0x1e000000 /* Reserved */
+	#define BMSK_GV_SEC_STATUS_AV_BASE_ADDR_LCK	(1<<24) /* == 0x01000000: AV_window has been locked */
+	#define BMSK_GV_SEC_STATUS_RESERVED1	0x00fffffc /* Reserved */
+	#define BMSK_GV_SEC_STATUS_AGNT_TRSTD	(1<<1) /* == 0x00000002: Determines if Global VSparc is trusted or not */
+	#define BMSK_GV_SEC_STATUS_EXEN_ENBL	(1<<0) /* == 0x00000001: Execution Enable */
+	/* Register BITFIELD for GV_SEC_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_SEC_STATUS_AV_BASE_ADDR	 0x7040, 29, 3, 0xe0000000
+	#define BITFIELD_GV_SEC_STATUS_RESERVED0	 0x7040, 25, 4, 0x1e000000
+	#define BITFIELD_GV_SEC_STATUS_AV_BASE_ADDR_LCK	 0x7040, 24, 1, 0x01000000
+	#define BITFIELD_GV_SEC_STATUS_RESERVED1	 0x7040, 2, 22, 0x00fffffc
+	#define BITFIELD_GV_SEC_STATUS_AGNT_TRSTD	 0x7040, 1, 1, 0x00000002
+	#define BITFIELD_GV_SEC_STATUS_EXEN_ENBL	 0x7040, 0, 1, 0x00000001
+#define ROFF_GV_SEC_THREAT	0x7044 /* Security Threat Regsiter */ 
+	#define BITFIELD_GV_SEC_THREAT	 0x7044, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_SEC_THREAT */
+	#define BLSB_GV_SEC_THREAT_RESERVED	1
+	#define BLSB_GV_SEC_THREAT_SEC_THREAT	0
+	/* Register Bit Widths for GV_SEC_THREAT */
+	#define BWID_GV_SEC_THREAT_RESERVED	31
+	#define BWID_GV_SEC_THREAT_SEC_THREAT	1
+	/* Register Bit MASKS for GV_SEC_THREAT */
+	#define BMSK_GV_SEC_THREAT_RESERVED	0xfffffffe /* Reserved */
+	#define BMSK_GV_SEC_THREAT_SEC_THREAT	(1<<0) /* == 0x00000001: Security Threat bit */
+	/* Register BITFIELD for GV_SEC_THREAT - roff, lsb, width, mask */
+	#define BITFIELD_GV_SEC_THREAT_RESERVED	 0x7044, 1, 31, 0xfffffffe
+	#define BITFIELD_GV_SEC_THREAT_SEC_THREAT	 0x7044, 0, 1, 0x00000001
+#define ROFF_GV_SEC_CONTROL	0x7048 /* Secuurity Control Regsiter */ 
+	#define BITFIELD_GV_SEC_CONTROL	 0x7048, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_SEC_CONTROL */
+	#define BLSB_GV_SEC_CONTROL_RESERVED	3
+	#define BLSB_GV_SEC_CONTROL_SEC_ATTR	0
+	/* Register Bit Widths for GV_SEC_CONTROL */
+	#define BWID_GV_SEC_CONTROL_RESERVED	29
+	#define BWID_GV_SEC_CONTROL_SEC_ATTR	3
+	/* Register Bit MASKS for GV_SEC_CONTROL */
+	#define BMSK_GV_SEC_CONTROL_RESERVED	0xfffffff8 /* Reserved */
+	#define BMSK_GV_SEC_CONTROL_SEC_ATTR	0x00000007 /* Security Attribute of Master */
+	/* Register BITFIELD for GV_SEC_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_GV_SEC_CONTROL_RESERVED	 0x7048, 3, 29, 0xfffffff8
+	#define BITFIELD_GV_SEC_CONTROL_SEC_ATTR	 0x7048, 0, 3, 0x00000007
+#define ROFF_GV_HOST_INTERRUPT_ENABLE	0x7050 /* Interrupt Enable Register for host processor */ 
+	#define BITFIELD_GV_HOST_INTERRUPT_ENABLE	 0x7050, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_HOST_INTERRUPT_ENABLE */
+	#define BLSB_GV_HOST_INTERRUPT_ENABLE_RESERVED	7
+	#define BLSB_GV_HOST_INTERRUPT_ENABLE_VSP_ILLEGAL_EVT	6
+	#define BLSB_GV_HOST_INTERRUPT_ENABLE_WATCHDOG_TIMER	5
+	#define BLSB_GV_HOST_INTERRUPT_ENABLE_EXT_EVT	4
+	#define BLSB_GV_HOST_INTERRUPT_ENABLE_GV_EVT	3
+	#define BLSB_GV_HOST_INTERRUPT_ENABLE_GV_DMA_DONE	2
+	#define BLSB_GV_HOST_INTERRUPT_ENABLE_HOST_DOORBELL_EVT	1
+	#define BLSB_GV_HOST_INTERRUPT_ENABLE_GV_DOORBELL_EVT	0
+	/* Register Bit Widths for GV_HOST_INTERRUPT_ENABLE */
+	#define BWID_GV_HOST_INTERRUPT_ENABLE_RESERVED	25
+	#define BWID_GV_HOST_INTERRUPT_ENABLE_VSP_ILLEGAL_EVT	1
+	#define BWID_GV_HOST_INTERRUPT_ENABLE_WATCHDOG_TIMER	1
+	#define BWID_GV_HOST_INTERRUPT_ENABLE_EXT_EVT	1
+	#define BWID_GV_HOST_INTERRUPT_ENABLE_GV_EVT	1
+	#define BWID_GV_HOST_INTERRUPT_ENABLE_GV_DMA_DONE	1
+	#define BWID_GV_HOST_INTERRUPT_ENABLE_HOST_DOORBELL_EVT	1
+	#define BWID_GV_HOST_INTERRUPT_ENABLE_GV_DOORBELL_EVT	1
+	/* Register Bit MASKS for GV_HOST_INTERRUPT_ENABLE */
+	#define BMSK_GV_HOST_INTERRUPT_ENABLE_RESERVED	0xffffff80 /* Reserved */
+	#define BMSK_GV_HOST_INTERRUPT_ENABLE_VSP_ILLEGAL_EVT	(1<<6) /* == 0x00000040: VSParc Illegal Event */
+	#define BMSK_GV_HOST_INTERRUPT_ENABLE_WATCHDOG_TIMER	(1<<5) /* == 0x00000020: Watchdog timer event interrupt enable */
+	#define BMSK_GV_HOST_INTERRUPT_ENABLE_EXT_EVT	(1<<4) /* == 0x00000010: External Event interrupt enable */
+	#define BMSK_GV_HOST_INTERRUPT_ENABLE_GV_EVT	(1<<3) /* == 0x00000008: Global vSparc event interrupt enable and status register */
+	#define BMSK_GV_HOST_INTERRUPT_ENABLE_GV_DMA_DONE	(1<<2) /* == 0x00000004: Global vSparc DMA event interrupt enable and status register */
+	#define BMSK_GV_HOST_INTERRUPT_ENABLE_HOST_DOORBELL_EVT	(1<<1) /* == 0x00000002: Host doorbell event interrupt enable and status register */
+	#define BMSK_GV_HOST_INTERRUPT_ENABLE_GV_DOORBELL_EVT	(1<<0) /* == 0x00000001: Global vSparc Doorbell event interrupt enable and status register */
+	/* Register BITFIELD for GV_HOST_INTERRUPT_ENABLE - roff, lsb, width, mask */
+	#define BITFIELD_GV_HOST_INTERRUPT_ENABLE_RESERVED	 0x7050, 7, 25, 0xffffff80
+	#define BITFIELD_GV_HOST_INTERRUPT_ENABLE_VSP_ILLEGAL_EVT	 0x7050, 6, 1, 0x00000040
+	#define BITFIELD_GV_HOST_INTERRUPT_ENABLE_WATCHDOG_TIMER	 0x7050, 5, 1, 0x00000020
+	#define BITFIELD_GV_HOST_INTERRUPT_ENABLE_EXT_EVT	 0x7050, 4, 1, 0x00000010
+	#define BITFIELD_GV_HOST_INTERRUPT_ENABLE_GV_EVT	 0x7050, 3, 1, 0x00000008
+	#define BITFIELD_GV_HOST_INTERRUPT_ENABLE_GV_DMA_DONE	 0x7050, 2, 1, 0x00000004
+	#define BITFIELD_GV_HOST_INTERRUPT_ENABLE_HOST_DOORBELL_EVT	 0x7050, 1, 1, 0x00000002
+	#define BITFIELD_GV_HOST_INTERRUPT_ENABLE_GV_DOORBELL_EVT	 0x7050, 0, 1, 0x00000001
+#define ROFF_GV_INTERRUPT_ENABLE	0x7054 /* Interrupt Enable Register for GV */ 
+	#define BITFIELD_GV_INTERRUPT_ENABLE	 0x7054, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_INTERRUPT_ENABLE */
+	#define BLSB_GV_INTERRUPT_ENABLE_RESERVED	7
+	#define BLSB_GV_INTERRUPT_ENABLE_VSP_ILLEGAL_EVT	6
+	#define BLSB_GV_INTERRUPT_ENABLE_WATCHDOG_TIMER	5
+	#define BLSB_GV_INTERRUPT_ENABLE_EXT_EVT	4
+	#define BLSB_GV_INTERRUPT_ENABLE_GV_EVT	3
+	#define BLSB_GV_INTERRUPT_ENABLE_GV_DMA_DONE	2
+	#define BLSB_GV_INTERRUPT_ENABLE_HOST_DOORBELL_EVT	1
+	#define BLSB_GV_INTERRUPT_ENABLE_GV_DOORBELL_EVT	0
+	/* Register Bit Widths for GV_INTERRUPT_ENABLE */
+	#define BWID_GV_INTERRUPT_ENABLE_RESERVED	25
+	#define BWID_GV_INTERRUPT_ENABLE_VSP_ILLEGAL_EVT	1
+	#define BWID_GV_INTERRUPT_ENABLE_WATCHDOG_TIMER	1
+	#define BWID_GV_INTERRUPT_ENABLE_EXT_EVT	1
+	#define BWID_GV_INTERRUPT_ENABLE_GV_EVT	1
+	#define BWID_GV_INTERRUPT_ENABLE_GV_DMA_DONE	1
+	#define BWID_GV_INTERRUPT_ENABLE_HOST_DOORBELL_EVT	1
+	#define BWID_GV_INTERRUPT_ENABLE_GV_DOORBELL_EVT	1
+	/* Register Bit MASKS for GV_INTERRUPT_ENABLE */
+	#define BMSK_GV_INTERRUPT_ENABLE_RESERVED	0xffffff80 /* Reserved */
+	#define BMSK_GV_INTERRUPT_ENABLE_VSP_ILLEGAL_EVT	(1<<6) /* == 0x00000040: VSParc Illegal Event */
+	#define BMSK_GV_INTERRUPT_ENABLE_WATCHDOG_TIMER	(1<<5) /* == 0x00000020: Watchdog timer event interrupt enable */
+	#define BMSK_GV_INTERRUPT_ENABLE_EXT_EVT	(1<<4) /* == 0x00000010: External Event interrupt enable */
+	#define BMSK_GV_INTERRUPT_ENABLE_GV_EVT	(1<<3) /* == 0x00000008: Global vSparc event interrupt enable and status register */
+	#define BMSK_GV_INTERRUPT_ENABLE_GV_DMA_DONE	(1<<2) /* == 0x00000004: Global vSparc DMA event interrupt enable and status register */
+	#define BMSK_GV_INTERRUPT_ENABLE_HOST_DOORBELL_EVT	(1<<1) /* == 0x00000002: Host doorbell event interrupt enable and status register */
+	#define BMSK_GV_INTERRUPT_ENABLE_GV_DOORBELL_EVT	(1<<0) /* == 0x00000001: Global vSparc Doorbell event interrupt enable and status register */
+	/* Register BITFIELD for GV_INTERRUPT_ENABLE - roff, lsb, width, mask */
+	#define BITFIELD_GV_INTERRUPT_ENABLE_RESERVED	 0x7054, 7, 25, 0xffffff80
+	#define BITFIELD_GV_INTERRUPT_ENABLE_VSP_ILLEGAL_EVT	 0x7054, 6, 1, 0x00000040
+	#define BITFIELD_GV_INTERRUPT_ENABLE_WATCHDOG_TIMER	 0x7054, 5, 1, 0x00000020
+	#define BITFIELD_GV_INTERRUPT_ENABLE_EXT_EVT	 0x7054, 4, 1, 0x00000010
+	#define BITFIELD_GV_INTERRUPT_ENABLE_GV_EVT	 0x7054, 3, 1, 0x00000008
+	#define BITFIELD_GV_INTERRUPT_ENABLE_GV_DMA_DONE	 0x7054, 2, 1, 0x00000004
+	#define BITFIELD_GV_INTERRUPT_ENABLE_HOST_DOORBELL_EVT	 0x7054, 1, 1, 0x00000002
+	#define BITFIELD_GV_INTERRUPT_ENABLE_GV_DOORBELL_EVT	 0x7054, 0, 1, 0x00000001
+#define ROFF_GV_INTERRUPT_STATUS	0x7058 /* Interrupt Status Register */ 
+	#define BITFIELD_GV_INTERRUPT_STATUS	 0x7058, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_INTERRUPT_STATUS */
+	#define BLSB_GV_INTERRUPT_STATUS_RESERVED	7
+	#define BLSB_GV_INTERRUPT_STATUS_VSP_ILLEGAL_EVT	6
+	#define BLSB_GV_INTERRUPT_STATUS_WATCHDOG_TIMER	5
+	#define BLSB_GV_INTERRUPT_STATUS_EXT_EVT	4
+	#define BLSB_GV_INTERRUPT_STATUS_GV_EVT	3
+	#define BLSB_GV_INTERRUPT_STATUS_GV_DMA_DONE	2
+	#define BLSB_GV_INTERRUPT_STATUS_HOST_DOORBELL_EVT	1
+	#define BLSB_GV_INTERRUPT_STATUS_GV_DOORBELL_EVT	0
+	/* Register Bit Widths for GV_INTERRUPT_STATUS */
+	#define BWID_GV_INTERRUPT_STATUS_RESERVED	25
+	#define BWID_GV_INTERRUPT_STATUS_VSP_ILLEGAL_EVT	1
+	#define BWID_GV_INTERRUPT_STATUS_WATCHDOG_TIMER	1
+	#define BWID_GV_INTERRUPT_STATUS_EXT_EVT	1
+	#define BWID_GV_INTERRUPT_STATUS_GV_EVT	1
+	#define BWID_GV_INTERRUPT_STATUS_GV_DMA_DONE	1
+	#define BWID_GV_INTERRUPT_STATUS_HOST_DOORBELL_EVT	1
+	#define BWID_GV_INTERRUPT_STATUS_GV_DOORBELL_EVT	1
+	/* Register Bit MASKS for GV_INTERRUPT_STATUS */
+	#define BMSK_GV_INTERRUPT_STATUS_RESERVED	0xffffff80 /* Reserved */
+	#define BMSK_GV_INTERRUPT_STATUS_VSP_ILLEGAL_EVT	(1<<6) /* == 0x00000040: VSParc Illegal Event */
+	#define BMSK_GV_INTERRUPT_STATUS_WATCHDOG_TIMER	(1<<5) /* == 0x00000020: Watchdog timer event interrupt enable */
+	#define BMSK_GV_INTERRUPT_STATUS_EXT_EVT	(1<<4) /* == 0x00000010: External Event interrupt enable */
+	#define BMSK_GV_INTERRUPT_STATUS_GV_EVT	(1<<3) /* == 0x00000008: Global vSparc event interrupt enable and status register */
+	#define BMSK_GV_INTERRUPT_STATUS_GV_DMA_DONE	(1<<2) /* == 0x00000004: Global vSparc DMA event interrupt enable and status register */
+	#define BMSK_GV_INTERRUPT_STATUS_HOST_DOORBELL_EVT	(1<<1) /* == 0x00000002: Host doorbell event interrupt enable and status register */
+	#define BMSK_GV_INTERRUPT_STATUS_GV_DOORBELL_EVT	(1<<0) /* == 0x00000001: Global vSparc Doorbell event interrupt enable and status register */
+	/* Register BITFIELD for GV_INTERRUPT_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_INTERRUPT_STATUS_RESERVED	 0x7058, 7, 25, 0xffffff80
+	#define BITFIELD_GV_INTERRUPT_STATUS_VSP_ILLEGAL_EVT	 0x7058, 6, 1, 0x00000040
+	#define BITFIELD_GV_INTERRUPT_STATUS_WATCHDOG_TIMER	 0x7058, 5, 1, 0x00000020
+	#define BITFIELD_GV_INTERRUPT_STATUS_EXT_EVT	 0x7058, 4, 1, 0x00000010
+	#define BITFIELD_GV_INTERRUPT_STATUS_GV_EVT	 0x7058, 3, 1, 0x00000008
+	#define BITFIELD_GV_INTERRUPT_STATUS_GV_DMA_DONE	 0x7058, 2, 1, 0x00000004
+	#define BITFIELD_GV_INTERRUPT_STATUS_HOST_DOORBELL_EVT	 0x7058, 1, 1, 0x00000002
+	#define BITFIELD_GV_INTERRUPT_STATUS_GV_DOORBELL_EVT	 0x7058, 0, 1, 0x00000001
+#define ROFF_GV_SYS_EVENT_ENABLE	0x7060 /* System Event interrupt enable register */ 
+	#define BITFIELD_GV_SYS_EVENT_ENABLE	 0x7060, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_SYS_EVENT_ENABLE */
+	#define BLSB_GV_SYS_EVENT_ENABLE_VCAP	28
+	#define BLSB_GV_SYS_EVENT_ENABLE_UART1	27
+	#define BLSB_GV_SYS_EVENT_ENABLE_SATA1	26
+	#define BLSB_GV_SYS_EVENT_ENABLE_PMU	25
+	#define BLSB_GV_SYS_EVENT_ENABLE_USB1	24
+	#define BLSB_GV_SYS_EVENT_ENABLE_SATA0	23
+	#define BLSB_GV_SYS_EVENT_ENABLE_USB0	22
+	#define BLSB_GV_SYS_EVENT_ENABLE_GIGE	21
+	#define BLSB_GV_SYS_EVENT_ENABLE_RES1	19
+	#define BLSB_GV_SYS_EVENT_ENABLE_SPI	18
+	#define BLSB_GV_SYS_EVENT_ENABLE_SMART_CARD	17
+	#define BLSB_GV_SYS_EVENT_ENABLE_I2C	16
+	#define BLSB_GV_SYS_EVENT_ENABLE_GPIO_AUX	15
+	#define BLSB_GV_SYS_EVENT_ENABLE_UART0	14
+	#define BLSB_GV_SYS_EVENT_ENABLE_NAND	13
+	#define BLSB_GV_SYS_EVENT_ENABLE_SEC	12
+	#define BLSB_GV_SYS_EVENT_ENABLE_HDMI_TX	11
+	#define BLSB_GV_SYS_EVENT_ENABLE_DPE	10
+	#define BLSB_GV_SYS_EVENT_ENABLE_VDC	9
+	#define BLSB_GV_SYS_EVENT_ENABLE_AUD	8
+	#define BLSB_GV_SYS_EVENT_ENABLE_DSP1	7
+	#define BLSB_GV_SYS_EVENT_ENABLE_DSP0	6
+	#define BLSB_GV_SYS_EVENT_ENABLE_TSD	5
+	#define BLSB_GV_SYS_EVENT_ENABLE_TSP	4
+	#define BLSB_GV_SYS_EVENT_ENABLE_CRU	3
+	#define BLSB_GV_SYS_EVENT_ENABLE_MFD	2
+	#define BLSB_GV_SYS_EVENT_ENABLE_RES0	1
+	#define BLSB_GV_SYS_EVENT_ENABLE_GFX	0
+	/* Register Bit Widths for GV_SYS_EVENT_ENABLE */
+	#define BWID_GV_SYS_EVENT_ENABLE_VCAP	1
+	#define BWID_GV_SYS_EVENT_ENABLE_UART1	1
+	#define BWID_GV_SYS_EVENT_ENABLE_SATA1	1
+	#define BWID_GV_SYS_EVENT_ENABLE_PMU	1
+	#define BWID_GV_SYS_EVENT_ENABLE_USB1	1
+	#define BWID_GV_SYS_EVENT_ENABLE_SATA0	1
+	#define BWID_GV_SYS_EVENT_ENABLE_USB0	1
+	#define BWID_GV_SYS_EVENT_ENABLE_GIGE	1
+	#define BWID_GV_SYS_EVENT_ENABLE_RES1	2
+	#define BWID_GV_SYS_EVENT_ENABLE_SPI	1
+	#define BWID_GV_SYS_EVENT_ENABLE_SMART_CARD	1
+	#define BWID_GV_SYS_EVENT_ENABLE_I2C	1
+	#define BWID_GV_SYS_EVENT_ENABLE_GPIO_AUX	1
+	#define BWID_GV_SYS_EVENT_ENABLE_UART0	1
+	#define BWID_GV_SYS_EVENT_ENABLE_NAND	1
+	#define BWID_GV_SYS_EVENT_ENABLE_SEC	1
+	#define BWID_GV_SYS_EVENT_ENABLE_HDMI_TX	1
+	#define BWID_GV_SYS_EVENT_ENABLE_DPE	1
+	#define BWID_GV_SYS_EVENT_ENABLE_VDC	1
+	#define BWID_GV_SYS_EVENT_ENABLE_AUD	1
+	#define BWID_GV_SYS_EVENT_ENABLE_DSP1	1
+	#define BWID_GV_SYS_EVENT_ENABLE_DSP0	1
+	#define BWID_GV_SYS_EVENT_ENABLE_TSD	1
+	#define BWID_GV_SYS_EVENT_ENABLE_TSP	1
+	#define BWID_GV_SYS_EVENT_ENABLE_CRU	1
+	#define BWID_GV_SYS_EVENT_ENABLE_MFD	1
+	#define BWID_GV_SYS_EVENT_ENABLE_RES0	1
+	#define BWID_GV_SYS_EVENT_ENABLE_GFX	1
+	/* Register Bit MASKS for GV_SYS_EVENT_ENABLE */
+	#define BMSK_GV_SYS_EVENT_ENABLE_VCAP	(1<<28) /* == 0x10000000: Video Capture */
+	#define BMSK_GV_SYS_EVENT_ENABLE_UART1	(1<<27) /* == 0x08000000: UART 1 */
+	#define BMSK_GV_SYS_EVENT_ENABLE_SATA1	(1<<26) /* == 0x04000000: SATA 1 */
+	#define BMSK_GV_SYS_EVENT_ENABLE_PMU	(1<<25) /* == 0x02000000: PMU */
+	#define BMSK_GV_SYS_EVENT_ENABLE_USB1	(1<<24) /* == 0x01000000: USB 1 */
+	#define BMSK_GV_SYS_EVENT_ENABLE_SATA0	(1<<23) /* == 0x00800000: SATA 0 */
+	#define BMSK_GV_SYS_EVENT_ENABLE_USB0	(1<<22) /* == 0x00400000: USB 0 */
+	#define BMSK_GV_SYS_EVENT_ENABLE_GIGE	(1<<21) /* == 0x00200000: Gigabit Ethernet */
+	#define BMSK_GV_SYS_EVENT_ENABLE_RES1	0x00180000 /* reserved[19-20] */
+	#define BMSK_GV_SYS_EVENT_ENABLE_SPI	(1<<18) /* == 0x00040000: SPI */
+	#define BMSK_GV_SYS_EVENT_ENABLE_SMART_CARD	(1<<17) /* == 0x00020000: Smart Card */
+	#define BMSK_GV_SYS_EVENT_ENABLE_I2C	(1<<16) /* == 0x00010000: I2C 0/1/2 */
+	#define BMSK_GV_SYS_EVENT_ENABLE_GPIO_AUX	(1<<15) /* == 0x00008000: GPIO_AUX */
+	#define BMSK_GV_SYS_EVENT_ENABLE_UART0	(1<<14) /* == 0x00004000: UART 0 */
+	#define BMSK_GV_SYS_EVENT_ENABLE_NAND	(1<<13) /* == 0x00002000: SEC */
+	#define BMSK_GV_SYS_EVENT_ENABLE_SEC	(1<<12) /* == 0x00001000: SEC */
+	#define BMSK_GV_SYS_EVENT_ENABLE_HDMI_TX	(1<<11) /* == 0x00000800: HDMI Transmitter */
+	#define BMSK_GV_SYS_EVENT_ENABLE_DPE	(1<<10) /* == 0x00000400: Display Processing Engine */
+	#define BMSK_GV_SYS_EVENT_ENABLE_VDC	(1<<9) /* == 0x00000200: Video Display Controller */
+	#define BMSK_GV_SYS_EVENT_ENABLE_AUD	(1<<8) /* == 0x00000100: Audio Interface */
+	#define BMSK_GV_SYS_EVENT_ENABLE_DSP1	(1<<7) /* == 0x00000080: DSP 0 */
+	#define BMSK_GV_SYS_EVENT_ENABLE_DSP0	(1<<6) /* == 0x00000040: DSP 0 */
+	#define BMSK_GV_SYS_EVENT_ENABLE_TSD	(1<<5) /* == 0x00000020: Transport Stream Demux */
+	#define BMSK_GV_SYS_EVENT_ENABLE_TSP	(1<<4) /* == 0x00000010: Transport Stream Prefilter */
+	#define BMSK_GV_SYS_EVENT_ENABLE_CRU	(1<<3) /* == 0x00000008: Clock Recovery Unit */
+	#define BMSK_GV_SYS_EVENT_ENABLE_MFD	(1<<2) /* == 0x00000004: Viddec */
+	#define BMSK_GV_SYS_EVENT_ENABLE_RES0	(1<<1) /* == 0x00000002: Reserved */
+	#define BMSK_GV_SYS_EVENT_ENABLE_GFX	(1<<0) /* == 0x00000001: Graphics */
+	/* Register BITFIELD for GV_SYS_EVENT_ENABLE - roff, lsb, width, mask */
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_VCAP	 0x7060, 28, 1, 0x10000000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_UART1	 0x7060, 27, 1, 0x08000000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_SATA1	 0x7060, 26, 1, 0x04000000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_PMU	 0x7060, 25, 1, 0x02000000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_USB1	 0x7060, 24, 1, 0x01000000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_SATA0	 0x7060, 23, 1, 0x00800000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_USB0	 0x7060, 22, 1, 0x00400000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_GIGE	 0x7060, 21, 1, 0x00200000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_RES1	 0x7060, 19, 2, 0x00180000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_SPI	 0x7060, 18, 1, 0x00040000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_SMART_CARD	 0x7060, 17, 1, 0x00020000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_I2C	 0x7060, 16, 1, 0x00010000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_GPIO_AUX	 0x7060, 15, 1, 0x00008000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_UART0	 0x7060, 14, 1, 0x00004000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_NAND	 0x7060, 13, 1, 0x00002000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_SEC	 0x7060, 12, 1, 0x00001000
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_HDMI_TX	 0x7060, 11, 1, 0x00000800
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_DPE	 0x7060, 10, 1, 0x00000400
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_VDC	 0x7060, 9, 1, 0x00000200
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_AUD	 0x7060, 8, 1, 0x00000100
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_DSP1	 0x7060, 7, 1, 0x00000080
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_DSP0	 0x7060, 6, 1, 0x00000040
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_TSD	 0x7060, 5, 1, 0x00000020
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_TSP	 0x7060, 4, 1, 0x00000010
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_CRU	 0x7060, 3, 1, 0x00000008
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_MFD	 0x7060, 2, 1, 0x00000004
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_RES0	 0x7060, 1, 1, 0x00000002
+	#define BITFIELD_GV_SYS_EVENT_ENABLE_GFX	 0x7060, 0, 1, 0x00000001
+#define ROFF_GV_SYS_EVENT_STATUS	0x7064 /* System Event Status Regsiter */ 
+	#define BITFIELD_GV_SYS_EVENT_STATUS	 0x7064, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_SYS_EVENT_STATUS */
+	#define BLSB_GV_SYS_EVENT_STATUS_VCAP	28
+	#define BLSB_GV_SYS_EVENT_STATUS_UART1	27
+	#define BLSB_GV_SYS_EVENT_STATUS_SATA1	26
+	#define BLSB_GV_SYS_EVENT_STATUS_PMU	25
+	#define BLSB_GV_SYS_EVENT_STATUS_USB1	24
+	#define BLSB_GV_SYS_EVENT_STATUS_SATA0	23
+	#define BLSB_GV_SYS_EVENT_STATUS_USB0	22
+	#define BLSB_GV_SYS_EVENT_STATUS_GIGE	21
+	#define BLSB_GV_SYS_EVENT_STATUS_RES1	19
+	#define BLSB_GV_SYS_EVENT_STATUS_SPI	18
+	#define BLSB_GV_SYS_EVENT_STATUS_SMART_CARD	17
+	#define BLSB_GV_SYS_EVENT_STATUS_I2C	16
+	#define BLSB_GV_SYS_EVENT_STATUS_GPIO_AUX	15
+	#define BLSB_GV_SYS_EVENT_STATUS_UART0	14
+	#define BLSB_GV_SYS_EVENT_STATUS_NAND	13
+	#define BLSB_GV_SYS_EVENT_STATUS_SEC	12
+	#define BLSB_GV_SYS_EVENT_STATUS_HDMI_TX	11
+	#define BLSB_GV_SYS_EVENT_STATUS_DPE	10
+	#define BLSB_GV_SYS_EVENT_STATUS_VDC	9
+	#define BLSB_GV_SYS_EVENT_STATUS_AUD	8
+	#define BLSB_GV_SYS_EVENT_STATUS_DSP1	7
+	#define BLSB_GV_SYS_EVENT_STATUS_DSP0	6
+	#define BLSB_GV_SYS_EVENT_STATUS_TSD	5
+	#define BLSB_GV_SYS_EVENT_STATUS_TSP	4
+	#define BLSB_GV_SYS_EVENT_STATUS_CRU	3
+	#define BLSB_GV_SYS_EVENT_STATUS_MFD	2
+	#define BLSB_GV_SYS_EVENT_STATUS_RES0	1
+	#define BLSB_GV_SYS_EVENT_STATUS_GFX	0
+	/* Register Bit Widths for GV_SYS_EVENT_STATUS */
+	#define BWID_GV_SYS_EVENT_STATUS_VCAP	1
+	#define BWID_GV_SYS_EVENT_STATUS_UART1	1
+	#define BWID_GV_SYS_EVENT_STATUS_SATA1	1
+	#define BWID_GV_SYS_EVENT_STATUS_PMU	1
+	#define BWID_GV_SYS_EVENT_STATUS_USB1	1
+	#define BWID_GV_SYS_EVENT_STATUS_SATA0	1
+	#define BWID_GV_SYS_EVENT_STATUS_USB0	1
+	#define BWID_GV_SYS_EVENT_STATUS_GIGE	1
+	#define BWID_GV_SYS_EVENT_STATUS_RES1	2
+	#define BWID_GV_SYS_EVENT_STATUS_SPI	1
+	#define BWID_GV_SYS_EVENT_STATUS_SMART_CARD	1
+	#define BWID_GV_SYS_EVENT_STATUS_I2C	1
+	#define BWID_GV_SYS_EVENT_STATUS_GPIO_AUX	1
+	#define BWID_GV_SYS_EVENT_STATUS_UART0	1
+	#define BWID_GV_SYS_EVENT_STATUS_NAND	1
+	#define BWID_GV_SYS_EVENT_STATUS_SEC	1
+	#define BWID_GV_SYS_EVENT_STATUS_HDMI_TX	1
+	#define BWID_GV_SYS_EVENT_STATUS_DPE	1
+	#define BWID_GV_SYS_EVENT_STATUS_VDC	1
+	#define BWID_GV_SYS_EVENT_STATUS_AUD	1
+	#define BWID_GV_SYS_EVENT_STATUS_DSP1	1
+	#define BWID_GV_SYS_EVENT_STATUS_DSP0	1
+	#define BWID_GV_SYS_EVENT_STATUS_TSD	1
+	#define BWID_GV_SYS_EVENT_STATUS_TSP	1
+	#define BWID_GV_SYS_EVENT_STATUS_CRU	1
+	#define BWID_GV_SYS_EVENT_STATUS_MFD	1
+	#define BWID_GV_SYS_EVENT_STATUS_RES0	1
+	#define BWID_GV_SYS_EVENT_STATUS_GFX	1
+	/* Register Bit MASKS for GV_SYS_EVENT_STATUS */
+	#define BMSK_GV_SYS_EVENT_STATUS_VCAP	(1<<28) /* == 0x10000000: Video Capture */
+	#define BMSK_GV_SYS_EVENT_STATUS_UART1	(1<<27) /* == 0x08000000: UART 1 */
+	#define BMSK_GV_SYS_EVENT_STATUS_SATA1	(1<<26) /* == 0x04000000: SATA 1 */
+	#define BMSK_GV_SYS_EVENT_STATUS_PMU	(1<<25) /* == 0x02000000: PMU */
+	#define BMSK_GV_SYS_EVENT_STATUS_USB1	(1<<24) /* == 0x01000000: USB 1 */
+	#define BMSK_GV_SYS_EVENT_STATUS_SATA0	(1<<23) /* == 0x00800000: SATA 0 */
+	#define BMSK_GV_SYS_EVENT_STATUS_USB0	(1<<22) /* == 0x00400000: USB 0 */
+	#define BMSK_GV_SYS_EVENT_STATUS_GIGE	(1<<21) /* == 0x00200000: Gigabit Ethernet */
+	#define BMSK_GV_SYS_EVENT_STATUS_RES1	0x00180000 /* reserved[19-20] */
+	#define BMSK_GV_SYS_EVENT_STATUS_SPI	(1<<18) /* == 0x00040000: SPI */
+	#define BMSK_GV_SYS_EVENT_STATUS_SMART_CARD	(1<<17) /* == 0x00020000: Smart Card */
+	#define BMSK_GV_SYS_EVENT_STATUS_I2C	(1<<16) /* == 0x00010000: I2C 0/1/2 */
+	#define BMSK_GV_SYS_EVENT_STATUS_GPIO_AUX	(1<<15) /* == 0x00008000: GPIO_AUX */
+	#define BMSK_GV_SYS_EVENT_STATUS_UART0	(1<<14) /* == 0x00004000: UART 0 */
+	#define BMSK_GV_SYS_EVENT_STATUS_NAND	(1<<13) /* == 0x00002000: SEC */
+	#define BMSK_GV_SYS_EVENT_STATUS_SEC	(1<<12) /* == 0x00001000: SEC */
+	#define BMSK_GV_SYS_EVENT_STATUS_HDMI_TX	(1<<11) /* == 0x00000800: HDMI Transmitter */
+	#define BMSK_GV_SYS_EVENT_STATUS_DPE	(1<<10) /* == 0x00000400: Display Processing Engine */
+	#define BMSK_GV_SYS_EVENT_STATUS_VDC	(1<<9) /* == 0x00000200: Video Display Controller */
+	#define BMSK_GV_SYS_EVENT_STATUS_AUD	(1<<8) /* == 0x00000100: Audio Interface */
+	#define BMSK_GV_SYS_EVENT_STATUS_DSP1	(1<<7) /* == 0x00000080: DSP 0 */
+	#define BMSK_GV_SYS_EVENT_STATUS_DSP0	(1<<6) /* == 0x00000040: DSP 0 */
+	#define BMSK_GV_SYS_EVENT_STATUS_TSD	(1<<5) /* == 0x00000020: Transport Stream Demux */
+	#define BMSK_GV_SYS_EVENT_STATUS_TSP	(1<<4) /* == 0x00000010: Transport Stream Prefilter */
+	#define BMSK_GV_SYS_EVENT_STATUS_CRU	(1<<3) /* == 0x00000008: Clock Recovery Unit */
+	#define BMSK_GV_SYS_EVENT_STATUS_MFD	(1<<2) /* == 0x00000004: Viddec */
+	#define BMSK_GV_SYS_EVENT_STATUS_RES0	(1<<1) /* == 0x00000002: Reserved */
+	#define BMSK_GV_SYS_EVENT_STATUS_GFX	(1<<0) /* == 0x00000001: Graphics */
+	/* Register BITFIELD for GV_SYS_EVENT_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_SYS_EVENT_STATUS_VCAP	 0x7064, 28, 1, 0x10000000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_UART1	 0x7064, 27, 1, 0x08000000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_SATA1	 0x7064, 26, 1, 0x04000000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_PMU	 0x7064, 25, 1, 0x02000000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_USB1	 0x7064, 24, 1, 0x01000000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_SATA0	 0x7064, 23, 1, 0x00800000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_USB0	 0x7064, 22, 1, 0x00400000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_GIGE	 0x7064, 21, 1, 0x00200000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_RES1	 0x7064, 19, 2, 0x00180000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_SPI	 0x7064, 18, 1, 0x00040000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_SMART_CARD	 0x7064, 17, 1, 0x00020000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_I2C	 0x7064, 16, 1, 0x00010000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_GPIO_AUX	 0x7064, 15, 1, 0x00008000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_UART0	 0x7064, 14, 1, 0x00004000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_NAND	 0x7064, 13, 1, 0x00002000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_SEC	 0x7064, 12, 1, 0x00001000
+	#define BITFIELD_GV_SYS_EVENT_STATUS_HDMI_TX	 0x7064, 11, 1, 0x00000800
+	#define BITFIELD_GV_SYS_EVENT_STATUS_DPE	 0x7064, 10, 1, 0x00000400
+	#define BITFIELD_GV_SYS_EVENT_STATUS_VDC	 0x7064, 9, 1, 0x00000200
+	#define BITFIELD_GV_SYS_EVENT_STATUS_AUD	 0x7064, 8, 1, 0x00000100
+	#define BITFIELD_GV_SYS_EVENT_STATUS_DSP1	 0x7064, 7, 1, 0x00000080
+	#define BITFIELD_GV_SYS_EVENT_STATUS_DSP0	 0x7064, 6, 1, 0x00000040
+	#define BITFIELD_GV_SYS_EVENT_STATUS_TSD	 0x7064, 5, 1, 0x00000020
+	#define BITFIELD_GV_SYS_EVENT_STATUS_TSP	 0x7064, 4, 1, 0x00000010
+	#define BITFIELD_GV_SYS_EVENT_STATUS_CRU	 0x7064, 3, 1, 0x00000008
+	#define BITFIELD_GV_SYS_EVENT_STATUS_MFD	 0x7064, 2, 1, 0x00000004
+	#define BITFIELD_GV_SYS_EVENT_STATUS_RES0	 0x7064, 1, 1, 0x00000002
+	#define BITFIELD_GV_SYS_EVENT_STATUS_GFX	 0x7064, 0, 1, 0x00000001
+#define ROFF_GV_EXT_EVENT_ENABLE	0x7070 /* External Event interrupt enable register */ 
+	#define BITFIELD_GV_EXT_EVENT_ENABLE	 0x7070, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_EXT_EVENT_ENABLE */
+	#define BLSB_GV_EXT_EVENT_ENABLE_VSP_ILLEGAL_ACCESS	31
+	#define BLSB_GV_EXT_EVENT_ENABLE_RESERVED0	18
+	#define BLSB_GV_EXT_EVENT_ENABLE_MFD_MP_DMA_INTR	17
+	#define BLSB_GV_EXT_EVENT_ENABLE_MFD_MP_SCD_INTR	16
+	#define BLSB_GV_EXT_EVENT_ENABLE_MFD_MP_BSD_INTR	15
+	#define BLSB_GV_EXT_EVENT_ENABLE_MFD_CORE_INT	14
+	#define BLSB_GV_EXT_EVENT_ENABLE_MFD_SCD_INT	13
+	#define BLSB_GV_EXT_EVENT_ENABLE_MFD_DMA_INT	12
+	#define BLSB_GV_EXT_EVENT_ENABLE_RESERVED1	0
+	/* Register Bit Widths for GV_EXT_EVENT_ENABLE */
+	#define BWID_GV_EXT_EVENT_ENABLE_VSP_ILLEGAL_ACCESS	1
+	#define BWID_GV_EXT_EVENT_ENABLE_RESERVED0	13
+	#define BWID_GV_EXT_EVENT_ENABLE_MFD_MP_DMA_INTR	1
+	#define BWID_GV_EXT_EVENT_ENABLE_MFD_MP_SCD_INTR	1
+	#define BWID_GV_EXT_EVENT_ENABLE_MFD_MP_BSD_INTR	1
+	#define BWID_GV_EXT_EVENT_ENABLE_MFD_CORE_INT	1
+	#define BWID_GV_EXT_EVENT_ENABLE_MFD_SCD_INT	1
+	#define BWID_GV_EXT_EVENT_ENABLE_MFD_DMA_INT	1
+	#define BWID_GV_EXT_EVENT_ENABLE_RESERVED1	12
+	/* Register Bit MASKS for GV_EXT_EVENT_ENABLE */
+	#define BMSK_GV_EXT_EVENT_ENABLE_VSP_ILLEGAL_ACCESS	(1<<31) /* == 0x80000000: bit set when vSparc does illegal data fetch */
+	#define BMSK_GV_EXT_EVENT_ENABLE_RESERVED0	0x7ffc0000 /* Reserved */
+	#define BMSK_GV_EXT_EVENT_ENABLE_MFD_MP_DMA_INTR	(1<<17) /* == 0x00020000: Interrupt from MFD Mini Pipe Streamer DMA */
+	#define BMSK_GV_EXT_EVENT_ENABLE_MFD_MP_SCD_INTR	(1<<16) /* == 0x00010000: Interrupt from MFD Mini Pipe Start Code Detector */
+	#define BMSK_GV_EXT_EVENT_ENABLE_MFD_MP_BSD_INTR	(1<<15) /* == 0x00008000: Interrupt from MFD Mini Pipe Byte Stream Decoder */
+	#define BMSK_GV_EXT_EVENT_ENABLE_MFD_CORE_INT	(1<<14) /* == 0x00004000: Interrupt from MFD H264/ VC1 pipeline */
+	#define BMSK_GV_EXT_EVENT_ENABLE_MFD_SCD_INT	(1<<13) /* == 0x00002000: Interrupt from MFD pipeline Start Code detector */
+	#define BMSK_GV_EXT_EVENT_ENABLE_MFD_DMA_INT	(1<<12) /* == 0x00001000: Interrupt from MFD pipeline's Streamer DMAs */
+	#define BMSK_GV_EXT_EVENT_ENABLE_RESERVED1	0x00000fff /* Reserved */
+	/* Register BITFIELD for GV_EXT_EVENT_ENABLE - roff, lsb, width, mask */
+	#define BITFIELD_GV_EXT_EVENT_ENABLE_VSP_ILLEGAL_ACCESS	 0x7070, 31, 1, 0x80000000
+	#define BITFIELD_GV_EXT_EVENT_ENABLE_RESERVED0	 0x7070, 18, 13, 0x7ffc0000
+	#define BITFIELD_GV_EXT_EVENT_ENABLE_MFD_MP_DMA_INTR	 0x7070, 17, 1, 0x00020000
+	#define BITFIELD_GV_EXT_EVENT_ENABLE_MFD_MP_SCD_INTR	 0x7070, 16, 1, 0x00010000
+	#define BITFIELD_GV_EXT_EVENT_ENABLE_MFD_MP_BSD_INTR	 0x7070, 15, 1, 0x00008000
+	#define BITFIELD_GV_EXT_EVENT_ENABLE_MFD_CORE_INT	 0x7070, 14, 1, 0x00004000
+	#define BITFIELD_GV_EXT_EVENT_ENABLE_MFD_SCD_INT	 0x7070, 13, 1, 0x00002000
+	#define BITFIELD_GV_EXT_EVENT_ENABLE_MFD_DMA_INT	 0x7070, 12, 1, 0x00001000
+	#define BITFIELD_GV_EXT_EVENT_ENABLE_RESERVED1	 0x7070, 0, 12, 0x00000fff
+#define ROFF_GV_EXT_EVENT_STATUS	0x7074 /* External Event Status Regsiter */ 
+	#define BITFIELD_GV_EXT_EVENT_STATUS	 0x7074, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_EXT_EVENT_STATUS */
+	#define BLSB_GV_EXT_EVENT_STATUS_VSP_ILLEGAL_ACCESS	31
+	#define BLSB_GV_EXT_EVENT_STATUS_RESERVED0	18
+	#define BLSB_GV_EXT_EVENT_STATUS_MFD_MP_DMA_INTR	17
+	#define BLSB_GV_EXT_EVENT_STATUS_MFD_MP_SCD_INTR	16
+	#define BLSB_GV_EXT_EVENT_STATUS_MFD_MP_BSD_INTR	15
+	#define BLSB_GV_EXT_EVENT_STATUS_MFD_CORE_INT	14
+	#define BLSB_GV_EXT_EVENT_STATUS_MFD_SCD_INT	13
+	#define BLSB_GV_EXT_EVENT_STATUS_MFD_DMA_INT	12
+	#define BLSB_GV_EXT_EVENT_STATUS_RESERVED1	0
+	/* Register Bit Widths for GV_EXT_EVENT_STATUS */
+	#define BWID_GV_EXT_EVENT_STATUS_VSP_ILLEGAL_ACCESS	1
+	#define BWID_GV_EXT_EVENT_STATUS_RESERVED0	13
+	#define BWID_GV_EXT_EVENT_STATUS_MFD_MP_DMA_INTR	1
+	#define BWID_GV_EXT_EVENT_STATUS_MFD_MP_SCD_INTR	1
+	#define BWID_GV_EXT_EVENT_STATUS_MFD_MP_BSD_INTR	1
+	#define BWID_GV_EXT_EVENT_STATUS_MFD_CORE_INT	1
+	#define BWID_GV_EXT_EVENT_STATUS_MFD_SCD_INT	1
+	#define BWID_GV_EXT_EVENT_STATUS_MFD_DMA_INT	1
+	#define BWID_GV_EXT_EVENT_STATUS_RESERVED1	12
+	/* Register Bit MASKS for GV_EXT_EVENT_STATUS */
+	#define BMSK_GV_EXT_EVENT_STATUS_VSP_ILLEGAL_ACCESS	(1<<31) /* == 0x80000000: bit set when vSparc does illegal data fetch */
+	#define BMSK_GV_EXT_EVENT_STATUS_RESERVED0	0x7ffc0000 /* Reserved */
+	#define BMSK_GV_EXT_EVENT_STATUS_MFD_MP_DMA_INTR	(1<<17) /* == 0x00020000: Interrupt from MFD Mini Pipe Streamer DMA */
+	#define BMSK_GV_EXT_EVENT_STATUS_MFD_MP_SCD_INTR	(1<<16) /* == 0x00010000: Interrupt from MFD Mini Pipe Start Code Detector */
+	#define BMSK_GV_EXT_EVENT_STATUS_MFD_MP_BSD_INTR	(1<<15) /* == 0x00008000: Interrupt from MFD Mini Pipe Byte Stream Decoder */
+	#define BMSK_GV_EXT_EVENT_STATUS_MFD_CORE_INT	(1<<14) /* == 0x00004000: Interrupt from MFD H264/ VC1 pipeline */
+	#define BMSK_GV_EXT_EVENT_STATUS_MFD_SCD_INT	(1<<13) /* == 0x00002000: Interrupt from MFD pipeline Start Code detector */
+	#define BMSK_GV_EXT_EVENT_STATUS_MFD_DMA_INT	(1<<12) /* == 0x00001000: Interrupt from MFD pipeline's Streamer DMAs */
+	#define BMSK_GV_EXT_EVENT_STATUS_RESERVED1	0x00000fff /* Reserved */
+	/* Register BITFIELD for GV_EXT_EVENT_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_EXT_EVENT_STATUS_VSP_ILLEGAL_ACCESS	 0x7074, 31, 1, 0x80000000
+	#define BITFIELD_GV_EXT_EVENT_STATUS_RESERVED0	 0x7074, 18, 13, 0x7ffc0000
+	#define BITFIELD_GV_EXT_EVENT_STATUS_MFD_MP_DMA_INTR	 0x7074, 17, 1, 0x00020000
+	#define BITFIELD_GV_EXT_EVENT_STATUS_MFD_MP_SCD_INTR	 0x7074, 16, 1, 0x00010000
+	#define BITFIELD_GV_EXT_EVENT_STATUS_MFD_MP_BSD_INTR	 0x7074, 15, 1, 0x00008000
+	#define BITFIELD_GV_EXT_EVENT_STATUS_MFD_CORE_INT	 0x7074, 14, 1, 0x00004000
+	#define BITFIELD_GV_EXT_EVENT_STATUS_MFD_SCD_INT	 0x7074, 13, 1, 0x00002000
+	#define BITFIELD_GV_EXT_EVENT_STATUS_MFD_DMA_INT	 0x7074, 12, 1, 0x00001000
+	#define BITFIELD_GV_EXT_EVENT_STATUS_RESERVED1	 0x7074, 0, 12, 0x00000fff
+#define ROFF_GV_DBG_FS_PC	0x7400 /* Fetch Stage Program Counter */ 
+	#define BITFIELD_GV_DBG_FS_PC	 0x7400, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_FS_PC */
+	#define BLSB_GV_DBG_FS_PC_GV_DB_FPC	0
+	/* Register Bit Widths for GV_DBG_FS_PC */
+	#define BWID_GV_DBG_FS_PC_GV_DB_FPC	32
+	/* Register Bit MASKS for GV_DBG_FS_PC */
+	#define BMSK_GV_DBG_FS_PC_GV_DB_FPC	0x00000000 /* Address of current instruction in fetch stage of VSP pipeline */
+	/* Register BITFIELD for GV_DBG_FS_PC - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_FS_PC_GV_DB_FPC	 0x7400, 0, 32, 0x00000000
+#define ROFF_GV_DBG_FS_STATUS	0x7408 /* Fetch Stage Status */ 
+	#define BITFIELD_GV_DBG_FS_STATUS	 0x7408, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_FS_STATUS */
+	#define BLSB_GV_DBG_FS_STATUS_RESERVED	1
+	#define BLSB_GV_DBG_FS_STATUS_GV_DB_SU	0
+	/* Register Bit Widths for GV_DBG_FS_STATUS */
+	#define BWID_GV_DBG_FS_STATUS_RESERVED	31
+	#define BWID_GV_DBG_FS_STATUS_GV_DB_SU	1
+	/* Register Bit MASKS for GV_DBG_FS_STATUS */
+	#define BMSK_GV_DBG_FS_STATUS_RESERVED	0xfffffffe /* Reserved */
+	#define BMSK_GV_DBG_FS_STATUS_GV_DB_SU	(1<<0) /* == 0x00000001: System/User of instruction in fetch stage */
+	/* Register BITFIELD for GV_DBG_FS_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_FS_STATUS_RESERVED	 0x7408, 1, 31, 0xfffffffe
+	#define BITFIELD_GV_DBG_FS_STATUS_GV_DB_SU	 0x7408, 0, 1, 0x00000001
+#define ROFF_GV_DBG_DS_PC	0x7410 /* Decode Stage Program counter */ 
+	#define BITFIELD_GV_DBG_DS_PC	 0x7410, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DS_PC */
+	#define BLSB_GV_DBG_DS_PC_GV_DB_DPC	0
+	/* Register Bit Widths for GV_DBG_DS_PC */
+	#define BWID_GV_DBG_DS_PC_GV_DB_DPC	32
+	/* Register Bit MASKS for GV_DBG_DS_PC */
+	#define BMSK_GV_DBG_DS_PC_GV_DB_DPC	0x00000000 /* Address of current instruction in decode stage of VSP pipeline */
+	/* Register BITFIELD for GV_DBG_DS_PC - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DS_PC_GV_DB_DPC	 0x7410, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DS_INST	0x7414 /* Decode Stage Instruction */ 
+	#define BITFIELD_GV_DBG_DS_INST	 0x7414, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DS_INST */
+	#define BLSB_GV_DBG_DS_INST_GV_DB_DINST	0
+	/* Register Bit Widths for GV_DBG_DS_INST */
+	#define BWID_GV_DBG_DS_INST_GV_DB_DINST	32
+	/* Register Bit MASKS for GV_DBG_DS_INST */
+	#define BMSK_GV_DBG_DS_INST_GV_DB_DINST	0x00000000 /* Current instruction in decode stage of VSP pipeline */
+	/* Register BITFIELD for GV_DBG_DS_INST - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DS_INST_GV_DB_DINST	 0x7414, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DS_STATUS	0x7418 /* Decode Stage Status Register */ 
+	#define BITFIELD_GV_DBG_DS_STATUS	 0x7418, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DS_STATUS */
+	#define BLSB_GV_DBG_DS_STATUS_RESERVED	7
+	#define BLSB_GV_DBG_DS_STATUS_GV_DB_DCWP	4
+	#define BLSB_GV_DBG_DS_STATUS_GV_DB_DICC	0
+	/* Register Bit Widths for GV_DBG_DS_STATUS */
+	#define BWID_GV_DBG_DS_STATUS_RESERVED	25
+	#define BWID_GV_DBG_DS_STATUS_GV_DB_DCWP	3
+	#define BWID_GV_DBG_DS_STATUS_GV_DB_DICC	4
+	/* Register Bit MASKS for GV_DBG_DS_STATUS */
+	#define BMSK_GV_DBG_DS_STATUS_RESERVED	0xffffff80 /* Reserved */
+	#define BMSK_GV_DBG_DS_STATUS_GV_DB_DCWP	0x00000070 /* Decode stage Current window pointer */
+	#define BMSK_GV_DBG_DS_STATUS_GV_DB_DICC	0x0000000f /* Decode stage Instruction Condition codes */
+	/* Register BITFIELD for GV_DBG_DS_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DS_STATUS_RESERVED	 0x7418, 7, 25, 0xffffff80
+	#define BITFIELD_GV_DBG_DS_STATUS_GV_DB_DCWP	 0x7418, 4, 3, 0x00000070
+	#define BITFIELD_GV_DBG_DS_STATUS_GV_DB_DICC	 0x7418, 0, 4, 0x0000000f
+#define ROFF_GV_DBG_ES_PC	0x7420 /* Execution stage Program Counter */ 
+	#define BITFIELD_GV_DBG_ES_PC	 0x7420, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_ES_PC */
+	#define BLSB_GV_DBG_ES_PC_GV_DB_EPC	0
+	/* Register Bit Widths for GV_DBG_ES_PC */
+	#define BWID_GV_DBG_ES_PC_GV_DB_EPC	32
+	/* Register Bit MASKS for GV_DBG_ES_PC */
+	#define BMSK_GV_DBG_ES_PC_GV_DB_EPC	0x00000000 /* Address of current instruction in execution stage of VSP pipeline */
+	/* Register BITFIELD for GV_DBG_ES_PC - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_ES_PC_GV_DB_EPC	 0x7420, 0, 32, 0x00000000
+#define ROFF_GV_DBG_ES_INST	0x7424 /* Execution Stage Instruction */ 
+	#define BITFIELD_GV_DBG_ES_INST	 0x7424, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_ES_INST */
+	#define BLSB_GV_DBG_ES_INST_GV_DB_EINST	0
+	/* Register Bit Widths for GV_DBG_ES_INST */
+	#define BWID_GV_DBG_ES_INST_GV_DB_EINST	32
+	/* Register Bit MASKS for GV_DBG_ES_INST */
+	#define BMSK_GV_DBG_ES_INST_GV_DB_EINST	0x00000000 /* Current instruction in decode stage of VSP pipeline */
+	/* Register BITFIELD for GV_DBG_ES_INST - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_ES_INST_GV_DB_EINST	 0x7424, 0, 32, 0x00000000
+#define ROFF_GV_DBG_ES_STATUS	0x7428 /* execution Stage Status */ 
+	#define BITFIELD_GV_DBG_ES_STATUS	 0x7428, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_ES_STATUS */
+	#define BLSB_GV_DBG_ES_STATUS_RESERVED	7
+	#define BLSB_GV_DBG_ES_STATUS_GV_DB_ECWP	4
+	#define BLSB_GV_DBG_ES_STATUS_GV_DB_EICC	0
+	/* Register Bit Widths for GV_DBG_ES_STATUS */
+	#define BWID_GV_DBG_ES_STATUS_RESERVED	25
+	#define BWID_GV_DBG_ES_STATUS_GV_DB_ECWP	3
+	#define BWID_GV_DBG_ES_STATUS_GV_DB_EICC	4
+	/* Register Bit MASKS for GV_DBG_ES_STATUS */
+	#define BMSK_GV_DBG_ES_STATUS_RESERVED	0xffffff80 /* Reserved */
+	#define BMSK_GV_DBG_ES_STATUS_GV_DB_ECWP	0x00000070 /* Execution stage Current window pointer */
+	#define BMSK_GV_DBG_ES_STATUS_GV_DB_EICC	0x0000000f /* Execution stage Instruction Condition codes */
+	/* Register BITFIELD for GV_DBG_ES_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_ES_STATUS_RESERVED	 0x7428, 7, 25, 0xffffff80
+	#define BITFIELD_GV_DBG_ES_STATUS_GV_DB_ECWP	 0x7428, 4, 3, 0x00000070
+	#define BITFIELD_GV_DBG_ES_STATUS_GV_DB_EICC	 0x7428, 0, 4, 0x0000000f
+#define ROFF_GV_DBG_MS_STATUS	0x7438 /* Mmeory Stage Status */ 
+	#define BITFIELD_GV_DBG_MS_STATUS	 0x7438, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_MS_STATUS */
+	#define BLSB_GV_DBG_MS_STATUS_RESERVED	7
+	#define BLSB_GV_DBG_MS_STATUS_GV_DB_MCWP	4
+	#define BLSB_GV_DBG_MS_STATUS_GV_DB_MICC	0
+	/* Register Bit Widths for GV_DBG_MS_STATUS */
+	#define BWID_GV_DBG_MS_STATUS_RESERVED	25
+	#define BWID_GV_DBG_MS_STATUS_GV_DB_MCWP	3
+	#define BWID_GV_DBG_MS_STATUS_GV_DB_MICC	4
+	/* Register Bit MASKS for GV_DBG_MS_STATUS */
+	#define BMSK_GV_DBG_MS_STATUS_RESERVED	0xffffff80 /* Reserved */
+	#define BMSK_GV_DBG_MS_STATUS_GV_DB_MCWP	0x00000070 /* Memory stage Current window pointer */
+	#define BMSK_GV_DBG_MS_STATUS_GV_DB_MICC	0x0000000f /* Memory stage Instruction Condition codes */
+	/* Register BITFIELD for GV_DBG_MS_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_MS_STATUS_RESERVED	 0x7438, 7, 25, 0xffffff80
+	#define BITFIELD_GV_DBG_MS_STATUS_GV_DB_MCWP	 0x7438, 4, 3, 0x00000070
+	#define BITFIELD_GV_DBG_MS_STATUS_GV_DB_MICC	 0x7438, 0, 4, 0x0000000f
+#define ROFF_GV_DBG_WS_STATUS	0x7448 /* Write Stage Status */ 
+	#define BITFIELD_GV_DBG_WS_STATUS	 0x7448, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_WS_STATUS */
+	#define BLSB_GV_DBG_WS_STATUS_RESERVED	7
+	#define BLSB_GV_DBG_WS_STATUS_GV_DB_WCWP	4
+	#define BLSB_GV_DBG_WS_STATUS_GV_DB_WICC	0
+	/* Register Bit Widths for GV_DBG_WS_STATUS */
+	#define BWID_GV_DBG_WS_STATUS_RESERVED	25
+	#define BWID_GV_DBG_WS_STATUS_GV_DB_WCWP	3
+	#define BWID_GV_DBG_WS_STATUS_GV_DB_WICC	4
+	/* Register Bit MASKS for GV_DBG_WS_STATUS */
+	#define BMSK_GV_DBG_WS_STATUS_RESERVED	0xffffff80 /* Reserved */
+	#define BMSK_GV_DBG_WS_STATUS_GV_DB_WCWP	0x00000070 /* Write stage Current window pointer */
+	#define BMSK_GV_DBG_WS_STATUS_GV_DB_WICC	0x0000000f /* Write stage Instruction Condition codes */
+	/* Register BITFIELD for GV_DBG_WS_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_WS_STATUS_RESERVED	 0x7448, 7, 25, 0xffffff80
+	#define BITFIELD_GV_DBG_WS_STATUS_GV_DB_WCWP	 0x7448, 4, 3, 0x00000070
+	#define BITFIELD_GV_DBG_WS_STATUS_GV_DB_WICC	 0x7448, 0, 4, 0x0000000f
+#define ROFF_GV_DBG_CONTROL	0x7500 /* Debugger Control */ 
+	#define BITFIELD_GV_DBG_CONTROL	 0x7500, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_CONTROL */
+	#define BLSB_GV_DBG_CONTROL_RESERVED0	12
+	#define BLSB_GV_DBG_CONTROL_GV_DB_DBP3EN	11
+	#define BLSB_GV_DBG_CONTROL_GV_DB_DBP2EN	10
+	#define BLSB_GV_DBG_CONTROL_GV_DB_DBP1EN	9
+	#define BLSB_GV_DBG_CONTROL_GV_DB_DBP0EN	8
+	#define BLSB_GV_DBG_CONTROL_GV_DB_PCBP3EN	7
+	#define BLSB_GV_DBG_CONTROL_GV_DB_PCBP2EN	6
+	#define BLSB_GV_DBG_CONTROL_GV_DB_PCBP1EN	5
+	#define BLSB_GV_DBG_CONTROL_GV_DB_PCBP0EN	4
+	#define BLSB_GV_DBG_CONTROL_RESERVED1	2
+	#define BLSB_GV_DBG_CONTROL_GV_DB_SINGLE_STEP	1
+	#define BLSB_GV_DBG_CONTROL_RESERVED2	0
+	/* Register Bit Widths for GV_DBG_CONTROL */
+	#define BWID_GV_DBG_CONTROL_RESERVED0	20
+	#define BWID_GV_DBG_CONTROL_GV_DB_DBP3EN	1
+	#define BWID_GV_DBG_CONTROL_GV_DB_DBP2EN	1
+	#define BWID_GV_DBG_CONTROL_GV_DB_DBP1EN	1
+	#define BWID_GV_DBG_CONTROL_GV_DB_DBP0EN	1
+	#define BWID_GV_DBG_CONTROL_GV_DB_PCBP3EN	1
+	#define BWID_GV_DBG_CONTROL_GV_DB_PCBP2EN	1
+	#define BWID_GV_DBG_CONTROL_GV_DB_PCBP1EN	1
+	#define BWID_GV_DBG_CONTROL_GV_DB_PCBP0EN	1
+	#define BWID_GV_DBG_CONTROL_RESERVED1	2
+	#define BWID_GV_DBG_CONTROL_GV_DB_SINGLE_STEP	1
+	#define BWID_GV_DBG_CONTROL_RESERVED2	1
+	/* Register Bit MASKS for GV_DBG_CONTROL */
+	#define BMSK_GV_DBG_CONTROL_RESERVED0	0xfffff000 /* Reserved */
+	#define BMSK_GV_DBG_CONTROL_GV_DB_DBP3EN	(1<<11) /* == 0x00000800: Data Address Breakpoint 3 Enable */
+	#define BMSK_GV_DBG_CONTROL_GV_DB_DBP2EN	(1<<10) /* == 0x00000400: Data Address Breakpoint 2 Enable */
+	#define BMSK_GV_DBG_CONTROL_GV_DB_DBP1EN	(1<<9) /* == 0x00000200: Data Address Breakpoint 1 Enable */
+	#define BMSK_GV_DBG_CONTROL_GV_DB_DBP0EN	(1<<8) /* == 0x00000100: Data Address Breakpoint 0 Enable */
+	#define BMSK_GV_DBG_CONTROL_GV_DB_PCBP3EN	(1<<7) /* == 0x00000080: Program Counter Breakpoint 3 Enable */
+	#define BMSK_GV_DBG_CONTROL_GV_DB_PCBP2EN	(1<<6) /* == 0x00000040: program Counter Breakpoint 2 Enable */
+	#define BMSK_GV_DBG_CONTROL_GV_DB_PCBP1EN	(1<<5) /* == 0x00000020: program Counter Breakpoint 1 Enable */
+	#define BMSK_GV_DBG_CONTROL_GV_DB_PCBP0EN	(1<<4) /* == 0x00000010: Program Counter Breakpoint 0 Enable */
+	#define BMSK_GV_DBG_CONTROL_RESERVED1	0x0000000c /* Reserved */
+	#define BMSK_GV_DBG_CONTROL_GV_DB_SINGLE_STEP	(1<<1) /* == 0x00000002: Single Step */
+	#define BMSK_GV_DBG_CONTROL_RESERVED2	(1<<0) /* == 0x00000001: Reserved */
+	/* Register BITFIELD for GV_DBG_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_CONTROL_RESERVED0	 0x7500, 12, 20, 0xfffff000
+	#define BITFIELD_GV_DBG_CONTROL_GV_DB_DBP3EN	 0x7500, 11, 1, 0x00000800
+	#define BITFIELD_GV_DBG_CONTROL_GV_DB_DBP2EN	 0x7500, 10, 1, 0x00000400
+	#define BITFIELD_GV_DBG_CONTROL_GV_DB_DBP1EN	 0x7500, 9, 1, 0x00000200
+	#define BITFIELD_GV_DBG_CONTROL_GV_DB_DBP0EN	 0x7500, 8, 1, 0x00000100
+	#define BITFIELD_GV_DBG_CONTROL_GV_DB_PCBP3EN	 0x7500, 7, 1, 0x00000080
+	#define BITFIELD_GV_DBG_CONTROL_GV_DB_PCBP2EN	 0x7500, 6, 1, 0x00000040
+	#define BITFIELD_GV_DBG_CONTROL_GV_DB_PCBP1EN	 0x7500, 5, 1, 0x00000020
+	#define BITFIELD_GV_DBG_CONTROL_GV_DB_PCBP0EN	 0x7500, 4, 1, 0x00000010
+	#define BITFIELD_GV_DBG_CONTROL_RESERVED1	 0x7500, 2, 2, 0x0000000c
+	#define BITFIELD_GV_DBG_CONTROL_GV_DB_SINGLE_STEP	 0x7500, 1, 1, 0x00000002
+	#define BITFIELD_GV_DBG_CONTROL_RESERVED2	 0x7500, 0, 1, 0x00000001
+#define ROFF_GV_DBG_STATUS	0x7504 /* Debugger Status */ 
+	#define BITFIELD_GV_DBG_STATUS	 0x7504, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_STATUS */
+	#define BLSB_GV_DBG_STATUS_RESERVED0	12
+	#define BLSB_GV_DBG_STATUS_GV_DB_DBP3TR	11
+	#define BLSB_GV_DBG_STATUS_GV_DB_DBP2TR	10
+	#define BLSB_GV_DBG_STATUS_GV_DB_DBP1TR	9
+	#define BLSB_GV_DBG_STATUS_GV_DB_DBP0TR	8
+	#define BLSB_GV_DBG_STATUS_GV_DB_PCBP3TR	7
+	#define BLSB_GV_DBG_STATUS_GV_DB_PCBP2TR	6
+	#define BLSB_GV_DBG_STATUS_GV_DB_PCBP1TR	5
+	#define BLSB_GV_DBG_STATUS_GV_DB_PCBP0TR	4
+	#define BLSB_GV_DBG_STATUS_RESERVED1	2
+	#define BLSB_GV_DBG_STATUS_GV_DB_STALLED	1
+	#define BLSB_GV_DBG_STATUS_GV_DB_ERR	0
+	/* Register Bit Widths for GV_DBG_STATUS */
+	#define BWID_GV_DBG_STATUS_RESERVED0	20
+	#define BWID_GV_DBG_STATUS_GV_DB_DBP3TR	1
+	#define BWID_GV_DBG_STATUS_GV_DB_DBP2TR	1
+	#define BWID_GV_DBG_STATUS_GV_DB_DBP1TR	1
+	#define BWID_GV_DBG_STATUS_GV_DB_DBP0TR	1
+	#define BWID_GV_DBG_STATUS_GV_DB_PCBP3TR	1
+	#define BWID_GV_DBG_STATUS_GV_DB_PCBP2TR	1
+	#define BWID_GV_DBG_STATUS_GV_DB_PCBP1TR	1
+	#define BWID_GV_DBG_STATUS_GV_DB_PCBP0TR	1
+	#define BWID_GV_DBG_STATUS_RESERVED1	2
+	#define BWID_GV_DBG_STATUS_GV_DB_STALLED	1
+	#define BWID_GV_DBG_STATUS_GV_DB_ERR	1
+	/* Register Bit MASKS for GV_DBG_STATUS */
+	#define BMSK_GV_DBG_STATUS_RESERVED0	0xfffff000 /* Reserved */
+	#define BMSK_GV_DBG_STATUS_GV_DB_DBP3TR	(1<<11) /* == 0x00000800: Data Address Breakpoint 3 Enable cleared by writing to this status register */
+	#define BMSK_GV_DBG_STATUS_GV_DB_DBP2TR	(1<<10) /* == 0x00000400: Data Address Breakpoint 2 Enable cleared by writing to this status register */
+	#define BMSK_GV_DBG_STATUS_GV_DB_DBP1TR	(1<<9) /* == 0x00000200: Data Address Breakpoint 1 Enable cleared by writing to this status register */
+	#define BMSK_GV_DBG_STATUS_GV_DB_DBP0TR	(1<<8) /* == 0x00000100: Data Address Breakpoint 0 Enable cleared by writing to this status register */
+	#define BMSK_GV_DBG_STATUS_GV_DB_PCBP3TR	(1<<7) /* == 0x00000080: Program Counter Breakpoint 3 Enable cleared by writing to this status register */
+	#define BMSK_GV_DBG_STATUS_GV_DB_PCBP2TR	(1<<6) /* == 0x00000040: program Counter Breakpoint 2 Enable cleared by writing to this status register */
+	#define BMSK_GV_DBG_STATUS_GV_DB_PCBP1TR	(1<<5) /* == 0x00000020: program Counter Breakpoint 1 Enable cleared by writing to this status register */
+	#define BMSK_GV_DBG_STATUS_GV_DB_PCBP0TR	(1<<4) /* == 0x00000010: Program Counter Breakpoint 0 Enable cleared by writing to this status register */
+	#define BMSK_GV_DBG_STATUS_RESERVED1	0x0000000c /* Reserved */
+	#define BMSK_GV_DBG_STATUS_GV_DB_STALLED	(1<<1) /* == 0x00000002: Processor Stalled */
+	#define BMSK_GV_DBG_STATUS_GV_DB_ERR	(1<<0) /* == 0x00000001: vSPARC Error */
+	/* Register BITFIELD for GV_DBG_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_STATUS_RESERVED0	 0x7504, 12, 20, 0xfffff000
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_DBP3TR	 0x7504, 11, 1, 0x00000800
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_DBP2TR	 0x7504, 10, 1, 0x00000400
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_DBP1TR	 0x7504, 9, 1, 0x00000200
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_DBP0TR	 0x7504, 8, 1, 0x00000100
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_PCBP3TR	 0x7504, 7, 1, 0x00000080
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_PCBP2TR	 0x7504, 6, 1, 0x00000040
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_PCBP1TR	 0x7504, 5, 1, 0x00000020
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_PCBP0TR	 0x7504, 4, 1, 0x00000010
+	#define BITFIELD_GV_DBG_STATUS_RESERVED1	 0x7504, 2, 2, 0x0000000c
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_STALLED	 0x7504, 1, 1, 0x00000002
+	#define BITFIELD_GV_DBG_STATUS_GV_DB_ERR	 0x7504, 0, 1, 0x00000001
+#define ROFF_GV_DBG_PC_BREAKPOINT0	0x7580 /* Program Counter Breakpoint 0 */ 
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT0	 0x7580, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_PC_BREAKPOINT0 */
+	#define BLSB_GV_DBG_PC_BREAKPOINT0_GV_DB_PCBP0	0
+	/* Register Bit Widths for GV_DBG_PC_BREAKPOINT0 */
+	#define BWID_GV_DBG_PC_BREAKPOINT0_GV_DB_PCBP0	32
+	/* Register Bit MASKS for GV_DBG_PC_BREAKPOINT0 */
+	#define BMSK_GV_DBG_PC_BREAKPOINT0_GV_DB_PCBP0	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_PC_BREAKPOINT0 - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT0_GV_DB_PCBP0	 0x7580, 0, 32, 0x00000000
+#define ROFF_GV_DBG_PC_BREAKPOINT0_MSK	0x7584 /* Program Counter Breakpoint 0 Mask */ 
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT0_MSK	 0x7584, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_PC_BREAKPOINT0_MSK */
+	#define BLSB_GV_DBG_PC_BREAKPOINT0_MSK_GV_DB_PCBP0MSK	0
+	/* Register Bit Widths for GV_DBG_PC_BREAKPOINT0_MSK */
+	#define BWID_GV_DBG_PC_BREAKPOINT0_MSK_GV_DB_PCBP0MSK	32
+	/* Register Bit MASKS for GV_DBG_PC_BREAKPOINT0_MSK */
+	#define BMSK_GV_DBG_PC_BREAKPOINT0_MSK_GV_DB_PCBP0MSK	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_PC_BREAKPOINT0_MSK - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT0_MSK_GV_DB_PCBP0MSK	 0x7584, 0, 32, 0x00000000
+#define ROFF_GV_DBG_PC_BREAKPOINT1	0x7590 /* Program Counter Breakpoint 1 */ 
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT1	 0x7590, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_PC_BREAKPOINT1 */
+	#define BLSB_GV_DBG_PC_BREAKPOINT1_GV_DB_PCBP1	0
+	/* Register Bit Widths for GV_DBG_PC_BREAKPOINT1 */
+	#define BWID_GV_DBG_PC_BREAKPOINT1_GV_DB_PCBP1	32
+	/* Register Bit MASKS for GV_DBG_PC_BREAKPOINT1 */
+	#define BMSK_GV_DBG_PC_BREAKPOINT1_GV_DB_PCBP1	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_PC_BREAKPOINT1 - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT1_GV_DB_PCBP1	 0x7590, 0, 32, 0x00000000
+#define ROFF_GV_DBG_PC_BREAKPOINT1_MSK	0x7594 /* Program Counter Breakpoint 1 Mask */ 
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT1_MSK	 0x7594, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_PC_BREAKPOINT1_MSK */
+	#define BLSB_GV_DBG_PC_BREAKPOINT1_MSK_GV_DB_PCBP1MSK	0
+	/* Register Bit Widths for GV_DBG_PC_BREAKPOINT1_MSK */
+	#define BWID_GV_DBG_PC_BREAKPOINT1_MSK_GV_DB_PCBP1MSK	32
+	/* Register Bit MASKS for GV_DBG_PC_BREAKPOINT1_MSK */
+	#define BMSK_GV_DBG_PC_BREAKPOINT1_MSK_GV_DB_PCBP1MSK	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_PC_BREAKPOINT1_MSK - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT1_MSK_GV_DB_PCBP1MSK	 0x7594, 0, 32, 0x00000000
+#define ROFF_GV_DBG_PC_BREAKPOINT2	0x75a0 /* Program Counter Breakpoint 2 */ 
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT2	 0x75a0, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_PC_BREAKPOINT2 */
+	#define BLSB_GV_DBG_PC_BREAKPOINT2_GV_DB_PCBP2	0
+	/* Register Bit Widths for GV_DBG_PC_BREAKPOINT2 */
+	#define BWID_GV_DBG_PC_BREAKPOINT2_GV_DB_PCBP2	32
+	/* Register Bit MASKS for GV_DBG_PC_BREAKPOINT2 */
+	#define BMSK_GV_DBG_PC_BREAKPOINT2_GV_DB_PCBP2	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_PC_BREAKPOINT2 - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT2_GV_DB_PCBP2	 0x75a0, 0, 32, 0x00000000
+#define ROFF_GV_DBG_PC_BREAKPOINT2_MSK	0x75a4 /* Program Counter Breakpoint 2 Mask */ 
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT2_MSK	 0x75a4, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_PC_BREAKPOINT2_MSK */
+	#define BLSB_GV_DBG_PC_BREAKPOINT2_MSK_GV_DB_PCBP2MSK	0
+	/* Register Bit Widths for GV_DBG_PC_BREAKPOINT2_MSK */
+	#define BWID_GV_DBG_PC_BREAKPOINT2_MSK_GV_DB_PCBP2MSK	32
+	/* Register Bit MASKS for GV_DBG_PC_BREAKPOINT2_MSK */
+	#define BMSK_GV_DBG_PC_BREAKPOINT2_MSK_GV_DB_PCBP2MSK	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_PC_BREAKPOINT2_MSK - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT2_MSK_GV_DB_PCBP2MSK	 0x75a4, 0, 32, 0x00000000
+#define ROFF_GV_DBG_PC_BREAKPOINT3	0x75b0 /* Program Counter Breakpoint 3 */ 
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT3	 0x75b0, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_PC_BREAKPOINT3 */
+	#define BLSB_GV_DBG_PC_BREAKPOINT3_GV_DB_PCBP3	0
+	/* Register Bit Widths for GV_DBG_PC_BREAKPOINT3 */
+	#define BWID_GV_DBG_PC_BREAKPOINT3_GV_DB_PCBP3	32
+	/* Register Bit MASKS for GV_DBG_PC_BREAKPOINT3 */
+	#define BMSK_GV_DBG_PC_BREAKPOINT3_GV_DB_PCBP3	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_PC_BREAKPOINT3 - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT3_GV_DB_PCBP3	 0x75b0, 0, 32, 0x00000000
+#define ROFF_GV_DBG_PC_BREAKPOINT3_MSK	0x75b4 /* Program Counter Breakpoint 3 Mask */ 
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT3_MSK	 0x75b4, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_PC_BREAKPOINT3_MSK */
+	#define BLSB_GV_DBG_PC_BREAKPOINT3_MSK_GV_DB_PCBP3MSK	0
+	/* Register Bit Widths for GV_DBG_PC_BREAKPOINT3_MSK */
+	#define BWID_GV_DBG_PC_BREAKPOINT3_MSK_GV_DB_PCBP3MSK	32
+	/* Register Bit MASKS for GV_DBG_PC_BREAKPOINT3_MSK */
+	#define BMSK_GV_DBG_PC_BREAKPOINT3_MSK_GV_DB_PCBP3MSK	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_PC_BREAKPOINT3_MSK - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_PC_BREAKPOINT3_MSK_GV_DB_PCBP3MSK	 0x75b4, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DATA_BREAKPOINT0	0x75c0 /* Data Breakpoint 0 */ 
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT0	 0x75c0, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DATA_BREAKPOINT0 */
+	#define BLSB_GV_DBG_DATA_BREAKPOINT0_GV_DB_DBP0	0
+	/* Register Bit Widths for GV_DBG_DATA_BREAKPOINT0 */
+	#define BWID_GV_DBG_DATA_BREAKPOINT0_GV_DB_DBP0	32
+	/* Register Bit MASKS for GV_DBG_DATA_BREAKPOINT0 */
+	#define BMSK_GV_DBG_DATA_BREAKPOINT0_GV_DB_DBP0	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_DATA_BREAKPOINT0 - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT0_GV_DB_DBP0	 0x75c0, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DATA_BREAKPOINT0_MSK	0x75c4 /* Data Breakpoint 0 Mask */ 
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT0_MSK	 0x75c4, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DATA_BREAKPOINT0_MSK */
+	#define BLSB_GV_DBG_DATA_BREAKPOINT0_MSK_GV_DB_DBP0MSK	0
+	/* Register Bit Widths for GV_DBG_DATA_BREAKPOINT0_MSK */
+	#define BWID_GV_DBG_DATA_BREAKPOINT0_MSK_GV_DB_DBP0MSK	32
+	/* Register Bit MASKS for GV_DBG_DATA_BREAKPOINT0_MSK */
+	#define BMSK_GV_DBG_DATA_BREAKPOINT0_MSK_GV_DB_DBP0MSK	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_DATA_BREAKPOINT0_MSK - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT0_MSK_GV_DB_DBP0MSK	 0x75c4, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DATA_BREAKPOINT1	0x75d0 /* Data Breakpoint 1 */ 
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT1	 0x75d0, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DATA_BREAKPOINT1 */
+	#define BLSB_GV_DBG_DATA_BREAKPOINT1_GV_DB_DBP1	0
+	/* Register Bit Widths for GV_DBG_DATA_BREAKPOINT1 */
+	#define BWID_GV_DBG_DATA_BREAKPOINT1_GV_DB_DBP1	32
+	/* Register Bit MASKS for GV_DBG_DATA_BREAKPOINT1 */
+	#define BMSK_GV_DBG_DATA_BREAKPOINT1_GV_DB_DBP1	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_DATA_BREAKPOINT1 - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT1_GV_DB_DBP1	 0x75d0, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DATA_BREAKPOINT1_MSK	0x75d4 /* Data Breakpoint 1 Mask */ 
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT1_MSK	 0x75d4, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DATA_BREAKPOINT1_MSK */
+	#define BLSB_GV_DBG_DATA_BREAKPOINT1_MSK_GV_DB_DBP1MSK	0
+	/* Register Bit Widths for GV_DBG_DATA_BREAKPOINT1_MSK */
+	#define BWID_GV_DBG_DATA_BREAKPOINT1_MSK_GV_DB_DBP1MSK	32
+	/* Register Bit MASKS for GV_DBG_DATA_BREAKPOINT1_MSK */
+	#define BMSK_GV_DBG_DATA_BREAKPOINT1_MSK_GV_DB_DBP1MSK	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_DATA_BREAKPOINT1_MSK - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT1_MSK_GV_DB_DBP1MSK	 0x75d4, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DATA_BREAKPOINT2	0x75e0 /* Data Breakpoint 2 */ 
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT2	 0x75e0, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DATA_BREAKPOINT2 */
+	#define BLSB_GV_DBG_DATA_BREAKPOINT2_GV_DB_DBP2	0
+	/* Register Bit Widths for GV_DBG_DATA_BREAKPOINT2 */
+	#define BWID_GV_DBG_DATA_BREAKPOINT2_GV_DB_DBP2	32
+	/* Register Bit MASKS for GV_DBG_DATA_BREAKPOINT2 */
+	#define BMSK_GV_DBG_DATA_BREAKPOINT2_GV_DB_DBP2	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_DATA_BREAKPOINT2 - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT2_GV_DB_DBP2	 0x75e0, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DATA_BREAKPOINT2_MSK	0x75e4 /* Data Breakpoint 2 Mask */ 
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT2_MSK	 0x75e4, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DATA_BREAKPOINT2_MSK */
+	#define BLSB_GV_DBG_DATA_BREAKPOINT2_MSK_GV_DB_DBP2MSK	0
+	/* Register Bit Widths for GV_DBG_DATA_BREAKPOINT2_MSK */
+	#define BWID_GV_DBG_DATA_BREAKPOINT2_MSK_GV_DB_DBP2MSK	32
+	/* Register Bit MASKS for GV_DBG_DATA_BREAKPOINT2_MSK */
+	#define BMSK_GV_DBG_DATA_BREAKPOINT2_MSK_GV_DB_DBP2MSK	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_DATA_BREAKPOINT2_MSK - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT2_MSK_GV_DB_DBP2MSK	 0x75e4, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DATA_BREAKPOINT3	0x75f0 /* Data Breakpoint 3 */ 
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT3	 0x75f0, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DATA_BREAKPOINT3 */
+	#define BLSB_GV_DBG_DATA_BREAKPOINT3_GV_DB_DBP3	0
+	/* Register Bit Widths for GV_DBG_DATA_BREAKPOINT3 */
+	#define BWID_GV_DBG_DATA_BREAKPOINT3_GV_DB_DBP3	32
+	/* Register Bit MASKS for GV_DBG_DATA_BREAKPOINT3 */
+	#define BMSK_GV_DBG_DATA_BREAKPOINT3_GV_DB_DBP3	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_DATA_BREAKPOINT3 - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT3_GV_DB_DBP3	 0x75f0, 0, 32, 0x00000000
+#define ROFF_GV_DBG_DATA_BREAKPOINT3_MSK	0x75f4 /* Data Breakpoint 3 Mask */ 
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT3_MSK	 0x75f4, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for GV_DBG_DATA_BREAKPOINT3_MSK */
+	#define BLSB_GV_DBG_DATA_BREAKPOINT3_MSK_GV_DB_DBP3MSK	0
+	/* Register Bit Widths for GV_DBG_DATA_BREAKPOINT3_MSK */
+	#define BWID_GV_DBG_DATA_BREAKPOINT3_MSK_GV_DB_DBP3MSK	32
+	/* Register Bit MASKS for GV_DBG_DATA_BREAKPOINT3_MSK */
+	#define BMSK_GV_DBG_DATA_BREAKPOINT3_MSK_GV_DB_DBP3MSK	0x00000000 /* Address of instruction vSparc will break on */
+	/* Register BITFIELD for GV_DBG_DATA_BREAKPOINT3_MSK - roff, lsb, width, mask */
+	#define BITFIELD_GV_DBG_DATA_BREAKPOINT3_MSK_GV_DB_DBP3MSK	 0x75f4, 0, 32, 0x00000000
+#define ROFF_GV_DMEM	0x8000 /* Data Memory */ 
+	#define BITFIELD_GV_DMEM	 0x8000, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+
+
+/* Module GV SPECIFIC SVEN Events */
+
+
+#define SVEN_MODULE_EVENT_GV_FW_AUTOAPI_CMD	0x80
+#define SVEN_MODULE_EVENT_GV_FW_PK_ES_START	0x81
+#define SVEN_MODULE_EVENT_GV_FW_PK_ES_DONE	0x82
+#define SVEN_MODULE_EVENT_GV_FW_PK_WL_DONE	0x83
+#define SVEN_MODULE_EVENT_GV_FW_PK_STREAM_STATUS	0x84
+#define SVEN_MODULE_EVENT_GV_FW_FATAL_STACK_CORRPON	0x85
+#define SVEN_MODULE_EVENT_GV_FW_PK_SCHDL_STRM_START	0x86
+#define SVEN_MODULE_EVENT_GV_FW_PK_SCHDL_STRM_END	0x87
+#define SVEN_MODULE_EVENT_GV_FW_FATAL_WKLD_OVERLFOW	0x88
+#define SVEN_MODULE_EVENT_GV_FW_FATAL_BUFFER_OVERLFOW	0x89
+#define SVEN_MODULE_EVENT_GV_FW_PM_WORKLOAD_STATUS	0x8a
+
+
+#endif /* GV_REGOFFS_H */

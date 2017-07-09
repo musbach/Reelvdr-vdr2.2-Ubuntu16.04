@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface
+END
+utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/utils.c
+END
+interface.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/interface.c
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/Makefile.in
+END
+smallft.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/smallft.c
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/utils.h
+END
+libcdio_cdda.sym
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/libcdio_cdda.sym
+END
+smallft.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/smallft.h
+END
+common_interface.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/common_interface.c
+END
+common_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/common_interface.h
+END
+drive_exceptions.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/drive_exceptions.h
+END
+toc.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/toc.c
+END
+scan_devices.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/scan_devices.c
+END
+low_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/low_interface.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/Makefile.am
+END
+cddap_interface.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/cddap_interface.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/Makefile
+END

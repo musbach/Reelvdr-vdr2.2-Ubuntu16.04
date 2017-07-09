@@ -1,0 +1,130 @@
+--- device.h	(revision 15412)
++++ device.h	(revision 15413)
+@@ -24,6 +24,9 @@
+ #include "spu.h"
+ #include "thread.h"
+ #include "tools.h"
++#ifdef USE_ROTOR
++#include <linux/dvb/frontend.h>
++#endif /* ROTOR */
+ 
+ #ifdef REELVDR
+ bool AnyFreeTuners(); // returns true if a tuner without recording is found
+@@ -163,6 +166,38 @@
+   static void Shutdown(void);
+          ///< Closes down all devices.
+          ///< Must be called at the end of the program.
++#ifdef USE_LNBSHARE
++public:
++  static void SetLnbNr(void);
++		  ///< Called after changes in setup
++		  ///< call SetLNBNrFromSetup for each device
++  virtual void SetLnbNrFromSetup(void) {};
++         ///< Called after changes in setup
++         ///< Read Setup.CardUsesLNBnr, write value to member variable of this class
++         ///< Only implemented in dvbdevice, other devices don't use LNBs
++  virtual int LnbNr(void) const { return cardIndex * -1; };
++         ///< Number of LNB. This is -cardIndex for all non-DVB devices.
++         ///< So, there will be no LNB conflicts for non-DVB devices.
++  virtual bool IsShareLnb(const cDevice *Device) { return false; };
++		  ///< True if both devices differ (this != Device) and share the same LNB
++  virtual bool IsLnbConflict(const cChannel *Channel) { return false; };
++         ///< false if 'Channel' can be recieved with the same 
++         ///< LNB as 'this' device is using
++         ///< Otherwise, true
++  cDevice *GetBadDevice(const cChannel *Channel) ;
++         ///< Returns NULL if there is no device which uses the same LNB or if
++         ///< all of those devices are tuned to the same frequency band and
++         ///< polarization as of the requested channel.
++         ///< Otherwise returns the first device found.
++  int GetMaxBadPriority(const cChannel *Channel) const;
++         ///< Returns the highest priority of all receiving devices which use
++         ///< the same LNB and are tuned to a different frequency band or
++         ///< polarization as of the requested channel.
++         ///< Returns -1 if there are no such devices, but the 'actual' device
++         ///< (device recieving live view) would be affected by switching to the requested channel.
++         ///< Returns -2 if there are no such devices and the actual device
++         ///< would not be affected by switching to the requested channel.
++#endif /* LNBSHARE */
+ private:
+   static int nextCardIndex;
+   int cardIndex;
+@@ -268,6 +303,11 @@
+   bool SwitchChannel(const cChannel *Channel, bool LiveView);
+          ///< Switches the device to the given Channel, initiating transfer mode
+          ///< if necessary.
++#ifdef USE_LNBSHARE
++  bool SwitchChannelForced(const cChannel *Channel, bool LiveView);
++         ///< Switches the device to the given channel, initiating transfer mode
++         ///< if necessary. Forces the switch without taking care of the LNB configuration.
++#endif /* LNBSHARE */
+   static bool SwitchChannel(int Direction);
+          ///< Switches the primary device to the next available channel in the given
+          ///< Direction (only the sign of Direction is evaluated, positive values
+@@ -282,12 +322,18 @@
+ 
+ #endif
+ private:
++#ifndef USE_YAEPG
+   eSetChannelResult SetChannel(const cChannel *Channel, bool LiveView);
+          ///< Sets the device to the given channel (general setup).
++#endif /* YAEPG */
+ protected:
+   virtual bool SetChannelDevice(const cChannel *Channel, bool LiveView);
+          ///< Sets the device to the given channel (actual physical setup).
+ public:
++#ifdef USE_YAEPG
++  eSetChannelResult SetChannel(const cChannel *Channel, bool LiveView);
++         ///< Sets the device to the given channel (general setup).
++#endif /* YAEPG */
+   static int CurrentChannel(void) { return primaryDevice ? currentChannel : 0; }
+          ///< Returns the number of the current channel on the primary device.
+   static void SetCurrentChannel(const cChannel *Channel) { currentChannel = Channel ? Channel->Number() : 0; }
+@@ -305,6 +351,9 @@
+   virtual bool HasProgramme(void);
+          ///< Returns true if the device is currently showing any programme to
+          ///< the user, either through replaying or live.
++#ifdef USE_ROTOR
++  virtual bool SendDiseqcCmd(dvb_diseqc_master_cmd cmd) {return false;}
++#endif /* ROTOR */
+ 
+ // PID handle facilities
+ 
+@@ -358,6 +407,12 @@
+        ///< Opens a file handle for the given filter data.
+        ///< A derived device that provides section data must
+        ///< implement this function.
++#ifdef USE_MCLI
++  virtual int ReadFilter(int Handle, void *Buffer, size_t Length);
++       ///< Read from a handle for the given filter data.
++       ///< a derived class need not implement this function, because this
++       ///< is done by the default implementation.
++#endif /* MCLI */
+   virtual void CloseFilter(int Handle);
+        ///< Closes a file handle that has previously been opened
+        ///< by OpenFilter(). If this is as simple as calling close(Handle),
+@@ -376,6 +431,14 @@
+ public:
+   virtual bool HasCi(void);
+          ///< Returns true if this device has a Common Interface.
++#ifdef USE_MCLI
++  virtual bool HasInternalCam(void) { return false; }
++         ///< Returns true if this device handles encrypted channels itself
++         ///< without VDR assistance. This can be e.g. when the device is a
++         ///< client that gets the stream from another VDR instance that has
++         ///< already decrypted the stream. In this case ProvidesChannel()
++         ///< shall check whether the channel can be decrypted.
++#endif /* MCLI */
+   void SetCamSlot(cCamSlot *CamSlot);
+          ///< Sets the given CamSlot to be used with this device.
+   cCamSlot *CamSlot(void) const { return camSlot; }
+@@ -535,6 +598,9 @@
+   cTsToPes tsToPesVideo;
+   cTsToPes tsToPesAudio;
+   cTsToPes tsToPesSubtitle;
++#ifdef USE_TTXTSUBS
++  cTsToPes tsToPesTeletext;
++#endif /* TTXTSUBS */
+   bool isPlayingVideo;
+ protected:
+   const cPatPmtParser *PatPmtParser(void) const { return &patPmtParser; }

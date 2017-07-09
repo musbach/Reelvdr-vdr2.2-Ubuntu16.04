@@ -1,0 +1,9 @@
+Package: libreelaudiodb
+Version: 0.1.0
+Section: reel
+Priority: important
+Architecture: armel
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: libreelaudiodb
+Description: 
+	shared library and header file to access reel's media database

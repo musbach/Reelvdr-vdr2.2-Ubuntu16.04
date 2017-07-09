@@ -1,0 +1,41 @@
+<!-- TableTemplate -->
+<h1><?% gettext("Administration of video disk recorder") %?></h1>
+
+<a href="?cmd=vdrnew">[<?% gettext("Create new definition of video disk recorder") %?>]</a>
+<p>
+
+<table border="0" width="95%">
+<form name='vdrlist'>
+<?% INCLUDE 'widgets/referer.tmpl' %?>
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <th><?% field %?></th>
+        <?% END %?>
+        </tr>
+        <?% x = -1 %?>
+        <?% FOREACH zeile IN data %?>
+        <?% x = x + 1 %?>
+        <tr class="<?% myclass %?>" <?% IF (x mod 2) != 0 %?>bgcolor='#F5F5F5'<?% END %?>>
+            <?% c = 0 %?>
+            <?% FOREACH field IN zeile %?>
+                <?% c = c + 1 %?>
+                <?% IF c == 1; # Id Field %?>
+                <td>
+                    <a title="<?% gettext("Edit definition of video disk recorder") %?>" href="?cmd=vdredit&amp;data=<?% zeile.0 %?>">
+                    [<?% gettext("Edit") %?>]</a>&nbsp;
+                    <a title="<?% gettext("Delete definition of video disk recorder") %?>"
+                       href="#" onclick="sure(document.vdrlist, '<?% gettext("Would you like to delete this definition of video disk recorder?") %?>: <?% escape(zeile.3) %?>','?cmd=vdrdelete&amp;data=<?% zeile.0 %?>')">
+                    [<?% gettext("Delete") %?>]
+                    </a>
+                </td>
+                <?% ELSE %?>
+                <td><?% field %?></td>
+                <?% END %?>
+            <?% END %?>
+        </tr>
+        <?% END %?>
+<?% END %?>
+</form>
+</table>

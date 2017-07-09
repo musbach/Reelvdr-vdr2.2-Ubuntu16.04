@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc
+END
+libwin32utils.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/libwin32utils.dsp
+END
+title_info.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/title_info.dsp
+END
+libdvdcss.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/libdvdcss.dsp
+END
+libdvdnav.dsw
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/libdvdnav.dsw
+END
+libdvdnav.def
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/libdvdnav.def
+END
+ifo_dump.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/ifo_dump.dsp
+END
+libwin32utils.def
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/libwin32utils.def
+END
+libdvdcss.def
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/libdvdcss.def
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/config.h
+END
+play_title.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/play_title.dsp
+END
+libdvdnav.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/libdvdnav.dsp
+END

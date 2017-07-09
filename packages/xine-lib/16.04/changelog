@@ -1,0 +1,10 @@
+xine-lib (1.2) satellit; urgency=low
+
+  * added matroska patch
+
+  - Corrected erroneous line responsible for not including the .desktop
+
+  file
+
+  -- satellit <http://www.reelbox4you.tv>  Wed, 21 Okt 2015 17:28:00 +0100
+

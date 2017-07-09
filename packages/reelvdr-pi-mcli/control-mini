@@ -1,0 +1,11 @@
+Package: reelvdr-pi-mcli
+Version: 0.9.1.16
+Section: reel
+Priority: required
+Architecture: armel
+Depends: libmcli, libxml2
+Conflicts: reelvdr-pi-rotor
+Maintainer: Reel Multimedia Development Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/mcli
+Description: Netceiver client, VDR plugin
+Description-de: Netceiver client als VDR-plugin

@@ -1,0 +1,63 @@
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -D_FILE_OFFSET_BITS=64 -c -DNDEBUG -DREPLEX_ONLY -DTMPDIR='"/tmp"' -DDVDDEV='"/dev/dvd"' -DISODIR='"/pub/export"' -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"burn"' -DPLUGIN_NAME_I18N='"burn"' -I. -I../../../../temp/docimage/libs/gd -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -o setup.o setup.c
+In file included from ./boost/config.hpp:57:0,
+                 from ./boost/utility/addressof.hpp:14,
+                 from proctools/property.h:8,
+                 from setup.h:13,
+                 from setup.c:8:
+./boost/optional/optional.hpp: In member function ‘void boost::optional_detail::optional_base<T>::construct(const Expr&, const boost::in_place_factory_base*)’:
+./boost/static_assert.hpp:105:21: warning: typedef ‘boost_static_assert_typedef_278’ locally defined but not used [-Wunused-local-typedefs]
+          BOOST_JOIN(boost_static_assert_typedef_, __LINE__)
+                     ^
+./boost/config/suffix.hpp:523:32: note: in definition of macro ‘BOOST_DO_JOIN2’
+ #define BOOST_DO_JOIN2( X, Y ) X##Y
+                                ^
+./boost/config/suffix.hpp:521:28: note: in expansion of macro ‘BOOST_DO_JOIN’
+ #define BOOST_JOIN( X, Y ) BOOST_DO_JOIN( X, Y )
+                            ^
+./boost/static_assert.hpp:105:10: note: in expansion of macro ‘BOOST_JOIN’
+          BOOST_JOIN(boost_static_assert_typedef_, __LINE__)
+          ^
+./boost/optional/optional.hpp:278:8: note: in expansion of macro ‘BOOST_STATIC_ASSERT’
+        BOOST_STATIC_ASSERT ( ::boost::mpl::not_<is_reference_predicate>::value ) ;
+        ^
+./boost/optional/optional.hpp: In member function ‘void boost::optional_detail::optional_base<T>::construct(const Expr&, const boost::typed_in_place_factory_base*)’:
+./boost/static_assert.hpp:105:21: warning: typedef ‘boost_static_assert_typedef_287’ locally defined but not used [-Wunused-local-typedefs]
+          BOOST_JOIN(boost_static_assert_typedef_, __LINE__)
+                     ^
+./boost/config/suffix.hpp:523:32: note: in definition of macro ‘BOOST_DO_JOIN2’
+ #define BOOST_DO_JOIN2( X, Y ) X##Y
+                                ^
+./boost/config/suffix.hpp:521:28: note: in expansion of macro ‘BOOST_DO_JOIN’
+ #define BOOST_JOIN( X, Y ) BOOST_DO_JOIN( X, Y )
+                            ^
+./boost/static_assert.hpp:105:10: note: in expansion of macro ‘BOOST_JOIN’
+          BOOST_JOIN(boost_static_assert_typedef_, __LINE__)
+          ^
+./boost/optional/optional.hpp:287:8: note: in expansion of macro ‘BOOST_STATIC_ASSERT’
+        BOOST_STATIC_ASSERT ( ::boost::mpl::not_<is_reference_predicate>::value ) ;
+        ^
+setup.c: In constructor ‘vdr_burn::cBurnParameters::cBurnParameters()’:
+setup.c:35:12: error: ‘VideoDirectory’ was not declared in this scope
+   DataPath(VideoDirectory),
+            ^
+In file included from setup.c:8:0:
+setup.h: In constructor ‘vdr_burn::job_options_base::job_options_base(vdr_burn::job_options&, bool)’:
+setup.h:121:16: warning: ‘vdr_burn::job_options_base::m_options’ will be initialized after [-Wreorder]
+   job_options& m_options;
+                ^
+setup.h:118:8: warning:   ‘bool vdr_burn::job_options_base::m_showAll’ [-Wreorder]
+   bool m_showAll;
+        ^
+setup.c:169:2: warning:   when initialized here [-Wreorder]
+  job_options_base::job_options_base( job_options& options_, bool showAll_ ):
+  ^
+In file included from boost/bind.hpp:1627:0,
+                 from menuitems.h:22,
+                 from menubase.h:12,
+                 from menuburn.h:11,
+                 from setup.c:10:
+./boost/bind/placeholders.hpp: At global scope:
+./boost/bind/placeholders.hpp:55:15: warning: ‘{anonymous}::_2’ defined but not used [-Wunused-variable]
+ boost::arg<2> _2;
+               ^
+make: *** [setup.o] Fehler 1

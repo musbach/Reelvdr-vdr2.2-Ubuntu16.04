@@ -1,0 +1,7 @@
+<!-- Redirect -->
+<?% IF global.shutter.defined; %?>
+<script type="text/javascript">
+    setTimeout("closeit()", '<?% data.wait ? data.wait * 3000 : 3000 %?>' );
+    /* redirect('<?% reentities(data.url) %?>', '<?% data.wait ? data.wait : 1 %?>' ); */
+</script>
+<?% END %?>

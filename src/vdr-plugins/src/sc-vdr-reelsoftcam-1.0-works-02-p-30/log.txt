@@ -1,0 +1,1710 @@
+Makefile:134: Warnung: Die Befehle für das Ziel ».dependencies« werden überschrieben
+../../../vdr-2.1/Make.common:61: Warnung: Alte Befehle für das Ziel ».dependencies« werden ignoriert
+Makefile:150: Warnung: Die Befehle für das Ziel »po/sc.pot« werden überschrieben
+../../../vdr-2.1/Make.common:82: Warnung: Alte Befehle für das Ziel »po/sc.pot« werden ignoriert
+Makefile:185: Warnung: Die Befehle für das Ziel »libvdr-sc.so« werden überschrieben
+../../../vdr-2.1/Make.common:129: Warnung: Alte Befehle für das Ziel »libvdr-sc.so« werden ignoriert
+Makefile:201: Warnung: Die Befehle für das Ziel »dist« werden überschrieben
+../../../vdr-2.1/Make.common:133: Warnung: Alte Befehle für das Ziel »dist« werden ignoriert
+Makefile:212: Warnung: Die Befehle für das Ziel »clean« werden überschrieben
+../../../vdr-2.1/Make.common:149: Warnung: Alte Befehle für das Ziel »clean« werden ignoriert
+Makefile:134: Warnung: Die Befehle für das Ziel ».dependencies« werden überschrieben
+../../../vdr-2.1/Make.common:61: Warnung: Alte Befehle für das Ziel ».dependencies« werden ignoriert
+Makefile:150: Warnung: Die Befehle für das Ziel »po/sc.pot« werden überschrieben
+../../../vdr-2.1/Make.common:82: Warnung: Alte Befehle für das Ziel »po/sc.pot« werden ignoriert
+Makefile:185: Warnung: Die Befehle für das Ziel »libvdr-sc.so« werden überschrieben
+../../../vdr-2.1/Make.common:129: Warnung: Alte Befehle für das Ziel »libvdr-sc.so« werden ignoriert
+Makefile:201: Warnung: Die Befehle für das Ziel »dist« werden überschrieben
+../../../vdr-2.1/Make.common:133: Warnung: Alte Befehle für das Ziel »dist« werden ignoriert
+Makefile:212: Warnung: Die Befehle für das Ziel »clean« werden überschrieben
+../../../vdr-2.1/Make.common:149: Warnung: Alte Befehle für das Ziel »clean« werden ignoriert
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o sc.o -Wl,--no-undefined sc.c
+In file included from ../../../vdr-2.1/include/vdr/dvbdevice.h:15:0,
+                 from ../../../vdr-2.1/include/vdr/menuitems.h:14,
+                 from ../../../vdr-2.1/include/vdr/plugin.h:14,
+                 from sc.c:31:
+../../../vdr-2.1/include/vdr/device.h:404:16: warning: ‘virtual bool cDevice::HasLock(int) const’ was hidden [-Woverloaded-virtual]
+   virtual bool HasLock(int TimeoutMs = 0) const;
+                ^
+In file included from mcli_sc.h:24:0,
+                 from cam.h:27,
+                 from sc.h:22,
+                 from sc.c:42:
+../mcli/device.h:54:15: warning:   by ‘virtual bool cMcliDevice::HasLock(int)’ [-Woverloaded-virtual]
+  virtual bool HasLock(int TimeoutMs = 0);
+               ^
+In file included from sc.h:22:0,
+                 from sc.c:42:
+cam.h: In member function ‘virtual bool cScDvbDevice::Ready()’:
+cam.h:199:28: warning: no return statement in function returning non-void [-Wreturn-type]
+   virtual bool Ready(void){};
+                            ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o data.o -Wl,--no-undefined data.c
+In file included from ../mcli/device.h:12:0,
+                 from mcli_sc.h:24,
+                 from data.c:28:
+../../../vdr-2.1/include/vdr/device.h:404:16: warning: ‘virtual bool cDevice::HasLock(int) const’ was hidden [-Woverloaded-virtual]
+   virtual bool HasLock(int TimeoutMs = 0) const;
+                ^
+In file included from mcli_sc.h:24:0,
+                 from data.c:28:
+../mcli/device.h:54:15: warning:   by ‘virtual bool cMcliDevice::HasLock(int)’ [-Woverloaded-virtual]
+  virtual bool HasLock(int TimeoutMs = 0);
+               ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o filter.o -Wl,--no-undefined filter.c
+In file included from filter.h:26:0,
+                 from filter.c:32:
+../../../vdr-2.1/include/vdr/device.h:404:16: warning: ‘virtual bool cDevice::HasLock(int) const’ was hidden [-Woverloaded-virtual]
+   virtual bool HasLock(int TimeoutMs = 0) const;
+                ^
+In file included from mcli_sc.h:24:0,
+                 from filter.h:27,
+                 from filter.c:32:
+../mcli/device.h:54:15: warning:   by ‘virtual bool cMcliDevice::HasLock(int)’ [-Woverloaded-virtual]
+  virtual bool HasLock(int TimeoutMs = 0);
+               ^
+In file included from sc.h:22:0,
+                 from filter.c:33:
+cam.h: In member function ‘virtual bool cScDvbDevice::Ready()’:
+cam.h:199:28: warning: no return statement in function returning non-void [-Wreturn-type]
+   virtual bool Ready(void){};
+                            ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o system.o -Wl,--no-undefined system.c
+In file included from ../../../vdr-2.1/include/vdr/dvbdevice.h:15:0,
+                 from cam.h:23,
+                 from sc.h:22,
+                 from system.c:28:
+../../../vdr-2.1/include/vdr/device.h:404:16: warning: ‘virtual bool cDevice::HasLock(int) const’ was hidden [-Woverloaded-virtual]
+   virtual bool HasLock(int TimeoutMs = 0) const;
+                ^
+In file included from mcli_sc.h:24:0,
+                 from cam.h:27,
+                 from sc.h:22,
+                 from system.c:28:
+../mcli/device.h:54:15: warning:   by ‘virtual bool cMcliDevice::HasLock(int)’ [-Woverloaded-virtual]
+  virtual bool HasLock(int TimeoutMs = 0);
+               ^
+In file included from sc.h:22:0,
+                 from system.c:28:
+cam.h: In member function ‘virtual bool cScDvbDevice::Ready()’:
+cam.h:199:28: warning: no return statement in function returning non-void [-Wreturn-type]
+   virtual bool Ready(void){};
+                            ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o misc.o -Wl,--no-undefined misc.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o version.o -Wl,--no-undefined version.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o smartcard.o -Wl,--no-undefined smartcard.c
+In file included from ../../../vdr-2.1/include/vdr/dvbdevice.h:15:0,
+                 from cam.h:23,
+                 from sc.h:22,
+                 from smartcard.c:35:
+../../../vdr-2.1/include/vdr/device.h:404:16: warning: ‘virtual bool cDevice::HasLock(int) const’ was hidden [-Woverloaded-virtual]
+   virtual bool HasLock(int TimeoutMs = 0) const;
+                ^
+In file included from mcli_sc.h:24:0,
+                 from cam.h:27,
+                 from sc.h:22,
+                 from smartcard.c:35:
+../mcli/device.h:54:15: warning:   by ‘virtual bool cMcliDevice::HasLock(int)’ [-Woverloaded-virtual]
+  virtual bool HasLock(int TimeoutMs = 0);
+               ^
+In file included from sc.h:22:0,
+                 from smartcard.c:35:
+cam.h: In member function ‘virtual bool cScDvbDevice::Ready()’:
+cam.h:199:28: warning: no return statement in function returning non-void [-Wreturn-type]
+   virtual bool Ready(void){};
+                            ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o network.o -Wl,--no-undefined network.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o crypto.o -Wl,--no-undefined crypto.c
+crypto.c:91:2: warning: #warning ** openssl lacks IDEA support. Using deprecated static support code. Update your openssl package. [-Wcpp]
+ #warning ** openssl lacks IDEA support. Using deprecated static support code. Update your openssl package.
+  ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o system-common.o -Wl,--no-undefined system-common.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o parse.o -Wl,--no-undefined parse.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o log.o -Wl,--no-undefined log.c
+log.c:48:70: warning: narrowing conversion of ‘2147483711u’ from ‘unsigned int’ to ‘int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+ static int config[LMOD_SUP] = { LMOD_ENABLE|L_GEN_ALL|LMOD_CFG_VALID };
+                                                                      ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o override.o -Wl,--no-undefined override.c
+In file included from ../../../vdr-2.1/include/vdr/dvbdevice.h:15:0,
+                 from cam.h:23,
+                 from sc.h:22,
+                 from override.c:27:
+../../../vdr-2.1/include/vdr/device.h:404:16: warning: ‘virtual bool cDevice::HasLock(int) const’ was hidden [-Woverloaded-virtual]
+   virtual bool HasLock(int TimeoutMs = 0) const;
+                ^
+In file included from mcli_sc.h:24:0,
+                 from cam.h:27,
+                 from sc.h:22,
+                 from override.c:27:
+../mcli/device.h:54:15: warning:   by ‘virtual bool cMcliDevice::HasLock(int)’ [-Woverloaded-virtual]
+  virtual bool HasLock(int TimeoutMs = 0);
+               ^
+In file included from sc.h:22:0,
+                 from override.c:27:
+cam.h: In member function ‘virtual bool cScDvbDevice::Ready()’:
+cam.h:199:28: warning: no return statement in function returning non-void [-Wreturn-type]
+   virtual bool Ready(void){};
+                            ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o cam.o -Wl,--no-undefined cam.c
+In file included from ../../../vdr-2.1/include/vdr/dvbdevice.h:15:0,
+                 from cam.c:30:
+../../../vdr-2.1/include/vdr/device.h:404:16: warning: ‘virtual bool cDevice::HasLock(int) const’ was hidden [-Woverloaded-virtual]
+   virtual bool HasLock(int TimeoutMs = 0) const;
+                ^
+In file included from mcli_sc.h:24:0,
+                 from cam.h:27,
+                 from cam.c:36:
+../mcli/device.h:54:15: warning:   by ‘virtual bool cMcliDevice::HasLock(int)’ [-Woverloaded-virtual]
+  virtual bool HasLock(int TimeoutMs = 0);
+               ^
+In file included from cam.c:36:0:
+cam.h: In member function ‘virtual bool cScDvbDevice::Ready()’:
+cam.h:199:28: warning: no return statement in function returning non-void [-Wreturn-type]
+   virtual bool Ready(void){};
+                            ^
+In file included from cam.c:29:0:
+../../../vdr-2.1/include/vdr/ci.h: At global scope:
+../../../vdr-2.1/include/vdr/ci.h:179:16: warning: ‘virtual bool cCamSlot::Reset()’ was hidden [-Woverloaded-virtual]
+   virtual bool Reset(void);
+                ^
+cam.c:2302:8: warning:   by ‘bool cScCamSlot::Reset(bool)’ [-Woverloaded-virtual]
+   bool Reset(bool log=true);
+        ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME_I18N='"sc"' -DVDR_IS_SC_PATCHED=402 -DREEL_AVANTGARDE -DREELVDR -DUSE_MCLI -DMCLISC -I./include -I../../../vdr-2.1/include -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml -I../../../vdr-2.1/include -I../../../vdr-2.1/../vdr-plugins/src/mcli -I -DDDD -o i18n-template.o -Wl,--no-undefined i18n-template.c
+make[1]: Verzeichnis »/usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-30/FFdecsa« wird betreten
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -fexpensive-optimizations -fomit-frame-pointer -funroll-loops -O3 -mmmx -msse -msse2 -msse3 -DPARALLEL_MODE=PARALLEL_128_SSE2 -c FFdecsa.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -fexpensive-optimizations -fomit-frame-pointer -funroll-loops -O3 -mmmx -msse -msse2 -msse3 -DPARALLEL_MODE=PARALLEL_128_SSE2 -c FFdecsa_test.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb -fexpensive-optimizations -fomit-frame-pointer -funroll-loops -O3 -mmmx -msse -msse2 -msse3 -o FFdecsa_test FFdecsa_test.o FFdecsa.o
+FFdecsa 1.0: testing correctness and speed
+CORRECT!
+CORRECT!
+CORRECT!
+CORRECT!
+CORRECT!
+speed=386.061231 Mbit/s
+speed=262269.858199 pkts/s
+CORRECT!
+CORRECT!
+CORRECT!
+CORRECT!
+CORRECT!
+make[1]: Verzeichnis »/usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-30/FFdecsa« wird verlassen
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb  -shared FFdecsa/FFdecsa.o -lcrypto ../mcli/mcast/client/libmcli.a  `xml2-config --libs` sc.o data.o filter.o system.o misc.o version.o smartcard.o network.o crypto.o system-common.o parse.o log.o override.o cam.o i18n-template.o -o libvdr-sc.so -Wl,--no-undefined
+sc.o: In Funktion `cMenuEditCapItem::cMenuEditCapItem(char const*, int*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:107: Nicht definierter Verweis auf `cMenuEditIntItem::cMenuEditIntItem(char const*, int*, int, int, char const*, char const*)'
+sc.o: In Funktion `cMenuEditCapItem::Set()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:114: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:114: Nicht definierter Verweis auf `cMenuEditItem::SetValue(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:115: Nicht definierter Verweis auf `cMenuEditIntItem::Set()'
+sc.o: In Funktion `cMenuEditCapItem::ProcessKey(eKeys)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:120: Nicht definierter Verweis auf `cOsdItem::ProcessKey(eKeys)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:122: Nicht definierter Verweis auf `cMenuEditIntItem::ProcessKey(eKeys)'
+sc.o: In Funktion `cMenuEditHexItem::cMenuEditHexItem(char const*, int*, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:144: Nicht definierter Verweis auf `cMenuEditItem::cMenuEditItem(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:144: Nicht definierter Verweis auf `cMenuEditItem::~cMenuEditItem()'
+sc.o: In Funktion `cMenuEditHexItem::Set()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:170: Nicht definierter Verweis auf `cMenuEditItem::SetValue(char const*)'
+sc.o: In Funktion `cMenuEditHexItem::ProcessKey(eKeys)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:184: Nicht definierter Verweis auf `cOsdItem::ProcessKey(eKeys)'
+sc.o: In Funktion `cScInfoItem::cScInfoItem(char const*, int, eOSState)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:241: Nicht definierter Verweis auf `cOsdItem::cOsdItem(eOSState)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:246: Nicht definierter Verweis auf `cOsdItem::SetSelectable(bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:241: Nicht definierter Verweis auf `cOsdItem::~cOsdItem()'
+sc.o: In Funktion `cScInfoItem::cScInfoItem(char const*, char const*, eOSState)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:250: Nicht definierter Verweis auf `cOsdItem::cOsdItem(eOSState)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:253: Nicht definierter Verweis auf `cOsdItem::SetSelectable(bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:250: Nicht definierter Verweis auf `cOsdItem::~cOsdItem()'
+sc.o: In Funktion `cScInfoItem::SetValue(char const*, char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:259: Nicht definierter Verweis auf `cOsdItem::SetText(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:260: Nicht definierter Verweis auf `cStatus::MsgOsdCurrentItem(char const*)'
+sc.o: In Funktion `cOptInt::Store(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:313: Nicht definierter Verweis auf `cPlugin::SetupStore(char const*, int)'
+sc.o: In Funktion `cOptInt::Create(cOsdMenu*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:318: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:318: Nicht definierter Verweis auf `cMenuEditIntItem::cMenuEditIntItem(char const*, int*, int, int, char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:318: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+sc.o: In Funktion `cOptSel::Create(cOsdMenu*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:339: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:340: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:340: Nicht definierter Verweis auf `cMenuEditStraItem::cMenuEditStraItem(char const*, int*, int, char const* const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:340: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+sc.o: In Funktion `cOptBool::Create(cOsdMenu*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:352: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:352: Nicht definierter Verweis auf `cMenuEditBoolItem::cMenuEditBoolItem(char const*, int*, char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:352: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+sc.o: In Funktion `cOptStr::Parse(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:371: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+sc.o: In Funktion `cOptStr::Backup()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:376: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+sc.o: In Funktion `cOptStr::Set()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:381: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+sc.o: In Funktion `cOptStr::Store(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:387: Nicht definierter Verweis auf `cPlugin::SetupStore(char const*, char const*)'
+sc.o: In Funktion `cOptStr::Create(cOsdMenu*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:392: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:392: Nicht definierter Verweis auf `cMenuEditStrItem::cMenuEditStrItem(char const*, char*, int, char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:392: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+sc.o: In Funktion `cOptMInt::Store(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:459: Nicht definierter Verweis auf `cPlugin::SetupStore(char const*, char const*)'
+sc.o: In Funktion `cOptMInt::Create(cOsdMenu*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:465: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:467: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:468: Nicht definierter Verweis auf `cMenuEditIntItem::cMenuEditIntItem(char const*, int*, int, int, char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:468: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:469: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+sc.o: In Funktion `cMenuInfoSc::cMenuInfoSc()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:547: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:547: Nicht definierter Verweis auf `cOsdMenu::cOsdMenu(char const*, int, int, int, int, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:549: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:549: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:557: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:564: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:564: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:568: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:568: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:570: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:570: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:572: Nicht definierter Verweis auf `cOsdMenu::Display()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:547: Nicht definierter Verweis auf `cOsdMenu::~cOsdMenu()'
+sc.o: In Funktion `cMenuInfoSc::ProcessKey(eKeys)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:577: Nicht definierter Verweis auf `cOsdMenu::ProcessKey(eKeys)'
+sc.o: In Funktion `cMenuInfoCard::cMenuInfoCard(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:594: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:594: Nicht definierter Verweis auf `cMenuText::cMenuText(char const*, char const*, eDvbFont)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:598: Nicht definierter Verweis auf `cMenuText::SetText(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:599: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:599: Nicht definierter Verweis auf `cOsdMenu::SetHelp(char const*, char const*, char const*, char const*, eKeys const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:600: Nicht definierter Verweis auf `cMenuText::Display()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:594: Nicht definierter Verweis auf `cMenuText::~cMenuText()'
+sc.o: In Funktion `cMenuInfoCard::ProcessKey(eKeys)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:605: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:605: Nicht definierter Verweis auf `Interface'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:605: Nicht definierter Verweis auf `cInterface::Confirm(char const*, int, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:609: Nicht definierter Verweis auf `cMenuText::ProcessKey(eKeys)'
+sc.o: In Funktion `cLogOptItem::cLogOptItem(char const*, int, int*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:625: Nicht definierter Verweis auf `cMenuEditBoolItem::cMenuEditBoolItem(char const*, int*, char const*, char const*)'
+sc.o: In Funktion `cMenuLogMod::cMenuLogMod(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:644: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:644: Nicht definierter Verweis auf `cOsdMenu::cOsdMenu(char const*, int, int, int, int, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:647: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:647: Nicht definierter Verweis auf `cOsdItem::cOsdItem(char const*, eOSState, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:647: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:660: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:665: Nicht definierter Verweis auf `cOsdMenu::Display()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:644: Nicht definierter Verweis auf `cOsdMenu::~cOsdMenu()'
+sc.o: In Funktion `cMenuLogMod::ProcessKey(eKeys)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:678: Nicht definierter Verweis auf `cOsdMenu::ProcessKey(eKeys)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:681: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:681: Nicht definierter Verweis auf `Interface'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:681: Nicht definierter Verweis auf `cInterface::Confirm(char const*, int, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:689: Nicht definierter Verweis auf `typeinfo for cOsdItem'
+sc.o: In Funktion `cLogModItem::cLogModItem(char const*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:718: Nicht definierter Verweis auf `cOsdItem::cOsdItem(eOSState)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:722: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:723: Nicht definierter Verweis auf `cOsdItem::SetText(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:718: Nicht definierter Verweis auf `cOsdItem::~cOsdItem()'
+sc.o: In Funktion `cMenuLogSys::cMenuLogSys()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:737: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:737: Nicht definierter Verweis auf `cOsdMenu::cOsdMenu(char const*, int, int, int, int, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:740: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:740: Nicht definierter Verweis auf `cOsdItem::cOsdItem(char const*, eOSState, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:740: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:741: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:741: Nicht definierter Verweis auf `cOsdItem::cOsdItem(char const*, eOSState, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:741: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:745: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:747: Nicht definierter Verweis auf `cOsdMenu::Display()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:737: Nicht definierter Verweis auf `cOsdMenu::~cOsdMenu()'
+sc.o: In Funktion `cMenuLogSys::ProcessKey(eKeys)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:761: Nicht definierter Verweis auf `cOsdMenu::ProcessKey(eKeys)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:764: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:764: Nicht definierter Verweis auf `Interface'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:764: Nicht definierter Verweis auf `cInterface::Confirm(char const*, int, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:772: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:772: Nicht definierter Verweis auf `Interface'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:772: Nicht definierter Verweis auf `cInterface::Confirm(char const*, int, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:781: Nicht definierter Verweis auf `typeinfo for cOsdItem'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:782: Nicht definierter Verweis auf `cOsdMenu::AddSubMenu(cOsdMenu*)'
+sc.o: In Funktion `cMenuSysOpts::cMenuSysOpts()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:802: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:802: Nicht definierter Verweis auf `cOsdMenu::cOsdMenu(char const*, int, int, int, int, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:808: Nicht definierter Verweis auf `cOsdMenu::Display()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:802: Nicht definierter Verweis auf `cOsdMenu::~cOsdMenu()'
+sc.o: In Funktion `cMenuSysOpts::ProcessKey(eKeys)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:813: Nicht definierter Verweis auf `cOsdMenu::ProcessKey(eKeys)'
+sc.o: In Funktion `cMenuSetupSc::cMenuSetupSc(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:845: Nicht definierter Verweis auf `cMenuSetupPage::cMenuSetupPage()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:848: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:848: Nicht definierter Verweis auf `cMenuSetupPage::SetSection(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:854: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:854: Nicht definierter Verweis auf `cOsdItem::cOsdItem(char const*, eOSState, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:854: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:855: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:855: Nicht definierter Verweis auf `cOsdItem::cOsdItem(char const*, eOSState, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:855: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:860: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:863: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:865: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:868: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:868: Nicht definierter Verweis auf `cOsdItem::cOsdItem(char const*, eOSState, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:868: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:869: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:869: Nicht definierter Verweis auf `cOsdItem::cOsdItem(char const*, eOSState, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:869: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:870: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:870: Nicht definierter Verweis auf `cOsdItem::cOsdItem(char const*, eOSState, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:870: Nicht definierter Verweis auf `cOsdMenu::Add(cOsdItem*, bool, cOsdItem*)'
+sc.o: In Funktion `cMenuSetupSc::ProcessKey(eKeys)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:885: Nicht definierter Verweis auf `cOsdMenu::ProcessKey(eKeys)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:889: Nicht definierter Verweis auf `typeinfo for cOsdItem'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:890: Nicht definierter Verweis auf `cOsdMenu::AddSubMenu(cOsdMenu*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:897: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:897: Nicht definierter Verweis auf `Interface'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:897: Nicht definierter Verweis auf `cInterface::Confirm(char const*, int, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:904: Nicht definierter Verweis auf `cOsdMenu::AddSubMenu(cOsdMenu*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:907: Nicht definierter Verweis auf `cOsdMenu::AddSubMenu(cOsdMenu*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:910: Nicht definierter Verweis auf `cOsdMenu::AddSubMenu(cOsdMenu*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:915: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:915: Nicht definierter Verweis auf `Interface'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:915: Nicht definierter Verweis auf `cInterface::Confirm(char const*, int, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:922: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:922: Nicht definierter Verweis auf `Skins'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:922: Nicht definierter Verweis auf `cSkins::Message(eMessageType, char const*, int)'
+sc.o: In Funktion `cScSetup::Store(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:989: Nicht definierter Verweis auf `cPlugin::SetupStore(char const*, char const*)'
+sc.o: In Funktion `cSoftCAM::CurrKeyStr(int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1023: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1023: Nicht definierter Verweis auf `typeinfo for cDevice'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1027: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+sc.o: In Funktion `cSoftCAM::Active(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1035: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1035: Nicht definierter Verweis auf `typeinfo for cDevice'
+sc.o: In Funktion `cSoftCAM::SetLogStatus(int, cEcmInfo const*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1043: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1043: Nicht definierter Verweis auf `typeinfo for cDevice'
+sc.o: In Funktion `cSoftCAM::AddHook(int, cLogHook*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1049: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1049: Nicht definierter Verweis auf `typeinfo for cDevice'
+sc.o: In Funktion `cSoftCAM::TriggerHook(int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1055: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1055: Nicht definierter Verweis auf `typeinfo for cDevice'
+sc.o: In Funktion `cSoftCAM::CaidsChanged()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1062: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1062: Nicht definierter Verweis auf `typeinfo for cDevice'
+sc.o: In Funktion `cSoftCAM::FilterHandle(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1071: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1071: Nicht definierter Verweis auf `typeinfo for cDevice'
+sc.o: In Funktion `cScHousekeeper::cScHousekeeper()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1086: Nicht definierter Verweis auf `cThread::cThread(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1088: Nicht definierter Verweis auf `cThread::Start()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1086: Nicht definierter Verweis auf `cThread::~cThread()'
+sc.o: In Funktion `cScHousekeeper::~cScHousekeeper()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1093: Nicht definierter Verweis auf `cThread::Cancel(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1091: Nicht definierter Verweis auf `cThread::~cThread()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1091: Nicht definierter Verweis auf `cThread::~cThread()'
+sc.o: In Funktion `cScHousekeeper::Action()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1103: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1103: Nicht definierter Verweis auf `typeinfo for cDevice'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1113: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+sc.o: In Funktion `cScDll::~cScDll()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1139: Nicht definierter Verweis auf `dlclose'
+sc.o: In Funktion `cScDll::Load()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1149: Nicht definierter Verweis auf `dlopen'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1151: Nicht definierter Verweis auf `dlerror'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1152: Nicht definierter Verweis auf `dlsym'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1153: Nicht definierter Verweis auf `dlerror'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1157: Nicht definierter Verweis auf `dlerror'
+sc.o: In Funktion `cScDlls::~cScDlls()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1184: Nicht definierter Verweis auf `dlclose'
+sc.o: In Funktion `cScDlls::Load()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1192: Nicht definierter Verweis auf `dladdr'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1193: Nicht definierter Verweis auf `dlerror'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1199: Nicht definierter Verweis auf `dlopen'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1201: Nicht definierter Verweis auf `dlerror'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1213: Nicht definierter Verweis auf `cReadDir::cReadDir(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1217: Nicht definierter Verweis auf `AddDirectory(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1217: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1215: Nicht definierter Verweis auf `cReadDir::Next()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1225: Nicht definierter Verweis auf `cReadDir::~cReadDir()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1217: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1225: Nicht definierter Verweis auf `cReadDir::~cReadDir()'
+sc.o: In Funktion `cScPlugin::MainMenuEntry()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1260: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+sc.o: In Funktion `cScPlugin::cScPlugin()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1263: Nicht definierter Verweis auf `cPlugin::cPlugin()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1282: Nicht definierter Verweis auf `FileNameChars'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1263: Nicht definierter Verweis auf `cPlugin::~cPlugin()'
+sc.o: In Funktion `cScPlugin::~cScPlugin()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1295: Nicht definierter Verweis auf `cPlugin::~cPlugin()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1295: Nicht definierter Verweis auf `cPlugin::~cPlugin()'
+sc.o: In Funktion `cScPlugin::Start()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1326: Nicht definierter Verweis auf `cPlugin::ConfigDirectory(char const*)'
+sc.o: In Funktion `cScPlugin::Description()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1352: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+sc.o: In Funktion `cScPlugin::SetupMenu()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1387: Nicht definierter Verweis auf `cPlugin::ConfigDirectory(char const*)'
+sc.o: In Funktion `cScPlugin::MainThreadHook()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1419: Nicht definierter Verweis auf `Skins'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1419: Nicht definierter Verweis auf `cSkins::QueueMessage(eMessageType, char const*, int, int)'
+sc.o: In Funktion `cScPlugin::SVDRPCommand(char const*, char const*, int&)':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1448: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1451: Nicht definierter Verweis auf `cPlugin::ConfigDirectory(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1452: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1455: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1462: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1465: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1468: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1473: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1479: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1485: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1489: Nicht definierter Verweis auf `Setup'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1489: Nicht definierter Verweis auf `cSetup::Save()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1490: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1492: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1511: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1512: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1517: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1523: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1529: Nicht definierter Verweis auf `stripspace(char*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1530: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1540: Nicht definierter Verweis auf `Setup'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1540: Nicht definierter Verweis auf `cSetup::Save()'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1541: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1543: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:1545: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+sc.o: In Funktion `cDevice::NumDevices()':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/device.h:129: Nicht definierter Verweis auf `cDevice::numDevices'
+sc.o: In Funktion `cSkinDisplay::Current()':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/skins.h:56: Nicht definierter Verweis auf `cSkinDisplay::current'
+sc.o: In Funktion `cMenuEditIntItem::~cMenuEditIntItem()':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/menuitems.h:37: Nicht definierter Verweis auf `vtable for cMenuEditIntItem'
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/menuitems.h:37: Nicht definierter Verweis auf `cMenuEditItem::~cMenuEditItem()'
+sc.o: In Funktion `cMenuEditBoolItem::~cMenuEditBoolItem()':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/menuitems.h:48: Nicht definierter Verweis auf `vtable for cMenuEditBoolItem'
+sc.o: In Funktion `cMenuSetupPage::~cMenuSetupPage()':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/menuitems.h:226: Nicht definierter Verweis auf `vtable for cMenuSetupPage'
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/menuitems.h:226: Nicht definierter Verweis auf `vtable for cMenuSetupPage'
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/menuitems.h:226: Nicht definierter Verweis auf `cOsdMenu::~cOsdMenu()'
+sc.o: In Funktion `cList<cOsdItem>::Get(int) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/tools.h:488: Nicht definierter Verweis auf `cListBase::Get(int) const'
+sc.o:(.data.rel.ro._ZTV9cScPlugin[_ZTV9cScPlugin]+0x2c): Nicht definierter Verweis auf `cPlugin::Housekeeping()'
+sc.o:(.data.rel.ro._ZTV9cScPlugin[_ZTV9cScPlugin]+0x34): Nicht definierter Verweis auf `cPlugin::Active()'
+sc.o:(.data.rel.ro._ZTV9cScPlugin[_ZTV9cScPlugin]+0x38): Nicht definierter Verweis auf `cPlugin::WakeupTime()'
+sc.o:(.data.rel.ro._ZTV9cScPlugin[_ZTV9cScPlugin]+0x40): Nicht definierter Verweis auf `cPlugin::MainMenuAction()'
+sc.o:(.data.rel.ro._ZTV12cMenuSetupSc[_ZTV12cMenuSetupSc]+0x14): Nicht definierter Verweis auf `cOsdObject::Show()'
+sc.o:(.data.rel.ro._ZTV12cMenuSetupSc[_ZTV12cMenuSetupSc]+0x1c): Nicht definierter Verweis auf `cOsdMenu::Clear()'
+sc.o:(.data.rel.ro._ZTV12cMenuSetupSc[_ZTV12cMenuSetupSc]+0x20): Nicht definierter Verweis auf `cOsdMenu::Del(int)'
+sc.o:(.data.rel.ro._ZTV12cMenuSetupSc[_ZTV12cMenuSetupSc]+0x24): Nicht definierter Verweis auf `cOsdMenu::Display()'
+sc.o:(.data.rel.ro._ZTV12cMenuSetupSc[_ZTV12cMenuSetupSc]+0x3c): Nicht definierter Verweis auf `cListBase::Move(int, int)'
+sc.o:(.data.rel.ro._ZTV12cMenuSetupSc[_ZTV12cMenuSetupSc]+0x40): Nicht definierter Verweis auf `non-virtual thunk to cOsdMenu::Clear()'
+sc.o:(.data.rel.ro._ZTV12cMenuSysOpts[_ZTV12cMenuSysOpts]+0x14): Nicht definierter Verweis auf `cOsdObject::Show()'
+sc.o:(.data.rel.ro._ZTV12cMenuSysOpts[_ZTV12cMenuSysOpts]+0x1c): Nicht definierter Verweis auf `cOsdMenu::Clear()'
+sc.o:(.data.rel.ro._ZTV12cMenuSysOpts[_ZTV12cMenuSysOpts]+0x20): Nicht definierter Verweis auf `cOsdMenu::Del(int)'
+sc.o:(.data.rel.ro._ZTV12cMenuSysOpts[_ZTV12cMenuSysOpts]+0x24): Nicht definierter Verweis auf `cOsdMenu::Display()'
+sc.o:(.data.rel.ro._ZTV12cMenuSysOpts[_ZTV12cMenuSysOpts]+0x38): Nicht definierter Verweis auf `cListBase::Move(int, int)'
+sc.o:(.data.rel.ro._ZTV12cMenuSysOpts[_ZTV12cMenuSysOpts]+0x3c): Nicht definierter Verweis auf `non-virtual thunk to cOsdMenu::Clear()'
+sc.o: In Funktion `cMenuSysOpts::~cMenuSysOpts()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:795: Nicht definierter Verweis auf `cOsdMenu::~cOsdMenu()'
+sc.o:(.data.rel.ro._ZTV11cMenuLogSys[_ZTV11cMenuLogSys]+0x14): Nicht definierter Verweis auf `cOsdObject::Show()'
+sc.o:(.data.rel.ro._ZTV11cMenuLogSys[_ZTV11cMenuLogSys]+0x1c): Nicht definierter Verweis auf `cOsdMenu::Clear()'
+sc.o:(.data.rel.ro._ZTV11cMenuLogSys[_ZTV11cMenuLogSys]+0x20): Nicht definierter Verweis auf `cOsdMenu::Del(int)'
+sc.o:(.data.rel.ro._ZTV11cMenuLogSys[_ZTV11cMenuLogSys]+0x24): Nicht definierter Verweis auf `cOsdMenu::Display()'
+sc.o:(.data.rel.ro._ZTV11cMenuLogSys[_ZTV11cMenuLogSys]+0x38): Nicht definierter Verweis auf `cListBase::Move(int, int)'
+sc.o:(.data.rel.ro._ZTV11cMenuLogSys[_ZTV11cMenuLogSys]+0x3c): Nicht definierter Verweis auf `non-virtual thunk to cOsdMenu::Clear()'
+sc.o: In Funktion `cMenuLogSys::~cMenuLogSys()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:728: Nicht definierter Verweis auf `cOsdMenu::~cOsdMenu()'
+sc.o:(.data.rel.ro._ZTV11cLogModItem[_ZTV11cLogModItem]+0x18): Nicht definierter Verweis auf `cOsdItem::SetMenuItem(cSkinDisplayMenu*, int, bool, bool)'
+sc.o:(.data.rel.ro._ZTV11cLogModItem[_ZTV11cLogModItem]+0x1c): Nicht definierter Verweis auf `cOsdItem::ProcessKey(eKeys)'
+sc.o: In Funktion `cLogModItem::~cLogModItem()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:709: Nicht definierter Verweis auf `cOsdItem::~cOsdItem()'
+sc.o:(.data.rel.ro._ZTV11cMenuLogMod[_ZTV11cMenuLogMod]+0x14): Nicht definierter Verweis auf `cOsdObject::Show()'
+sc.o:(.data.rel.ro._ZTV11cMenuLogMod[_ZTV11cMenuLogMod]+0x1c): Nicht definierter Verweis auf `cOsdMenu::Clear()'
+sc.o:(.data.rel.ro._ZTV11cMenuLogMod[_ZTV11cMenuLogMod]+0x20): Nicht definierter Verweis auf `cOsdMenu::Del(int)'
+sc.o:(.data.rel.ro._ZTV11cMenuLogMod[_ZTV11cMenuLogMod]+0x24): Nicht definierter Verweis auf `cOsdMenu::Display()'
+sc.o:(.data.rel.ro._ZTV11cMenuLogMod[_ZTV11cMenuLogMod]+0x38): Nicht definierter Verweis auf `cListBase::Move(int, int)'
+sc.o:(.data.rel.ro._ZTV11cMenuLogMod[_ZTV11cMenuLogMod]+0x3c): Nicht definierter Verweis auf `non-virtual thunk to cOsdMenu::Clear()'
+sc.o: In Funktion `cMenuLogMod::~cMenuLogMod()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:632: Nicht definierter Verweis auf `cOsdMenu::~cOsdMenu()'
+sc.o:(.data.rel.ro._ZTV11cLogOptItem[_ZTV11cLogOptItem]+0x14): Nicht definierter Verweis auf `cMenuEditBoolItem::Set()'
+sc.o:(.data.rel.ro._ZTV11cLogOptItem[_ZTV11cLogOptItem]+0x18): Nicht definierter Verweis auf `cOsdItem::SetMenuItem(cSkinDisplayMenu*, int, bool, bool)'
+sc.o:(.data.rel.ro._ZTV11cLogOptItem[_ZTV11cLogOptItem]+0x1c): Nicht definierter Verweis auf `cMenuEditIntItem::ProcessKey(eKeys)'
+sc.o:(.data.rel.ro._ZTV13cMenuInfoCard[_ZTV13cMenuInfoCard]+0x14): Nicht definierter Verweis auf `cOsdObject::Show()'
+sc.o:(.data.rel.ro._ZTV13cMenuInfoCard[_ZTV13cMenuInfoCard]+0x1c): Nicht definierter Verweis auf `cOsdMenu::Clear()'
+sc.o:(.data.rel.ro._ZTV13cMenuInfoCard[_ZTV13cMenuInfoCard]+0x20): Nicht definierter Verweis auf `cOsdMenu::Del(int)'
+sc.o:(.data.rel.ro._ZTV13cMenuInfoCard[_ZTV13cMenuInfoCard]+0x24): Nicht definierter Verweis auf `cMenuText::Display()'
+sc.o:(.data.rel.ro._ZTV13cMenuInfoCard[_ZTV13cMenuInfoCard]+0x38): Nicht definierter Verweis auf `cListBase::Move(int, int)'
+sc.o:(.data.rel.ro._ZTV13cMenuInfoCard[_ZTV13cMenuInfoCard]+0x3c): Nicht definierter Verweis auf `non-virtual thunk to cOsdMenu::Clear()'
+sc.o: In Funktion `cMenuInfoCard::~cMenuInfoCard()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:584: Nicht definierter Verweis auf `cMenuText::~cMenuText()'
+sc.o:(.data.rel.ro._ZTV11cMenuInfoSc[_ZTV11cMenuInfoSc]+0x14): Nicht definierter Verweis auf `cOsdObject::Show()'
+sc.o:(.data.rel.ro._ZTV11cMenuInfoSc[_ZTV11cMenuInfoSc]+0x1c): Nicht definierter Verweis auf `cOsdMenu::Clear()'
+sc.o:(.data.rel.ro._ZTV11cMenuInfoSc[_ZTV11cMenuInfoSc]+0x20): Nicht definierter Verweis auf `cOsdMenu::Del(int)'
+sc.o:(.data.rel.ro._ZTV11cMenuInfoSc[_ZTV11cMenuInfoSc]+0x24): Nicht definierter Verweis auf `cOsdMenu::Display()'
+sc.o:(.data.rel.ro._ZTV11cMenuInfoSc[_ZTV11cMenuInfoSc]+0x38): Nicht definierter Verweis auf `cListBase::Move(int, int)'
+sc.o:(.data.rel.ro._ZTV11cMenuInfoSc[_ZTV11cMenuInfoSc]+0x3c): Nicht definierter Verweis auf `non-virtual thunk to cOsdMenu::Clear()'
+sc.o: In Funktion `cMenuInfoSc::~cMenuInfoSc()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:540: Nicht definierter Verweis auf `cOsdMenu::~cOsdMenu()'
+sc.o:(.data.rel.ro._ZTV11cScInfoItem[_ZTV11cScInfoItem]+0x18): Nicht definierter Verweis auf `cOsdItem::SetMenuItem(cSkinDisplayMenu*, int, bool, bool)'
+sc.o:(.data.rel.ro._ZTV11cScInfoItem[_ZTV11cScInfoItem]+0x1c): Nicht definierter Verweis auf `cOsdItem::ProcessKey(eKeys)'
+sc.o: In Funktion `cScInfoItem::~cScInfoItem()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:228: Nicht definierter Verweis auf `cOsdItem::~cOsdItem()'
+sc.o:(.data.rel.ro._ZTV16cMenuEditHexItem[_ZTV16cMenuEditHexItem]+0x18): Nicht definierter Verweis auf `cOsdItem::SetMenuItem(cSkinDisplayMenu*, int, bool, bool)'
+sc.o: In Funktion `cMenuEditHexItem::~cMenuEditHexItem()':
+/usr/src/reelbox/testing/src/plugins/src/sc/sc.c:128: Nicht definierter Verweis auf `cMenuEditItem::~cMenuEditItem()'
+sc.o:(.data.rel.ro._ZTV16cMenuEditCapItem[_ZTV16cMenuEditCapItem]+0x18): Nicht definierter Verweis auf `cOsdItem::SetMenuItem(cSkinDisplayMenu*, int, bool, bool)'
+sc.o:(.data.rel.ro._ZTI9cScPlugin[_ZTI9cScPlugin]+0x8): Nicht definierter Verweis auf `typeinfo for cPlugin'
+sc.o:(.data.rel.ro._ZTI14cScHousekeeper[_ZTI14cScHousekeeper]+0x8): Nicht definierter Verweis auf `typeinfo for cThread'
+sc.o:(.data.rel.ro._ZTI12cMenuSetupSc[_ZTI12cMenuSetupSc]+0x8): Nicht definierter Verweis auf `typeinfo for cMenuSetupPage'
+sc.o:(.data.rel.ro._ZTI12cMenuSysOpts[_ZTI12cMenuSysOpts]+0x8): Nicht definierter Verweis auf `typeinfo for cOsdMenu'
+sc.o:(.data.rel.ro._ZTI11cMenuLogSys[_ZTI11cMenuLogSys]+0x8): Nicht definierter Verweis auf `typeinfo for cOsdMenu'
+sc.o:(.data.rel.ro._ZTI11cLogModItem[_ZTI11cLogModItem]+0x8): Nicht definierter Verweis auf `typeinfo for cOsdItem'
+sc.o:(.data.rel.ro._ZTI11cMenuLogMod[_ZTI11cMenuLogMod]+0x8): Nicht definierter Verweis auf `typeinfo for cOsdMenu'
+sc.o:(.data.rel.ro._ZTI11cLogOptItem[_ZTI11cLogOptItem]+0x8): Nicht definierter Verweis auf `typeinfo for cMenuEditBoolItem'
+sc.o:(.data.rel.ro._ZTI13cMenuInfoCard[_ZTI13cMenuInfoCard]+0x8): Nicht definierter Verweis auf `typeinfo for cMenuText'
+sc.o:(.data.rel.ro._ZTI11cMenuInfoSc[_ZTI11cMenuInfoSc]+0x8): Nicht definierter Verweis auf `typeinfo for cOsdMenu'
+sc.o:(.data.rel.ro._ZTI11cScInfoItem[_ZTI11cScInfoItem]+0x8): Nicht definierter Verweis auf `typeinfo for cOsdItem'
+sc.o:(.data.rel.ro._ZTI16cMenuEditHexItem[_ZTI16cMenuEditHexItem]+0x8): Nicht definierter Verweis auf `typeinfo for cMenuEditItem'
+sc.o:(.data.rel.ro._ZTI16cMenuEditCapItem[_ZTI16cMenuEditCapItem]+0x8): Nicht definierter Verweis auf `typeinfo for cMenuEditIntItem'
+data.o: In Funktion `cFileMap::cFileMap(char const*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:42: Nicht definierter Verweis auf `cMutex::cMutex()'
+data.o: In Funktion `cFileMap::~cFileMap()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:49: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:49: Nicht definierter Verweis auf `cMutex::~cMutex()'
+data.o: In Funktion `cFileMap::Map()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:68: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:91: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:91: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+data.o: In Funktion `cFileMap::Unmap()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:96: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:101: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:101: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+data.o: In Funktion `cFileMap::Sync()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:106: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:107: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:107: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+data.o: In Funktion `cFileMaps::cFileMaps()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:114: Nicht definierter Verweis auf `cMutex::cMutex()'
+data.o: In Funktion `cFileMaps::~cFileMaps()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:119: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:119: Nicht definierter Verweis auf `cMutex::~cMutex()'
+data.o: In Funktion `cFileMaps::GetFileMap(char const*, char const*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:133: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:143: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:143: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+data.o: In Funktion `cStructItem::Save(_IO_FILE*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:166: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:166: Nicht definierter Verweis auf `cString::~cString()'
+data.o: In Funktion `cStructLoader::cStructLoader(char const*, char const*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:185: Nicht definierter Verweis auf `cRwLock::cRwLock(bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:185: Nicht definierter Verweis auf `cRwLock::~cRwLock()'
+data.o: In Funktion `cStructLoader::~cStructLoader()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:192: Nicht definierter Verweis auf `cRwLock::~cRwLock()'
+data.o: In Funktion `cStructLoader::DelItem(cStructItem*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:224: Nicht definierter Verweis auf `cString::sprintf(char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:224: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:224: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:224: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:224: Nicht definierter Verweis auf `cString::~cString()'
+data.o: In Funktion `cStructLoader::SetCfgDir(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:242: Nicht definierter Verweis auf `AddDirectory(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:242: Nicht definierter Verweis auf `cString::~cString()'
+data.o: In Funktion `cStructLoader::Load(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:339: Nicht definierter Verweis auf `strreplace(char*, char, char)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:339: Nicht definierter Verweis auf `strreplace(char*, char, char)'
+data.o: In Funktion `cStructLoader::Save()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:401: Nicht definierter Verweis auf `cSafeFile::cSafeFile(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:402: Nicht definierter Verweis auf `cSafeFile::Open()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:406: Nicht definierter Verweis auf `cSafeFile::Close()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:411: Nicht definierter Verweis auf `cSafeFile::~cSafeFile()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:411: Nicht definierter Verweis auf `cSafeFile::~cSafeFile()'
+data.o: In Funktion `cStructLoaderPlain::Load(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:452: Nicht definierter Verweis auf `strreplace(char*, char, char)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:452: Nicht definierter Verweis auf `strreplace(char*, char, char)'
+data.o: In Funktion `cStructLoaderPlain::Save()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:483: Nicht definierter Verweis auf `cSafeFile::cSafeFile(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:484: Nicht definierter Verweis auf `cSafeFile::Open()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:490: Nicht definierter Verweis auf `cSafeFile::Close()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:494: Nicht definierter Verweis auf `cSafeFile::~cSafeFile()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:494: Nicht definierter Verweis auf `cSafeFile::~cSafeFile()'
+data.o: In Funktion `cStructLoaders::Load(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:524: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:526: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+data.o: In Funktion `cStructLoaders::Save(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:532: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:534: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+data.o: In Funktion `cStructLoaders::Purge()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:540: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:542: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+data.o: In Funktion `cPlainKey::PrintKeyNr()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:723: Nicht definierter Verweis auf `cString::sprintf(char const*, ...)'
+data.o: In Funktion `cPlainKey::ToString(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:733: Nicht definierter Verweis auf `cString::sprintf(char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:733: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:733: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:733: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:733: Nicht definierter Verweis auf `cString::~cString()'
+data.o: In Funktion `cPlainKeyDummy::SetKey(void*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:818: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+data.o: In Funktion `cPlainKeyDummy::Print()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:829: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+data.o: In Funktion `cPlainKeyDummy::Parse(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:839: Nicht definierter Verweis auf `stripspace(char*)'
+data.o: In Funktion `cPlainKeys::cPlainKeys()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:888: Nicht definierter Verweis auf `cThread::cThread(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:888: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:888: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:888: Nicht definierter Verweis auf `cThread::~cThread()'
+data.o: In Funktion `cPlainKeys::Trigger(int, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:901: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:901: Nicht definierter Verweis auf `cString::~cString()'
+data.o: In Funktion `cPlainKeys::AddNewKey(cPlainKey*, char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:941: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:945: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:956: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:945: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:956: Nicht definierter Verweis auf `cString::~cString()'
+data.o: In Funktion `cPlainKeys::KeyString(int, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:989: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:993: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:989: Nicht definierter Verweis auf `cString::~cString()'
+data.o: In Funktion `cPlainKeys::PostLoad()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1001: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1001: Nicht definierter Verweis auf `cString::~cString()'
+data.o: In Funktion `cPlainKeys::HouseKeeping()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1008: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1009: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+data.o: In Funktion `cPlainKeys::ExternalUpdate()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1018: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1020: Nicht definierter Verweis auf `cThread::Active()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1021: Nicht definierter Verweis auf `cThread::Start()'
+data.o: In Funktion `cPlainKeys::Action()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1031: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1033: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1034: Nicht definierter Verweis auf `cPipe::cPipe()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1035: Nicht definierter Verweis auf `cPipe::Open(char const*, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1038: Nicht definierter Verweis auf `stripspace(char*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1043: Nicht definierter Verweis auf `cPipe::Close()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1044: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1044: Nicht definierter Verweis auf `cPipe::~cPipe()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:1044: Nicht definierter Verweis auf `cPipe::~cPipe()'
+data.o: In Funktion `__static_initialization_and_destruction_0':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:505: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:506: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:507: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+data.o: In Funktion `cThread::Lock()':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/thread.h:92: Nicht definierter Verweis auf `cMutex::Lock()'
+data.o: In Funktion `cThread::Unlock()':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/thread.h:93: Nicht definierter Verweis auf `cMutex::Unlock()'
+data.o: In Funktion `cStructItem::ToString(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.h:82: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+data.o: In Funktion `cStructLoader::ListLock(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.h:133: Nicht definierter Verweis auf `cRwLock::Lock(bool, int)'
+data.o: In Funktion `cStructLoader::ListUnlock()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.h:134: Nicht definierter Verweis auf `cRwLock::Unlock()'
+data.o: In Funktion `cEcmInfo::ToString(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.h:246: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+data.o: In Funktion `cPlainKeyDummy::PrintKeyNr()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.c:790: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+data.o: In Funktion `cPlainKeys::~cPlainKeys()':
+/usr/src/reelbox/testing/src/plugins/src/sc/data.h:346: Nicht definierter Verweis auf `cThread::~cThread()'
+/usr/src/reelbox/testing/src/plugins/src/sc/data.h:346: Nicht definierter Verweis auf `cThread::~cThread()'
+data.o:(.data.rel.ro._ZTI10cPlainKeys[_ZTI10cPlainKeys]+0x10): Nicht definierter Verweis auf `typeinfo for cThread'
+filter.o: In Funktion `cPidFilter::cPidFilter(char const*, int, int, unsigned int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:39: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:39: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:64: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:64: Nicht definierter Verweis auf `typeinfo for cDevice'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:39: Nicht definierter Verweis auf `cMutex::~cMutex()'
+filter.o: In Funktion `cPidFilter::~cPidFilter()':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:74: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:80: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:72: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:80: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:72: Nicht definierter Verweis auf `cMutex::~cMutex()'
+filter.o: In Funktion `cPidFilter::Open()':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:85: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:93: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:93: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+filter.o: In Funktion `cPidFilter::Flush()':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:98: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:103: Nicht definierter Verweis auf `safe_read(int, void*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:110: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:111: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+filter.o: In Funktion `cPidFilter::Start(int, int, int, int, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:116: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:153: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:155: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+filter.o: In Funktion `cPidFilter::Stop()':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:160: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:169: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:169: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:171: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:171: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+filter.o: In Funktion `cPidFilter::SetBuffSize(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:176: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:183: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:183: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:183: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:184: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+filter.o: In Funktion `cPidFilter::Wakeup()':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:196: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:198: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:198: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+filter.o: In Funktion `cAction::cAction(char const*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:208: Nicht definierter Verweis auf `cThread::cThread(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:213: Nicht definierter Verweis auf `cThread::SetDescription(char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:208: Nicht definierter Verweis auf `cThread::~cThread()'
+filter.o: In Funktion `cAction::~cAction()':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:218: Nicht definierter Verweis auf `cThread::Cancel(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:216: Nicht definierter Verweis auf `cThread::~cThread()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:216: Nicht definierter Verweis auf `cThread::~cThread()'
+filter.o: In Funktion `cAction::NewFilter(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:234: Nicht definierter Verweis auf `cThread::Active()'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:235: Nicht definierter Verweis auf `cThread::Start()'
+filter.o: In Funktion `cAction::Action()':
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:281: Nicht definierter Verweis auf `cThread::SetPriority(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:285: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:331: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:348: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/filter.c:349: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+filter.o: In Funktion `SI::CRC32::isValid(char const*, int, unsigned int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/libsi/util.h:151: Nicht definierter Verweis auf `SI::CRC32::crc32(char const*, int, unsigned int)'
+filter.o:(.data.rel.ro._ZTI7cAction[_ZTI7cAction]+0x10): Nicht definierter Verweis auf `typeinfo for cThread'
+system.o: In Funktion `cLogHook::cLogHook(int, char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:76: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+system.o: In Funktion `cSystem::KeyOK(cPlainKey*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:242: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:242: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:243: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:242: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:243: Nicht definierter Verweis auf `cString::~cString()'
+system.o: In Funktion `cSystem::KeyOK(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:250: Nicht definierter Verweis auf `I18nTranslate(char const*, char const*)'
+system.o: In Funktion `cSystem::KeyFail(int, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:258: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:258: Nicht definierter Verweis auf `cString::~cString()'
+system.o: In Funktion `cMsgCache::cMsgCache(int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:436: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:436: Nicht definierter Verweis auf `cCondVar::cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:436: Nicht definierter Verweis auf `cCondVar::~cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:436: Nicht definierter Verweis auf `cMutex::~cMutex()'
+system.o: In Funktion `cMsgCache::~cMsgCache()':
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:452: Nicht definierter Verweis auf `cCondVar::~cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:452: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:452: Nicht definierter Verweis auf `cMutex::~cMutex()'
+system.o: In Funktion `cMsgCache::Clear()':
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:466: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:469: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:469: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+system.o: In Funktion `cMsgCache::Get(unsigned char const*, int, unsigned char*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:492: Nicht definierter Verweis auf `MD5'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:493: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:500: Nicht definierter Verweis auf `cCondVar::Wait(cMutex&)'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:509: Nicht definierter Verweis auf `cCondVar::Wait(cMutex&)'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:535: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:535: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+system.o: In Funktion `cMsgCache::Cache(int, bool, unsigned char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:540: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:545: Nicht definierter Verweis auf `cCondVar::Broadcast()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:568: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/system.c:568: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+smartcard.o: In Funktion `cSmartCardSlot::cSmartCardSlot()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:107: Nicht definierter Verweis auf `cThread::cThread(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:107: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:107: Nicht definierter Verweis auf `cCondVar::cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:107: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:107: Nicht definierter Verweis auf `cThread::~cThread()'
+smartcard.o: In Funktion `cSmartCardSlot::~cSmartCardSlot()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:116: Nicht definierter Verweis auf `cThread::Cancel(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:114: Nicht definierter Verweis auf `cCondVar::~cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:114: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:114: Nicht definierter Verweis auf `cThread::~cThread()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:114: Nicht definierter Verweis auf `cCondVar::~cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:114: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:114: Nicht definierter Verweis auf `cThread::~cThread()'
+smartcard.o: In Funktion `cSmartCardSlot::Setup(int, char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:124: Nicht definierter Verweis auf `cThread::SetDescription(char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:127: Nicht definierter Verweis auf `cThread::Start()'
+smartcard.o: In Funktion `cSmartCardSlot::HaveCard(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:135: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:136: Nicht definierter Verweis auf `cCondVar::Wait(cMutex&)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:137: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:137: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+smartcard.o: In Funktion `cSmartCardSlot::LockCard(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:142: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:143: Nicht definierter Verweis auf `cCondVar::Wait(cMutex&)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:146: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:147: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:150: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:151: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:153: Nicht definierter Verweis auf `cCondVar::Broadcast()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:155: Nicht definierter Verweis auf `cMutex::Unlock()'
+smartcard.o: In Funktion `cSmartCardSlot::ReleaseCard(cSmartCard*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:162: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:163: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:165: Nicht definierter Verweis auf `cCondVar::Broadcast()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:166: Nicht definierter Verweis auf `cMutex::Unlock()'
+smartcard.o: In Funktion `cSmartCardSlot::GetCardIdStr(char*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:172: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:176: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:181: Nicht definierter Verweis auf `cMutex::Unlock()'
+smartcard.o: In Funktion `cSmartCardSlot::GetCardInfoStr(char*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:186: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:189: Nicht definierter Verweis auf `cMutex::Unlock()'
+smartcard.o: In Funktion `cSmartCardSlot::SetCard(cSmartCard*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:195: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:196: Nicht definierter Verweis auf `cCondVar::Wait(cMutex&)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:199: Nicht definierter Verweis auf `cMutex::Unlock()'
+smartcard.o: In Funktion `cSmartCardSlot::Action()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:206: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:208: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:218: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:223: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:258: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:259: Nicht definierter Verweis auf `cCondVar::Broadcast()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:261: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:263: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+smartcard.o: In Funktion `cSmartCardSlot::Reset()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:271: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+smartcard.o: In Funktion `cSmartCardSlotSerial::SetDtrRts()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:708: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:708: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:709: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:709: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+smartcard.o: In Funktion `cSmartCardSlotSerial::DeviceClose()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:718: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:718: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+smartcard.o: In Funktion `cSmartCardSlotSerial::Flush()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:726: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:726: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+smartcard.o: In Funktion `cSmartCardSlotSerial::DeviceWrite(unsigned char const*, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:882: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+smartcard.o: In Funktion `cSmartCardSlotSerial::DeviceToggleReset()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:890: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:890: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:893: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:893: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+smartcard.o: In Funktion `cSmartCardSlotSerial::DeviceIsInserted()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:949: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:949: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+smartcard.o: In Funktion `cInfoStr::cInfoStr()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1836: Nicht definierter Verweis auf `cMutex::cMutex()'
+smartcard.o: In Funktion `cInfoStr::~cInfoStr()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1841: Nicht definierter Verweis auf `cMutex::~cMutex()'
+smartcard.o: In Funktion `cInfoStr::Get(char*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1848: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1850: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1853: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1853: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+smartcard.o: In Funktion `cInfoStr::Finish()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1863: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1865: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1865: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+smartcard.o: In Funktion `cSmartCard::cSmartCard(CardConfig const*, StatusMsg const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1917: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1917: Nicht definierter Verweis auf `cMutex::~cMutex()'
+smartcard.o: In Funktion `cSmartCard::GetCardIdStr(char*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.c:1932: Nicht definierter Verweis auf `strn0cpy(char*, char const*, unsigned int)'
+smartcard.o: In Funktion `cSmartCard::~cSmartCard()':
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.h:133: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/smartcard.h:133: Nicht definierter Verweis auf `cMutex::~cMutex()'
+smartcard.o:(.data.rel.ro._ZTI14cSmartCardSlot[_ZTI14cSmartCardSlot]+0x10): Nicht definierter Verweis auf `typeinfo for cThread'
+network.o: In Funktion `cNetWatcher::cNetWatcher()':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:58: Nicht definierter Verweis auf `cThread::cThread(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:58: Nicht definierter Verweis auf `cThread::~cThread()'
+network.o: In Funktion `cNetWatcher::~cNetWatcher()':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:63: Nicht definierter Verweis auf `cThread::Cancel(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:61: Nicht definierter Verweis auf `cThread::~cThread()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:61: Nicht definierter Verweis auf `cThread::~cThread()'
+network.o: In Funktion `cNetWatcher::Up(cNetSocket*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:74: Nicht definierter Verweis auf `cThread::Active()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:74: Nicht definierter Verweis auf `cThread::Start()'
+network.o: In Funktion `cNetWatcher::Action()':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:92: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:93: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:97: Nicht definierter Verweis auf `cMutex::Unlock()'
+network.o: In Funktion `cNetSocket::cNetSocket()':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:106: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:106: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:106: Nicht definierter Verweis auf `cMutex::~cMutex()'
+network.o: In Funktion `cNetSocket::~cNetSocket()':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:113: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:113: Nicht definierter Verweis auf `cMutex::~cMutex()'
+network.o: In Funktion `cNetSocket::Activity()':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:121: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+network.o: In Funktion `cNetSocket::StrError(int) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:140: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+network.o: In Funktion `cNetSocket::GetSocket(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:154: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:156: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:159: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:154: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:156: Nicht definierter Verweis auf `cString::~cString()'
+network.o:/usr/src/reelbox/testing/src/plugins/src/sc/network.c:159: Weitere nicht definierte Verweise auf `cString::~cString()' folgen
+network.o: In Funktion `cNetSocket::Connect(char const*, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:165: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:187: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:189: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:193: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:195: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:197: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:187: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:189: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:193: Nicht definierter Verweis auf `cString::~cString()'
+network.o: In Funktion `cNetSocket::Bind(char const*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:204: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:219: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:222: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:224: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:222: Nicht definierter Verweis auf `cString::~cString()'
+network.o: In Funktion `cNetSocket::Disconnect()':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:232: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:234: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:234: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+network.o: In Funktion `cNetSocket::Flush()':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:239: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:243: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:243: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+network.o: In Funktion `cNetSocket::Read(unsigned char*, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:250: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:260: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:263: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:267: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:280: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:267: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:280: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+network.o: In Funktion `cNetSocket::Write(unsigned char const*, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:285: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:288: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:291: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:295: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:304: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:295: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:304: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+network.o: In Funktion `cNetSocket::SendTo(char const*, int, unsigned char const*, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:309: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:314: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:317: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:321: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:331: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:321: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:331: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+network.o: In Funktion `cNetSocket::Select(bool, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:349: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/network.c:349: Nicht definierter Verweis auf `cString::~cString()'
+network.o:(.data.rel.ro._ZTI11cNetWatcher[_ZTI11cNetWatcher]+0x10): Nicht definierter Verweis auf `typeinfo for cThread'
+crypto.o: In Funktion `cBN::Get(unsigned char const*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:54: Nicht definierter Verweis auf `BN_bin2bn'
+crypto.o: In Funktion `cBN::Put(unsigned char*, int) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:59: Nicht definierter Verweis auf `BN_num_bits'
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:62: Nicht definierter Verweis auf `BN_bn2bin'
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:68: Nicht definierter Verweis auf `BN_bn2bin'
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:70: Nicht definierter Verweis auf `BN_bn2bin'
+crypto.o: In Funktion `cBN::GetLE(unsigned char const*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:78: Nicht definierter Verweis auf `BN_bin2bn'
+crypto.o: In Funktion `cRSA::RSA(unsigned char*, unsigned char const*, int, bignum_st const*, bignum_st const*, bool) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:182: Nicht definierter Verweis auf `BN_mod_exp'
+crypto.o: In Funktion `cRSA::RSA(bignum_st*, unsigned char const*, int, bignum_st const*, bignum_st const*, bool) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:193: Nicht definierter Verweis auf `BN_mod_exp'
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:193: Nicht definierter Verweis auf `BN_num_bits'
+crypto.o: In Funktion `cRSA::RSA(unsigned char*, int, bignum_st*, bignum_st const*, bignum_st const*, bool) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:203: Nicht definierter Verweis auf `BN_mod_exp'
+crypto.o: In Funktion `cAES::SetKey(unsigned char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:416: Nicht definierter Verweis auf `AES_set_decrypt_key'
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:417: Nicht definierter Verweis auf `AES_set_encrypt_key'
+crypto.o: In Funktion `cAES::Encrypt(unsigned char const*, int, unsigned char*) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:425: Nicht definierter Verweis auf `AES_encrypt'
+crypto.o: In Funktion `cAES::Decrypt(unsigned char*, int) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:434: Nicht definierter Verweis auf `AES_decrypt'
+crypto.o: In Funktion `cAES::Decrypt(unsigned char const*, int, unsigned char*) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto.c:443: Nicht definierter Verweis auf `AES_decrypt'
+crypto.o: In Funktion `cBN::cBN()':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto-bn.h:36: Nicht definierter Verweis auf `BN_init'
+crypto.o: In Funktion `cBN::~cBN()':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto-bn.h:37: Nicht definierter Verweis auf `BN_free'
+crypto.o: In Funktion `cBNctx::cBNctx()':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto-bn.h:51: Nicht definierter Verweis auf `BN_CTX_new'
+crypto.o: In Funktion `cBNctx::~cBNctx()':
+/usr/src/reelbox/testing/src/plugins/src/sc/crypto-bn.h:52: Nicht definierter Verweis auf `BN_CTX_free'
+system-common.o: In Funktion `cHexKey::Print()':
+/usr/src/reelbox/testing/src/plugins/src/sc/system-common.c:73: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+system-common.o: In Funktion `cBNKey::SetKey(void*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system-common.c:92: Nicht definierter Verweis auf `BN_copy'
+system-common.o: In Funktion `cBNKey::Cmp(cPlainKey*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system-common.c:104: Nicht definierter Verweis auf `BN_cmp'
+system-common.o: In Funktion `cBNKey::Get(void*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/system-common.c:109: Nicht definierter Verweis auf `BN_copy'
+system-common.o: In Funktion `cBNKey::Print()':
+/usr/src/reelbox/testing/src/plugins/src/sc/system-common.c:118: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+log.o: In Funktion `cLogging::LogLine(LogHeader const*, char const*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:113: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:114: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:115: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:121: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:123: Nicht definierter Verweis auf `cMutex::Unlock()'
+log.o: In Funktion `cLogging::PrivateLogPrint(LogHeader const*, char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:142: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:184: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:194: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:195: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:196: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:201: Nicht definierter Verweis auf `cThread::ThreadId()'
+log.o: In Funktion `cLogging::ReopenLogfile()':
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:384: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:386: Nicht definierter Verweis auf `cMutex::Unlock()'
+log.o: In Funktion `cUserMsgs::cUserMsgs()':
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:428: Nicht definierter Verweis auf `cMutex::cMutex()'
+log.o: In Funktion `cUserMsgs::~cUserMsgs()':
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:433: Nicht definierter Verweis auf `cMutex::~cMutex()'
+log.o: In Funktion `cUserMsgs::Queue(char const*, ...)':
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:444: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:446: Nicht definierter Verweis auf `cMutex::Unlock()'
+log.o: In Funktion `cUserMsgs::GetQueuedMsg()':
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:452: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:455: Nicht definierter Verweis auf `cMutex::Unlock()'
+log.o: In Funktion `__static_initialization_and_destruction_0':
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:50: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:50: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:57: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:58: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/log.c:58: Nicht definierter Verweis auf `cMutex::~cMutex()'
+override.o: In Funktion `cValidityRange::Parse2(char*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:83: Nicht definierter Verweis auf `isempty(char const*)'
+override.o: In Funktion `cValidityRange::ParseSourceRange(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:135: Nicht definierter Verweis auf `cSource::FromString(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:136: Nicht definierter Verweis auf `cSource::FromString(char const*)'
+override.o: In Funktion `cValidityRange::Print()':
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:153: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:163: Nicht definierter Verweis auf `cSource::ToString(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:163: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:165: Nicht definierter Verweis auf `cSource::ToString(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:165: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:173: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+override.o: In Funktion `cOverrideCat::Parse(char*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:201: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:201: Nicht definierter Verweis auf `cString::~cString()'
+override.o: In Funktion `cOverrideEmmCaid::Parse(char*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:236: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:236: Nicht definierter Verweis auf `cString::~cString()'
+override.o: In Funktion `cOverrideEcmTable::Parse(char*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/override.c:265: Nicht definierter Verweis auf `cString::~cString()'
+override.o:/usr/src/reelbox/testing/src/plugins/src/sc/override.c:265: Weitere nicht definierte Verweise auf `cString::~cString()' folgen
+cam.o: In Funktion `LogStatsUp()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:105: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:107: Nicht definierter Verweis auf `cMutex::Unlock()'
+cam.o: In Funktion `LogStatsDown()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:112: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:114: Nicht definierter Verweis auf `cMutex::Unlock()'
+cam.o: In Funktion `cLogStats::cLogStats()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:117: Nicht definierter Verweis auf `cThread::cThread(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:117: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:117: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:121: Nicht definierter Verweis auf `cThread::SetDescription(char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:122: Nicht definierter Verweis auf `cThread::Start()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:117: Nicht definierter Verweis auf `cThread::~cThread()'
+cam.o: In Funktion `cLogStats::~cLogStats()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:127: Nicht definierter Verweis auf `cThread::Cancel(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:125: Nicht definierter Verweis auf `cThread::~cThread()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:125: Nicht definierter Verweis auf `cThread::~cThread()'
+cam.o: In Funktion `cLogStats::Action()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:138: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:139: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:141: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:141: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:144: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:145: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+cam.o: In Funktion `cHookManager::TriggerHook(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:207: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+cam.o: In Funktion `cHookManager::AddHook(cLogHook*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:219: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+cam.o: In Funktion `cHookManager::Process(cPidFilter*, unsigned char*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:265: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:272: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+cam.o: In Funktion `cLogChain::cLogChain(int, bool, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:291: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+cam.o: In Funktion `cLogger::cLogger(int, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:379: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+cam.o: In Funktion `cLogger::StopChain(cLogChain*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:491: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:505: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+cam.o: In Funktion `cLogger::Process(cPidFilter*, unsigned char*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:560: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:562: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+cam.o: In Funktion `OldSourceToString(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:611: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+cam.o: In Funktion `cEcmData::Parse(char const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:636: Nicht definierter Verweis auf `cSource::FromString(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:641: Nicht definierter Verweis auf `cSource::FromString(char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:641: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:641: Nicht definierter Verweis auf `cString::~cString()'
+cam.o: In Funktion `cEcmData::ToString(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:674: Nicht definierter Verweis auf `cSource::ToString(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:674: Nicht definierter Verweis auf `cString::sprintf(char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:674: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:674: Nicht definierter Verweis auf `cString::~cString()'
+cam.o: In Funktion `cCaDescr::ToString()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:839: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:843: Nicht definierter Verweis auf `cString::cString(char const*, bool)'
+cam.o: In Funktion `cPrg::DumpCaDescr(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:867: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:869: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:867: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:869: Nicht definierter Verweis auf `cString::~cString()'
+cam.o: In Funktion `cEcmHandler::cEcmHandler(cCam*, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:975: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:975: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:975: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:975: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:975: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:975: Nicht definierter Verweis auf `cMutex::~cMutex()'
+cam.o: In Funktion `cEcmHandler::~cEcmHandler()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:986: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:986: Nicht definierter Verweis auf `cMutex::~cMutex()'
+cam.o: In Funktion `cEcmHandler::IsIdle()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:998: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1000: Nicht definierter Verweis auf `cMutex::Unlock()'
+cam.o: In Funktion `cEcmHandler::IsRemoveable()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1006: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+cam.o: In Funktion `cEcmHandler::Stop()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1011: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1015: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1020: Nicht definierter Verweis auf `cMutex::Unlock()'
+cam.o: In Funktion `cEcmHandler::ShiftCwIndex(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1030: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1035: Nicht definierter Verweis auf `cMutex::Unlock()'
+cam.o: In Funktion `cEcmHandler::SetPrg(cPrg*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1042: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1049: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1100: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1108: Nicht definierter Verweis auf `cMutex::Unlock()'
+cam.o: In Funktion `cEcmHandler::Process(cPidFilter*, unsigned char*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1114: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1138: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1142: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1156: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1162: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1166: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1178: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1186: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1187: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1189: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1190: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1199: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1200: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1203: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1217: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1225: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1226: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1231: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1232: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1236: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1274: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1277: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1278: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1303: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1138: Nicht definierter Verweis auf `cString::~cString()'
+cam.o: In Funktion `cCam::cCam(cScDevice*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1526: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1526: Nicht definierter Verweis auf `cMutex::~cMutex()'
+cam.o: In Funktion `cCam::~cCam()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1535: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1535: Nicht definierter Verweis auf `cMutex::~cMutex()'
+cam.o: In Funktion `cCam::Tune(cChannel const*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1549: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1550: Nicht definierter Verweis auf `cChannel::Transponder() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1551: Nicht definierter Verweis auf `cChannel::Transponder() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1552: Nicht definierter Verweis auf `cSource::ToString(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1552: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1555: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1552: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1555: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::PostTune()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1560: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1564: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1564: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::SetPid(int, int, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1569: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1576: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1576: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::Stop()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1581: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1586: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1586: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::AddPrg(cPrg*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1591: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1715: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1715: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::HasPrg(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1720: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1724: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1724: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::CurrentKeyStr(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1729: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1733: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1733: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::Active(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1738: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1744: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1744: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::HouseKeeping()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1749: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1758: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1758: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::LogEcmStatus(cEcmInfo const*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1771: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1773: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1773: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cCam::AddHook(cLogHook*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1778: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1780: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1780: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cChannelCaids::cChannelCaids(cChannel*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1977: Nicht definierter Verweis auf `cChannel::Transponder() const'
+cam.o: In Funktion `cChannelCaids::IsChannel(cChannel*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:1986: Nicht definierter Verweis auf `cChannel::Transponder() const'
+cam.o: In Funktion `cCiFrame::Put()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2186: Nicht definierter Verweis auf `cRingBufferLinear::Put(unsigned char const*, int)'
+cam.o: In Funktion `cCiFrame::Get(int&)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2194: Nicht definierter Verweis auf `cRingBufferLinear::Get(int&)'
+cam.o: In Funktion `cCiFrame::Del()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2218: Nicht definierter Verweis auf `cRingBufferLinear::Del(int)'
+cam.o: In Funktion `cScCamSlot::cScCamSlot(cScCiAdapter*, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2309: Nicht definierter Verweis auf `cCamSlot::cCamSlot(cCiAdapter*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2309: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2309: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2309: Nicht definierter Verweis auf `cRingBufferLinear::cRingBufferLinear(int, int, bool, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2309: Nicht definierter Verweis auf `cRingBufferLinear::~cRingBufferLinear()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2309: Nicht definierter Verweis auf `cCamSlot::~cCamSlot()'
+cam.o: In Funktion `cScCamSlot::Status()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2322: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+cam.o: In Funktion `cScCamSlot::Reset(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2339: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2340: Nicht definierter Verweis auf `cRingBufferLinear::Clear()'
+cam.o: In Funktion `cScCamSlot::Check()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2354: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2360: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+cam.o: In Funktion `cScCiAdapter::cScCiAdapter(cDevice*, int, cCam*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2502: Nicht definierter Verweis auf `cCiAdapter::cCiAdapter()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2502: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2502: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2502: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2502: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2502: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2508: Nicht definierter Verweis auf `cThread::SetDescription(char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2509: Nicht definierter Verweis auf `cRingBufferLinear::cRingBufferLinear(int, int, bool, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2511: Nicht definierter Verweis auf `cRingBuffer::SetTimeouts(int, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2525: Nicht definierter Verweis auf `cThread::Start()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2502: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2502: Nicht definierter Verweis auf `cCiAdapter::~cCiAdapter()'
+cam.o: In Funktion `cScCiAdapter::~cScCiAdapter()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2532: Nicht definierter Verweis auf `cThread::Cancel(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2533: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2535: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2530: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2530: Nicht definierter Verweis auf `cCiAdapter::~cCiAdapter()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2530: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2530: Nicht definierter Verweis auf `cCiAdapter::~cCiAdapter()'
+cam.o: In Funktion `cScCiAdapter::GetCaids(int, unsigned short*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2556: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2562: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cScCiAdapter::BuildCaids(bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2572: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2572: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2575: Nicht definierter Verweis auf `Channels'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2575: Nicht definierter Verweis auf `cRwLock::Lock(bool, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2576: Nicht definierter Verweis auf `Channels'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2576: Nicht definierter Verweis auf `Channels'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2582: Nicht definierter Verweis auf `Channels'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2582: Nicht definierter Verweis auf `cRwLock::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2604: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2615: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2617: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2618: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+cam.o: In Funktion `cScCiAdapter::Read(unsigned char*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2625: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2635: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2640: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2641: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2643: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2645: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2645: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cScCiAdapter::Write(unsigned char const*, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2654: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2712: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2712: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cScCiAdapter::Reset(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2717: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2719: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2719: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cScCiAdapter::ModuleStatus(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2724: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2727: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2727: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cDeCSA::cDeCSA(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2773: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2773: Nicht definierter Verweis auf `cCondVar::cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2773: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2773: Nicht definierter Verweis auf `cCondVar::~cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2773: Nicht definierter Verweis auf `cMutex::~cMutex()'
+cam.o: In Funktion `cDeCSA::~cDeCSA()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2784: Nicht definierter Verweis auf `cCondVar::~cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2784: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2784: Nicht definierter Verweis auf `cCondVar::~cCondVar()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2784: Nicht definierter Verweis auf `cMutex::~cMutex()'
+cam.o: In Funktion `cDeCSA::SetDescr(ca_descr*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2814: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2820: Nicht definierter Verweis auf `cCondVar::TimedWait(cMutex&, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2830: Nicht definierter Verweis auf `cCondVar::Broadcast()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2836: Nicht definierter Verweis auf `cCondVar::Broadcast()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2839: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2839: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cDeCSA::SetCaPid(ca_pid*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2844: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2849: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2849: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cDeCSA::Decrypt(unsigned char*, int, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2854: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2873: Nicht definierter Verweis auf `cCondVar::Broadcast()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2888: Nicht definierter Verweis auf `cCondVar::TimedWait(cMutex&, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2930: Nicht definierter Verweis auf `cTimeMs::TimedOut() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2947: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2954: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2954: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cDeCsaTSBuffer::cDeCsaTSBuffer(int, int, int, cDeCSA*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2977: Nicht definierter Verweis auf `cThread::cThread(char const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2979: Nicht definierter Verweis auf `cThread::SetDescription(char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2982: Nicht definierter Verweis auf `cRingBufferLinear::cRingBufferLinear(int, int, bool, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2983: Nicht definierter Verweis auf `cRingBuffer::SetTimeouts(int, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2986: Nicht definierter Verweis auf `cThread::Start()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2977: Nicht definierter Verweis auf `cThread::~cThread()'
+cam.o: In Funktion `cDeCsaTSBuffer::~cDeCsaTSBuffer()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2991: Nicht definierter Verweis auf `cThread::Cancel(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2989: Nicht definierter Verweis auf `cThread::~cThread()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2989: Nicht definierter Verweis auf `cThread::~cThread()'
+cam.o: In Funktion `cDeCsaTSBuffer::Action()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3005: Nicht definierter Verweis auf `cPoller::cPoller(int, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3007: Nicht definierter Verweis auf `cPoller::Poll(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3009: Nicht definierter Verweis auf `cRingBufferLinear::Read(int, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3012: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3012: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3013: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3013: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+cam.o: In Funktion `cDeCsaTSBuffer::Get()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3023: Nicht definierter Verweis auf `cRingBufferLinear::Del(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3024: Nicht definierter Verweis auf `cRingBufferLinear::Get(int&)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3030: Nicht definierter Verweis auf `cRingBufferLinear::Del(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3031: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3031: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3038: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+cam.o: In Funktion `cScDvbDeviceProbe::Probe(int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3063: Nicht definierter Verweis auf `cString::sprintf(char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3063: Nicht definierter Verweis auf `cString::~cString()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3063: Nicht definierter Verweis auf `cString::~cString()'
+cam.o: In Funktion `cScMcliDevice::cScMcliDevice()':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:62: Nicht definierter Verweis auf `cMcliDevice::cMcliDevice()'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:62: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:62: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:62: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:62: Nicht definierter Verweis auf `cMcliDevice::~cMcliDevice()'
+cam.o: In Funktion `cScMcliDevice::~cScMcliDevice()':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:83: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:83: Nicht definierter Verweis auf `cMcliDevice::~cMcliDevice()'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:83: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:83: Nicht definierter Verweis auf `cMcliDevice::~cMcliDevice()'
+cam.o: In Funktion `cScMcliDevice::SetPid(cDevice::cPidHandle*, int, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:223: Nicht definierter Verweis auf `cMcliDevice::SetPid(cDevice::cPidHandle*, int, bool)'
+cam.o: In Funktion `cScMcliDevice::StartSC()':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:233: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:233: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:248: Nicht definierter Verweis auf `cRingBufferLinear::cRingBufferLinear(int, int, bool, char const*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:258: Nicht definierter Verweis auf `pthread_create'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:259: Nicht definierter Verweis auf `pthread_detach'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:260: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:260: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:262: Nicht definierter Verweis auf `cMcliDevice::SetEnable(bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:264: Nicht definierter Verweis auf `cMcliDevice::SetEnable(bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:267: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:267: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+cam.o: In Funktion `cScMcliDevice::StopSC()':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:275: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:275: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:278: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+cam.o: In Funktion `cScMcliDevice::SetChannelDevice(cChannel const*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:320: Nicht definierter Verweis auf `cMcliDevice::SetChannelDevice(cChannel const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:354: Nicht definierter Verweis auf `cChannel::Name() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:354: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:354: Nicht definierter Verweis auf `cChannel::Name() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:354: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:358: Nicht definierter Verweis auf `cMcliDevice::SetChannelDevice(cChannel const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:360: Nicht definierter Verweis auf `cDevice::Transferring() const'
+cam.o: In Funktion `cScMcliDevice::ProvidesSCChannel(cChannel const*, int, bool*) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:372: Nicht definierter Verweis auf `cDevice::Priority() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:377: Nicht definierter Verweis auf `cDevice::Receiving(bool) const'
+cam.o: In Funktion `cScMcliDevice::ProvidesChannel(cChannel const*, int, bool*) const':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:393: Nicht definierter Verweis auf `cMcliDevice::ProvidesChannel(cChannel const*, int, bool*) const'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:401: Nicht definierter Verweis auf `cMcliDevice::ProvidesChannel(cChannel const*, int, bool*) const'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:407: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:407: Nicht definierter Verweis auf `cChannel::Name() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:407: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+cam.o: In Funktion `cScMcliDevice::PutOEBuff(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:434: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:434: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:437: Nicht definierter Verweis auf `cRingBufferLinear::Put(unsigned char const*, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:438: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:438: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:444: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:444: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:447: Nicht definierter Verweis auf `cRingBufferLinear::Put(unsigned char const*, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:448: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:448: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+cam.o: In Funktion `cScMcliDevice::HandleTsData(unsigned char*, unsigned int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:458: Nicht definierter Verweis auf `cMcliDevice::HandleTsData(unsigned char*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:470: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:482: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:482: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:500: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:500: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:503: Nicht definierter Verweis auf `cRingBufferLinear::Put(unsigned char const*, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:504: Nicht definierter Verweis auf `SysLogLevel'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:504: Nicht definierter Verweis auf `syslog_with_tid(int, char const*, ...)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:507: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:509: Nicht definierter Verweis auf `cMcliDevice::HandleTsData(unsigned char*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:507: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cScMcliDevice::EarlyShutdown()':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:535: Nicht definierter Verweis auf `cDevice::SetCamSlot(cCamSlot*)'
+cam.o: In Funktion `cScMcliDevice::Shutdown()':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:545: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:545: Nicht definierter Verweis auf `typeinfo for cDevice'
+cam.o: In Funktion `cScMcliDevice::ProcessRead()':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:598: Nicht definierter Verweis auf `cRingBufferLinear::Get(int&)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:603: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:611: Nicht definierter Verweis auf `cMcliDevice::HandleTsData(unsigned char*, unsigned int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:612: Nicht definierter Verweis auf `cRingBufferLinear::Del(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:614: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:617: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+cam.o: In Funktion `cScDvbDevice::cScDvbDevice(int, int, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3075: Nicht definierter Verweis auf `cDvbDevice::cDvbDevice(int, int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3075: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3075: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3075: Nicht definierter Verweis auf `cTimeMs::cTimeMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3075: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3075: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3075: Nicht definierter Verweis auf `cDvbDevice::~cDvbDevice()'
+cam.o: In Funktion `cScDvbDevice::~cScDvbDevice()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3085: Nicht definierter Verweis auf `cDvbDevice::DetachAllReceivers()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3086: Nicht definierter Verweis auf `cThread::Cancel(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3083: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3083: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3083: Nicht definierter Verweis auf `cDvbDevice::~cDvbDevice()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3083: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3083: Nicht definierter Verweis auf `cMutex::~cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3083: Nicht definierter Verweis auf `cDvbDevice::~cDvbDevice()'
+cam.o: In Funktion `cScDvbDevice::EarlyShutdown()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3095: Nicht definierter Verweis auf `cDevice::SetCamSlot(cCamSlot*)'
+cam.o: In Funktion `cScDvbDevice::LateInit()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3106: Nicht definierter Verweis auf `cDevice::DeviceNumber() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3116: Nicht definierter Verweis auf `cDvbCiAdapter::CreateCiAdapter(cDevice*, int)'
+cam.o: In Funktion `cScDvbDevice::Shutdown()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3132: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3132: Nicht definierter Verweis auf `typeinfo for cDevice'
+cam.o: In Funktion `cScDvbDevice::Startup()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3140: Nicht definierter Verweis auf `cDvbDevice::SetTransferModeForDolbyDigital(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3142: Nicht definierter Verweis auf `cDevice::GetDevice(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3142: Nicht definierter Verweis auf `typeinfo for cDevice'
+cam.o: In Funktion `cScDvbDevice::SetPid(cDevice::cPidHandle*, int, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3180: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3182: Nicht definierter Verweis auf `cMutex::Unlock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3183: Nicht definierter Verweis auf `cDvbDevice::SetPid(cDevice::cPidHandle*, int, bool)'
+cam.o: In Funktion `cScDvbDevice::SetChannelDevice(cChannel const*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3189: Nicht definierter Verweis auf `cDvbDevice::SetChannelDevice(cChannel const*, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3191: Nicht definierter Verweis auf `cDevice::Transferring() const'
+cam.o: In Funktion `cScDvbDevice::ScActive()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3202: Nicht definierter Verweis auf `typeinfo for cCamSlot'
+cam.o: In Funktion `cScDvbDevice::OpenDvr()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3208: Nicht definierter Verweis auf `cDvbDevice::DvbOpen(char const*, int, int, int, bool)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3210: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3212: Nicht definierter Verweis auf `cMutex::Unlock()'
+cam.o: In Funktion `cScDvbDevice::CloseDvr()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3219: Nicht definierter Verweis auf `cMutex::Lock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3221: Nicht definierter Verweis auf `cMutex::Unlock()'
+cam.o: In Funktion `cScDvbDevice::SetCaDescr(ca_descr*, bool)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3244: Nicht definierter Verweis auf `cCondWait::SleepMs(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3246: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3247: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cScDvbDevice::SetCaPid(ca_pid*)':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3256: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3257: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cScDvbDevice::DumpAV7110()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3275: Nicht definierter Verweis auf `cMutexLock::cMutexLock(cMutex*)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3276: Nicht definierter Verweis auf `cTimeMs::Elapsed() const'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3277: Nicht definierter Verweis auf `cTimeMs::Set(int)'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3326: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3326: Nicht definierter Verweis auf `cMutexLock::~cMutexLock()'
+cam.o: In Funktion `cScDvbDevice::FilterHandle()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:3332: Nicht definierter Verweis auf `cDvbDevice::DvbOpen(char const*, int, int, int, bool)'
+cam.o: In Funktion `__static_initialization_and_destruction_0':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:100: Nicht definierter Verweis auf `cMutex::cMutex()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:100: Nicht definierter Verweis auf `cMutex::~cMutex()'
+cam.o: In Funktion `cDevice::IsPrimaryDevice() const':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/device.h:247: Nicht definierter Verweis auf `cDevice::primaryDevice'
+cam.o: In Funktion `cDevice::CanScaleVideo(cRect const&, int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/../../../vdr-2.1/include/vdr/device.h:759: Nicht definierter Verweis auf `cRect::Null'
+cam.o: In Funktion `cScMcliDevice::PutTsData(unsigned char*, unsigned int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.h:107: Nicht definierter Verweis auf `cMcliDevice::HandleTsData(unsigned char*, unsigned int)'
+cam.o: In Funktion `cScCiMcliAdapter::ModuleStatus(int)':
+/usr/src/reelbox/testing/src/plugins/src/sc/mcli_sc.c:55: Nicht definierter Verweis auf `typeinfo for cDevice'
+cam.o: In Funktion `cScDvbDeviceProbe::cScDvbDeviceProbe()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.h:171: Nicht definierter Verweis auf `cDvbDeviceProbe::cDvbDeviceProbe()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x8): Nicht definierter Verweis auf `cDevice::Action()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x18): Nicht definierter Verweis auf `cDevice::MakePrimaryDevice(bool)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x1c): Nicht definierter Verweis auf `cDvbDevice::DeviceType() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x20): Nicht definierter Verweis auf `cDvbDevice::DeviceName() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x24): Nicht definierter Verweis auf `cDevice::HasDecoder() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x2c): Nicht definierter Verweis auf `cDevice::GetSpuDecoder()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x30): Nicht definierter Verweis auf `cDvbDevice::ProvidesSource(int) const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x34): Nicht definierter Verweis auf `cDvbDevice::ProvidesTransponder(cChannel const*) const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x38): Nicht definierter Verweis auf `cDevice::ProvidesTransponderExclusively(cChannel const*) const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x3c): Nicht definierter Verweis auf `cDvbDevice::ProvidesChannel(cChannel const*, int, bool*) const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x40): Nicht definierter Verweis auf `cDvbDevice::ProvidesEIT() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x44): Nicht definierter Verweis auf `cDvbDevice::NumProvidedSystems() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x48): Nicht definierter Verweis auf `cDvbDevice::Positioner() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x4c): Nicht definierter Verweis auf `cDvbDevice::SignalStrength() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x50): Nicht definierter Verweis auf `cDvbDevice::SignalQuality() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x54): Nicht definierter Verweis auf `cDvbDevice::GetCurrentlyTunedTransponder() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x58): Nicht definierter Verweis auf `cDvbDevice::IsTunedToTransponder(cChannel const*) const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x5c): Nicht definierter Verweis auf `cDvbDevice::MaySwitchTransponder(cChannel const*) const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x6c): Nicht definierter Verweis auf `cDvbDevice::HasLock(int) const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x70): Nicht definierter Verweis auf `cDevice::HasProgramme() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x78): Nicht definierter Verweis auf `cDvbDevice::OpenFilter(unsigned short, unsigned char, unsigned char)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x7c): Nicht definierter Verweis auf `cDevice::ReadFilter(int, void*, unsigned int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x80): Nicht definierter Verweis auf `cDvbDevice::CloseFilter(int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x8c): Nicht definierter Verweis auf `cDevice::GrabImage(int&, bool, int, int, int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x90): Nicht definierter Verweis auf `cDevice::SetVideoDisplayFormat(eVideoDisplayFormat)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x94): Nicht definierter Verweis auf `cDevice::SetVideoFormat(bool)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x9c): Nicht definierter Verweis auf `cDevice::GetVideoSize(int&, int&, double&)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xa0): Nicht definierter Verweis auf `cDevice::GetOsdSize(int&, int&, double&)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xa4): Nicht definierter Verweis auf `cDevice::SetAudioTrackDevice(eTrackType)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xa8): Nicht definierter Verweis auf `cDevice::SetSubtitleTrackDevice(eTrackType)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xac): Nicht definierter Verweis auf `cDevice::GetAudioChannelDevice()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xb0): Nicht definierter Verweis auf `cDevice::SetAudioChannelDevice(int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xb4): Nicht definierter Verweis auf `cDevice::SetVolumeDevice(int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xb8): Nicht definierter Verweis auf `cDevice::SetDigitalAudioDevice(bool)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xbc): Nicht definierter Verweis auf `cDevice::CanReplay() const'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xc0): Nicht definierter Verweis auf `cDevice::SetPlayMode(ePlayMode)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xc4): Nicht definierter Verweis auf `cDevice::PlayVideo(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xc8): Nicht definierter Verweis auf `cDevice::PlayAudio(unsigned char const*, int, unsigned char)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xcc): Nicht definierter Verweis auf `cDevice::PlaySubtitle(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xd0): Nicht definierter Verweis auf `cDevice::PlayPesPacket(unsigned char const*, int, bool)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xd4): Nicht definierter Verweis auf `cDevice::PlayTsVideo(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xd8): Nicht definierter Verweis auf `cDevice::PlayTsAudio(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xdc): Nicht definierter Verweis auf `cDevice::PlayTsSubtitle(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xe0): Nicht definierter Verweis auf `cDevice::GetSTC()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0xf4): Nicht definierter Verweis auf `cDevice::TrickSpeed(int, bool)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x10c): Nicht definierter Verweis auf `cDevice::Clear()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x110): Nicht definierter Verweis auf `cDevice::Play()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x114): Nicht definierter Verweis auf `cDevice::Freeze()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x118): Nicht definierter Verweis auf `cDevice::Mute()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x11c): Nicht definierter Verweis auf `cDevice::StillPicture(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x120): Nicht definierter Verweis auf `cDevice::Poll(cPoller&, int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x124): Nicht definierter Verweis auf `cDevice::Flush(int)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x128): Nicht definierter Verweis auf `cDevice::PlayPes(unsigned char const*, int, bool)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x12c): Nicht definierter Verweis auf `cDevice::PlayTs(unsigned char const*, int, bool)'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x13c): Nicht definierter Verweis auf `cDvbDevice::DetachAllReceivers()'
+cam.o:(.data.rel.ro._ZTV12cScDvbDevice[_ZTV12cScDvbDevice]+0x140): Nicht definierter Verweis auf `cDvbDevice::ProvidesDeliverySystem(int) const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x8): Nicht definierter Verweis auf `cDevice::Action()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x14): Nicht definierter Verweis auf `cScMcliDevice::Ready()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x18): Nicht definierter Verweis auf `cDevice::MakePrimaryDevice(bool)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x1c): Nicht definierter Verweis auf `cDevice::DeviceType() const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x20): Nicht definierter Verweis auf `cDevice::DeviceName() const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x24): Nicht definierter Verweis auf `cDevice::HasDecoder() const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x2c): Nicht definierter Verweis auf `cDevice::GetSpuDecoder()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x30): Nicht definierter Verweis auf `cMcliDevice::ProvidesSource(int) const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x34): Nicht definierter Verweis auf `cMcliDevice::ProvidesTransponder(cChannel const*) const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x38): Nicht definierter Verweis auf `cDevice::ProvidesTransponderExclusively(cChannel const*) const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x48): Nicht definierter Verweis auf `cDevice::Positioner() const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x4c): Nicht definierter Verweis auf `cMcliDevice::SignalStrength() const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x50): Nicht definierter Verweis auf `cMcliDevice::SignalQuality() const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x54): Nicht definierter Verweis auf `cDevice::GetCurrentlyTunedTransponder() const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x58): Nicht definierter Verweis auf `cMcliDevice::IsTunedToTransponder(cChannel const*) const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x5c): Nicht definierter Verweis auf `cDevice::MaySwitchTransponder(cChannel const*) const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x60): Nicht definierter Verweis auf `cMcliDevice::GetAttribute(char const*, unsigned long long*)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x64): Nicht definierter Verweis auf `cMcliDevice::GetAttribute(char const*, char*, int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x6c): Nicht definierter Verweis auf `cDevice::HasLock(int) const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x70): Nicht definierter Verweis auf `cDevice::HasProgramme() const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x78): Nicht definierter Verweis auf `cMcliDevice::OpenFilter(unsigned short, unsigned char, unsigned char)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x7c): Nicht definierter Verweis auf `cDevice::ReadFilter(int, void*, unsigned int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x80): Nicht definierter Verweis auf `cMcliDevice::CloseFilter(int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x8c): Nicht definierter Verweis auf `cDevice::GrabImage(int&, bool, int, int, int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x90): Nicht definierter Verweis auf `cDevice::SetVideoDisplayFormat(eVideoDisplayFormat)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x94): Nicht definierter Verweis auf `cDevice::SetVideoFormat(bool)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x9c): Nicht definierter Verweis auf `cDevice::GetVideoSize(int&, int&, double&)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xa0): Nicht definierter Verweis auf `cDevice::GetOsdSize(int&, int&, double&)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xa4): Nicht definierter Verweis auf `cDevice::SetAudioTrackDevice(eTrackType)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xa8): Nicht definierter Verweis auf `cDevice::SetSubtitleTrackDevice(eTrackType)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xac): Nicht definierter Verweis auf `cDevice::GetAudioChannelDevice()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xb0): Nicht definierter Verweis auf `cDevice::SetAudioChannelDevice(int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xb4): Nicht definierter Verweis auf `cDevice::SetVolumeDevice(int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xb8): Nicht definierter Verweis auf `cDevice::SetDigitalAudioDevice(bool)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xbc): Nicht definierter Verweis auf `cDevice::CanReplay() const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xc0): Nicht definierter Verweis auf `cDevice::SetPlayMode(ePlayMode)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xc4): Nicht definierter Verweis auf `cDevice::PlayVideo(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xc8): Nicht definierter Verweis auf `cDevice::PlayAudio(unsigned char const*, int, unsigned char)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xcc): Nicht definierter Verweis auf `cDevice::PlaySubtitle(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xd0): Nicht definierter Verweis auf `cDevice::PlayPesPacket(unsigned char const*, int, bool)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xd4): Nicht definierter Verweis auf `cDevice::PlayTsVideo(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xd8): Nicht definierter Verweis auf `cDevice::PlayTsAudio(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xdc): Nicht definierter Verweis auf `cDevice::PlayTsSubtitle(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xe0): Nicht definierter Verweis auf `cDevice::GetSTC()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0xf4): Nicht definierter Verweis auf `cDevice::TrickSpeed(int, bool)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x10c): Nicht definierter Verweis auf `cDevice::Clear()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x110): Nicht definierter Verweis auf `cDevice::Play()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x114): Nicht definierter Verweis auf `cDevice::Freeze()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x118): Nicht definierter Verweis auf `cDevice::Mute()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x11c): Nicht definierter Verweis auf `cDevice::StillPicture(unsigned char const*, int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x120): Nicht definierter Verweis auf `cDevice::Poll(cPoller&, int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x124): Nicht definierter Verweis auf `cDevice::Flush(int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x128): Nicht definierter Verweis auf `cDevice::PlayPes(unsigned char const*, int, bool)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x12c): Nicht definierter Verweis auf `cDevice::PlayTs(unsigned char const*, int, bool)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x130): Nicht definierter Verweis auf `cMcliDevice::OpenDvr()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x134): Nicht definierter Verweis auf `cMcliDevice::CloseDvr()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x138): Nicht definierter Verweis auf `cMcliDevice::GetTSPacket(unsigned char*&)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x13c): Nicht definierter Verweis auf `cDevice::DetachAllReceivers()'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x140): Nicht definierter Verweis auf `cMcliDevice::HasLock(int)'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x144): Nicht definierter Verweis auf `cMcliDevice::CheckCAM(cChannel const*, bool) const'
+cam.o:(.data.rel.ro._ZTV13cScMcliDevice[_ZTV13cScMcliDevice]+0x1ac): Nicht definierter Verweis auf `non-virtual thunk to cScMcliDevice::Ready()'
+cam.o:(.data.rel.ro._ZTV16cScCiMcliAdapter[_ZTV16cScCiMcliAdapter]+0x8): Nicht definierter Verweis auf `cCiAdapter::Action()'
+cam.o: In Funktion `cScDvbDeviceProbe::~cScDvbDeviceProbe()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.h:171: Nicht definierter Verweis auf `cDvbDeviceProbe::~cDvbDeviceProbe()'
+cam.o:(.data.rel.ro._ZTV12cScCiAdapter[_ZTV12cScCiAdapter]+0x8): Nicht definierter Verweis auf `cCiAdapter::Action()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x14): Nicht definierter Verweis auf `cCamSlot::Reset()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x18): Nicht definierter Verweis auf `cCamSlot::ModuleStatus()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x1c): Nicht definierter Verweis auf `cCamSlot::GetCamName()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x20): Nicht definierter Verweis auf `cCamSlot::Ready()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x24): Nicht definierter Verweis auf `cCamSlot::HasMMI()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x28): Nicht definierter Verweis auf `cCamSlot::HasUserIO()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x2c): Nicht definierter Verweis auf `cCamSlot::EnterMenu()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x30): Nicht definierter Verweis auf `cCamSlot::GetMenu()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x34): Nicht definierter Verweis auf `cCamSlot::GetEnquiry()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x38): Nicht definierter Verweis auf `cCamSlot::ProvidesCa(int const*)'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x3c): Nicht definierter Verweis auf `cCamSlot::AddPid(int, int, int)'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x40): Nicht definierter Verweis auf `cCamSlot::SetPid(int, bool)'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x44): Nicht definierter Verweis auf `cCamSlot::AddChannel(cChannel const*)'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x48): Nicht definierter Verweis auf `cCamSlot::CanDecrypt(cChannel const*)'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x4c): Nicht definierter Verweis auf `cCamSlot::StartDecrypting()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x50): Nicht definierter Verweis auf `cCamSlot::StopDecrypting()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x54): Nicht definierter Verweis auf `cCamSlot::IsDecrypting()'
+cam.o:(.data.rel.ro._ZTV10cScCamSlot[_ZTV10cScCamSlot]+0x58): Nicht definierter Verweis auf `cCamSlot::Decrypt(unsigned char*, int&)'
+cam.o: In Funktion `cScCamSlot::~cScCamSlot()':
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2281: Nicht definierter Verweis auf `cRingBufferLinear::~cRingBufferLinear()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2281: Nicht definierter Verweis auf `cCamSlot::~cCamSlot()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2281: Nicht definierter Verweis auf `cRingBufferLinear::~cRingBufferLinear()'
+/usr/src/reelbox/testing/src/plugins/src/sc/cam.c:2281: Nicht definierter Verweis auf `cCamSlot::~cCamSlot()'
+cam.o:(.data.rel.ro._ZTI14cDeCsaTSBuffer[_ZTI14cDeCsaTSBuffer]+0x8): Nicht definierter Verweis auf `typeinfo for cThread'
+cam.o:(.data.rel.ro._ZTI10cScCamSlot[_ZTI10cScCamSlot]+0x8): Nicht definierter Verweis auf `typeinfo for cCamSlot'
+cam.o:(.data.rel.ro._ZTI12cScCiAdapter[_ZTI12cScCiAdapter]+0x8): Nicht definierter Verweis auf `typeinfo for cCiAdapter'
+cam.o:(.data.rel.ro._ZTI9cLogStats[_ZTI9cLogStats]+0x8): Nicht definierter Verweis auf `typeinfo for cThread'
+cam.o:(.data.rel.ro._ZTI12cScDvbDevice[_ZTI12cScDvbDevice]+0x10): Nicht definierter Verweis auf `typeinfo for cDvbDevice'
+cam.o:(.data.rel.ro._ZTI17cScDvbDeviceProbe[_ZTI17cScDvbDeviceProbe]+0x8): Nicht definierter Verweis auf `typeinfo for cDvbDeviceProbe'
+cam.o:(.data.rel.ro._ZTI13cScMcliDevice[_ZTI13cScMcliDevice]+0x10): Nicht definierter Verweis auf `typeinfo for cMcliDevice'
+collect2: error: ld returned 1 exit status
+make: *** [libvdr-sc.so] Fehler 1

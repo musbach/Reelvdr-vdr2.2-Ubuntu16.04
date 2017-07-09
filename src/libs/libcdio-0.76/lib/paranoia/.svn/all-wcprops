@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia
+END
+p_block.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/p_block.h
+END
+isort.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/isort.c
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/Makefile.in
+END
+isort.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/isort.h
+END
+libcdio_paranoia.sym
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/libcdio_paranoia.sym
+END
+gap.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/gap.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/Makefile.am
+END
+overlap.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/overlap.c
+END
+p_block.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/p_block.c
+END
+paranoia.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/paranoia.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/Makefile
+END
+gap.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/gap.h
+END
+overlap.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/paranoia/overlap.h
+END

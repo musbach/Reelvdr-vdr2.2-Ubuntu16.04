@@ -1,0 +1,132 @@
+***********************************************************
+*** Using Git                                           ***
+***********************************************************
+
+If this is a Git snapshot you have to perform some steps yourself
+to get a complete VDRAdmin-AM folder:
+
+1) The Git repository contains no locales (.mo files). You have to
+   create them yourself if you want to use a language other than
+	 English: ./make.sh po
+	 Please note that you need the "msgfmt" utility for this!
+
+***********************************************************
+*** Installation                                        ***
+***********************************************************
+
+1)  Unpack the archive somewhere:
+    $ tar xvjf vdradmin-am-VERSION.tar.bz2
+    $ cd vdradmin-am-VERSION
+
+2)  If you want to run VDRAdmin-AM using a language other than set on
+    your system, then before running it you have to issue:
+    $ export LANG="<language code>"
+
+    Where <language code> has to be one of: de_DE, es_ES, fi_FI, fr_FR,
+		nl_NL or ru_RU (en_GB is default).
+
+3)  Check if your system provides all requirements and optionally install
+    the missing Perl modules:
+    $ ./make.sh check 
+
+4)  Now you have to decide whether you want to run VDRAdmin-AM locally (4a)
+    in this directory or install it into your system (4b).
+
+4a) run locally (=no installation)
+    First you have to configure VDRAdmin-AM. This only has to be done once.
+    $ ./vdradmind --config
+
+    Some questions about the configuration will be asked.
+
+    Now you're done and you can run VDRAdmin-AM:
+    $ ./vdradmind
+
+4b) install into system
+    $ ./make.sh install
+
+    Some questions about the configuration will asked.
+
+    Now you're done and you can run VDRAdmin-AM:
+    $ vdradmind
+
+5)  If you want VDRAdmin-AM to run automatically on system boot, you have
+    to add a startup script to the wanted runlevel. Please consult your
+    Linux distribution's documentation.
+    Please also note that you might have to set the wanted language in
+    that startup as shown in (2).
+
+6)  No matter how you run VDRAdmin-AM, you now can point your browser to
+    the given parameters (e.g. http://localhost:8001).
+
+
+***********************************************************
+*** Removing VDRAdmin-AM from your system               ***
+***********************************************************
+
+1)  Uninstall depends on the kind of installation you did:
+
+1a) run locally (=no installation)
+    There is not much to do.
+    Simply remove to folder VDRAdmin-AM has been created while unpacking:
+    $ rm -rf vdradmin-am-VERSION
+
+1b) installed to your system
+    You need the unpacked VDRAdmin-AM archive.
+    $ cd vdradmin-am-VERSION
+    $ ./make.sh uninstall
+
+    You might want to delete your VDRAdmin-AM's configuration files:
+    $ rm -rf /etc/vdradmin
+
+    This of course only works if you didn't change the default install
+    locations! If you've change them you must call "./make.sh uninstall"
+		with those locations.
+    If you don't know what I'm talking about, you probably didn't change
+    the default values ;)
+
+2)  You're done!
+
+
+***********************************************************
+*** Hide VDRAdmin-AM behind apache                      ***
+***********************************************************
+
+  you will need apache with mod_proxy and these lines in httpd.conf:
+
+  <IfModule mod_proxy.c>
+    ProxyRequests Off
+    ProxyPass /vdradmin/ http://127.0.0.1:8001/
+  </IfModule>
+
+
+***********************************************************
+*** Hint from Martin Neuditschko for apache2 (untested) ***
+***********************************************************
+
+  I have summarized the needed changes for my Apache (Apache2, SuSE 8.2):
+  Following modules have to be activated additionally:
+  proxy, html_proxy, rewrite
+
+  Following has to be added to the httpd.conf:
+  <VirtualHost *>
+    RewriteEngine On
+    RewriteRule ^/vdradmin(.*) http://localhost:8001$1 [P,L]
+  </VirtualHost>
+
+
+***********************************************************
+*** See who's calling (you need an ISDN card for this)  ***
+***********************************************************
+
+  Insert this in your isdn.conf:
+
+  [MSN]
+  NUMBER = <yourmsn>
+  START = {
+    [FLAG]
+    FLAGS = I|O|R
+    PROGRAM = /path/to/vdradmind --displaycall "Call from \$2"
+  }
+
+  Restart isdnlog.
+

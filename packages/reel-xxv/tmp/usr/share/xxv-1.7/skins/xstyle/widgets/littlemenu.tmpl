@@ -1,0 +1,12 @@
+<!-- LittleMenuTemplate -->
+
+<?% IF data.title %?>
+<h1><?% data.title %?></h1>
+<?% END %?>
+
+<?% FOREACH l IN data.links %?>
+<?% "<b>" IF data.highlight == l.key %?>
+<a href="<?% l.value.link %?>">[<?% l.value.text %?>]</a>&nbsp;
+<?% "</b>" IF data.highlight == l.key %?>
+<?% END %?>
+<p>

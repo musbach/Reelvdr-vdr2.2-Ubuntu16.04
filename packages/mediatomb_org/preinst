@@ -1,0 +1,43 @@
+#!/bin/sh
+
+DATADIR=/var/lib/mediatomb
+
+# stolen from mysql deb package...
+
+# If we use NIS then errors should be tolerated. It's up to the
+# user to ensure that the mediatomb user is correctly setup.
+# Beware that there are two ypwhich one of them needs the 2>/dev/null!
+if test -n "`which ypwhich 2>/dev/null`"  &&  ypwhich >/dev/null 2>&1; then
+    set +e
+fi
+
+# creating mediatomb group if it isn't already there
+if ! getent group mediatomb >/dev/null; then
+    # Adding system group: mediatomb.
+    addgroup --system mediatomb >/dev/null
+fi
+
+# creating mediatomb user if it isn't already there
+if ! getent passwd mediatomb >/dev/null; then
+    # Adding system user: mediatomb.
+    adduser \
+     --system \
+     --ingroup mediatomb \
+     --home $DATADIR \
+     --gecos "MediaTomb Server" \
+     --shell /bin/false \
+     mediatomb  >/dev/null
+fi
+
+# make sure the databases exists in mysql
+# create database 'mediatomb' with access to user 'mediatomb' with password 'mediatomb' 
+# specified in /etc/mediatomb/config.xml
+mysql -uroot -proot -e "CREATE DATABASE IF NOT EXISTS mediatomb; GRANT ALL ON mediatomb.* TO 'mediatomb'@'localhost' IDENTIFIED BY 'mediatomb'; FLUSH PRIVILEGES; "
+
+
+# end of NIS tolerance zone
+set -e
+
+
+
+exit 0

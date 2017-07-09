@@ -1,0 +1,55 @@
+audio_out.o: audio_out.c audio_out.h utils.h VdrXineMpIf.h \
+ reel_video_overlay.h /usr/include/xine/xine_internal.h \
+ /usr/include/xine/xineutils.h /usr/include/xine/audio_out.h spu.h \
+ /usr/include/xine/video_out.h /usr/include/xine/video_overlay.h
+mpeg_videodec.o: mpeg_videodec.c mpeg_videodec.h utils.h VdrXineMpIf.h \
+ reel_video_overlay.h /usr/include/xine/xine_internal.h \
+ VideoStreamParser.h /usr/include/xine/xineutils.h \
+ /usr/include/xine/video_decoder.h
+spu.o: spu.c /usr/include/xine/xine_internal.h \
+ /usr/include/xine/xineutils.h spu.h /usr/include/xine/video_out.h \
+ /usr/include/xine/video_overlay.h reel_video_overlay.h \
+ /usr/include/xine/buffer.h /usr/include/dvdread/nav_read.h \
+ /usr/include/dvdread/nav_print.h spu_If.h VdrXineMpIf.h debug.h
+spu_If.o: spu_If.c spu_If.h VdrXineMpIf.h reel_video_overlay.h \
+ /usr/include/xine/xine_internal.h /usr/include/xine/video_overlay.h \
+ spu.h /usr/include/xine/video_out.h /usr/include/xine/metronom.h
+xine_decoder.o: xine_decoder.c /usr/include/xine/xine_internal.h \
+ /usr/include/xine/buffer.h /usr/include/xine/xineutils.h spu.h \
+ /usr/include/xine/video_out.h /usr/include/xine/video_overlay.h \
+ reel_video_overlay.h /usr/include/dvdread/nav_read.h \
+ /usr/include/dvdread/nav_types.h xine_decoder.h debug.h spu_If.h \
+ VdrXineMpIf.h
+plugin.o: plugin.c audio_out.h mpeg_videodec.h xine_decoder.h \
+ /usr/include/xine/xine_internal.h /usr/include/xine/buffer.h \
+ /usr/include/xine/xine_plugin.h /usr/include/xine/video_decoder.h \
+ /usr/include/xine/spu_decoder.h
+audio_out.o: audio_out.c audio_out.h utils.h VdrXineMpIf.h \
+ reel_video_overlay.h /usr/include/xine/xine_internal.h \
+ /usr/include/xine/xineutils.h /usr/include/xine/audio_out.h spu.h \
+ /usr/include/xine/video_out.h /usr/include/xine/video_overlay.h
+mpeg_videodec.o: mpeg_videodec.c mpeg_videodec.h utils.h VdrXineMpIf.h \
+ reel_video_overlay.h /usr/include/xine/xine_internal.h \
+ VideoStreamParser.h /usr/include/xine/xineutils.h \
+ /usr/include/xine/video_decoder.h
+spu.o: spu.c /usr/include/xine/xine_internal.h \
+ /usr/include/xine/xineutils.h spu.h /usr/include/xine/video_out.h \
+ /usr/include/xine/video_overlay.h reel_video_overlay.h \
+ /usr/include/xine/buffer.h /usr/include/dvdread/nav_read.h \
+ /usr/include/dvdread/nav_print.h spu_If.h VdrXineMpIf.h debug.h
+spu_If.o: spu_If.c spu_If.h VdrXineMpIf.h reel_video_overlay.h \
+ /usr/include/xine/xine_internal.h /usr/include/xine/video_overlay.h \
+ spu.h /usr/include/xine/video_out.h /usr/include/xine/metronom.h
+xine_decoder.o: xine_decoder.c /usr/include/xine/xine_internal.h \
+ /usr/include/xine/buffer.h /usr/include/xine/xineutils.h spu.h \
+ /usr/include/xine/video_out.h /usr/include/xine/video_overlay.h \
+ reel_video_overlay.h /usr/include/dvdread/nav_read.h \
+ /usr/include/dvdread/nav_types.h xine_decoder.h debug.h spu_If.h \
+ VdrXineMpIf.h
+plugin.o: plugin.c audio_out.h mpeg_videodec.h xine_decoder.h \
+ /usr/include/xine/xine_internal.h /usr/include/xine/buffer.h \
+ /usr/include/xine/xine_plugin.h /usr/include/xine/video_decoder.h \
+ /usr/include/xine/spu_decoder.h
+ReadBuffer.o: ReadBuffer.cpp ReadBuffer.h
+VideoStreamParser.o: VideoStreamParser.cpp VideoStreamParser.h \
+ ReadBuffer.h

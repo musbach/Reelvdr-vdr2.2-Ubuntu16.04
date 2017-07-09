@@ -1,0 +1,13 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+# src rel. to $(SRCDIR)		dest			type	owner.group
+etc/default/mediaconfigs
+etc/init/mediaanalyzer.conf
+libs/reelaudiodb/MediaAnalyzer	usr/sbin/MediaAnalyzer	exe
+libs/reelaudiodb/MediaCleaner	usr/sbin/MediaCleaner	exe
+libs/reelaudiodb/MediaCrawler	usr/sbin/MediaCrawler	exe
+libs/reelaudiodb/MediaRemover	usr/sbin/MediaRemover	exe
+sbin/mediaanalyzer.sh	usr/sbin/mediaanalyzer.sh	script
+sbin/mediacrawler.sh	usr/sbin/mediacrawler.sh	script
+sbin/mediaremover.sh	usr/sbin/mediaremover.sh	script
+#sbin/mediacleaner.sh	usr/sbin/mediacleaner.sh	script

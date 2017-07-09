@@ -1,0 +1,15 @@
+#! /bin/sh
+FOLDER="/usr/share/xxv-1.7"
+
+/etc/init.d/xxvd stop
+killall xxvd
+
+case "$1" in
+	purge|remove)
+		cd $FOLDER
+		mv contrib/create-database.sql.inst contrib/create-database.sql
+		rm -f doc/*.pod
+	;;
+esac
+
+exit 0

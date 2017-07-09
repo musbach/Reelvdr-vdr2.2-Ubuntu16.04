@@ -1,0 +1,31 @@
+#!/bin/sh
+
+echo "creating init levels for ReelBox control"
+if [ ! -L /etc/rc2.d/S15reelbox-control ] && [ -L /etc/rc2.d/S??reelbox-control ] ; then
+        update-rc.d -f reelbox-control remove
+fi
+update-rc.d reelbox-control defaults 15 80
+
+if ! grep -q "reeldrv" /etc/modules ; then
+        echo "Adding reeldrv to /etc/modules"
+	echo reeldrv >> /etc/modules
+fi
+
+depmod -a
+
+if ! grep -q "reelfpctl"  /etc/init.d/checkroot.sh ; then
+	echo "patching /etc/init.d/checkroot.sh (blinking on root fsck)"
+	sed -i "/splash_start_indefinite/a\\\t\\treelfpctl -blinkled 2" /etc/init.d/checkroot.sh
+	sed -i "/splash_stop_indefinite/a\\\t\\treelfpctl -clearled 2" /etc/init.d/checkroot.sh
+fi
+
+if ! grep -q "reelfpctl"  /etc/init.d/checkfs.sh ; then
+	echo "patching /etc/init.d/checkfs.sh (blinking on fsck)"
+	sed -i "/splash_start_indefinite/a\\\t\\treelfpctl -blinkled 4" /etc/init.d/checkfs.sh
+	sed -i "/splash_stop_indefinite/a\\\t\\treelfpctl -clearled 4" /etc/init.d/checkfs.sh
+fi
+
+# this is needed for setup.xml for compability with AVG
+[ ! -L /usr/sbin/fpleds ] && ln -s /etc/init.d/fpleds /usr/sbin/fpleds
+
+exit 0

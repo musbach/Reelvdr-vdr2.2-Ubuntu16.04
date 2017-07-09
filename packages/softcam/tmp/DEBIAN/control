@@ -1,0 +1,9 @@
+Package: softcam
+Version: 14.04.19453-182
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 1,8M
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: sc
+Description: sc turbo with || 128 sse

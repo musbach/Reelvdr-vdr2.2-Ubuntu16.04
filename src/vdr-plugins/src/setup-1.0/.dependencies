@@ -1,0 +1,593 @@
+setup.o: setup.cpp ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h setup.h setupmenu.h \
+ ../../../vdr/../vdr/help.h ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/livebuffer.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/svdrp.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/debugmacros.h config.h \
+ plugins.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr/../vdr/thread.h menusysteminfo.h meminfo.h \
+ ../../../vdr/../vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr/../vdr/device.h setupsetup.h setupmultiroom.h \
+ setupnetclientmenu.h ../avahi/avahiservice.h i18n.h \
+ ../../../vdr/../vdr/i18n.h setupwlanmenu.h wlansetting.h mainmenu.h \
+ vdrsetupclasses.h ../../../vdr/../vdr/diseqc.h \
+ ../../../vdr/../vdr/sourceparams.h
+blockdevice.o: blockdevice.cpp blockdevice.h ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/tools.h
+config.o: config.cpp ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h config.h ../../../vdr/../vdr/submenu.h \
+ plugins.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/debugmacros.h
+energyoptionsmenu.o: energyoptionsmenu.cpp energyoptionsmenu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/config.h \
+ vdrsetupclasses.h ../../../vdr/../vdr/diseqc.h \
+ ../../../vdr/../vdr/sourceparams.h ../../../vdr/../vdr/sysconfig_vdr.h \
+ ../../../vdr/../vdr/debug.h
+formatmenu.o: formatmenu.cpp formatmenu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/debug.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/interface.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/svdrp.h
+i18n.o: i18n.cpp ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h i18n.h ../../../vdr/../vdr/i18n.h
+mainmenu.o: mainmenu.cpp ../../../vdr/../vdr/cutter.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/debug.h ../../../vdr/../vdr/help.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/player.h \
+ ../../../vdr/../vdr/interface.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/svdrp.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/livebuffer.h ../../../vdr/../vdr/plugin.h \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/vdrmysql.h \
+ ../../../vdr/../vdr/videodir.h mainmenu.h ../../../vdr/../vdr/config.h \
+ vdrsetupclasses.h ../../../vdr/../vdr/diseqc.h \
+ ../../../vdr/../vdr/sourceparams.h setupmenu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/debugmacros.h config.h \
+ plugins.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr/../vdr/thread.h menusysteminfo.h meminfo.h netinfo.h \
+ systeminfo.h ../../../vdr/../vdr/device.h
+meminfo.o: meminfo.cpp meminfo.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h
+menus.o: menus.cpp ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/submenu.h config.h \
+ plugins.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/debugmacros.h \
+ menusysteminfo.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/player.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/livebuffer.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/interface.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/svdrp.h meminfo.h ../../../vdr/../vdr/config.h \
+ netinfo.h systeminfo.h ../../../vdr/../vdr/device.h
+menueditrefreshitems.o: menueditrefreshitems.cpp menueditrefreshitems.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h
+menusysteminfo.o: menusysteminfo.cpp menusysteminfo.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/livebuffer.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/svdrp.h \
+ ../../../vdr/../vdr/submenu.h meminfo.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr/../vdr/device.h config.h plugins.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/debugmacros.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/videodir.h
+netinfo.o: netinfo.cpp netinfo.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/tools.h
+networkfilesystem.o: networkfilesystem.cpp networkfilesystem.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/svdrp.h ../../../vdr/../vdr/sysconfig_vdr.h
+plugins.o: plugins.cpp ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h plugins.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h util.h ../../../vdr/../vdr/thread.h
+setupmenu.o: setupmenu.cpp ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/player.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/livebuffer.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/videodir.h config.h ../../../vdr/../vdr/submenu.h \
+ plugins.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/debugmacros.h \
+ energyoptionsmenu.h ../../../vdr/../vdr/osdbase.h vdrsetupclasses.h \
+ ../../../vdr/../vdr/diseqc.h ../../../vdr/../vdr/sourceparams.h \
+ menueditrefreshitems.h menusetup_vdr.h ../../../vdr/../vdr/plugin.h \
+ mainmenu.h setupmenu.h ../../../vdr/../vdr/help.h \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/svdrp.h \
+ menusysteminfo.h meminfo.h netinfo.h systeminfo.h \
+ ../../../vdr/../vdr/device.h setup.h setupsetup.h setupmultiroom.h \
+ setupnetclientmenu.h ../avahi/avahiservice.h i18n.h \
+ ../../../vdr/../vdr/i18n.h setuprecordingdevicemenu.h blockdevice.h \
+ setupwlanmenu.h wlansetting.h setupnetworkfilesystemmenu.h \
+ networkfilesystem.h resetsettingsmenu.h setupmysqlmenu.h
+setupmultiroom.o: setupmultiroom.cpp setup.h ../../../vdr/../vdr/plugin.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h setupmenu.h \
+ ../../../vdr/../vdr/help.h ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/livebuffer.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/svdrp.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/debugmacros.h config.h \
+ plugins.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr/../vdr/thread.h menusysteminfo.h meminfo.h \
+ ../../../vdr/../vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr/../vdr/device.h setupsetup.h setupmultiroom.h \
+ setupnetclientmenu.h ../avahi/avahiservice.h i18n.h \
+ ../../../vdr/../vdr/i18n.h menueditrefreshitems.h \
+ ../../../vdr/../vdr/debug.h ../../../vdr/../vdr/s2reel_compat.h \
+ ../mcli/mcli_service.h ../../../vdr/../vdr/vdrmysql.h
+setupnetclientmenu.o: setupnetclientmenu.cpp ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/livebuffer.h ../../../vdr/../vdr/vdrmysql.h \
+ ../../../vdr/../vdr/videodir.h ../../../vdr/../vdr/plugin.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h setupnetclientmenu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/svdrp.h \
+ ../avahi/avahiservice.h menueditrefreshitems.h \
+ ../../../vdr/../vdr/menuitems.h netinfo.h
+setupnetworkfilesystemmenu.o: setupnetworkfilesystemmenu.cpp \
+ setupnetworkfilesystemmenu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/thread.h \
+ networkfilesystem.h menueditrefreshitems.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/sysconfig_vdr.h \
+ setupmenu.h ../../../vdr/../vdr/help.h ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/livebuffer.h \
+ ../../../vdr/../vdr/interface.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/svdrp.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr/../vdr/tools.h menus.h util.h menusysteminfo.h meminfo.h \
+ ../../../vdr/../vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/debug.h
+setuprecordingdevicemenu.o: setuprecordingdevicemenu.cpp \
+ ../../../vdr/../vdr/debug.h ../../../vdr/../vdr/videodir.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/svdrp.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/sysconfig_vdr.h \
+ setuprecordingdevicemenu.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/livebuffer.h blockdevice.h formatmenu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/tools.h
+setupsetup.o: setupsetup.cpp ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/player.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/livebuffer.h \
+ ../../../vdr/../vdr/submenu.h setupsetup.h setup.h \
+ ../../../vdr/../vdr/plugin.h setupmenu.h ../../../vdr/../vdr/help.h \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/svdrp.h \
+ ../../../vdr/../vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/sysconfig_vdr.h menus.h \
+ util.h ../../../vdr/../vdr/thread.h menusysteminfo.h meminfo.h \
+ ../../../vdr/../vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr/../vdr/device.h setupmultiroom.h setupnetclientmenu.h \
+ ../avahi/avahiservice.h i18n.h ../../../vdr/../vdr/i18n.h
+setupwlanmenu.o: setupwlanmenu.cpp setupwlanmenu.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/livebuffer.h wlansetting.h setupmenu.h \
+ ../../../vdr/../vdr/help.h ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/interface.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/svdrp.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/sysconfig_vdr.h menus.h \
+ util.h ../../../vdr/../vdr/thread.h menusysteminfo.h meminfo.h \
+ ../../../vdr/../vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr/../vdr/device.h menueditrefreshitems.h
+resetsettingsmenu.o: resetsettingsmenu.cpp resetsettingsmenu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h
+systeminfo.o: systeminfo.cpp ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h menusysteminfo.h ../../../vdr/../vdr/menu.h \
+ ../../../vdr/../vdr/dvbplayer.h ../../../vdr/../vdr/player.h \
+ ../../../vdr/../vdr/recorder.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/livebuffer.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/interface.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/svdrp.h ../../../vdr/../vdr/submenu.h meminfo.h \
+ ../../../vdr/../vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr/../vdr/device.h ../mcli/mcli_service.h
+util.o: util.cpp ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/tools.h util.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h
+wlansetting.o: wlansetting.cpp ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/tools.h wlansetting.h
+menusetup_vdr.o: menusetup_vdr.cpp ../../../vdr/../vdr/debug.h \
+ ../../../vdr/../vdr/eitscan.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/videodir.h mainmenu.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/menu.h ../../../vdr/../vdr/dvbplayer.h \
+ ../../../vdr/../vdr/player.h ../../../vdr/../vdr/recorder.h \
+ ../../../vdr/../vdr/receiver.h ../../../vdr/../vdr/submenu.h \
+ ../../../vdr/../vdr/livebuffer.h vdrsetupclasses.h \
+ ../../../vdr/../vdr/diseqc.h ../../../vdr/../vdr/sourceparams.h \
+ menusetup_vdr.h setupmenu.h ../../../vdr/../vdr/help.h \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/svdrp.h \
+ ../../../vdr/../vdr/submenu.h ../../../vdr/../vdr/debugmacros.h config.h \
+ plugins.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr/../vdr/thread.h menusysteminfo.h meminfo.h netinfo.h \
+ systeminfo.h ../../../vdr/../vdr/device.h
+setupmysqlmenu.o: setupmysqlmenu.cpp setupmysqlmenu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h netinfo.h \
+ ../../../vdr/../vdr/vdrmysql.h

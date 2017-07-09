@@ -1,0 +1,79 @@
+<?% ######################################################################## %?>
+<card id="first" title="XXV <?% gettext("Timers") %?>">
+<p>
+<?% IF allow('tl') %?>
+<a href="?cmd=tl#t1"><img src="images/forward.wbm" alt="<?% gettext("List timers") %?>" /><?% gettext("Show timers",12) %?></a><br />
+<?% END %?>
+<?% IF allow('tn') %?>
+<a href="?cmd=tn"><img src="images/new.wbm" alt="<?% gettext("Create new timer") %?>" /><?% gettext("Create new timer",12) %?></a><br />
+<?% END %?>
+<?% IF allow('tu') %?>
+<a href="?cmd=tu"><img src="images/refresh.wbm" alt="<?% gettext("Update timers") %?>" /><?% gettext("Update timers",12) %?></a><br />
+<?% END %?>
+<a href="#index"><img src="images/home.wbm" alt="<?% gettext("Menu") %?>" /></a>
+</p>
+</card>
+<?% ######################################################################## %?>
+<?% BLOCK time %?>
+    <?% tt = t FILTER format('%04d') %?><?% tt.chunk(-2).join(':') %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK item %?>
+    <?% IF global.ShowCardTitle %?>
+    <?% IF allow('tedit') %?>
+    <a href="?cmd=te&amp;data=<?% id %?>">
+    <?% END %?>
+        <?% gettext("Timer") %?> <?% ' ';loop.count %?>
+    <?% "</a>" IF allow('tedit') %?>
+    <br />
+    <?% END %?>
+<?% IF allow('ttoggle') %?>
+    <a href="?cmd=tt&amp;data=<?% id %?>">
+<?% END %?>
+    <img src="images/<?% aktiv ? 'on.wbm' : 'off.wbm'%?>" alt="<?% aktiv ? gettext("On") : gettext("Off") %?>" />
+    <?% "</a>" IF allow('ttoggle') %?>
+    <?% datum %?><br />
+    <?% PROCESS time t = start %?>-<?% PROCESS time t = stop %?><br />
+    <?% ## sender | html %?< <br />%?>
+<?% IF allow('tedit') %?>
+    <a href="?cmd=te&amp;data=<?% id %?>">
+<?% END %?>
+        <?% title | html | replace('~','<br />') %?>
+    <?% "</a>" IF allow('tedit') %?>
+    
+	<?% IF allow('tedit') %?>
+    <br />
+        <a href="?cmd=te&amp;data=<?% id %?>"><img src="images/edit.wbm" alt="<?% gettext("Edit") %?>" /></a>
+	<?% END %?>
+	<?% IF allow('tdelete') %?>
+        <a href="?cmd=td&amp;data=<?% id %?>"><img src="images/delete.wbm" alt="<?% gettext("Delete") %?>" /></a>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% skip = cgi.param('offset') || 1 %?>
+<?% offset = skip + global.MaxCards %?>
+<?% IF data.size > skip %?>
+<?% fields = data.shift %?>
+   	<?% FOREACH zeile IN data %?>
+        <?% IF loop.count < skip;NEXT;END %?>
+		<?% aktiv=zeile.1;sender=zeile.2;channel=zeile.3;datum=zeile.4;start=zeile.5;stop=zeile.6;title=zeile.7;day = zeile.8;conflict=zeile.9 %?>
+    	<?% IF id.defined %?>
+        <a href="#t<?% loop.count %?>"><img src="images/forward.wbm" alt="<?% gettext("Forward") %?>" /></a>
+        <a href="#index"><img src="images/home.wbm" alt="<?% gettext("Menu") %?>" /></a>
+    </p>
+</card>
+        <?% END %?>
+        <?% id=zeile.0 %?>
+<card id="t<?% loop.count %?>" title="<?% gettext("Timer") %?> <?% ' ';loop.count %?>">
+     <p>
+		<?% PROCESS item %?>
+        <?% count =  loop.count + 1 %?>
+        <?% IF count >= offset;LAST;END %?>
+    <?% END %?>
+    <?% IF count < data.size %?>
+        <a href="?cmd=<?% cgi.param('cmd') %?>&amp;offset=<?% offset %?>#t<?% offset %?>"><img src="images/forward.wbm" alt="<?% gettext("Forward") %?>" /></a>
+    <?% END %?>
+        <a href="#index"><img src="images/home.wbm" alt="<?% gettext("Menu") %?>" /></a>
+    </p>
+</card>
+<?% END %?>

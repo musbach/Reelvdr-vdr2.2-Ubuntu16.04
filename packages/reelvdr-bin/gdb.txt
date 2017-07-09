@@ -1,0 +1,259 @@
+Reading symbols from /usr/sbin/vdr...done.
+Starting program: /usr/sbin/vdr --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/i386-linux-gnu/libthread_db.so.1".
+[New Thread 0xb36abb40 (LWP 32223)]
+[New Thread 0xb2eaab40 (LWP 32224)]
+[Thread 0xb36abb40 (LWP 32223) exited]
+[Thread 0xb2eaab40 (LWP 32224) exited]
+[New Thread 0xb36abb40 (LWP 32225)]
+[New Thread 0xb2eaab40 (LWP 32226)]
+[New Thread 0xb22ffb40 (LWP 32227)]
+[New Thread 0xb1afeb40 (LWP 32228)]
+[New Thread 0xb10ffb40 (LWP 32229)]
+[New Thread 0xb06ffb40 (LWP 32230)]
+[New Thread 0xafefeb40 (LWP 32231)]
+[New Thread 0xaf2fcb40 (LWP 32232)]
+[New Thread 0xae6fab40 (LWP 32233)]
+[New Thread 0xadaf8b40 (LWP 32234)]
+[New Thread 0xaccfeb40 (LWP 32235)]
+[New Thread 0xac0fcb40 (LWP 32236)]
+[New Thread 0xab4fab40 (LWP 32237)]
+[New Thread 0xaa8f8b40 (LWP 32238)]
+[New Thread 0xa9affb40 (LWP 32241)]
+[New Thread 0xa92feb40 (LWP 32242)]
+[New Thread 0xa8afdb40 (LWP 32243)]
+[New Thread 0xa82fcb40 (LWP 32244)]
+[New Thread 0xa7afbb40 (LWP 32245)]
+[New Thread 0xa72fab40 (LWP 32246)]
+[New Thread 0xa6af9b40 (LWP 32247)]
+[New Thread 0xa60ffb40 (LWP 32248)]
+[New Thread 0xa58feb40 (LWP 32249)]
+[New Thread 0xa50fdb40 (LWP 32250)]
+[New Thread 0xa3327b40 (LWP 32251)]
+[New Thread 0xa2b26b40 (LWP 32252)]
+[New Thread 0xa21ffb40 (LWP 32254)]
+[New Thread 0xa19feb40 (LWP 32256)]
+[New Thread 0xa11fdb40 (LWP 32259)]
+[New Thread 0xa09fcb40 (LWP 32260)]
+[Thread 0xb36abb40 (LWP 32225) exited]
+[New Thread 0xb36abb40 (LWP 32268)]
+[New Thread 0xa0030b40 (LWP 32269)]
+[New Thread 0x9f6ffb40 (LWP 32270)]
+[New Thread 0x9dafeb40 (LWP 32273)]
+[New Thread 0x9d2fdb40 (LWP 32274)]
+[New Thread 0x9cafcb40 (LWP 32275)]
+[Thread 0x9d2fdb40 (LWP 32274) exited]
+[New Thread 0x9d2fdb40 (LWP 32293)]
+[New Thread 0x9bb62b40 (LWP 32308)]
+
+Program received signal SIGPIPE, Broken pipe.
+[Switching to Thread 0x9bb62b40 (LWP 32308)]
+0xb7fdd428 in __kernel_vsyscall ()
+Continuing.
+[Thread 0x9bb62b40 (LWP 32308) exited]
+[Thread 0xa2b26b40 (LWP 32252) exited]
+Quit
+Quit
+A debugging session is active.
+
+	Inferior 1 [process 32218] will be killed.
+
+Quit anyway? (y or n) Reading symbols from /usr/sbin/vdr...done.
+Starting program: /usr/sbin/vdr --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/i386-linux-gnu/libthread_db.so.1".
+[New Thread 0xb36abb40 (LWP 3526)]
+[New Thread 0xb2eaab40 (LWP 3527)]
+[Thread 0xb36abb40 (LWP 3526) exited]
+[New Thread 0xb36abb40 (LWP 3528)]
+[Thread 0xb2eaab40 (LWP 3527) exited]
+[New Thread 0xb2eaab40 (LWP 3529)]
+[New Thread 0xb22ffb40 (LWP 3530)]
+[New Thread 0xb1afeb40 (LWP 3531)]
+[New Thread 0xb0effb40 (LWP 3532)]
+[New Thread 0xb06feb40 (LWP 3533)]
+[New Thread 0xafefdb40 (LWP 3534)]
+[New Thread 0xaf2fbb40 (LWP 3535)]
+[New Thread 0xae6f9b40 (LWP 3536)]
+[New Thread 0xadaf7b40 (LWP 3537)]
+[New Thread 0xacef5b40 (LWP 3538)]
+[New Thread 0xac2f3b40 (LWP 3539)]
+[New Thread 0xab6f1b40 (LWP 3540)]
+[New Thread 0xaaaaeb40 (LWP 3541)]
+[Thread 0xb36abb40 (LWP 3528) exited]
+[New Thread 0xb36abb40 (LWP 3545)]
+[New Thread 0xa98ffb40 (LWP 3546)]
+[New Thread 0xa90feb40 (LWP 3547)]
+[New Thread 0xa88fdb40 (LWP 3548)]
+[New Thread 0xa80fcb40 (LWP 3549)]
+[New Thread 0xa78fbb40 (LWP 3550)]
+[New Thread 0xa70fab40 (LWP 3551)]
+[New Thread 0xa68f9b40 (LWP 3552)]
+[New Thread 0xa60f8b40 (LWP 3553)]
+[New Thread 0xa58f7b40 (LWP 3554)]
+[New Thread 0xa3b21b40 (LWP 3555)]
+[New Thread 0xa3320b40 (LWP 3556)]
+[New Thread 0xa2b1fb40 (LWP 3557)]
+[New Thread 0xa231eb40 (LWP 3558)]
+[New Thread 0xa1b1db40 (LWP 3559)]
+[New Thread 0xa131cb40 (LWP 3560)]
+[New Thread 0xa0b1bb40 (LWP 3570)]
+[New Thread 0xa014fb40 (LWP 3571)]
+[New Thread 0x9f7ffb40 (LWP 3572)]
+[New Thread 0x9dbfeb40 (LWP 3575)]
+[New Thread 0x9d3fdb40 (LWP 3576)]
+[New Thread 0x9cbfcb40 (LWP 3584)]
+[Thread 0x9d3fdb40 (LWP 3576) exited]
+[New Thread 0x9d3fdb40 (LWP 3599)]
+[New Thread 0x9bbb8b40 (LWP 3663)]
+
+Program received signal SIGPIPE, Broken pipe.
+[Switching to Thread 0x9bbb8b40 (LWP 3663)]
+0xb7fdd428 in __kernel_vsyscall ()
+Continuing.
+[Thread 0xa3320b40 (LWP 3556) exited]
+[Thread 0x9bbb8b40 (LWP 3663) exited]
+
+Program received signal SIGINT, Interrupt.
+[Switching to Thread 0xafefdb40 (LWP 3534)]
+__GI__dl_debug_state () at dl-debug.c:74
+74	dl-debug.c: Datei oder Verzeichnis nicht gefunden.
+Quit
+A debugging session is active.
+
+	Inferior 1 [process 3521] will be killed.
+
+Quit anyway? (y or n) Reading symbols from /usr/sbin/vdr...done.
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n]) Haltepunkt 1 (cam.c:2672) anstehend.
+Starting program: /usr/sbin/vdr --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer > /dev/stdout
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/i386-linux-gnu/libthread_db.so.1".
+[New Thread 0xb36abb40 (LWP 14820)]
+[New Thread 0xb2eaab40 (LWP 14821)]
+[Thread 0xb36abb40 (LWP 14820) exited]
+[Thread 0xb2eaab40 (LWP 14821) exited]
+[New Thread 0xb36abb40 (LWP 14822)]
+[New Thread 0xb2eaab40 (LWP 14823)]
+[New Thread 0xb1affb40 (LWP 14825)]
+[New Thread 0xb24ffb40 (LWP 14824)]
+[New Thread 0xb0effb40 (LWP 14826)]
+[New Thread 0xb06feb40 (LWP 14827)]
+[New Thread 0xafefdb40 (LWP 14828)]
+[New Thread 0xaf0feb40 (LWP 14829)]
+[New Thread 0xae4fcb40 (LWP 14830)]
+[New Thread 0xad8fab40 (LWP 14831)]
+[New Thread 0xacafeb40 (LWP 14832)]
+[New Thread 0xabefcb40 (LWP 14833)]
+[New Thread 0xab2fab40 (LWP 14834)]
+[New Thread 0xaa6f8b40 (LWP 14835)]
+[New Thread 0xa96ffb40 (LWP 14838)]
+[New Thread 0xa8efeb40 (LWP 14839)]
+[New Thread 0xa86fdb40 (LWP 14840)]
+[New Thread 0xa7efcb40 (LWP 14841)]
+[New Thread 0xa76fbb40 (LWP 14842)]
+[New Thread 0xa6efab40 (LWP 14843)]
+[New Thread 0xa66f9b40 (LWP 14844)]
+[New Thread 0xa5ef8b40 (LWP 14845)]
+[Thread 0xa76fbb40 (LWP 14842) exited]
+[New Thread 0xa76fbb40 (LWP 14846)]
+[New Thread 0xa56f7b40 (LWP 14847)]
+[New Thread 0xa3921b40 (LWP 14848)]
+[New Thread 0xa3120b40 (LWP 14849)]
+[New Thread 0xa291fb40 (LWP 14850)]
+[New Thread 0xa211eb40 (LWP 14851)]
+[New Thread 0xa191db40 (LWP 14852)]
+[New Thread 0xa111cb40 (LWP 14853)]
+[Thread 0xa111cb40 (LWP 14853) exited]
+[Thread 0xb36abb40 (LWP 14822) exited]
+[New Thread 0xb36abb40 (LWP 14863)]
+[New Thread 0xa111cb40 (LWP 14864)]
+[New Thread 0xa0634b40 (LWP 14865)]
+[New Thread 0x9ea33b40 (LWP 14868)]
+[New Thread 0x9e232b40 (LWP 14869)]
+[New Thread 0x9da31b40 (LWP 14875)]
+[New Thread 0x9cb4db40 (LWP 14896)]
+
+Program received signal SIGPIPE, Broken pipe.
+[Switching to Thread 0x9cb4db40 (LWP 14896)]
+0xb7fdd428 in __kernel_vsyscall ()
+Continuing.
+[Thread 0xa3120b40 (LWP 14849) exited]
+[Thread 0x9cb4db40 (LWP 14896) exited]
+
+Program received signal SIGINT, Interrupt.
+[Switching to Thread 0xb77c1700 (LWP 14808)]
+0xb7fdd428 in __kernel_vsyscall ()
+A debugging session is active.
+
+	Inferior 1 [process 14808] will be killed.
+
+Quit anyway? (y or n) Reading symbols from /usr/sbin/vdr...done.
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n]) Haltepunkt 1 (cam.c:2672) anstehend.
+Starting program: /usr/sbin/vdr --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer /dev/stdout
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/i386-linux-gnu/libthread_db.so.1".
+[New Thread 0xb36abb40 (LWP 15142)]
+[New Thread 0xb2eaab40 (LWP 15143)]
+[Thread 0xb2eaab40 (LWP 15143) exited]
+[New Thread 0xb24ffb40 (LWP 15144)]
+[New Thread 0xb2eaab40 (LWP 15145)]
+[New Thread 0xb1affb40 (LWP 15146)]
+[New Thread 0xb12feb40 (LWP 15147)]
+[Thread 0xb36abb40 (LWP 15142) exited]
+[New Thread 0xb08ffb40 (LWP 15148)]
+[New Thread 0xb36abb40 (LWP 15149)]
+[New Thread 0xb00feb40 (LWP 15150)]
+[New Thread 0xaf4fcb40 (LWP 15151)]
+[New Thread 0xae6feb40 (LWP 15152)]
+[New Thread 0xadafcb40 (LWP 15153)]
+[New Thread 0xaccfeb40 (LWP 15154)]
+[New Thread 0xac0fcb40 (LWP 15155)]
+[New Thread 0xab4fab40 (LWP 15156)]
+[New Thread 0xaa8f8b40 (LWP 15157)]
+[New Thread 0xa98ffb40 (LWP 15160)]
+[New Thread 0xa90feb40 (LWP 15161)]
+[New Thread 0xa88fdb40 (LWP 15162)]
+[New Thread 0xa80fcb40 (LWP 15163)]
+[New Thread 0xa78fbb40 (LWP 15164)]
+[New Thread 0xa70fab40 (LWP 15165)]
+[New Thread 0xa68f9b40 (LWP 15167)]
+[New Thread 0xa60f8b40 (LWP 15168)]
+[New Thread 0xa58f7b40 (LWP 15169)]
+[New Thread 0xa50f6b40 (LWP 15170)]
+[New Thread 0xa3320b40 (LWP 15171)]
+[New Thread 0xa2b1fb40 (LWP 15172)]
+[New Thread 0xa231eb40 (LWP 15173)]
+[New Thread 0xa1b1db40 (LWP 15174)]
+[New Thread 0xa131cb40 (LWP 15175)]
+[New Thread 0xa0b1bb40 (LWP 15176)]
+[Thread 0xb24ffb40 (LWP 15144) exited]
+[New Thread 0xb24ffb40 (LWP 15187)]
+[New Thread 0xa0034b40 (LWP 15188)]
+[New Thread 0x9f6ffb40 (LWP 15189)]
+[New Thread 0x9dafeb40 (LWP 15192)]
+[New Thread 0x9d2fdb40 (LWP 15193)]
+[New Thread 0x9cafcb40 (LWP 15195)]
+[New Thread 0x9bb62b40 (LWP 15223)]
+
+Program received signal SIGPIPE, Broken pipe.
+[Switching to Thread 0x9bb62b40 (LWP 15223)]
+0xb7fdd428 in __kernel_vsyscall ()
+Continuing.
+[Thread 0x9bb62b40 (LWP 15223) exited]
+[Thread 0xa2b1fb40 (LWP 15172) exited]
+[Thread 0xa0b1bb40 (LWP 15176) exited]
+[Thread 0xa131cb40 (LWP 15175) exited]
+[Thread 0xa1b1db40 (LWP 15174) exited]
+[Thread 0x9d2fdb40 (LWP 15193) exited]
+
+Program received signal SIGABRT, Aborted.
+[Switching to Thread 0xa90feb40 (LWP 15161)]
+0xb7fdd428 in __kernel_vsyscall ()
+A debugging session is active.
+
+	Inferior 1 [process 15136] will be killed.
+
+Quit anyway? (y or n) 

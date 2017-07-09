@@ -1,0 +1,69 @@
+<!-- LittleMenuTemplate -->
+<?% IF ! global.bodyinc.defined;global.bodyinc = 2 %?>
+<body class="frame">
+<?% END %?>
+<?% INCLUDE header.inc %?>
+<div id="sidebar">
+<?% IF allow('cedit') %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Preferences") %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <a href="?cmd=vdrlist"><img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Video disk recorder") %?>" /></a>&nbsp;<a href="?cmd=vdrlist"><?% gettext("Video disk recorder",20) %?></a>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidetext">
+    <a href="?cmd=clist"><img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Channels") %?>" /></a>&nbsp;<a href="?cmd=clist"><?% gettext("Channels",20) %?></a>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+<?% IF allow( 'ul') || allow( 'uprefs' ) %?>
+  <table>
+    <tr>
+        <td class="sidehead"><?% gettext("User administration",20) %?></td>
+    </tr>
+    <tr>
+    <td class="sidetext">
+      <?% IF allow( 'ul' ) %?>    <a href="?cmd=ul"><?% gettext("User",20) %?></a><br /><?% END %?>
+      <?% IF allow( 'uprefs' ) %?><a href="javascript:popupcmd('uprefs',620,450,0)"><?% gettext("Own settings",20) %?></a><br /><?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+  <table>
+    <tr>
+        <td class="sidehead">
+        <?% IF data.title %?>
+            <?% chop(data.title,20) %?>
+        <?% ELSE %?>
+            <?% gettext("Preferences") %?>
+        <?% END %?>
+        </td>
+    </tr>
+    <tr>
+    <td class="sidetext">
+<?% FOREACH l IN data.links %?>
+<?% "<strong>" IF data.highlight == l.key %?>
+         <a href="<?% l.value.link %?>"><?% chop(l.value.text,22) %?></a>
+<?% "</strong>" IF data.highlight == l.key %?><br />
+<?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<div id="body">
+<?% IF data.title %?>
+<h1><?% data.title %?></h1>
+<?% END %?>

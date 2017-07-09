@@ -1,0 +1,48 @@
+<!-- ###### Seite ###### -->
+<?% IF ! global.sidebar.defined %?>
+<div id="sidebar">
+    <p class="section">&nbsp;</p>
+    <p>
+        <a href="javascript:back()"><img src="images/back.<?% global.imagetyp %?>" alt="<?% gettext("Back") %?>" title="<?% gettext("Back") %?>" /></a>&nbsp;
+        <a href="javascript:back()"><?% gettext("Back",20) %?></a>
+    </p>
+</div>
+<?% END %?>
+<!-- ###### Kopfzeile ###### -->
+<?% IF ! global.iframe.defined %?>
+<div id="header">
+  <div id="logo">
+     <?% IF allow( 'help' ) %?>
+        <a href="http://projects.vdr-developer.org/projects/xxv">
+            <img src="images/logo.<?% global.imagetyp %?>" alt="" />
+        </a>
+     <?% ELSE %?>
+        <img src="images/logo.<?% global.imagetyp %?>" alt="" />
+     <?% END %?>
+  </div>
+  <div id="headerNav">
+      &middot; 
+      <?% IF allow( 'n' ) %?>        <a accesskey="n" href="?cmd=n"><?% gettext("Running now") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'p' ) %?>        <a accesskey="p" href="?cmd=p"><?% gettext("Program guide") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'al' ) %?>       <a accesskey="a" href="?cmd=al"><?% gettext("Autotimer") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'tl' ) %?>       <a accesskey="t" href="?cmd=tl"><?% gettext("Timers") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'rl' ) %?>       <a accesskey="r" href="?cmd=rl"><?% gettext("Recordings") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'vt' ) %?>       <a accesskey="v" href="?cmd=vt"><?% gettext("Teletext") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'ml' ) %?>       <a accesskey="m" href="?cmd=ml"><?% gettext("Music") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'r' ) %?>        <a accesskey="f" href="?cmd=r"><?% gettext("Remote") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'sa' ) %?>       <a accesskey="s" href="?cmd=sa"><?% gettext("Status") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'rp' ) %?>       <a accesskey="b" href="?cmd=rp"><?% gettext("Report") %?></a> &middot;
+      <?% ELSIF allow( 'lg' ) %?>    <a accesskey="b" href="?cmd=lg&data=main"><?% gettext("Log files") %?></a> &middot;<?% END %?>
+      <?% IF allow( 'ce' ) %?>       <a accesskey="c" href="?cmd=ce"><?% gettext("Preferences") %?></a> &middot;
+      <?% ELSIF allow( 'uprefs' ) %?><a accesskey="u" href="?cmd=uprefs"><?% gettext("Own settings") %?></a> &middot; 
+      <?% END %?>
+      <?% IF allow( 'logout' ) %?>   <a accesskey="q" href="?cmd=logout"><?% gettext("Logout") %?></a> &middot; <?% END %?>
+      <?% IF allow( 'help' ) %?>     <a accesskey="h" href="?cmd=help">?</a> &middot; <?% END %?>
+  </div>
+</div>
+<!-- ###### Tooltips ###### -->
+<div id="TOOLTIP"></div>
+<?% END %?>
+<!-- ###### Ende ###### -->
+    </body>
+</html>

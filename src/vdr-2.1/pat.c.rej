@@ -1,0 +1,69 @@
+--- pat.c	(revision 15412)
++++ pat.c	(revision 15413)
+@@ -13,6 +13,9 @@
+ #include "libsi/section.h"
+ #include "libsi/descriptor.h"
+ #include "thread.h"
++#ifdef USE_TTXTSUBS
++#include "vdrttxtsubshooks.h"
++#endif /* TTXTSUBS */
+ 
+ #define PMT_SCAN_TIMEOUT  10 // seconds
+ 
+@@ -343,6 +346,10 @@
+         char DLangs[MAXDPIDS][MAXLANGCODE2] = { "" };
+         char SLangs[MAXSPIDS][MAXLANGCODE2] = { "" };
+         int Tpid = 0;
++#ifdef USE_TTXTSUBS
++        tTeletextSubtitlePage TeletextSubtitlePages[MAXTXTPAGES];
++        int NumTPages = 0;
++#endif /* TTXTSUBS */
+         int NumApids = 0;
+         int NumDpids = 0;
+         int NumSpids = 0;
+@@ -434,8 +441,27 @@
+                                     NumSpids++;
+                                     }
+                                  break;
++#ifdef USE_TTXTSUBS
++                            case SI::TeletextDescriptorTag: {
++#else
+                             case SI::TeletextDescriptorTag:
++#endif /* TTXTSUBS */
+                                  Tpid = esPid;
++#ifdef USE_TTXTSUBS
++                                 SI::TeletextDescriptor *sd = (SI::TeletextDescriptor *)d;
++                                 SI::TeletextDescriptor::Teletext ttxt;
++                                 for (SI::Loop::Iterator it; sd->teletextLoop.getNext(ttxt, it); ) {
++                                     bool isSubtitlePage = (ttxt.getTeletextType() == 0x02) || (ttxt.getTeletextType() == 0x05);
++                                     if ((NumTPages < MAXTXTPAGES) && ttxt.languageCode[0] && isSubtitlePage) {
++                                        strn0cpy(TeletextSubtitlePages[NumTPages].ttxtLanguage, I18nNormalizeLanguageCode(ttxt.languageCode), MAXLANGCODE1);
++                                        TeletextSubtitlePages[NumTPages].ttxtPage = ttxt.getTeletextPageNumber();
++                                        TeletextSubtitlePages[NumTPages].ttxtMagazine = ttxt.getTeletextMagazineNumber();
++                                        TeletextSubtitlePages[NumTPages].ttxtType = ttxt.getTeletextType();
++                                        NumTPages++;
++                                        }
++                                     }
++                                 }
++#endif /* TTXTSUBS */
+                                  break;
+                             case SI::ISO639LanguageDescriptorTag: {
+                                  SI::ISO639LanguageDescriptor *ld = (SI::ISO639LanguageDescriptor *)d;
+@@ -491,7 +517,17 @@
+             }
+         if (Setup.UpdateChannels >= 2) {
+            Channel->SetPids(Vpid, Ppid, Vtype, Apids, Atypes, ALangs, Dpids, Dtypes, DLangs, Spids, SLangs, Tpid);
++#ifdef USE_TTXTSUBS
++           if (NumTPages < MAXTXTPAGES) {
++	      int manualPageNumber = cVDRTtxtsubsHookListener::Hook()->ManualPageNumber(Channel);
++	      if (manualPageNumber)
++                 TeletextSubtitlePages[NumTPages++] = tTeletextSubtitlePage(manualPageNumber);
++              }
++           Channel->SetTeletextSubtitlePages(TeletextSubtitlePages, NumTPages);
++	   Channel->SetCaIds(CaDescriptors->CaIds());
++#else
+            Channel->SetCaIds(CaDescriptors->CaIds());
++#endif /* TTXTSUBS */
+            Channel->SetSubtitlingDescriptors(SubtitlingTypes, CompositionPageIds, AncillaryPageIds);
+            }
+         Channel->SetCaDescriptors(CaDescriptorHandler.AddCaDescriptors(CaDescriptors));

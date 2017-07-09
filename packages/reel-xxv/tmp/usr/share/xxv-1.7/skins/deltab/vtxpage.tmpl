@@ -1,0 +1,51 @@
+<!-- VTXTemplate -->
+<h1><?% gettext("Teletext") %?></h1>
+<!-- ###### Seite ###### -->
+<?% IF data.0 >= 1 %?>
+<?% channel = data.0.3 %?>
+<?% url = "?cmd=vt&amp;channel=${channel}" %?>
+<?% END %?>
+<div id="sidebar">
+    <p class="section"><?% gettext("Teletext",20) %?></p>
+    <form action="">
+    <p>
+    <select size="5" name='chan' onchange="di('?cmd=vt&amp;channel=',this.form.chan.options[this.form.chan.options.selectedIndex].value)">
+    	<?% FOREACH ch IN param.channels %?>
+    	    <option value="<?% ch.1 %?>" <?% 'selected="selected"' IF channel == ch.1 %?>><?% ch.0 %?></option>
+    	<?% END %?>
+    </select>
+    </p>
+    </form>
+<?% IF channel %?>
+    <p class="section"><?% gettext("Page",20) %?></p>
+    <form method="post" action="<?% url %?>">
+    <p>
+        <input type="text" name="page" size="18" value="<?% data.0.1 %?>" />
+    </p>
+    </form>
+    <p style="color:#aaaaaa;">
+    <?% IF data.0.4 != 0 %?><a href="<?% url %?>"><img src="images/home.<?% global.imagetyp %?>" alt="" title="<?% gettext("First page") %?>" /></a><?% ELSE %?><img src="images/home.<?% global.imagetyp %?>" alt="" title="<?% gettext("First page") %?>" /><?% END %?>&nbsp;
+    <?% IF data.0.4 != 0 %?><a href="<?% url %?>"><?% gettext("First page",20) %?></a><?% ELSE %?><?% gettext("First page",20) %?><?% END %?><br />
+    <?% IF data.0.4 != 0 %?><a href="<?% url %?>&amp;page=<?% data.0.4 %?>"><img src="images/back.<?% global.imagetyp %?>" alt="" title="<?% gettext("Previous page") %?>" /></a><?% ELSE %?><img src="images/back.<?% global.imagetyp %?>" alt="" title="<?% gettext("Previous page") %?>" /><?% END %?>&nbsp;
+    <?% IF data.0.4 != 0 %?><a href="<?% url %?>&amp;page=<?% data.0.4 %?>"><?% gettext("Previous page",20) %?></a><?% ELSE %?><?% gettext("Previous page",20) %?><?% END %?><br />
+    <?% IF data.0.5 != 0 %?><a href="<?% url %?>&amp;page=<?% data.0.5 %?>"><img src="images/forward.<?% global.imagetyp %?>" alt="" title="<?% gettext("Next page") %?>" /></a><?% ELSE %?><img src="images/forward.<?% global.imagetyp %?>" alt="" title="<?% gettext("Next page") %?>" /><?% END %?>&nbsp;
+    <?% IF data.0.5 != 0 %?><a href="<?% url %?>&amp;page=<?% data.0.5 %?>"><?% gettext("Next page",20) %?></a><?% ELSE %?><?% gettext("Next page",20) %?><?% END %?><br />
+    </p>
+    <p class="section"><?% gettext("Search",20) %?></p>
+    <form method="post" action="?cmd=vs&amp;channel=<?% channel %?>">
+    <p>
+    	<input type="text" name="data" size="18" value="" />
+    </p>
+    </form>
+<?% END %?>
+</div>
+<?% global.sidebar = 1 %?>
+<?% FOREACH zeile IN data %?>
+<?% id=zeile.0;page=zeile.1;subpage=zeile.2;channels=zeile.3;prev=zeile.4;next=zeile.5;mtime=zeile.6 %?>
+<div style="float:left; margin:5px;" id="<?% id %?>">
+  <h2><?% gettext("Page") %?>&nbsp;<?% page; IF subpage > 0 %?>/<?% subpage; END %?></h2>
+  <div id="vt">
+    <?% zeile.7 %?>
+  </div>
+</div><?% END %?>
+

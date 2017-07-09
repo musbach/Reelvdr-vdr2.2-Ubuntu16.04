@@ -1,0 +1,21 @@
+reelchannellist.o: reelchannellist.c favourites.h menu.h menuitem.h \
+ channelListFilter.h activelist.h setup.h
+activelist.o: activelist.c activelist.h menu.h menuitem.h \
+ channelListFilter.h favourites.h
+menu.o: menu.c menu.h menuitem.h channelListFilter.h activelist.h tools.h \
+ MenuCISlot.h MenuEditChannel.h menu-vdr.h MenuMoveChannels.h \
+ favourites.h
+menuitem.o: menuitem.c menuitem.h tools.h
+channelListFilter.o: channelListFilter.c channelListFilter.h tools.h \
+ favourites.h
+tools.o: tools.c tools.h
+setup.o: setup.c setup.h
+MenuMoveChannels.o: MenuMoveChannels.c MenuMoveChannels.h menu.h \
+ menuitem.h channelListFilter.h
+favourites.o: favourites.c favourites.h menuitem.h menu.h \
+ channelListFilter.h activelist.h MenuCISlot.h MenuEditChannel.h \
+ menu-vdr.h
+MenuEditChannel.o: MenuEditChannel.c MenuEditChannel.h menu-vdr.h \
+ ci-vdr.h channels-vdr.h
+MenuCISlot.o: MenuCISlot.c MenuCISlot.h MenuEditChannel.h menu-vdr.h \
+ favourites.h menu.h menuitem.h channelListFilter.h

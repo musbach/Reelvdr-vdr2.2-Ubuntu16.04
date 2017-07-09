@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/vdr-mcli-plugin/!svn/ver/89/patches
+END
+vdr-1.4.0-closefilter.patch
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/vdr-mcli-plugin/!svn/ver/1/patches/vdr-1.4.0-closefilter.patch
+END
+vdr-1.6.0-intcamdevices.patch
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/vdr-mcli-plugin/!svn/ver/1/patches/vdr-1.6.0-intcamdevices.patch
+END
+reelvdr-device-handling-patch.diff
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/vdr-mcli-plugin/!svn/ver/1/patches/reelvdr-device-handling-patch.diff
+END
+vdr-1.6-device-consistent-destruct.patch
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/vdr-mcli-plugin/!svn/ver/1/patches/vdr-1.6-device-consistent-destruct.patch
+END
+vdr-1.6.0-altmenuaction.patch
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/vdr-mcli-plugin/!svn/ver/89/patches/vdr-1.6.0-altmenuaction.patch
+END
+vdr-1.6-section-read-abstraction.patch
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/vdr-mcli-plugin/!svn/ver/1/patches/vdr-1.6-section-read-abstraction.patch
+END

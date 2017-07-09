@@ -1,0 +1,9 @@
+Package: system-utils
+Version: 25.0.4
+Section: reel-ice
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: system-utils
+Description: system-utils for Intel CE
+Description-de: System-Utilities für Intel CE

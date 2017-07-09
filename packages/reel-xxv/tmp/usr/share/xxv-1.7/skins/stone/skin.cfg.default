@@ -1,0 +1,11 @@
+<?% ######################################################################## %?>
+<?% # 0 = Show/1 = Hide Description on program,now,search %?>
+<?% SET global.hideDescription = 0 %?>
+<?% ######################################################################## %?>
+<?% # Prefered control at now/rlist %?>
+<?% # 0 = Stream live TV / recording as webcast %?>
+<?% # 1 = Switch channel / Start playback with SVDRP  %?>
+<?% SET global.preferedlocal = 0 %?>
+<?% ######################################################################## %?>
+<?% # Limit rows per page %?>
+<?% SET global.pagelimit = 200 %?>

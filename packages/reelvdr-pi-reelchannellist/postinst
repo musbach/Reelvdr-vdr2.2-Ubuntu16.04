@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0
+
+# make sure pi-bouquets is automatically deinstalled
+
+Script="/var/spool/vdr/reelvdr-pi-reelchannels.postinst.sh"
+
+[ -d `dirname $Script` ] || mkdir -p `dirname $Script`
+
+cat << EOF > $Script
+#!/bin/sh
+aptitude markauto -y reelvdr-pi-bouquets
+rm -f $0
+EOF
+
+chmod 775 $Script
+
+exit 0

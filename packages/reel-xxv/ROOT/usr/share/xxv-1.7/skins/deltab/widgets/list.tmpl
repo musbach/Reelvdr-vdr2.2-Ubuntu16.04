@@ -1,0 +1,44 @@
+<!-- list -->
+<tr>
+    <td valign="top">
+        <?% data.msg %?>
+    </td>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% UNLESS val.max %?>
+            <?% values = val.join(',').split(',') %?>
+        <?% ELSE %?>
+            <?% values = val %?>
+        <?% END %?>
+        <?% IF data.options == 'multi' %?>
+            <select style="width:400px;" name="<?% data.NAME %?>" multiple="multiple" size="10">
+        <?% ELSE %?>
+            <select style="width:400px;" name="<?% data.NAME %?>">
+        <?% END %?>
+            <?% FOREACH l IN data.choices %?>
+                <?% sel = '' %?>
+                <?% dis = '' %?>
+                <?% FOREACH valch IN values %?>
+                    <?% IF valch == l.1 %?>
+                    <?% sel = ' selected="selected"';LAST %?>
+                    <?% END %?>
+                <?% END %?>
+                <?% FOREACH valch IN data.disabled %?>
+                    <?% IF valch == l.1 %?>
+                    <?% dis = ' disabled="disabled"';LAST %?>
+                    <?% END %?>
+                <?% END %?>
+            <?% IF l.2 && l.2 != optgroup %?>
+              <?% IF optgroup %?>
+              </optgroup>
+              <?% END %?>
+              <optgroup label="<?% optgroup = l.2;l.2 %?>">
+            <?% END %?>
+                <option value='<?% l.1 %?>'<?% sel %?><?% dis %?>><?% l.0 %?></option>
+            <?% END %?>
+            <?% IF optgroup %?>
+              </optgroup>
+            <?% END %?>
+            </select>
+    </td>
+</tr>

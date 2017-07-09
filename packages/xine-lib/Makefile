@@ -1,0 +1,83 @@
+#just for the reelbox package build-system
+
+RELEASE := $(shell lsb_release -rs)
+
+ifeq ($(RELEASE), 7.10)
+  TARGET_VERSION := 1.2.4
+  #PATCHES := xine-lib-debian.diff xine-lib-reel.diff xine-lib-vdr.diff
+  #PATCHES := xine-lib-debian.diff xine-lib-reel.diff
+  PATCHES := $(RELEASE)/xine-lib_1.1.8-1ubuntu1.diff \
+  	$(RELEASE)/xine-lib-reel.diff \
+  	$(RELEASE)/xine-lib-titlechapter.diff \
+  	$(RELEASE)/xine-lib-maxredirect.diff \
+  	$(RELEASE)/xine-lib-matroska.diff
+else ifeq  ($(RELEASE), 8.04)
+  TARGET_VERSION := 1.1.11.1
+  PATCHES := $(RELEASE)/xine-lib_1.1.11.1-ubuntu.diff \
+  	$(RELEASE)/xine-lib-1.1.11.1-reel.diff \
+  	$(RELEASE)/xine-lib-maxredirect.diff \
+  	$(RELEASE)/xine-lib-matroska.diff
+else ifeq  ($(RELEASE), 13.10)
+  TARGET_VERSION := 1.2.01.1
+  PATCHES := $(RELEASE)/xine-lib_1.1.11.1-ubuntu.diff \
+  	$(RELEASE)/xine-lib-1.1.11.1-reel.diff \
+  	$(RELEASE)/xine-lib-maxredirect.diff \
+  	$(RELEASE)/xine-lib-matroska.diff \
+  	$(RELEASE)/0001-xvmc.patch \
+  	$(RELEASE)/0002-upstream-vaapi-delay.patch
+else ifeq  ($(RELEASE), 14.04)
+  TARGET_VERSION := 1-2-79bf8d28f792
+  PATCHES := \
+  	$(RELEASE)/0001-xvmc.patch \
+  	$(RELEASE)/0002-upstream-vaapi-delay.patch
+else ifeq  ($(RELEASE), 16.04)
+  TARGET_VERSION := 1.4
+  PATCHES := \
+  	$(RELEASE)/0001-xvmc.patch \
+  	$(RELEASE)/0002-upstream-vaapi-delay.patch
+endif
+
+all: deb
+
+deb: xine-lib-$(TARGET_VERSION)/.ispatched
+	#xine-lib-$(TARGET_VERSION)/debian/changelog
+	cp $(RELEASE)/changelog $(<D)/debian/
+	echo "this here is really really experimental..."
+	cd xine-lib-$(TARGET_VERSION) ; dpkg-buildpackage -rfakeroot -us -uc -tc
+	#cd xine-lib-$(TARGET_VERSION) ; dpkg-buildpackage -us -uc -tc
+
+
+xine-lib-$(TARGET_VERSION)/debian/changelog: $(RELEASE)/changelog
+	#Todo: patch version/timestamp!
+	cp $< $@
+	touch $@
+
+
+xine-lib-$(TARGET_VERSION)/.ispatched: xine-lib-$(TARGET_VERSION)/configure
+	#cat $(PATCHES) | patch -d $(<D) -p1
+	#chmod 755 $(@D)/debian/rules
+	#./$(@D)/autogen.sh
+	echo "########################################"
+	#$(@D)/configure --disable-vcd
+	#chmod 755 $(@D)/rules
+	ln -s $(@D)/debian
+	chmod 755 debian/rules
+	touch $@
+
+
+xine-lib-$(TARGET_VERSION)/configure: xine-lib-$(TARGET_VERSION).tar.bz2
+	echo "(RELEASE): $(RELEASE)"
+	#tar -jxf tip.tar.bz2 
+	#touch $@
+
+xine-lib-$(TARGET_VERSION).tar.bz2:
+	#wget http://surfnet.dl.sourceforge.net/project/xine/xine-lib%20%28xine%20core%29/1.1.11.1/xine-lib-1.1.11.1.tar.bz2
+	#wget http://anonscm.debian.org/hg/xine-lib/xine-lib-1.2/archive/tip.tar.bz2
+
+
+clean:
+	#-rm -rf xine-lib-$(TARGET_VERSION)
+	#-rm -f *.deb *.dsc *.changes *.tar.gz
+	-rm -f *.deb *.dsc *.changes
+	-rm -rf debian/*
+	-rm -rf a.out config.log config.status contrib/ doc/ include/ lib/ libtool m4/ misc/ po/ src/ win32/

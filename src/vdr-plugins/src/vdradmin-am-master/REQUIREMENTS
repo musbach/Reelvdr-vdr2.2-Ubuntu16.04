@@ -1,0 +1,5 @@
+* In order to function properly you need to have a running Perl installation with some external modules.
+
+  Please run "./make.sh check" to check required Perl modules and install missing ones.
+
+2006-11-29, Andreas Mair

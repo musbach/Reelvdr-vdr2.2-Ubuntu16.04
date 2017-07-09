@@ -1,0 +1,220 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#
+#valid types:
+# script - for scripts, default 755, root.root
+# exe    - like script, but will be stripped on packaging
+# sexe   - setuid root executeable, 4755, root.root, strip
+# lib	 - library,     755, root.root, no strip
+# cfg    - config file, 644, root.root
+# bin    - binaries, i.e. firmware, 644, root.root
+# any other files will be installed "as they are", so be careful about permissions!
+#
+# src rel. to $(SRCDIR)			dest					type	owner	group
+
+# Config
+etc/vdr/channels.conf
+
+# Plugin and Translation
+vdr-plugins/lib/libvdr-channelscan.so.2.2.0	usr/lib/vdr/libvdr-channelscan.so.2.2.0	lib	-
+vdr-2.2.0/locale/ca_ES/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/cs_CZ/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/da_DK/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/de_DE/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/el_GR/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/es_ES/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/et_EE/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/fi_FI/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/fr_FR/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/hr_HR/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/hu_HU/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/it_IT/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/nl_NL/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/nn_NO/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/pl_PL/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/pt_PT/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/ro_RO/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/ru_RU/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/sl_SI/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/sv_SE/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-channelscan.mo
+vdr-2.2.0/locale/tr_TR/LC_MESSAGES/vdr-channelscan.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-channelscan.mo
+
+
+# Transponderlist
+
+etc/vdr/plugins/transponders/S2.0E.tpl
+etc/vdr/plugins/transponders/S7.0E.tpl
+etc/vdr/plugins/transponders/S9.0E.tpl
+etc/vdr/plugins/transponders/S74.0W.tpl
+etc/vdr/plugins/transponders/S84.0W.tpl
+etc/vdr/plugins/transponders/S169.0E.tpl
+etc/vdr/plugins/transponders/S55.5W.tpl
+etc/vdr/plugins/transponders/S13.0E.tpl
+etc/vdr/plugins/transponders/S101.0W.tpl
+etc/vdr/plugins/transponders/S33.0E.tpl
+etc/vdr/plugins/transponders/S121.0W.tpl
+etc/vdr/plugins/transponders/S131.0W.tpl
+etc/vdr/plugins/transponders/S53.0E.tpl
+etc/vdr/plugins/transponders/S21.6E.tpl
+etc/vdr/plugins/transponders/S7.0W.tpl
+etc/vdr/plugins/transponders/S83.0E.tpl
+etc/vdr/plugins/transponders/S119.0W.tpl
+etc/vdr/plugins/transponders/S129.0W.tpl
+etc/vdr/plugins/transponders/S139.0W.tpl
+etc/vdr/plugins/transponders/S85.2E.tpl
+etc/vdr/plugins/transponders/S110.0E.tpl
+etc/vdr/plugins/transponders/S120.0E.tpl
+etc/vdr/plugins/transponders/S150.0E.tpl
+etc/vdr/plugins/transponders/S122.2E.tpl
+etc/vdr/plugins/transponders/S160.0E.tpl
+etc/vdr/plugins/transponders/S108.0E.tpl
+etc/vdr/plugins/transponders/S180.0E.tpl
+etc/vdr/plugins/transponders/S43.0W.tpl
+etc/vdr/plugins/transponders/S53.0W.tpl
+etc/vdr/plugins/transponders/S118.0E.tpl
+etc/vdr/plugins/transponders/S63.0W.tpl
+etc/vdr/plugins/transponders/S72.7W.tpl
+etc/vdr/plugins/transponders/S92.2E.tpl
+etc/vdr/plugins/transponders/S98.5E.tpl
+etc/vdr/plugins/transponders/S128.0E.tpl
+etc/vdr/plugins/transponders/S138.0E.tpl
+etc/vdr/plugins/transponders/S138.5W.tpl
+etc/vdr/plugins/transponders/S148.0E.tpl
+etc/vdr/plugins/transponders/S24.5W.tpl
+etc/vdr/plugins/transponders/S83.0W.tpl
+etc/vdr/plugins/transponders/S34.5W.tpl
+etc/vdr/plugins/transponders/S158.0E.tpl
+etc/vdr/plugins/transponders/S93.0W.tpl
+etc/vdr/plugins/transponders/S110.0W.tpl
+etc/vdr/plugins/transponders/sources.conf
+etc/vdr/plugins/transponders/S42.0E.tpl
+etc/vdr/plugins/transponders/S31.3E.tpl
+etc/vdr/plugins/transponders/S62.0E.tpl
+etc/vdr/plugins/transponders/S72.0E.tpl
+etc/vdr/plugins/transponders/S23.5E.tpl
+etc/vdr/plugins/transponders/S107.3W.tpl
+etc/vdr/plugins/transponders/S148.0W.tpl
+etc/vdr/plugins/transponders/S93.5E.tpl
+etc/vdr/plugins/transponders/S5.0E.tpl
+etc/vdr/plugins/transponders/S22.0W.tpl
+etc/vdr/plugins/transponders/S100.5E.tpl
+etc/vdr/plugins/transponders/S110.5E.tpl
+etc/vdr/plugins/transponders/S72.0W.tpl
+etc/vdr/plugins/transponders/S82.0W.tpl
+etc/vdr/plugins/transponders/S92.0W.tpl
+etc/vdr/plugins/transponders/S123.2W.tpl
+etc/vdr/plugins/transponders/S2.4W.tpl
+etc/vdr/plugins/transponders/S99.4W.tpl
+etc/vdr/plugins/transponders/S21.0E.tpl
+etc/vdr/plugins/transponders/S5.0W.tpl
+etc/vdr/plugins/transponders/S42.5E.tpl
+etc/vdr/plugins/transponders/S127.0W.tpl
+etc/vdr/plugins/transponders/S39.0E.tpl
+etc/vdr/plugins/transponders/S49.0E.tpl
+etc/vdr/plugins/transponders/S137.0W.tpl
+etc/vdr/plugins/transponders/S177.0W.tpl
+etc/vdr/plugins/transponders/S11.0W.tpl
+etc/vdr/plugins/transponders/S116.0E.tpl
+etc/vdr/plugins/transponders/S61.0W.tpl
+etc/vdr/plugins/transponders/S136.0E.tpl
+etc/vdr/plugins/transponders/S12.5W.tpl
+etc/vdr/plugins/transponders/S146.0E.tpl
+etc/vdr/plugins/transponders/S91.0W.tpl
+etc/vdr/plugins/transponders/S156.0E.tpl
+etc/vdr/plugins/transponders/S166.0E.tpl
+etc/vdr/plugins/transponders/S72.5W.tpl
+etc/vdr/plugins/transponders/S10.0E.tpl
+etc/vdr/plugins/transponders/S79.0W.tpl
+etc/vdr/plugins/transponders/S99.0W.tpl
+etc/vdr/plugins/transponders/S40.0E.tpl
+etc/vdr/plugins/transponders/S60.0E.tpl
+etc/vdr/plugins/transponders/S4.0W.tpl
+etc/vdr/plugins/transponders/S80.0E.tpl
+etc/vdr/plugins/transponders/S90.0E.tpl
+etc/vdr/plugins/transponders/S38.0E.tpl
+etc/vdr/plugins/transponders/S91.5E.tpl
+etc/vdr/plugins/transponders/S88.0E.tpl
+etc/vdr/plugins/transponders/S116.8W.tpl
+etc/vdr/plugins/transponders/S20.0W.tpl
+etc/vdr/plugins/transponders/S26.2E.tpl
+etc/vdr/plugins/transponders/S30.0W.tpl
+etc/vdr/plugins/transponders/S105.0E.tpl
+etc/vdr/plugins/transponders/S50.0W.tpl
+etc/vdr/plugins/transponders/S70.0W.tpl
+etc/vdr/plugins/transponders/S135.5E.tpl
+etc/vdr/plugins/transponders/S145.0E.tpl
+etc/vdr/plugins/transponders/S31.5W.tpl
+etc/vdr/plugins/transponders/S18.0W.tpl
+etc/vdr/plugins/transponders/S61.5W.tpl
+etc/vdr/plugins/transponders/S58.0W.tpl
+etc/vdr/plugins/transponders/S30.5E.tpl
+etc/vdr/plugins/transponders/S105.0W.tpl
+etc/vdr/plugins/transponders/S125.0W.tpl
+etc/vdr/plugins/transponders/S135.0W.tpl
+etc/vdr/plugins/transponders/S70.5E.tpl
+etc/vdr/plugins/transponders/S57.0E.tpl
+etc/vdr/plugins/transponders/S19.2E.tpl
+etc/vdr/plugins/transponders/S68.5E.tpl
+etc/vdr/plugins/transponders/S78.5E.tpl
+etc/vdr/plugins/transponders/S124.0E.tpl
+etc/vdr/plugins/transponders/S134.0E.tpl
+etc/vdr/plugins/transponders/S144.0E.tpl
+etc/vdr/plugins/transponders/S154.0E.tpl
+etc/vdr/plugins/transponders/S105.5E.tpl
+etc/vdr/plugins/transponders/S40.5W.tpl
+etc/vdr/plugins/transponders/S164.0E.tpl
+etc/vdr/plugins/transponders/S107.7E.tpl
+etc/vdr/plugins/transponders/S87.0W.tpl
+etc/vdr/plugins/transponders/S97.0W.tpl
+etc/vdr/plugins/transponders/S111.1W.tpl
+etc/vdr/plugins/transponders/S16.0E.tpl
+etc/vdr/plugins/transponders/S26.0E.tpl
+etc/vdr/plugins/transponders/S36.0E.tpl
+etc/vdr/plugins/transponders/S33.5E.tpl
+etc/vdr/plugins/transponders/S32.8E.tpl
+etc/vdr/plugins/transponders/S56.0E.tpl
+etc/vdr/plugins/transponders/S28.2E.tpl
+etc/vdr/plugins/transponders/S66.0E.tpl
+etc/vdr/plugins/transponders/S87.5E.tpl
+etc/vdr/plugins/transponders/S113.0E.tpl
+etc/vdr/plugins/transponders/S131.0E.tpl
+etc/vdr/plugins/transponders/S27.5W.tpl
+etc/vdr/plugins/transponders/S37.5W.tpl
+etc/vdr/plugins/transponders/S103.0W.tpl
+etc/vdr/plugins/transponders/S78.0W.tpl
+etc/vdr/plugins/transponders/S93.1W.tpl
+etc/vdr/plugins/transponders/S113.0W.tpl
+etc/vdr/plugins/transponders/S123.0W.tpl
+etc/vdr/plugins/transponders/S133.0W.tpl
+etc/vdr/plugins/transponders/S45.0E.tpl
+etc/vdr/plugins/transponders/S50.2E.tpl
+etc/vdr/plugins/transponders/S55.0E.tpl
+etc/vdr/plugins/transponders/S75.0E.tpl
+etc/vdr/plugins/transponders/S95.0E.tpl
+etc/vdr/plugins/transponders/S76.5E.tpl
+etc/vdr/plugins/transponders/S96.5E.tpl
+etc/vdr/plugins/transponders/S132.0E.tpl
+etc/vdr/plugins/transponders/S152.0E.tpl
+etc/vdr/plugins/transponders/S15.0W.tpl
+etc/vdr/plugins/transponders/S162.0E.tpl
+etc/vdr/plugins/transponders/S2.5W.tpl
+etc/vdr/plugins/transponders/S45.0W.tpl
+etc/vdr/plugins/transponders/S65.0W.tpl
+etc/vdr/plugins/transponders/S68.0W.tpl
+etc/vdr/plugins/transponders/S95.0W.tpl
+etc/vdr/plugins/transponders/S109.8W.tpl
+etc/vdr/plugins/transponders/S8.0W.tpl
+etc/vdr/plugins/transponders/S64.0E.tpl
+etc/vdr/plugins/transponders/S74.0E.tpl
+etc/vdr/plugins/transponders/S80.9W.tpl
+etc/vdr/plugins/transponders/S42.5W.tpl
+etc/vdr/plugins/transponders/S81.5E.tpl
+etc/vdr/plugins/transponders/S76.8W.tpl
+etc/vdr/plugins/transponders/S16.5W.tpl
+etc/vdr/plugins/transponders/S177.9E.tpl
+etc/vdr/plugins/transponders/S0.8W.tpl
+etc/vdr/plugins/transponders/S54.8E.tpl
+etc/vdr/plugins/transponders/S50.8E.tpl
+etc/vdr/plugins/transponders/S169.1E.tpl
+etc/vdr/plugins/transponders/S15.8E.tpl
+etc/vdr/plugins/transponders/Sat.tpl

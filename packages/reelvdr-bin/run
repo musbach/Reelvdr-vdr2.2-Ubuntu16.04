@@ -1,0 +1,22 @@
+#!/bin/bash
+cd /usr/src/reelbox/testing/src/vdr
+make clean
+if make all
+  then
+    echo "OK -> do deb"
+else
+    echo "error"
+fi
+cd /usr/src/reelbox/testing/packages/bin
+make clean
+if make all
+  then
+    echo "OK"
+    dpkg -i /usr/src/reelbox/testing/packages/reelvdr-bin*.deb
+    sudo service reelvdr stop
+    sleep 6
+    sudo service reelvdr start
+    hwclock --show
+else
+    echo "error"
+fi

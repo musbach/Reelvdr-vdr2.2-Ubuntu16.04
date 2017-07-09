@@ -1,0 +1,80 @@
+--- menu.h	(revision 15412)
++++ menu.h	(revision 15413)
+@@ -20,7 +20,7 @@
+ #include "skins.h"
+ #ifdef USE_SETUP
+ #include "submenu.h"
+-#endif /* USE_SETUP */
++#endif /* SETUP */
+ 
+ class cMenuText : public cOsdMenu {
+ private:
+@@ -124,31 +133,40 @@
+ #endif /* REELVDR*/
+ 
+ class cMenuMain : public cOsdMenu {
++#ifdef REELVDR
++protected:
++  cMenuMain(const char *Title):cOsdMenu(Title){}; // Allow custom constructor
++#else
+ private:
++#endif
+ #ifdef USE_SETUP
+   int    nrDynamicMenuEntries;
+-#endif /* USE_SETUP */
++#endif /* SETUP */
+   bool replaying;
+   cOsdItem *stopReplayItem;
+   cOsdItem *cancelEditingItem;
+   cOsdItem *stopRecordingItem;
+   int recordControlsState;
+   static cOsdObject *pluginOsdObject;
+-#ifdef REELVDR
+-  static void SetPluginOsdObject(cOsdObject *PluginOsdObject) { pluginOsdObject = PluginOsdObject ; }
+-#endif /* REELVDR */
+ #ifdef USE_SETUP
+   void Set(int current=0);
+   bool Update(bool Force = false);
+   cSubMenu subMenu;
+ #else
+-   void Set(void);
+-   bool Update(bool Force = false);
+-#endif /* USE_SETUP */
++  void Set(void);
++  bool Update(bool Force = false);
++#endif /* SETUP */
+ public:
+   cMenuMain(eOSState State = osUnknown);
+   virtual eOSState ProcessKey(eKeys Key);
+   static cOsdObject *PluginOsdObject(void);
++#ifdef REELVDR
++  static void SetPluginOsdObject(cOsdObject *PluginOsdObject)
++      { pluginOsdObject = PluginOsdObject ; }
++#endif /* REELVDR */
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuMain"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ class cDisplayChannel : public cOsdObject {
+@@ -307,11 +335,20 @@
+ class cReplayControl : public cDvbPlayerControl {
+ private:
+   cSkinDisplayReplay *displayReplay;
++#ifdef USE_JUMPPLAY
++  cMarksReload marks;
++#else
+   cMarks marks;
++#endif /* JUMPPLAY */
+   bool visible, modeOnly, shown, displayFrames;
+   int lastCurrent, lastTotal;
+   bool lastPlay, lastForward;
+   int lastSpeed;
++#ifdef USE_LIEMIEXT
++  int lastSkipSeconds;
++  eKeys lastSkipKey;
++  cTimeMs lastSkipTimeout;
++#endif /* LIEMIEXT */
+   time_t timeoutShow;
+   bool timeSearchActive, timeSearchHide;
+   int timeSearchTime, timeSearchPos;

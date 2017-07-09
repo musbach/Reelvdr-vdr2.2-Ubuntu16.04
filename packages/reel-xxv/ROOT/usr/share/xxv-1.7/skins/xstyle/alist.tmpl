@@ -1,0 +1,96 @@
+<!-- TableTemplate -->
+<h1><?% gettext("Wished automated recordings") %?></h1>
+
+<div id="navcontainer">
+<ul id="navlist">
+    <?% IF allow('anew') %?>
+    <li><a href="?cmd=anew"><?% gettext("Create new autotimer") %?></a></li>
+    <?% END %?>
+    <li><a href="#" onClick="suche('<?% gettext("Search text") %?>', '?cmd=asearch&data=')"><?% gettext("Search in autotimer") %?></a></li>
+    <?% IF allow('aupdate') %?>
+    <li><a href="?cmd=aupdate"><?% gettext("Search autotimer") %?></a></li>
+    <?% END %?>
+</ul>
+</div>
+
+
+<table border="0" width="95%">
+<form name='Autotimer'>
+<?% INCLUDE 'widgets/referer.tmpl' %?>
+
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <th style="white-space: nowrap">
+                <?% field %?>
+                <?% IF param.sortable %?>
+                <a href="?cmd=<?% cgi.param('cmd') %?>&__sortby=<?% field %?>&__desc=0"><img src="images/asc.png"></a><a href="?cmd=<?% cgi.param('cmd') %?>&__sortby=<?% field %?>&__desc=1"><img src="images/desc.png"></a>
+                <?% END %?>
+            </th>
+        <?% END %?>
+        </tr>
+        <?% x = -1 %?>
+        <?% FOREACH zeile IN data %?>
+        <?% IF zeile.1 == 'n' %?>
+            <?% myclass = "deactive" %?>
+        <?% ELSE %?>
+            <?% myclass = "" %?>
+        <?% END %?>
+        <?% x = x + 1 %?>
+        <tr class="<?% myclass %?>" <?% IF (x mod 2) == 0 %?>bgcolor='#F5F5F5'<?% END %?>>
+            <?% c = 0 %?>
+            <?% FOREACH field IN zeile %?>
+                <?% c = c + 1 %?>
+                <?% IF c == 1; # Id Field %?>
+                <?% Id = zeile.0 %?>
+                <td><nobr>
+                    <div id='icons'>
+                    <?% IF allow('aedit') %?>
+                    <a title="<?% gettext("Edit autotimer") %?>"
+                       href="?cmd=aedit&amp;data=<?% zeile.0 %?>"><img src="images/edit.png"></a>
+                    <?% END %?>
+                    <?% IF allow('adelete') %?>
+                    <a title="<?% gettext("Delete autotimer")  %?>"
+                       href="javascript:sure(document.Autotimer, '<?% gettext("Would you like to delete this autotimer?") %?>\n<?% escape(zeile.2) %?>','?cmd=adelete&amp;data=<?% zeile.0 %?>')">
+                    <img src="images/delete.png">
+                    </a>
+                    <?% END %?>
+                    <?% IF param.timers.$Id.allTimer.size %?>
+                    <a title="active:<?% param.timers.$Id.activeTimer.size %?>&nbsp;deactive:<?% param.timers.$Id.deactiveTimer.size %?>&nbsp;<?% gettext('Timers') %?>"
+                       href="?cmd=tlist&amp;data=<?% param.timers.$Id.allTimer.join(',') %?>"><img src="images/timers.png"></a>
+                    <?% ELSE %?>
+                    <img title="<?% gettext('Timers not found.') %?>" src="images/notimers.png">
+                    <?% END %?>
+                    </div>
+                </td>
+                <?% ELSIF c == 2; # Activ Field %?>
+                <td>
+                  <div id='icons'>
+                    <?% aus = gettext('Off') %?>
+                    <?% an = gettext('On') %?>
+                    <?% IF allow('atoggle') %?>
+                    <a href="javascript:tostatus('?cmd=atoggle&amp;data=<?% zeile.0 %?>')"><img src="images/<?% zeile.1 == 'n' ? "off" : "on" %?>.png"></a>
+                    <?% ELSE %?>
+                    [<?% zeile.1 == 'n' ? aus : an %?>]
+                    <?% END %?>
+                  </div>
+                </td>
+                <?% ELSIF c == 4; # Channel Field %?>
+                <td>
+                    <?% text = "" %?>
+                    <?% FOREACH ch IN field.split(',') %?>
+                        <?% text = "$text ${ch}" %?>
+                        <?% LAST IF text.length > 20 %?>
+                    <?% END %?>
+                    <?% chop(text,20) %?>
+                </td>
+                <?% ELSE %?>
+                <td><?% field %?></td>
+                <?% END %?>
+            <?% END %?>
+        </tr>
+        <?% END %?>
+<?% END %?>
+</form>
+</table>

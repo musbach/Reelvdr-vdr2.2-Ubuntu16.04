@@ -1,0 +1,21 @@
+Scripts for VDR Plugin 'yacoto' Revision History
+------------------------------------------------
+
+2010-10-27: Version 0.4
+- Scripte wieder im Plugin integriert
+- http://redmine.gen2vdr.org/projects/vdr-plugin--yacoto/roadmap?tracker_ids[]=1&tracker_ids[]=2
+
+
+2008-12-18: Version 0.0.2
+
+- http://bugs.htpc-forum.de/changelog_page.php (Projekt Yacoto)
+- replex Patch verbessert (Danke an dunar)
+  http://www.vdr-portal.de/board/thread.php?postid=769887#post769887
+- removed dependency to "grep -P"  
+- yac_update.sh zum Upgrade der conf Dateien (siehe README)
+  
+
+2008-10-06: Version 0.0.1
+
+- http://bugs.htpc-forum.de/changelog_page.php (Projekt Yacoto)
+- Erste Version (yacoto-scripts Paket vom Plugin separiert)

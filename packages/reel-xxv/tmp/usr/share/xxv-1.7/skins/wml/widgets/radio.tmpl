@@ -1,0 +1,17 @@
+<?% ############################################################################
+    val = cgi.param(data.NAME) || data.def;
+    selectitem = 1;
+    FOREACH wert IN data.choices;
+        IF wert == val;
+            selectitem = loop.count;
+            LAST;
+        END;
+    END; 
+   ######################################################################### %?>
+<?% data.msg | truncate(15) %?> : 
+<select name="<?% data.NAME | replace('__','var') %?>" ivalue="<?% selectitem %?>">
+    <?% FOREACH wert IN data.choices %?>
+        <option value="<?% entities(wert) %?>"><?% entities(wert) %?></option>
+    <?% END %?>
+</select><br/>
+<?% global.fomularfield.push(data.NAME) %?>

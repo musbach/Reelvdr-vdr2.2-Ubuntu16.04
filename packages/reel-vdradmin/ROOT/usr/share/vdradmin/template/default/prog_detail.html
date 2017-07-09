@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=<?% charset %?>" />
+	<title><?% title %?></title>
+	<script type="text/javascript" language="JavaScript1.2" src="library.js"></script>
+	<link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% IF usercss %?>
+		<link href="user.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% END %?>
+</head>
+
+<body id="prog_detail" onload="window.focus()">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="group">
+		<tr class="heading">
+			<td class="col_content">
+				<span class="channel_name"><?% channel_name %?></span><?% IF date %?><span class="date_long"><?% date %?></span><span class="time_duration"><span class="time_start"><?% start %?></span> - <span class="time_stop"><?% stop %?></span></span><?% IF vps %?><span class="time_vps"><?% gettext('VPS') %?> <?% vps %?></span><?% END %?><?% END %?>
+			</td>
+		</tr>
+		<tr class="row_even">
+			<td class="col_content">
+				<table border="0" cellspacing="0" cellpadding="0" class="content">
+					<tr>
+						<td class="col_buttons">
+							<span class="action close">
+								<a href="javascript:window.close()"><img src="bilder/close.png" border="0" alt="<?% gettext('close') %?>" onmouseover="window.status='<?% gettext('close') %?>';return true" title="<?% gettext('close') %?>" /></a>
+							</span>
+							<?% IF date %?>
+								<?% IF switchurl %?>
+									<span class="action switch">
+										<a href="javascript:callurl('<?% switchurl %?>')"><img src="bilder/view.png" border="0" alt="<?% gettext('view') %?>" onmouseover="window.status='<?% gettext('view') %?>';return true" title="<?% gettext('view') %?>" /></a>
+									</span>
+								<?% END %?>
+								<?% IF recurl %?>
+									<?% UNLESS timerset %?>
+									  <span class="action record">
+											<a href="javascript:void(opener.location.href='<?% recurl %?>');window.close()"><img src="bilder/rec_button.png" border="0" alt="<?% gettext('record') %?>" onmouseover="window.status='<?% gettext('record') %?>';return true" title="<?% gettext('record') %?>" /></a>
+									  </span>
+									<?% END %?>
+								<?% END %?>
+								<span class="action repeatings">
+									<a href="vdradmin.pl?search=<?% find_title %?>&amp;aktion=prog_summary&amp;submit=go11" target="main"><img src="bilder/find.png" border="0" alt="<?% gettext('search') %?>" onmouseover="window.status='<?% gettext('search') %?>';return true" title="<?% gettext('search') %?>" /></a>
+								</span>
+								<span class="action edit">
+									<a href="javascript:void(opener.location.href='<?% editurl %?>'); window.close()"><img src="bilder/edit.png" border="0" alt="<?% gettext('edit') %?>" onmouseover="window.status='<?% gettext('edit') %?>';return true" title="<?% gettext('edit') %?>" /></a>
+								</span>
+							<?% END %?>
+							<?% IF srch1_url %?>
+								<span class="action imdb">
+									<a href="<?% srch1_url %?>" target="_blank"><img src="bilder/imdb.png" border="0" alt="IMDb" onmouseover="window.status='<?% srch1_title %?>';return true" title="<?% srch1_title %?>" /></a>
+								</span>
+							<?% END %?>
+							<?% IF srch2_url %?>
+								<span class="action imdb">
+									<a href="<?% srch2_url %?>" target="_blank"><img src="bilder/udef_search.png" border="0" alt="Search" onmouseover="window.status='<?% broadcast.srch2_url %?>';return true" title="<?% broadcast.srch2_url %?>" /></a>
+								</span>
+							<?% END %?>
+						</td>
+						<td class="col_epg">
+							<div class="epg_title"><?% title %?></div>
+							<?% IF subtitle %?>
+								<div class="epg_subtitle"><?% subtitle %?></div>
+							<?% END %?>
+							<div class="epg_summary"><?% text %?></div>
+							<?% IF length %?>
+								<div class="epg_length">
+									<h4><?% gettext('Length') %?>:</h4>&nbsp;
+									<?% length %?>
+								</div>
+							<?% END %?>
+							<?% IF video %?>
+								<div class="epg_video">
+									<h4><?% gettext('Video tracks:') %?></h4>&nbsp;
+									<?% video %?>
+								</div>
+							<?% END %?>
+							<?% IF audio %?>
+								<div class="epg_audio">
+									<h4><?% gettext('Audio tracks:') %?></h4>&nbsp;
+									<?% audio %?>
+								</div>
+							<?% END %?>
+							<?% IF subs %?>
+								<div class="epg_subs">
+									<h4><?% gettext('Subtitles:') %?></h4>&nbsp;
+									<?% subs %?>
+								</div>
+							<?% END %?>
+							<?% IF epgimages %?>
+								<div class="epg_images">
+									<?% FOREACH ei = epgimages %?>
+										<img src="<?% ei.image %?>" alt=""/>
+									<?% END %?>
+								</div>
+							<?% END %?>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>

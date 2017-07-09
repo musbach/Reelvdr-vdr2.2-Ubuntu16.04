@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "creating init levels for dyndns and gnudip daemons"
+update-rc.d reel-dyndns defaults 06 80
+
+echo "Start DYNDNS"
+/usr/sbin/dyndnsd -d
+
+echo "Start GNUDIP"
+/usr/sbin/gnudipd -d
+

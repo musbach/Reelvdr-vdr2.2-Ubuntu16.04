@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# set use-iff-running to "yes"
+sed s/^\#use-iff-running=no/"use-iff-running=yes"/ /etc/avahi/avahi-daemon.conf > /tmp/avahi-daemon.conf
+if [ -e /tmp/avahi-daemon.conf ]
+then
+   mv /tmp/avahi-daemon.conf /etc/avahi/
+   /etc/init.d/avahi-daemon restart
+fi
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

@@ -1,0 +1,27 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)				dest					type	owner.group
+etc/reel/p.ipod.conf
+etc/reel/p.netcvupdate.conf
+etc/reel/p.streamdev-client.conf
+etc/reel/p.streamdev-server.conf
+vdr-plugins/lib/libvdr-arghdirector.so.1.4.29	usr/lib/vdr/libvdr-arghdirector.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-bgprocess.so.1.4.29	usr/lib/vdr/libvdr-bgprocess.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-conflictcheckonly.so.1.4.29	usr/lib/vdr/libvdr-conflictcheckonly.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-epgsearch.so.1.4.29	usr/lib/vdr/libvdr-epgsearch.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-epgsearchonly.so.1.4.29	usr/lib/vdr/libvdr-epgsearchonly.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-epgtimers.so.1.4.29	usr/lib/vdr/libvdr-epgtimers.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-extrecmenu.so.1.4.29	usr/lib/vdr/libvdr-extrecmenu.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-femon.so.1.4.29	usr/lib/vdr/libvdr-femon.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-filebrowser.so.1.4.29	usr/lib/vdr/libvdr-filebrowser.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-install.so.1.4.29	usr/lib/vdr/libvdr-install.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-ipod.so.1.4.29	usr/lib/vdr/libvdr-ipod.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-netcv.so.1.4.29	usr/lib/vdr/libvdr-netcv.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-netcvupdate.so.1.4.29	usr/lib/vdr/libvdr-netcvupdate.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-osdteletext.so.1.4.29	usr/lib/vdr/libvdr-osdteletext.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-premiereepg.so.1.4.29	usr/lib/vdr/libvdr-premiereepg.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-setup.so.1.4.29	usr/lib/vdr/libvdr-setup.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-sleeptimer.so.1.4.29	usr/lib/vdr/libvdr-sleeptimer.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-streamdev-client.so.1.4.29	usr/lib/vdr/libvdr-streamdev-client.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-streamdev-server.so.1.4.29	usr/lib/vdr/libvdr-streamdev-server.so.1.4.29	lib	-
+vdr-plugins/lib/libvdr-undelete.so.1.4.29	usr/lib/vdr/libvdr-undelete.so.1.4.29	lib	-

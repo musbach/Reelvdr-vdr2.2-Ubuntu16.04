@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+#removes dead links for dvb firmware
+
+symlink=dvb-ttpci-01.fw
+
+for i in `find /lib/firmware/2.6.* -name $symlink` ; do
+	rm -f $i
+done
+
+
+if [ "$1" = "purge" ]                                                                                           
+then                                                                                                            
+    update-rc.d reelvdr remove >/dev/null                                                                       
+fi

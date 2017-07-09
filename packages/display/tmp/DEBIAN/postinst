@@ -1,0 +1,20 @@
+#!/bin/sh
+
+PLATFORM_DIR=sgx535
+KERNEL_DIR=$(uname -r)
+#TODO: sgx545/sgx545a for CE5300
+
+#cp -a /lib/modules/intel-platforms/$PLATFORM_DIR/pvrsrvkm.ko /lib/modules/2.6.39/kernel/intel/
+cp -a /lib/modules/intel-platforms/$PLATFORM_DIR/pvrsrvkm.ko /lib/modules/$KERNEL_DIR/kernel/intel/
+
+ln -sf /lib/$PLATFORM_DIR/*.so /lib/
+ln -sf /lib/srb/$PLATFORM_DIR/libsrb_sgx.so /lib/srb/
+
+ln -sf /usr/sbin/$PLATFORM_DIR/* /usr/sbin/
+
+depmod -a $(uname -r)
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

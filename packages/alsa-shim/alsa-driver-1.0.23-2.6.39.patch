@@ -1,0 +1,683 @@
+--- alsa-driver-1.0.23/acore/misc_driver.c	2011-07-21 00:41:57.431373759 +0800
++++ alsa-driver-1.0.23/acore/misc_driver_new.c	2011-07-21 00:33:11.290746345 +0800
+@@ -1,6 +1,8 @@
+ #define __NO_VERSION__
+ #include "adriver.h"
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ #include <linux/smp_lock.h>
++#endif
+ #include <linux/vmalloc.h>
+ #include <linux/slab.h>
+ #include <linux/platform_device.h>
+--- alsa-driver-1.0.23/acore/ioctl32/ioctl32_new.c	2011-07-20 23:59:04.961375551 +0800
++++ alsa-driver-1.0.23/acore/ioctl32/ioctl32_new_new.c	2011-07-21 00:44:50.262624387 +0800
+@@ -20,7 +20,9 @@
+ 
+ #include "adriver.h"
+ #include <linux/sched.h>
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ #include <linux/smp_lock.h>
++#endif
+ #include <linux/init.h>
+ #include <linux/time.h>
+ #include <linux/slab.h>
+--- alsa-driver-1.0.23/acore/ioctl32/ioctl32_old.c	2011-07-20 23:59:04.961375551 +0800
++++ alsa-driver-1.0.23/acore/ioctl32/ioctl32_old_new.c	2011-07-21 00:45:28.391374208 +0800
+@@ -20,7 +20,9 @@
+ 
+ #include "adriver.h"
+ #include <linux/sched.h>
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ #include <linux/smp_lock.h>
++#endif
+ #include <linux/init.h>
+ #include <linux/time.h>
+ #include <linux/slab.h>
+--- alsa-driver-1.0.23/alsa-kernel/sound_core.c	2011-07-20 23:59:05.001383647 +0800
++++ alsa-driver-1.0.23/alsa-kernel/sound_core_new.c	2011-07-21 00:49:45.642626525 +0800
+@@ -104,7 +104,9 @@
+ 
+ #include <linux/init.h>
+ #include <linux/slab.h>
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ #include <linux/smp_lock.h>
++#endif
+ #include <linux/types.h>
+ #include <linux/kernel.h>
+ #include <linux/sound.h>
+--- alsa-driver-1.0.23/alsa-kernel/core/pcm_native.c	2011-07-20 23:59:05.001383647 +0800
++++ alsa-driver-1.0.23/alsa-kernel/core/pcm_native_new.c	2011-07-21 00:50:33.270749043 +0800
+@@ -22,7 +22,9 @@
+ #include <linux/mm.h>
+ #include <linux/file.h>
+ #include <linux/slab.h>
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ #include <linux/smp_lock.h>
++#endif
+ #include <linux/time.h>
+ #include <linux/pm_qos_params.h>
+ #include <linux/uio.h>
+--- alsa-driver-1.0.23/alsa-kernel/core/info.c	2011-07-20 23:59:05.001383647 +0800
++++ alsa-driver-1.0.23/alsa-kernel/core/info_new.c	2011-07-21 00:53:00.911361647 +0800
+@@ -23,7 +23,9 @@
+ #include <linux/time.h>
+ #include <linux/mm.h>
+ #include <linux/slab.h>
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ #include <linux/smp_lock.h>
++#endif
+ #include <linux/string.h>
+ #include <sound/core.h>
+ #include <sound/minors.h>
+--- alsa-driver-1.0.23/sound/core/sound.c	2011-07-20 23:59:05.001383647 +0800
++++ alsa-driver-1.0.23/sound/core/sound_new.c	2011-07-21 00:51:19.201371431 +0800
+@@ -21,7 +21,9 @@
+ 
+ #include <linux/init.h>
+ #include <linux/slab.h>
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ #include <linux/smp_lock.h>
++#endif
+ #include <linux/time.h>
+ #include <linux/device.h>
+ #include <linux/moduleparam.h>
+--- alsa-driver-1.0.23/acore/oss/mixer_oss.patch	2011-07-20 23:59:04.951368974 +0800
++++ alsa-driver-1.0.23/acore/oss/mixer_oss_new.patch	2011-07-21 00:33:58.091373828 +0800
+@@ -1,19 +1,21 @@
+---- ../../alsa-kernel/core/oss/mixer_oss.c	2010-04-13 12:01:49.080966488 +0200
+-+++ mixer_oss.c	2010-04-13 13:07:14.784700677 +0200
++--- ../../alsa-kernel/core/oss/mixer_oss.c	2011-07-20 23:59:05.001383647 +0800
+++++ mixer_oss.c	2011-07-21 00:04:21.461999263 +0800
+ @@ -1,3 +1,4 @@
+ +#include "adriver.h"
+  /*
+   *  OSS emulation layer for the mixer interface
+   *  Copyright (c) by Jaroslav Kysela <perex@perex.cz>
+-@@ -20,6 +21,7 @@
++@@ -20,6 +21,9 @@
+   */
+  
+  #include <linux/init.h>
+++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ +#include <linux/smp_lock.h>
+++#endif
+  #include <linux/slab.h>
+  #include <linux/time.h>
+  #include <linux/string.h>
+-@@ -385,25 +387,44 @@
++@@ -385,25 +389,44 @@
+  	return snd_mixer_oss_ioctl1(&fmixer, cmd, arg);
+  }
+  
+--- alsa-driver-1.0.23/acore/oss/pcm_oss.patch	2011-07-20 23:59:04.961375551 +0800
++++ alsa-driver-1.0.23/acore/oss/pcm_oss_new.patch	2011-07-21 00:33:34.881373897 +0800
+@@ -1,19 +1,21 @@
+---- ../../alsa-kernel/core/oss/pcm_oss.c	2010-04-13 12:01:49.084966034 +0200
+-+++ pcm_oss.c	2010-04-13 13:10:22.969200644 +0200
++--- ../../alsa-kernel/core/oss/pcm_oss.c	2011-07-20 23:59:05.001383647 +0800
+++++ pcm_oss.c	2011-07-21 00:32:18.831374013 +0800
+ @@ -1,3 +1,4 @@
+ +#include "adriver.h"
+  /*
+   *  Digital Audio (PCM) abstract layer / OSS compatible
+   *  Copyright (c) by Jaroslav Kysela <perex@perex.cz>
+-@@ -27,6 +28,7 @@
++@@ -27,6 +28,9 @@
+  #endif
+  
+  #include <linux/init.h>
+++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ +#include <linux/smp_lock.h>
+++#endif
+  #include <linux/slab.h>
+  #include <linux/time.h>
+  #include <linux/vmalloc.h>
+-@@ -1913,9 +1915,13 @@
++@@ -1913,9 +1917,13 @@
+  
+  static int snd_pcm_oss_nonblock(struct file * file)
+  {
+@@ -27,7 +29,7 @@
+  	return 0;
+  }
+  
+-@@ -2634,13 +2640,26 @@
++@@ -2634,13 +2642,26 @@
+  	return -EINVAL;
+  }
+  
+@@ -55,7 +57,7 @@
+  static ssize_t snd_pcm_oss_read(struct file *file, char __user *buf, size_t count, loff_t *offset)
+  {
+  	struct snd_pcm_oss_file *pcm_oss_file;
+-@@ -2673,8 +2692,14 @@
++@@ -2673,8 +2694,14 @@
+  	substream = pcm_oss_file->streams[SNDRV_PCM_STREAM_PLAYBACK];
+  	if (substream == NULL)
+  		return -ENXIO;
+@@ -70,7 +72,7 @@
+  #ifdef OSS_DEBUG
+  	printk(KERN_DEBUG "pcm_oss: write %li bytes (wrote %li bytes)\n",
+  	       (long)count, (long)result);
+-@@ -2795,7 +2820,11 @@
++@@ -2795,7 +2822,11 @@
+  		return -EIO;
+  #endif
+  
+@@ -82,7 +84,7 @@
+  		return -EINVAL;
+  
+  	err = snd_pcm_mmap_data(substream, file, area);
+-@@ -2976,15 +3005,21 @@
++@@ -2976,15 +3007,21 @@
+  
+  static const struct file_operations snd_pcm_oss_f_reg =
+  {
+@@ -104,7 +106,7 @@
+  	.mmap =		snd_pcm_oss_mmap,
+  };
+  
+-@@ -3098,3 +3133,5 @@
++@@ -3098,3 +3135,5 @@
+  
+  module_init(alsa_pcm_oss_init)
+  module_exit(alsa_pcm_oss_exit)
+--- alsa-driver-1.0.23/acore/control.patch	2011-07-20 23:59:04.961375551 +0800
++++ alsa-driver-1.0.23/acore/control_new.patch	2011-07-21 01:06:45.951371536 +0800
+@@ -1,20 +1,22 @@
+---- ../alsa-kernel/core/control.c	2010-04-13 12:01:49.080966488 +0200
+-+++ control.c	2010-04-13 13:03:53.852789224 +0200
++--- ../alsa-kernel/core/control.c	2011-07-20 23:59:05.001383647 +0800
+++++ control.c	2011-07-21 00:34:57.741373949 +0800
+ @@ -1,3 +1,5 @@
+ +#define __NO_VERSION__
+ +#include "adriver.h"
+  /*
+   *  Routines for driver control interface
+   *  Copyright (c) by Jaroslav Kysela <perex@perex.cz>
+-@@ -21,6 +23,7 @@
++@@ -21,6 +23,9 @@
+  
+  #include <linux/threads.h>
+  #include <linux/interrupt.h>
+++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ +#include <linux/smp_lock.h>
+++#endif
+  #include <linux/slab.h>
+  #include <linux/vmalloc.h>
+  #include <linux/time.h>
+-@@ -732,6 +735,10 @@
++@@ -732,6 +737,10 @@
+  	return result;
+  }
+  
+@@ -25,7 +27,7 @@
+  static int snd_ctl_elem_read_user(struct snd_card *card,
+  				  struct snd_ctl_elem_value __user *_control)
+  {
+-@@ -788,6 +795,10 @@
++@@ -788,6 +797,10 @@
+  	return result;
+  }
+  
+@@ -36,7 +38,7 @@
+  static int snd_ctl_elem_write_user(struct snd_ctl_file *file,
+  				   struct snd_ctl_elem_value __user *_control)
+  {
+-@@ -1376,26 +1387,45 @@
++@@ -1376,26 +1389,45 @@
+  /*
+   * ioctl32 compat
+   */
+--- alsa-driver-1.0.23/acore/rawmidi.patch	2011-07-20 23:59:04.961375551 +0800
++++ alsa-driver-1.0.23/acore/rawmidi_new.patch	2011-07-21 01:08:22.811374132 +0800
+@@ -1,19 +1,21 @@
+---- ../alsa-kernel/core/rawmidi.c	2010-04-13 12:01:49.084966034 +0200
+-+++ rawmidi.c	2010-04-13 13:04:40.000999370 +0200
++--- ../alsa-kernel/core/rawmidi.c	2011-07-20 23:59:05.001383647 +0800
+++++ rawmidi.c	2011-07-21 01:07:54.331373879 +0800
+ @@ -1,3 +1,4 @@
+ +#include "adriver.h"
+  /*
+   *  Abstract layer for MIDI v1.0 stream
+   *  Copyright (c) by Jaroslav Kysela <perex@perex.cz>
+-@@ -22,6 +23,7 @@
++@@ -22,6 +23,9 @@
+  #include <sound/core.h>
+  #include <linux/major.h>
+  #include <linux/init.h>
+++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ +#include <linux/smp_lock.h>
+++#endif
+  #include <linux/sched.h>
+  #include <linux/slab.h>
+  #include <linux/time.h>
+-@@ -1261,6 +1263,9 @@
++@@ -1261,6 +1265,9 @@
+  			break;
+  		count -= count1;
+  	}
+@@ -23,7 +25,7 @@
+  	if (file->f_flags & O_DSYNC) {
+  		spin_lock_irq(&runtime->lock);
+  		while (runtime->avail != runtime->buffer_size) {
+-@@ -1313,12 +1318,25 @@
++@@ -1313,12 +1320,25 @@
+  
+  /*
+   */
+@@ -50,7 +52,7 @@
+  /*
+  
+   */
+-@@ -1390,15 +1408,21 @@
++@@ -1390,15 +1410,21 @@
+  
+  static const struct file_operations snd_rawmidi_f_ops =
+  {
+--- alsa-driver-1.0.23/acore/hwdep.patch	2011-07-20 23:59:04.971375176 +0800
++++ alsa-driver-1.0.23/acore/hwdep_new.patch	2011-07-21 01:11:12.991371642 +0800
+@@ -1,19 +1,21 @@
+---- ../alsa-kernel/core/hwdep.c	2008-08-08 15:08:59.000000000 +0200
+-+++ hwdep.c	2008-08-08 15:10:26.000000000 +0200
++--- ../alsa-kernel/core/hwdep.c	2011-07-20 23:59:05.001383647 +0800
+++++ hwdep.c	2011-07-21 01:10:31.861371268 +0800
+ @@ -1,3 +1,4 @@
+ +#include "adriver.h"
+  /*
+   *  Hardware dependent layer
+   *  Copyright (c) by Jaroslav Kysela <perex@perex.cz>
+-@@ -21,6 +22,7 @@
++@@ -21,6 +22,9 @@
+  
+  #include <linux/major.h>
+  #include <linux/init.h>
+++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ +#include <linux/smp_lock.h>
+++#endif
+  #include <linux/slab.h>
+  #include <linux/time.h>
+  #include <linux/mutex.h>
+-@@ -305,27 +307,46 @@
++@@ -306,27 +310,46 @@
+  	return -ENOIOCTLCMD;
+  }
+  
+--- alsa-driver-1.0.23/acore/seq/seq_clientmgr.patch	2011-07-20 23:59:04.971375176 +0800
++++ alsa-driver-1.0.23/acore/seq/seq_clientmgr_new.patch	2011-07-21 01:21:19.641804280 +0800
+@@ -1,20 +1,22 @@
+---- ../../alsa-kernel/core/seq/seq_clientmgr.c	2010-04-13 12:01:49.084966034 +0200
+-+++ seq_clientmgr.c	2010-04-13 13:11:27.005575952 +0200
++--- ../../alsa-kernel/core/seq/seq_clientmgr.c	2011-07-20 23:59:05.001383647 +0800
+++++ seq_clientmgr.c	2011-07-21 01:20:35.951371541 +0800
+ @@ -1,3 +1,5 @@
+ +#define __NO_VERSION__
+ +#include "adriver.h"
+  /*
+   *  ALSA sequencer Client Manager
+   *  Copyright (c) 1998-2001 by Frank van de Pol <fvdpol@coil.demon.nl>
+-@@ -22,6 +24,7 @@
++@@ -22,6 +24,9 @@
+   */
+  
+  #include <linux/init.h>
+++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ +#include <linux/smp_lock.h>
+++#endif
+  #include <linux/slab.h>
+  #include <sound/core.h>
+  #include <sound/minors.h>
+-@@ -2211,12 +2214,25 @@
++@@ -2211,12 +2216,25 @@
+  	return snd_seq_do_ioctl(client, cmd, (void __user *) arg);
+  }
+  
+@@ -41,7 +43,7 @@
+  /* -------------------------------------------------------- */
+  
+  
+-@@ -2550,15 +2566,21 @@
++@@ -2550,15 +2568,21 @@
+  
+  static const struct file_operations snd_seq_f_ops =
+  {
+--- alsa-driver-1.0.23/acore/timer.patch	2011-07-20 23:59:04.961375551 +0800
++++ alsa-driver-1.0.23/acore/timer_new.patch	2011-07-21 01:35:23.561371625 +0800
+@@ -1,19 +1,21 @@
+---- ../alsa-kernel/core/timer.c	2010-04-13 12:01:49.084966034 +0200
+-+++ timer.c	2010-04-13 13:05:39.544700178 +0200
++--- ../alsa-kernel/core/timer.c	2011-07-20 23:59:05.001383647 +0800
+++++ timer.c	2011-07-21 01:09:08.692626661 +0800
+ @@ -1,3 +1,4 @@
+ +#include "adriver.h"
+  /*
+   *  Timers abstract layer
+   *  Copyright (c) by Jaroslav Kysela <perex@perex.cz>
+-@@ -21,6 +22,7 @@
++@@ -21,6 +22,9 @@
+  
+  #include <linux/delay.h>
+  #include <linux/init.h>
+++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
+ +#include <linux/smp_lock.h>
+++#endif
+  #include <linux/slab.h>
+  #include <linux/time.h>
+  #include <linux/mutex.h>
+-@@ -995,7 +997,7 @@
++@@ -995,7 +999,7 @@
+  static struct snd_timer_hardware snd_timer_system =
+  {
+  	.flags =	SNDRV_TIMER_HW_FIRST | SNDRV_TIMER_HW_TASKLET,
+@@ -22,7 +24,7 @@
+  	.ticks =	10000000L,
+  	.start =	snd_timer_s_start,
+  	.stop =		snd_timer_s_stop
+-@@ -1914,22 +1916,41 @@
++@@ -1914,22 +1918,41 @@
+  	return mask;
+  }
+  
+@@ -65,7 +67,7 @@
+  	.fasync = 	snd_timer_user_fasync,
+  };
+  
+-@@ -1941,6 +1962,7 @@
++@@ -1941,6 +1964,7 @@
+  {
+  	int err;
+  
+--- alsa-driver-1.0.23/acore/pcm_native.patch	2011-07-20 23:59:04.971375176 +0800
++++ alsa-driver-1.0.23/acore/pcm_native_new.patch	2011-07-21 01:41:12.131373951 +0800
+@@ -1,23 +1,26 @@
+---- ../alsa-kernel/core/pcm_native.c	2010-04-13 12:01:49.316965755 +0200
+-+++ pcm_native.c	2010-04-13 13:02:27.280928480 +0200
++--- ../alsa-kernel/core/pcm_native.c	2011-07-21 01:40:00.150748695 +0800
+++++ pcm_native.c	2011-07-21 01:11:44.011323766 +0800
+ @@ -1,3 +1,5 @@
+ +#define __NO_VERSION__
+ +#include "adriver.h"
+  /*
+   *  Digital Audio (PCM) abstract layer
+   *  Copyright (c) by Jaroslav Kysela <perex@perex.cz>
+-@@ -20,9 +22,9 @@
++@@ -20,11 +22,11 @@
+   */
+  
+  #include <linux/mm.h>
+-+#include <linux/smp_lock.h>
+- #include <linux/file.h>
+- #include <linux/slab.h>
+--#include <linux/smp_lock.h>
++-#include <linux/file.h>
++-#include <linux/slab.h>
++ #if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 39)
++ #include <linux/smp_lock.h>
++ #endif
+++#include <linux/file.h>
+++#include <linux/slab.h>
+  #include <linux/time.h>
+  #include <linux/pm_qos_params.h>
+  #include <linux/uio.h>
+-@@ -399,7 +401,10 @@
++@@ -401,7 +403,10 @@
+  	return 0;
+  }
+  
+@@ -29,7 +32,7 @@
+  			     struct snd_pcm_hw_params *params)
+  {
+  	struct snd_pcm_runtime *runtime;
+-@@ -1577,7 +1582,11 @@
++@@ -1579,7 +1584,11 @@
+  	file = fget(fd);
+  	if (!file)
+  		return NULL;
+@@ -41,7 +44,7 @@
+  	if (!S_ISCHR(inode->i_mode) ||
+  	    imajor(inode) != snd_major) {
+  		fput(file);
+-@@ -2834,25 +2843,50 @@
++@@ -2836,25 +2845,50 @@
+  	struct snd_pcm_runtime *runtime;
+  	snd_pcm_sframes_t result;
+  
+@@ -99,7 +102,7 @@
+  {
+  	struct snd_pcm_file *pcm_file;
+  	struct snd_pcm_substream *substream;
+-@@ -2862,7 +2896,11 @@
++@@ -2864,7 +2898,11 @@
+  	void __user **bufs;
+  	snd_pcm_uframes_t frames;
+  
+@@ -111,7 +114,7 @@
+  	substream = pcm_file->substream;
+  	if (PCM_RUNTIME_CHECK(substream))
+  		return -ENXIO;
+-@@ -2886,8 +2924,13 @@
++@@ -2888,8 +2926,13 @@
+  	return result;
+  }
+  
+@@ -125,7 +128,7 @@
+  {
+  	struct snd_pcm_file *pcm_file;
+  	struct snd_pcm_substream *substream;
+-@@ -2897,7 +2940,11 @@
++@@ -2899,7 +2942,11 @@
+  	void __user **bufs;
+  	snd_pcm_uframes_t frames;
+  
+@@ -137,7 +140,7 @@
+  	substream = pcm_file->substream;
+  	if (PCM_RUNTIME_CHECK(substream))
+  		return -ENXIO;
+-@@ -2919,6 +2966,7 @@
++@@ -2921,6 +2968,7 @@
+  	kfree(bufs);
+  	return result;
+  }
+@@ -145,7 +148,7 @@
+  
+  static unsigned int snd_pcm_playback_poll(struct file *file, poll_table * wait)
+  {
+-@@ -3006,6 +3054,22 @@
++@@ -3008,6 +3056,22 @@
+   * mmap support
+   */
+  
+@@ -168,7 +171,7 @@
+  /*
+   * Only on coherent architectures, we can mmap the status and the control records
+   * for effcient data transfer.  On others, we have to use HWSYNC ioctl...
+-@@ -3014,6 +3078,7 @@
++@@ -3016,6 +3080,7 @@
+  /*
+   * mmap status record
+   */
+@@ -176,7 +179,7 @@
+  static int snd_pcm_mmap_status_fault(struct vm_area_struct *area,
+  						struct vm_fault *vmf)
+  {
+-@@ -3027,10 +3092,49 @@
++@@ -3029,10 +3094,49 @@
+  	get_page(vmf->page);
+  	return 0;
+  }
+@@ -226,7 +229,7 @@
+  };
+  
+  static int snd_pcm_mmap_status(struct snd_pcm_substream *substream, struct file *file,
+-@@ -3045,7 +3149,11 @@
++@@ -3047,7 +3151,11 @@
+  	if (size != PAGE_ALIGN(sizeof(struct snd_pcm_mmap_status)))
+  		return -EINVAL;
+  	area->vm_ops = &snd_pcm_vm_ops_status;
+@@ -238,7 +241,7 @@
+  	area->vm_flags |= VM_RESERVED;
+  	return 0;
+  }
+-@@ -3053,6 +3161,7 @@
++@@ -3055,6 +3163,7 @@
+  /*
+   * mmap control record
+   */
+@@ -246,7 +249,7 @@
+  static int snd_pcm_mmap_control_fault(struct vm_area_struct *area,
+  						struct vm_fault *vmf)
+  {
+-@@ -3066,10 +3175,50 @@
++@@ -3068,10 +3177,50 @@
+  	get_page(vmf->page);
+  	return 0;
+  }
+@@ -297,7 +300,7 @@
+  };
+  
+  static int snd_pcm_mmap_control(struct snd_pcm_substream *substream, struct file *file,
+-@@ -3084,7 +3233,11 @@
++@@ -3086,7 +3235,11 @@
+  	if (size != PAGE_ALIGN(sizeof(struct snd_pcm_mmap_control)))
+  		return -EINVAL;
+  	area->vm_ops = &snd_pcm_vm_ops_control;
+@@ -309,7 +312,7 @@
+  	area->vm_flags |= VM_RESERVED;
+  	return 0;
+  }
+-@@ -3125,9 +3278,16 @@
++@@ -3127,9 +3280,16 @@
+  	return virt_to_page(vaddr);
+  }
+  
+@@ -326,7 +329,7 @@
+  static int snd_pcm_mmap_data_fault(struct vm_area_struct *area,
+  						struct vm_fault *vmf)
+  {
+-@@ -3154,6 +3314,59 @@
++@@ -3156,6 +3316,59 @@
+  	vmf->page = page;
+  	return 0;
+  }
+@@ -386,7 +389,7 @@
+  
+  static const struct vm_operations_struct snd_pcm_vm_ops_data = {
+  	.open =		snd_pcm_mmap_data_open,
+-@@ -3163,7 +3376,14 @@
++@@ -3165,7 +3378,14 @@
+  static const struct vm_operations_struct snd_pcm_vm_ops_data_fault = {
+  	.open =		snd_pcm_mmap_data_open,
+  	.close =	snd_pcm_mmap_data_close,
+@@ -401,7 +404,7 @@
+  };
+  
+  #ifndef ARCH_HAS_DMA_MMAP_COHERENT
+-@@ -3207,11 +3427,26 @@
++@@ -3209,11 +3429,26 @@
+  	area->vm_page_prot = pgprot_noncached(area->vm_page_prot);
+  	area->vm_flags |= VM_IO;
+  	size = area->vm_end - area->vm_start;
+@@ -429,7 +432,7 @@
+  	return 0;
+  }
+  
+-@@ -3255,7 +3490,7 @@
++@@ -3257,7 +3492,7 @@
+  	    runtime->access == SNDRV_PCM_ACCESS_RW_NONINTERLEAVED)
+  		return -EINVAL;
+  	size = area->vm_end - area->vm_start;
+@@ -438,7 +441,7 @@
+  	dma_bytes = PAGE_ALIGN(runtime->dma_bytes);
+  	if ((size_t)size > dma_bytes)
+  		return -EINVAL;
+-@@ -3263,7 +3498,11 @@
++@@ -3265,7 +3500,11 @@
+  		return -EINVAL;
+  
+  	area->vm_ops = &snd_pcm_vm_ops_data;
+@@ -450,7 +453,7 @@
+  	if (substream->ops->mmap)
+  		err = substream->ops->mmap(substream, area);
+  	else
+-@@ -3286,7 +3525,7 @@
++@@ -3288,7 +3527,7 @@
+  	if (PCM_RUNTIME_CHECK(substream))
+  		return -ENXIO;
+  
+@@ -459,7 +462,7 @@
+  	switch (offset) {
+  	case SNDRV_PCM_MMAP_OFFSET_STATUS:
+  		if (pcm_file->no_compat_mmap)
+-@@ -3319,12 +3558,34 @@
++@@ -3321,12 +3560,34 @@
+  /*
+   * ioctl32 compat
+   */
+@@ -495,7 +498,7 @@
+  /*
+   *  To be removed helpers to keep binary compatibility
+   */
+-@@ -3463,31 +3724,55 @@
++@@ -3465,31 +3726,55 @@
+  
+  const struct file_operations snd_pcm_f_ops[2] = {
+  	{
+--- alsa-driver-1.0.23/usb/endpoint.patch	2011-07-20 12:58:31.449719861 +0800
++++ alsa-driver-1.0.23/usb/endpoint.new.patch	2011-07-20 12:56:55.949723739 +0800
+@@ -1,12 +1,35 @@
+---- ../alsa-kernel/usb/endpoint.c	2010-03-10 09:22:24.488022926 +0100
+-+++ endpoint.c	2010-03-10 10:07:52.316022217 +0100
++--- endpoint.c.orig	2011-07-20 12:46:13.553719989 +0800
+++++ endpoint.c	2011-07-20 12:55:15.117719999 +0800
+ @@ -1,3 +1,5 @@
+ +#define __NO_VERSION__
+ +#include "usbaudio.inc"
+  /*
+   *   This program is free software; you can redistribute it and/or modify
+   *   it under the terms of the GNU General Public License as published by
+-@@ -183,7 +185,11 @@
++@@ -34,6 +36,22 @@
++ #include "helper.h"
++ #include "format.h"
++ 
+++#if LINUX_VERSION_CODE > KERNEL_VERSION(2, 6, 35)
+++/* 4.9.2 Class-Specific AS Interface Descriptor */
+++
+++struct uac_as_header_descriptor_v2 {
+++	__u8 bLength;
+++	__u8 bDescriptorType;
+++	__u8 bDescriptorSubtype;
+++	__u8 bTerminalLink;
+++	__u8 bmControls;
+++	__u8 bFormatType;
+++	__u32 bmFormats;
+++	__u8 bNrChannels;
+++	__u32 bmChannelConfig;
+++	__u8 iChannelNames;
+++} __attribute__((packed));
+++#endif
++ 
++ /*
++  * free a substream
++@@ -186,7 +204,11 @@
+  		    (altsd->bInterfaceSubClass != USB_SUBCLASS_AUDIOSTREAMING &&
+  		     altsd->bInterfaceSubClass != USB_SUBCLASS_VENDOR_SPEC) ||
+  		    altsd->bNumEndpoints < 1 ||
+@@ -18,7 +41,7 @@
+  			continue;
+  		/* must be isochronous */
+  		if ((get_endpoint(alts, 0)->bmAttributes & USB_ENDPOINT_XFERTYPE_MASK) !=
+-@@ -270,7 +276,11 @@
++@@ -274,7 +296,11 @@
+  		    fp && fp->altsetting == 1 && fp->channels == 1 &&
+  		    fp->formats == SNDRV_PCM_FMTBIT_S16_LE &&
+  		    protocol == UAC_VERSION_1 &&
+@@ -30,7 +53,7 @@
+  							fp->maxpacksize * 2)
+  			continue;
+  
+-@@ -297,7 +307,11 @@
++@@ -301,7 +327,11 @@
+  		fp->endpoint = get_endpoint(alts, 0)->bEndpointAddress;
+  		fp->ep_attr = get_endpoint(alts, 0)->bmAttributes;
+  		fp->datainterval = snd_usb_parse_datainterval(chip, alts);

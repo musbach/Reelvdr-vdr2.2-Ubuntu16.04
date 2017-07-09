@@ -1,0 +1,1 @@
+cp /etc/usb_modeswitch.conf /etc/usb_modeswitch.conf-org

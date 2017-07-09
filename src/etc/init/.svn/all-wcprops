@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/reelbox/!svn/ver/1/testing/src/etc/init
+END
+prepare-mediadevice.conf
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/etc/init/prepare-mediadevice.conf
+END
+prepare-mountpoints.conf
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/etc/init/prepare-mountpoints.conf
+END
+frontpanel-pre.conf
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/etc/init/frontpanel-pre.conf
+END
+fpleds.conf
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/reelbox/!svn/ver/1/testing/src/etc/init/fpleds.conf
+END
+reelbox-control.conf
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/etc/init/reelbox-control.conf
+END
+link-shares.conf
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/etc/init/link-shares.conf
+END
+tftpd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/init/tftpd.conf
+END
+decypher.conf
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/etc/init/decypher.conf
+END
+reelvdr.conf
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/etc/init/reelvdr.conf
+END
+setup-shares.conf
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/etc/init/setup-shares.conf
+END
+ttyS0.conf
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/init/ttyS0.conf
+END
+mediaanalyzer.conf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/etc/init/mediaanalyzer.conf
+END
+umts-dialer.conf
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/etc/init/umts-dialer.conf
+END
+reel-browser.conf
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/etc/init/reel-browser.conf
+END

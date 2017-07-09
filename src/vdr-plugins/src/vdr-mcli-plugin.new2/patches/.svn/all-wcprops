@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/patches
+END
+vdr-1.4.0-closefilter.patch
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/patches/vdr-1.4.0-closefilter.patch
+END
+vdr-1.6.0-intcamdevices.patch
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/patches/vdr-1.6.0-intcamdevices.patch
+END
+reelvdr-device-handling-patch.diff
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/patches/reelvdr-device-handling-patch.diff
+END
+vdr-1.6-device-consistent-destruct.patch
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/patches/vdr-1.6-device-consistent-destruct.patch
+END
+vdr-1.6.0-altmenuaction.patch
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/patches/vdr-1.6.0-altmenuaction.patch
+END
+vdr-1.6-section-read-abstraction.patch
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/patches/vdr-1.6-section-read-abstraction.patch
+END

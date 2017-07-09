@@ -1,0 +1,16 @@
+#!/bin/sh
+
+
+myln () {
+src="$2"
+target="$3"
+
+    if [ ! -L $target ]; then
+	ln -f $*
+    fi
+}
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

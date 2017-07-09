@@ -1,0 +1,26 @@
+loadepg.o: loadepg.c loadepg.h ../../../vdr/../vdr/plugin.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/svdrp.h \
+ ../../../vdr/../vdr/interface.h ../../../vdr/../vdr/remote.h \
+ ../../../vdr/../vdr/svdrp.h i18n.h ../../../vdr/../vdr/i18n.h
+i18n.o: i18n.c i18n.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h

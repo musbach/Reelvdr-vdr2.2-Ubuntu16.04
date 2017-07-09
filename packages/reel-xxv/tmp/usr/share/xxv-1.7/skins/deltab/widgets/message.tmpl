@@ -1,0 +1,15 @@
+<!-- MessageTemplate -->
+<?% trimmed = data FILTER trim %?>
+<?% IF data.size > 1 || trimmed != "" %?>
+        <?% IF data.size <= 0 %?>
+            <?% data %?>
+        <?% ELSE %?>
+            <table summary="">
+            <?% FOREACH zeile IN data %?>
+                <tr<?% " class='two'" IF loop.count mod 2 == 0 %?>>
+                    <td><?% zeile %?></td>
+                </tr>
+             <?% END %?>
+            </table>
+        <?% END %?>
+<?% END %?>

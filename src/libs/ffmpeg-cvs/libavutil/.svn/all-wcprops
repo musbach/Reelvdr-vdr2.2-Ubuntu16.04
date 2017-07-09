@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil
+END
+rational.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/rational.h
+END
+mathematics.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/mathematics.c
+END
+bswap.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/bswap.h
+END
+integer.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/integer.h
+END
+mathematics.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/mathematics.h
+END
+intfloat_readwrite.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/intfloat_readwrite.c
+END
+eval.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/eval.c
+END
+avutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/avutil.h
+END
+rational.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/rational.c
+END
+intfloat_readwrite.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/intfloat_readwrite.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/Makefile
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/common.h
+END
+integer.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavutil/integer.c
+END

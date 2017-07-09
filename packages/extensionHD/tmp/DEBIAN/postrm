@@ -1,0 +1,11 @@
+#! /bin/sh
+
+update-rc.d -f decypher remove >/dev/null
+
+update-rc.d -f shmnet remove
+
+if [ "$1" = "purge" ]; then
+    sudo dkms remove -m extensionhd -v 3.0 --all
+fi
+
+exit 0

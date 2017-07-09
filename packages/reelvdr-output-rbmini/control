@@ -1,0 +1,12 @@
+Package: reelvdr-output-rbmini
+Version: 1.4
+Section: reel
+Priority: required
+Architecture: armel
+Depends: libpng12-0
+Conflicts: reelvdr-rbmini
+Replaces: reelvdr-rbmini
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-output-rbmini
+Description: ReelBox output plugin for the NetClient
+ Is required to run ReelVDR on the Reel NetClient

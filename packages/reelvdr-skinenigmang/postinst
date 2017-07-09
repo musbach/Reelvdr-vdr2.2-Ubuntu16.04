@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+echo "Setting Skin to Enigma(NG)"
+sed s/"OSDSkin = .*"/"OSDSkin = EnigmaNG"/ -i /etc/vdr/setup.conf
+sed s/"SKIN=.*"/"SKIN=\"Enigma\""/ -i /etc/reel/reelvdr
+
+
+exit 0

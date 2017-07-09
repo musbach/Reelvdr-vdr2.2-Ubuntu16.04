@@ -1,0 +1,64 @@
+--- config.c	(revision 15376)
++++ config.c	(revision 15377)
+@@ -693,6 +796,30 @@
+   else if (!strcasecmp(Name, "InitialVolume"))       InitialVolume      = atoi(Value);
+   else if (!strcasecmp(Name, "ChannelsWrap"))        ChannelsWrap       = atoi(Value);
+   else if (!strcasecmp(Name, "EmergencyExit"))       EmergencyExit      = atoi(Value);
++#ifdef REELVDR
++  else if (!strcasecmp(Name, "LiveBuffer"))          LiveBuffer         = atoi(Value);
++  else if (!strcasecmp(Name, "LiveBufferSize"))      LiveBufferSize     = atoi(Value);
++  else if (!strcasecmp(Name, "LiveTvOnAvg"))         LiveTvOnAvg        = atoi(Value);
++  else if (!strcasecmp(Name, "ReceptionMode"))       ReceptionMode      = (eReceiverType)atoi(Value);
++  else if (!strcasecmp(Name, "NetServerName"))       Utf8Strn0Cpy(NetServerName, Value, MAXHOSTNAME);
++  else if (!strcasecmp(Name, "NetServerMAC"))        Utf8Strn0Cpy(NetServerMAC, Value, MACLENGTH);
++  else if (!strcasecmp(Name, "ExpertOptions"))       ExpertOptions      = atoi(Value);
++  else if (!strcasecmp(Name, "OSDRandom"))           OSDRandom          = atoi(Value);
++  else if (!strcasecmp(Name, "OSDRemainTime"))       OSDRemainTime      = atoi(Value);
++  else if (!strcasecmp(Name, "OSDUseSymbol"))        OSDUseSymbol       = atoi(Value);
++  else if (!strcasecmp(Name, "OSDScrollBarWidth"))   OSDScrollBarWidth  = atoi(Value);
++  else if (!strcasecmp(Name, "FontSizes"))           FontSizes          = atoi(Value);
++  else if (!strcasecmp(Name, "AddNewChannels"))      AddNewChannels     = atoi(Value);
++  else if (!strcasecmp(Name, "NetServerIP"))         Utf8Strn0Cpy(NetServerIP, Value, MAXHOSTIP);
++  else if (!strcasecmp(Name, "ReelboxMode"))         ReelboxMode        = (eReelboxMode)atoi(Value);
++  else if (!strcasecmp(Name, "RequestShutDownMode")) RequestShutDownMode= atoi(Value);
++  else if (!strcasecmp(Name, "StandbyOrQuickshutdown")) StandbyOrQuickshutdown  = atoi(Value);
++  else if (!strcasecmp(Name, "UseBouquetList"))      UseBouquetList     = atoi(Value);
++  else if (!strcasecmp(Name, "OnlyRadioChannels"))   OnlyRadioChannels  = atoi(Value);
++  else if (!strcasecmp(Name, "OnlyEncryptedChannels"))OnlyEncryptedChannels = atoi(Value);
++  else if (!strcasecmp(Name, "OnlyHDChannels"))      OnlyHDChannels       = atoi(Value);
++  else if (!strcasecmp(Name, "ExpertNavi"))          ExpertNavi         = atoi(Value);
++#endif /* REELVDR */
+   else
+      return false;
+   return true;
+@@ -789,6 +916,30 @@
+   Store("InitialVolume",      InitialVolume);
+   Store("ChannelsWrap",       ChannelsWrap);
+   Store("EmergencyExit",      EmergencyExit);
++#ifdef REELVDR
++  Store("LiveBuffer",         LiveBuffer);
++  Store("LiveBufferSize",     LiveBufferSize);
++  Store("LiveTvOnAvg",        LiveTvOnAvg);
++  Store("ReceptionMode",      ReceptionMode);
++  Store("NetServerName",      NetServerName);
++  Store("NetServerMAC",       NetServerMAC);
++  Store("ExpertOptions",      ExpertOptions);
++  Store("OSDRandom",          OSDRandom);
++  Store("OSDRemainTime",      OSDRemainTime);
++  Store("OSDUseSymbol",       OSDUseSymbol);
++  Store("OSDScrollBarWidth",  OSDScrollBarWidth);
++  Store("FontSizes",          FontSizes);
++  Store("AddNewChannels",     AddNewChannels);
++  Store("NetServerIP",        NetServerIP);
++  Store("ReelboxMode",        ReelboxMode);
++  Store("RequestShutDownMode",RequestShutDownMode);
++  Store("StandbyOrQuickshutdown", StandbyOrQuickshutdown);
++  Store("UseBouquetList",     UseBouquetList);
++  Store("OnlyRadioChannels",  OnlyRadioChannels);
++  Store("OnlyEncryptedChannels", OnlyEncryptedChannels);
++  Store("OnlyHDChannels", OnlyHDChannels);
++  Store("ExpertNavi",         ExpertNavi);
++ #endif /* REELVDR */
+ 
+   Sort();
+ 

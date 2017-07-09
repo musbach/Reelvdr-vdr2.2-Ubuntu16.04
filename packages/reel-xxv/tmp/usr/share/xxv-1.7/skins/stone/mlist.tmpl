@@ -1,0 +1,268 @@
+<!--mlist-->
+<body class="frame">
+<div id="body">
+<?% USE date %?>
+<?% ######################################################################## %?>
+<?% total = 0 %?>
+<?% BLOCK summe %?>
+			<?% 
+                tt = playtime.split(':');
+                IF tt.size == 3;
+				ts = (tt.0 * 3600) + (tt.1 * 60) + ( tt.2 );
+                ELSIF tt.size == 2;
+				ts = (tt.0 * 60) + ( tt.1 );
+                END;
+				total = total + ts;
+			%?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK printsumme %?>
+        		<?% IF total > 0 %?>
+        		<?% 
+                    sec  = total mod 60;
+                    min  = total div 60 mod 60;
+                    hour = total div 3600;
+        		%?>
+ 			 		  <p class="description" style="padding: 0; margin-right: 10px; text-align:right;"><?% IF hour > 0 %?><?% hour FILTER format('%02d') %?>:<?% END %?><?% min FILTER format('%02d') %?>:<?% sec FILTER format('%02d')%?></p>
+       			<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsArea %?>
+      <div class="areabegin">
+        <table class="fieldtable" summary="">
+          <tr>
+            <td class="fieldhead">
+              <div class="fieldhead">
+            <?% IF artist.length > 0 %?>
+            <a title="<?% gettext("Search") %?>" href="?cmd=ml&amp;data=artist:<?% url(artist) %?>">
+                <?% chop(artist,30) %?>
+            </a>
+            <?% END %?>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldtext">
+              <div class="fieldtitle">
+            <?% IF title.length > 0 %?>
+            <a title="<?% gettext("Search") %?>" href="?cmd=ml&amp;data=title:<?% url(title) %?>">
+                <?% title %?>
+            </a>
+            <?% END %?>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldtext">
+              <table class="fieldinline" summary="" >
+                <tr>
+                    <td class="fieldinline" style="white-space: nowrap">
+                        <font class="description">
+                            <?% IF allow('mplay') %?>
+                            <input class="push" type="checkbox" value="<?% id %?>" />
+                                <a title="<?% gettext("Play selected songs") %?>" href="javascript:PlayMusic('<?% id %?>')">
+                            <?% END %?>
+                                    <?% playtime %?>
+                                    <?% IF track != "" %?>&nbsp;(<?% track %?>)<?% END %?>
+                            <?% IF allow('mplay') %?>
+                                </a>
+                            <?% END %?>
+                        </font>
+                    </td>
+                    <td class="push">
+    <?% IF allow('mgetfile') %?>
+                        <a title="<?% gettext("Store selected song") %?>" href="?cmd=mgetfile&amp;data=<?% id %?>">
+                            <img src="images/file.<?% global.imagetyp %?>" alt="" title="<?% gettext("Store selected song") %?>" />
+                        </a>
+    <?% END %?>
+    <?% IF allow('mplay') %?>
+                        <a title="<?% gettext("Play selected songs") %?>" href="javascript:PlayMusic('<?% id %?>')">
+                            <img src="images/play.<?% global.imagetyp %?>" alt="" title="<?% gettext("Play selected songs") %?>" />
+                        </a>
+    <?% END %?>
+                    </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldbottom"></td>
+          </tr>
+        </table>
+     </div>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK titleline %?>
+	<?% headlist = [];
+		smallist = [];
+		headlist.push(album) IF album.search('\S+');
+		c=loop.count;
+		headlist.push(artist) IF artist.search('\S+') AND artist == data.$c.1;
+		smallist.push(genre) IF genre.search('\S+');
+		smallist.push(year) IF year != 0;
+	 %?>
+  	 <?% headlist.join("&nbsp;-&nbsp;") %?>
+	 <small>	
+		<?% "&nbsp;-&nbsp;" IF headlist.size > 0 AND smallist > 0;
+		    smallist.join("&nbsp;-&nbsp;");
+            IF comment.search('\S+');
+                "&nbsp;";
+    	       	cc = [];
+                cc.push("(");
+                cc.push(comment);
+                cc.push(")");
+                cc.join(" ");
+            END; %?>
+	 </small>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK coverimage %?>
+      <div class="areabegin">
+        <table class="fieldtable" summary="">
+          <tr>
+            <td class="fieldhead title">
+              <div class="fieldhead">
+                <a title="<?% gettext("Search") %?>" href="?cmd=ml&amp;data=album:<?% url(album) %?>">
+                <?% chop(album,30) %?>
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="fieldtext" align="center">
+                <a title="<?% gettext("Search") %?>" href="?cmd=ml&amp;data=album:<?% url(album) %?>">
+                    <img class="cover" src="?cmd=mcoverimage&amp;data=<?% id %?>" alt="<?% album %?>" />
+                </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldbottom"></td>
+          </tr>
+        </table>
+      </div>
+<?% END %?>
+<?% ######################################################################## %?>
+<!-- Musiclist -->
+<h1><?% gettext("Music library") %?></h1>
+<?% IF data.size > 1%?>
+<?% fields = data.shift %?>
+<form name="mlist" action="">
+    <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?% id=zeile.0;artist=zeile.1;album=zeile.2;title=zeile.3;track=zeile.4;year=zeile.5;playtime=zeile.6;genre=zeile.7;comment=zeile.8 %?>
+		<?% IF !old.defined || album != old %?>
+        <?% IF old.defined %?>
+    <div class="areaclose"></div>
+		<?% PROCESS printsumme %?>
+       <?% END %?>
+	<h2><?% PROCESS titleline %?></h2>
+        <?% PROCESS coverimage %?>
+       <?% END %?>
+        <?% PROCESS ItemAsArea %?>
+        <?% PROCESS summe %?>
+        <?% old = album %?>    
+    <?% END %?>
+<div class="areaclose"></div>
+</form>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Music",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <form name="genreform" action="">
+    <?% gettext("Genres",20) %?>:<br />
+    <select name='genres' onchange="di('?cmd=ml&amp;data=','genre:' + this.form.genres.options[this.form.genres.options.selectedIndex].value)">
+    <?% FOREACH ch IN param.genres %?>
+        <option value="<?% url( ch.1 ) %?>"<?% ' selected="selected"' IF cgi.param('data').split(':').first == 'genre' && cgi.param('data').split(':').last == ch.1 %?>><?% ch.0 %?></option>
+    <?% END %?>
+    </select>
+    </form>
+
+    <form name="artistform" action="" onsubmit="location.href = '?cmd=ml&amp;data=' + 'artist:' + escape(document.artistform.data.value); return false">
+    <?% gettext("Artists",20) %?>:<br />
+    <input type="text" id="artisttext" name="data" alt="<?% gettext("Artists") %?>" 
+           onkeyup="suggest('msuggest&__get=artist','artisttext','artistsuggest');" 
+           <?% IF cgi.param('data').split(':').first == 'artist' %?>value="<?% cgi.param('data').split(':').last %?>"<?% END %?>
+           autocomplete="off" />
+    <br /><div class="suggestbox" id="artistsuggest"></div>
+    </form>
+
+    <form name="albumsform" action="" onsubmit="location.href = '?cmd=ml&amp;data=' + 'album:' + escape(document.albumsform.data.value); return false">
+    <?% gettext("Albums",20) %?>:<br />
+    <input type="text" id="albumtext" name="data" alt="<?% gettext("Artists") %?>" 
+           onkeyup="suggest('msuggest&__get=album','albumtext','albumsuggest');" 
+           <?% IF cgi.param('data').split(':').first == 'album' %?>value="<?% cgi.param('data').split(':').last %?>"<?% END %?>
+           autocomplete="off" />
+    <br /><div class="suggestbox" id="albumsuggest"></div>
+    </form>
+
+    <form name="yearsform" action="">
+    <?% gettext("Year",20) %?>:<br />
+    <select name='years' onchange="di('?cmd=ml&amp;data=','year:' + this.form.years.options[this.form.years.options.selectedIndex].value)">
+        <option value=""> </option>
+    <?% ch = date.format(date.now, '%Y', 'en_GB'); WHILE ch >= 1970; %?>
+        <option value="<?% url( ch )  %?>"<?% ' selected="selected"' IF cgi.param('data').split(':').first == 'year' && cgi.param('data').split(':').last == ch %?>><?% ch %?></option>
+    <?% ch = ch - 1; END %?>
+    </select>
+    </form>
+    <?% IF allow('mrefresh') %?>
+    <a title="<?% gettext("Update Music Database") %?>" href="javascript:popupcmd('mrefresh',620,400,1)"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+    <a title="<?% gettext("Update Music Database") %?>" href="javascript:popupcmd('mrefresh',620,400,1)"><?% gettext("Update Music Database",20) %?></a><br />
+    <?% END %?>
+    <?% IF allow('mcovers') %?>
+    <a title="<?% gettext("Get new Covers") %?>" href="javascript:popupcmd('mcovers',620,400,1)"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+    <a title="<?% gettext("Get new Covers") %?>" href="javascript:popupcmd('mcovers',620,400,1)"><?% gettext("Get new Covers",18) %?></a><br />
+    <?% END %?>
+    <!--
+    Search: <input name='search' value='' /><input type='button' onclick="location.href = '/?cmd=ml&amp;data=' + 'search:' + document.forms[0].search.value" value="Go" />
+    -->
+    </td>
+    </tr>
+    <tr><td class="sidebottom"></td></tr>
+  </table>
+  <?% IF allow('mplay') %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Selection",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+        <a href="javascript:selAll(document.mlist,1)"><img src="images/select.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.mlist,1)"><?% gettext("Select all",20) %?></a><br />
+        <a href="javascript:selAll(document.mlist,0)"><img src="images/deselect.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.mlist,0)"><?% gettext("Unselect all",20) %?></a><br />
+        <a href="javascript:reverse(document.mlist)"><img src="images/invers.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:reverse(document.mlist)"><?% gettext("Reverse select",20) %?></a><br />
+        <a href="javascript:Play('<?% gettext("Nothing selected!") %?>',document.mlist)">
+            <img src="images/play.<?% global.imagetyp %?>" alt="" title="<?% gettext("Play selected songs") %?>" />
+        </a>&nbsp;
+        <a href="javascript:Play('<?% gettext("Nothing selected!") %?>',document.mlist)">
+            <?% gettext("Play selected songs",20)  %?>
+        </a>
+    </td>
+    </tr>
+    <tr><td class="sidebottom"></td></tr>
+  </table>
+  <?% END %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Search",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <form method="post" action="?cmd=msearch" name="titleform">
+        <input type="text" id="titletext" name="data" alt="<?% gettext("Search") %?>" 
+               onkeyup="suggest('msuggest&__get=title','titletext','titlesuggest');" 
+               <?% IF cgi.param('cmd')=='ms' || cgi.param('cmd')=='msearch' %?>value="<?% cgi.param('data')%?>"<?% END %?>
+               autocomplete="off" />
+        <br /><div class="suggestbox" id="titlesuggest"></div>
+    </form>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

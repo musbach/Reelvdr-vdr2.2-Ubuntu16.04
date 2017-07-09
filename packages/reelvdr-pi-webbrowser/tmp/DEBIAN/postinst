@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if grep -q allowed_users /etc/X11/Xwrapper.config ; then 
+	sed -i s/^allowed_users=.*/allowed_users=anybody/ /etc/X11/Xwrapper.config
+else
+	echo "allowed_users=anybody" >> /etc/X11/Xwrapper.config
+fi
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

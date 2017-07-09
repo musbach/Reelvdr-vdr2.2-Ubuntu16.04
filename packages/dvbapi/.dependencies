@@ -1,0 +1,5 @@
+tmp/usr/lib/vdr/libvdr-dvbapi.so.2.2.0: /usr/src/reelbox/testing/src/vdr-plugins/src/dvbapi/libvdr-dvbapi.so
+tmp/usr/share/locale/dvbapi/po/et_EE/LC_MESSAGES/dvbapi.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/dvbapi/po/et_EE.mo
+tmp/usr/share/locale/dvbapi/po/lt_LT/LC_MESSAGES/dvbapi.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/dvbapi/po/lt_LT.mo
+tmp/usr/share/locale/dvbapi/po/de_DE/LC_MESSAGES/dvbapi.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/dvbapi/po/de_DE.mo
+tmp/usr/share/locale/dvbapi/po/fi_FI/LC_MESSAGES/dvbapi.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/dvbapi/po/fi_FI.mo

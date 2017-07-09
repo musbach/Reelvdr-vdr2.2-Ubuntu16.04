@@ -1,0 +1,8 @@
+    <?% command = cgi.param('cmd') %?>
+    <?% IF info.Referer.match("cmd=help") %?>
+        <input type='hidden' name='referer' value='?cmd=<?% cgi.param('cmd') %?>&data=<?% cgi.param('data') %?>'>
+    <?% ELSIF info.Referer.match("cmd=${command}") %?>
+        <input type='hidden' name='referer' value='<?% cgi.param('referer') %?>'>
+    <?% ELSE %?>
+        <input type='hidden' name='referer' value='<?% info.Referer %?>'>
+    <?% END %?>

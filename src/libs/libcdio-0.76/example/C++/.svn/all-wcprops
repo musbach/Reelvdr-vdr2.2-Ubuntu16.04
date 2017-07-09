@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++
+END
+mmc2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/mmc2.cpp
+END
+device.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/device.cpp
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/Makefile.in
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/Makefile.am
+END
+paranoia.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/paranoia.cpp
+END
+iso1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/iso1.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/README
+END
+iso2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/iso2.cpp
+END
+iso3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/iso3.cpp
+END
+mmc1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/example/C++/mmc1.cpp
+END

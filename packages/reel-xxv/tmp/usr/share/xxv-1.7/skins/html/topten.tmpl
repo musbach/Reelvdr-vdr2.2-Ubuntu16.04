@@ -1,0 +1,68 @@
+<script language="javascript" type="text/javascript">
+<!--
+
+    <?% INCLUDE javascript/records.js %?>
+
+-->
+</SCRIPT>
+
+<!-- TableTemplate -->
+<h1><?% gettext("Top Ten entrys") %?></h1>
+<h6><?% gettext("This Screen list the most programmed EPG Events from all XXV Users. Of course, we list only Events these are exists in your EPG Table!") %?></h6>
+<p/>
+
+<table border="0" width="95%">
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <?% NEXT IF field.match('^__') %?>
+            <th><?% field %?></th>
+        <?% END %?>
+        </tr>
+        <?% FOREACH zeile IN data %?>
+        <?% c = 0 %?>
+        <?% id=zeile.0;title=zeile.1;subtitle=zeile.2;sender=zeile.3;
+            channel=zeile.4;start=zeile.5;stop=zeile.6;day=zeile.7;description=zeile.8;
+            pdc=zeile.9;timerid=zeile.10;recording=zeile.11;running=zeile.12;
+            rank=zeile.13 div 1;level=zeile.14;quantity=zeile.15;
+            %?>
+        <tr <?% IF (loop.count mod 2) == 0 %?> bgcolor='#F5F5F5'<?% END %?>>
+            <?% FOREACH field IN [id,title,channel,start,stop,day,rank] %?>
+                <?% c = c + 1 %?>
+                <?% IF c == 1; # Id Field %?>
+                <td>
+                <?% INCLUDE 'bloecke/event_links.tmpl' data=zeile umbruch='<br/>' %?>
+                </td>
+                <?% ELSIF c == 2; # Text Field %?>
+                <td>
+                    <?% INCLUDE bloecke/tooltip.tmpl cmd="display" desc=description eventid=id linkid=id ttp_offset=0 %?>
+                    <?% IF timerid && recording %?>
+                    <b><?% field %?></b>
+                    <?% ELSE %?>
+                    <?% field %?>
+                    <?% END %?>
+                    <?% IF subtitle.length > 0  %?>
+                    <br><small><?% subtitle %?></small>
+                    <?% END %?>
+                    <?% IF description.length > 0 %?>
+                    <br><small><em><?% chop(description,30) | replace('<br />',' ') %?></em></small>
+                    <?% END %?>
+                    </a>
+                </td>
+                <?% ELSIF c == 3; # Channel Field %?>
+                <td>
+    						<a href='?cmd=program&data=<?% channel %?>'><?% sender %?></a>
+                </td>
+                <?% ELSE %?>
+                    <?% IF timerid && recording %?>
+                            <td><b><?% field %?></b></td>
+                    <?% ELSE %?>
+                            <td><?% field %?></td>
+                    <?% END %?>
+                <?% END %?>
+            <?% END %?>
+        </tr>
+        <?% END %?>
+<?% END %?>
+</table>

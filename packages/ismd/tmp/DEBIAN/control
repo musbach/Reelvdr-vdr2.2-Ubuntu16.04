@@ -1,0 +1,9 @@
+Package: ismd
+Version: 25.0.19412
+Section: reel-ice
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: ismd
+Description: ismd - intel streaming media driver elements
+Description-de: ismd Elements

@@ -1,0 +1,16 @@
+/** \defgroup entity Cache entities
+
+Entities represent individual items from the libapt-front caches.
+
+\par Extending the entities to access your data
+ 
+First thing, you need to make your cache visible to the iterators.  To do so,
+add a method like pkgCache() or debtagsCache() to entity::Implementation (\see
+cache/entity/entity.h).
+ 
+Now you're ready to extend entity::Package (\see cache/entity/package.h) with
+your methods: just add forwarder methods that make appropriate calls to your
+cache and return the results. Pay attention to exception conventions used in
+the entity classes.
+ 
+*/

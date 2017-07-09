@@ -1,0 +1,21 @@
+#! /bin/sh
+
+ls /lib/udev/rules.d/81-i* >/dev/null 2>&1 && rm -f /lib/udev/rules.d/81-i*
+
+# repair old tty1 config
+
+cfile=/etc/init/tty1.conf
+
+if grep -q ttyS0 $cfile ; then
+	cat /etc/init/tty3.conf | sed s/tty3/tty1/ > $cfile
+fi
+
+#update initramfs
+echo "updating initramfs"
+sed s/MODULES=.*/MODULES=list/ -i /etc/initramfs-tools/initramfs.conf
+mkinitramfs -o /boot/initramfs.img
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

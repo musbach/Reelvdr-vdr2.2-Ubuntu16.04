@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conf
+END
+epgsearchupdmail-html.templ
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conf/epgsearchupdmail-html.templ
+END
+epgsearchcats.conf-epgdata
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conf/epgsearchcats.conf-epgdata
+END
+epgsearchconflmail.templ
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conf/epgsearchconflmail.templ
+END
+epgsearchcats.conf-tvm2vdr-tvmovie
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conf/epgsearchcats.conf-tvm2vdr-tvmovie
+END
+epgsearchmenu.conf
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conf/epgsearchmenu.conf
+END
+epgsearchcats.conf-tvm2vdr-hoerzu
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conf/epgsearchcats.conf-tvm2vdr-hoerzu
+END
+epgsearchupdmail.templ
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/conf/epgsearchupdmail.templ
+END

@@ -1,0 +1,16 @@
+Package: reelbox-ice
+Version: 1.25-12
+Section: reel-ice
+Priority: standard
+Architecture: i386
+Installed-Size: 729K
+Depends: alsa-shim, display, libdirectfb-1.4-0, idl, gstreamer0.10-plugins-ugly, gstreamer0.10-plugins-ugly-multiverse, ismd, linux-image-2.6.39-reel, pal-osal, platform-config, reelbox-mr-service, reelvdr-output-ice, reel-umts, system-utils, xserver-xorg-video-ice
+Conflicts: reelbox, noreelbox
+Provides: noreelbox
+Replaces: noreelbox
+Recommends: netceiver-client, osd-color-themes
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-ice
+Description: Meta package needed for ReelBox ICE installations
+ You need this package if you are running the Rubuntu/ReelVDR distribution on
+ Reel ICE hardware

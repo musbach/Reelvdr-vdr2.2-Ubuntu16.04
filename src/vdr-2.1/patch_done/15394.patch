@@ -1,0 +1,14 @@
+Index: menu.h
+===================================================================
+--- menu.h	(revision 15393)
++++ menu.h	(revision 15394)
+@@ -103,6 +103,9 @@
+   cOsdItem *stopRecordingItem;
+   int recordControlsState;
+   static cOsdObject *pluginOsdObject;
++#ifdef REELVDR
++  static void SetPluginOsdObject(cOsdObject *PluginOsdObject) { pluginOsdObject = PluginOsdObject ; }
++#endif /* REELVDR */
+   void Set(void);
+   bool Update(bool Force = false);
+ public:

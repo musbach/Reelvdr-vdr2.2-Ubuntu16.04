@@ -1,0 +1,515 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test
+END
+joliet.iso
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/joliet.iso
+END
+cdda-read.right
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/cdda-read.right
+END
+isofs-m1.toc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/isofs-m1.toc
+END
+testassert.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/testassert.c
+END
+vcd2.toc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/vcd2.toc
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/Makefile.in
+END
+testbincue.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/testbincue.c
+END
+bad-file.toc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-file.toc
+END
+testischar.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/testischar.c
+END
+check_nrg.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_nrg.sh
+END
+vcd_demo.right
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/vcd_demo.right
+END
+testiso9660.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/testiso9660.c
+END
+check_paranoia.sh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_paranoia.sh
+END
+check_nrg.sh.in
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_nrg.sh.in
+END
+joliet.right
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/joliet.right
+END
+testdefault.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/testdefault.c
+END
+copying-rr.right
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/copying-rr.right
+END
+check_paranoia.sh.in
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_paranoia.sh.in
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/Makefile
+END
+check_opts0.right
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_opts0.right
+END
+check_opts2.right
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_opts2.right
+END
+check_opts4.right
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_opts4.right
+END
+check_opts6.right
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_opts6.right
+END
+check_cue.sh.in
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_cue.sh.in
+END
+bad-cat1.cue
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-cat1.cue
+END
+bad-cat2.cue
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-cat2.cue
+END
+videocd.right
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/videocd.right
+END
+bad-cat3.cue
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-cat3.cue
+END
+check_opts.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_opts.sh
+END
+bad-cat1.toc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-cat1.toc
+END
+bad-cat2.toc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-cat2.toc
+END
+bad-cat3.toc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-cat3.toc
+END
+isofs-m1.bin
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/isofs-m1.bin
+END
+isofs-m1-no-rr.right
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/isofs-m1-no-rr.right
+END
+cdda.cue
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/cdda.cue
+END
+t1.toc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/t1.toc
+END
+t2.toc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/t2.toc
+END
+t3.toc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/t3.toc
+END
+t4.toc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/t4.toc
+END
+t5.toc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/t5.toc
+END
+t6.toc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/t6.toc
+END
+t7.toc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/t7.toc
+END
+t8.toc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/t8.toc
+END
+cdtext.toc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/cdtext.toc
+END
+cdda.toc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/cdda.toc
+END
+t9.toc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/t9.toc
+END
+bad-msf-1.cue
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-msf-1.cue
+END
+copying-rr.iso
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/copying-rr.iso
+END
+bad-msf-2.cue
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-msf-2.cue
+END
+bad-msf-3.cue
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-msf-3.cue
+END
+check_cd_read.sh
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_cd_read.sh
+END
+bad-msf-1.toc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-msf-1.toc
+END
+bad-msf-2.toc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-msf-2.toc
+END
+bad-msf-3.toc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-msf-3.toc
+END
+copying.iso
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/copying.iso
+END
+testtoc.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/testtoc.c
+END
+cdda.right
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/cdda.right
+END
+check_common_fn
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_common_fn
+END
+isofs-m1.right
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/isofs-m1.right
+END
+testparanoia.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/testparanoia.c
+END
+check_common_fn.in
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_common_fn.in
+END
+check_sizeof.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_sizeof.c
+END
+data1.toc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/data1.toc
+END
+check_opts1.right
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_opts1.right
+END
+data2.toc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/data2.toc
+END
+check_opts3.right
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_opts3.right
+END
+check_cue.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_cue.sh
+END
+data5.toc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/data5.toc
+END
+isofs-m1-read.right
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/isofs-m1-read.right
+END
+joliet-nojoliet.right
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/joliet-nojoliet.right
+END
+data6.toc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/data6.toc
+END
+check_opts5.right
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_opts5.right
+END
+data7.toc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/data7.toc
+END
+copying.right
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/copying.right
+END
+check_opts7.right
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_opts7.right
+END
+check_iso.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_iso.sh
+END
+cdda.bin
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/cdda.bin
+END
+videocd.nrg
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/videocd.nrg
+END
+vcd_demo_vcdinfo.right
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/vcd_demo_vcdinfo.right
+END
+bad-mode1.cue
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-mode1.cue
+END
+check_iso.sh.in
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_iso.sh.in
+END
+check_fuzzyiso.sh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/check_fuzzyiso.sh
+END
+isofs-m1.cue
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/isofs-m1.cue
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/Makefile.am
+END
+bad-mode1.toc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/bad-mode1.toc
+END

@@ -1,0 +1,304 @@
+<body class="frame">
+<?% enableform = allow('rdelete') %?>
+<?% IF cgi.param('cmd')=='rl' || cgi.param('cmd')=='rlist' %?>
+    <?% browse = cgi.param('data') %?>
+<?% END %?>
+<div id="body">
+<?% BLOCK dur # d in Sekunden %?>
+<?% IF d > 1 %?>
+    <?% Stunden = d div 3600 %?>
+    <?% Minuten = d div 60 mod 60 %?>
+    <?% Sekunden =  d mod 60 %?>
+    <?% Stunden | format('%d') %?>:<?% Minuten | format('%02d') %?>:<?% Sekunden | format('%02d') %?>
+<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK image %?>
+	<?% files = preview.split(',') %?>
+  <?% IF type == 'RADIO' %?>
+    <img src="images/radio.png" alt="" title="<?% gettext('Radio recording') %?>" />
+  <?% ELSIF files.size > 0;
+      img = (files.size div 2);
+      frame = files.$img %?>
+    <img src="?cmd=ri&data=<?% id %?>_<?% frame %?>" alt="" width="200" title="<?% gettext('Television recording') %?>" />
+  <?% ELSE %?>
+    <img src="images/movie.png" alt="" width="200" title="<?% gettext('Television recording') %?>" />
+  <?% END; %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% total = 0 %?>
+<?% BLOCK printsumme %?>
+ 			 	<p>
+        		<?% IF total > 0;
+                    sec  = total mod 60;
+                    min  = total div 60 mod 60;
+                    hour = total div 3600;
+        		%?>
+						<?% gettext("total time") %?> : 
+						<?% IF hour > 0 %?><?% hour FILTER format('%02d') %?>:<?% END %?><?% min FILTER format('%02d') %?>:<?% sec FILTER format('%02d')%?>
+       			<?% END %?>
+       		    <?% IF param.free;
+                        secf  = param.free mod 60;
+                        minf  = param.free div 60 mod 60;
+                        hourf = param.free div 3600;
+      		    %?>
+    					<br /><?% gettext("available capacity") %?> : 
+						<?% IF hourf > 0 %?><?% hourf FILTER format('%02d') %?>:<?% END %?><?% minf FILTER format('%02d') %?>:<?% secf FILTER format('%02d')%?>
+   			    <?% END %?>
+				</p>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK item %?>
+    <div style="float:left; margin: 2px">
+          <?% IF folder > 1 %?>
+        <table cellspacing="0" cellpadding="0" width="1" class="folderwindow">
+          <tr>
+            <td>
+                  <div style="width:200px; height:160px; text-align:center; vertical-align:middle;">
+                  <a href="?cmd=rlist&amp;data=<?% url( fulltitle ) %?>">
+                   <?% PROCESS image %?> 
+                  </a>
+                  </div>
+                  <div style="height:3em; overflow:hidden;">
+                  <a href="?cmd=rlist&amp;data=<?% url( fulltitle ) %?>">
+                  <b><?% foldertitle %?></b><br />
+                  
+                  <img src="images/<?% new ? "newfolder" : "foldericon" %?>.png" alt="" title="<?% new ? gettext("New recording") : "" %?>" />
+		          &nbsp;<?% folder %?><?% IF new %?>&nbsp;(<?% new %?>)<?% END %?>&nbsp;<?% gettext("more recordings") %?>&nbsp;...
+                  </a>
+                  </div>
+            </td>
+          </tr>
+          <tr height='20'>
+            <td>
+            <?% IF enableform %?>
+            <input type="checkbox" value="all:<?% id %?>" name="<?% gettext("All recordings with title") %?> : '<?% title %?>'" />
+            <?% END %?>&nbsp;<?% gettext("Duration") %?>: <?% PROCESS dur d=duration %?>
+            </td>
+          </tr>
+        </table>
+          <?% ELSE %?>
+        <table cellspacing="0" cellpadding="0" width="1" class="recordwindow">
+          <tr>
+            <td>
+                <div style="width:200px; height:160px; text-align:center; vertical-align:middle;">
+                <a href="?cmd=rdisplay&amp;data=<?% id %?>">
+                <?% PROCESS image %?>
+                </a>
+                </div>
+                <div style="height:3em; overflow:hidden;">
+                <?% INCLUDE bloecke/tooltip.tmpl cmd="rdisplay" linkid=id ttp_offset=0 %?>
+                <?% IF new %?><img src="images/new.png" alt="" title="<?% gettext("New recording") %?>" /><?% END %?>
+                <b><?% (title.match('[a-z]') ? title : fulltitle) %?></b>
+                <br /><?% subtitle %?></font><br />
+                </a>
+                </div>
+            </td>
+          </tr>
+          <tr height='20'>
+            <td>
+            <?% IF enableform %?>
+            <input type="checkbox" value="<?% id %?>" name="<?% title %?>" />
+            <?% END %?>
+            <?% start %?><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?% gettext("Duration") %?>: <?% PROCESS dur d=duration %?>
+            </td>
+          </tr>
+        </table>
+          <?% END %?>
+    </div>
+<?% END %?>
+
+<?% ################# Start ###################### %?>
+
+<?% IF cgi.param('data') != "" %?>
+    <?% search = cgi.param('data') %?>
+<?% END %?>
+<h1><?% gettext("Stored recordings") %?>
+    <?% IF search.defined %?> : "<?% search %?>" <?% END %?>
+    &nbsp;<small>(<?% param.usage %?>)</small>
+</h1>
+<?% IF data.size %?>
+<?% fields = data.shift %?>
+
+<div id="navcontainer">
+<ul id="navlist">
+    <li><a href="?cmd=rupdate"><?% gettext("Update recordings") %?></a></li>
+    <?% IF allow('rdelete') %?>
+    <li><a href="#" onClick="Delete('<?% gettext("Would you like to delete these recordings?") %?>',
+    '<?% gettext("Nothing selected!") %?>','rdelete',document.rlist)">
+    <?% gettext("Delete recordings") %?></a></li>
+    <?% END %?>
+<?% IF allow('rrecover') %?>
+    <li><a href="?cmd=rrecover"><?% gettext("Recover deleted recordings") %?></a></li>
+<?% END %?>
+    <li><a href="#" onClick="suche('<?% gettext("Search text") %?>', '?cmd=rsearch&data=')"><?% gettext("Search for recordings") %?></a></li>
+<?% IF allow('rkeywords') %?>
+    <li><a href="#" onClick="suche('<?% gettext("Keywords") %?>', '?cmd=rkeywords&data=')"><?% gettext("Keywords") %?></a></li>
+<?% END %?>
+</ul>
+</div>
+
+
+<?% IF browse.defined && browse != "" %?>
+    <?% directorys = browse.split('~') %?>
+    <?% IF directorys.size <= 1 %?>
+      <div id="icons">
+      <a title="<?% gettext("Back") %?>" href="?cmd=rlist"><img src="images/oben.png"></a>
+      </div>
+    <?% ELSE %?>
+    <?% t = directorys.pop %?>
+    <?% directory = directorys.join('~') %?>
+      <div id="icons">
+      <a title="<?% gettext("Back") %?>" href="?cmd=rlist&amp;data=<?% url( directory ) %?>"><img src="images/schnell_back.png"></a>
+      <a title="<?% gettext("Back") %?>" href="?cmd=rlist"><img src="images/oben.png"></a>&nbsp;
+      </div>
+    <?% END %?>
+    <br />
+<?% END %?>
+<?% IF param.sortable %?>
+    <?% cmd = cgi.param('cmd') %?>
+    <?% IF cgi.param('data') %?>
+        <?% daten = url ( cgi.param('data') ) %?>
+        <?% daten = "&amp;data=${daten}" %?>
+    <?% END %?>
+<?% END %?>
+<?% IF enableform %?>
+<form name='rlist'>
+<?% END %?>
+<?% IF param.previewcommand == 'n' %?>
+    <table border="0" width="95%">
+        <tr>
+        <?% c = -1 %?>
+        <?% FOREACH field IN fields %?>
+            <?% c = c + 1 %?>
+            <?% NEXT IF field.match('^__') %?>
+            <th style="white-space: nowrap">
+            <?% field %?>
+            <?% IF param.sortable %?>
+                  <a href="?cmd=<?% cmd %?><?% daten %?>&__sortby=<?% field %?>&__desc=0"><img src="images/asc.png"></a>
+                  <a href="?cmd=<?% cmd %?><?% daten %?>&__sortby=<?% field %?>&__desc=1"><img src="images/desc.png"></a>
+            <?% END %?>
+            </th>
+        <?% END %?>
+        </tr>
+        <?% FOREACH zeile IN data %?>
+        <?%- id=zeile.0;eventid=zeile.1;title=zeile.2.split('~').last;subtitle=zeile.3;
+             duration=zeile.4;start=zeile.5;new=zeile.6;type=zeile.7;folder=zeile.8;fulltitle=zeile.9;
+             isrecording=zeile.10;desc=zeile.11;foldertitle=fulltitle.split('~').last -%?>
+		    <?% total = total + duration %?>
+        <tr>
+            <?% IF folder > 1 %?>
+            <td colspan="5">
+                  <a href="?cmd=rlist&amp;data=<?% url( fulltitle ) %?>">
+                  <?% IF new %?>
+                  <img src="images/newfolder.png" alt="" title="<?% gettext("New recording") %?>" />
+                  <?% ELSE %?>
+                  <img src="images/foldericon.png" alt="" />
+                  <?% END %?>
+                  <b><?% foldertitle.split('~').last %?></b>&nbsp;<?% folder %?><?% IF new %?>&nbsp;(<?% new %?>)<?% END %?>&nbsp;<?% gettext("more recordings") %?>&nbsp;...
+                  </a>
+            </td>
+            <?% ELSE %?>
+            <?% c = -1 %?>
+            <?% FOREACH field IN zeile %?>
+             <?%- id=zeile.0;eventid=zeile.1;title=zeile.2.split('~').last;subtitle=zeile.3;
+                   duration=zeile.4;start=zeile.5;new=zeile.6;type=zeile.7;folder=zeile.8;fulltitle=zeile.9;
+                   isrecording=zeile.10;desc=zeile.11;foldertitle=fulltitle.split('~').last -%?>
+                <?% c = c + 1 %?>
+                <?% NEXT IF fields.$c.match('^__') %?>
+            <td>
+                <?% IF c == 0 %?>
+    <?% IF enableform %?>
+                    <input type="checkbox" value="<?% id %?>" name="<?% title | html %?>" />
+    <?% END %?>
+                    <?% start %?>
+                <?% ELSIF c == 4 %?>
+                    <?% PROCESS dur d=field %?>
+                <?% ELSIF c == 2 # title %?>
+                    <?% INCLUDE bloecke/tooltip.tmpl cmd="rdisplay" linkid=id ttp_offset=0 %?>
+                    <?% IF new %?><img src="images/new.png" alt="" title="<?% gettext("New recording") %?>" />&nbsp;<?% END %?>
+                    <?% val = (field.split('~').last.match('[a-z]') ? field.split('~').last : zeile.9); chop(val,30) %?>
+                    </a>
+                <?% ELSE %?>
+                    <a href="?cmd=rdisplay&amp;data=<?% id %?>">
+                    <?% chop(field,30) %?>
+                    </a>
+                <?% END %?>
+            </td>
+            <?% END %?>
+            <?% END %?>
+        </tr>
+        <?% END %?>
+    </table>
+<?% ELSE %?>
+<?% IF param.sortable %?>
+        <?% BLOCK SortItem %?>
+            <?% label | html %?>
+            <a href="?cmd=<?% cmd %?><?% daten %?>&amp;__sortby=<?% row %?>&amp;__desc=0" ><img src="images/asc.png"></a><a href="?cmd=<?% cmd %?><?% daten %?>&amp;__sortby=<?% row %?>&amp;__desc=1" ><img src="images/desc.png"></a>&nbsp;|&nbsp;
+        <?% END %?>
+        <?% gettext('Sorting') %?> :
+    <?% FOREACH row IN fields %?>
+      <?% NEXT IF row.match('^__') %?>
+        <?% PROCESS SortItem label=row %?>
+      <?% END %?>
+<?% END %?>
+
+        <?% # ---------------- Folder Display %?>
+        <?% FOREACH zeile IN data %?>
+            <?%- 
+                id=zeile.0;
+                eventid=zeile.1;
+                title=zeile.2.split('~').last;
+                subtitle=zeile.3;
+                duration=zeile.4;
+                start=zeile.5;
+                new=zeile.6;
+                type=zeile.7;
+                folder=zeile.8;
+                fulltitle=zeile.9;
+                isrecording=zeile.10;
+                desc=zeile.11;
+                preview=zeile.12;
+                foldertitle=fulltitle.split('~').last 
+            -%?>
+            <?% NEXT IF folder < 2 %?>
+		    <?% total = total + duration %?>
+            <?% PROCESS item %?>
+        <?% END %?>
+        <div style="clear:both"></div>
+        <hr style="width:30%; color:yellow; height:1px; border:1px solid #DDD;">
+        <?% # ---------------- Record Display %?>
+        <?% FOREACH zeile IN data %?>
+            <?%- 
+                id=zeile.0;
+                eventid=zeile.1;
+                title=zeile.2.split('~').last;
+                subtitle=zeile.3;
+                duration=zeile.4;
+                start=zeile.5;
+                new=zeile.6;
+                type=zeile.7;
+                folder=zeile.8;
+                fulltitle=zeile.9;
+                isrecording=zeile.10;
+                desc=zeile.11;
+                preview=zeile.12;
+                foldertitle=fulltitle.split('~').last 
+            -%?>
+            <?% NEXT IF folder > 1 %?>
+		    <?% total = total + duration %?>
+            <?% PROCESS item %?>
+            <?% z = z + 1 %?>
+        <?% END %?>
+        <div style="clear:both"></div>
+
+    <?% END %?>
+    <?% PROCESS printsumme width=0 %?>
+    <?% IF enableform %?>
+    </form>
+    <a href="#" onClick="selAll(document.rlist, 1)">[<?% gettext("Select all") %?>]</a>
+    <a href="#" onClick="selAll(document.rlist, 0)">[<?% gettext("Unselect all") %?>]</a>
+    <a href="#" onClick="reverse(document.rlist)">[<?% gettext("Reverse select") %?>]</a>
+    <?% END %?>
+<?% END %?>

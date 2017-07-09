@@ -1,0 +1,10 @@
+/var/log/replex2mpeg.log {
+	weekly
+	rotate 2
+	missingok
+	notifempty
+	compress
+	nocreate
+    size 10M
+}
+

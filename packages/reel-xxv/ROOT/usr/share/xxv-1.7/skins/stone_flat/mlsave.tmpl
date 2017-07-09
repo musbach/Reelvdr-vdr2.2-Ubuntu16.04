@@ -1,0 +1,43 @@
+<!--media save-->
+<body class="frame">
+<div id="body">
+<h1><?% gettext("Media library") %?></h1>
+<?% trimmed = data FILTER trim %?>
+<?% IF data.size > 1 || trimmed != "" %?>
+<table class="editortable" summary="">
+    <tr><td class="editorhead"><div class="editorhead">&nbsp;</div></td></tr>
+    <tr>  
+        <td class="editortext" align="left">
+        <?% IF data.size <= 0 %?>
+            <?% data %?>
+        <?% ELSE %?>
+            <table summary="" width="100%">
+            <?% FOREACH zeile IN data %?>
+                <tr<?% " class='two'" IF loop.count mod 2 == 0 %?>>
+                    <td><?% zeile %?></td>
+                </tr>
+             <?% END %?>
+            </table>
+        <?% END %?>
+        </td>
+    </tr>
+    <tr><td class="editorbottom"></td></tr>
+</table>
+<?% END %?>
+
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Media library",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+      <a title="<?% gettext("Back") %?>" href="?cmd=mldisplay&amp;data=<?% cgi.param('data') %?>"><img src="images/back.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Back") %?>" href="?cmd=mldisplay&amp;data=<?% cgi.param('data') %?>"><?% gettext("Back",18) %?></a><br />
+    </td>
+    </tr>
+    <tr><td class="sidebottom"></td></tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

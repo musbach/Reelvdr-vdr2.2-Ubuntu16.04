@@ -1,0 +1,1828 @@
+#ifndef DFX_REGOFFS_H
+#define DFX_REGOFFS_H 1
+#warning including deprecated file DFX_REGOFFS_H please use sanitized filename
+/*
+
+  This file is provided under a dual BSD/GPLv2 license.  When using or 
+  redistributing this file, you may do so under either license.
+
+  GPL LICENSE SUMMARY
+
+  Copyright(c) 2007-2009 Intel Corporation. All rights reserved.
+
+  This program is free software; you can redistribute it and/or modify 
+  it under the terms of version 2 of the GNU General Public License as
+  published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful, but 
+  WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License 
+  along with this program; if not, write to the Free Software 
+  Foundation, Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+  The full GNU General Public License is included in this distribution 
+  in the file called LICENSE.GPL.
+
+  Contact Information:
+    Intel Corporation
+    2200 Mission College Blvd.
+    Santa Clara, CA  97052
+
+  BSD LICENSE 
+
+  Copyright(c) 2007-2009 Intel Corporation. All rights reserved.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without 
+  modification, are permitted provided that the following conditions 
+  are met:
+
+    * Redistributions of source code must retain the above copyright 
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright 
+      notice, this list of conditions and the following disclaimer in 
+      the documentation and/or other materials provided with the 
+      distribution.
+    * Neither the name of Intel Corporation nor the names of its 
+      contributors may be used to endorse or promote products derived 
+      from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY 
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+
+
+/* Module DFX CSR Definitions */
+/* WARNING: This file is Machine Generated using sven_csr.c */
+
+
+#define ROFF_DFX_DBG_SCRATCH	0x200 /* Scratch */ 
+	#define BITFIELD_DFX_DBG_SCRATCH	 0x0200, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_DBG_TIMESTAMP	0x204 /* Timestamp */ 
+	#define BITFIELD_DFX_DBG_TIMESTAMP	 0x0204, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_DBG_PRESCALE	0x208 /* Timestamp Prescale */ 
+	#define BITFIELD_DFX_DBG_PRESCALE	 0x0208, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_DBG_PRESCALE */
+	#define BLSB_DFX_DBG_PRESCALE_CURRENT	16
+	#define BLSB_DFX_DBG_PRESCALE_PRESCALER	0
+	/* Register Bit Widths for DFX_DBG_PRESCALE */
+	#define BWID_DFX_DBG_PRESCALE_CURRENT	16
+	#define BWID_DFX_DBG_PRESCALE_PRESCALER	16
+	/* Register Bit MASKS for DFX_DBG_PRESCALE */
+	#define BMSK_DFX_DBG_PRESCALE_CURRENT	0xffff0000 /* Prescaler Current Value */
+	#define BMSK_DFX_DBG_PRESCALE_PRESCALER	0x0000ffff /* Prescaler Set Value */
+	/* Register BITFIELD for DFX_DBG_PRESCALE - roff, lsb, width, mask */
+	#define BITFIELD_DFX_DBG_PRESCALE_CURRENT	 0x0208, 16, 16, 0xffff0000
+	#define BITFIELD_DFX_DBG_PRESCALE_PRESCALER	 0x0208, 0, 16, 0x0000ffff
+#define ROFF_DFX_DBG_COUNT_SET	0x210 /* Counter Get */ 
+	#define BITFIELD_DFX_DBG_COUNT_SET	 0x0210, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_DBG_COUNT_GET	0x214 /* Counter Set */ 
+	#define BITFIELD_DFX_DBG_COUNT_GET	 0x0214, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_DBG_COUNT_INC	0x218 /* Counter Increment */ 
+	#define BITFIELD_DFX_DBG_COUNT_INC	 0x0218, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_OMAR_CONTROL	0x2000 /* Control Register */ 
+	#define BITFIELD_DFX_OMAR_CONTROL	 0x2000, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_OMAR_CONTROL */
+	#define BLSB_DFX_OMAR_CONTROL_ENABLE	0
+	/* Register Bit Widths for DFX_OMAR_CONTROL */
+	#define BWID_DFX_OMAR_CONTROL_ENABLE	1
+	/* Register Bit MASKS for DFX_OMAR_CONTROL */
+	#define BMSK_DFX_OMAR_CONTROL_ENABLE	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_OMAR_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_OMAR_CONTROL_ENABLE	 0x2000, 0, 1, 0x00000001
+#define ROFF_DFX_OMAR_INTERVAL_COUNT	0x2008 /* Sample Interval Countdown (XSI clocks) */ 
+	#define BITFIELD_DFX_OMAR_INTERVAL_COUNT	 0x2008, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_OMAR_HEADER_WORD	0x200c /* (RO) Header Word */ 
+	#define BITFIELD_DFX_OMAR_HEADER_WORD	 0x200c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_OMAR_HEADER_WORD */
+	#define BLSB_DFX_OMAR_HEADER_WORD_HDR_WRAP	30
+	#define BLSB_DFX_OMAR_HEADER_WORD_HDR_BURST	25
+	#define BLSB_DFX_OMAR_HEADER_WORD_HDR_SAMP	0
+	/* Register Bit Widths for DFX_OMAR_HEADER_WORD */
+	#define BWID_DFX_OMAR_HEADER_WORD_HDR_WRAP	2
+	#define BWID_DFX_OMAR_HEADER_WORD_HDR_BURST	4
+	#define BWID_DFX_OMAR_HEADER_WORD_HDR_SAMP	24
+	/* Register Bit MASKS for DFX_OMAR_HEADER_WORD */
+	#define BMSK_DFX_OMAR_HEADER_WORD_HDR_WRAP	0xc0000000 /* Circular Wrap Counter */
+	#define BMSK_DFX_OMAR_HEADER_WORD_HDR_BURST	0x1e000000 /* Burst Counter */
+	#define BMSK_DFX_OMAR_HEADER_WORD_HDR_SAMP	0x00ffffff /* Sample Counter */
+	/* Register BITFIELD for DFX_OMAR_HEADER_WORD - roff, lsb, width, mask */
+	#define BITFIELD_DFX_OMAR_HEADER_WORD_HDR_WRAP	 0x200c, 30, 2, 0xc0000000
+	#define BITFIELD_DFX_OMAR_HEADER_WORD_HDR_BURST	 0x200c, 25, 4, 0x1e000000
+	#define BITFIELD_DFX_OMAR_HEADER_WORD_HDR_SAMP	 0x200c, 0, 24, 0x00ffffff
+#define ROFF_DFX_OMAR_CAP_BASE_ADDR	0x2010 /* Capture Buffer Base Address */ 
+	#define BITFIELD_DFX_OMAR_CAP_BASE_ADDR	 0x2010, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_OMAR_CAP_SIZE	0x2014 /* Capture Buffer Size in bytes */ 
+	#define BITFIELD_DFX_OMAR_CAP_SIZE	 0x2014, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_OMAR_CAP_CUR_PTR	0x2018 /* (RO) Capture Current Pointer */ 
+	#define BITFIELD_DFX_OMAR_CAP_CUR_PTR	 0x2018, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_OMAR_UNIT_ENABLE_0	0x2020 /* Capture Enable for units (00-1f) */ 
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0	 0x2020, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_OMAR_UNIT_ENABLE_0 */
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_31	31
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_30	30
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_29	29
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_28	28
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_27	27
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_26	26
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_25	25
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_24	24
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_23	23
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_22	22
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_21	21
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_20	20
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_19	19
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_18	18
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_17	17
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_16	16
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_15	15
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_14	14
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_13	13
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_12	12
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_11	11
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_10	10
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_9	9
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_8	8
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_7	7
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_6	6
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_5	5
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_4	4
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_3	3
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_2	2
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_1	1
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_0_ENA_0	0
+	/* Register Bit Widths for DFX_OMAR_UNIT_ENABLE_0 */
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_31	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_30	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_29	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_28	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_27	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_26	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_25	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_24	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_23	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_22	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_21	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_20	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_19	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_18	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_17	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_16	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_15	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_14	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_13	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_12	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_11	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_10	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_9	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_8	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_7	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_6	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_5	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_4	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_3	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_2	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_1	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_0_ENA_0	1
+	/* Register Bit MASKS for DFX_OMAR_UNIT_ENABLE_0 */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_31	(1<<31) /* == 0x80000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_30	(1<<30) /* == 0x40000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_29	(1<<29) /* == 0x20000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_28	(1<<28) /* == 0x10000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_27	(1<<27) /* == 0x08000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_26	(1<<26) /* == 0x04000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_25	(1<<25) /* == 0x02000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_24	(1<<24) /* == 0x01000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_23	(1<<23) /* == 0x00800000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_22	(1<<22) /* == 0x00400000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_21	(1<<21) /* == 0x00200000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_20	(1<<20) /* == 0x00100000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_19	(1<<19) /* == 0x00080000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_18	(1<<18) /* == 0x00040000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_17	(1<<17) /* == 0x00020000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_16	(1<<16) /* == 0x00010000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_15	(1<<15) /* == 0x00008000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_14	(1<<14) /* == 0x00004000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_13	(1<<13) /* == 0x00002000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_12	(1<<12) /* == 0x00001000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_11	(1<<11) /* == 0x00000800:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_10	(1<<10) /* == 0x00000400:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_9	(1<<9) /* == 0x00000200:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_8	(1<<8) /* == 0x00000100:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_7	(1<<7) /* == 0x00000080:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_6	(1<<6) /* == 0x00000040:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_5	(1<<5) /* == 0x00000020:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_4	(1<<4) /* == 0x00000010:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_3	(1<<3) /* == 0x00000008:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_2	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_1	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_0_ENA_0	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_OMAR_UNIT_ENABLE_0 - roff, lsb, width, mask */
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_31	 0x2020, 31, 1, 0x80000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_30	 0x2020, 30, 1, 0x40000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_29	 0x2020, 29, 1, 0x20000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_28	 0x2020, 28, 1, 0x10000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_27	 0x2020, 27, 1, 0x08000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_26	 0x2020, 26, 1, 0x04000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_25	 0x2020, 25, 1, 0x02000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_24	 0x2020, 24, 1, 0x01000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_23	 0x2020, 23, 1, 0x00800000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_22	 0x2020, 22, 1, 0x00400000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_21	 0x2020, 21, 1, 0x00200000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_20	 0x2020, 20, 1, 0x00100000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_19	 0x2020, 19, 1, 0x00080000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_18	 0x2020, 18, 1, 0x00040000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_17	 0x2020, 17, 1, 0x00020000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_16	 0x2020, 16, 1, 0x00010000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_15	 0x2020, 15, 1, 0x00008000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_14	 0x2020, 14, 1, 0x00004000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_13	 0x2020, 13, 1, 0x00002000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_12	 0x2020, 12, 1, 0x00001000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_11	 0x2020, 11, 1, 0x00000800
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_10	 0x2020, 10, 1, 0x00000400
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_9	 0x2020, 9, 1, 0x00000200
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_8	 0x2020, 8, 1, 0x00000100
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_7	 0x2020, 7, 1, 0x00000080
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_6	 0x2020, 6, 1, 0x00000040
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_5	 0x2020, 5, 1, 0x00000020
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_4	 0x2020, 4, 1, 0x00000010
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_3	 0x2020, 3, 1, 0x00000008
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_2	 0x2020, 2, 1, 0x00000004
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_1	 0x2020, 1, 1, 0x00000002
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_0_ENA_0	 0x2020, 0, 1, 0x00000001
+#define ROFF_DFX_OMAR_UNIT_ENABLE_1	0x2024 /* Capture Enable for units (20-3f) */ 
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1	 0x2024, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_OMAR_UNIT_ENABLE_1 */
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_63	31
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_62	30
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_61	29
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_60	28
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_59	27
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_58	26
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_57	25
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_56	24
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_55	23
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_54	22
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_53	21
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_52	20
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_51	19
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_50	18
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_49	17
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_48	16
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_47	15
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_46	14
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_45	13
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_44	12
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_43	11
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_42	10
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_41	9
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_40	8
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_39	7
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_38	6
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_37	5
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_36	4
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_35	3
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_34	2
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_33	1
+	#define BLSB_DFX_OMAR_UNIT_ENABLE_1_ENA_32	0
+	/* Register Bit Widths for DFX_OMAR_UNIT_ENABLE_1 */
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_63	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_62	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_61	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_60	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_59	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_58	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_57	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_56	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_55	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_54	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_53	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_52	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_51	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_50	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_49	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_48	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_47	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_46	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_45	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_44	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_43	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_42	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_41	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_40	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_39	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_38	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_37	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_36	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_35	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_34	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_33	1
+	#define BWID_DFX_OMAR_UNIT_ENABLE_1_ENA_32	1
+	/* Register Bit MASKS for DFX_OMAR_UNIT_ENABLE_1 */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_63	(1<<31) /* == 0x80000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_62	(1<<30) /* == 0x40000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_61	(1<<29) /* == 0x20000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_60	(1<<28) /* == 0x10000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_59	(1<<27) /* == 0x08000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_58	(1<<26) /* == 0x04000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_57	(1<<25) /* == 0x02000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_56	(1<<24) /* == 0x01000000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_55	(1<<23) /* == 0x00800000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_54	(1<<22) /* == 0x00400000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_53	(1<<21) /* == 0x00200000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_52	(1<<20) /* == 0x00100000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_51	(1<<19) /* == 0x00080000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_50	(1<<18) /* == 0x00040000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_49	(1<<17) /* == 0x00020000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_48	(1<<16) /* == 0x00010000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_47	(1<<15) /* == 0x00008000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_46	(1<<14) /* == 0x00004000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_45	(1<<13) /* == 0x00002000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_44	(1<<12) /* == 0x00001000:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_43	(1<<11) /* == 0x00000800:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_42	(1<<10) /* == 0x00000400:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_41	(1<<9) /* == 0x00000200:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_40	(1<<8) /* == 0x00000100:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_39	(1<<7) /* == 0x00000080:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_38	(1<<6) /* == 0x00000040:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_37	(1<<5) /* == 0x00000020:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_36	(1<<4) /* == 0x00000010:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_35	(1<<3) /* == 0x00000008:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_34	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_33	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_OMAR_UNIT_ENABLE_1_ENA_32	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_OMAR_UNIT_ENABLE_1 - roff, lsb, width, mask */
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_63	 0x2024, 31, 1, 0x80000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_62	 0x2024, 30, 1, 0x40000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_61	 0x2024, 29, 1, 0x20000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_60	 0x2024, 28, 1, 0x10000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_59	 0x2024, 27, 1, 0x08000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_58	 0x2024, 26, 1, 0x04000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_57	 0x2024, 25, 1, 0x02000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_56	 0x2024, 24, 1, 0x01000000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_55	 0x2024, 23, 1, 0x00800000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_54	 0x2024, 22, 1, 0x00400000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_53	 0x2024, 21, 1, 0x00200000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_52	 0x2024, 20, 1, 0x00100000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_51	 0x2024, 19, 1, 0x00080000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_50	 0x2024, 18, 1, 0x00040000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_49	 0x2024, 17, 1, 0x00020000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_48	 0x2024, 16, 1, 0x00010000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_47	 0x2024, 15, 1, 0x00008000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_46	 0x2024, 14, 1, 0x00004000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_45	 0x2024, 13, 1, 0x00002000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_44	 0x2024, 12, 1, 0x00001000
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_43	 0x2024, 11, 1, 0x00000800
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_42	 0x2024, 10, 1, 0x00000400
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_41	 0x2024, 9, 1, 0x00000200
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_40	 0x2024, 8, 1, 0x00000100
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_39	 0x2024, 7, 1, 0x00000080
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_38	 0x2024, 6, 1, 0x00000040
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_37	 0x2024, 5, 1, 0x00000020
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_36	 0x2024, 4, 1, 0x00000010
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_35	 0x2024, 3, 1, 0x00000008
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_34	 0x2024, 2, 1, 0x00000004
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_33	 0x2024, 1, 1, 0x00000002
+	#define BITFIELD_DFX_OMAR_UNIT_ENABLE_1_ENA_32	 0x2024, 0, 1, 0x00000001
+#define ROFF_DFX_OMAR_HILO_SWAP	0x2028 /* HighLow Swap */ 
+	#define BITFIELD_DFX_OMAR_HILO_SWAP	 0x2028, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_OMAR_BLOCK_SWAP	0x202c /* Block Swap */ 
+	#define BITFIELD_DFX_OMAR_BLOCK_SWAP	 0x202c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_OMAR_BLOCK_MUX_SELECT	0x2030 /* Block Mux Select */ 
+	#define BITFIELD_DFX_OMAR_BLOCK_MUX_SELECT	 0x2030, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_OMAR_BLOCK_MUX_SELECT */
+	#define BLSB_DFX_OMAR_BLOCK_MUX_SELECT_SEL_35_67	3
+	#define BLSB_DFX_OMAR_BLOCK_MUX_SELECT_SEL_34_66	2
+	#define BLSB_DFX_OMAR_BLOCK_MUX_SELECT_SEL_33_65	1
+	#define BLSB_DFX_OMAR_BLOCK_MUX_SELECT_SEL_32_64	0
+	/* Register Bit Widths for DFX_OMAR_BLOCK_MUX_SELECT */
+	#define BWID_DFX_OMAR_BLOCK_MUX_SELECT_SEL_35_67	1
+	#define BWID_DFX_OMAR_BLOCK_MUX_SELECT_SEL_34_66	1
+	#define BWID_DFX_OMAR_BLOCK_MUX_SELECT_SEL_33_65	1
+	#define BWID_DFX_OMAR_BLOCK_MUX_SELECT_SEL_32_64	1
+	/* Register Bit MASKS for DFX_OMAR_BLOCK_MUX_SELECT */
+	#define BMSK_DFX_OMAR_BLOCK_MUX_SELECT_SEL_35_67	(1<<3) /* == 0x00000008:  */
+	#define BMSK_DFX_OMAR_BLOCK_MUX_SELECT_SEL_34_66	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_OMAR_BLOCK_MUX_SELECT_SEL_33_65	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_OMAR_BLOCK_MUX_SELECT_SEL_32_64	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_OMAR_BLOCK_MUX_SELECT - roff, lsb, width, mask */
+	#define BITFIELD_DFX_OMAR_BLOCK_MUX_SELECT_SEL_35_67	 0x2030, 3, 1, 0x00000008
+	#define BITFIELD_DFX_OMAR_BLOCK_MUX_SELECT_SEL_34_66	 0x2030, 2, 1, 0x00000004
+	#define BITFIELD_DFX_OMAR_BLOCK_MUX_SELECT_SEL_33_65	 0x2030, 1, 1, 0x00000002
+	#define BITFIELD_DFX_OMAR_BLOCK_MUX_SELECT_SEL_32_64	 0x2030, 0, 1, 0x00000001
+#define ROFF_DFX_PMU0_CONTROL	0x1000 /* PMU0 Control Register, Counter[2:0] */ 
+	#define BITFIELD_DFX_PMU0_CONTROL	 0x1000, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU0_CONTROL */
+	#define BLSB_DFX_PMU0_CONTROL_GlobalDisable	31
+	#define BLSB_DFX_PMU0_CONTROL_Overflow	14
+	#define BLSB_DFX_PMU0_CONTROL_Input0	8
+	#define BLSB_DFX_PMU0_CONTROL_Input1	10
+	#define BLSB_DFX_PMU0_CONTROL_Input2	12
+	#define BLSB_DFX_PMU0_CONTROL_OverflowReset	7
+	#define BLSB_DFX_PMU0_CONTROL_Counter2Reset	6
+	#define BLSB_DFX_PMU0_CONTROL_Counter1Reset	5
+	#define BLSB_DFX_PMU0_CONTROL_Counter0Reset	4
+	#define BLSB_DFX_PMU0_CONTROL_OverflowEnable	3
+	#define BLSB_DFX_PMU0_CONTROL_Counter2Enable	2
+	#define BLSB_DFX_PMU0_CONTROL_Counter1Enable	1
+	#define BLSB_DFX_PMU0_CONTROL_Counter0Enable	0
+	/* Register Bit Widths for DFX_PMU0_CONTROL */
+	#define BWID_DFX_PMU0_CONTROL_GlobalDisable	1
+	#define BWID_DFX_PMU0_CONTROL_Overflow	2
+	#define BWID_DFX_PMU0_CONTROL_Input0	2
+	#define BWID_DFX_PMU0_CONTROL_Input1	2
+	#define BWID_DFX_PMU0_CONTROL_Input2	2
+	#define BWID_DFX_PMU0_CONTROL_OverflowReset	1
+	#define BWID_DFX_PMU0_CONTROL_Counter2Reset	1
+	#define BWID_DFX_PMU0_CONTROL_Counter1Reset	1
+	#define BWID_DFX_PMU0_CONTROL_Counter0Reset	1
+	#define BWID_DFX_PMU0_CONTROL_OverflowEnable	1
+	#define BWID_DFX_PMU0_CONTROL_Counter2Enable	1
+	#define BWID_DFX_PMU0_CONTROL_Counter1Enable	1
+	#define BWID_DFX_PMU0_CONTROL_Counter0Enable	1
+	/* Register Bit MASKS for DFX_PMU0_CONTROL */
+	#define BMSK_DFX_PMU0_CONTROL_GlobalDisable	(1<<31) /* == 0x80000000:  */
+	#define BMSK_DFX_PMU0_CONTROL_Overflow	0x0000c000 /*  */
+	#define BMSK_DFX_PMU0_CONTROL_Input0	0x00000300 /*  */
+	#define BMSK_DFX_PMU0_CONTROL_Input1	0x00000c00 /*  */
+	#define BMSK_DFX_PMU0_CONTROL_Input2	0x00003000 /*  */
+	#define BMSK_DFX_PMU0_CONTROL_OverflowReset	(1<<7) /* == 0x00000080:  */
+	#define BMSK_DFX_PMU0_CONTROL_Counter2Reset	(1<<6) /* == 0x00000040:  */
+	#define BMSK_DFX_PMU0_CONTROL_Counter1Reset	(1<<5) /* == 0x00000020:  */
+	#define BMSK_DFX_PMU0_CONTROL_Counter0Reset	(1<<4) /* == 0x00000010:  */
+	#define BMSK_DFX_PMU0_CONTROL_OverflowEnable	(1<<3) /* == 0x00000008:  */
+	#define BMSK_DFX_PMU0_CONTROL_Counter2Enable	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_PMU0_CONTROL_Counter1Enable	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU0_CONTROL_Counter0Enable	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_PMU0_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU0_CONTROL_GlobalDisable	 0x1000, 31, 1, 0x80000000
+	#define BITFIELD_DFX_PMU0_CONTROL_Overflow	 0x1000, 14, 2, 0x0000c000
+	#define BITFIELD_DFX_PMU0_CONTROL_Input0	 0x1000, 8, 2, 0x00000300
+	#define BITFIELD_DFX_PMU0_CONTROL_Input1	 0x1000, 10, 2, 0x00000c00
+	#define BITFIELD_DFX_PMU0_CONTROL_Input2	 0x1000, 12, 2, 0x00003000
+	#define BITFIELD_DFX_PMU0_CONTROL_OverflowReset	 0x1000, 7, 1, 0x00000080
+	#define BITFIELD_DFX_PMU0_CONTROL_Counter2Reset	 0x1000, 6, 1, 0x00000040
+	#define BITFIELD_DFX_PMU0_CONTROL_Counter1Reset	 0x1000, 5, 1, 0x00000020
+	#define BITFIELD_DFX_PMU0_CONTROL_Counter0Reset	 0x1000, 4, 1, 0x00000010
+	#define BITFIELD_DFX_PMU0_CONTROL_OverflowEnable	 0x1000, 3, 1, 0x00000008
+	#define BITFIELD_DFX_PMU0_CONTROL_Counter2Enable	 0x1000, 2, 1, 0x00000004
+	#define BITFIELD_DFX_PMU0_CONTROL_Counter1Enable	 0x1000, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU0_CONTROL_Counter0Enable	 0x1000, 0, 1, 0x00000001
+#define ROFF_DFX_PMU1_CONTROL	0x1100 /* PMU1 Control Register, Counter[5:3] */ 
+	#define BITFIELD_DFX_PMU1_CONTROL	 0x1100, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU1_CONTROL */
+	#define BLSB_DFX_PMU1_CONTROL_GlobalDisable	31
+	#define BLSB_DFX_PMU1_CONTROL_Overflow	14
+	#define BLSB_DFX_PMU1_CONTROL_Input0	8
+	#define BLSB_DFX_PMU1_CONTROL_Input1	10
+	#define BLSB_DFX_PMU1_CONTROL_Input2	12
+	#define BLSB_DFX_PMU1_CONTROL_OverflowReset	7
+	#define BLSB_DFX_PMU1_CONTROL_Counter2Reset	6
+	#define BLSB_DFX_PMU1_CONTROL_Counter1Reset	5
+	#define BLSB_DFX_PMU1_CONTROL_Counter0Reset	4
+	#define BLSB_DFX_PMU1_CONTROL_OverflowEnable	3
+	#define BLSB_DFX_PMU1_CONTROL_Counter2Enable	2
+	#define BLSB_DFX_PMU1_CONTROL_Counter1Enable	1
+	#define BLSB_DFX_PMU1_CONTROL_Counter0Enable	0
+	/* Register Bit Widths for DFX_PMU1_CONTROL */
+	#define BWID_DFX_PMU1_CONTROL_GlobalDisable	1
+	#define BWID_DFX_PMU1_CONTROL_Overflow	2
+	#define BWID_DFX_PMU1_CONTROL_Input0	2
+	#define BWID_DFX_PMU1_CONTROL_Input1	2
+	#define BWID_DFX_PMU1_CONTROL_Input2	2
+	#define BWID_DFX_PMU1_CONTROL_OverflowReset	1
+	#define BWID_DFX_PMU1_CONTROL_Counter2Reset	1
+	#define BWID_DFX_PMU1_CONTROL_Counter1Reset	1
+	#define BWID_DFX_PMU1_CONTROL_Counter0Reset	1
+	#define BWID_DFX_PMU1_CONTROL_OverflowEnable	1
+	#define BWID_DFX_PMU1_CONTROL_Counter2Enable	1
+	#define BWID_DFX_PMU1_CONTROL_Counter1Enable	1
+	#define BWID_DFX_PMU1_CONTROL_Counter0Enable	1
+	/* Register Bit MASKS for DFX_PMU1_CONTROL */
+	#define BMSK_DFX_PMU1_CONTROL_GlobalDisable	(1<<31) /* == 0x80000000:  */
+	#define BMSK_DFX_PMU1_CONTROL_Overflow	0x0000c000 /*  */
+	#define BMSK_DFX_PMU1_CONTROL_Input0	0x00000300 /*  */
+	#define BMSK_DFX_PMU1_CONTROL_Input1	0x00000c00 /*  */
+	#define BMSK_DFX_PMU1_CONTROL_Input2	0x00003000 /*  */
+	#define BMSK_DFX_PMU1_CONTROL_OverflowReset	(1<<7) /* == 0x00000080:  */
+	#define BMSK_DFX_PMU1_CONTROL_Counter2Reset	(1<<6) /* == 0x00000040:  */
+	#define BMSK_DFX_PMU1_CONTROL_Counter1Reset	(1<<5) /* == 0x00000020:  */
+	#define BMSK_DFX_PMU1_CONTROL_Counter0Reset	(1<<4) /* == 0x00000010:  */
+	#define BMSK_DFX_PMU1_CONTROL_OverflowEnable	(1<<3) /* == 0x00000008:  */
+	#define BMSK_DFX_PMU1_CONTROL_Counter2Enable	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_PMU1_CONTROL_Counter1Enable	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU1_CONTROL_Counter0Enable	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_PMU1_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU1_CONTROL_GlobalDisable	 0x1100, 31, 1, 0x80000000
+	#define BITFIELD_DFX_PMU1_CONTROL_Overflow	 0x1100, 14, 2, 0x0000c000
+	#define BITFIELD_DFX_PMU1_CONTROL_Input0	 0x1100, 8, 2, 0x00000300
+	#define BITFIELD_DFX_PMU1_CONTROL_Input1	 0x1100, 10, 2, 0x00000c00
+	#define BITFIELD_DFX_PMU1_CONTROL_Input2	 0x1100, 12, 2, 0x00003000
+	#define BITFIELD_DFX_PMU1_CONTROL_OverflowReset	 0x1100, 7, 1, 0x00000080
+	#define BITFIELD_DFX_PMU1_CONTROL_Counter2Reset	 0x1100, 6, 1, 0x00000040
+	#define BITFIELD_DFX_PMU1_CONTROL_Counter1Reset	 0x1100, 5, 1, 0x00000020
+	#define BITFIELD_DFX_PMU1_CONTROL_Counter0Reset	 0x1100, 4, 1, 0x00000010
+	#define BITFIELD_DFX_PMU1_CONTROL_OverflowEnable	 0x1100, 3, 1, 0x00000008
+	#define BITFIELD_DFX_PMU1_CONTROL_Counter2Enable	 0x1100, 2, 1, 0x00000004
+	#define BITFIELD_DFX_PMU1_CONTROL_Counter1Enable	 0x1100, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU1_CONTROL_Counter0Enable	 0x1100, 0, 1, 0x00000001
+#define ROFF_DFX_PMU2_CONTROL	0x1200 /* PMU2 Control Register, Counter[8:6] */ 
+	#define BITFIELD_DFX_PMU2_CONTROL	 0x1200, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU2_CONTROL */
+	#define BLSB_DFX_PMU2_CONTROL_GlobalDisable	31
+	#define BLSB_DFX_PMU2_CONTROL_Overflow	14
+	#define BLSB_DFX_PMU2_CONTROL_Input0	8
+	#define BLSB_DFX_PMU2_CONTROL_Input1	10
+	#define BLSB_DFX_PMU2_CONTROL_Input2	12
+	#define BLSB_DFX_PMU2_CONTROL_OverflowReset	7
+	#define BLSB_DFX_PMU2_CONTROL_Counter2Reset	6
+	#define BLSB_DFX_PMU2_CONTROL_Counter1Reset	5
+	#define BLSB_DFX_PMU2_CONTROL_Counter0Reset	4
+	#define BLSB_DFX_PMU2_CONTROL_OverflowEnable	3
+	#define BLSB_DFX_PMU2_CONTROL_Counter2Enable	2
+	#define BLSB_DFX_PMU2_CONTROL_Counter1Enable	1
+	#define BLSB_DFX_PMU2_CONTROL_Counter0Enable	0
+	/* Register Bit Widths for DFX_PMU2_CONTROL */
+	#define BWID_DFX_PMU2_CONTROL_GlobalDisable	1
+	#define BWID_DFX_PMU2_CONTROL_Overflow	2
+	#define BWID_DFX_PMU2_CONTROL_Input0	2
+	#define BWID_DFX_PMU2_CONTROL_Input1	2
+	#define BWID_DFX_PMU2_CONTROL_Input2	2
+	#define BWID_DFX_PMU2_CONTROL_OverflowReset	1
+	#define BWID_DFX_PMU2_CONTROL_Counter2Reset	1
+	#define BWID_DFX_PMU2_CONTROL_Counter1Reset	1
+	#define BWID_DFX_PMU2_CONTROL_Counter0Reset	1
+	#define BWID_DFX_PMU2_CONTROL_OverflowEnable	1
+	#define BWID_DFX_PMU2_CONTROL_Counter2Enable	1
+	#define BWID_DFX_PMU2_CONTROL_Counter1Enable	1
+	#define BWID_DFX_PMU2_CONTROL_Counter0Enable	1
+	/* Register Bit MASKS for DFX_PMU2_CONTROL */
+	#define BMSK_DFX_PMU2_CONTROL_GlobalDisable	(1<<31) /* == 0x80000000:  */
+	#define BMSK_DFX_PMU2_CONTROL_Overflow	0x0000c000 /*  */
+	#define BMSK_DFX_PMU2_CONTROL_Input0	0x00000300 /*  */
+	#define BMSK_DFX_PMU2_CONTROL_Input1	0x00000c00 /*  */
+	#define BMSK_DFX_PMU2_CONTROL_Input2	0x00003000 /*  */
+	#define BMSK_DFX_PMU2_CONTROL_OverflowReset	(1<<7) /* == 0x00000080:  */
+	#define BMSK_DFX_PMU2_CONTROL_Counter2Reset	(1<<6) /* == 0x00000040:  */
+	#define BMSK_DFX_PMU2_CONTROL_Counter1Reset	(1<<5) /* == 0x00000020:  */
+	#define BMSK_DFX_PMU2_CONTROL_Counter0Reset	(1<<4) /* == 0x00000010:  */
+	#define BMSK_DFX_PMU2_CONTROL_OverflowEnable	(1<<3) /* == 0x00000008:  */
+	#define BMSK_DFX_PMU2_CONTROL_Counter2Enable	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_PMU2_CONTROL_Counter1Enable	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU2_CONTROL_Counter0Enable	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_PMU2_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU2_CONTROL_GlobalDisable	 0x1200, 31, 1, 0x80000000
+	#define BITFIELD_DFX_PMU2_CONTROL_Overflow	 0x1200, 14, 2, 0x0000c000
+	#define BITFIELD_DFX_PMU2_CONTROL_Input0	 0x1200, 8, 2, 0x00000300
+	#define BITFIELD_DFX_PMU2_CONTROL_Input1	 0x1200, 10, 2, 0x00000c00
+	#define BITFIELD_DFX_PMU2_CONTROL_Input2	 0x1200, 12, 2, 0x00003000
+	#define BITFIELD_DFX_PMU2_CONTROL_OverflowReset	 0x1200, 7, 1, 0x00000080
+	#define BITFIELD_DFX_PMU2_CONTROL_Counter2Reset	 0x1200, 6, 1, 0x00000040
+	#define BITFIELD_DFX_PMU2_CONTROL_Counter1Reset	 0x1200, 5, 1, 0x00000020
+	#define BITFIELD_DFX_PMU2_CONTROL_Counter0Reset	 0x1200, 4, 1, 0x00000010
+	#define BITFIELD_DFX_PMU2_CONTROL_OverflowEnable	 0x1200, 3, 1, 0x00000008
+	#define BITFIELD_DFX_PMU2_CONTROL_Counter2Enable	 0x1200, 2, 1, 0x00000004
+	#define BITFIELD_DFX_PMU2_CONTROL_Counter1Enable	 0x1200, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU2_CONTROL_Counter0Enable	 0x1200, 0, 1, 0x00000001
+#define ROFF_DFX_PMU3_CONTROL	0x1300 /* PMU3 Control Register, Counter[11:9] */ 
+	#define BITFIELD_DFX_PMU3_CONTROL	 0x1300, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU3_CONTROL */
+	#define BLSB_DFX_PMU3_CONTROL_GlobalDisable	31
+	#define BLSB_DFX_PMU3_CONTROL_Overflow	14
+	#define BLSB_DFX_PMU3_CONTROL_Input0	8
+	#define BLSB_DFX_PMU3_CONTROL_Input1	10
+	#define BLSB_DFX_PMU3_CONTROL_Input2	12
+	#define BLSB_DFX_PMU3_CONTROL_OverflowReset	7
+	#define BLSB_DFX_PMU3_CONTROL_Counter2Reset	6
+	#define BLSB_DFX_PMU3_CONTROL_Counter1Reset	5
+	#define BLSB_DFX_PMU3_CONTROL_Counter0Reset	4
+	#define BLSB_DFX_PMU3_CONTROL_OverflowEnable	3
+	#define BLSB_DFX_PMU3_CONTROL_Counter2Enable	2
+	#define BLSB_DFX_PMU3_CONTROL_Counter1Enable	1
+	#define BLSB_DFX_PMU3_CONTROL_Counter0Enable	0
+	/* Register Bit Widths for DFX_PMU3_CONTROL */
+	#define BWID_DFX_PMU3_CONTROL_GlobalDisable	1
+	#define BWID_DFX_PMU3_CONTROL_Overflow	2
+	#define BWID_DFX_PMU3_CONTROL_Input0	2
+	#define BWID_DFX_PMU3_CONTROL_Input1	2
+	#define BWID_DFX_PMU3_CONTROL_Input2	2
+	#define BWID_DFX_PMU3_CONTROL_OverflowReset	1
+	#define BWID_DFX_PMU3_CONTROL_Counter2Reset	1
+	#define BWID_DFX_PMU3_CONTROL_Counter1Reset	1
+	#define BWID_DFX_PMU3_CONTROL_Counter0Reset	1
+	#define BWID_DFX_PMU3_CONTROL_OverflowEnable	1
+	#define BWID_DFX_PMU3_CONTROL_Counter2Enable	1
+	#define BWID_DFX_PMU3_CONTROL_Counter1Enable	1
+	#define BWID_DFX_PMU3_CONTROL_Counter0Enable	1
+	/* Register Bit MASKS for DFX_PMU3_CONTROL */
+	#define BMSK_DFX_PMU3_CONTROL_GlobalDisable	(1<<31) /* == 0x80000000:  */
+	#define BMSK_DFX_PMU3_CONTROL_Overflow	0x0000c000 /*  */
+	#define BMSK_DFX_PMU3_CONTROL_Input0	0x00000300 /*  */
+	#define BMSK_DFX_PMU3_CONTROL_Input1	0x00000c00 /*  */
+	#define BMSK_DFX_PMU3_CONTROL_Input2	0x00003000 /*  */
+	#define BMSK_DFX_PMU3_CONTROL_OverflowReset	(1<<7) /* == 0x00000080:  */
+	#define BMSK_DFX_PMU3_CONTROL_Counter2Reset	(1<<6) /* == 0x00000040:  */
+	#define BMSK_DFX_PMU3_CONTROL_Counter1Reset	(1<<5) /* == 0x00000020:  */
+	#define BMSK_DFX_PMU3_CONTROL_Counter0Reset	(1<<4) /* == 0x00000010:  */
+	#define BMSK_DFX_PMU3_CONTROL_OverflowEnable	(1<<3) /* == 0x00000008:  */
+	#define BMSK_DFX_PMU3_CONTROL_Counter2Enable	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_PMU3_CONTROL_Counter1Enable	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU3_CONTROL_Counter0Enable	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_PMU3_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU3_CONTROL_GlobalDisable	 0x1300, 31, 1, 0x80000000
+	#define BITFIELD_DFX_PMU3_CONTROL_Overflow	 0x1300, 14, 2, 0x0000c000
+	#define BITFIELD_DFX_PMU3_CONTROL_Input0	 0x1300, 8, 2, 0x00000300
+	#define BITFIELD_DFX_PMU3_CONTROL_Input1	 0x1300, 10, 2, 0x00000c00
+	#define BITFIELD_DFX_PMU3_CONTROL_Input2	 0x1300, 12, 2, 0x00003000
+	#define BITFIELD_DFX_PMU3_CONTROL_OverflowReset	 0x1300, 7, 1, 0x00000080
+	#define BITFIELD_DFX_PMU3_CONTROL_Counter2Reset	 0x1300, 6, 1, 0x00000040
+	#define BITFIELD_DFX_PMU3_CONTROL_Counter1Reset	 0x1300, 5, 1, 0x00000020
+	#define BITFIELD_DFX_PMU3_CONTROL_Counter0Reset	 0x1300, 4, 1, 0x00000010
+	#define BITFIELD_DFX_PMU3_CONTROL_OverflowEnable	 0x1300, 3, 1, 0x00000008
+	#define BITFIELD_DFX_PMU3_CONTROL_Counter2Enable	 0x1300, 2, 1, 0x00000004
+	#define BITFIELD_DFX_PMU3_CONTROL_Counter1Enable	 0x1300, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU3_CONTROL_Counter0Enable	 0x1300, 0, 1, 0x00000001
+#define ROFF_DFX_PMU0_COUNTER_SELECT	0x1004 /* PMU0 Counter Select, Counter[2:0] */ 
+	#define BITFIELD_DFX_PMU0_COUNTER_SELECT	 0x1004, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU0_COUNTER_SELECT */
+	#define BLSB_DFX_PMU0_COUNTER_SELECT_EventCount2	10
+	#define BLSB_DFX_PMU0_COUNTER_SELECT_EventCount1	5
+	#define BLSB_DFX_PMU0_COUNTER_SELECT_EventCount0	0
+	/* Register Bit Widths for DFX_PMU0_COUNTER_SELECT */
+	#define BWID_DFX_PMU0_COUNTER_SELECT_EventCount2	5
+	#define BWID_DFX_PMU0_COUNTER_SELECT_EventCount1	5
+	#define BWID_DFX_PMU0_COUNTER_SELECT_EventCount0	5
+	/* Register Bit MASKS for DFX_PMU0_COUNTER_SELECT */
+	#define BMSK_DFX_PMU0_COUNTER_SELECT_EventCount2	0x00007c00 /*  */
+	#define BMSK_DFX_PMU0_COUNTER_SELECT_EventCount1	0x000003e0 /*  */
+	#define BMSK_DFX_PMU0_COUNTER_SELECT_EventCount0	0x0000001f /*  */
+	/* Register BITFIELD for DFX_PMU0_COUNTER_SELECT - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU0_COUNTER_SELECT_EventCount2	 0x1004, 10, 5, 0x00007c00
+	#define BITFIELD_DFX_PMU0_COUNTER_SELECT_EventCount1	 0x1004, 5, 5, 0x000003e0
+	#define BITFIELD_DFX_PMU0_COUNTER_SELECT_EventCount0	 0x1004, 0, 5, 0x0000001f
+#define ROFF_DFX_PMU1_COUNTER_SELECT	0x1104 /* PMU1 Counter Select, Counter[5:3] */ 
+	#define BITFIELD_DFX_PMU1_COUNTER_SELECT	 0x1104, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU1_COUNTER_SELECT */
+	#define BLSB_DFX_PMU1_COUNTER_SELECT_EventCount2	10
+	#define BLSB_DFX_PMU1_COUNTER_SELECT_EventCount1	5
+	#define BLSB_DFX_PMU1_COUNTER_SELECT_EventCount0	0
+	/* Register Bit Widths for DFX_PMU1_COUNTER_SELECT */
+	#define BWID_DFX_PMU1_COUNTER_SELECT_EventCount2	5
+	#define BWID_DFX_PMU1_COUNTER_SELECT_EventCount1	5
+	#define BWID_DFX_PMU1_COUNTER_SELECT_EventCount0	5
+	/* Register Bit MASKS for DFX_PMU1_COUNTER_SELECT */
+	#define BMSK_DFX_PMU1_COUNTER_SELECT_EventCount2	0x00007c00 /*  */
+	#define BMSK_DFX_PMU1_COUNTER_SELECT_EventCount1	0x000003e0 /*  */
+	#define BMSK_DFX_PMU1_COUNTER_SELECT_EventCount0	0x0000001f /*  */
+	/* Register BITFIELD for DFX_PMU1_COUNTER_SELECT - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU1_COUNTER_SELECT_EventCount2	 0x1104, 10, 5, 0x00007c00
+	#define BITFIELD_DFX_PMU1_COUNTER_SELECT_EventCount1	 0x1104, 5, 5, 0x000003e0
+	#define BITFIELD_DFX_PMU1_COUNTER_SELECT_EventCount0	 0x1104, 0, 5, 0x0000001f
+#define ROFF_DFX_PMU2_COUNTER_SELECT	0x1204 /* PMU2 Counter Select, Counter[8:6] */ 
+	#define BITFIELD_DFX_PMU2_COUNTER_SELECT	 0x1204, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU2_COUNTER_SELECT */
+	#define BLSB_DFX_PMU2_COUNTER_SELECT_EventCount2	10
+	#define BLSB_DFX_PMU2_COUNTER_SELECT_EventCount1	5
+	#define BLSB_DFX_PMU2_COUNTER_SELECT_EventCount0	0
+	/* Register Bit Widths for DFX_PMU2_COUNTER_SELECT */
+	#define BWID_DFX_PMU2_COUNTER_SELECT_EventCount2	5
+	#define BWID_DFX_PMU2_COUNTER_SELECT_EventCount1	5
+	#define BWID_DFX_PMU2_COUNTER_SELECT_EventCount0	5
+	/* Register Bit MASKS for DFX_PMU2_COUNTER_SELECT */
+	#define BMSK_DFX_PMU2_COUNTER_SELECT_EventCount2	0x00007c00 /*  */
+	#define BMSK_DFX_PMU2_COUNTER_SELECT_EventCount1	0x000003e0 /*  */
+	#define BMSK_DFX_PMU2_COUNTER_SELECT_EventCount0	0x0000001f /*  */
+	/* Register BITFIELD for DFX_PMU2_COUNTER_SELECT - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU2_COUNTER_SELECT_EventCount2	 0x1204, 10, 5, 0x00007c00
+	#define BITFIELD_DFX_PMU2_COUNTER_SELECT_EventCount1	 0x1204, 5, 5, 0x000003e0
+	#define BITFIELD_DFX_PMU2_COUNTER_SELECT_EventCount0	 0x1204, 0, 5, 0x0000001f
+#define ROFF_DFX_PMU3_COUNTER_SELECT	0x1304 /* PMU3 Counter Select, Counter[11:9] */ 
+	#define BITFIELD_DFX_PMU3_COUNTER_SELECT	 0x1304, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU3_COUNTER_SELECT */
+	#define BLSB_DFX_PMU3_COUNTER_SELECT_EventCount2	10
+	#define BLSB_DFX_PMU3_COUNTER_SELECT_EventCount1	5
+	#define BLSB_DFX_PMU3_COUNTER_SELECT_EventCount0	0
+	/* Register Bit Widths for DFX_PMU3_COUNTER_SELECT */
+	#define BWID_DFX_PMU3_COUNTER_SELECT_EventCount2	5
+	#define BWID_DFX_PMU3_COUNTER_SELECT_EventCount1	5
+	#define BWID_DFX_PMU3_COUNTER_SELECT_EventCount0	5
+	/* Register Bit MASKS for DFX_PMU3_COUNTER_SELECT */
+	#define BMSK_DFX_PMU3_COUNTER_SELECT_EventCount2	0x00007c00 /*  */
+	#define BMSK_DFX_PMU3_COUNTER_SELECT_EventCount1	0x000003e0 /*  */
+	#define BMSK_DFX_PMU3_COUNTER_SELECT_EventCount0	0x0000001f /*  */
+	/* Register BITFIELD for DFX_PMU3_COUNTER_SELECT - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU3_COUNTER_SELECT_EventCount2	 0x1304, 10, 5, 0x00007c00
+	#define BITFIELD_DFX_PMU3_COUNTER_SELECT_EventCount1	 0x1304, 5, 5, 0x000003e0
+	#define BITFIELD_DFX_PMU3_COUNTER_SELECT_EventCount0	 0x1304, 0, 5, 0x0000001f
+#define ROFF_DFX_PMU0_INTERRUPT_ENABLE	0x1008 /* PMU0 Interrupt Enable, Counter[2:0] */ 
+	#define BITFIELD_DFX_PMU0_INTERRUPT_ENABLE	 0x1008, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU0_INTERRUPT_ENABLE */
+	#define BLSB_DFX_PMU0_INTERRUPT_ENABLE_Counter0InterruptEnable	0
+	#define BLSB_DFX_PMU0_INTERRUPT_ENABLE_Counter1InterruptEnable	1
+	#define BLSB_DFX_PMU0_INTERRUPT_ENABLE_Counter2InterruptEnable	2
+	/* Register Bit Widths for DFX_PMU0_INTERRUPT_ENABLE */
+	#define BWID_DFX_PMU0_INTERRUPT_ENABLE_Counter0InterruptEnable	1
+	#define BWID_DFX_PMU0_INTERRUPT_ENABLE_Counter1InterruptEnable	1
+	#define BWID_DFX_PMU0_INTERRUPT_ENABLE_Counter2InterruptEnable	1
+	/* Register Bit MASKS for DFX_PMU0_INTERRUPT_ENABLE */
+	#define BMSK_DFX_PMU0_INTERRUPT_ENABLE_Counter0InterruptEnable	(1<<0) /* == 0x00000001:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_ENABLE_Counter1InterruptEnable	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_ENABLE_Counter2InterruptEnable	(1<<2) /* == 0x00000004:  */
+	/* Register BITFIELD for DFX_PMU0_INTERRUPT_ENABLE - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU0_INTERRUPT_ENABLE_Counter0InterruptEnable	 0x1008, 0, 1, 0x00000001
+	#define BITFIELD_DFX_PMU0_INTERRUPT_ENABLE_Counter1InterruptEnable	 0x1008, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU0_INTERRUPT_ENABLE_Counter2InterruptEnable	 0x1008, 2, 1, 0x00000004
+#define ROFF_DFX_PMU1_INTERRUPT_ENABLE	0x1108 /* PMU1 Interrupt Enable, Counter[5:3] */ 
+	#define BITFIELD_DFX_PMU1_INTERRUPT_ENABLE	 0x1108, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU1_INTERRUPT_ENABLE */
+	#define BLSB_DFX_PMU1_INTERRUPT_ENABLE_Counter0InterruptEnable	0
+	#define BLSB_DFX_PMU1_INTERRUPT_ENABLE_Counter1InterruptEnable	1
+	#define BLSB_DFX_PMU1_INTERRUPT_ENABLE_Counter2InterruptEnable	2
+	/* Register Bit Widths for DFX_PMU1_INTERRUPT_ENABLE */
+	#define BWID_DFX_PMU1_INTERRUPT_ENABLE_Counter0InterruptEnable	1
+	#define BWID_DFX_PMU1_INTERRUPT_ENABLE_Counter1InterruptEnable	1
+	#define BWID_DFX_PMU1_INTERRUPT_ENABLE_Counter2InterruptEnable	1
+	/* Register Bit MASKS for DFX_PMU1_INTERRUPT_ENABLE */
+	#define BMSK_DFX_PMU1_INTERRUPT_ENABLE_Counter0InterruptEnable	(1<<0) /* == 0x00000001:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_ENABLE_Counter1InterruptEnable	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_ENABLE_Counter2InterruptEnable	(1<<2) /* == 0x00000004:  */
+	/* Register BITFIELD for DFX_PMU1_INTERRUPT_ENABLE - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU1_INTERRUPT_ENABLE_Counter0InterruptEnable	 0x1108, 0, 1, 0x00000001
+	#define BITFIELD_DFX_PMU1_INTERRUPT_ENABLE_Counter1InterruptEnable	 0x1108, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU1_INTERRUPT_ENABLE_Counter2InterruptEnable	 0x1108, 2, 1, 0x00000004
+#define ROFF_DFX_PMU2_INTERRUPT_ENABLE	0x1208 /* PMU2 Interrupt Enable, Counter[8:6] */ 
+	#define BITFIELD_DFX_PMU2_INTERRUPT_ENABLE	 0x1208, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU2_INTERRUPT_ENABLE */
+	#define BLSB_DFX_PMU2_INTERRUPT_ENABLE_Counter0InterruptEnable	0
+	#define BLSB_DFX_PMU2_INTERRUPT_ENABLE_Counter1InterruptEnable	1
+	#define BLSB_DFX_PMU2_INTERRUPT_ENABLE_Counter2InterruptEnable	2
+	/* Register Bit Widths for DFX_PMU2_INTERRUPT_ENABLE */
+	#define BWID_DFX_PMU2_INTERRUPT_ENABLE_Counter0InterruptEnable	1
+	#define BWID_DFX_PMU2_INTERRUPT_ENABLE_Counter1InterruptEnable	1
+	#define BWID_DFX_PMU2_INTERRUPT_ENABLE_Counter2InterruptEnable	1
+	/* Register Bit MASKS for DFX_PMU2_INTERRUPT_ENABLE */
+	#define BMSK_DFX_PMU2_INTERRUPT_ENABLE_Counter0InterruptEnable	(1<<0) /* == 0x00000001:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_ENABLE_Counter1InterruptEnable	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_ENABLE_Counter2InterruptEnable	(1<<2) /* == 0x00000004:  */
+	/* Register BITFIELD for DFX_PMU2_INTERRUPT_ENABLE - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU2_INTERRUPT_ENABLE_Counter0InterruptEnable	 0x1208, 0, 1, 0x00000001
+	#define BITFIELD_DFX_PMU2_INTERRUPT_ENABLE_Counter1InterruptEnable	 0x1208, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU2_INTERRUPT_ENABLE_Counter2InterruptEnable	 0x1208, 2, 1, 0x00000004
+#define ROFF_DFX_PMU3_INTERRUPT_ENABLE	0x1308 /* PMU3 Interrupt Enable, Counter[11:9] */ 
+	#define BITFIELD_DFX_PMU3_INTERRUPT_ENABLE	 0x1308, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU3_INTERRUPT_ENABLE */
+	#define BLSB_DFX_PMU3_INTERRUPT_ENABLE_Counter0InterruptEnable	0
+	#define BLSB_DFX_PMU3_INTERRUPT_ENABLE_Counter1InterruptEnable	1
+	#define BLSB_DFX_PMU3_INTERRUPT_ENABLE_Counter2InterruptEnable	2
+	/* Register Bit Widths for DFX_PMU3_INTERRUPT_ENABLE */
+	#define BWID_DFX_PMU3_INTERRUPT_ENABLE_Counter0InterruptEnable	1
+	#define BWID_DFX_PMU3_INTERRUPT_ENABLE_Counter1InterruptEnable	1
+	#define BWID_DFX_PMU3_INTERRUPT_ENABLE_Counter2InterruptEnable	1
+	/* Register Bit MASKS for DFX_PMU3_INTERRUPT_ENABLE */
+	#define BMSK_DFX_PMU3_INTERRUPT_ENABLE_Counter0InterruptEnable	(1<<0) /* == 0x00000001:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_ENABLE_Counter1InterruptEnable	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_ENABLE_Counter2InterruptEnable	(1<<2) /* == 0x00000004:  */
+	/* Register BITFIELD for DFX_PMU3_INTERRUPT_ENABLE - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU3_INTERRUPT_ENABLE_Counter0InterruptEnable	 0x1308, 0, 1, 0x00000001
+	#define BITFIELD_DFX_PMU3_INTERRUPT_ENABLE_Counter1InterruptEnable	 0x1308, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU3_INTERRUPT_ENABLE_Counter2InterruptEnable	 0x1308, 2, 1, 0x00000004
+#define ROFF_DFX_PMU0_INTERRUPT_STATUS	0x100c /* PMU0 Interrupt Status, Counter[2:0] */ 
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS	 0x100c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU0_INTERRUPT_STATUS */
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMUCount0Threshold	0
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMUCount1Threshold	1
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMUCount2Threshold	2
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU0Count0Threshold	16
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU0Count1Threshold	17
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU0Count2Threshold	18
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU1Count0Threshold	19
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU1Count1Threshold	20
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU1Count2Threshold	21
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU2Count0Threshold	22
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU2Count1Threshold	23
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU2Count2Threshold	24
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU3Count0Threshold	25
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU3Count1Threshold	26
+	#define BLSB_DFX_PMU0_INTERRUPT_STATUS_PMU3Count2Threshold	27
+	/* Register Bit Widths for DFX_PMU0_INTERRUPT_STATUS */
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMUCount0Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMUCount1Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMUCount2Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU0Count0Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU0Count1Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU0Count2Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU1Count0Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU1Count1Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU1Count2Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU2Count0Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU2Count1Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU2Count2Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU3Count0Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU3Count1Threshold	1
+	#define BWID_DFX_PMU0_INTERRUPT_STATUS_PMU3Count2Threshold	1
+	/* Register Bit MASKS for DFX_PMU0_INTERRUPT_STATUS */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMUCount0Threshold	(1<<0) /* == 0x00000001:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMUCount1Threshold	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMUCount2Threshold	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU0Count0Threshold	(1<<16) /* == 0x00010000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU0Count1Threshold	(1<<17) /* == 0x00020000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU0Count2Threshold	(1<<18) /* == 0x00040000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU1Count0Threshold	(1<<19) /* == 0x00080000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU1Count1Threshold	(1<<20) /* == 0x00100000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU1Count2Threshold	(1<<21) /* == 0x00200000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU2Count0Threshold	(1<<22) /* == 0x00400000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU2Count1Threshold	(1<<23) /* == 0x00800000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU2Count2Threshold	(1<<24) /* == 0x01000000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU3Count0Threshold	(1<<25) /* == 0x02000000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU3Count1Threshold	(1<<26) /* == 0x04000000:  */
+	#define BMSK_DFX_PMU0_INTERRUPT_STATUS_PMU3Count2Threshold	(1<<27) /* == 0x08000000:  */
+	/* Register BITFIELD for DFX_PMU0_INTERRUPT_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMUCount0Threshold	 0x100c, 0, 1, 0x00000001
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMUCount1Threshold	 0x100c, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMUCount2Threshold	 0x100c, 2, 1, 0x00000004
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU0Count0Threshold	 0x100c, 16, 1, 0x00010000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU0Count1Threshold	 0x100c, 17, 1, 0x00020000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU0Count2Threshold	 0x100c, 18, 1, 0x00040000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU1Count0Threshold	 0x100c, 19, 1, 0x00080000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU1Count1Threshold	 0x100c, 20, 1, 0x00100000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU1Count2Threshold	 0x100c, 21, 1, 0x00200000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU2Count0Threshold	 0x100c, 22, 1, 0x00400000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU2Count1Threshold	 0x100c, 23, 1, 0x00800000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU2Count2Threshold	 0x100c, 24, 1, 0x01000000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU3Count0Threshold	 0x100c, 25, 1, 0x02000000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU3Count1Threshold	 0x100c, 26, 1, 0x04000000
+	#define BITFIELD_DFX_PMU0_INTERRUPT_STATUS_PMU3Count2Threshold	 0x100c, 27, 1, 0x08000000
+#define ROFF_DFX_PMU1_INTERRUPT_STATUS	0x110c /* PMU1 Interrupt Status, Counter[5:3] */ 
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS	 0x110c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU1_INTERRUPT_STATUS */
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMUCount0Threshold	0
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMUCount1Threshold	1
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMUCount2Threshold	2
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU0Count0Threshold	16
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU0Count1Threshold	17
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU0Count2Threshold	18
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU1Count0Threshold	19
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU1Count1Threshold	20
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU1Count2Threshold	21
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU2Count0Threshold	22
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU2Count1Threshold	23
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU2Count2Threshold	24
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU3Count0Threshold	25
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU3Count1Threshold	26
+	#define BLSB_DFX_PMU1_INTERRUPT_STATUS_PMU3Count2Threshold	27
+	/* Register Bit Widths for DFX_PMU1_INTERRUPT_STATUS */
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMUCount0Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMUCount1Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMUCount2Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU0Count0Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU0Count1Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU0Count2Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU1Count0Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU1Count1Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU1Count2Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU2Count0Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU2Count1Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU2Count2Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU3Count0Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU3Count1Threshold	1
+	#define BWID_DFX_PMU1_INTERRUPT_STATUS_PMU3Count2Threshold	1
+	/* Register Bit MASKS for DFX_PMU1_INTERRUPT_STATUS */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMUCount0Threshold	(1<<0) /* == 0x00000001:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMUCount1Threshold	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMUCount2Threshold	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU0Count0Threshold	(1<<16) /* == 0x00010000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU0Count1Threshold	(1<<17) /* == 0x00020000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU0Count2Threshold	(1<<18) /* == 0x00040000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU1Count0Threshold	(1<<19) /* == 0x00080000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU1Count1Threshold	(1<<20) /* == 0x00100000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU1Count2Threshold	(1<<21) /* == 0x00200000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU2Count0Threshold	(1<<22) /* == 0x00400000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU2Count1Threshold	(1<<23) /* == 0x00800000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU2Count2Threshold	(1<<24) /* == 0x01000000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU3Count0Threshold	(1<<25) /* == 0x02000000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU3Count1Threshold	(1<<26) /* == 0x04000000:  */
+	#define BMSK_DFX_PMU1_INTERRUPT_STATUS_PMU3Count2Threshold	(1<<27) /* == 0x08000000:  */
+	/* Register BITFIELD for DFX_PMU1_INTERRUPT_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMUCount0Threshold	 0x110c, 0, 1, 0x00000001
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMUCount1Threshold	 0x110c, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMUCount2Threshold	 0x110c, 2, 1, 0x00000004
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU0Count0Threshold	 0x110c, 16, 1, 0x00010000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU0Count1Threshold	 0x110c, 17, 1, 0x00020000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU0Count2Threshold	 0x110c, 18, 1, 0x00040000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU1Count0Threshold	 0x110c, 19, 1, 0x00080000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU1Count1Threshold	 0x110c, 20, 1, 0x00100000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU1Count2Threshold	 0x110c, 21, 1, 0x00200000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU2Count0Threshold	 0x110c, 22, 1, 0x00400000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU2Count1Threshold	 0x110c, 23, 1, 0x00800000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU2Count2Threshold	 0x110c, 24, 1, 0x01000000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU3Count0Threshold	 0x110c, 25, 1, 0x02000000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU3Count1Threshold	 0x110c, 26, 1, 0x04000000
+	#define BITFIELD_DFX_PMU1_INTERRUPT_STATUS_PMU3Count2Threshold	 0x110c, 27, 1, 0x08000000
+#define ROFF_DFX_PMU2_INTERRUPT_STATUS	0x120c /* PMU2 Interrupt Status, Counter[8:6] */ 
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS	 0x120c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU2_INTERRUPT_STATUS */
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMUCount0Threshold	0
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMUCount1Threshold	1
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMUCount2Threshold	2
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU0Count0Threshold	16
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU0Count1Threshold	17
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU0Count2Threshold	18
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU1Count0Threshold	19
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU1Count1Threshold	20
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU1Count2Threshold	21
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU2Count0Threshold	22
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU2Count1Threshold	23
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU2Count2Threshold	24
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU3Count0Threshold	25
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU3Count1Threshold	26
+	#define BLSB_DFX_PMU2_INTERRUPT_STATUS_PMU3Count2Threshold	27
+	/* Register Bit Widths for DFX_PMU2_INTERRUPT_STATUS */
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMUCount0Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMUCount1Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMUCount2Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU0Count0Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU0Count1Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU0Count2Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU1Count0Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU1Count1Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU1Count2Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU2Count0Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU2Count1Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU2Count2Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU3Count0Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU3Count1Threshold	1
+	#define BWID_DFX_PMU2_INTERRUPT_STATUS_PMU3Count2Threshold	1
+	/* Register Bit MASKS for DFX_PMU2_INTERRUPT_STATUS */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMUCount0Threshold	(1<<0) /* == 0x00000001:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMUCount1Threshold	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMUCount2Threshold	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU0Count0Threshold	(1<<16) /* == 0x00010000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU0Count1Threshold	(1<<17) /* == 0x00020000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU0Count2Threshold	(1<<18) /* == 0x00040000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU1Count0Threshold	(1<<19) /* == 0x00080000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU1Count1Threshold	(1<<20) /* == 0x00100000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU1Count2Threshold	(1<<21) /* == 0x00200000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU2Count0Threshold	(1<<22) /* == 0x00400000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU2Count1Threshold	(1<<23) /* == 0x00800000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU2Count2Threshold	(1<<24) /* == 0x01000000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU3Count0Threshold	(1<<25) /* == 0x02000000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU3Count1Threshold	(1<<26) /* == 0x04000000:  */
+	#define BMSK_DFX_PMU2_INTERRUPT_STATUS_PMU3Count2Threshold	(1<<27) /* == 0x08000000:  */
+	/* Register BITFIELD for DFX_PMU2_INTERRUPT_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMUCount0Threshold	 0x120c, 0, 1, 0x00000001
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMUCount1Threshold	 0x120c, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMUCount2Threshold	 0x120c, 2, 1, 0x00000004
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU0Count0Threshold	 0x120c, 16, 1, 0x00010000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU0Count1Threshold	 0x120c, 17, 1, 0x00020000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU0Count2Threshold	 0x120c, 18, 1, 0x00040000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU1Count0Threshold	 0x120c, 19, 1, 0x00080000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU1Count1Threshold	 0x120c, 20, 1, 0x00100000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU1Count2Threshold	 0x120c, 21, 1, 0x00200000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU2Count0Threshold	 0x120c, 22, 1, 0x00400000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU2Count1Threshold	 0x120c, 23, 1, 0x00800000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU2Count2Threshold	 0x120c, 24, 1, 0x01000000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU3Count0Threshold	 0x120c, 25, 1, 0x02000000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU3Count1Threshold	 0x120c, 26, 1, 0x04000000
+	#define BITFIELD_DFX_PMU2_INTERRUPT_STATUS_PMU3Count2Threshold	 0x120c, 27, 1, 0x08000000
+#define ROFF_DFX_PMU3_INTERRUPT_STATUS	0x130c /* PMU3 Interrupt Status, Counter[11:9] */ 
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS	 0x130c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_PMU3_INTERRUPT_STATUS */
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMUCount0Threshold	0
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMUCount1Threshold	1
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMUCount2Threshold	2
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU0Count0Threshold	16
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU0Count1Threshold	17
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU0Count2Threshold	18
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU1Count0Threshold	19
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU1Count1Threshold	20
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU1Count2Threshold	21
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU2Count0Threshold	22
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU2Count1Threshold	23
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU2Count2Threshold	24
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU3Count0Threshold	25
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU3Count1Threshold	26
+	#define BLSB_DFX_PMU3_INTERRUPT_STATUS_PMU3Count2Threshold	27
+	/* Register Bit Widths for DFX_PMU3_INTERRUPT_STATUS */
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMUCount0Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMUCount1Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMUCount2Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU0Count0Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU0Count1Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU0Count2Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU1Count0Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU1Count1Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU1Count2Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU2Count0Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU2Count1Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU2Count2Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU3Count0Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU3Count1Threshold	1
+	#define BWID_DFX_PMU3_INTERRUPT_STATUS_PMU3Count2Threshold	1
+	/* Register Bit MASKS for DFX_PMU3_INTERRUPT_STATUS */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMUCount0Threshold	(1<<0) /* == 0x00000001:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMUCount1Threshold	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMUCount2Threshold	(1<<2) /* == 0x00000004:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU0Count0Threshold	(1<<16) /* == 0x00010000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU0Count1Threshold	(1<<17) /* == 0x00020000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU0Count2Threshold	(1<<18) /* == 0x00040000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU1Count0Threshold	(1<<19) /* == 0x00080000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU1Count1Threshold	(1<<20) /* == 0x00100000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU1Count2Threshold	(1<<21) /* == 0x00200000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU2Count0Threshold	(1<<22) /* == 0x00400000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU2Count1Threshold	(1<<23) /* == 0x00800000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU2Count2Threshold	(1<<24) /* == 0x01000000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU3Count0Threshold	(1<<25) /* == 0x02000000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU3Count1Threshold	(1<<26) /* == 0x04000000:  */
+	#define BMSK_DFX_PMU3_INTERRUPT_STATUS_PMU3Count2Threshold	(1<<27) /* == 0x08000000:  */
+	/* Register BITFIELD for DFX_PMU3_INTERRUPT_STATUS - roff, lsb, width, mask */
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMUCount0Threshold	 0x130c, 0, 1, 0x00000001
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMUCount1Threshold	 0x130c, 1, 1, 0x00000002
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMUCount2Threshold	 0x130c, 2, 1, 0x00000004
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU0Count0Threshold	 0x130c, 16, 1, 0x00010000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU0Count1Threshold	 0x130c, 17, 1, 0x00020000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU0Count2Threshold	 0x130c, 18, 1, 0x00040000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU1Count0Threshold	 0x130c, 19, 1, 0x00080000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU1Count1Threshold	 0x130c, 20, 1, 0x00100000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU1Count2Threshold	 0x130c, 21, 1, 0x00200000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU2Count0Threshold	 0x130c, 22, 1, 0x00400000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU2Count1Threshold	 0x130c, 23, 1, 0x00800000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU2Count2Threshold	 0x130c, 24, 1, 0x01000000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU3Count0Threshold	 0x130c, 25, 1, 0x02000000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU3Count1Threshold	 0x130c, 26, 1, 0x04000000
+	#define BITFIELD_DFX_PMU3_INTERRUPT_STATUS_PMU3Count2Threshold	 0x130c, 27, 1, 0x08000000
+#define ROFF_DFX_PMU0_EVENT_COUNT0_THRESHOLD	0x1010 /* PMU0 Event Count Theshold, Counter 0 */ 
+	#define BITFIELD_DFX_PMU0_EVENT_COUNT0_THRESHOLD	 0x1010, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU0_EVENT_COUNT1_THRESHOLD	0x1014 /* PMU0 Event Count Theshold, Counter 1 */ 
+	#define BITFIELD_DFX_PMU0_EVENT_COUNT1_THRESHOLD	 0x1014, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU0_EVENT_COUNT2_THRESHOLD	0x1018 /* PMU0 Event Count Theshold, Counter 2 */ 
+	#define BITFIELD_DFX_PMU0_EVENT_COUNT2_THRESHOLD	 0x1018, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_EVENT_COUNT0_THRESHOLD	0x1110 /* PMU1 Event Count Theshold, Counter 3 */ 
+	#define BITFIELD_DFX_PMU1_EVENT_COUNT0_THRESHOLD	 0x1110, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_EVENT_COUNT1_THRESHOLD	0x1114 /* PMU1 Event Count Theshold, Counter 4 */ 
+	#define BITFIELD_DFX_PMU1_EVENT_COUNT1_THRESHOLD	 0x1114, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_EVENT_COUNT2_THRESHOLD	0x1118 /* PMU1 Event Count Theshold, Counter 5 */ 
+	#define BITFIELD_DFX_PMU1_EVENT_COUNT2_THRESHOLD	 0x1118, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_EVENT_COUNT0_THRESHOLD	0x1210 /* PMU2 Event Count Theshold, Counter 6 */ 
+	#define BITFIELD_DFX_PMU2_EVENT_COUNT0_THRESHOLD	 0x1210, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_EVENT_COUNT1_THRESHOLD	0x1214 /* PMU2 Event Count Theshold, Counter 7 */ 
+	#define BITFIELD_DFX_PMU2_EVENT_COUNT1_THRESHOLD	 0x1214, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_EVENT_COUNT2_THRESHOLD	0x1218 /* PMU2 Event Count Theshold, Counter 8 */ 
+	#define BITFIELD_DFX_PMU2_EVENT_COUNT2_THRESHOLD	 0x1218, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_EVENT_COUNT0_THRESHOLD	0x1310 /* PMU3 Event Count Theshold, Counter 9 */ 
+	#define BITFIELD_DFX_PMU3_EVENT_COUNT0_THRESHOLD	 0x1310, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_EVENT_COUNT1_THRESHOLD	0x1314 /* PMU3 Event Count Theshold, Counter 10 */ 
+	#define BITFIELD_DFX_PMU3_EVENT_COUNT1_THRESHOLD	 0x1314, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_EVENT_COUNT2_THRESHOLD	0x1318 /* PMU3 Event Count Theshold, Counter 11 */ 
+	#define BITFIELD_DFX_PMU3_EVENT_COUNT2_THRESHOLD	 0x1318, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU0_EVENT_COUNT0	0x101c /* PMU0 Event Count 0, Counter 0 */ 
+	#define BITFIELD_DFX_PMU0_EVENT_COUNT0	 0x101c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU0_EVENT_COUNT1	0x1020 /* PMU0 Event Count 1, Counter 1 */ 
+	#define BITFIELD_DFX_PMU0_EVENT_COUNT1	 0x1020, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU0_EVENT_COUNT2	0x1024 /* PMU0 Event Count 2, Counter 2 */ 
+	#define BITFIELD_DFX_PMU0_EVENT_COUNT2	 0x1024, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_EVENT_COUNT0	0x111c /* PMU1 Event Count 0, Counter 3 */ 
+	#define BITFIELD_DFX_PMU1_EVENT_COUNT0	 0x111c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_EVENT_COUNT1	0x1120 /* PMU1 Event Count 1, Counter 4 */ 
+	#define BITFIELD_DFX_PMU1_EVENT_COUNT1	 0x1120, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_EVENT_COUNT2	0x1124 /* PMU1 Event Count 2, Counter 5 */ 
+	#define BITFIELD_DFX_PMU1_EVENT_COUNT2	 0x1124, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_EVENT_COUNT0	0x121c /* PMU2 Event Count 0, Counter 6 */ 
+	#define BITFIELD_DFX_PMU2_EVENT_COUNT0	 0x121c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_EVENT_COUNT1	0x1220 /* PMU2 Event Count 1, Counter 7 */ 
+	#define BITFIELD_DFX_PMU2_EVENT_COUNT1	 0x1220, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_EVENT_COUNT2	0x1224 /* PMU2 Event Count 2, Counter 8 */ 
+	#define BITFIELD_DFX_PMU2_EVENT_COUNT2	 0x1224, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_EVENT_COUNT0	0x131c /* PMU3 Event Count 0, Counter 9 */ 
+	#define BITFIELD_DFX_PMU3_EVENT_COUNT0	 0x131c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_EVENT_COUNT1	0x1320 /* PMU3 Event Count 1, Counter 10 */ 
+	#define BITFIELD_DFX_PMU3_EVENT_COUNT1	 0x1320, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_EVENT_COUNT2	0x1324 /* PMU3 Event Count 2, Counter 11 */ 
+	#define BITFIELD_DFX_PMU3_EVENT_COUNT2	 0x1324, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU0_OVERFLOW_COUNT	0x1028 /* PMU0 Overflow Count */ 
+	#define BITFIELD_DFX_PMU0_OVERFLOW_COUNT	 0x1028, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_OVERFLOW_COUNT	0x1128 /* PMU0 Overflow Count */ 
+	#define BITFIELD_DFX_PMU1_OVERFLOW_COUNT	 0x1128, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_OVERFLOW_COUNT	0x1228 /* PMU0 Overflow Count */ 
+	#define BITFIELD_DFX_PMU2_OVERFLOW_COUNT	 0x1228, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_OVERFLOW_COUNT	0x1328 /* PMU0 Overflow Count */ 
+	#define BITFIELD_DFX_PMU3_OVERFLOW_COUNT	 0x1328, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU0_START_STOP_CONTROL0	0x1030 /* PMU0 Start Stop Control0, Counter 0 */ 
+	#define BITFIELD_DFX_PMU0_START_STOP_CONTROL0	 0x1030, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU0_START_STOP_CONTROL1	0x1034 /* PMU0 Start Stop Control1, Counter 1 */ 
+	#define BITFIELD_DFX_PMU0_START_STOP_CONTROL1	 0x1034, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU0_START_STOP_CONTROL2	0x1038 /* PMU0 Start Stop Control2, Counter 2 */ 
+	#define BITFIELD_DFX_PMU0_START_STOP_CONTROL2	 0x1038, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_START_STOP_CONTROL0	0x1130 /* PMU1 Start Stop Control0, Counter 3 */ 
+	#define BITFIELD_DFX_PMU1_START_STOP_CONTROL0	 0x1130, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_START_STOP_CONTROL1	0x1134 /* PMU1 Start Stop Control1, Counter 4 */ 
+	#define BITFIELD_DFX_PMU1_START_STOP_CONTROL1	 0x1134, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU1_START_STOP_CONTROL2	0x1138 /* PMU1 Start Stop Control2, Counter 5 */ 
+	#define BITFIELD_DFX_PMU1_START_STOP_CONTROL2	 0x1138, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_START_STOP_CONTROL0	0x1230 /* PMU2 Start Stop Control0, Counter 6 */ 
+	#define BITFIELD_DFX_PMU2_START_STOP_CONTROL0	 0x1230, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_START_STOP_CONTROL1	0x1234 /* PMU2 Start Stop Control1, Counter 7 */ 
+	#define BITFIELD_DFX_PMU2_START_STOP_CONTROL1	 0x1234, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU2_START_STOP_CONTROL2	0x1238 /* PMU2 Start Stop Control2, Counter 8 */ 
+	#define BITFIELD_DFX_PMU2_START_STOP_CONTROL2	 0x1238, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_START_STOP_CONTROL0	0x1330 /* PMU3 Start Stop Control0, Counter 9 */ 
+	#define BITFIELD_DFX_PMU3_START_STOP_CONTROL0	 0x1330, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_START_STOP_CONTROL1	0x1334 /* PMU3 Start Stop Control1, Counter 10 */ 
+	#define BITFIELD_DFX_PMU3_START_STOP_CONTROL1	 0x1334, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_PMU3_START_STOP_CONTROL2	0x1338 /* PMU3 Start Stop Control2, Counter 11 */ 
+	#define BITFIELD_DFX_PMU3_START_STOP_CONTROL2	 0x1338, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_CW_GLOBAL_CONTROL	0x100 /* CW0 Control Register, Counter[2:0] */ 
+	#define BITFIELD_DFX_CW_GLOBAL_CONTROL	 0x0100, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_GLOBAL_CONTROL */
+	#define BLSB_DFX_CW_GLOBAL_CONTROL_MMR_Enable	31
+	#define BLSB_DFX_CW_GLOBAL_CONTROL_CW32_Enable	1
+	#define BLSB_DFX_CW_GLOBAL_CONTROL_CW16_Enable	0
+	/* Register Bit Widths for DFX_CW_GLOBAL_CONTROL */
+	#define BWID_DFX_CW_GLOBAL_CONTROL_MMR_Enable	1
+	#define BWID_DFX_CW_GLOBAL_CONTROL_CW32_Enable	1
+	#define BWID_DFX_CW_GLOBAL_CONTROL_CW16_Enable	1
+	/* Register Bit MASKS for DFX_CW_GLOBAL_CONTROL */
+	#define BMSK_DFX_CW_GLOBAL_CONTROL_MMR_Enable	(1<<31) /* == 0x80000000:  */
+	#define BMSK_DFX_CW_GLOBAL_CONTROL_CW32_Enable	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_CW_GLOBAL_CONTROL_CW16_Enable	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_CW_GLOBAL_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_GLOBAL_CONTROL_MMR_Enable	 0x0100, 31, 1, 0x80000000
+	#define BITFIELD_DFX_CW_GLOBAL_CONTROL_CW32_Enable	 0x0100, 1, 1, 0x00000002
+	#define BITFIELD_DFX_CW_GLOBAL_CONTROL_CW16_Enable	 0x0100, 0, 1, 0x00000001
+#define ROFF_DFX_CW_SKEW_CLKS_CONTROL	0x10c /* CW Clocks Skew Control */ 
+	#define BITFIELD_DFX_CW_SKEW_CLKS_CONTROL	 0x010c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_CW_SKEW7_0_CONTROL	0x110 /* CW Signals[7:0] Skew Control */ 
+	#define BITFIELD_DFX_CW_SKEW7_0_CONTROL	 0x0110, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_CW_SKEW15_8_CONTROL	0x114 /* CW Signals[15:8] Skew Control */ 
+	#define BITFIELD_DFX_CW_SKEW15_8_CONTROL	 0x0114, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_CW_SKEW23_16_CONTROL	0x118 /* CW Signals[23:16] Skew Control */ 
+	#define BITFIELD_DFX_CW_SKEW23_16_CONTROL	 0x0118, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_CW_SKEW31_24_CONTROL	0x11c /* CW Signals[32:24] Skew Control */ 
+	#define BITFIELD_DFX_CW_SKEW31_24_CONTROL	 0x011c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+#define ROFF_DFX_CW_CHAIN0_CONTROL	0x120 /* CW Chain 0 Control */ 
+	#define BITFIELD_DFX_CW_CHAIN0_CONTROL	 0x0120, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_CHAIN0_CONTROL */
+	#define BLSB_DFX_CW_CHAIN0_CONTROL_P2SEL	16
+	#define BLSB_DFX_CW_CHAIN0_CONTROL_P1SEL	13
+	#define BLSB_DFX_CW_CHAIN0_CONTROL_FLPBP	11
+	#define BLSB_DFX_CW_CHAIN0_CONTROL_TEBP	10
+	#define BLSB_DFX_CW_CHAIN0_CONTROL_BLKID2	5
+	#define BLSB_DFX_CW_CHAIN0_CONTROL_BLKID1	0
+	/* Register Bit Widths for DFX_CW_CHAIN0_CONTROL */
+	#define BWID_DFX_CW_CHAIN0_CONTROL_P2SEL	3
+	#define BWID_DFX_CW_CHAIN0_CONTROL_P1SEL	3
+	#define BWID_DFX_CW_CHAIN0_CONTROL_FLPBP	2
+	#define BWID_DFX_CW_CHAIN0_CONTROL_TEBP	1
+	#define BWID_DFX_CW_CHAIN0_CONTROL_BLKID2	1
+	#define BWID_DFX_CW_CHAIN0_CONTROL_BLKID1	5
+	/* Register Bit MASKS for DFX_CW_CHAIN0_CONTROL */
+	#define BMSK_DFX_CW_CHAIN0_CONTROL_P2SEL	0x00070000 /* Upper Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN0_CONTROL_P1SEL	0x0000e000 /* Lower Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN0_CONTROL_FLPBP	0x00001800 /* Flop Bypass */
+	#define BMSK_DFX_CW_CHAIN0_CONTROL_TEBP	(1<<10) /* == 0x00000400: Timing Enabled Bypass Control for deskew characterization */
+	#define BMSK_DFX_CW_CHAIN0_CONTROL_BLKID2	(1<<5) /* == 0x00000020: Block ID 2 Selection for compare */
+	#define BMSK_DFX_CW_CHAIN0_CONTROL_BLKID1	0x0000001f /* Block ID 1 Selection for compare */
+	/* Register BITFIELD for DFX_CW_CHAIN0_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_CHAIN0_CONTROL_P2SEL	 0x0120, 16, 3, 0x00070000
+	#define BITFIELD_DFX_CW_CHAIN0_CONTROL_P1SEL	 0x0120, 13, 3, 0x0000e000
+	#define BITFIELD_DFX_CW_CHAIN0_CONTROL_FLPBP	 0x0120, 11, 2, 0x00001800
+	#define BITFIELD_DFX_CW_CHAIN0_CONTROL_TEBP	 0x0120, 10, 1, 0x00000400
+	#define BITFIELD_DFX_CW_CHAIN0_CONTROL_BLKID2	 0x0120, 5, 1, 0x00000020
+	#define BITFIELD_DFX_CW_CHAIN0_CONTROL_BLKID1	 0x0120, 0, 5, 0x0000001f
+#define ROFF_DFX_CW_CHAIN1_CONTROL	0x124 /* CW Chain 1 Control */ 
+	#define BITFIELD_DFX_CW_CHAIN1_CONTROL	 0x0124, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_CHAIN1_CONTROL */
+	#define BLSB_DFX_CW_CHAIN1_CONTROL_P2SEL	16
+	#define BLSB_DFX_CW_CHAIN1_CONTROL_P1SEL	13
+	#define BLSB_DFX_CW_CHAIN1_CONTROL_FLPBP	11
+	#define BLSB_DFX_CW_CHAIN1_CONTROL_TEBP	10
+	#define BLSB_DFX_CW_CHAIN1_CONTROL_BLKID2	5
+	#define BLSB_DFX_CW_CHAIN1_CONTROL_BLKID1	0
+	/* Register Bit Widths for DFX_CW_CHAIN1_CONTROL */
+	#define BWID_DFX_CW_CHAIN1_CONTROL_P2SEL	3
+	#define BWID_DFX_CW_CHAIN1_CONTROL_P1SEL	3
+	#define BWID_DFX_CW_CHAIN1_CONTROL_FLPBP	2
+	#define BWID_DFX_CW_CHAIN1_CONTROL_TEBP	1
+	#define BWID_DFX_CW_CHAIN1_CONTROL_BLKID2	1
+	#define BWID_DFX_CW_CHAIN1_CONTROL_BLKID1	5
+	/* Register Bit MASKS for DFX_CW_CHAIN1_CONTROL */
+	#define BMSK_DFX_CW_CHAIN1_CONTROL_P2SEL	0x00070000 /* Upper Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN1_CONTROL_P1SEL	0x0000e000 /* Lower Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN1_CONTROL_FLPBP	0x00001800 /* Flop Bypass */
+	#define BMSK_DFX_CW_CHAIN1_CONTROL_TEBP	(1<<10) /* == 0x00000400: Timing Enabled Bypass Control for deskew characterization */
+	#define BMSK_DFX_CW_CHAIN1_CONTROL_BLKID2	(1<<5) /* == 0x00000020: Block ID 2 Selection for compare */
+	#define BMSK_DFX_CW_CHAIN1_CONTROL_BLKID1	0x0000001f /* Block ID 1 Selection for compare */
+	/* Register BITFIELD for DFX_CW_CHAIN1_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_CHAIN1_CONTROL_P2SEL	 0x0124, 16, 3, 0x00070000
+	#define BITFIELD_DFX_CW_CHAIN1_CONTROL_P1SEL	 0x0124, 13, 3, 0x0000e000
+	#define BITFIELD_DFX_CW_CHAIN1_CONTROL_FLPBP	 0x0124, 11, 2, 0x00001800
+	#define BITFIELD_DFX_CW_CHAIN1_CONTROL_TEBP	 0x0124, 10, 1, 0x00000400
+	#define BITFIELD_DFX_CW_CHAIN1_CONTROL_BLKID2	 0x0124, 5, 1, 0x00000020
+	#define BITFIELD_DFX_CW_CHAIN1_CONTROL_BLKID1	 0x0124, 0, 5, 0x0000001f
+#define ROFF_DFX_CW_CHAIN2_CONTROL	0x128 /* CW Chain 2 Control */ 
+	#define BITFIELD_DFX_CW_CHAIN2_CONTROL	 0x0128, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_CHAIN2_CONTROL */
+	#define BLSB_DFX_CW_CHAIN2_CONTROL_P2SEL	16
+	#define BLSB_DFX_CW_CHAIN2_CONTROL_P1SEL	13
+	#define BLSB_DFX_CW_CHAIN2_CONTROL_FLPBP	11
+	#define BLSB_DFX_CW_CHAIN2_CONTROL_TEBP	10
+	#define BLSB_DFX_CW_CHAIN2_CONTROL_BLKID2	5
+	#define BLSB_DFX_CW_CHAIN2_CONTROL_BLKID1	0
+	/* Register Bit Widths for DFX_CW_CHAIN2_CONTROL */
+	#define BWID_DFX_CW_CHAIN2_CONTROL_P2SEL	3
+	#define BWID_DFX_CW_CHAIN2_CONTROL_P1SEL	3
+	#define BWID_DFX_CW_CHAIN2_CONTROL_FLPBP	2
+	#define BWID_DFX_CW_CHAIN2_CONTROL_TEBP	1
+	#define BWID_DFX_CW_CHAIN2_CONTROL_BLKID2	1
+	#define BWID_DFX_CW_CHAIN2_CONTROL_BLKID1	5
+	/* Register Bit MASKS for DFX_CW_CHAIN2_CONTROL */
+	#define BMSK_DFX_CW_CHAIN2_CONTROL_P2SEL	0x00070000 /* Upper Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN2_CONTROL_P1SEL	0x0000e000 /* Lower Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN2_CONTROL_FLPBP	0x00001800 /* Flop Bypass */
+	#define BMSK_DFX_CW_CHAIN2_CONTROL_TEBP	(1<<10) /* == 0x00000400: Timing Enabled Bypass Control for deskew characterization */
+	#define BMSK_DFX_CW_CHAIN2_CONTROL_BLKID2	(1<<5) /* == 0x00000020: Block ID 2 Selection for compare */
+	#define BMSK_DFX_CW_CHAIN2_CONTROL_BLKID1	0x0000001f /* Block ID 1 Selection for compare */
+	/* Register BITFIELD for DFX_CW_CHAIN2_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_CHAIN2_CONTROL_P2SEL	 0x0128, 16, 3, 0x00070000
+	#define BITFIELD_DFX_CW_CHAIN2_CONTROL_P1SEL	 0x0128, 13, 3, 0x0000e000
+	#define BITFIELD_DFX_CW_CHAIN2_CONTROL_FLPBP	 0x0128, 11, 2, 0x00001800
+	#define BITFIELD_DFX_CW_CHAIN2_CONTROL_TEBP	 0x0128, 10, 1, 0x00000400
+	#define BITFIELD_DFX_CW_CHAIN2_CONTROL_BLKID2	 0x0128, 5, 1, 0x00000020
+	#define BITFIELD_DFX_CW_CHAIN2_CONTROL_BLKID1	 0x0128, 0, 5, 0x0000001f
+#define ROFF_DFX_CW_CHAIN3_CONTROL	0x12c /* CW Chain 3 Control */ 
+	#define BITFIELD_DFX_CW_CHAIN3_CONTROL	 0x012c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_CHAIN3_CONTROL */
+	#define BLSB_DFX_CW_CHAIN3_CONTROL_P2SEL	16
+	#define BLSB_DFX_CW_CHAIN3_CONTROL_P1SEL	13
+	#define BLSB_DFX_CW_CHAIN3_CONTROL_FLPBP	11
+	#define BLSB_DFX_CW_CHAIN3_CONTROL_TEBP	10
+	#define BLSB_DFX_CW_CHAIN3_CONTROL_BLKID2	5
+	#define BLSB_DFX_CW_CHAIN3_CONTROL_BLKID1	0
+	/* Register Bit Widths for DFX_CW_CHAIN3_CONTROL */
+	#define BWID_DFX_CW_CHAIN3_CONTROL_P2SEL	3
+	#define BWID_DFX_CW_CHAIN3_CONTROL_P1SEL	3
+	#define BWID_DFX_CW_CHAIN3_CONTROL_FLPBP	2
+	#define BWID_DFX_CW_CHAIN3_CONTROL_TEBP	1
+	#define BWID_DFX_CW_CHAIN3_CONTROL_BLKID2	1
+	#define BWID_DFX_CW_CHAIN3_CONTROL_BLKID1	5
+	/* Register Bit MASKS for DFX_CW_CHAIN3_CONTROL */
+	#define BMSK_DFX_CW_CHAIN3_CONTROL_P2SEL	0x00070000 /* Upper Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN3_CONTROL_P1SEL	0x0000e000 /* Lower Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN3_CONTROL_FLPBP	0x00001800 /* Flop Bypass */
+	#define BMSK_DFX_CW_CHAIN3_CONTROL_TEBP	(1<<10) /* == 0x00000400: Timing Enabled Bypass Control for deskew characterization */
+	#define BMSK_DFX_CW_CHAIN3_CONTROL_BLKID2	(1<<5) /* == 0x00000020: Block ID 2 Selection for compare */
+	#define BMSK_DFX_CW_CHAIN3_CONTROL_BLKID1	0x0000001f /* Block ID 1 Selection for compare */
+	/* Register BITFIELD for DFX_CW_CHAIN3_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_CHAIN3_CONTROL_P2SEL	 0x012c, 16, 3, 0x00070000
+	#define BITFIELD_DFX_CW_CHAIN3_CONTROL_P1SEL	 0x012c, 13, 3, 0x0000e000
+	#define BITFIELD_DFX_CW_CHAIN3_CONTROL_FLPBP	 0x012c, 11, 2, 0x00001800
+	#define BITFIELD_DFX_CW_CHAIN3_CONTROL_TEBP	 0x012c, 10, 1, 0x00000400
+	#define BITFIELD_DFX_CW_CHAIN3_CONTROL_BLKID2	 0x012c, 5, 1, 0x00000020
+	#define BITFIELD_DFX_CW_CHAIN3_CONTROL_BLKID1	 0x012c, 0, 5, 0x0000001f
+#define ROFF_DFX_CW_CHAIN4_CONTROL	0x130 /* CW Chain 4 Control */ 
+	#define BITFIELD_DFX_CW_CHAIN4_CONTROL	 0x0130, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_CHAIN4_CONTROL */
+	#define BLSB_DFX_CW_CHAIN4_CONTROL_P2SEL	16
+	#define BLSB_DFX_CW_CHAIN4_CONTROL_P1SEL	13
+	#define BLSB_DFX_CW_CHAIN4_CONTROL_FLPBP	11
+	#define BLSB_DFX_CW_CHAIN4_CONTROL_TEBP	10
+	#define BLSB_DFX_CW_CHAIN4_CONTROL_BLKID2	5
+	#define BLSB_DFX_CW_CHAIN4_CONTROL_BLKID1	0
+	/* Register Bit Widths for DFX_CW_CHAIN4_CONTROL */
+	#define BWID_DFX_CW_CHAIN4_CONTROL_P2SEL	3
+	#define BWID_DFX_CW_CHAIN4_CONTROL_P1SEL	3
+	#define BWID_DFX_CW_CHAIN4_CONTROL_FLPBP	2
+	#define BWID_DFX_CW_CHAIN4_CONTROL_TEBP	1
+	#define BWID_DFX_CW_CHAIN4_CONTROL_BLKID2	1
+	#define BWID_DFX_CW_CHAIN4_CONTROL_BLKID1	5
+	/* Register Bit MASKS for DFX_CW_CHAIN4_CONTROL */
+	#define BMSK_DFX_CW_CHAIN4_CONTROL_P2SEL	0x00070000 /* Upper Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN4_CONTROL_P1SEL	0x0000e000 /* Lower Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN4_CONTROL_FLPBP	0x00001800 /* Flop Bypass */
+	#define BMSK_DFX_CW_CHAIN4_CONTROL_TEBP	(1<<10) /* == 0x00000400: Timing Enabled Bypass Control for deskew characterization */
+	#define BMSK_DFX_CW_CHAIN4_CONTROL_BLKID2	(1<<5) /* == 0x00000020: Block ID 2 Selection for compare */
+	#define BMSK_DFX_CW_CHAIN4_CONTROL_BLKID1	0x0000001f /* Block ID 1 Selection for compare */
+	/* Register BITFIELD for DFX_CW_CHAIN4_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_CHAIN4_CONTROL_P2SEL	 0x0130, 16, 3, 0x00070000
+	#define BITFIELD_DFX_CW_CHAIN4_CONTROL_P1SEL	 0x0130, 13, 3, 0x0000e000
+	#define BITFIELD_DFX_CW_CHAIN4_CONTROL_FLPBP	 0x0130, 11, 2, 0x00001800
+	#define BITFIELD_DFX_CW_CHAIN4_CONTROL_TEBP	 0x0130, 10, 1, 0x00000400
+	#define BITFIELD_DFX_CW_CHAIN4_CONTROL_BLKID2	 0x0130, 5, 1, 0x00000020
+	#define BITFIELD_DFX_CW_CHAIN4_CONTROL_BLKID1	 0x0130, 0, 5, 0x0000001f
+#define ROFF_DFX_CW_CHAIN5_CONTROL	0x134 /* CW Chain 5 Control */ 
+	#define BITFIELD_DFX_CW_CHAIN5_CONTROL	 0x0134, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_CHAIN5_CONTROL */
+	#define BLSB_DFX_CW_CHAIN5_CONTROL_P2SEL	16
+	#define BLSB_DFX_CW_CHAIN5_CONTROL_P1SEL	13
+	#define BLSB_DFX_CW_CHAIN5_CONTROL_FLPBP	11
+	#define BLSB_DFX_CW_CHAIN5_CONTROL_TEBP	10
+	#define BLSB_DFX_CW_CHAIN5_CONTROL_BLKID2	5
+	#define BLSB_DFX_CW_CHAIN5_CONTROL_BLKID1	0
+	/* Register Bit Widths for DFX_CW_CHAIN5_CONTROL */
+	#define BWID_DFX_CW_CHAIN5_CONTROL_P2SEL	3
+	#define BWID_DFX_CW_CHAIN5_CONTROL_P1SEL	3
+	#define BWID_DFX_CW_CHAIN5_CONTROL_FLPBP	2
+	#define BWID_DFX_CW_CHAIN5_CONTROL_TEBP	1
+	#define BWID_DFX_CW_CHAIN5_CONTROL_BLKID2	1
+	#define BWID_DFX_CW_CHAIN5_CONTROL_BLKID1	5
+	/* Register Bit MASKS for DFX_CW_CHAIN5_CONTROL */
+	#define BMSK_DFX_CW_CHAIN5_CONTROL_P2SEL	0x00070000 /* Upper Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN5_CONTROL_P1SEL	0x0000e000 /* Lower Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN5_CONTROL_FLPBP	0x00001800 /* Flop Bypass */
+	#define BMSK_DFX_CW_CHAIN5_CONTROL_TEBP	(1<<10) /* == 0x00000400: Timing Enabled Bypass Control for deskew characterization */
+	#define BMSK_DFX_CW_CHAIN5_CONTROL_BLKID2	(1<<5) /* == 0x00000020: Block ID 2 Selection for compare */
+	#define BMSK_DFX_CW_CHAIN5_CONTROL_BLKID1	0x0000001f /* Block ID 1 Selection for compare */
+	/* Register BITFIELD for DFX_CW_CHAIN5_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_CHAIN5_CONTROL_P2SEL	 0x0134, 16, 3, 0x00070000
+	#define BITFIELD_DFX_CW_CHAIN5_CONTROL_P1SEL	 0x0134, 13, 3, 0x0000e000
+	#define BITFIELD_DFX_CW_CHAIN5_CONTROL_FLPBP	 0x0134, 11, 2, 0x00001800
+	#define BITFIELD_DFX_CW_CHAIN5_CONTROL_TEBP	 0x0134, 10, 1, 0x00000400
+	#define BITFIELD_DFX_CW_CHAIN5_CONTROL_BLKID2	 0x0134, 5, 1, 0x00000020
+	#define BITFIELD_DFX_CW_CHAIN5_CONTROL_BLKID1	 0x0134, 0, 5, 0x0000001f
+#define ROFF_DFX_CW_CHAIN6_CONTROL	0x138 /* CW Chain 6 Control */ 
+	#define BITFIELD_DFX_CW_CHAIN6_CONTROL	 0x0138, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_CHAIN6_CONTROL */
+	#define BLSB_DFX_CW_CHAIN6_CONTROL_P2SEL	16
+	#define BLSB_DFX_CW_CHAIN6_CONTROL_P1SEL	13
+	#define BLSB_DFX_CW_CHAIN6_CONTROL_FLPBP	11
+	#define BLSB_DFX_CW_CHAIN6_CONTROL_TEBP	10
+	#define BLSB_DFX_CW_CHAIN6_CONTROL_BLKID2	5
+	#define BLSB_DFX_CW_CHAIN6_CONTROL_BLKID1	0
+	/* Register Bit Widths for DFX_CW_CHAIN6_CONTROL */
+	#define BWID_DFX_CW_CHAIN6_CONTROL_P2SEL	3
+	#define BWID_DFX_CW_CHAIN6_CONTROL_P1SEL	3
+	#define BWID_DFX_CW_CHAIN6_CONTROL_FLPBP	2
+	#define BWID_DFX_CW_CHAIN6_CONTROL_TEBP	1
+	#define BWID_DFX_CW_CHAIN6_CONTROL_BLKID2	1
+	#define BWID_DFX_CW_CHAIN6_CONTROL_BLKID1	5
+	/* Register Bit MASKS for DFX_CW_CHAIN6_CONTROL */
+	#define BMSK_DFX_CW_CHAIN6_CONTROL_P2SEL	0x00070000 /* Upper Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN6_CONTROL_P1SEL	0x0000e000 /* Lower Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN6_CONTROL_FLPBP	0x00001800 /* Flop Bypass */
+	#define BMSK_DFX_CW_CHAIN6_CONTROL_TEBP	(1<<10) /* == 0x00000400: Timing Enabled Bypass Control for deskew characterization */
+	#define BMSK_DFX_CW_CHAIN6_CONTROL_BLKID2	(1<<5) /* == 0x00000020: Block ID 2 Selection for compare */
+	#define BMSK_DFX_CW_CHAIN6_CONTROL_BLKID1	0x0000001f /* Block ID 1 Selection for compare */
+	/* Register BITFIELD for DFX_CW_CHAIN6_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_CHAIN6_CONTROL_P2SEL	 0x0138, 16, 3, 0x00070000
+	#define BITFIELD_DFX_CW_CHAIN6_CONTROL_P1SEL	 0x0138, 13, 3, 0x0000e000
+	#define BITFIELD_DFX_CW_CHAIN6_CONTROL_FLPBP	 0x0138, 11, 2, 0x00001800
+	#define BITFIELD_DFX_CW_CHAIN6_CONTROL_TEBP	 0x0138, 10, 1, 0x00000400
+	#define BITFIELD_DFX_CW_CHAIN6_CONTROL_BLKID2	 0x0138, 5, 1, 0x00000020
+	#define BITFIELD_DFX_CW_CHAIN6_CONTROL_BLKID1	 0x0138, 0, 5, 0x0000001f
+#define ROFF_DFX_CW_CHAIN7_CONTROL	0x13c /* CW Chain 7 Control */ 
+	#define BITFIELD_DFX_CW_CHAIN7_CONTROL	 0x013c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_CHAIN7_CONTROL */
+	#define BLSB_DFX_CW_CHAIN7_CONTROL_P2SEL	16
+	#define BLSB_DFX_CW_CHAIN7_CONTROL_P1SEL	13
+	#define BLSB_DFX_CW_CHAIN7_CONTROL_FLPBP	11
+	#define BLSB_DFX_CW_CHAIN7_CONTROL_TEBP	10
+	#define BLSB_DFX_CW_CHAIN7_CONTROL_BLKID2	5
+	#define BLSB_DFX_CW_CHAIN7_CONTROL_BLKID1	0
+	/* Register Bit Widths for DFX_CW_CHAIN7_CONTROL */
+	#define BWID_DFX_CW_CHAIN7_CONTROL_P2SEL	3
+	#define BWID_DFX_CW_CHAIN7_CONTROL_P1SEL	3
+	#define BWID_DFX_CW_CHAIN7_CONTROL_FLPBP	2
+	#define BWID_DFX_CW_CHAIN7_CONTROL_TEBP	1
+	#define BWID_DFX_CW_CHAIN7_CONTROL_BLKID2	1
+	#define BWID_DFX_CW_CHAIN7_CONTROL_BLKID1	5
+	/* Register Bit MASKS for DFX_CW_CHAIN7_CONTROL */
+	#define BMSK_DFX_CW_CHAIN7_CONTROL_P2SEL	0x00070000 /* Upper Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN7_CONTROL_P1SEL	0x0000e000 /* Lower Byte Group Selection */
+	#define BMSK_DFX_CW_CHAIN7_CONTROL_FLPBP	0x00001800 /* Flop Bypass */
+	#define BMSK_DFX_CW_CHAIN7_CONTROL_TEBP	(1<<10) /* == 0x00000400: Timing Enabled Bypass Control for deskew characterization */
+	#define BMSK_DFX_CW_CHAIN7_CONTROL_BLKID2	(1<<5) /* == 0x00000020: Block ID 2 Selection for compare */
+	#define BMSK_DFX_CW_CHAIN7_CONTROL_BLKID1	0x0000001f /* Block ID 1 Selection for compare */
+	/* Register BITFIELD for DFX_CW_CHAIN7_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_CHAIN7_CONTROL_P2SEL	 0x013c, 16, 3, 0x00070000
+	#define BITFIELD_DFX_CW_CHAIN7_CONTROL_P1SEL	 0x013c, 13, 3, 0x0000e000
+	#define BITFIELD_DFX_CW_CHAIN7_CONTROL_FLPBP	 0x013c, 11, 2, 0x00001800
+	#define BITFIELD_DFX_CW_CHAIN7_CONTROL_TEBP	 0x013c, 10, 1, 0x00000400
+	#define BITFIELD_DFX_CW_CHAIN7_CONTROL_BLKID2	 0x013c, 5, 1, 0x00000020
+	#define BITFIELD_DFX_CW_CHAIN7_CONTROL_BLKID1	 0x013c, 0, 5, 0x0000001f
+#define ROFF_DFX_CW_USB_MUX_CONTROL	0x150 /*  */ 
+	#define BITFIELD_DFX_CW_USB_MUX_CONTROL	 0x0150, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_USB_MUX_CONTROL */
+	#define BLSB_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_SWAP	20
+	#define BLSB_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_CLOCK_SELECT	17
+	#define BLSB_DFX_CW_USB_MUX_CONTROL_USB_LOWER_BUS_CLOCK_SELECT	14
+	#define BLSB_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_TABLE_SELECT	8
+	#define BLSB_DFX_CW_USB_MUX_CONTROL_USB_LOWER_BUS_TABLE_SELECT	2
+	#define BLSB_DFX_CW_USB_MUX_CONTROL_USB_UPPER_USB_SELECT	1
+	#define BLSB_DFX_CW_USB_MUX_CONTROL_USB_LOWER_USB_SELECT	0
+	/* Register Bit Widths for DFX_CW_USB_MUX_CONTROL */
+	#define BWID_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_SWAP	1
+	#define BWID_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_CLOCK_SELECT	3
+	#define BWID_DFX_CW_USB_MUX_CONTROL_USB_LOWER_BUS_CLOCK_SELECT	3
+	#define BWID_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_TABLE_SELECT	6
+	#define BWID_DFX_CW_USB_MUX_CONTROL_USB_LOWER_BUS_TABLE_SELECT	6
+	#define BWID_DFX_CW_USB_MUX_CONTROL_USB_UPPER_USB_SELECT	1
+	#define BWID_DFX_CW_USB_MUX_CONTROL_USB_LOWER_USB_SELECT	1
+	/* Register Bit MASKS for DFX_CW_USB_MUX_CONTROL */
+	#define BMSK_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_SWAP	(1<<20) /* == 0x00100000:  */
+	#define BMSK_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_CLOCK_SELECT	0x000e0000 /*  */
+	#define BMSK_DFX_CW_USB_MUX_CONTROL_USB_LOWER_BUS_CLOCK_SELECT	0x0001c000 /*  */
+	#define BMSK_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_TABLE_SELECT	0x00003f00 /*  */
+	#define BMSK_DFX_CW_USB_MUX_CONTROL_USB_LOWER_BUS_TABLE_SELECT	0x000000fc /*  */
+	#define BMSK_DFX_CW_USB_MUX_CONTROL_USB_UPPER_USB_SELECT	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_CW_USB_MUX_CONTROL_USB_LOWER_USB_SELECT	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_CW_USB_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_SWAP	 0x0150, 20, 1, 0x00100000
+	#define BITFIELD_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_CLOCK_SELECT	 0x0150, 17, 3, 0x000e0000
+	#define BITFIELD_DFX_CW_USB_MUX_CONTROL_USB_LOWER_BUS_CLOCK_SELECT	 0x0150, 14, 3, 0x0001c000
+	#define BITFIELD_DFX_CW_USB_MUX_CONTROL_USB_UPPER_BUS_TABLE_SELECT	 0x0150, 8, 6, 0x00003f00
+	#define BITFIELD_DFX_CW_USB_MUX_CONTROL_USB_LOWER_BUS_TABLE_SELECT	 0x0150, 2, 6, 0x000000fc
+	#define BITFIELD_DFX_CW_USB_MUX_CONTROL_USB_UPPER_USB_SELECT	 0x0150, 1, 1, 0x00000002
+	#define BITFIELD_DFX_CW_USB_MUX_CONTROL_USB_LOWER_USB_SELECT	 0x0150, 0, 1, 0x00000001
+#define ROFF_DFX_CW_SATA_MUX_CONTROL	0x154 /*  */ 
+	#define BITFIELD_DFX_CW_SATA_MUX_CONTROL	 0x0154, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_SATA_MUX_CONTROL */
+	#define BLSB_DFX_CW_SATA_MUX_CONTROL_SATA_UPPER_BUS_SWAP	16
+	#define BLSB_DFX_CW_SATA_MUX_CONTROL_SATA_UPPER_BUS_TABLE_SELECT	8
+	#define BLSB_DFX_CW_SATA_MUX_CONTROL_SATA_LOWER_BUS_TABLE_SELECT	0
+	/* Register Bit Widths for DFX_CW_SATA_MUX_CONTROL */
+	#define BWID_DFX_CW_SATA_MUX_CONTROL_SATA_UPPER_BUS_SWAP	1
+	#define BWID_DFX_CW_SATA_MUX_CONTROL_SATA_UPPER_BUS_TABLE_SELECT	8
+	#define BWID_DFX_CW_SATA_MUX_CONTROL_SATA_LOWER_BUS_TABLE_SELECT	8
+	/* Register Bit MASKS for DFX_CW_SATA_MUX_CONTROL */
+	#define BMSK_DFX_CW_SATA_MUX_CONTROL_SATA_UPPER_BUS_SWAP	(1<<16) /* == 0x00010000:  */
+	#define BMSK_DFX_CW_SATA_MUX_CONTROL_SATA_UPPER_BUS_TABLE_SELECT	0x0000ff00 /*  */
+	#define BMSK_DFX_CW_SATA_MUX_CONTROL_SATA_LOWER_BUS_TABLE_SELECT	0x000000ff /*  */
+	/* Register BITFIELD for DFX_CW_SATA_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_SATA_MUX_CONTROL_SATA_UPPER_BUS_SWAP	 0x0154, 16, 1, 0x00010000
+	#define BITFIELD_DFX_CW_SATA_MUX_CONTROL_SATA_UPPER_BUS_TABLE_SELECT	 0x0154, 8, 8, 0x0000ff00
+	#define BITFIELD_DFX_CW_SATA_MUX_CONTROL_SATA_LOWER_BUS_TABLE_SELECT	 0x0154, 0, 8, 0x000000ff
+#define ROFF_DFX_CW_PCIE_MUX_CONTROL	0x158 /*  */ 
+	#define BITFIELD_DFX_CW_PCIE_MUX_CONTROL	 0x0158, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_PCIE_MUX_CONTROL */
+	#define BLSB_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_CLOCK_SELECT	19
+	#define BLSB_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_CLOCK_SELECT	16
+	#define BLSB_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_TABLE_SELECT	9
+	#define BLSB_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_TABLE_SELECT	2
+	#define BLSB_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_LANE_SELECT	1
+	#define BLSB_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_LANE_SELECT	0
+	/* Register Bit Widths for DFX_CW_PCIE_MUX_CONTROL */
+	#define BWID_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_CLOCK_SELECT	3
+	#define BWID_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_CLOCK_SELECT	3
+	#define BWID_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_TABLE_SELECT	7
+	#define BWID_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_TABLE_SELECT	7
+	#define BWID_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_LANE_SELECT	1
+	#define BWID_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_LANE_SELECT	1
+	/* Register Bit MASKS for DFX_CW_PCIE_MUX_CONTROL */
+	#define BMSK_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_CLOCK_SELECT	0x00380000 /*  */
+	#define BMSK_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_CLOCK_SELECT	0x00070000 /*  */
+	#define BMSK_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_TABLE_SELECT	0x0000fe00 /*  */
+	#define BMSK_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_TABLE_SELECT	0x000001fc /*  */
+	#define BMSK_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_LANE_SELECT	(1<<1) /* == 0x00000002:  */
+	#define BMSK_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_LANE_SELECT	(1<<0) /* == 0x00000001:  */
+	/* Register BITFIELD for DFX_CW_PCIE_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_CLOCK_SELECT	 0x0158, 19, 3, 0x00380000
+	#define BITFIELD_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_CLOCK_SELECT	 0x0158, 16, 3, 0x00070000
+	#define BITFIELD_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_TABLE_SELECT	 0x0158, 9, 7, 0x0000fe00
+	#define BITFIELD_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_TABLE_SELECT	 0x0158, 2, 7, 0x000001fc
+	#define BITFIELD_DFX_CW_PCIE_MUX_CONTROL_PCIE_UPPER_BUS_LANE_SELECT	 0x0158, 1, 1, 0x00000002
+	#define BITFIELD_DFX_CW_PCIE_MUX_CONTROL_PCIE_LOWER_BUS_LANE_SELECT	 0x0158, 0, 1, 0x00000001
+#define ROFF_DFX_CW_CLOCK_SELECT_CONTROL	0x180 /*  */ 
+	#define BITFIELD_DFX_CW_CLOCK_SELECT_CONTROL	 0x0180, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_CLOCK_SELECT_CONTROL */
+	#define BLSB_DFX_CW_CLOCK_SELECT_CONTROL_CW_CLOCK2_SELECT_CONTROL	4
+	#define BLSB_DFX_CW_CLOCK_SELECT_CONTROL_CW_CLOCK1_SELECT_CONTROL	0
+	/* Register Bit Widths for DFX_CW_CLOCK_SELECT_CONTROL */
+	#define BWID_DFX_CW_CLOCK_SELECT_CONTROL_CW_CLOCK2_SELECT_CONTROL	4
+	#define BWID_DFX_CW_CLOCK_SELECT_CONTROL_CW_CLOCK1_SELECT_CONTROL	4
+	/* Register Bit MASKS for DFX_CW_CLOCK_SELECT_CONTROL */
+	#define BMSK_DFX_CW_CLOCK_SELECT_CONTROL_CW_CLOCK2_SELECT_CONTROL	0x000000f0 /*  */
+	#define BMSK_DFX_CW_CLOCK_SELECT_CONTROL_CW_CLOCK1_SELECT_CONTROL	0x0000000f /*  */
+	/* Register BITFIELD for DFX_CW_CLOCK_SELECT_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_CLOCK_SELECT_CONTROL_CW_CLOCK2_SELECT_CONTROL	 0x0180, 4, 4, 0x000000f0
+	#define BITFIELD_DFX_CW_CLOCK_SELECT_CONTROL_CW_CLOCK1_SELECT_CONTROL	 0x0180, 0, 4, 0x0000000f
+#define ROFF_DFX_CW_BYTE07_00_MUX_CONTROL	0x190 /*  */ 
+	#define BITFIELD_DFX_CW_BYTE07_00_MUX_CONTROL	 0x0190, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_BYTE07_00_MUX_CONTROL */
+	#define BLSB_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_7_15_23_31_SEL	28
+	#define BLSB_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_6_14_22_30_SEL	24
+	#define BLSB_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_5_13_21_29_SEL	20
+	#define BLSB_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_4_12_20_28_SEL	16
+	#define BLSB_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_3_11_19_27_SEL	12
+	#define BLSB_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_2_10_18_26_SEL	8
+	#define BLSB_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_1_9_17_25_SEL	4
+	#define BLSB_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_0_8_16_24_SEL	0
+	/* Register Bit Widths for DFX_CW_BYTE07_00_MUX_CONTROL */
+	#define BWID_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_7_15_23_31_SEL	4
+	#define BWID_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_6_14_22_30_SEL	4
+	#define BWID_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_5_13_21_29_SEL	4
+	#define BWID_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_4_12_20_28_SEL	4
+	#define BWID_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_3_11_19_27_SEL	4
+	#define BWID_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_2_10_18_26_SEL	4
+	#define BWID_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_1_9_17_25_SEL	4
+	#define BWID_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_0_8_16_24_SEL	4
+	/* Register Bit MASKS for DFX_CW_BYTE07_00_MUX_CONTROL */
+	#define BMSK_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_7_15_23_31_SEL	0xf0000000 /*  */
+	#define BMSK_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_6_14_22_30_SEL	0x0f000000 /*  */
+	#define BMSK_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_5_13_21_29_SEL	0x00f00000 /*  */
+	#define BMSK_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_4_12_20_28_SEL	0x000f0000 /*  */
+	#define BMSK_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_3_11_19_27_SEL	0x0000f000 /*  */
+	#define BMSK_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_2_10_18_26_SEL	0x00000f00 /*  */
+	#define BMSK_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_1_9_17_25_SEL	0x000000f0 /*  */
+	#define BMSK_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_0_8_16_24_SEL	0x0000000f /*  */
+	/* Register BITFIELD for DFX_CW_BYTE07_00_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_7_15_23_31_SEL	 0x0190, 28, 4, 0xf0000000
+	#define BITFIELD_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_6_14_22_30_SEL	 0x0190, 24, 4, 0x0f000000
+	#define BITFIELD_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_5_13_21_29_SEL	 0x0190, 20, 4, 0x00f00000
+	#define BITFIELD_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_4_12_20_28_SEL	 0x0190, 16, 4, 0x000f0000
+	#define BITFIELD_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_3_11_19_27_SEL	 0x0190, 12, 4, 0x0000f000
+	#define BITFIELD_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_2_10_18_26_SEL	 0x0190, 8, 4, 0x00000f00
+	#define BITFIELD_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_1_9_17_25_SEL	 0x0190, 4, 4, 0x000000f0
+	#define BITFIELD_DFX_CW_BYTE07_00_MUX_CONTROL_BYTE_0_8_16_24_SEL	 0x0190, 0, 4, 0x0000000f
+#define ROFF_DFX_CW_BYTE15_08_MUX_CONTROL	0x194 /*  */ 
+	#define BITFIELD_DFX_CW_BYTE15_08_MUX_CONTROL	 0x0194, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_BYTE15_08_MUX_CONTROL */
+	#define BLSB_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_7_15_23_31_SEL	28
+	#define BLSB_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_6_14_22_30_SEL	24
+	#define BLSB_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_5_13_21_29_SEL	20
+	#define BLSB_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_4_12_20_28_SEL	16
+	#define BLSB_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_3_11_19_27_SEL	12
+	#define BLSB_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_2_10_18_26_SEL	8
+	#define BLSB_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_1_9_17_25_SEL	4
+	#define BLSB_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_0_8_16_24_SEL	0
+	/* Register Bit Widths for DFX_CW_BYTE15_08_MUX_CONTROL */
+	#define BWID_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_7_15_23_31_SEL	4
+	#define BWID_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_6_14_22_30_SEL	4
+	#define BWID_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_5_13_21_29_SEL	4
+	#define BWID_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_4_12_20_28_SEL	4
+	#define BWID_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_3_11_19_27_SEL	4
+	#define BWID_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_2_10_18_26_SEL	4
+	#define BWID_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_1_9_17_25_SEL	4
+	#define BWID_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_0_8_16_24_SEL	4
+	/* Register Bit MASKS for DFX_CW_BYTE15_08_MUX_CONTROL */
+	#define BMSK_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_7_15_23_31_SEL	0xf0000000 /*  */
+	#define BMSK_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_6_14_22_30_SEL	0x0f000000 /*  */
+	#define BMSK_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_5_13_21_29_SEL	0x00f00000 /*  */
+	#define BMSK_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_4_12_20_28_SEL	0x000f0000 /*  */
+	#define BMSK_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_3_11_19_27_SEL	0x0000f000 /*  */
+	#define BMSK_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_2_10_18_26_SEL	0x00000f00 /*  */
+	#define BMSK_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_1_9_17_25_SEL	0x000000f0 /*  */
+	#define BMSK_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_0_8_16_24_SEL	0x0000000f /*  */
+	/* Register BITFIELD for DFX_CW_BYTE15_08_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_7_15_23_31_SEL	 0x0194, 28, 4, 0xf0000000
+	#define BITFIELD_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_6_14_22_30_SEL	 0x0194, 24, 4, 0x0f000000
+	#define BITFIELD_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_5_13_21_29_SEL	 0x0194, 20, 4, 0x00f00000
+	#define BITFIELD_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_4_12_20_28_SEL	 0x0194, 16, 4, 0x000f0000
+	#define BITFIELD_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_3_11_19_27_SEL	 0x0194, 12, 4, 0x0000f000
+	#define BITFIELD_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_2_10_18_26_SEL	 0x0194, 8, 4, 0x00000f00
+	#define BITFIELD_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_1_9_17_25_SEL	 0x0194, 4, 4, 0x000000f0
+	#define BITFIELD_DFX_CW_BYTE15_08_MUX_CONTROL_BYTE_0_8_16_24_SEL	 0x0194, 0, 4, 0x0000000f
+#define ROFF_DFX_CW_BYTE23_16_MUX_CONTROL	0x198 /*  */ 
+	#define BITFIELD_DFX_CW_BYTE23_16_MUX_CONTROL	 0x0198, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_BYTE23_16_MUX_CONTROL */
+	#define BLSB_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_7_15_23_31_SEL	28
+	#define BLSB_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_6_14_22_30_SEL	24
+	#define BLSB_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_5_13_21_29_SEL	20
+	#define BLSB_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_4_12_20_28_SEL	16
+	#define BLSB_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_3_11_19_27_SEL	12
+	#define BLSB_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_2_10_18_26_SEL	8
+	#define BLSB_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_1_9_17_25_SEL	4
+	#define BLSB_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_0_8_16_24_SEL	0
+	/* Register Bit Widths for DFX_CW_BYTE23_16_MUX_CONTROL */
+	#define BWID_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_7_15_23_31_SEL	4
+	#define BWID_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_6_14_22_30_SEL	4
+	#define BWID_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_5_13_21_29_SEL	4
+	#define BWID_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_4_12_20_28_SEL	4
+	#define BWID_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_3_11_19_27_SEL	4
+	#define BWID_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_2_10_18_26_SEL	4
+	#define BWID_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_1_9_17_25_SEL	4
+	#define BWID_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_0_8_16_24_SEL	4
+	/* Register Bit MASKS for DFX_CW_BYTE23_16_MUX_CONTROL */
+	#define BMSK_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_7_15_23_31_SEL	0xf0000000 /*  */
+	#define BMSK_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_6_14_22_30_SEL	0x0f000000 /*  */
+	#define BMSK_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_5_13_21_29_SEL	0x00f00000 /*  */
+	#define BMSK_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_4_12_20_28_SEL	0x000f0000 /*  */
+	#define BMSK_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_3_11_19_27_SEL	0x0000f000 /*  */
+	#define BMSK_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_2_10_18_26_SEL	0x00000f00 /*  */
+	#define BMSK_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_1_9_17_25_SEL	0x000000f0 /*  */
+	#define BMSK_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_0_8_16_24_SEL	0x0000000f /*  */
+	/* Register BITFIELD for DFX_CW_BYTE23_16_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_7_15_23_31_SEL	 0x0198, 28, 4, 0xf0000000
+	#define BITFIELD_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_6_14_22_30_SEL	 0x0198, 24, 4, 0x0f000000
+	#define BITFIELD_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_5_13_21_29_SEL	 0x0198, 20, 4, 0x00f00000
+	#define BITFIELD_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_4_12_20_28_SEL	 0x0198, 16, 4, 0x000f0000
+	#define BITFIELD_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_3_11_19_27_SEL	 0x0198, 12, 4, 0x0000f000
+	#define BITFIELD_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_2_10_18_26_SEL	 0x0198, 8, 4, 0x00000f00
+	#define BITFIELD_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_1_9_17_25_SEL	 0x0198, 4, 4, 0x000000f0
+	#define BITFIELD_DFX_CW_BYTE23_16_MUX_CONTROL_BYTE_0_8_16_24_SEL	 0x0198, 0, 4, 0x0000000f
+#define ROFF_DFX_CW_BYTE31_24_MUX_CONTROL	0x19c /*  */ 
+	#define BITFIELD_DFX_CW_BYTE31_24_MUX_CONTROL	 0x019c, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_BYTE31_24_MUX_CONTROL */
+	#define BLSB_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_7_15_23_31_SEL	28
+	#define BLSB_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_6_14_22_30_SEL	24
+	#define BLSB_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_5_13_21_29_SEL	20
+	#define BLSB_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_4_12_20_28_SEL	16
+	#define BLSB_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_3_11_19_27_SEL	12
+	#define BLSB_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_2_10_18_26_SEL	8
+	#define BLSB_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_1_9_17_25_SEL	4
+	#define BLSB_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_0_8_16_24_SEL	0
+	/* Register Bit Widths for DFX_CW_BYTE31_24_MUX_CONTROL */
+	#define BWID_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_7_15_23_31_SEL	4
+	#define BWID_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_6_14_22_30_SEL	4
+	#define BWID_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_5_13_21_29_SEL	4
+	#define BWID_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_4_12_20_28_SEL	4
+	#define BWID_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_3_11_19_27_SEL	4
+	#define BWID_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_2_10_18_26_SEL	4
+	#define BWID_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_1_9_17_25_SEL	4
+	#define BWID_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_0_8_16_24_SEL	4
+	/* Register Bit MASKS for DFX_CW_BYTE31_24_MUX_CONTROL */
+	#define BMSK_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_7_15_23_31_SEL	0xf0000000 /*  */
+	#define BMSK_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_6_14_22_30_SEL	0x0f000000 /*  */
+	#define BMSK_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_5_13_21_29_SEL	0x00f00000 /*  */
+	#define BMSK_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_4_12_20_28_SEL	0x000f0000 /*  */
+	#define BMSK_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_3_11_19_27_SEL	0x0000f000 /*  */
+	#define BMSK_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_2_10_18_26_SEL	0x00000f00 /*  */
+	#define BMSK_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_1_9_17_25_SEL	0x000000f0 /*  */
+	#define BMSK_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_0_8_16_24_SEL	0x0000000f /*  */
+	/* Register BITFIELD for DFX_CW_BYTE31_24_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_7_15_23_31_SEL	 0x019c, 28, 4, 0xf0000000
+	#define BITFIELD_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_6_14_22_30_SEL	 0x019c, 24, 4, 0x0f000000
+	#define BITFIELD_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_5_13_21_29_SEL	 0x019c, 20, 4, 0x00f00000
+	#define BITFIELD_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_4_12_20_28_SEL	 0x019c, 16, 4, 0x000f0000
+	#define BITFIELD_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_3_11_19_27_SEL	 0x019c, 12, 4, 0x0000f000
+	#define BITFIELD_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_2_10_18_26_SEL	 0x019c, 8, 4, 0x00000f00
+	#define BITFIELD_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_1_9_17_25_SEL	 0x019c, 4, 4, 0x000000f0
+	#define BITFIELD_DFX_CW_BYTE31_24_MUX_CONTROL_BYTE_0_8_16_24_SEL	 0x019c, 0, 4, 0x0000000f
+#define ROFF_DFX_CW_BIT07_00_MUX_CONTROL	0x1b0 /*  */ 
+	#define BITFIELD_DFX_CW_BIT07_00_MUX_CONTROL	 0x01b0, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_BIT07_00_MUX_CONTROL */
+	#define BLSB_DFX_CW_BIT07_00_MUX_CONTROL_BIT_7_15_23_31_SEL	21
+	#define BLSB_DFX_CW_BIT07_00_MUX_CONTROL_BIT_6_14_22_30_SEL	18
+	#define BLSB_DFX_CW_BIT07_00_MUX_CONTROL_BIT_5_13_21_29_SEL	15
+	#define BLSB_DFX_CW_BIT07_00_MUX_CONTROL_BIT_4_12_20_28_SEL	12
+	#define BLSB_DFX_CW_BIT07_00_MUX_CONTROL_BIT_3_11_19_27_SEL	9
+	#define BLSB_DFX_CW_BIT07_00_MUX_CONTROL_BIT_2_10_18_26_SEL	6
+	#define BLSB_DFX_CW_BIT07_00_MUX_CONTROL_BIT_1_9_17_25_SEL	3
+	#define BLSB_DFX_CW_BIT07_00_MUX_CONTROL_BIT_0_8_16_24_SEL	0
+	/* Register Bit Widths for DFX_CW_BIT07_00_MUX_CONTROL */
+	#define BWID_DFX_CW_BIT07_00_MUX_CONTROL_BIT_7_15_23_31_SEL	3
+	#define BWID_DFX_CW_BIT07_00_MUX_CONTROL_BIT_6_14_22_30_SEL	3
+	#define BWID_DFX_CW_BIT07_00_MUX_CONTROL_BIT_5_13_21_29_SEL	3
+	#define BWID_DFX_CW_BIT07_00_MUX_CONTROL_BIT_4_12_20_28_SEL	3
+	#define BWID_DFX_CW_BIT07_00_MUX_CONTROL_BIT_3_11_19_27_SEL	3
+	#define BWID_DFX_CW_BIT07_00_MUX_CONTROL_BIT_2_10_18_26_SEL	3
+	#define BWID_DFX_CW_BIT07_00_MUX_CONTROL_BIT_1_9_17_25_SEL	3
+	#define BWID_DFX_CW_BIT07_00_MUX_CONTROL_BIT_0_8_16_24_SEL	3
+	/* Register Bit MASKS for DFX_CW_BIT07_00_MUX_CONTROL */
+	#define BMSK_DFX_CW_BIT07_00_MUX_CONTROL_BIT_7_15_23_31_SEL	0x00e00000 /*  */
+	#define BMSK_DFX_CW_BIT07_00_MUX_CONTROL_BIT_6_14_22_30_SEL	0x001c0000 /*  */
+	#define BMSK_DFX_CW_BIT07_00_MUX_CONTROL_BIT_5_13_21_29_SEL	0x00038000 /*  */
+	#define BMSK_DFX_CW_BIT07_00_MUX_CONTROL_BIT_4_12_20_28_SEL	0x00007000 /*  */
+	#define BMSK_DFX_CW_BIT07_00_MUX_CONTROL_BIT_3_11_19_27_SEL	0x00000e00 /*  */
+	#define BMSK_DFX_CW_BIT07_00_MUX_CONTROL_BIT_2_10_18_26_SEL	0x000001c0 /*  */
+	#define BMSK_DFX_CW_BIT07_00_MUX_CONTROL_BIT_1_9_17_25_SEL	0x00000038 /*  */
+	#define BMSK_DFX_CW_BIT07_00_MUX_CONTROL_BIT_0_8_16_24_SEL	0x00000007 /*  */
+	/* Register BITFIELD for DFX_CW_BIT07_00_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_BIT07_00_MUX_CONTROL_BIT_7_15_23_31_SEL	 0x01b0, 21, 3, 0x00e00000
+	#define BITFIELD_DFX_CW_BIT07_00_MUX_CONTROL_BIT_6_14_22_30_SEL	 0x01b0, 18, 3, 0x001c0000
+	#define BITFIELD_DFX_CW_BIT07_00_MUX_CONTROL_BIT_5_13_21_29_SEL	 0x01b0, 15, 3, 0x00038000
+	#define BITFIELD_DFX_CW_BIT07_00_MUX_CONTROL_BIT_4_12_20_28_SEL	 0x01b0, 12, 3, 0x00007000
+	#define BITFIELD_DFX_CW_BIT07_00_MUX_CONTROL_BIT_3_11_19_27_SEL	 0x01b0, 9, 3, 0x00000e00
+	#define BITFIELD_DFX_CW_BIT07_00_MUX_CONTROL_BIT_2_10_18_26_SEL	 0x01b0, 6, 3, 0x000001c0
+	#define BITFIELD_DFX_CW_BIT07_00_MUX_CONTROL_BIT_1_9_17_25_SEL	 0x01b0, 3, 3, 0x00000038
+	#define BITFIELD_DFX_CW_BIT07_00_MUX_CONTROL_BIT_0_8_16_24_SEL	 0x01b0, 0, 3, 0x00000007
+#define ROFF_DFX_CW_BIT15_08_MUX_CONTROL	0x1b4 /*  */ 
+	#define BITFIELD_DFX_CW_BIT15_08_MUX_CONTROL	 0x01b4, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_BIT15_08_MUX_CONTROL */
+	#define BLSB_DFX_CW_BIT15_08_MUX_CONTROL_BIT_7_15_23_31_SEL	21
+	#define BLSB_DFX_CW_BIT15_08_MUX_CONTROL_BIT_6_14_22_30_SEL	18
+	#define BLSB_DFX_CW_BIT15_08_MUX_CONTROL_BIT_5_13_21_29_SEL	15
+	#define BLSB_DFX_CW_BIT15_08_MUX_CONTROL_BIT_4_12_20_28_SEL	12
+	#define BLSB_DFX_CW_BIT15_08_MUX_CONTROL_BIT_3_11_19_27_SEL	9
+	#define BLSB_DFX_CW_BIT15_08_MUX_CONTROL_BIT_2_10_18_26_SEL	6
+	#define BLSB_DFX_CW_BIT15_08_MUX_CONTROL_BIT_1_9_17_25_SEL	3
+	#define BLSB_DFX_CW_BIT15_08_MUX_CONTROL_BIT_0_8_16_24_SEL	0
+	/* Register Bit Widths for DFX_CW_BIT15_08_MUX_CONTROL */
+	#define BWID_DFX_CW_BIT15_08_MUX_CONTROL_BIT_7_15_23_31_SEL	3
+	#define BWID_DFX_CW_BIT15_08_MUX_CONTROL_BIT_6_14_22_30_SEL	3
+	#define BWID_DFX_CW_BIT15_08_MUX_CONTROL_BIT_5_13_21_29_SEL	3
+	#define BWID_DFX_CW_BIT15_08_MUX_CONTROL_BIT_4_12_20_28_SEL	3
+	#define BWID_DFX_CW_BIT15_08_MUX_CONTROL_BIT_3_11_19_27_SEL	3
+	#define BWID_DFX_CW_BIT15_08_MUX_CONTROL_BIT_2_10_18_26_SEL	3
+	#define BWID_DFX_CW_BIT15_08_MUX_CONTROL_BIT_1_9_17_25_SEL	3
+	#define BWID_DFX_CW_BIT15_08_MUX_CONTROL_BIT_0_8_16_24_SEL	3
+	/* Register Bit MASKS for DFX_CW_BIT15_08_MUX_CONTROL */
+	#define BMSK_DFX_CW_BIT15_08_MUX_CONTROL_BIT_7_15_23_31_SEL	0x00e00000 /*  */
+	#define BMSK_DFX_CW_BIT15_08_MUX_CONTROL_BIT_6_14_22_30_SEL	0x001c0000 /*  */
+	#define BMSK_DFX_CW_BIT15_08_MUX_CONTROL_BIT_5_13_21_29_SEL	0x00038000 /*  */
+	#define BMSK_DFX_CW_BIT15_08_MUX_CONTROL_BIT_4_12_20_28_SEL	0x00007000 /*  */
+	#define BMSK_DFX_CW_BIT15_08_MUX_CONTROL_BIT_3_11_19_27_SEL	0x00000e00 /*  */
+	#define BMSK_DFX_CW_BIT15_08_MUX_CONTROL_BIT_2_10_18_26_SEL	0x000001c0 /*  */
+	#define BMSK_DFX_CW_BIT15_08_MUX_CONTROL_BIT_1_9_17_25_SEL	0x00000038 /*  */
+	#define BMSK_DFX_CW_BIT15_08_MUX_CONTROL_BIT_0_8_16_24_SEL	0x00000007 /*  */
+	/* Register BITFIELD for DFX_CW_BIT15_08_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_BIT15_08_MUX_CONTROL_BIT_7_15_23_31_SEL	 0x01b4, 21, 3, 0x00e00000
+	#define BITFIELD_DFX_CW_BIT15_08_MUX_CONTROL_BIT_6_14_22_30_SEL	 0x01b4, 18, 3, 0x001c0000
+	#define BITFIELD_DFX_CW_BIT15_08_MUX_CONTROL_BIT_5_13_21_29_SEL	 0x01b4, 15, 3, 0x00038000
+	#define BITFIELD_DFX_CW_BIT15_08_MUX_CONTROL_BIT_4_12_20_28_SEL	 0x01b4, 12, 3, 0x00007000
+	#define BITFIELD_DFX_CW_BIT15_08_MUX_CONTROL_BIT_3_11_19_27_SEL	 0x01b4, 9, 3, 0x00000e00
+	#define BITFIELD_DFX_CW_BIT15_08_MUX_CONTROL_BIT_2_10_18_26_SEL	 0x01b4, 6, 3, 0x000001c0
+	#define BITFIELD_DFX_CW_BIT15_08_MUX_CONTROL_BIT_1_9_17_25_SEL	 0x01b4, 3, 3, 0x00000038
+	#define BITFIELD_DFX_CW_BIT15_08_MUX_CONTROL_BIT_0_8_16_24_SEL	 0x01b4, 0, 3, 0x00000007
+#define ROFF_DFX_CW_BIT23_16_MUX_CONTROL	0x1b8 /*  */ 
+	#define BITFIELD_DFX_CW_BIT23_16_MUX_CONTROL	 0x01b8, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_BIT23_16_MUX_CONTROL */
+	#define BLSB_DFX_CW_BIT23_16_MUX_CONTROL_BIT_7_15_23_31_SEL	21
+	#define BLSB_DFX_CW_BIT23_16_MUX_CONTROL_BIT_6_14_22_30_SEL	18
+	#define BLSB_DFX_CW_BIT23_16_MUX_CONTROL_BIT_5_13_21_29_SEL	15
+	#define BLSB_DFX_CW_BIT23_16_MUX_CONTROL_BIT_4_12_20_28_SEL	12
+	#define BLSB_DFX_CW_BIT23_16_MUX_CONTROL_BIT_3_11_19_27_SEL	9
+	#define BLSB_DFX_CW_BIT23_16_MUX_CONTROL_BIT_2_10_18_26_SEL	6
+	#define BLSB_DFX_CW_BIT23_16_MUX_CONTROL_BIT_1_9_17_25_SEL	3
+	#define BLSB_DFX_CW_BIT23_16_MUX_CONTROL_BIT_0_8_16_24_SEL	0
+	/* Register Bit Widths for DFX_CW_BIT23_16_MUX_CONTROL */
+	#define BWID_DFX_CW_BIT23_16_MUX_CONTROL_BIT_7_15_23_31_SEL	3
+	#define BWID_DFX_CW_BIT23_16_MUX_CONTROL_BIT_6_14_22_30_SEL	3
+	#define BWID_DFX_CW_BIT23_16_MUX_CONTROL_BIT_5_13_21_29_SEL	3
+	#define BWID_DFX_CW_BIT23_16_MUX_CONTROL_BIT_4_12_20_28_SEL	3
+	#define BWID_DFX_CW_BIT23_16_MUX_CONTROL_BIT_3_11_19_27_SEL	3
+	#define BWID_DFX_CW_BIT23_16_MUX_CONTROL_BIT_2_10_18_26_SEL	3
+	#define BWID_DFX_CW_BIT23_16_MUX_CONTROL_BIT_1_9_17_25_SEL	3
+	#define BWID_DFX_CW_BIT23_16_MUX_CONTROL_BIT_0_8_16_24_SEL	3
+	/* Register Bit MASKS for DFX_CW_BIT23_16_MUX_CONTROL */
+	#define BMSK_DFX_CW_BIT23_16_MUX_CONTROL_BIT_7_15_23_31_SEL	0x00e00000 /*  */
+	#define BMSK_DFX_CW_BIT23_16_MUX_CONTROL_BIT_6_14_22_30_SEL	0x001c0000 /*  */
+	#define BMSK_DFX_CW_BIT23_16_MUX_CONTROL_BIT_5_13_21_29_SEL	0x00038000 /*  */
+	#define BMSK_DFX_CW_BIT23_16_MUX_CONTROL_BIT_4_12_20_28_SEL	0x00007000 /*  */
+	#define BMSK_DFX_CW_BIT23_16_MUX_CONTROL_BIT_3_11_19_27_SEL	0x00000e00 /*  */
+	#define BMSK_DFX_CW_BIT23_16_MUX_CONTROL_BIT_2_10_18_26_SEL	0x000001c0 /*  */
+	#define BMSK_DFX_CW_BIT23_16_MUX_CONTROL_BIT_1_9_17_25_SEL	0x00000038 /*  */
+	#define BMSK_DFX_CW_BIT23_16_MUX_CONTROL_BIT_0_8_16_24_SEL	0x00000007 /*  */
+	/* Register BITFIELD for DFX_CW_BIT23_16_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_BIT23_16_MUX_CONTROL_BIT_7_15_23_31_SEL	 0x01b8, 21, 3, 0x00e00000
+	#define BITFIELD_DFX_CW_BIT23_16_MUX_CONTROL_BIT_6_14_22_30_SEL	 0x01b8, 18, 3, 0x001c0000
+	#define BITFIELD_DFX_CW_BIT23_16_MUX_CONTROL_BIT_5_13_21_29_SEL	 0x01b8, 15, 3, 0x00038000
+	#define BITFIELD_DFX_CW_BIT23_16_MUX_CONTROL_BIT_4_12_20_28_SEL	 0x01b8, 12, 3, 0x00007000
+	#define BITFIELD_DFX_CW_BIT23_16_MUX_CONTROL_BIT_3_11_19_27_SEL	 0x01b8, 9, 3, 0x00000e00
+	#define BITFIELD_DFX_CW_BIT23_16_MUX_CONTROL_BIT_2_10_18_26_SEL	 0x01b8, 6, 3, 0x000001c0
+	#define BITFIELD_DFX_CW_BIT23_16_MUX_CONTROL_BIT_1_9_17_25_SEL	 0x01b8, 3, 3, 0x00000038
+	#define BITFIELD_DFX_CW_BIT23_16_MUX_CONTROL_BIT_0_8_16_24_SEL	 0x01b8, 0, 3, 0x00000007
+#define ROFF_DFX_CW_BIT31_24_MUX_CONTROL	0x1bc /*  */ 
+	#define BITFIELD_DFX_CW_BIT31_24_MUX_CONTROL	 0x01bc, 0, 32, 0xffffffff  /* roff, lsb, width, mask */
+	/* Register Bit LSB Positions for DFX_CW_BIT31_24_MUX_CONTROL */
+	#define BLSB_DFX_CW_BIT31_24_MUX_CONTROL_BIT_7_15_23_31_SEL	21
+	#define BLSB_DFX_CW_BIT31_24_MUX_CONTROL_BIT_6_14_22_30_SEL	18
+	#define BLSB_DFX_CW_BIT31_24_MUX_CONTROL_BIT_5_13_21_29_SEL	15
+	#define BLSB_DFX_CW_BIT31_24_MUX_CONTROL_BIT_4_12_20_28_SEL	12
+	#define BLSB_DFX_CW_BIT31_24_MUX_CONTROL_BIT_3_11_19_27_SEL	9
+	#define BLSB_DFX_CW_BIT31_24_MUX_CONTROL_BIT_2_10_18_26_SEL	6
+	#define BLSB_DFX_CW_BIT31_24_MUX_CONTROL_BIT_1_9_17_25_SEL	3
+	#define BLSB_DFX_CW_BIT31_24_MUX_CONTROL_BIT_0_8_16_24_SEL	0
+	/* Register Bit Widths for DFX_CW_BIT31_24_MUX_CONTROL */
+	#define BWID_DFX_CW_BIT31_24_MUX_CONTROL_BIT_7_15_23_31_SEL	3
+	#define BWID_DFX_CW_BIT31_24_MUX_CONTROL_BIT_6_14_22_30_SEL	3
+	#define BWID_DFX_CW_BIT31_24_MUX_CONTROL_BIT_5_13_21_29_SEL	3
+	#define BWID_DFX_CW_BIT31_24_MUX_CONTROL_BIT_4_12_20_28_SEL	3
+	#define BWID_DFX_CW_BIT31_24_MUX_CONTROL_BIT_3_11_19_27_SEL	3
+	#define BWID_DFX_CW_BIT31_24_MUX_CONTROL_BIT_2_10_18_26_SEL	3
+	#define BWID_DFX_CW_BIT31_24_MUX_CONTROL_BIT_1_9_17_25_SEL	3
+	#define BWID_DFX_CW_BIT31_24_MUX_CONTROL_BIT_0_8_16_24_SEL	3
+	/* Register Bit MASKS for DFX_CW_BIT31_24_MUX_CONTROL */
+	#define BMSK_DFX_CW_BIT31_24_MUX_CONTROL_BIT_7_15_23_31_SEL	0x00e00000 /*  */
+	#define BMSK_DFX_CW_BIT31_24_MUX_CONTROL_BIT_6_14_22_30_SEL	0x001c0000 /*  */
+	#define BMSK_DFX_CW_BIT31_24_MUX_CONTROL_BIT_5_13_21_29_SEL	0x00038000 /*  */
+	#define BMSK_DFX_CW_BIT31_24_MUX_CONTROL_BIT_4_12_20_28_SEL	0x00007000 /*  */
+	#define BMSK_DFX_CW_BIT31_24_MUX_CONTROL_BIT_3_11_19_27_SEL	0x00000e00 /*  */
+	#define BMSK_DFX_CW_BIT31_24_MUX_CONTROL_BIT_2_10_18_26_SEL	0x000001c0 /*  */
+	#define BMSK_DFX_CW_BIT31_24_MUX_CONTROL_BIT_1_9_17_25_SEL	0x00000038 /*  */
+	#define BMSK_DFX_CW_BIT31_24_MUX_CONTROL_BIT_0_8_16_24_SEL	0x00000007 /*  */
+	/* Register BITFIELD for DFX_CW_BIT31_24_MUX_CONTROL - roff, lsb, width, mask */
+	#define BITFIELD_DFX_CW_BIT31_24_MUX_CONTROL_BIT_7_15_23_31_SEL	 0x01bc, 21, 3, 0x00e00000
+	#define BITFIELD_DFX_CW_BIT31_24_MUX_CONTROL_BIT_6_14_22_30_SEL	 0x01bc, 18, 3, 0x001c0000
+	#define BITFIELD_DFX_CW_BIT31_24_MUX_CONTROL_BIT_5_13_21_29_SEL	 0x01bc, 15, 3, 0x00038000
+	#define BITFIELD_DFX_CW_BIT31_24_MUX_CONTROL_BIT_4_12_20_28_SEL	 0x01bc, 12, 3, 0x00007000
+	#define BITFIELD_DFX_CW_BIT31_24_MUX_CONTROL_BIT_3_11_19_27_SEL	 0x01bc, 9, 3, 0x00000e00
+	#define BITFIELD_DFX_CW_BIT31_24_MUX_CONTROL_BIT_2_10_18_26_SEL	 0x01bc, 6, 3, 0x000001c0
+	#define BITFIELD_DFX_CW_BIT31_24_MUX_CONTROL_BIT_1_9_17_25_SEL	 0x01bc, 3, 3, 0x00000038
+	#define BITFIELD_DFX_CW_BIT31_24_MUX_CONTROL_BIT_0_8_16_24_SEL	 0x01bc, 0, 3, 0x00000007
+
+
+/* Module DFX SPECIFIC SVEN Events */
+
+
+#define SVEN_MODULE_EVENT_DFX_OMAR_CAPTURE_START	0x1
+#define SVEN_MODULE_EVENT_DFX_OMAR_CAPTURE_STOP	0x2
+#define SVEN_MODULE_EVENT_DFX_INTERVAL_CONFIGURATION	0x3
+#define SVEN_MODULE_EVENT_DFX_INTERVAL_MODE_INT	0x4
+#define SVEN_MODULE_EVENT_DFX_INTERRUPT_DATA_0	0x5
+#define SVEN_MODULE_EVENT_DFX_INTERRUPT_DATA_1	0x6
+#define SVEN_MODULE_EVENT_DFX_INTERRUPT_DATA_2	0x7
+#define SVEN_MODULE_EVENT_DFX_INTERRUPT_DATA_3	0x8
+
+
+#endif /* DFX_REGOFFS_H */

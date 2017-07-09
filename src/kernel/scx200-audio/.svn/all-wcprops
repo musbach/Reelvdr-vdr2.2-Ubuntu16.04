@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/configure
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/Makefile.in
+END
+force48k.patch
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/force48k.patch
+END
+config.log
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/config.log
+END
+amd_geode.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/amd_geode.c
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/AUTHORS
+END
+config.status
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/config.status
+END
+amd_geode.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/amd_geode.h
+END
+os_inc.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/os_inc.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/README
+END
+os_inc.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/os_inc.h
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/configure.ac
+END
+pcm_oss_2.6.10.patch
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/pcm_oss_2.6.10.patch
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/COPYING
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/scx200-audio/Makefile
+END

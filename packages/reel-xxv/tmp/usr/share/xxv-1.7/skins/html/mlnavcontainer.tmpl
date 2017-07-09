@@ -1,0 +1,33 @@
+<form name='media'>
+<?% IF nav_ranges %?>
+    
+        <select name='ranges' onChange="di(this.form.ranges.options[this.form.ranges.options.selectedIndex].value, '?cmd=mllist&__range=')">
+            <option value="0"><?% gettext('Ranges') %?></option>
+        <?% FOREACH r IN param.ranges %?>
+            <option value='<?% r.first %?>'<?% " selected" IF cgi.param('__range') == r.first %?> ><?% r.last %?></option>
+        <?% END %?>
+        </select>
+    
+<?% END %?>
+<?% IF nav_new && allow('mledit') %?>
+<a href="?cmd=mledit&__range=<?% param.range %?>">[<?% gettext("New") %?>]</a>
+<?% END %?>
+<?% IF nav_edit && allow('mledit') %?>
+<a href="?cmd=mledit&data=<?% fields.0 %?>&__range=<?% param.range %?>">[<?% gettext("Edit") %?>]</a>
+<?% END %?>
+<?% IF nav_copy && allow('mlcopy') %?>
+<a href="?cmd=mlcopy&data=<?% fields.0 %?>&__range=<?% param.range %?>">[<?% gettext("Copy") %?>]</a>
+<?% END %?>
+<?% IF nav_delete && allow('mldelete') %?>
+<a href="?cmd=mldelete&data=<?% fields.0 %?>&__range=<?% param.range %?>">[<?% gettext("Delete") %?>]</a>
+<?% END %?>
+<?% IF nav_back %?>
+<a href="<?% info.Referer %?>">[<?% gettext("Back") %?>]</a>
+<?% END %?>
+<?% IF nav_search && allow('mlsearch') %?>
+<a href="?cmd=mlsearch&__range=<?% param.range %?>">[<?% gettext("Search") %?>]</a>
+<?% END %?>
+
+
+<?% INCLUDE 'widgets/referer.tmpl' %?>
+</form>

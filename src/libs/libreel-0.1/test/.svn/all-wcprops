@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/libs/libreel-0.1/test
+END
+test_fileexists.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libreel-0.1/test/test_fileexists.cc
+END
+test_networkdevice.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libreel-0.1/test/test_networkdevice.cc
+END
+test_progressbar.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libreel-0.1/test/test_progressbar.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libreel-0.1/test/Makefile
+END

@@ -1,0 +1,139 @@
+#ifndef VIDREND_REGOFFS_H
+#define VIDREND_REGOFFS_H 1
+/*
+
+  This file is provided under a dual BSD/GPLv2 license.  When using or 
+  redistributing this file, you may do so under either license.
+
+  GPL LICENSE SUMMARY
+
+  Copyright(c) 2007-2009 Intel Corporation. All rights reserved.
+
+  This program is free software; you can redistribute it and/or modify 
+  it under the terms of version 2 of the GNU General Public License as
+  published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful, but 
+  WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License 
+  along with this program; if not, write to the Free Software 
+  Foundation, Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+  The full GNU General Public License is included in this distribution 
+  in the file called LICENSE.GPL.
+
+  Contact Information:
+    Intel Corporation
+    2200 Mission College Blvd.
+    Santa Clara, CA  97052
+
+  BSD LICENSE 
+
+  Copyright(c) 2007-2009 Intel Corporation. All rights reserved.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without 
+  modification, are permitted provided that the following conditions 
+  are met:
+
+    * Redistributions of source code must retain the above copyright 
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright 
+      notice, this list of conditions and the following disclaimer in 
+      the documentation and/or other materials provided with the 
+      distribution.
+    * Neither the name of Intel Corporation nor the names of its 
+      contributors may be used to endorse or promote products derived 
+      from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY 
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+
+
+/* Module VIDREND CSR Definitions */
+/* WARNING: This file is Machine Generated using sven_csr.c */
+
+
+
+
+/* Module VIDREND SPECIFIC SVEN Events */
+
+
+#define SVEN_MODULE_EVENT_VIDREND_FIRST_FLIP	0x1
+#define SVEN_MODULE_EVENT_VIDREND_SECOND_FLIP	0x2
+#define SVEN_MODULE_EVENT_VIDREND_FLIP	0x3
+#define SVEN_MODULE_EVENT_VIDREND_DROP	0x4
+#define SVEN_MODULE_EVENT_VIDREND_FLIP_HOLD	0x5
+#define SVEN_MODULE_EVENT_VIDREND_STATUS	0x6
+#define SVEN_MODULE_EVENT_VIDREND_TIMING	0x7
+#define SVEN_MODULE_EVENT_VIDREND_RELEASE	0x8
+#define SVEN_MODULE_EVENT_VIDREND_PORTREAD	0x9
+#define SVEN_MODULE_EVENT_VIDREND_PTSMOD	0xa
+#define SVEN_MODULE_EVENT_VIDREND_OUT_OF_ORDER	0xb
+#define SVEN_MODULE_EVENT_VIDREND_IPQADD	0xc
+#define SVEN_MODULE_EVENT_VIDREND_LATEFRAME	0xd
+#define SVEN_MODULE_EVENT_VIDREND_STARVING	0xe
+#define SVEN_MODULE_EVENT_VIDREND_FLUSH_STOP	0x10
+#define SVEN_MODULE_EVENT_VIDREND_FR_EXISTS	0x11
+#define SVEN_MODULE_EVENT_VIDREND_VSYNC	0x12
+#define SVEN_MODULE_EVENT_VIDREND_HALF_RATE	0x13
+#define SVEN_MODULE_EVENT_VIDREND_LATEVSYNC	0x14
+#define SVEN_MODULE_EVENT_VIDREND_IPQSTAT	0x15
+#define SVEN_MODULE_EVENT_VIDREND_FLIP_TIMING	0x16
+#define SVEN_MODULE_EVENT_VIDREND_OUT_OF_SEGMENT	0x17
+#define SVEN_MODULE_EVENT_VIDREND_NEW_SEGMENT	0x18
+#define SVEN_MODULE_EVENT_VIDREND_TH_NEW_SEGMENT	0x19
+#define SVEN_MODULE_EVENT_VIDREND_BASE_TIME	0x1a
+#define SVEN_MODULE_EVENT_VIDREND_DISCONTINUITY_DROP	0x1b
+#define SVEN_MODULE_EVENT_VIDREND_INTPOL_PTS_DROP	0x1c
+#define SVEN_MODULE_EVENT_VIDREND_FLUSH_BUFFER_REF	0x1d
+#define SVEN_MODULE_EVENT_VIDREND_FLUSH_BUFFER_DEREF	0x1e
+#define SVEN_MODULE_EVENT_VIDREND_MODIFIED_PTS	0x1f
+#define SVEN_MODULE_EVENT_VIDREND_IN_DEQUEUE	0x64
+#define SVEN_MODULE_EVENT_VIDREND_OUT_ENQUEUE	0x65
+#define SVEN_MODULE_EVENT_VIDREND_CONTENT_TIME_GAP	0x66
+#define SVEN_MODULE_EVENT_VIDREND_CLOSE	0x68
+#define SVEN_MODULE_EVENT_VIDREND_STATE_CHANGE	0x6b
+#define SVEN_MODULE_EVENT_VIDREND_FLUSH_START	0x6c
+#define SVEN_MODULE_EVENT_VIDREND_FLUSH_COMPLETE	0x6d
+#define SVEN_MODULE_EVENT_VIDREND_NEW_SEG_IN	0x6e
+#define SVEN_MODULE_EVENT_VIDREND_NEW_SEG_OUT	0x6f
+#define SVEN_MODULE_EVENT_VIDREND_VID_PRESENT	0x20
+#define SVEN_MODULE_EVENT_VIDREND_UNDER_FLOW	0x21
+#define SVEN_MODULE_EVENT_VIDREND_OPEN	0x22
+#define SVEN_MODULE_EVENT_VIDREND_UNDERRUN	0x23
+#define SVEN_MODULE_EVENT_VIDREND_SET_CLOCK	0x24
+#define SVEN_MODULE_EVENT_VIDREND_PLAY_RATE	0x25
+#define SVEN_MODULE_EVENT_VIDREND_SET_PLAY_RATE	0x26
+#define SVEN_MODULE_EVENT_VIDREND_DROP_LINKED	0x27
+#define SVEN_MODULE_EVENT_VIDREND_DELAYED_BASE	0x28
+#define SVEN_MODULE_EVENT_VIDREND_DELAYED_DEP	0x29
+#define SVEN_MODULE_EVENT_VIDREND_START_OF_SEGMENT	0x2a
+#define SVEN_MODULE_EVENT_VIDREND_STRICT_NS_POLICY_DROP	0x2b
+#define SVEN_MODULE_EVENT_VIDREND_TIMING_ADJUST	0x2c
+#define SVEN_MODULE_EVENT_VIDREND_TIMING_ADJUST_DELTA	0x2d
+#define SVEN_MODULE_EVENT_VIDREND_HANDLE_VSYNC	0x2e
+#define SVEN_MODULE_EVENT_VIDREND_PREDICTED_LATEFRAME	0x2f
+#define SVEN_MODULE_EVENT_VIDREND_BUFFER_DEREF_FAIL	0x30
+#define SVEN_MODULE_EVENT_VIDREND_BUFFER_DEREF	0x31
+#define SVEN_MODULE_EVENT_VIDREND_BUFFER_ADDREF_FAIL	0x32
+#define SVEN_MODULE_EVENT_VIDREND_BUFFER_ADDREF	0x33
+#define SVEN_MODULE_EVENT_VIDREND_MASKED_DROP	0x34
+#define SVEN_MODULE_EVENT_VIDREND_INITIAL_INPUT_FRAME	0x35
+#define SVEN_MODULE_EVENT_VIDREND_DELAYED_VSYNC	0x36
+
+
+#endif /* VIDREND_REGOFFS_H */

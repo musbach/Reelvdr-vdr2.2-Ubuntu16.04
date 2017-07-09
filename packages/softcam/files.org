@@ -1,0 +1,58 @@
+#enter all files here that have to be copied from the src/sc/poDIR to the package root
+#note: use only tabs and only one tab between fields!
+#
+#valid types:
+# script - for scripts, default 755, root.root
+# exe    - like script, but will be stripped on packaging
+# sexe   - setuid root executeable, 4755, root.root, strip
+# lib	 - library,     755, root.root, no strip
+# cfg    - config file, 644, root.root
+# bin    - binaries, i.e. firmware, 644, root.root
+# any other files will be installed "as they are", so be careful about permissions!
+#
+# src/sc/po rel. to $(src/sc/poDIR)			dest					type	owner	group
+vdr-plugins/lib/libvdr-sc.so.2.1.6	usr/lib/vdr/libvdr-sc.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-cardclient-30.so.2.1.6	usr/lib/vdr/libsc-cardclient-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-conax-30.so.2.1.6	usr/lib/vdr/libsc-conax-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-constcw-30.so.2.1.6	usr/lib/vdr/libsc-constcw-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-cryptoworks-30.so.2.1.6	usr/lib/vdr/libsc-cryptoworks-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-irdeto-30.so.2.1.6	usr/lib/vdr/libsc-irdeto-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-nagra-30.so.2.1.6	usr/lib/vdr/libsc-nagra-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-nds-30.so.2.1.6	usr/lib/vdr/libsc-nds-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-sc_conax-30.so.2.1.6	usr/lib/vdr/libsc-sc_conax-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-sc_cryptoworks-30.so.2.1.6	usr/lib/vdr/libsc-sc_cryptoworks-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-sc_irdeto-30.so.2.1.6	usr/lib/vdr/libsc-sc_irdeto-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-sc_nagra-30.so.2.1.6	usr/lib/vdr/libsc-sc_nagra-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-sc_seca-30.so.2.1.6	usr/lib/vdr/libsc-sc_seca-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-sc_viaccess-30.so.2.1.6	usr/lib/vdr/libsc-sc_viaccess-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-sc_videoguard2-30.so.2.1.6	usr/lib/vdr/libsc-sc_videoguard2-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-seca-30.so.2.1.6	usr/lib/vdr/libsc-seca-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-shl-30.so.2.1.6	usr/lib/vdr/libsc-shl-30.so.2.1.6	lib	-
+vdr-plugins/lib/libsc-viaccess-30.so.2.1.6	usr/lib/vdr/libsc-viaccess-30.so.2.1.6	lib	-
+vdr-plugins/src/sc/examples2/cardclient.conf etc/vdr/plugins/sc/cardclient.conf	cfg
+vdr-plugins/src/sc/examples2/cardslot.conf	etc/vdr/plugins/sc/cardslot.conf	cfg
+vdr-plugins/src/sc/examples2/override.conf	etc/vdr/plugins/sc/override.conf	cfg
+vdr-plugins/src/sc/examples2/smartcard.conf	etc/vdr/plugins/sc/smartcard.conf	cfg
+vdr-plugins/src/sc/examples2/SoftCam.Key	etc/vdr/plugins/sc/SoftCam.Key	cfg
+vdr-plugins/src/sc/examples2/Viaccess.KID	etc/vdr/plugins/sc/Viaccess.KID	cfg
+#vdr-plugins/src/sc/po/ca_ES.mo	usr/share/src/sc/po/ca_ES/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/cs_CZ.mo	usr/share/src/sc/po/cs_CZ/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/da_DK.mo	usr/share/src/sc/po/da_DK/LC_MESSAGES/sc.mo
+vdr-plugins/src/sc/po/de_DE.mo	usr/share/src/sc/po/de_DE/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/el_GR.mo	usr/share/src/sc/po/el_GR/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/es_ES.mo	usr/share/src/sc/po/es_ES/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/et_EE.mo	usr/share/src/sc/po/et_EE/LC_MESSAGES/sc.mo
+vdr-plugins/src/sc/po/fi_FI.mo	usr/share/src/sc/po/fi_FI/LC_MESSAGES/sc.mo
+vdr-plugins/src/sc/po/fr_FR.mo	usr/share/src/sc/po/fr_FR/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/hr_HR.mo	usr/share/src/sc/po/hr_HR/LC_MESSAGES/sc.mo
+vdr-plugins/src/sc/po/hu_HU.mo	usr/share/src/sc/po/hu_HU/LC_MESSAGES/sc.mo
+vdr-plugins/src/sc/po/it_IT.mo	usr/share/src/sc/po/it_IT/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/nl_NLc.mo	usr/share/src/sc/po/nl_NL/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/nn_NO.mo	usr/share/src/sc/po/nn_NO/LC_MESSAGES/sc.mo
+vdr-plugins/src/sc/po/pl_PL.mo	usr/share/src/sc/po/pl_PL/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/pt_PT.mo	usr/share/src/sc/po/pt_PT/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/ro_RO.mo	usr/share/src/sc/po/ro_RO/LC_MESSAGES/sc.mo
+vdr-plugins/src/sc/po/ru_RU.mo	usr/share/src/sc/po/ru_RU/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/sl_SI.mo	usr/share/src/sc/po/sl_SI/LC_MESSAGES/sc.mo
+vdr-plugins/src/sc/po/sv_SE.mo	usr/share/src/sc/po/sv_SE/LC_MESSAGES/sc.mo
+#vdr-plugins/src/sc/po/tr_TR.mo	usr/share/src/sc/po/tr_TR/LC_MESSAGES/sc.mo

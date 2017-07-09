@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/dvbfuse
+END
+channels.conf
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/19/mcast/dvbfuse/channels.conf
+END
+dvbfuse.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/dvbfuse/dvbfuse.c
+END
+headers.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/18/mcast/dvbfuse/headers.h
+END
+mclilink.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/dvbfuse/mclilink.c
+END
+dvbfuse.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/dvbfuse/dvbfuse.h
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/dvbfuse/main.c
+END
+siparser.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/vdr-mcli-plugin/!svn/ver/18/mcast/dvbfuse/siparser.c
+END
+libmcli.so
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/vdr-mcli-plugin/!svn/ver/18/mcast/dvbfuse/libmcli.so
+END
+parse.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/dvbfuse/parse.c
+END
+crc32.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/vdr-mcli-plugin/!svn/ver/18/mcast/dvbfuse/crc32.c
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/dvbfuse/makefile
+END
+.indent.pro
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/18/mcast/dvbfuse/.indent.pro
+END

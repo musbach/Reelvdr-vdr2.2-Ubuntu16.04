@@ -1,0 +1,10 @@
+Package: reelvdr-langpack
+Version: 1.25
+Section: reel
+Priority: important
+Architecture: all
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-langpack
+Depends: convmv, locales
+Description: language pack/translations for the ReelVdr and basic plugins
+Description-de: Übersetzungen für den ReelVdr

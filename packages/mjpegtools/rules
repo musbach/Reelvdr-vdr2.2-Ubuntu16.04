@@ -1,0 +1,101 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+include /usr/share/dpatch/dpatch.make
+
+version := $(shell sed -n 's/Package: \(.*\)/\1/p' debian/control | head -n 1)
+
+DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+ifneq (powerpc, $(DEB_BUILD_ARCH))
+	CFLAGS += -Wall -g
+else
+	CFLAGS += -Wall
+endif
+
+ifeq (amd64, $(DEB_BUILD_ARCH))
+	CFLAGS += -fPIC -DPIC
+endif
+
+configure: configure-stamp
+configure-stamp: patch-stamp
+	dh_testdir
+
+	CFLAGS="$(CFLAGS)" ./configure --prefix=/usr \
+	--mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
+	--host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE)
+
+	perl -i -pe 's/^(hardcode_libdir_flag_spec\s*=\s*).+$$/$$1" -D__LIBTOOL_IS_A_FOOL__ "/' libtool
+
+	touch configure-stamp
+
+build: build-stamp
+build-stamp: configure-stamp 
+	dh_testdir
+
+# -j doesn't work
+	$(MAKE)
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+
+	[ ! -f Makefile ] || $(MAKE) distclean
+
+	debian/rules unpatch
+
+	dh_clean debian/Makefile.* debian/libmjpegtools0c2a.files \
+	debian/mjpegtools.info debian/mjpegtools.docs debian/control.in \
+	debian/libmjpegtools.files
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	$(MAKE) install prefix=$(CURDIR)/debian/${version}/usr
+	cp mpeg2enc/mpeg2syntaxcodes.h $(CURDIR)/debian/${version}/usr/include/mjpegtools/mpeg2enc
+
+	dh_movefiles --sourcedir=debian/${version}
+
+	find debian -type d | xargs rmdir -p --ignore-fail-on-non-empty
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs -A AUTHORS
+#	dh_installexamples
+#	dh_installmenu
+#	dh_installman
+	dh_installinfo
+	dh_installchangelogs ChangeLog
+	dh_link
+	dh_strip -Xdebian/libmjpegtools-dev/usr/lib/libmpeg2encpp.a -Xdebian/libmjpegtools-dev/usr/lib/libmplex2.a
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs -V
+	dh_installdeb
+	dh_shlibdeps -l debian/${version}/usr/lib
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure patch unpatch

@@ -1,0 +1,7 @@
+# oscam.services generated automatically by Streamboard OSCAM 1.20-unstable_svn SVN r9143
+# Read more: http://www.streamboard.tv/svn/oscam/trunk/Distribution/doc/txt/oscam.services.txt
+
+[hdplus]
+caid                          = 1843
+provid                        = 
+srvid                         = 1519,151A,157F,2774,2777,2E9B,2EAF,5273,5274,EF10,EF11,EF14,EF15,EF74,EF75,EF76,EF77,EF78,EF78,30D4

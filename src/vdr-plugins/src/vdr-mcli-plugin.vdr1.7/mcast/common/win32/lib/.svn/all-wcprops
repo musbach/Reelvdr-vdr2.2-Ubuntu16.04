@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/vdr-mcli-plugin/!svn/ver/14/mcast/common/win32/lib
+END
+libz.a
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/lib/libz.a
+END
+fusewin.lib
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/vdr-mcli-plugin/!svn/ver/14/mcast/common/win32/lib/fusewin.lib
+END
+libxml2.a
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/lib/libxml2.a
+END
+libpthreadGC2.a
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/lib/libpthreadGC2.a
+END
+fusewin.dll
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/vdr-mcli-plugin/!svn/ver/14/mcast/common/win32/lib/fusewin.dll
+END

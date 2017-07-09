@@ -1,0 +1,8 @@
+Package: alsa-shim
+Version: 25.0.2
+Section: reel-ice
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: alsa-shim
+Description: alsa-shim module for Intel CE

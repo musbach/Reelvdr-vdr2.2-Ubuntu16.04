@@ -1,0 +1,36 @@
+#!/bin/sh
+
+
+myln () {
+src="$2"
+target="$3"
+
+	if [ ! -L $target ]; then
+		ln -f $*
+	fi
+}
+
+if [ -x /usr/bin/lsb_release ] && [ $(lsb_release -rs | cut -f1 -d.) -ge 10 ]; then
+        UBUNTU10="true"
+else
+        UBUNTU10="false"
+fi
+
+if $UBUNTU10 ; then
+    update-rc.d -f setup-shares remove >/dev/null
+
+    #set correct device in setup-shares.conf
+    device="eth0"
+    if [ -d /proc/sys/net/ipv4/conf/eth1 ]; then
+	device="eth1"
+    fi
+    #we have to wait for the correct device to be configured by DHCP
+    sed -i s/"net-device-up IFACE=.*"/"net-device-up IFACE=$device"/  /etc/init/setup-shares.conf
+    [ -f /etc/init/smbd.conf ] && sed -i s/"#start on local-filesystems"/"start on local-filesystems"/ /etc/init/smbd.conf
+    [ -f /etc/init/nmbd.conf ] && sed -i s/"#start on (local-filesystems"/"start on (local-filesystems"/ /etc/init/nmbd.conf
+else
+    echo "creating init levels for setup-shares"
+    update-rc.d setup-shares defaults 18 82
+fi
+
+exit 0

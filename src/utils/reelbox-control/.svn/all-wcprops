@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/17/testing/src/utils/reelbox-control
+END
+rb_control.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/rb_control.c
+END
+frontpanel_rs232.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/frontpanel_rs232.c
+END
+daemon.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/daemon.c
+END
+fan_control.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/fan_control.c
+END
+external_ctrl.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/external_ctrl.c
+END
+rs232.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/rs232.txt
+END
+rb_control.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/rb_control.h
+END
+frontpanel.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/frontpanel.c
+END
+daemon.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/daemon.h
+END
+frontpanel.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/frontpanel.h
+END
+frontpanel_usb.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/frontpanel_usb.c
+END
+frontpanel_nc.c.wip
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/frontpanel_nc.c.wip
+END
+frontpanel_nc.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/frontpanel_nc.c
+END
+frontpanel_ice.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/utils/reelbox-control/frontpanel_ice.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/17/testing/src/utils/reelbox-control/Makefile
+END

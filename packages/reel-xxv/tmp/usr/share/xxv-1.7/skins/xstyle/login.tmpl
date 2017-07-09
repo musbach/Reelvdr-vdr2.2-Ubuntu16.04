@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="<?% charset %?>"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?% lang = locale.split('_') %?>
+<html xmlns="http://www.w3.org/1999/xhtml" <?% IF lang.1 %?>xml:lang="<?% lang.0 %?>" lang="<?% lang.0 %?>"<?% ELSE %?>xml:lang="en" lang="en"<?% END %?>>
+<head>
+    <link rel="stylesheet" type="text/css" href="style-<?% skin %?>.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="print.css" media="print" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title><?% IF param.title.defined;param.title;ELSE %?>XXV<?% END %?></title>
+    <meta name="generator" content="XXV System - Version: <?% version %?>" />
+    <meta http-equiv="content-type" content="text/html; charset=<?% charset %?>" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="robots" content="noindex,noarchive,nofollow" />
+</head>
+<body>
+<form method="post" action="?cmd=login">
+  <input type="hidden" name="__action" value="save" />
+  <h1><?% gettext("Authorization required") %?></h1>
+  <table border='0' width='95%' style="margin-top:15px">
+            <tr><td width="150" height="1"></td><td width="245" align="right"><img src="images/xxv.gif" /></td></tr>
+            <tr>
+                <td>
+                    <?% gettext("Username") %?> :
+                </td>
+                <td>
+                    <input style="width:245px;" type="text" name="__name" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?% gettext("Password") %?> :
+                </td>
+                <td>
+                    <input style="width:245px;" type="password" name="__password" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                &nbsp;
+                </td>
+                 <td align="right">
+                    <input type="submit" value="<?% gettext("Login") %?>" />
+                </td>
+            </tr>
+        </table>
+</form>
+</body>
+</html>

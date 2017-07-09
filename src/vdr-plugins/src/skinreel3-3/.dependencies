@@ -1,0 +1,564 @@
+skinreel3.o: skinreel3.c /usr/include/linux/stddef.h common.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ config.h font.h /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h reel.h \
+ ../../../vdr/include/vdr/skinsttng.h ../../../vdr/include/vdr/skins.h \
+ logo.h bitmap.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/vdr/recording.h setup.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h status.h \
+ ../../../vdr/include/vdr/status.h ../../../vdr/include/vdr/player.h
+reel.o: reel.c common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h config.h font.h \
+ /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h reel.h \
+ ../../../vdr/include/vdr/skinsttng.h ../../../vdr/include/vdr/skins.h \
+ logo.h bitmap.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/vdr/recording.h status.h \
+ ../../../vdr/include/vdr/status.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/osdbase.h \
+ texteffects.h ../../../vdr/include/vdr/thread.h tools.h displaymenu.h \
+ mytextscroller.h displaychannel.h displayvolume.h displayreplay.h \
+ displaytracks.h displaymessage.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/timers.h ../../../vdr/include/vdr/menu.h \
+ ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/plugin.h
+config.o: config.c common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h config.h font.h \
+ /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h tools.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h
+logo.o: logo.c common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h bitmap.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/thread.h \
+ config.h font.h /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h logo.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h
+tools.o: tools.c common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h tools.h
+status.o: status.c common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h status.h \
+ ../../../vdr/include/vdr/status.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/positioner.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/recording.h \
+ ../../../vdr/include/vdr/timers.h ../../../vdr/include/vdr/themes.h \
+ ../../../vdr/include/vdr/timers.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/menu.h \
+ ../../../vdr/include/vdr/dvbplayer.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h
+texteffects.o: texteffects.c common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h config.h font.h \
+ /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h texteffects.h reel.h \
+ ../../../vdr/include/vdr/skinsttng.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/thread.h tools.h
+setup.o: setup.c common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h logo.h bitmap.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/vdr/timers.h setup.h config.h font.h \
+ /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/themes.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ tools.h texteffects.h reel.h ../../../vdr/include/vdr/skinsttng.h \
+ ../../../vdr/include/vdr/thread.h
+displaymenu.o: displaymenu.c pngutils.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/debug.h \
+ ../../../vdr/include/vdr/status.h ../../../vdr/include/vdr/player.h \
+ displaymenu.h reel.h common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/skinsttng.h \
+ mytextscroller.h ../../../vdr/include/vdr/osd.h config.h font.h \
+ /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h logo.h bitmap.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/vdr/recording.h status.h tools.h
+displaychannel.o: displaychannel.c ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ displaychannel.h reel.h common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/skinsttng.h \
+ config.h font.h /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h logo.h bitmap.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/vdr/recording.h
+displayreplay.o: displayreplay.c displayreplay.h reel.h common.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/skinsttng.h \
+ ../../../vdr/include/vdr/skins.h config.h font.h \
+ /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h logo.h bitmap.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/vdr/recording.h
+displayvolume.o: displayvolume.c displayvolume.h reel.h common.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/skinsttng.h \
+ ../../../vdr/include/vdr/skins.h config.h font.h \
+ /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h
+displaytracks.o: displaytracks.c ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h displaytracks.h reel.h common.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/skinsttng.h logo.h bitmap.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/vdr/recording.h \
+ config.h font.h /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h
+displaymessage.o: displaymessage.c displaymessage.h reel.h common.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/skinsttng.h \
+ ../../../vdr/include/vdr/skins.h logo.h bitmap.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/vdr/recording.h \
+ config.h font.h /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h
+mytextscroller.o: mytextscroller.c mytextscroller.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h reel.h common.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/skinsttng.h \
+ ../../../vdr/include/vdr/skins.h
+bitmap.o: bitmap.c common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h bitmap.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/thread.h \
+ config.h font.h /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h /usr/include/GraphicsMagick/Magick++.h \
+ /usr/include/GraphicsMagick/Magick++/Include.h \
+ /usr/include/GraphicsMagick/magick/magick_config.h \
+ /usr/include/GraphicsMagick/magick/api.h \
+ /usr/include/GraphicsMagick/magick/common.h \
+ /usr/include/GraphicsMagick/magick/magick_types.h \
+ /usr/include/GraphicsMagick/magick/analyze.h \
+ /usr/include/GraphicsMagick/magick/image.h \
+ /usr/include/GraphicsMagick/magick/forward.h \
+ /usr/include/GraphicsMagick/magick/colorspace.h \
+ /usr/include/GraphicsMagick/magick/error.h \
+ /usr/include/GraphicsMagick/magick/log.h \
+ /usr/include/GraphicsMagick/magick/timer.h \
+ /usr/include/GraphicsMagick/magick/attribute.h \
+ /usr/include/GraphicsMagick/magick/average.h \
+ /usr/include/GraphicsMagick/magick/blob.h \
+ /usr/include/GraphicsMagick/magick/cdl.h \
+ /usr/include/GraphicsMagick/magick/channel.h \
+ /usr/include/GraphicsMagick/magick/color.h \
+ /usr/include/GraphicsMagick/magick/color_lookup.h \
+ /usr/include/GraphicsMagick/magick/colormap.h \
+ /usr/include/GraphicsMagick/magick/command.h \
+ /usr/include/GraphicsMagick/magick/compare.h \
+ /usr/include/GraphicsMagick/magick/composite.h \
+ /usr/include/GraphicsMagick/magick/compress.h \
+ /usr/include/GraphicsMagick/magick/confirm_access.h \
+ /usr/include/GraphicsMagick/magick/constitute.h \
+ /usr/include/GraphicsMagick/magick/decorate.h \
+ /usr/include/GraphicsMagick/magick/delegate.h \
+ /usr/include/GraphicsMagick/magick/deprecate.h \
+ /usr/include/GraphicsMagick/magick/describe.h \
+ /usr/include/GraphicsMagick/magick/draw.h \
+ /usr/include/GraphicsMagick/magick/render.h \
+ /usr/include/GraphicsMagick/magick/type.h \
+ /usr/include/GraphicsMagick/magick/effect.h \
+ /usr/include/GraphicsMagick/magick/enhance.h \
+ /usr/include/GraphicsMagick/magick/fx.h \
+ /usr/include/GraphicsMagick/magick/gem.h \
+ /usr/include/GraphicsMagick/magick/random.h \
+ /usr/include/GraphicsMagick/magick/gradient.h \
+ /usr/include/GraphicsMagick/magick/hclut.h \
+ /usr/include/GraphicsMagick/magick/list.h \
+ /usr/include/GraphicsMagick/magick/magic.h \
+ /usr/include/GraphicsMagick/magick/magick.h \
+ /usr/include/GraphicsMagick/magick/memory.h \
+ /usr/include/GraphicsMagick/magick/module.h \
+ /usr/include/GraphicsMagick/magick/monitor.h \
+ /usr/include/GraphicsMagick/magick/montage.h \
+ /usr/include/GraphicsMagick/magick/operator.h \
+ /usr/include/GraphicsMagick/magick/paint.h \
+ /usr/include/GraphicsMagick/magick/pixel_cache.h \
+ /usr/include/GraphicsMagick/magick/pixel_iterator.h \
+ /usr/include/GraphicsMagick/magick/plasma.h \
+ /usr/include/GraphicsMagick/magick/profile.h \
+ /usr/include/GraphicsMagick/magick/quantize.h \
+ /usr/include/GraphicsMagick/magick/registry.h \
+ /usr/include/GraphicsMagick/magick/resize.h \
+ /usr/include/GraphicsMagick/magick/resource.h \
+ /usr/include/GraphicsMagick/magick/shear.h \
+ /usr/include/GraphicsMagick/magick/signature.h \
+ /usr/include/GraphicsMagick/magick/statistics.h \
+ /usr/include/GraphicsMagick/magick/texture.h \
+ /usr/include/GraphicsMagick/magick/transform.h \
+ /usr/include/GraphicsMagick/magick/utility.h \
+ /usr/include/GraphicsMagick/magick/version.h \
+ /usr/include/GraphicsMagick/Magick++/Image.h \
+ /usr/include/GraphicsMagick/Magick++/Blob.h \
+ /usr/include/GraphicsMagick/Magick++/Color.h \
+ /usr/include/GraphicsMagick/Magick++/Drawable.h \
+ /usr/include/GraphicsMagick/Magick++/Geometry.h \
+ /usr/include/GraphicsMagick/Magick++/Exception.h \
+ /usr/include/GraphicsMagick/Magick++/TypeMetric.h \
+ /usr/include/GraphicsMagick/Magick++/Pixels.h \
+ /usr/include/GraphicsMagick/Magick++/STL.h \
+ /usr/include/GraphicsMagick/Magick++/CoderInfo.h \
+ /usr/include/GraphicsMagick/Magick++/Montage.h \
+ ../../../vdr/include/vdr/themes.h
+pngutils.o: pngutils.c ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/config.h \
+ pngutils.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h
+font.o: font.c common.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h font.h /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ ../../../vdr/include/vdr/font.h

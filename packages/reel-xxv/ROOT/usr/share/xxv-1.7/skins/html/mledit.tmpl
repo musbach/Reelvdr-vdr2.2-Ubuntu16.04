@@ -1,0 +1,207 @@
+<h1><?% IF data.id %?>
+    <?% gettext("Edit Media") %?>
+    <?% ELSE %?>
+    <?% gettext("Create Media") %?>
+<?% END %?></h1>
+
+<?% INCLUDE 'mlnavcontainer.tmpl'
+        nav_back = 1
+        nav_copy = 1
+        nav_edit = 1
+        nav_delete = 1
+        nav_new = 1
+        nav_search = 1
+        nav_ranges = 1
+%?>
+
+<form method="post" action="?cmd=mlsave" name="library">
+<input type="hidden" name="data" value="<?% IF data.id %?><?% data.id %?><?% ELSE %?><?% param.id %?><?% END %?>" />
+<input type="hidden" name="__range" value="<?% param.range %?>" />
+<table border="100%">
+    <tr>
+        <td>
+            <?% gettext('Title') %?>:
+        </td>
+        <td colspan="3">
+            <input type="text" name="__title" id="title" value="<?% data.title || param.title %?>" size="50" maxlength="255" />
+            <!--
+            &nbsp;<input type="submit" name="__search" value="<?% gettext('Search at') %?>"  onfocus="document.library.action='?cmd=mlresearch'" onblur="document.library.action='?cmd=mlsave'" />&nbsp;&nbsp;
+            <input type="radio" name="__source" value="dvdpalace" checked>&nbsp;
+            <a href="http://www.dvd-palace.de" target="_blank">DVD-Palace (DE)</a>
+            -->
+            <!--<img width="100" height="28" src="images/dvdpalace.gif" border="0" alt="www.dvd-palace.de"/ align="bottom">-->
+            <!--<input type="radio" name="__source" value"nix">&nbsp;Nix-->
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Subtitle') %?>:
+        </td>
+        <td>
+            <input type="text" name="__subtitle" id="subtitle" value="<?% data.subtitle || param.subtitle %?>" size="50" maxlength="255" />
+        </td>
+        <td>
+            <?% gettext('Country') %?>:
+        </td>
+        <td>
+            <input type="text" name="__country" id="country" value="<?% data.country || param.country %?>" size="50" maxlength="255" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Cover URL') %?>:
+        </td>
+        <td>
+            <input type="text" name="__imgurl" id="imgurl" value="<?% data.imgurl || param.imgurl %?>" size="50" maxlength="255" />
+        </td>
+        <td>
+            <?% gettext('Director') %?>:
+        </td>
+        <td>
+            <input type="text" name="__director" id="director" value="<?% data.director || param.director %?>" size="50" maxlength="255" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Language') %?>:
+        </td>
+        <td>
+            <input type="text" size="15" maxlength="255" name="__language" id="language" value="<?% data.language || param.language %?>" />
+            <a href="#" title="set to german" onclick="document.library.__language.value='<?% gettext('german') %?>'">
+                <img src="images/german.gif" border="0" alt="<?% gettext('german') %?>" />
+            </a>
+            <a href="#" title="set to english" onclick="document.library.__language.value='<?% gettext('english') %?>'">
+                <img src="images/english.gif" border="0" alt="<?% gettext('english') %?>" />
+            </a>
+            <a href="#" title="set to french" onclick="document.library.__language.value='<?% gettext('french') %?>'">
+                <img src="images/french.gif" border="0" alt="<?% gettext('french') %?>" />
+            </a>
+            <a href="#" title="set to spanish" onclick="document.library.__language.value='<?% gettext('spanish') %?>'">
+                <img src="images/spanish.gif" border="0" alt="<?% gettext('spanish') %?>" />
+            </a>
+        </td>
+        <td rowspan="5">
+            <?% gettext('Plot') %?>:
+        </td>
+        <td rowspan="5">
+            <textarea cols="40" rows="8" name="__plot" id="plot" wrap="virtual"><?% data.plot || param.plot %?></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('DiskID') %?>:
+        </td>
+        <td>
+            <input type="text" name="__diskid" id="diskid" value="<?% data.diskid || param.diskid %?>" size="15" maxlength="255" />
+            <input type="hidden" name="__id" id="id" value="<?% data.id || param.id %?>" size="15" maxlength="255" />
+            <?% gettext('Mediatype') %?>
+            <select name="__mediatype">
+                <option label="" value="0" <?% IF (data.mediatype || param.mediatype) && (data.mediatype == 0 || param.mediatype == 0) %?>selected="selected"<?% END %?>></option>
+                <?% mediatypes = param.mediatypes %?>
+                <?% FOREACH type IN mediatypes %?>
+                <option label="<?% type.1 %?>" value="<?% type.0 %?>" <?% IF data.mediatype == type.0 || param.mediatype == type.0 %?>selected="selected"<?% END %?>><?% type.1 %?></option>
+                <?% END %?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('TV-Episode') %?>:
+        </td>
+        <td>
+            <input type="checkbox" name="__istv" id="istv" value="<?% data.istv || param.istv %?>" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Seen') %?>:
+        </td>
+        <td>
+            <input type="checkbox" name="__seen" id="seen" value="<?% data.seen || param.seen %?>" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Runtime') %?>:
+        </td>
+        <td>
+            <input type="text" name="__runtime" id="runtime" value="<?% data.runtime || param.runtime %?>" size="5" maxlength="5" />min
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <?% gettext('Year') %?>:
+            <input type="text" name="__year" id="year" value="<?% data.year || param.year %?>" size="5" maxlength="4" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Filename') %?>:
+        </td>
+        <td>
+            <input type="text" name="__filename" id="filename" value="<?% data.filename || param.filename %?>" size="50" maxlength="255" />
+        </td>
+        <td rowspan="5">
+            <?% gettext('Actors') %?>:
+        </td>
+        <td rowspan="5">
+            <textarea cols="40" rows="8" name="__actors" id="actors" wrap="off"><?% data.actors || param.actors %?></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Filesize') %?>:
+        </td>
+        <td>
+            <input type="text" name="__filesize" id="filesize" value="<?% data.filesize || param.filesize %?>" size="10" maxlength="15" /> bytes
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Filedate') %?>:
+        </td>
+        <td>
+            <input type="text" name="__filedate" id="filedate" value="<?% data.filedate || param.filedate %?>" size="18" maxlength="20" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Audio Codec') %?>:
+        </td>
+        <td>
+            <input type="text" name="__audio_codec" id="audio_codec" value="<?% data.audio_codec || param.audio_codec %?>" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Video Codec') %?>:
+        </td>
+        <td>
+            <input type="text" name="__video_codec" id="video_codec" value="<?% data.video_codec || param.video_codec %?>" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Size') %?>:
+        </td>
+        <td>
+            <input type="text" name="__video_width" id="video_width" value="<?% data.video_width || param.video_width %?>" size="5" maxlength="4" /> x
+            <input type="text" name="__video_height" id="video_height" value="<?% data.video_height || param.video_height %?>" size="5" maxlength="4" />
+        </td>
+        <td rowspan="2">
+            <?% gettext('Comment') %?>:
+        </td>
+        <td rowspan="2">
+            <textarea cols="40" rows="8" name="__comment" id="comment" wrap="virtual"><?% data.comment || param.comment %?></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><?% gettext('Genre') %?>:
+            <br/>
+            <?% INCLUDE 'mlgenres.tmpl' %?>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <input type='submit' name="__save" value='<?% gettext('Save') %?>' onfocus="document.library.action='?cmd=mlsave'" onblur="document.library.action='?cmd=mlresearch'"/>&nbsp;
+        </td>
+    </tr>
+</table>
+</form>

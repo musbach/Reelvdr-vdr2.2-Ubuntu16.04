@@ -1,0 +1,19 @@
+Package: reelvdr-pi-timeline
+Version: 1.0.141.2
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-timeline
+Description: timeline plugin for the ReelVDR
+ Shows a timeline of all programmed timers per day and informs
+ you of timer conflicts
+ .
+ Written by:                  Jürgen Schmitz <js@js-home.org>
+ Project's homepage:          http://www.js-home.org/vdr
+Description-de: Timer Zeitleiste für den ReelVDR
+ Zeigt eine Zeitleiste der programmierten Timer für jeden Tag
+ und informiert über mögliche Timerkonflikte
+ .
+ Written by:                  Jürgen Schmitz <js@js-home.org>
+ Project's homepage:          http://www.js-home.org/vdr

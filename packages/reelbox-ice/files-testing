@@ -1,0 +1,11 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)		dest	type	owner.group
+etc/exports
+etc/default/hdparm
+etc/default/tftpd-hpa.conf
+etc/bash_completion.d/reel
+etc/init.d/mount_prep_local
+etc/init.d/netserver_wol	-	script
+etc/init.d/sanitycheck-reel	-	script
+sbin/factorysettings.sh		root/bin/factorysettings.sh	script

@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Wed, 28 Mar 2012 11:57:09 +0200
+Source: mountall
+Binary: mountall
+Architecture: source i386
+Version: 2.15.3-reel2
+Distribution: lucid-proposed
+Urgency: low
+Maintainer: Scott James Remnant <scott@ubuntu.com>
+Changed-By: rollercoaster <rollercoaster@reel-multimedia.com>
+Description:
+ mountall   - filesystem mounting tool
+Changes:
+ mountall (2.15.3-reel2) lucid-proposed; urgency=low
+ .
+   [ Rollercoaster ]
+   * "fix" fstab - /tmp should be on a tmpfs
+Checksums-Sha1:
+ a820b6ac1ef01ee51e6e56bd0e06a66bfea4e7c4 761 mountall_2.15.3-reel2.dsc
+ 7f18218a9a013cb8454a78135690ea2aace77330 573676 mountall_2.15.3-reel2.tar.gz
+ 36572338ed9c0af27cded3dd9e818c08dd5a72c1 46994 mountall_2.15.3-reel2_i386.deb
+Checksums-Sha256:
+ 4ccd69f207b4a40085c67eb63aa2d6b1e9e9538d9d1b00835f42ac32db7dc586 761 mountall_2.15.3-reel2.dsc
+ 5dd73381337443dcc7d09628911fc8c23b54936cc205def0f2f2a1692dcc8355 573676 mountall_2.15.3-reel2.tar.gz
+ d90ba361ae74d9f154c9dfd726e40e60b7170a11be4e48e50f4c47eef1335619 46994 mountall_2.15.3-reel2_i386.deb
+Files:
+ 085e19f95ddea5f882f426233550e30b 761 admin required mountall_2.15.3-reel2.dsc
+ 5412cf49097f5a098e1fd032b04d8caf 573676 admin required mountall_2.15.3-reel2.tar.gz
+ 857cefc2f6b9fb5a3c791121243216b2 46994 admin required mountall_2.15.3-reel2_i386.deb

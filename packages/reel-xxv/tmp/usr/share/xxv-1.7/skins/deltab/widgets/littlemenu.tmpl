@@ -1,0 +1,43 @@
+<!-- LittleMenuTemplate -->
+<?% global.sidebar = 1 %?>
+<div id="sidebar">
+    <?% IF allow('vdrlist') || allow('clist') %?>
+    <p class="section"><?% gettext("Preferences",20) %?></p>
+    <p>
+    <?% END %?>
+    <?% IF allow('vdrlist') %?>
+    <a href="?cmd=vdrlist">
+        <?% gettext("Video disk recorder",20) %?>
+    </a>
+    <br />
+    <?% END %?>
+    <?% IF allow('clist') %?>
+    <a href="?cmd=clist">
+        <?% gettext("Channels",20) %?>
+    </a>
+    <br />
+    <?% END %?>
+    <?% IF allow('vdrlist') || allow('clist') %?>
+    </p>
+    <?% END %?>
+  <?% IF allow( 'ul') || allow( 'uprefs' ) %?>
+  <p class="section"><?% gettext("User administration",20) %?></p>
+  <p>
+      <?% IF allow( 'ul' ) %?>    <a href="?cmd=ul"><?% gettext("User",20) %?></a><br /><?% END %?>
+      <?% IF allow( 'uprefs' ) %?><a href="?cmd=uprefs"><?% gettext("Own settings",20) %?></a><br /><?% END %?>
+  </p>
+  <?% END %?>
+<?% IF data.title %?>
+  <p class="section"><?% chop(data.title,20) %?></p>
+<?% ELSE %?>
+  <p class="section"><?% gettext("Preferences") %?></p>
+<?% END %?>
+    <p>
+        <?% FOREACH l IN data.links %?>
+            <?% "<b>" IF data.highlight == l.key %?>
+            <a href="<?% l.value.link %?>"><?% l.value.text %?></a>
+            <?% "</b>" IF data.highlight == l.key %?>
+            <br />
+            <?% END %?>
+    </p>
+</div>

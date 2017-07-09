@@ -1,0 +1,14 @@
+--- config.h	(revision 15413)
++++ config.h	(revision 15414)
+@@ -14,9 +14,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #ifdef REELVDR
++#include <string>
++#else
+ #include <string.h>
+-#else
+-#include <string>
+ #endif /*REELVDR*/
+ #include <time.h>
+ #include <unistd.h>

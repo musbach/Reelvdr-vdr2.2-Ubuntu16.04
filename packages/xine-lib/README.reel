@@ -1,0 +1,34 @@
+The files here are just the skeleton for creating the debian packages.
+
+if you want to compile xine-lib by yourself, you have to d/l the original 
+source from http://www.xinehq.de .
+
+After unpacking the source in this directory (keep the leading 
+xine-lib-$(VERSION)! ), apply patches
+
+xine-lib-reel.diff
+xine-lib-vdr.diff
+xine-lib-vdr.diff
+
+
+change at least version in changelog
+
+
+To compile, enter make
+
+Wait about 1/2 an hour and you'll find ten packages.
+
+
+RC, 2007-04-11
+-------------------------------------------------
+Paketerstellung:
+
+changelog anpassen (version!)
+selber bauen
+hochladen auf reelbox.org nach
+reelbox.org/var/www/reelbox.org/software/rubuntu/pool/testing/710
+hier ein Unterverzeichnis anlegen für die neue Version und alle .deb's hier 
+reinstecken. siehst du aber wie es mit den aktuellen Versionen gemacht ist.
+
+(auch .dsc und die .tar.gz)
+

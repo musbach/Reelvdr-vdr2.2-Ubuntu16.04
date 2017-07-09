@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+.PHONY: override_dh_strip override_dh_auto_build override_dh_auto_install
+
+override_dh_auto_build:
+	INCLUDES=-I/usr/include/vdr dh_auto_build -- all
+	cd debian; /bin/sh pxsup2dast.c
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -f debian/pxsup2dast
+
+override_dh_strip:
+	dh_strip --dbg-package=vdr-plugin-burn-dbg
+
+override_dh_auto_install:
+	LIBDIR=. dh_auto_install --destdir=debian/vdr-plugin-burn
+
+%:
+	dh $@
+

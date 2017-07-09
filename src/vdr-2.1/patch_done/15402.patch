@@ -1,0 +1,14 @@
+Index: channels.h
+===================================================================
+--- channels.h	(revision 15401)
++++ channels.h	(revision 15402)
+@@ -177,6 +177,9 @@
+   int Number(void) const { return number; }
+   void SetNumber(int Number) { number = Number; }
+   bool GroupSep(void) const { return groupSep; }
++#ifdef REELVDR
++  void SetGroupSep(bool GroupSep) { groupSep=GroupSep; }
++#endif
+   const char *Parameters(void) const { return parameters; }
+   const cLinkChannels* LinkChannels(void) const { return linkChannels; }
+   const cChannel *RefChannel(void) const { return refChannel; }

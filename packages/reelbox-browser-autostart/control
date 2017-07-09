@@ -1,0 +1,9 @@
+Package: reelbox-browser-autostart
+Version: 0.9
+Section: reel
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: testing/packages/reelbox-browser-autostart
+Description: starts the webbrowser in background on system start
+Description-de: started den webbrowser beim Systemstart im Hintergrund

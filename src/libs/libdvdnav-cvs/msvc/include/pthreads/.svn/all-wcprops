@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/pthreads
+END
+sched.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/pthreads/sched.h
+END
+pthread.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/pthreads/pthread.h
+END

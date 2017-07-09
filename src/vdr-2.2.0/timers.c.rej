@@ -1,0 +1,42 @@
+--- timers.c	(revision 15412)
++++ timers.c	(revision 15413)
+@@ -49,6 +49,9 @@
+      stop -= 2400;
+   priority = Pause ? Setup.PausePriority : Setup.DefaultPriority;
+   lifetime = Pause ? Setup.PauseLifetime : Setup.DefaultLifetime;
++#ifdef USE_PINPLUGIN
++  fskProtection = 0;
++#endif /* PINPLUGIN */
+   *file = 0;
+   aux = NULL;
+   event = NULL;
+@@ -87,6 +90,9 @@
+      stop -= 2400;
+   priority = Setup.DefaultPriority;
+   lifetime = Setup.DefaultLifetime;
++#ifdef USE_PINPLUGIN
++  fskProtection = 0;
++#endif /* PINPLUGIN */
+   *file = 0;
+   const char *Title = Event->Title();
+   if (!isempty(Title))
+@@ -98,6 +104,9 @@
+      }
+   aux = NULL;
+   event = NULL; // let SetEvent() be called to get a log message
++#ifdef USE_PINPLUGIN
++  cStatus::MsgTimerCreation(this, Event);
++#endif /* PINPLUGIN */
+ }
+ 
+ cTimer::cTimer(const cTimer &Timer)
+@@ -381,6 +393,9 @@
+         result = false;
+         }
+      }
++#ifdef USE_PINPLUGIN
++  fskProtection = aux && strstr(aux, "<pin-plugin><protected>yes</protected></pin-plugin>");
++#endif /* PINPLUGIN */
+ #ifdef USEMYSQL
+   if(UpdateDB && ((Setup.ReelboxModeTemp == eModeClient) || (Setup.ReelboxModeTemp == eModeServer))) // Client & Server
+       UpdateTimerDB();

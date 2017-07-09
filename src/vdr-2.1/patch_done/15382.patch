@@ -1,0 +1,43 @@
+Index: keys.c
+===================================================================
+--- keys.c	(revision 15381)
++++ keys.c	(revision 15382)
+@@ -56,6 +56,21 @@
+                     { kRecordings,    trNOOP("Key$Recordings")  },
+                     { kSetup,         trNOOP("Key$Setup")       },
+                     { kCommands,      trNOOP("Key$Commands")    },
++#ifdef REELVDR
++                    { kGreater,       trNOOP("Key$Greater")     },
++                    { kLess,          trNOOP("Key$Less")        },
++                    { k2digit,        trNOOP("Key$2digit")      },
++                    { kDVD,           trNOOP("Key$DVD")         },
++                    { kDVB,           trNOOP("Key$DVB")         },
++                    { kPVR,           trNOOP("Key$PVR")         },
++                    { kReel,          trNOOP("Key$Reel")        },
++                    { kTT,            trNOOP("Key$TT")          },
++                    { kPiP,           trNOOP("Key$PiP")         },
++                    { kHelp,          trNOOP("Key$Help")        },
++                    { kEject,         trNOOP("Key$Eject")       },
++                    { kAspect,        trNOOP("Key$Aspect")      },
++                    { kSearch,        trNOOP("Key$Search")      },
++#endif /* REELVDR */
+                     { kUser0,         trNOOP("Key$User0")       },
+                     { kUser1,         trNOOP("Key$User1")       },
+                     { kUser2,         trNOOP("Key$User2")       },
+Index: keys.h
+===================================================================
+--- keys.h	(revision 15381)
++++ keys.h	(revision 15382)
+@@ -50,6 +50,12 @@
+              kRecordings,
+              kSetup,
+              kCommands,
++#ifdef REELVDR
++             kGreater, kLess, k2digit,
++             kDVD, kDVB, kPVR, kReel,
++             kTT, kPiP,
++             kHelp, kEject, kAspect, kSearch,
++#endif /* REELVDR */
+              kUser0, kUser1, kUser2, kUser3, kUser4, kUser5, kUser6, kUser7, kUser8, kUser9,
+              kNone,
+              kKbd,

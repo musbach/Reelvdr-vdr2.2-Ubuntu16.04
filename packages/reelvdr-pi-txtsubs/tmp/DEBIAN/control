@@ -1,0 +1,21 @@
+Package: teletextsubs
+Version: 0.2.4.1
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/ttxtsubs
+Description: displays, records and replays teletext based subtitles
+  This plug-in implements displaying, recording and replaying teletext
+  based subtitles using the on screen display.
+  .
+  Current Maintainer: Tobias Grimm <vdr@e-tobi.net>
+  Original Author:    Ragnar Sundblad <ragge@nada.kth.se>
+  Homepage: http://projects.vdr-developer.org/projects/show/plg-ttxtsubs
+Description-de: Zeigt Teletext-Untertitel, nimmt diese auf und gibt sie wieder
+  Dieses Plugin beinhaltet die Anzeige, Aufnahme und Wiedergabe von
+  Teletext basierten Untertiteln
+  .
+  Aktueller Betreuer: Tobias Grimm <vdr@e-tobi.net>
+  Original Autor:    Ragnar Sundblad <ragge@nada.kth.se>
+  Homepage: http://projects.vdr-developer.org/projects/show/plg-ttxtsubs

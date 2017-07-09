@@ -1,0 +1,9 @@
+hdtsplay.o: hdtsplay.c ../../src//include/hdchannel.h \
+ ../../src//include/hdshmlib.h ../../src//include/../driver/hdshm.h \
+ ../../src//include/hdshm_user_structs.h
+hdshmlib.o: hdshmlib.c ../../src/hostlib/hdshmlib.c \
+ ../../src/hostlib/../driver/hdshm.h
+hdchannel.o: hdchannel.c ../../src/hdchannel/hdchannel.c \
+ ../../src//include/hdchannel.h ../../src//include/hdshmlib.h \
+ ../../src//include/../driver/hdshm.h \
+ ../../src//include/hdshm_user_structs.h

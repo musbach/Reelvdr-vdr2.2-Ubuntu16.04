@@ -1,0 +1,12 @@
+--- pat.c	(revision 15412)
++++ pat.c	(revision 15413)
+@@ -13,6 +13,9 @@
+ #include "libsi/section.h"
+ #include "libsi/descriptor.h"
+ #include "thread.h"
++#ifdef USE_TTXTSUBS
++#include "vdrttxtsubshooks.h"
++#endif /* TTXTSUBS */
+ 
+ #define PMT_SCAN_TIMEOUT  10 // seconds
+ 

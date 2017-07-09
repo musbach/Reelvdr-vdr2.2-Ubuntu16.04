@@ -1,0 +1,3 @@
+# Rules for PTP camera
+PROGRAM="check-ptp-camera 06/01/01", ACTION=="add", SUBSYSTEM=="usb_device", RUN+="/usr/sbin/PTPCameraMount.sh add"
+ACTION=="remove", SUBSYSTEM=="usb_device", RUN+="/usr/sbin/PTPCameraMount.sh remove"

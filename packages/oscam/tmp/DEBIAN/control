@@ -1,0 +1,9 @@
+Package: oscam
+Version: 14.04.11197-14
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 1,6M
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: oscam
+Description: oscam

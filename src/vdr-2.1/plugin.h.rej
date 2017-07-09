@@ -1,0 +1,12 @@
+--- plugin.h	(revision 15412)
++++ plugin.h	(revision 15413)
+@@ -45,6 +45,9 @@
+ 
+   virtual const char *MainMenuEntry(void);
+   virtual cOsdObject *MainMenuAction(void);
++#ifdef USE_MCLI
++  virtual cOsdObject *AltMenuAction(void) { return NULL; };
++#endif /* MCLI */
+ 
+   virtual cMenuSetupPage *SetupMenu(void);
+   virtual bool SetupParse(const char *Name, const char *Value);

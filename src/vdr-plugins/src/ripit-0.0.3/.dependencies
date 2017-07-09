@@ -1,0 +1,89 @@
+ripit.o: ripit.c ../../../vdr/include/vdr/interface.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/remote.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/svdrp.h \
+ setup.h ripit.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/osd.h \
+ ripitosd.h ../../../vdr/include/vdr/status.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/thread.h \
+ tools.h
+ripitosd.o: ripitosd.c ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/config.h \
+ ripitosd.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/status.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/thread.h \
+ setup.h ripitstatus.h tools.h
+setup.o: setup.c setup.h
+tools.o: tools.c tools.h setup.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ripitstatus.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h
+ripitstatus.o: ripitstatus.c ripitstatus.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h

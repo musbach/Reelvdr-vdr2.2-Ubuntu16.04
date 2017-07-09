@@ -1,0 +1,66 @@
+mediaplayer.o: mediaplayer.c mediaplayer.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/status.h \
+ ../../../vdr/include/vdr/player.h playermenu.h \
+ ../../../vdr/include/vdr/osdbase.h playerStatus.h \
+ ../filebrowser/servicestructs.h def.h ../../../vdr/include/vdr/remote.h
+playermenu.o: playermenu.c ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/remote.h \
+ ../../../vdr/include/vdr/keys.h mediaplayer.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/positioner.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/status.h \
+ ../../../vdr/include/vdr/player.h playermenu.h \
+ ../../../vdr/include/vdr/osdbase.h playerStatus.h \
+ ../filebrowser/servicestructs.h def.h
+playerStatus.o: playerStatus.c ../../../vdr/include/vdr/status.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/positioner.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/recording.h \
+ ../../../vdr/include/vdr/timers.h ../../../vdr/include/vdr/themes.h \
+ ../../../vdr/include/vdr/remote.h playerStatus.h playermenu.h \
+ ../../../vdr/include/vdr/osdbase.h ../filebrowser/servicestructs.h

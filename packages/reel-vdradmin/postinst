@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# changed port from 8001 to 80
+/etc/init.d/vdradmin stop
+killall vdradmind
+
+#if  grep -o -q "8001" /etc/vdradmin/vdradmind.conf; then
+#	sed s/"^SERVERPORT =.*"/"SERVERPORT = 80"/ -i /etc/vdradmin/vdradmind.conf
+#fi
+
+#rm old config, will be re-created on first start
+#[ -f /etc/vdradmin/vdradmind.conf ] && mv -f /etc/vdradmin/vdradmind.conf /etc/vdradmin/vdradmind.conf.BAK
+#touch /etc/vdradmin/vdradmind.conf
+
+echo "creating init levels for vdradmin daemon"
+update-rc.d vdradmin defaults 22 80
+
+/etc/init.d/vdradmin start
+

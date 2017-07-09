@@ -1,0 +1,223 @@
+--- mcli.c	2014-07-13 11:16:50.021565143 +0200
++++ mcli.c	2014-07-13 10:46:15.484027961 +0200
+@@ -464,25 +477,29 @@
+ 	if(satlist == NULL) {
+ 		return false;
+ 	}
++
+ 	for(int i=0; i<satlist->sat_num;i ++) {
+ 		satellite_info_t *s=satlist->sat+i;
++
++		//printf("Mcli::%s: Satlist Pos %d s->type %d s->Name %s s->SatPos %d LNB%d UNI%d ROT%d\n", __FUNCTION__, pos, s->type, s->Name,  s->SatPos, SAT_SRC_LNB, SAT_SRC_UNI, SAT_SRC_ROTOR);
++
+ 		switch(s->type){
+ 			case SAT_SRC_LNB:
+ 			case SAT_SRC_UNI:
+ 				if(pos == s->SatPos) {
+-//					printf("satlist found\n");
++					//printf("satlist found\n");
+ 					return true;
+ 				}
+ 				break;
+ 			case SAT_SRC_ROTOR:
+ 				if(pos>=s->SatPosMin && pos <=s->SatPosMax) {
+-//					printf("satlist found\n");
++					//printf("satlist found\n");
+ 					return true;
+ 				}
+ 				break;
+ 		}
+ 	}
+-//	printf("satlist not found\n");
++	//printf("satlist not found\n");
+ 
+ 	return false;
+ }
+@@ -512,9 +530,13 @@
+ 	}
+ 	bool ret;
+ 	if(satlist == NULL) {
++                printf("Mcli::%s: No Satlist found \n", __FUNCTION__);
+ 		ret = false;
+ 	} else {
+ 		ret=SatelitePositionLookup(satlist, pos);
++		if (!ret) {
++			printf("Mcli::%s: Pos %d not found in Satlist \n", __FUNCTION__, pos);
++		}		
+ 	}
+ 	nc_unlock_list ();
+ 	return ret;
+@@ -599,20 +621,23 @@
+ 	if(lock) {
+ 		Lock();
+ 	}
+-//	printf("TunerAvailable: %d %d\n",type, pos);
++
++	printf("Mcli::%s: Testing for tuner type %d pos %d\n", __FUNCTION__, type, pos);
++
+ 	if (TunerCountByType (type) == m_cmd.tuner_type_limit[type]) {
++
+ #ifdef DEBUG_RESOURCES
+-		//printf("Type %d limit (%d) reached\n", type, m_cmd.tuner_type_limit[type]);
++		printf("Mcli::%s: type %d limit (%d) reached\n", __FUNCTION__, type, m_cmd.tuner_type_limit[type]);
+ #endif
+ 		if(lock) {
+ 			Unlock();
+ 		}
++
+ 		return NULL;
+ 	}
+ 
+ 	for(int i=0; i<TUNER_POOL_MAX; i++) {
+ 		tp=m_tuner_pool+i;
+-//		printf("Tuner %d(%p), type %d, inuse %d\n", i, tp, tp->type, tp->inuse);
+ 
+ 		if(tp->inuse) {
+ 			continue;
+@@ -688,9 +720,8 @@
+ {
+ 	netceiver_info_list_t *nc_list = nc_get_list ();
+ //	printf ("Looking for netceivers out there....\n");
+-#if 1 //ndef REELVDR
+ 	bool channel_switch_ok = false;
+-#endif
++
+ #define NOTIFY_CAM_CHANGE 1
+ #ifdef NOTIFY_CAM_CHANGE
+     int cam_stats[CAM_POOL_MAX] = { 0 };
+@@ -704,7 +735,7 @@
+ 	bool netCVChanged;
+ 
+ 	while (Running ()) {
+-        netCVChanged = false;
++		netCVChanged = false;
+ 		Lock ();
+ 		if(!InitMcli()) {
+ 			usleep (250 * 1000);
+@@ -716,21 +747,55 @@
+ 
+ 		for (int n = 0; n < nc_list->nci_num; n++) {
+ 			netceiver_info_t *nci = nc_list->nci + n;
++
++			//printf("cPluginMcli::Action: NCI Cam_Num: %d\n", nci->cam_num);
++
+ 			if ((now - nci->lastseen) > MCLI_DEVICE_TIMEOUT) {
+ 				if(CAMPoolDel(nci->uuid)) {
+-					printf  ("mcli: Remove CAMs from NetCeiver %s\n", nci->uuid);
+-					isyslog ("mcli: Remove CAMs from NetCeiver %s\n", nci->uuid);
+-                    netCVChanged = true;
++					printf  ("Mcli::%s: Remove CAMs from NetCeiver: [%s]\n", __FUNCTION__, nci->uuid);
++					netCVChanged = true;
+ 				}
+ 			} else {
+ 				int cpa = CAMPoolAdd(nci);
+ 				if(cpa==1) {
+-					printf ("mcli: Add CAMs from NetCeiver %s -> %d\n", nci->uuid, cpa);
+-					isyslog ("mcli: Add CAMs from NetCeiver %s -> %d\n", nci->uuid, cpa);
+-                    netCVChanged = true;
++					printf ("Mcli::%s: Add CAMs from NetCeiver: [%s] -> %d\n", __FUNCTION__, nci->uuid, cpa);
++					netCVChanged = true;
+ 				}
+ 			}
+ 
++                        if (netCVChanged) {
++				for(int j = 0; j < nci->cam_num; j++) {
++
++					const char *camstate;
++					const char *cammode;
++
++					switch(nci->cam[j].status) {
++						case DVBCA_CAMSTATE_MISSING: 
++							camstate="MISSING"; break;
++						case DVBCA_CAMSTATE_INITIALISING:
++							camstate="INIT"; break;
++						case DVBCA_CAMSTATE_READY:
++							camstate="READY"; break;
++					}
++					switch(nci->cam[j].flags) {
++						case CA_SINGLE:
++							cammode="CA_SINGLE"; break;
++						case CA_MULTI_SID:
++							cammode="CA_MULTI_SID"; break;
++						case CA_MULTI_TRANSPONDER:
++							cammode="CA_MULTI_TRANSPONDER"; break;
++					}
++
++					if (nci->cam[j].status != DVBCA_CAMSTATE_MISSING) {
++						printf("Mcli::%s: Slot:%d CamModule '%s' State:%s Mode:%s\n", __FUNCTION__, j, nci->cam[j].menu_string, camstate, cammode);
++					} else {
++						printf("Mcli::%s: Slot:%d CamModule State:%s\n", __FUNCTION__, j, camstate);
++					}
++				}
++			}
++
++
++
+ #if NOTIFY_CAM_CHANGE
+             if (n == 0) {
+                 for(int j = 0; j < nci->cam_num && j < CAM_POOL_MAX; j++) {
+@@ -762,17 +827,17 @@
+ 				if (((now - nci->lastseen) > MCLI_DEVICE_TIMEOUT) || (nci->tuner[i].preference < 0) || !strlen (nci->tuner[i].uuid)) {
+ 					if (t) {
+ 						int pos=TunerPoolDel(t);
+-						printf  ("mcli: Remove Tuner %s [%s] @ %d\n", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, pos);
+-						isyslog ("mcli: Remove Tuner %s [%s] @ %d", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, pos);
+-                        netCVChanged = true;
++						printf  ("Mcli::%s: Remove Tuner %s [%s] @ %d\n", __FUNCTION__, nci->tuner[i].fe_info.name, nci->tuner[i].uuid, pos);
++						//isyslog ("cPluginMcli::Action: Remove Tuner %s [%s] @ %d", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, pos);
++						netCVChanged = true;
+ 					}
+ 					continue;
+ 				}
+ 				if (!t) {
+ 					tpa=TunerPoolAdd(nci->tuner+i);
+-					printf ("mcli: Add Tuner: %s [%s], Type %d @ %d\n", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, nci->tuner[i].fe_info.type, tpa);
+-					isyslog ("mcli: Add Tuner: %s [%s], Type %d @ %d", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, nci->tuner[i].fe_info.type, tpa);
+-                    netCVChanged = true;
++					printf ("Mcli::%s: Add Tuner: %s [%s], Type %d @ %d\n", __FUNCTION__, nci->tuner[i].fe_info.name, nci->tuner[i].uuid, nci->tuner[i].fe_info.type, tpa);
++					//isyslog ("cPluginMcli::Action: Add Tuner: %s [%s], Type %d @ %d", nci->tuner[i].fe_info.name, nci->tuner[i].uuid, nci->tuner[i].fe_info.type, tpa);
++					netCVChanged = true;
+ 				}
+ 			}
+ 		}
+@@ -780,10 +845,10 @@
+ 		Unlock ();
+ 		UpdateDevices();
+ 
+-        //RC: disabled, see mantis #995
+-        //if (netCVChanged) {
+-        //    cPluginManager::CallAllServices("NetCeiver changed");
+-        //}
++		if (netCVChanged) {
++			//RC: disabled, see mantis #995
++			//cPluginManager::CallAllServices("NetCeiver changed");
++		}
+         
+ //TB: reelvdr itself tunes if the first tuner appears, don't do it twice
+ #if 1 //ndef REELVDR
+@@ -791,7 +856,7 @@
+ 			if (!channel_switch_ok) {	// the first tuner that was found, so make VDR retune to the channel it wants...
+ 				cChannel *ch = Channels.GetByNumber (cDevice::CurrentChannel ());
+ 				if (ch) {
+-                    printf("cDevice::PrimaryDevice ()%p\n", cDevice::PrimaryDevice ());
++					printf("Mcli::%s: cDevice::PrimaryDevice (%p)\n", __FUNCTION__, cDevice::PrimaryDevice ());
+ 					channel_switch_ok = cDevice::PrimaryDevice ()->SwitchChannel (ch, true);
+ 				}
+ 			}
+@@ -1049,6 +1115,8 @@
+ 
+ cString cPluginMcli::SVDRPCommand (const char *Command, const char *Option, int &ReplyCode)
+ {
++//      printf ("Mcli::%s:\n", __FUNCTION__);
++
+         typedef struct nrTuners
+         {
+             int sat;
+@@ -1057,7 +1125,6 @@
+             int terr;
+         } nrTuners_t;
+ 
+-//	printf ("cPluginMcli::SVDRPCommand\n");
+ 	// Process SVDRP commands this plugin implements
+ 
+ 	if (strcasecmp (Command, "REINIT") == 0) {

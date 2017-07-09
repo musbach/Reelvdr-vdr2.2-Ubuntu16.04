@@ -1,0 +1,10 @@
+Package: musicbrowser
+Version: 0.1.7
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Depends: reelaudiodb, libreelaudiodb
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: testing/src/vdr-plugins/src/musicbrowser
+Description: musicbrowser shows and plays music collection on your ReelBox
+Description-de: Musicbrowser zeigt die Musiksammlung auf Ihrer ReelBox an

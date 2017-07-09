@@ -1,0 +1,24 @@
+--- menuitems.h	(revision 15412)
++++ menuitems.h	(revision 15413)
+@@ -22,7 +22,11 @@
+ public:
+   cMenuEditItem(const char *Name);
+   ~cMenuEditItem();
++#ifdef USE_VALIDINPUT
++  void SetValue(const char *Value, bool HasPre=false, bool HasSucc=false);
++#else
+   void SetValue(const char *Value);
++#endif /* VALIDINPUT */
+   };
+ 
+ class cMenuEditIntItem : public cMenuEditItem {
+@@ -202,6 +206,9 @@
+   cMenuSetupPage(void);
+   virtual eOSState ProcessKey(eKeys Key);
+   void SetPlugin(cPlugin *Plugin);
++#ifdef USE_GRAPHTFT
++  const char* MenuKind() { return "MenuSetupPage"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ #endif //__MENUITEMS_H

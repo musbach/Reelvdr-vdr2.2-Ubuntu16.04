@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/18/testing/src/etc/apt/sources.list.d
+END
+emdebian.sources.list
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/emdebian.sources.list
+END
+reel.list.testing.1004
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/reel.list.testing.1004
+END
+reel.list.testing.1310
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/18/testing/src/etc/apt/sources.list.d/reel.list.testing.1310
+END
+reel.list.stable.804
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/reel.list.stable.804
+END
+reel.list.stable.mini
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/reel.list.stable.mini
+END
+reel.list.testing.804
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/reel.list.testing.804
+END
+reel.list.testing.mini
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/reel.list.testing.mini
+END
+reel.list.stable
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/reel.list.stable
+END
+reel.list.stable.1004
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/reel.list.stable.1004
+END
+reel.list.stable.1310
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/18/testing/src/etc/apt/sources.list.d/reel.list.stable.1310
+END
+reel.list.testing
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/reel.list.testing
+END
+reel-devel.list
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/etc/apt/sources.list.d/reel-devel.list
+END

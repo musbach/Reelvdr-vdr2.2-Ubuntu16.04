@@ -1,0 +1,113 @@
+<!--media list-->
+<body class="frame">
+<div id="body">
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+    <?% IF allow('mledit') %?>
+            <a href="?cmd=mledit&amp;data=<?% id %?>">
+                <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit media") %?>" />
+            </a>
+    <?% END %?>
+    <?% IF allow('mldelete') %?>
+            <a href="javascript:surecmd('<?% gettext("You will delete this media") %?>','<?% escape(title) %?>','mldelete','<?% id %?>',620,670)">
+                <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete media") %?>" />
+            </a>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK item %?>
+<?% IF value %?>
+  <a href="?cmd=mlsearch&amp;__search&amp;__selfields=<?% topic %?>&amp;__searchitem=<?% value %?>">
+    <?% value %?>
+  </a>
+<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsFlat %?>
+        <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+          <td class="fieldinline">
+              <div class="medialist">
+                <a href="?cmd=mldisplay&amp;data=<?% id %?>" class="fieldinline">
+                  <img class="medialist" alt="" src='<?% IF param.usecache == "y" %?>?cmd=mlcache&amp;__source=<?% END %?><?% imgurl %?>' />
+                  </a>
+              </div>
+          </td>
+          <td class="fieldinline">
+            <a href="?cmd=mldisplay&amp;data=<?% id %?>" class="fieldinline">
+                <font class="title">
+                <?% title %?><br />
+
+                </font>
+                <font class="subtitle">
+                  <?% subtitle %?> ( <?% director %?> )<br />
+                </font>
+                <?% IF global.hideDescription != 1 && description.length > 0 %?>
+                  <font class="description"><?% chop(description,100,5) %?></font>
+                <?% END %?>
+            </a>
+            </td>
+            <td class="fieldinline push">
+                <?% IF year > 0 %?>
+                    <font class="description"><?% PROCESS item topic="year" value=year %?></font>
+                <?% END %?>
+                <br />
+                <?% PROCESS RowButtons %?>
+            </td>
+        </tr>
+<?% END %?>
+<?% ######################################################################## %?>
+<h1><?% gettext("Media library") %?></h1>
+<form name="mlist" action="">
+  <table class="largetable" summary="">
+      <tr><td class="largehead">&nbsp;</td></tr>
+          <tr>
+              <td class="largetext" align="left">
+              <table  summary="" width="100%">
+              <tr height="0"><th width="60"></th><th></th><th width="64"></th></tr>
+     <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?% id=zeile.0;imgurl=zeile.1;title=zeile.2;subtitle=zeile.3;year=zeile.4;director=zeile.5;description=zeile.6; %?>
+        <?% PROCESS ItemAsFlat %?>
+    <?% END %?>
+                        </table>
+                        </td>
+                    </tr>
+      <tr><td class="largebottom"></td></tr>
+  </table> 
+</form>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Media library",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <?% IF allow('mledit') %?>
+    <a title="<?% gettext("New") %?>" href="?cmd=mledit&amp;__range=<?% param.range %?>"><img src="images/new.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+    <a title="<?% gettext("New") %?>" href="?cmd=mledit&amp;__range=<?% param.range %?>"><?% gettext("New",18) %?></a><br />
+    <?% END %?>
+    </td>
+    </tr>
+    <tr><td class="sidebottom"></td></tr>
+  </table>
+
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Search",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+      <form name="mediarange" action="">
+      <select name='range' onchange="di('?cmd=mllist&amp;__range=',this.form.range.options[this.form.range.options.selectedIndex].value)">
+      <?% FOREACH r IN param.ranges %?>
+          <option value="<?% url( r.0 ) %?>"<?% ' selected="selected"' IF param.range == r.0 %?>><?% r.1 %?></option>
+      <?% END %?>
+      </select>
+      </form>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

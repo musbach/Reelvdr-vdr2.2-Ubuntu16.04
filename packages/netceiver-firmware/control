@@ -1,0 +1,9 @@
+Package: netceiver-firmware
+Version: 120904
+Section: reel
+Priority: important
+Architecture: all
+Depends: netceiver-client
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: netceiver-firmware
+Description: firmware updates for the Reel netceiver

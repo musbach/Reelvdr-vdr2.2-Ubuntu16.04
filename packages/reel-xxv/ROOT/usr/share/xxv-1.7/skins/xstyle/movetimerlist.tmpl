@@ -1,0 +1,100 @@
+<!-- movetimerlist -->
+<?% ######################################################################## %?>
+<?% enableform = allow('movetimerdelete') && data.size > 1  %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+<?% IF allow('movetimeredit') %?>
+                        <a name="<?% id %?>" href="?cmd=movetimeredit&amp;data=<?% id %?>">
+                            <img src="images/edit.png" alt="" title="<?% gettext("Edit rule to move timer") %?>" />
+                        </a>
+<?% END %?>
+<?% IF allow('movetimerdelete') %?>
+                        <a href="javascript:sure(document.movetimerlist, '<?% gettext("Would you like to delete this rule?") %?>\n<?% escape(source) %?> - <?% escape(destination) %?>','?cmd=movetimerdelete&amp;data=',<?% id %?>)" title="<?% gettext("Delete rule to move timer") %?>">
+                            <img src="images/delete.png" alt="" title="<?% gettext("Delete rule to move timer") %?>" />
+                        </a>
+<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK Item %?>
+        <tr<?% ' bgcolor="#F5F5F5"' IF loop.count mod 2 == 0 %?>>
+          <td>
+            <?% IF enableform %?>
+        			<input type="checkbox" value="<?% id %?>" name="<?% source %?> - <?% destination %?>" />
+             <?% END %?>
+            <?% PROCESS RowButtons %?>
+          </td>
+          <td>
+<?% IF allow('movetimeredit') %?>
+            <a name="<?% id %?>" href="?cmd=movetimeredit&amp;data=<?% id %?>">
+<?% END %?>
+            <?% source %?>
+<?% IF allow('movetimeredit') %?>
+            </a>
+<?% END %?>
+          </td>
+          <td>
+            <?% destination %?>
+          </td>
+          <td>
+            <?% when %?>
+          </td>
+          <td>
+            <?% action %?>
+          </td>
+        </tr>
+<?% END %?>
+<?% ######################################################################## %?>
+<h1>
+    <?% gettext("Rules to move timer between channels") %?>
+</h1>
+
+<div id="navcontainer">
+<ul id="navlist">
+<?% IF allow('movetimercreate') %?>
+    <li><a title="<?% gettext("Create a new rule to move timer") %?>"
+           href="?cmd=movetimercreate"><?% gettext("Create a new rule to move timer",25) %?></a></li>
+<?% END %?>
+<?% IF data.size > 1 %?>
+  <?% IF allow('movetimer') %?>
+    <li><a title="<?% gettext("Manual move timer between channels") %?>"
+           href="?cmd=movetimer"><?% gettext("Manual move timer between channels",25) %?></a></li>
+  <?% END %?>
+  <?% IF allow('movetimerdelete') %?>
+    <li><a title="<?% gettext("Delete rules to move timer") %?>"
+          href="#" onClick="Delete('<?% gettext("Would you like to delete these rules?") %?>','<?% gettext("Nothing selected!") %?>','movetimerdelete',document.movetimerlist)">
+        <?% gettext("Delete rules to move timer",25) %?></a>
+     </li>
+  <?% END %?>
+<?% END %?>
+</ul>
+</div>
+
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+<?% IF enableform %?>
+<a href="#" onClick="selAll(document.movetimerlist, 1)">[<?% gettext("Select all") %?>]</a>
+<a href="#" onClick="selAll(document.movetimerlist, 0)">[<?% gettext("Unselect all") %?>]</a>
+<a href="#" onClick="reverse(document.movetimerlist)">[<?% gettext("Reverse select") %?>]</a>
+<form name="movetimerlist" action="">
+  <?% INCLUDE 'widgets/referer.tmpl' %?>
+<?% END %?>
+
+      <table summary="" width="95%">
+            <tr><th width="80"><?% gettext('Service') %?></th>
+                <th><?% gettext('Source') %?></th>
+                <th><?% gettext('Destination')%?></th>
+                <th><?% gettext('Move timer') %?></th>
+                <th><?% gettext('Change original timer') %?></th>
+            </tr>
+     <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?%- id=zeile.0;source=zeile.1;destination=zeile.2;when=zeile.3;action=zeile.4 -%?>
+        <?% PROCESS Item %?>
+     <?% END %?>
+      </table>
+<?% IF enableform %?>
+</form>
+<?% END %?>
+
+<?% END %?>
+

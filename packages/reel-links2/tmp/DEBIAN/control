@@ -1,0 +1,11 @@
+Package: reel-links2
+Version: 2.1pre28
+Section: reel
+Priority: important
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reel-links2
+Depends: gpm, fbset
+Conflicts: links2
+Description: Web browser running in both graphics and text mode
+

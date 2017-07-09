@@ -1,0 +1,30 @@
+Source: vdr-plugin-burn
+Section: misc
+Priority: extra
+Maintainer: Andreas Wissel <dunar@darkmages.de>
+Origin: ctvdr
+Bugs: mailto:pkg-vdr-dvb-devel@lists.alioth.debian.org
+Build-Depends: debhelper (>= 8), sharutils, vdr-dev (>= 1.7.27), pkg-config, libgd2-noxpm-dev (>= 2.0.33) | libgd2-xpm-dev (>= 2.0.33), libboost-dev (>= 1.32.0), gettext
+Standards-Version: 3.9.2
+Homepage: http://www.xeatre.de/community/burn/
+
+Package: vdr-plugin-burn
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, transcode (>= 0.6.10), mjpegtools (>= 1.8.0), dvdauthor (>= 0.6.8), genisoimage, dvd+rw-tools (>= 5.13.4.7.4), eject (>= 2.0.3), project-x, vdr-genindex (>= 0.1.3), ttf-dejavu, imagemagick, sharutils
+Suggests: vdr-burnbackgrounds (>= 0.0.1-4)
+Conflicts: vdr-burnbackgrounds (<= 0.0.1-3)
+Description: Plugin for vdr that implements dvd conversion and writing
+ This Plugin enables VDR to write compliant DVDs from VDR recordings while 
+ being able to control and watch the process inside VDRs on-screen-display.
+ If the selected recordings don't fit the DVD, the video tracks are
+ requantized (shrinked) automatically.
+
+Package: vdr-plugin-burn-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-burn (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-burn
+ .
+ This package contains only the debugging symbols for vdr-plugin-burn
+

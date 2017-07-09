@@ -1,0 +1,44 @@
+Index: xine-lib-1.2.deb/m4/video_out.m4
+===================================================================
+--- xine-lib-1.2.deb.orig/m4/video_out.m4	2013-10-14 16:43:34.215099798 +0100
++++ xine-lib-1.2.deb/m4/video_out.m4	2013-10-14 16:43:34.189084198 +0100
+@@ -434,7 +434,7 @@
+             AC_MSG_RESULT([])
+             LIBS="$XXMC_LIBS $X_LIBS $XV_LIBS $LIBS"
+             AC_LINK_IFELSE([AC_LANG_PROGRAM([[]], [[XvMCPutSlice()]])], [have_xxmc=yes],
+-                           [LIBS="$XXMC_LIBS -lXvMC $X_LIBS $XV_LIBS $LIBS"
++                           [LIBS="$XXMC_LIBS -lXvMC $X_LIBS $XV_LIBS $LIBS $DYNAMIC_LD_LIBS"
+                             AC_LINK_IFELSE([AC_LANG_PROGRAM([[]], [[XvMCPutSlice()]])],
+                                            [have_xxmc=yes XXMC_LIBS="$XXMC_LIBS -lXvMC"])])
+             if test x"$have_xxmc" = x"yes"; then
+@@ -459,7 +459,7 @@
+             AC_MSG_RESULT([])
+             LIBS="$XVMC_LIBS $X_LIBS $XV_LIBS $LIBS"
+             AC_LINK_IFELSE([AC_LANG_PROGRAM([[]], [[XvMCCreateContext()]])], [have_xvmc=yes],
+-                           [LIBS="$XVMC_LIBS -lXvMC $X_LIBS $XV_LIBS $LIBS"
++                           [LIBS="$XVMC_LIBS -lXvMC $X_LIBS $XV_LIBS $LIBS $DYNAMIC_LD_LIBS"
+                             AC_LINK_IFELSE([AC_LANG_PROGRAM([[]], [[XvMCCreateContext()]])],
+                                            [have_xvmc=yes XVMC_LIBS="$XVMC_LIBS -lXvMC"])])
+             if test x"$have_xvmc" = x"yes"; then
+Index: xine-lib-1.2.deb/configure
+===================================================================
+--- xine-lib-1.2.deb.orig/configure	2013-10-14 16:43:34.215099798 +0100
++++ xine-lib-1.2.deb/configure	2013-10-14 16:43:34.207094998 +0100
+@@ -26005,7 +26005,7 @@
+ if ac_fn_c_try_link "$LINENO"; then :
+   have_xxmc=yes
+ else
+-  LIBS="$XXMC_LIBS -lXvMC $X_LIBS $XV_LIBS $LIBS"
++  LIBS="$XXMC_LIBS -lXvMC $X_LIBS $XV_LIBS $LIBS $DYNAMIC_LD_LIBS"
+                             cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -26117,7 +26117,7 @@
+ if ac_fn_c_try_link "$LINENO"; then :
+   have_xvmc=yes
+ else
+-  LIBS="$XVMC_LIBS -lXvMC $X_LIBS $XV_LIBS $LIBS"
++  LIBS="$XVMC_LIBS -lXvMC $X_LIBS $XV_LIBS $LIBS $DYNAMIC_LD_LIBS"
+                             cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

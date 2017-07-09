@@ -1,0 +1,15 @@
+<div id='icons'>
+    <?% IF with_display_button %?>
+<a href="?cmd=display&data=<?% epgId %?>" title='<?% gettext("Detailed program information") %?>'><img src="images/view_event.png"></a><?% umbruch %?>
+    <?% END %?>
+<a href="?cmd=search&amp;data=<?% url( data.1 ) %?>"><img src="images/repeat.png" title="<?% gettext("Search for repeats") %?>"></a><?% umbruch %?>
+    <?% IF timerid && allow('tedit') %?>
+<a href="?cmd=tedit&amp;data=<?% timerid %?>"><img src="images/record_blue.png" title="<?% gettext("Edit this timer") %?>" /></a><?% umbruch %?>
+    <?% ELSIF allow('tnew') %?>
+<a href="?cmd=tnew&amp;data=<?% data.0 %?>"><img src="images/record.png" title="<?% gettext("To record") %?>" name='recordlink' id='<?% data.0 %?>' /></a><?% umbruch %?>
+    <?% END %?>
+<?% IF allow('switch') && switch %?>
+    <a href="?cmd=switch&amp;data=<?% url(data.4) %?>"><img src="images/switch.png" title="<?% gettext("Switch to channel") %?>&nbsp;<?% data.3 %?>" /></a><?% umbruch %?>
+<?% END %?>
+<?% INCLUDE 'bloecke/stars.tmpl' eventid=data.0 %?>
+</div>

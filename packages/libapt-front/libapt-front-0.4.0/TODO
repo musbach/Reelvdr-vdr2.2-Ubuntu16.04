@@ -1,0 +1,46 @@
+ :* Improve exception classes (error.*) and make throughout use of them
+* Port stuff from libept:
+  - dpkgpm replacement
+  - opprogress handling (or rewrite?)
+* Better debtags support (enrico, mornfall):
+* Unified cache update mechanism
+   (debtags and apt databases, possibly more?) 
+* Sane marking API!
+  - mark either package or version for install/remove/upgrade
+  - query either package or version for action/current state
+  - PackageIterator::markInstall should call candidateVersion's markInstall
+  - PackageIterator::markRemove should call currentVersion's markUninstall
+  - possibly add unmark* operations as counterparts to mark*? think!
+  - implementation: should be implemented using APT pinning to get the desired
+    effect (per-version install/uninstall etc)
+    OR: vice versa, implement pinning in terms of individual version installation
+  - version states to include upgradedFrom and upgradedTo and counterpart
+    accessors to get the "other" version in upgrade situation
+  - ensure at most one version per package can be marked for installation ;-)
+  - Iterator ID's
+* Implement an extended state system:
+  - compare synaptic, libcapture and aptitude systems
+  - write a metadata and policy draft
+* Optimize:
+  - make use of const refs where it makes sense
+  - take out that profiler :-)
+* Make a design decision if every failure of an opening in aptFront::cache::Cache
+  should be fatal (TODO added by Ben)
+	- IRC log:
+	[17:10] <ben_vos> Ok, here is an libapt-front question:
+	[17:10] <ben_vos> There is 
+	[17:10] <ben_vos>  bool aptFront::cache::component::PackageTags::hasTagDatabase()
+	[17:10] <ben_vos> but I get a FileException, when calling
+	[17:10] <ben_vos>  aptFront::cache::Global::get().open(aptFront::cache::Cache::OpenDefault
+	[17:10] <ben_vos>   | aptFront::cache::Cache::OpenReadOnly
+	[17:10] <ben_vos>   | aptFront::cache::Cache::OpenTags
+	[17:10] <ben_vos>   | aptFront::cache::Cache::OpenDebtags);
+	[17:10] <ben_vos> and the vocabulary is not available - now whats the use of hasTagDatabase() then?
+	[17:10] <ben_vos> The description of hasTagDatabase() is:
+	[17:10] <ben_vos> Check if the tag database has been created (i.e. if something equivalend to debtags update has been run)
+	[17:12] <mornfall> ben_vos: hmm, the function itself should work
+	[17:12] <mornfall> ben_vos: now i'm not sure about how to take it into account while opening cache
+	[17:13] <mornfall> either we decide that any failure is fatal for open() or none is
+	[17:13] <mornfall> first means that if open() worked, all requested components are up
+	[17:13] <mornfall> the latter means that you can get exceptions from the component accessors
+	[17:13] <mornfall> after a successful open

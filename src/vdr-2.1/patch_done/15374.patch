@@ -1,0 +1,16 @@
+Index: nit.h
+===================================================================
+--- nit.h	(revision 15373)
++++ nit.h	(revision 15374)
+@@ -12,7 +12,11 @@
+ 
+ #include "filter.h"
+ 
++#ifdef REELVDR
++#define MAXNITS 256
++#else
+ #define MAXNITS 16
++#endif
+ #define MAXNETWORKNAME Utf8BufSize(256)
+ 
+ class cNitFilter : public cFilter {

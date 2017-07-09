@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs
+END
+cws2fws.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/cws2fws.c
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/configure
+END
+Doxyfile
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/Doxyfile
+END
+ffmpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/ffmpeg.c
+END
+Changelog
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/Changelog
+END
+clean-diff
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/clean-diff
+END
+output_example.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/output_example.c
+END
+pktdumper.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/pktdumper.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/README
+END
+CREDITS
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/CREDITS
+END
+xvmc_render.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/xvmc_render.h
+END
+ffplay.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/ffplay.c
+END
+ffserver.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/ffserver.c
+END
+cmdutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/cmdutils.c
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/INSTALL
+END
+ffserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/ffserver.h
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/COPYING
+END
+cmdutils.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/cmdutils.h
+END
+ffinstall.nsi
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/ffinstall.nsi
+END
+berrno.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/berrno.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/Makefile
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/.cvsignore
+END
+qt-faststart.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/qt-faststart.c
+END

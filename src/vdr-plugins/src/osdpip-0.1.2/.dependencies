@@ -1,0 +1,10 @@
+osdpip.o: osdpip.c decoder.h opt.h osd.h osd_info.h setup.h
+osd_info.o: osd_info.c osd_info.h setup.h
+remux.o: remux.c remux.h
+osd.o: osd.c osd.h decoder.h opt.h osd_info.h quantize.h receiver.h \
+ setup.h remux.h
+receiver.o: receiver.c receiver.h pes.h setup.h remux.h
+setup.o: setup.c setup.h
+pes.o: pes.c pes.h
+quantize.o: quantize.c quantize.h
+decoder.o: decoder.c decoder.h opt.h setup.h

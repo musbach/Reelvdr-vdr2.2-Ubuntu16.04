@@ -1,0 +1,8 @@
+#!/bin/sh
+
+restart mediaanalyzer
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

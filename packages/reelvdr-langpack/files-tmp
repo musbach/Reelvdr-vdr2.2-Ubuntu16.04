@@ -1,0 +1,1237 @@
+find /usr/src/reelbox/testing/src/vdr-/locale -name *.mo -exec rm -f {} \;
+cd /usr/src/reelbox/testing/src/vdr- && make i18n ;
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-2.2.0“ wird betreten
+install -D -m644 po/pt_PT.mo locale/pt_PT/LC_MESSAGES/vdr.mo
+install -D -m644 po/pl_PL.mo locale/pl_PL/LC_MESSAGES/vdr.mo
+install -D -m644 po/sr_RS.mo locale/sr_RS/LC_MESSAGES/vdr.mo
+install -D -m644 po/ru_RU.mo locale/ru_RU/LC_MESSAGES/vdr.mo
+install -D -m644 po/et_EE.mo locale/et_EE/LC_MESSAGES/vdr.mo
+install -D -m644 po/zh_CN.mo locale/zh_CN/LC_MESSAGES/vdr.mo
+install -D -m644 po/hr_HR.mo locale/hr_HR/LC_MESSAGES/vdr.mo
+install -D -m644 po/hu_HU.mo locale/hu_HU/LC_MESSAGES/vdr.mo
+install -D -m644 po/da_DK.mo locale/da_DK/LC_MESSAGES/vdr.mo
+install -D -m644 po/fi_FI.mo locale/fi_FI/LC_MESSAGES/vdr.mo
+install -D -m644 po/es_ES.mo locale/es_ES/LC_MESSAGES/vdr.mo
+install -D -m644 po/uk_UA.mo locale/uk_UA/LC_MESSAGES/vdr.mo
+install -D -m644 po/sl_SI.mo locale/sl_SI/LC_MESSAGES/vdr.mo
+install -D -m644 po/it_IT.mo locale/it_IT/LC_MESSAGES/vdr.mo
+install -D -m644 po/nl_NL.mo locale/nl_NL/LC_MESSAGES/vdr.mo
+install -D -m644 po/el_GR.mo locale/el_GR/LC_MESSAGES/vdr.mo
+install -D -m644 po/lt_LT.mo locale/lt_LT/LC_MESSAGES/vdr.mo
+install -D -m644 po/sv_SE.mo locale/sv_SE/LC_MESSAGES/vdr.mo
+install -D -m644 po/tr_TR.mo locale/tr_TR/LC_MESSAGES/vdr.mo
+install -D -m644 po/cs_CZ.mo locale/cs_CZ/LC_MESSAGES/vdr.mo
+install -D -m644 po/mk_MK.mo locale/mk_MK/LC_MESSAGES/vdr.mo
+install -D -m644 po/de_DE.mo locale/de_DE/LC_MESSAGES/vdr.mo
+install -D -m644 po/ar.mo locale/ar/LC_MESSAGES/vdr.mo
+install -D -m644 po/nn_NO.mo locale/nn_NO/LC_MESSAGES/vdr.mo
+install -D -m644 po/ro_RO.mo locale/ro_RO/LC_MESSAGES/vdr.mo
+install -D -m644 po/ca_ES.mo locale/ca_ES/LC_MESSAGES/vdr.mo
+install -D -m644 po/sk_SK.mo locale/sk_SK/LC_MESSAGES/vdr.mo
+install -D -m644 po/fr_FR.mo locale/fr_FR/LC_MESSAGES/vdr.mo
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-2.2.0“ wird verlassen
+for I in arghdirector bgprocess bgprocess epgsearch extrecmenu femon filebrowser install ipod netcv netcvupdate osdteletext pin premiereepg setup sleeptimer streamdev sc burn bouquets dvbapi radio satip softhddevice xinemediaplayer ; do \
+	echo $I ; \
+	cd /usr/src/reelbox/testing/src/vdr-plugins/src/$(echo $I) ; \
+	make i18n ;  \
+done
+arghdirector
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/arghdirector-0.2.8-reel“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/arghdirector.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/arghdirector.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-arghdirector.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-arghdirector.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-arghdirector.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-arghdirector.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-arghdirector.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-arghdirector.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-arghdirector.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-arghdirector.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-arghdirector.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-arghdirector.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-arghdirector.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-arghdirector.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-arghdirector.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-arghdirector.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-arghdirector.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-arghdirector.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-arghdirector.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-arghdirector.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-arghdirector.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-arghdirector.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-arghdirector.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-arghdirector.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/arghdirector-0.2.8-reel“ wird verlassen
+bgprocess
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/bgprocess-0.1.0“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/bgprocess.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-bgprocess.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-bgprocess.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-bgprocess.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-bgprocess.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-bgprocess.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-bgprocess.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-bgprocess.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-bgprocess.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-bgprocess.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-bgprocess.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-bgprocess.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-bgprocess.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-bgprocess.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-bgprocess.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-bgprocess.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-bgprocess.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-bgprocess.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-bgprocess.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-bgprocess.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-bgprocess.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-bgprocess.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-bgprocess.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/bgprocess-0.1.0“ wird verlassen
+bgprocess
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/bgprocess-0.1.0“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/bgprocess.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/bgprocess.pot
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/bgprocess-0.1.0“ wird verlassen
+epgsearch
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel5“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/epgsearch.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/epgsearch.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-epgsearch.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-epgsearch.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-epgsearch.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-epgsearch.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-epgsearch.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-epgsearch.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-epgsearch.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-epgsearch.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-epgsearch.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-epgsearch.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-epgsearch.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-epgsearch.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-epgsearch.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-epgsearch.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-epgsearch.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-epgsearch.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-epgsearch.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-epgsearch.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-epgsearch.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-epgsearch.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-epgsearch.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-epgsearch.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel5“ wird verlassen
+extrecmenu
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/extrecmenu-1.2“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/extrecmenu.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/extrecmenu.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-extrecmenu.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-extrecmenu.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-extrecmenu.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-extrecmenu.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-extrecmenu.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-extrecmenu.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-extrecmenu.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-extrecmenu.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-extrecmenu.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-extrecmenu.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-extrecmenu.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-extrecmenu.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-extrecmenu.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-extrecmenu.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-extrecmenu.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-extrecmenu.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-extrecmenu.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-extrecmenu.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-extrecmenu.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-extrecmenu.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-extrecmenu.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-extrecmenu.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/extrecmenu-1.2“ wird verlassen
+femon
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/femon-1.1.3“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/femon.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/femon.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-femon.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-femon.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-femon.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-femon.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-femon.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-femon.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-femon.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-femon.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-femon.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-femon.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-femon.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-femon.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-femon.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-femon.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-femon.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-femon.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-femon.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-femon.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-femon.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-femon.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-femon.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-femon.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/femon-1.1.3“ wird verlassen
+filebrowser
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/filebrowser-0.35“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/filebrowser.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/filebrowser.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-filebrowser.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-filebrowser.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-filebrowser.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-filebrowser.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-filebrowser.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-filebrowser.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-filebrowser.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-filebrowser.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-filebrowser.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-filebrowser.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-filebrowser.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-filebrowser.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-filebrowser.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-filebrowser.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-filebrowser.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-filebrowser.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-filebrowser.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-filebrowser.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-filebrowser.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-filebrowser.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-filebrowser.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-filebrowser.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/filebrowser-0.35“ wird verlassen
+install
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/install-0.0.7“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/install.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/install.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-install.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-install.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-install.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-install.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-install.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-install.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-install.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-install.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-install.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-install.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-install.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-install.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-install.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-install.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-install.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-install.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-install.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-install.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-install.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-install.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-install.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-install.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/install-0.0.7“ wird verlassen
+ipod
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/ipod-0.0.4“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/ipod.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/ipod.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-ipod.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-ipod.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-ipod.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-ipod.mo po/et_EE.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-ipod.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-ipod.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-ipod.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-ipod.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-ipod.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-ipod.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-ipod.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-ipod.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-ipod.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-ipod.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-ipod.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-ipod.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-ipod.mo po/ro_RO.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-ipod.mo po/ca_ES.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-ipod.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-ipod.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-ipod.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-ipod.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/ipod-0.0.4“ wird verlassen
+netcv
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/netcv-0.1.0“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/netcv.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-netcv.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-netcv.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-netcv.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-netcv.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-netcv.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-netcv.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-netcv.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-netcv.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-netcv.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-netcv.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-netcv.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-netcv.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-netcv.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-netcv.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-netcv.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-netcv.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-netcv.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-netcv.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-netcv.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-netcv.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-netcv.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-netcv.mo po/tr_TR.po
+cp ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-netcvupdate.mo
+cp ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-netcv.mo ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-netcvupdate.mo
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/netcv-0.1.0“ wird verlassen
+netcvupdate
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/netcv-0.1.0“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/netcv.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/netcv.pot
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/netcv-0.1.0“ wird verlassen
+osdteletext
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/osdteletext-0.9.5“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/osdteletext.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/osdteletext.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/osdteletext.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/osdteletext.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/osdteletext.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/uk_UA.po po/osdteletext.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/osdteletext.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/osdteletext.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sk_SK.po po/osdteletext.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/osdteletext.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-osdteletext.mo po/pt_PT.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-osdteletext.mo po/fi_FI.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-osdteletext.mo po/de_DE.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-osdteletext.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-osdteletext.mo po/it_IT.po
+making: ../../../vdr/locale/uk_UA/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/uk_UA/LC_MESSAGES/vdr-osdteletext.mo po/uk_UA.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-osdteletext.mo po/ru_RU.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-osdteletext.mo po/ca_ES.po
+making: ../../../vdr/locale/sk_SK/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/sk_SK/LC_MESSAGES/vdr-osdteletext.mo po/sk_SK.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-osdteletext.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-osdteletext.mo po/fr_FR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/osdteletext-0.9.5“ wird verlassen
+pin
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/pin-0.1.3“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/pin.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/pin.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-pin.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-pin.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-pin.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-pin.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-pin.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-pin.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-pin.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-pin.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-pin.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-pin.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-pin.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-pin.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-pin.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-pin.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-pin.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-pin.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-pin.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-pin.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-pin.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-pin.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-pin.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-pin.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/pin-0.1.3“ wird verlassen
+premiereepg
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/premiereepg-0.0.8“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/premiereepg.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/premiereepg.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-premiereepg.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-premiereepg.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-premiereepg.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-premiereepg.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-premiereepg.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-premiereepg.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-premiereepg.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-premiereepg.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-premiereepg.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-premiereepg.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-premiereepg.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-premiereepg.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-premiereepg.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-premiereepg.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-premiereepg.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-premiereepg.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-premiereepg.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-premiereepg.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-premiereepg.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-premiereepg.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-premiereepg.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-premiereepg.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/premiereepg-0.0.8“ wird verlassen
+setup
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/setup-1.0“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/setup.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/setup.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-setup.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-setup.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-setup.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-setup.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-setup.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-setup.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-setup.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-setup.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-setup.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-setup.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-setup.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-setup.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-setup.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-setup.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-setup.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-setup.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-setup.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-setup.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-setup.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-setup.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-setup.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-setup.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/setup-1.0“ wird verlassen
+sleeptimer
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/sleeptimer-0.6“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/sleeptimer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/sleeptimer.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-sleeptimer.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-sleeptimer.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-sleeptimer.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-sleeptimer.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-sleeptimer.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-sleeptimer.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-sleeptimer.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-sleeptimer.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-sleeptimer.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-sleeptimer.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-sleeptimer.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-sleeptimer.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-sleeptimer.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-sleeptimer.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-sleeptimer.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-sleeptimer.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-sleeptimer.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-sleeptimer.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-sleeptimer.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-sleeptimer.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-sleeptimer.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-sleeptimer.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/sleeptimer-0.6“ wird verlassen
+streamdev
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/streamdev-0.6.1“ wird betreten
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/streamdev-0.6.1“ wird verlassen
+sc
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-06“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/sc.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/sc.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/sc.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/sc.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/sc.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/lt_LT.po po/sc.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/sc.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/sc.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/sc.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/sc.pot
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-sc.mo po/pl_PL.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-sc.mo po/fi_FI.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-sc.mo po/de_DE.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-sc.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-sc.mo po/nl_NL.po
+making: ../../../vdr/locale/lt_LT/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/lt_LT/LC_MESSAGES/vdr-sc.mo po/lt_LT.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-sc.mo po/sv_SE.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-sc.mo po/hu_HU.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-sc.mo po/ru_RU.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-sc.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-sc.mo po/fr_FR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-06“ wird verlassen
+burn
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/burn-master“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/burn.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/burn.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/burn.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/burn.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/burn.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sk_SK.po po/burn.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/burn.pot
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-burn.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-burn.mo po/fi_FI.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-burn.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-burn.mo po/de_DE.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-burn.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-burn.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-burn.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-burn.mo po/nl_NL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-burn.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-burn.mo po/ru_RU.po
+making: ../../../vdr/locale/sk_SK/LC_MESSAGES/vdr-burn.mo
+msgfmt -c -o ../../../vdr/locale/sk_SK/LC_MESSAGES/vdr-burn.mo po/sk_SK.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-burn.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-burn.mo po/fr_FR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/burn-master“ wird verlassen
+bouquets
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/bouquets-0.1“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/bouquets.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/bouquets.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-bouquets.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-bouquets.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-bouquets.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-bouquets.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-bouquets.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-bouquets.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-bouquets.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-bouquets.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-bouquets.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-bouquets.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-bouquets.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-bouquets.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-bouquets.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-bouquets.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-bouquets.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-bouquets.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-bouquets.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-bouquets.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-bouquets.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-bouquets.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-bouquets.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-bouquets.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/bouquets-0.1“ wird verlassen
+dvbapi
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/vdr-plugin-dvbapi-2-2-3“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/dvbapi.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/dvbapi.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/lt_LT.po po/dvbapi.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/dvbapi.pot
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-dvbapi.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-dvbapi.mo po/et_EE.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-dvbapi.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-dvbapi.mo po/fi_FI.po
+making: ../../../vdr/locale/lt_LT/LC_MESSAGES/vdr-dvbapi.mo
+msgfmt -c -o ../../../vdr/locale/lt_LT/LC_MESSAGES/vdr-dvbapi.mo po/lt_LT.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-dvbapi.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-dvbapi.mo po/de_DE.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/vdr-plugin-dvbapi-2-2-3“ wird verlassen
+radio
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/radio-1.0.0“ wird betreten
+make[1]: Für das Ziel „i18n“ ist nichts zu tun.
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/radio-1.0.0“ wird verlassen
+satip
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/satip-1.0.2“ wird betreten
+make[1]: Für das Ziel „i18n“ ist nichts zu tun.
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/satip-1.0.2“ wird verlassen
+softhddevice
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/softhddevice-master-2“ wird betreten
+make[1]: Für das Ziel „i18n“ ist nichts zu tun.
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/softhddevice-master-2“ wird verlassen
+xinemediaplayer
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/xinemediaplayer-0.13.1“ wird betreten
+making: i18n-pofiles
+msgmerge -U --no-wrap --no-location --backup=none -q po/pt_PT.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/pl_PL.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ru_RU.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/et_EE.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ca_ES.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hr_HR.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/hu_HU.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/da_DK.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fi_FI.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/es_ES.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/it_IT.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nl_NL.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/el_GR.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sv_SE.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/cs_CZ.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/de_DE.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/nn_NO.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/ro_RO.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/sl_SI.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/fr_FR.po po/xinemediaplayer.pot
+msgmerge -U --no-wrap --no-location --backup=none -q po/tr_TR.po po/xinemediaplayer.pot
+making: ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/pt_PT/LC_MESSAGES/vdr-xinemediaplayer.mo po/pt_PT.po
+making: ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/pl_PL/LC_MESSAGES/vdr-xinemediaplayer.mo po/pl_PL.po
+making: ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/ru_RU/LC_MESSAGES/vdr-xinemediaplayer.mo po/ru_RU.po
+making: ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/et_EE/LC_MESSAGES/vdr-xinemediaplayer.mo po/et_EE.po
+making: ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/ca_ES/LC_MESSAGES/vdr-xinemediaplayer.mo po/ca_ES.po
+making: ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/hr_HR/LC_MESSAGES/vdr-xinemediaplayer.mo po/hr_HR.po
+making: ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/hu_HU/LC_MESSAGES/vdr-xinemediaplayer.mo po/hu_HU.po
+making: ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/da_DK/LC_MESSAGES/vdr-xinemediaplayer.mo po/da_DK.po
+making: ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/fi_FI/LC_MESSAGES/vdr-xinemediaplayer.mo po/fi_FI.po
+making: ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/es_ES/LC_MESSAGES/vdr-xinemediaplayer.mo po/es_ES.po
+making: ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/it_IT/LC_MESSAGES/vdr-xinemediaplayer.mo po/it_IT.po
+making: ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/nl_NL/LC_MESSAGES/vdr-xinemediaplayer.mo po/nl_NL.po
+making: ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/el_GR/LC_MESSAGES/vdr-xinemediaplayer.mo po/el_GR.po
+making: ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/sv_SE/LC_MESSAGES/vdr-xinemediaplayer.mo po/sv_SE.po
+making: ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/cs_CZ/LC_MESSAGES/vdr-xinemediaplayer.mo po/cs_CZ.po
+making: ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/de_DE/LC_MESSAGES/vdr-xinemediaplayer.mo po/de_DE.po
+making: ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/nn_NO/LC_MESSAGES/vdr-xinemediaplayer.mo po/nn_NO.po
+making: ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/ro_RO/LC_MESSAGES/vdr-xinemediaplayer.mo po/ro_RO.po
+making: ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/sl_SI/LC_MESSAGES/vdr-xinemediaplayer.mo po/sl_SI.po
+making: ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/fr_FR/LC_MESSAGES/vdr-xinemediaplayer.mo po/fr_FR.po
+making: ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-xinemediaplayer.mo
+msgfmt -c -o ../../../vdr/locale/tr_TR/LC_MESSAGES/vdr-xinemediaplayer.mo po/tr_TR.po
+make[1]: Verzeichnis „/usr/src/reelbox/testing/src/vdr-plugins/src/xinemediaplayer-0.13.1“ wird verlassen

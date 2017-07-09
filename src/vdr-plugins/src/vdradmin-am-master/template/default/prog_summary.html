@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="scroller">
+
+<head>
+	<meta http-equiv="refresh" content="600; URL=vdradmin.pl?aktion=prog_summary" />
+	<meta http-equiv="content-type" content="text/html;charset=<?% charset %?>" />
+	<title>VDRAdmin-AM - <?% gettext('What\'s On Now?') %?></title>
+	<link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% IF usercss %?>
+		<link href="user.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% END %?>
+	<script type="text/javascript" language="JavaScript" src="library.js"></script>
+</head>
+
+<body id="prog_summary">
+	<form action="<?% url %?>" method="get" name="FormName">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="heading">
+			<tr>
+				<td class="col_title">
+					<h1><?% title %?></h1>
+				</td>
+				<td class="col_other">
+<?% UNLESS searchresults %?> 
+					<?% gettext('Channel group:') %?> 
+					<select name="select_wanted_channels" size="1" class="submit" onchange="window.open(this.options[this.selectedIndex].value,'main')">
+<?% FOREACH ch_grp = ch_groups %?> 
+						<option value="<?% ch_grp.url %?>" <?% IF ch_grp.selected %?>selected="selected"<?% END %?> ><?% ch_grp.title %?></option>
+<?% END %?>
+					</select> 
+<?% END %?>
+					[<a href="<?% switchview_url %?>"><?% switchview_text %?></a>]
+				</td>
+<?% IF times.size() > 0 %?>
+				<td class="col_other">
+					<?% gettext('What\'s on:') %?>
+					<select name="select_time" size="1" class="submit" onchange="window.open(this.options[this.selectedIndex].value,'main')">
+	<?% FOREACH time = times %?>
+						<option value="<?% time.id %?>" <?% IF time.sel %?>selected="selected"<?% END %?>><?% time.name %?></option>
+	<?% END %?>
+					</select>
+					<?% gettext('at') %?>&nbsp;<input type="text" name="time" size="5" value="<?% now | html %?>" />&nbsp;<?% gettext('o\'clock') %?>
+				</td>
+<?% END %?>
+			</tr>
+		</table>
+		<input type="hidden" name="aktion" value="prog_summary" />
+
+<?% IF error_msg %?>
+		<div class="error"><?% error_msg %?></div>
+<?% END %?>
+
+		<div id="content">
+<?% IF rows.size() > 0 %?>
+	<?% FOREACH row = rows %?>
+		<?% IF row.longdate %?>
+			<table border="0" cellspacing="0" cellpadding="0" class="group">
+				<tr class="heading">
+					<td class="col_center">
+						<a id="<?% row.anchor %?>" name="<?% row.anchor %?>"></a>
+						<span class="channel_name"><a href="<?% row.proglink %?>" title="<?% gettext('Channels') %?>"><?% row.progname %?></a></span>
+						<!-- TODO
+						<?% IF row.show_percent %?>
+							<table border="0" cellspacing="0" cellpadding="0" class="percent">
+								<tr title="<?% row.elapsed_min %?>min / <?% row.length_min %?>min">
+									<td class="elapsed" width="<?% row.percent %?>%"><img src="bilder/spacer.gif" width="1" height="1" alt=""/></td>
+									<td class="remaining"><img src="bilder/spacer.gif" width="1" height="1" alt=""/></td>
+								</tr>
+							</table>
+						<?% END %?>
+						-->
+					</td>
+				</tr>
+				<tr class="row_even">
+					<td class="col_content">
+						<table border="0" cellspacing="0" cellpadding="0" class="content">
+							<tr>
+								<td class="col_buttons">
+									<?% IF row.stream_live_on %?>
+										<span class="action stream">
+											<a href="<?% row.streamurl %?>" title="<?% gettext('Stream') %?>"><img src="bilder/stream.png" border="0" alt="<?% gettext('Stream') %?>" onmouseover="window.status='<?% gettext('Stream') %?>';return true" title="<?% gettext('Stream') %?>" /></a>
+										</span>
+									<?% END %?>
+									<?% IF row.switchurl %?>
+										<span class="action switch">
+											<a href="javascript:callurl('<?% row.switchurl %?>');"><img src="bilder/view.png" border="0" alt="<?% gettext('TV select') %?>" onmouseover="window.status='<?% gettext('TV select') %?>';return true" title="<?% gettext('TV select') %?>" /></a>
+										</span>
+									<?% END %?>
+									<?% IF row.recurl %?>
+										<span class="action repeatings">
+											<a href="vdradmin.pl?search=<?% row.find_title %?>&amp;aktion=prog_summary&amp;submit=go11"><img src="bilder/find.png" border="0" alt="<?% gettext('Search for other show times') %?>" onmouseover="window.status='<?% gettext('Search for other show times') %?>';return true" title="<?% gettext('Search for other show times') %?>" /></a>
+										</span>
+										<span class="action info">
+											<?% IF row.summary %?>
+												<a href="javascript:popup('<?% row.infurl %?>', <?% config.GUI_POPUP_WIDTH %?>, <?% config.GUI_POPUP_HEIGHT %?>);"><img src="bilder/info_button.png" border="0" alt="<?% gettext('More Information') %?>" onmouseover="window.status='<?% gettext('More Information') %?>';return true" title="<?% gettext('More Information') %?>" /></a>
+											<?% ELSE %?>
+												<img src="bilder/info_button_disabled.png" border="0" alt="noinfo" title="<?% gettext('No Information') %?>" />
+											<?% END %?>
+										</span>
+										<span class="action edit">
+											<a href="<?% row.editurl %?>"><img src="bilder/edit.png" border="0" alt="<?% gettext('Edit') %?>" onmouseover="window.status='<?% gettext('Edit') %?>';return true" title="<?% gettext('Edit') %?>" /></a>
+										</span>
+										<?% UNLESS row.timerset %?>
+                      <span class="action record">
+											  <a href="<?% row.recurl %?>"><img src="bilder/rec_button.png" border="0" alt="<?% gettext('Record') %?>" onmouseover="window.status='<?% gettext('Record') %?>';return true" title="<?% gettext('Record') %?>" /></a>
+										  </span>
+									  <?% END %?>
+									<?% END %?>
+									<?% IF row.srch1_url %?>
+										<span class="action imdb">
+											<a href="<?% row.srch1_url %?>" target="_blank"><img src="bilder/imdb.png" border="0" alt="IMDb" onmouseover="window.status='<?% row.srch1_title %?>';return true" title="<?% row.srch1_title %?>" /></a>
+										</span>
+									<?% END %?>
+									<?% IF row.srch2_url %?>
+										<span class="action imdb"><a href="<?% row.srch2_url %?>" target="_blank"><img src="bilder/udef_search.png" border="0" alt="Search" onmouseover="window.status='<?% row.srch2_title %?>';return true" title="<?% row.srch2_title %?>" /></a></span>
+									<?% END %?>
+								</td>
+								<td class="col_epg">
+									<div class="date_long"><?% row.longdate %?></div>
+									<div class="time_duration">
+										<span class="time_start"><?% IF row.start %?><?% row.start %?></span>-<span class="time_stop"><?% row.stop %?><?% ELSE %?>&nbsp;<?% END %?></span>
+									</div>
+									<div class="epg_title">
+										<?% IF row.summary %?>
+											<a href="javascript:popup('<?% row.infurl %?>', <?% config.GUI_POPUP_WIDTH %?>, <?% config.GUI_POPUP_HEIGHT %?>);" title="<?% gettext('More Information') %?>" >
+										<?% END %?>
+										<?% row.title %?>
+										<?% IF row.summary %?>
+											</a>
+										<?% END %?>
+									</div>
+									<div class="epg_subtitle">
+										<?% IF row.subtitle %?>
+											<?% row.subtitle %?>
+										<?% ELSE %?>
+											&nbsp;
+										<?% END %?>
+									</div>
+									<div class="epg_summary"><?% row.summary %?></div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		<?% END %?>
+	<?% END %?>
+<?% ELSE %?>
+			<div class="warning"><?% gettext('No EPG information available') %?></div>
+<?% END %?>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+***************
+*** 798,803 ****
+    cTimeMs minTime;
+  
+    if(id==0x4101) StartLog(ecm,0x1881); // D+ AU
+      
+    if(cmdLen<64 || SCT_LEN(data)<cmdLen+10) {
+      if(doLog) PRINTF(L_SYS_ECM,"bad ECM message msgLen=%d sctLen=%d",cmdLen,SCT_LEN(data));
+--- 873,885 ----
+    cTimeMs minTime;
+  
+    if(id==0x4101) StartLog(ecm,0x1881); // D+ AU
++ 
++   if (id==0x0503 || id==0x0511 || id==0x504 || id==0x505)
++   {
++      // using 0501 for Prem Star
++     if(doLog) PRINTF(L_SYS_KEY,"replacing id %04x by %04x",id, 0x501);
++     id=0x0501;
++   }
+      
+    if(cmdLen<64 || SCT_LEN(data)<cmdLen+10) {
+      if(doLog) PRINTF(L_SYS_ECM,"bad ECM message msgLen=%d sctLen=%d",cmdLen,SCT_LEN(data));

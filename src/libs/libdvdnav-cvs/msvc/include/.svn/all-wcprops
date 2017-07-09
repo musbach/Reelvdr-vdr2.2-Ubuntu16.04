@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include
+END
+dvdnav_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/dvdnav_internal.h
+END
+inttypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/inttypes.h
+END
+timer.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/timer.h
+END
+getopt.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/getopt.h
+END
+os_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/os_types.h
+END
+dlfcn.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/dlfcn.h
+END
+unistd.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/include/unistd.h
+END

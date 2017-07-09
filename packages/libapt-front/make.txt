@@ -1,0 +1,3 @@
+cd libapt-front-0.4.0_test && dpkg-buildpackage -tc -d && rm -rf libapt-front-0.4.0
+/bin/sh: 1: cd: can't cd to libapt-front-0.4.0_test
+make: *** [libapt-front-dev_0.4.0-0.2ubuntu1_i386.deb] Fehler 2

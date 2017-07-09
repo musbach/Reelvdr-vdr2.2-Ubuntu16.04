@@ -1,0 +1,138 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
+endif
+
+config.status: configure
+	dh_testdir
+	# Add here commands to configure the package.
+	# aclocal-1.7 && autoconf
+	./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info --sysconfdir=/etc 
+
+build: unpack config-stamp build-stamp
+
+build-stamp:  config.status
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE)
+	#/usr/bin/docbook-to-man debian/mpeg2desc.sgml > mpeg2desc.1
+	cp -a ./doc/mpeg2desc.1 .
+	# /usr/bin/docbook-to-man doc/dvdauthor.sgml > doc/dvdauthor.1
+	#/usr/bin/docbook-to-man debian/dvdunauthor.sgml > dvdunauthor.1
+	cp -a ./doc/dvdunauthor.1 .
+	#/usr/bin/docbook-to-man debian/dvddirdel.sgml > dvddirdel.1
+	cp -a ./doc/dvddirdel.1 .
+	# /usr/bin/docbook-to-man doc/spumux.sgml > doc/spumux.1
+	#/usr/bin/docbook-to-man debian/spuunmux.sgml > spuunmux.1
+	cp -a ./doc/spuunmux.1 .
+	# /usr/bin/docbook2man -o doc/ doc/root.sgml
+	# /usr/bin/docbook2html -o doc/ -d doc/html.dsl doc/root.sgml
+
+
+	touch build-stamp
+
+config-stamp: patch-stamp
+	touch config-stamp
+
+clean:	unpatch
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+	rm -f config-stamp
+	rm -f unpack-stamp
+	rm -f mpeg2desc.1 dvdunauthor.1 spuunmux.1 dvddirdel.1
+
+	# Add here commands to clean up after the build process.
+	-$(MAKE) distclean
+# ifneq "$(wildcard /usr/share/misc/config.sub)" ""
+# 	cp -f /usr/share/misc/config.sub config.sub
+# endif
+# ifneq "$(wildcard /usr/share/misc/config.guess)" ""
+#	cp -f /usr/share/misc/config.guess config.guess
+# endif
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	# Add here commands to install the package into debian/dvdauthor.
+	$(MAKE) install prefix=$(CURDIR)/debian/dvdauthor/usr
+
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs 
+	dh_installdocs
+	dh_installexamples
+#	dh_install
+#	dh_installmenu
+#	dh_installdebconf	
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_installinit
+#	dh_installcron
+#	dh_installinfo
+	dh_installman mpeg2desc.1 dvdunauthor.1 spuunmux.1 dvddirdel.1
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_perl
+#	dh_python
+#	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+unpack: unpack-stamp
+
+unpack-stamp:
+	touch unpack-stamp
+
+patch: patch-stamp
+
+patch-stamp: unpack
+	dpatch apply-all
+#	dpatch call-all -a=pkg-info >patch-stamp
+
+unpatch:
+	dpatch deapply-all
+	rm -rf patch-stamp debian/patched
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install patch unpatch

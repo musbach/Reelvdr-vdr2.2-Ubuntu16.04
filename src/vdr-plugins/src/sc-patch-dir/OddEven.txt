@@ -1,0 +1,196 @@
+sc-1/sc.c:  OddEven=1;
+sc-1/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-1/mcli_sc.c.org:             if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-1/scsetup.h:  int OddEven;
+sc-1/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-1/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-1/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-1/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-1/po/sc.pot:msgid "Activate OddEven Fix"
+sc-1/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-1/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-1/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-1/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-1/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-1/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-1/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-1/mcli_sc.c:         if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam/softcam-vdr-master/sc.c:  OddEven=1;
+sc-master/reel_softcam/softcam-vdr-master/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam/softcam-vdr-master/scsetup.h:  int OddEven;
+sc-master/reel_softcam/softcam-vdr-master/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-vdr-master/mcli_sc.c:            if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam/softcam/sc.c:  OddEven=1;
+sc-master/reel_softcam/softcam/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam/softcam/scsetup.h:  int OddEven;
+sc-master/reel_softcam/softcam/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam/softcam/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam/mcli_sc.c:               if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam/softcam-org/sc.c:  OddEven=1;
+sc-master/reel_softcam/softcam-org/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam/softcam-org/scsetup.h:  int OddEven;
+sc-master/reel_softcam/softcam-org/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-org/mcli_sc.c:           if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam/softcam-sc-0.8.6/sc.c:  OddEven=1;
+sc-master/reel_softcam/softcam-sc-0.8.6/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam/softcam-sc-0.8.6/scsetup.h:  int OddEven;
+sc-master/reel_softcam/softcam-sc-0.8.6/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-sc-0.8.6/mcli_sc.c:              if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam/softcam-ohne/sc.c:  OddEven=1;
+sc-master/reel_softcam/softcam-ohne/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam/softcam-ohne/scsetup.h:  int OddEven;
+sc-master/reel_softcam/softcam-ohne/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam/softcam-ohne/mcli_sc.c:          if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/sc.c:  OddEven=1;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/mcli_sc.c.org:          if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/scsetup.h:  int OddEven;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-01/mcli_sc.c:              if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/sc.c:  OddEven=1;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/mcli_sc.c.org:            if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/scsetup.h:  int OddEven;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-05/mcli_sc.c:                if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/sc.c:  OddEven=1;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEve  Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/scsetup.h:  int OddEven;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0/mcli_sc.c:               if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/sc.c:  OddEven=1;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/mcli_sc.c.org:            if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/scsetup.h:  int OddEven;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-opt-04/mcli_sc.c:                if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/sc.c:  OddEven=1;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/scsetup.h:  int OddEven;
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/sc.pot:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-master/reel_softcam-1.0/vdr-reelsoftcam-1.0-works-02/mcli_sc.c:              if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {
+sc-vdr-reelsoftcam-1.0-works-02/sc.c:  OddEven=1;
+sc-vdr-reelsoftcam-1.0-works-02/sc.c:  ScOpts->Add(new cOptBool ("OddEven"      ,trNOOP("Activate OddEven Fix") ,&ScSetup.OddEven));
+sc-vdr-reelsoftcam-1.0-works-02/scsetup.h:  int OddEven;
+sc-vdr-reelsoftcam-1.0-works-02/po/hu_HU.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/sv_SE.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/de_DE.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/de_DE.po:msgstr "Aktiviere OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/sc.pot:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/nl_NL.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/ru_RU.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/it_IT.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/lt_LT.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/fi_FI.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/pl_PL.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/po/fr_FR.po:msgid "Activate OddEven Fix"
+sc-vdr-reelsoftcam-1.0-works-02/mcli_sc.c:              if((ca > 0) && (ca < MAX_OE_CA) && (oemap[ca].size()>1) && (ScSetup.OddEven==1)) {

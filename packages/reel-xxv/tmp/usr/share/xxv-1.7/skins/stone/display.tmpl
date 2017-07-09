@@ -1,0 +1,182 @@
+<!-- display -->
+<?% IF ! global.bodyinc.defined; global.bodyinc = 1 %?>
+<?% files = data.last.13.split("\n") %?>
+<script language="javascript" type="text/javascript">
+<!--
+  var pics = <?% files.size %?>;
+  if( pics > 3) {
+    window.onload = initslide;
+  }
+-->
+</script>
+<body class="hilfsframed">
+<div>
+<?% END %?>
+<?% IF verbose  %?>
+<!-- First: <?% FOREACH x IN data.first %?><?% loop.count - 1 %?>:<?% x %?>|<?% END %?> -->
+<!-- Last: <?% FOREACH x IN data.last %?><?% loop.count - 1 %?>:<?% x %?>|<?% END %?> -->
+<?% END %?>
+<?%
+  USE date;
+  id = data.last.0;
+  title = data.last.1;
+  subtitle = data.last.2;
+  start = data.last.3;
+  stopp = data.last.4;
+  channel = data.last.5;
+  description = data.last.6;
+  video = data.last.7;
+  audio = data.last.8;
+  d = data.last.9;
+  timerid=data.last.10;
+  timeractiv=data.last.11;
+  running=data.last.12;
+  images=data.last.13;
+  pdc = data.last.14;
+  channelid = data.last.15;
+  level = data.last.16;
+  content = data.last.17.split(" ");
+  rating = data.last.18;
+%?>
+<?% ######################################################################## %?>
+<?% BLOCK dur %?>
+    <?% height=12;IF d >= 0 and d < 100;d = d div 1 %?>
+          <?% IF d >= 1 %?>
+        <img class="progressleft" src="images/blank.gif" width="<?% 100 - d %?>" height="<?% height %?>" alt="<?% 100 - d %?>%" /><img class="progressright" src="images/blank.gif" width="<?% d %?>" height="<?% height %?>" alt="" />
+            <?% ELSE %?>
+        <img class="progress" src="images/blank.gif" width="100" height="<?% height %?>" alt="" />
+            <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK printduration;
+      duration = stopp - start;
+      IF duration > 1;
+        hours = duration div 3600;
+        minutes = duration div 60 mod 60;
+        seconds =  duration mod 60;
+        gettext("Duration") ; " : "; hours div 1 ;":"; minutes | format('%02d');
+      END;
+END %?>
+<?% ######################################################################## %?>
+<?% BLOCK image %?>
+  <div id="slideframe">
+        <?% IF files.size > 3 %?>
+    <div id="slideleft"><img src="images/back.<?% global.imagetyp %?>" title="<?% gettext("Back") %?>" alt="" /></div>
+    <div id="slideright"><img src="images/forward.<?% global.imagetyp %?>" title="<?% gettext("Next") %?>" alt="" /></div>
+        <?% END %?>
+      <div id="slidelist" style="left:<?% IF files.size <= 3 %?><?% 280 - (170 * ( files.size / 2 ) )  %?><?% ELSE %?>0<?% END %?>px; width:<?% files.size * 180 %?>px;" >
+        <?% FOREACH frame IN files %?>
+          <img class="epgimages" src="?cmd=ei&data=<?% frame %?>" alt="" title="" />
+        <?% END %?>
+      <div id="slideend"></div>
+    </div>
+  </div>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+<div align="right">
+    <a target="_blank" href="http://german.imdb.com/find?s=tt&amp;site=aka&amp;q=<?% title %?>">
+        <img src="images/imdb.<?% global.imagetyp %?>" title="<?% gettext("Search with IMDb") %?>" alt="IMDb" />
+    </a>
+    <a target="_blank" href="http://www.ofdb.de/view.php?page=suchergebnis&Kat=Titel&SText=<?% title %?>">
+        <img src="images/ofdb.<?% global.imagetyp %?>" title="<?% gettext("Search with OFDb") %?>" alt="OFDb" />
+    </a>
+    <a target="_blank" href="?cmd=search&amp;data=<?% url( title ) %?>">
+        <img src="images/find.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search for repeats") %?>" />
+    </a>
+    <?% IF timerid && allow('tedit') %?>
+    <a href="?cmd=tedit&amp;data=<?% timerid %?>">
+        <img src="images/onoff.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit this timer") %?>" />
+    </a>
+    <?% ELSIF allow('tnew') %?>
+    <a href="?cmd=tnew&amp;data=<?% id %?>">
+        <img src="images/record.<?% global.imagetyp %?>" alt="" title="<?% gettext("To record") %?>" />
+    </a>
+    <?% END %?>
+</div>
+<?% END %?>
+<?% ######################################################################## %?>
+  <table class="editortable" summary="">
+      <tr>
+      <td class="editorhead">
+        <div class="editorhead" style="float:left;">
+          <?% title %?>
+          <?% IF subtitle.length > 0 %?><font class="subtitle">&nbsp;~&nbsp;<?% subtitle %?></font><?% END %?>
+        </div>
+        <?% INCLUDE shutter.inc %?>
+      </td>
+    </tr>
+      <tr>
+      <td class="editortext">
+      <table width="100%" summary="">
+        <tr>
+          <td>
+             <div class="description" style="white-space: nowrap">    
+                <?% IF allow('switch') %?>
+                <a href="javascript:post('switch','<?% channelid %?>')">
+                    <img src="images/watch.<?% global.imagetyp %?>" alt="" title="<?% gettext("Switch") %?>" /></a>&nbsp;
+                 <?% END %?>
+                <?% IF allow('livestream') %?>
+                <a href="?cmd=livestream&amp;data=<?% channelid %?>">
+                  <img src="images/webcast.<?% global.imagetyp %?>" alt="" title="<?% gettext("Live TV web cast") %?>" /></a>&nbsp;
+                <?% END %?>
+                 <?% channel %?>
+            </div>
+          </td>
+          <td>
+             <div class="description" style="white-space: nowrap">    
+                
+                <?% date.format(start,"%A, %x",locale) %?>
+                <br />
+                <?% date.format(start,"%H:%M",locale) %?>&nbsp;-&nbsp;<?% date.format(stopp,"%H:%M",locale) %?>
+                <?% IF pdc && pdc != start %?>&nbsp;&nbsp;&nbsp;(<?% gettext("PDC") %?>&nbsp;<?% date.format(pdc,"%H:%M",locale) %?>) <?% END %?>
+                &nbsp;&nbsp;&nbsp;<?% PROCESS printduration %?>
+
+            </div>
+          </td>
+          <td align="right">
+              <?% PROCESS dur %?>
+          </td>
+                <td class="push">
+                    <?% PROCESS RowButtons %?>
+                </td>
+           </tr>
+          </table>
+    <?% IF files.size %?>
+          <div align="center">
+              <?% PROCESS image %?>
+          </div>
+    <?% END %?>
+    <?% IF description != "" %?>
+                    <p class="description">
+<?% description %?>
+                    </p>
+    <?% END %?>
+    <?% IF content.size %?>
+                    <p class="description">
+                      <?% gettext("Content") %?>:
+<?% FOREACH c=content %?>
+  <?% ct = getModule('EPG').content(c) %?>
+  <?% IF ct && loop.count != 1 %?>,<?% END %?>
+  <a target="_blank" href="?cmd=search&amp;__contentid=<?% c %?>">
+    <?% ct %?>
+  </a>
+<?% END %?>
+                    </p>
+    <?% END %?>
+    <?% IF level && allow('topten') %?>
+                    <p class="description">
+                    <a target="_blank" href="?cmd=topten">
+                    <div class="levelbar">
+                      <div style="width:<?% level*20 %?>%"></div>
+                    </div>
+                    </a>
+                    </p>
+    <?% END %?>
+    </td>
+    </tr>
+    <tr>
+      <td class="editorbottom"></td>
+    </tr>
+</table>

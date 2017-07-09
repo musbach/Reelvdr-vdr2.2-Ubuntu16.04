@@ -1,0 +1,12 @@
+Package: hdshm-modules-2.6.24
+Version: 2.6.24-1.7-reel9
+Section: reel
+Priority: important
+Architecture: i386
+Depends: linux-image-generic (>= 2.6.24), linux-restricted-modules-common (>= 2.6.24)
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: hdshm-modules-2.6.24
+Description: Modules needed for the Reel DeCypher Video Card.
+ Includes kernel modules
+ .                                                                                                                      
+ This package provides modules for Linux version 2.6.24 on x86/x86_64.

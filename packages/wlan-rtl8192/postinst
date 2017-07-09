@@ -1,0 +1,9 @@
+#!/bin/sh
+
+depmod -a
+depmod -a 4.4.0-53-generic
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

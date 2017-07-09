@@ -1,0 +1,13 @@
+#!/bin/bash
+cd /usr/src/reelbox/testing/packages/skin
+make clean
+if make all
+  then
+    echo "OK"
+    dpkg -i /usr/src/reelbox/testing/packages/reelvdr-pi-skinreel3*.deb
+    sudo service reelvdr stop
+    sleep 8
+    sudo service reelvdr start
+else
+    echo "error"
+fi

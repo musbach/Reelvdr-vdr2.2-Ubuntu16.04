@@ -1,0 +1,14 @@
+Package: yacoto
+Source: yacoto
+Version: 0.2
+Section: reel-opt
+Priority: important
+Maintainer: Reel Multimedia Team (reelbox-devel@mailings.reelbox.org)
+Architecture: all
+Depends: mencoder, screen, vorbis-tools
+Recommends: lame
+Description: Yet another convert tool (for VDR recordings)
+  converts vdr recordings into vidx/x.264
+  .
+  Wuensche, Lobhuldigungen, Bugs etc an:                                                                                   
+  Helmut Auer ( http://htpc-forum.de/index.php?url=about.php )

@@ -1,0 +1,2 @@
+MAILTO=""
+30 6 * * * root /etc/init.d/vdradmin restart

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools/Makefile.in
+END
+depcomp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools/depcomp
+END
+compile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools/compile
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools/Makefile.am
+END
+missing
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools/missing
+END
+config.guess
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools/config.guess
+END
+config.sub
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools/config.sub
+END
+ltmain.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools/ltmain.sh
+END
+install-sh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/autotools/install-sh
+END

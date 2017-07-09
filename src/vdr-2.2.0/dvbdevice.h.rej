@@ -1,0 +1,12 @@
+--- dvbdevice.h	(revision 15412)
++++ dvbdevice.h	(revision 15413)
+@@ -166,6 +182,9 @@
+   virtual bool SetChannelDevice(const cChannel *Channel, bool LiveView);
+ public:
+   virtual bool HasLock(int TimeoutMs = 0);
++#ifdef USE_ROTOR
++  virtual bool SendDiseqcCmd(dvb_diseqc_master_cmd cmd);
++#endif /* ROTOR */
+ 
+ // PID handle facilities
+ 

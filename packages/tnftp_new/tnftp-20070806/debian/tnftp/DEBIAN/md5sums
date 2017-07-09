@@ -1,0 +1,10 @@
+f986f5b2f8633e005904b94ae4c8a017  usr/bin/tnftp
+9dcdf38f6cc5dc2a3df70ce31b6d2aa5  usr/share/doc/tnftp/README
+5ae9f3479cc5fbb2de4c3ba673cd08ed  usr/share/doc/tnftp/THANKS
+bdfd6e8dabf55a25953e291a9d9bc4ba  usr/share/doc/tnftp/changelog.Debian.gz
+77cc870471fbf9e174aba5ee6953d630  usr/share/doc/tnftp/changelog.gz
+98fbfcba31c38a96390f6264a478a851  usr/share/doc/tnftp/copyright
+81c443772b4a7a09f2d6e4fce1cf1632  usr/share/doc/tnftp/todo
+fbe29bc368435081e6baa68c3087cea7  usr/share/man/man1/tnftp.1.gz
+b99ef587a81801c634682d7c04d28861  usr/share/man/man3/editline.tn.3.gz
+08783712cc6171960164bafda739c3f5  usr/share/man/man5/editrc.tn.5.gz

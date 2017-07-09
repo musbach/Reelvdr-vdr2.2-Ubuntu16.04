@@ -1,0 +1,65 @@
+smd_2mb_buffers {	 //# 140MB-144MB ( 2MB) MPG2VD Video PES buffers (2)
+	base = 0x08C00000
+	size = 0x00400000
+}
+smd_32kb_buffers {	 //# 144MB-148MB ( 4MB) 128 x 32KB buffers to support 2 tsd highbandwith output
+	base = 0x09000000
+	size = 0x00400000
+}
+smd_16kb_buffers {	 //# 150MB-151MB ( 1MB) 64 x 16KB buffers for internal APM use.
+	base = 0x09600000
+	size = 0x00100000
+}
+smd_8kb_buffers {	 //# (512KB) 63 x 8KB buffers
+	base = 0x09800000
+	size = 0x0007e000
+}
+smd_2kb_buffers {	 //# ( 64KB) 32 x 2KB buffers
+	base = 0x09930000
+	size = 0x00010000
+}
+smd_1kb_buffers {	 //# ( 32KB) 32 x 1KB buffers to support 2 tsd lowbandwith output
+	base = 0x09940000
+	size = 0x00008000
+}
+smd_1kb_buffers {	 //# ( 12KB) buffer for tsd psi 
+	base = 0x0994A000
+	size = 0x00003000
+}
+smd_512kb_buffers {	 //# (512KB) buffer for tsd input port circular buffer
+	base = 0x09A00000
+	size = 0x00100000
+}
+smd_frame_buffers {	 //# (99MB) used to allocate frame buffers
+	base = 0x09B00000
+	size = 0x06300000
+}
+sven_buf {	//# (1MB) used for SVEN trace buffer
+	base = 0x0FE00000
+	size = 0x00100000
+}
+omar_buf {	//# (1MB) used for OMAR trace buffer
+	base = 0x0FF00000
+	size = 0x00100000
+}
+sven_hdr {	//# (4k) Shared SVEN header
+	base = 0x0987e000
+	size = 0x00001000
+}
+omar_hdr {	//# (4k) Shared OMAR header
+	base = 0x0987f000
+	size = 0x00001000
+}
+smd_16mb_buffers {	 //# 160MB - 192MB Audio DSP input and output buffers, kernel and codecs (2), must be 16MB aligned
+	base = 0x0a000000
+	size = 0x02000000
+}
+display {	 //# Display Memory
+    // IMPORTANT!: On Zolo-PCI systems memory must be allocated at or above
+    // BAR0 + 1MB.  This address can vary from system to system, and can be
+    // determined by running the following on the target system:
+    //      BAR_ADDR=0x$(cat /proc/bus/pci/devices | grep 80860001 | cut -f 4)
+    //      printf "0x%x\n" $((BAR_ADDR+0x100000))
+	base = 0x91000000
+	size = 0x08000000
+}

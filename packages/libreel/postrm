@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ -f /usr/lib/libreel.so ] && rm -f /usr/lib/libreel.so
+[ -f /usr/include/reel/tools.h ] && rm -f /usr/include/reel/tools.h
+
+
+ldconfig

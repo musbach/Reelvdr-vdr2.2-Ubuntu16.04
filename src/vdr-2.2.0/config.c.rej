@@ -1,0 +1,283 @@
+--- config.c	(revision 15412)
++++ config.c	(revision 15413)
+@@ -499,17 +526,57 @@
+   MultiSpeedMode = 0;
+   ShowReplayMode = 0;
+   ResumeID = 0;
++#ifdef USE_JUMPPLAY
++  JumpPlay = 0;
++  PlayJump = 0;
++  PauseLastMark = 0;
++  ReloadMarks = 0;
++#endif /* JUMPPLAY */
+   CurrentChannel = -1;
+   CurrentVolume = MAXVOLUME;
+   CurrentDolby = 0;
++#ifdef USE_CHANNELPROVIDE
++  LocalChannelProvide = 1;
++#endif /* CHANNELPROVIDE */
+   InitialChannel = 0;
+   InitialVolume = -1;
++#ifdef USE_VOLCTRL
++  LRVolumeControl = 0;
++  LRChannelGroups = 1;
++  LRForwardRewind = 1;
++#endif /* VOLCTRL */
+   ChannelsWrap = 0;
+   EmergencyExit = 1;
++#ifdef USE_LIEMIEXT
++  ShowRecDate = 1;
++  ShowRecTime = 1;
++  ShowRecLength = 0;
++  ShowProgressBar = 0;
++  MenuCmdPosition = 0;
++#endif /* LIEMIEXT */
++#ifdef USE_LIRCSETTINGS
++  LircRepeatDelay = 350;
++  LircRepeatFreq = 100;
++  LircRepeatTimeout = 500;
++#endif /* LIRCSETTINGS */
++#ifdef USE_LNBSHARE
++  VerboseLNBlog = 0;
++  for (int i = 0; i < MAXDEVICES; i++) CardUsesLnbNr[i] = i + 1;
++#endif /* LNBSHARE */
+ #ifdef USE_NOEPG
+   noEPGMode = 0;
+   noEPGList = NULL;
+-#endif /* USE_NOEPG */
++#endif /* NOEPG */
++#ifdef USE_DVLVIDPREFER
++  UseVidPrefer = 0; // default = disabled
++  nVidPrefer = 1;
++  for (int zz = 1; zz < DVLVIDPREFER_MAX; zz++) {
++      VidPreferPrio[ zz ] = 50;
++      VidPreferSize[ zz ] = 100;
++      }
++  VidPreferSize[ 0 ] = 800;
++  VidPreferPrio[ 0 ] = 50;
++#endif /* DVLVIDPREFER */
+ #ifdef REELVDR
+   LiveBuffer = 0;
+   LiveBufferSize = 30;
+@@ -541,7 +608,7 @@
+   if (noEPGList)
+      free(noEPGList);
+ }
+-#endif /* USE_NOEPG */
++#endif /* NOEPG */
+ 
+ cSetup& cSetup::operator= (const cSetup &s)
+ {
+@@ -553,7 +620,7 @@
+      }
+   if (s.noEPGList)
+      noEPGList = strdup(s.noEPGList);
+-#endif /* USE_NOEPG */
++#endif /* NOEPG */
+   return *this;
+ }
+ 
+@@ -784,46 +902,92 @@
+   else if (!strcasecmp(Name, "MultiSpeedMode"))      MultiSpeedMode     = atoi(Value);
+   else if (!strcasecmp(Name, "ShowReplayMode"))      ShowReplayMode     = atoi(Value);
+   else if (!strcasecmp(Name, "ResumeID"))            ResumeID           = atoi(Value);
++#ifdef USE_JUMPPLAY
++  else if (!strcasecmp(Name, "JumpPlay"))            JumpPlay           = atoi(Value);
++  else if (!strcasecmp(Name, "PlayJump"))            PlayJump           = atoi(Value);
++  else if (!strcasecmp(Name, "PauseLastMark"))       PauseLastMark      = atoi(Value);
++  else if (!strcasecmp(Name, "ReloadMarks"))         ReloadMarks        = atoi(Value);
++#endif /* JUMPPLAY */
+   else if (!strcasecmp(Name, "CurrentChannel"))      CurrentChannel     = atoi(Value);
+   else if (!strcasecmp(Name, "CurrentVolume"))       CurrentVolume      = atoi(Value);
+   else if (!strcasecmp(Name, "CurrentDolby"))        CurrentDolby       = atoi(Value);
++#ifdef USE_CHANNELPROVIDE
++  else if (!strcasecmp(Name, "LocalChannelProvide")) LocalChannelProvide = atoi(Value);
++#endif /* CHANNELPROVIDE */
+   else if (!strcasecmp(Name, "InitialChannel"))      InitialChannel     = atoi(Value);
+   else if (!strcasecmp(Name, "InitialVolume"))       InitialVolume      = atoi(Value);
++#ifdef USE_VOLCTRL
++  else if (!strcasecmp(Name, "LRVolumeControl"))     LRVolumeControl    = atoi(Value);
++  else if (!strcasecmp(Name, "LRChannelGroups"))     LRChannelGroups    = atoi(Value);
++  else if (!strcasecmp(Name, "LRForwardRewind"))     LRForwardRewind    = atoi(Value);
++#endif /* VOLCTRL */
+   else if (!strcasecmp(Name, "ChannelsWrap"))        ChannelsWrap       = atoi(Value);
+   else if (!strcasecmp(Name, "EmergencyExit"))       EmergencyExit      = atoi(Value);
++#ifdef USE_LIEMIEXT
++  else if (!strcasecmp(Name, "ShowRecDate"))         ShowRecDate        = atoi(Value);
++  else if (!strcasecmp(Name, "ShowRecTime"))         ShowRecTime        = atoi(Value);
++  else if (!strcasecmp(Name, "ShowRecLength"))       ShowRecLength      = atoi(Value);
++  else if (!strcasecmp(Name, "ShowProgressBar"))     ShowProgressBar    = atoi(Value);
++  else if (!strcasecmp(Name, "MenuCmdPosition"))     MenuCmdPosition    = atoi(Value);
++#endif /* LIEMIEXT */
++#ifdef USE_LIRCSETTINGS
++  else if (!strcasecmp(Name, "LircRepeatDelay"))     LircRepeatDelay    = atoi(Value);
++  else if (!strcasecmp(Name, "LircRepeatFreq"))      LircRepeatFreq     = atoi(Value);
++  else if (!strcasecmp(Name, "LircRepeatTimeout"))   LircRepeatTimeout  = atoi(Value);
++#endif /* LIRCSETTINGS */
+ #ifdef USE_NOEPG
+   else if (!strcasecmp(Name, "noEPGMode"))           noEPGMode          = atoi(Value);
+   else if (!strcasecmp(Name, "noEPGList")) {
+      free(noEPGList);
+      noEPGList = Value ? strdup(Value) : NULL;
+      }
+-#endif /* USE_NOEPG */
+-#ifdef REELVDR
+-  else if (!strcasecmp(Name, "LiveBuffer"))          LiveBuffer         = atoi(Value);
+-  else if (!strcasecmp(Name, "LiveBufferSize"))      LiveBufferSize     = atoi(Value);
+-  else if (!strcasecmp(Name, "LiveTvOnAvg"))         LiveTvOnAvg        = atoi(Value);
+-  else if (!strcasecmp(Name, "ReceptionMode"))       ReceptionMode      = (eReceiverType)atoi(Value);
+-  else if (!strcasecmp(Name, "NetServerName"))       Utf8Strn0Cpy(NetServerName, Value, MAXHOSTNAME);
+-  else if (!strcasecmp(Name, "NetServerMAC"))        Utf8Strn0Cpy(NetServerMAC, Value, MACLENGTH);
+-  else if (!strcasecmp(Name, "ExpertOptions"))       ExpertOptions      = atoi(Value);
+-  else if (!strcasecmp(Name, "OSDRandom"))           OSDRandom          = atoi(Value);
+-  else if (!strcasecmp(Name, "OSDRemainTime"))       OSDRemainTime      = atoi(Value);
+-  else if (!strcasecmp(Name, "OSDUseSymbol"))        OSDUseSymbol       = atoi(Value);
+-  else if (!strcasecmp(Name, "OSDScrollBarWidth"))   OSDScrollBarWidth  = atoi(Value);
+-  else if (!strcasecmp(Name, "FontSizes"))           FontSizes          = atoi(Value);
+-  else if (!strcasecmp(Name, "AddNewChannels"))      AddNewChannels     = atoi(Value);
+-  else if (!strcasecmp(Name, "NetServerIP"))         Utf8Strn0Cpy(NetServerIP, Value, MAXHOSTIP);
+-  else if (!strcasecmp(Name, "ReelboxMode"))         ReelboxMode        = (eReelboxMode)atoi(Value);
+-  else if (!strcasecmp(Name, "RequestShutDownMode")) RequestShutDownMode= atoi(Value);
+-  else if (!strcasecmp(Name, "StandbyOrQuickshutdown")) StandbyOrQuickshutdown  = atoi(Value);
+-  else if (!strcasecmp(Name, "UseBouquetList"))      UseBouquetList     = atoi(Value);
+-  else if (!strcasecmp(Name, "OnlyRadioChannels"))   OnlyRadioChannels  = atoi(Value);
+-  else if (!strcasecmp(Name, "OnlyEncryptedChannels"))OnlyEncryptedChannels = atoi(Value);
+-  else if (!strcasecmp(Name, "OnlyHDChannels"))      OnlyHDChannels       = atoi(Value);
+-  else if (!strcasecmp(Name, "ExpertNavi"))          ExpertNavi         = atoi(Value);
+-#endif /* REELVDR */
++#endif /* NOEPG */
++#ifdef USE_DVLVIDPREFER
++  else if (strcasecmp(Name, "UseVidPrefer") == 0)    UseVidPrefer       = atoi(Value);
++  else if (strcasecmp(Name, "nVidPrefer") == 0)      nVidPrefer         = atoi(Value);
++  else if (strstr(Name, "VidPrefer") == Name) {
++     char *x = (char *)&Name[ strlen(Name) - 1 ];
++     int vN;
++
++     if (isdigit(*x) != 0) {
++        while (isdigit(*x) != 0)
++              x--;
++        x++;
++        }
++
++     vN = atoi(x);
++     if (vN < DVLVIDPREFER_MAX) {
++        if (strstr(Name, "VidPreferPrio") == Name) {
++           VidPreferPrio[ vN ] = atoi(Value);
++           if (VidPreferPrio[ vN ] > 99)
++              VidPreferPrio[ vN ] = 99;
++           }
++        else if (strstr(Name, "VidPreferSize") == Name) {
++           VidPreferSize[ vN ] = atoi(Value);
++           }
++        else
++           return false;
++        }
++     }
++#endif /* DVLVIDPREFER */
+   else
++#ifdef USE_LNBSHARE
++  if (!strcasecmp(Name, "VerboseLNBlog")) VerboseLNBlog = atoi(Value);
++  else {
++    char tmp[20];
++    bool result = false;
++    for (int i = 1; i <= MAXDEVICES; i++) {
++      sprintf(tmp, "Card%dusesLNBnr", i);
++      if (!strcasecmp(Name, tmp)) {
++        CardUsesLnbNr[i - 1] = atoi(Value);
++        result = true;
++      }
++    }  
++     return result;
++  }
++#else
+      return false;
++#endif /* LNBSHARE */
+   return true;
+ }
+ 
+@@ -934,17 +1121,69 @@
+   Store("MultiSpeedMode",     MultiSpeedMode);
+   Store("ShowReplayMode",     ShowReplayMode);
+   Store("ResumeID",           ResumeID);
++#ifdef USE_JUMPPLAY
++  Store("JumpPlay",           JumpPlay);
++  Store("PlayJump",           PlayJump);
++  Store("PauseLastMark",      PauseLastMark);
++  Store("ReloadMarks",        ReloadMarks);
++#endif /* JUMPPLAY */
+   Store("CurrentChannel",     CurrentChannel);
+   Store("CurrentVolume",      CurrentVolume);
+   Store("CurrentDolby",       CurrentDolby);
++#ifdef USE_CHANNELPROVIDE
++  Store("LocalChannelProvide",LocalChannelProvide);
++#endif /* CHANNELPROVIDE */
++#ifdef USE_HARDLINKCUTTER
++  Store("MaxRecordingSize",   MaxRecordingSize);
++  Store("HardLinkCutter",     HardLinkCutter);
++#endif /* HARDLINKCUTTER */
+   Store("InitialChannel",     InitialChannel);
+   Store("InitialVolume",      InitialVolume);
++#ifdef USE_VOLCTRL
++  Store("LRVolumeControl",    LRVolumeControl);
++  Store("LRChannelGroups",    LRChannelGroups);
++  Store("LRForwardRewind",    LRForwardRewind);
++#endif /* VOLCTRL */
+   Store("ChannelsWrap",       ChannelsWrap);
+   Store("EmergencyExit",      EmergencyExit);
++#ifdef USE_LIEMIEXT
++  Store("ShowRecDate",        ShowRecDate);
++  Store("ShowRecTime",        ShowRecTime);
++  Store("ShowRecLength",      ShowRecLength);
++  Store("ShowProgressBar",    ShowProgressBar);
++  Store("MenuCmdPosition",    MenuCmdPosition);
++#endif /* LIEMIEXT */
++#ifdef USE_LIRCSETTINGS
++  Store("LircRepeatDelay",    LircRepeatDelay);
++  Store("LircRepeatFreq",     LircRepeatFreq);
++  Store("LircRepeatTimeout",  LircRepeatTimeout);
++#endif /* LIRCSETTINGS */
++#ifdef USE_LNBSHARE
++  Store("VerboseLNBlog",       VerboseLNBlog);
++  char tmp[20];
++  if (cDevice::NumDevices() > 1) {
++     for (int i = 1; i <= cDevice::NumDevices(); i++) {
++        sprintf(tmp, "Card%dusesLNBnr", i);
++        Store(tmp, CardUsesLnbNr[i - 1]);
++     }
++  }
++#endif /* LNBSHARE */
+ #ifdef USE_NOEPG
+   Store("noEPGMode",          noEPGMode);
+   Store("noEPGList",          noEPGList ? noEPGList : "");
+-#endif /* USE_NOEPG */
++#endif /* NOEPG */
++#ifdef USE_DVLVIDPREFER
++  Store ("UseVidPrefer",      UseVidPrefer);
++  Store ("nVidPrefer",        nVidPrefer);
++
++  char vidBuf[32];
++  for (int zz = 0; zz < nVidPrefer; zz++) {
++      sprintf(vidBuf, "VidPreferPrio%d", zz);
++      Store (vidBuf, VidPreferPrio[zz]);
++      sprintf(vidBuf, "VidPreferSize%d", zz);
++      Store (vidBuf, VidPreferSize[zz]);
++      }
++#endif /* DVLVIDPREFER */
+ #ifdef REELVDR
+   Store("LiveBuffer",         LiveBuffer);
+   Store("LiveBufferSize",     LiveBufferSize);
+@@ -968,7 +1207,7 @@
+   Store("OnlyEncryptedChannels", OnlyEncryptedChannels);
+   Store("OnlyHDChannels", OnlyHDChannels);
+   Store("ExpertNavi",         ExpertNavi);
+- #endif /* REELVDR */
++#endif /* REELVDR */
+ 
+   Sort();
+ 
+@@ -996,4 +1235,4 @@
+     std::string command = std::string("CopytoTftpRoot.sh ") + p;
+     SystemExec(command.c_str());
+ }
+-#endif /* REELVDR */
++#endif /* REELVDR */

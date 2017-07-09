@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde
+END
+hde_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_base.h
+END
+bitstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/bitstream.h
+END
+parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/parser.h
+END
+hde_tool.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_tool.h
+END
+defines.mak
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/defines.mak
+END
+hde_xine_audio.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_xine_audio.c
+END
+hde_cmds.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_cmds.c
+END
+hde_xine_video.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_xine_video.c
+END
+hde_xine_sd.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_xine_sd.c
+END
+hde_cmds.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_cmds.h
+END
+hde_xine_vd.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_xine_vd.c
+END
+mpeg4.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/mpeg4.c
+END
+golomb.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/golomb.c
+END
+bswap.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/bswap.h
+END
+h264data.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/h264data.h
+END
+hde_xine.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_xine.c
+END
+h264.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/h264.c
+END
+golomb.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/golomb.h
+END
+xplayer.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/xplayer.c
+END
+hde_io.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_io.c
+END
+hde_xine_ad.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_xine_ad.c
+END
+hde_xine.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_xine.h
+END
+hde_xine_scr.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_xine_scr.c
+END
+mpeg12.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/mpeg12.c
+END
+hde_io.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_io.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/Makefile
+END
+parser.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/parser.c
+END
+hde_tool.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/xine-hde/hde_tool.c
+END

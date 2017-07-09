@@ -1,0 +1,27 @@
+Index: menu.h
+===================================================================
+--- menu.h	(revision 15406)
++++ menu.h	(revision 15407)
+@@ -98,6 +98,22 @@
+   virtual eOSState ProcessKey(eKeys Key);
+   };
+ 
++#ifdef REELVDR
++struct MenuMainHook_Data_V1_0 {
++  eOSState  Function;    /*IN*/
++  cOsdMenu *pResultMenu; /*OUT*/
++};
++#define CREATE_MENU_MAIN(function,menu) {                              \
++  MenuMainHook_Data_V1_0 data;                                         \
++  memset(&data, 0, sizeof(data));                                      \
++  data.Function = function;                                            \
++  if (!cPluginManager::CallFirstService("MenuMainHook-V1.0", &data))   \
++    menu = new cMenuMain(function);                                    \
++  else                                                                 \
++    menu = data.pResultMenu;                                           \
++}
++#endif /* REELVDR*/
++
+ class cMenuMain : public cOsdMenu {
+ private:
+ #ifdef USE_SETUP

@@ -1,0 +1,22 @@
+REELVDR=1
+DEBUG = 1
+VDRVER ?= 2.1
+CCACHE := $(shell which ccache)
+MAKE  += -j3
+LSB_RELEASE := $(shell lsb_release -sr)
+	MACHINE  ?= -m32 -march=pentium3 -mmmx -msse -mfpmath=sse
+CC       = $(CCACHE) $(DISTCC) $(CROSS)gcc
+CFLAGS   = -O2 -g -pg $(MACHINE)
+CXX      = $(CCACHE) $(DISTCC) $(CROSS)g++
+CXXFLAGS = -g3 -funroll-loops -fomit-frame-pointer $(MACHINE) -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+STRIP    = $(CROSS)strip
+export CC CXX CFLAGS CXXFLAGS
+	CC  := $(CC)-4.8
+	CXX := $(CXX)-4.8
+	DEFINES += -DDVBAPI_V5
+	DEFINES += -DNEW_FFMPEG
+	USEMYSQL = 1
+	DEVICE_ATTRIBUTES = 1
+	DVBDIR  := /usr/src/linux-headers-3.13.0-66-generic/include/config/dvb
+	VDRVER  := 2.1
+

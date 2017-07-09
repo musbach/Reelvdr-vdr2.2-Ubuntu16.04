@@ -1,0 +1,3 @@
+sc-seca.o: sc-seca.c ../../system-common.h ../../data.h ../../misc.h \
+ ../../system.h ../../smartcard.h ../../data.h ../../misc.h ../../opts.h \
+ ../../i18n.h ../../parse.h ../../log-sc.h ../../log.h ../../version.h

@@ -1,0 +1,9 @@
+tmp/etc/default/mediaconfigs: /usr/src/reelbox/testing/src/etc/default/mediaconfigs
+tmp/etc/init/mediaanalyzer.conf: /usr/src/reelbox/testing/src/etc/init/mediaanalyzer.conf
+tmp/usr/sbin/MediaAnalyzer: /usr/src/reelbox/testing/src/libs/reelaudiodb/MediaAnalyzer
+tmp/usr/sbin/MediaCleaner: /usr/src/reelbox/testing/src/libs/reelaudiodb/MediaCleaner
+tmp/usr/sbin/MediaCrawler: /usr/src/reelbox/testing/src/libs/reelaudiodb/MediaCrawler
+tmp/usr/sbin/MediaRemover: /usr/src/reelbox/testing/src/libs/reelaudiodb/MediaRemover
+tmp/usr/sbin/mediaanalyzer.sh: /usr/src/reelbox/testing/src/sbin/mediaanalyzer.sh
+tmp/usr/sbin/mediacrawler.sh: /usr/src/reelbox/testing/src/sbin/mediacrawler.sh
+tmp/usr/sbin/mediaremover.sh: /usr/src/reelbox/testing/src/sbin/mediaremover.sh

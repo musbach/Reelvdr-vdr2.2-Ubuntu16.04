@@ -1,0 +1,4 @@
+compiles without SASC
+find ./ -name "*.c" -exec sed -i "s/MAXDVBDEVICES/MAXDEVICES/g" {} \;
+change speed to parallel_32_int
+change compiler options: -O3 -mmmx -msse -msse2 -msse3 to: -O2

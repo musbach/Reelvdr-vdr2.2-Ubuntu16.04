@@ -1,0 +1,154 @@
+dvdauthor (0.6.14-1) unstable; urgency=low
+
+  * updated to version 0.6.14
+  
+ -- Noman <noman@nomail.com>  Wed, 28 Mar 2007 12:14:53 +0200
+
+dvdauthor (0.6.11-4) unstable; urgency=low
+
+  * Allow buttons padded with opaque colour 0, fix by Ben Hutchings
+    (Closes: Bug#387828)
+  * Upload sponsored by Christian Marillat 
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Sat, 23 Sep 2006 18:56:09 +0200
+
+dvdauthor (0.6.11-3.1) unstable; urgency=low
+
+  * Non-maintainer upload
+  * Fix button position range check (closes: #345943)
+
+ -- Ben Hutchings <ben@decadent.org.uk>  Sun,  9 Jul 2006 18:58:19 +0100
+
+dvdauthor (0.6.11-3) unstable; urgency=low
+
+  * added patch from Vincent Fourmond <vincent.fourmond@9online.fr>, spumux
+    reads from stdin (Closes: Bug#339665)
+  * upgraded standards version to 3.6.2
+  * fix int/unsigned problem: dvdauthor dumps core on some mpegs
+    (Closes: Bug#345105)
+  * Fix sgml manpages 
+  * Upload sponsored by Christian Marillat 
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Sat,  3 Dec 2005 09:10:16 +0100
+
+dvdauthor (0.6.11-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Imagemagick transition (Closes: #332452)
+
+ -- Luk Claes <luk@debian.org>  Thu, 27 Oct 2005 18:22:38 +0200
+
+dvdauthor (0.6.11-2) unstable; urgency=low
+
+  * Upstream fix in libmagick6-dev, was not a dvdauthor bug in the
+    first place (Closes: Bug#315503), see #316725
+  * patch from Romain Chantereau <romain@mezimail.com> to fix libmagick6
+    not including stdarg (Closes: Bug#317463)
+  * include 3rd party patches, assertion failures (Closes: Bug#320195,
+    Closes: Bug#321183, Closes: Bug#323410) from Ben Hutchings 
+  * Upload sponsored by Christian Marillat 
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Sun, 26 Jun 2005 20:49:58 +0200
+
+dvdauthor (0.6.11-1) unstable; urgency=low
+
+  * New upstream release (Closes: Bug#300758) (Closes: Bug#276490)
+  * removed patches from 0.6.10-4 release
+  * HISTORY file is no longer present
+  * root.sgml is no longer present
+  * Upload sponsored by Christian Marillat 
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Wed, 23 Mar 2005 21:50:29 +0100
+
+dvdauthor (0.6.10-4) unstable; urgency=low
+
+  * amd64 fix (Closes: Bug#275341)
+  * libmagick++6 fix and dependency (Closes: Bug#276709)
+  * rebuild for libfribidi0-dev build dependency changes
+  * Upload sponsored by Christian Marillat 
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Fri, 15 Oct 2004 22:31:49 +0200
+
+dvdauthor (0.6.10-3) unstable; urgency=low
+
+  * added HISTORY to dh_installchangelogs 
+  * Upload sponsored by Christian Marillat 
+  * Fixed dvdauthor manpage (Closes: Bug#270705)
+  * Applied gcc-3.4 patch from Andreas Jochens <aj@andaco.de> 
+     (Closes: Bug#258628)
+  * Upload sponsored by Christian Marillat 
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Wed,  5 May 2004 14:47:25 +0200
+
+dvdauthor (0.6.10-2) unstable; urgency=low
+
+  * Upgraded build dependency with libmagick6-dev (new unstable) 
+      (Closes: Bug#245683)
+  * Upload sponsored by Christian Marillat 
+
+ -- Marc Leeman <marc.leeman@advalvas.be>  Thu, 29 Apr 2004 21:18:14 +0200
+
+dvdauthor (0.6.10-1) unstable; urgency=low
+
+  * New upstream release
+  * Upload sponsored by Christian Marillat
+
+ -- Marc Leeman <marc.leeman@advalvas.be>  Tue, 16 Mar 2004 09:21:44 +0100
+
+dvdauthor (0.6.9-1) unstable; urgency=low
+
+  * New upstream release
+  * added build-dependency to docbook-utils
+  * added minimal manpage for dvddirdel
+  * Upload sponsored by Christian Marillat
+
+ -- Marc Leeman <mleeman@users.sourceforge.net>  Sat, 17 Jan 2004 07:38:41 +0100
+
+dvdauthor (0.6.8-2) unstable; urgency=low
+
+  * Included initial manpages for spuunmux and dvdunauthor 
+  * Removed vob_dump, makedvd and makevob (removed binaries)
+  * Removed submux (renamed to spumux)
+  * Upload sponsored by Christian Marillat
+
+ -- Marc Leeman <mleeman@users.sourceforge.net>  Thu, 15 Jan 2004 19:36:05 +0100
+
+dvdauthor (0.6.8-1) unstable; urgency=low
+
+  * New upstream release (Closes: Bug#227717)
+  * Package uploaded by Christian Marillat
+  * Install of menu.txt, lib.txt (creating menus), and more new upstream docs
+  * include ft2build.h in the subfont sources
+
+ -- Marc Leeman <mleeman@users.sourceforge.net>  Wed, 14 Jan 2004 20:59:26 +0100
+
+dvdauthor (0.6.7-1) unstable; urgency=low
+
+  * New Upstream Release
+
+ -- Marc Leeman <mleeman@users.sourceforge.net>  Fri, 28 Nov 2003 11:42:14 +0100
+
+dvdauthor (0.5.3-3) unstable; urgency=low
+
+  * Closed ITP bug (Closes: #204625)
+  * Upgraded policy to 3.6.1
+
+ -- Marc Leeman <mleeman@users.sourceforge.net>  Fri,  5 Sep 2003 09:50:02 +0200
+ 
+dvdauthor (0.5.3-2) unstable; urgency=low
+
+  * install of README TODO and iso639.txt docs (debian/rules)
+  * install of changelog HISTORY
+  * Applied patches from Stephen Gran
+  * Upload sponsored by Christian Marillat <marillat@debian.org>
+
+ -- Marc Leeman <mleeman@users.sourceforge.net>  Fri,  5 Sep 2003 09:50:02 +0200
+ 
+dvdauthor (0.5.3-1) unstable; urgency=low
+
+  * Initial Release.
+  * Created man page entries
+  * Upload sponsored by Luigi Gangitano <luigi@debian.org>
+
+ -- Marc Leeman <mleeman@users.sourceforge.net>  Fri,  8 Aug 2003 21:37:16 +0200
+

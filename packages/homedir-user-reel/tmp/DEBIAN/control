@@ -1,0 +1,10 @@
+Package: homedir-reel
+Version: 1.1-1
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 25M
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: homedir-reel
+Description: Skeleton homedir for the user reel
+  only install this package if your home directory is lost and you are forced to 

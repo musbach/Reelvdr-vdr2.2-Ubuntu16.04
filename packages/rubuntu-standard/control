@@ -1,0 +1,17 @@
+Package: rubuntu-standard
+Version: 1.89
+Section: reel-essential
+Priority: required
+Essential: yes
+Architecture: i386
+Depends: cron, dosfstools, file, hdparm, iptables, jfsutils, libxine2, lshw, lsof, memtest86+, netceiver-client, nfs-common, ntfs-3g, psmisc, reelbox | noreelbox, reelbox-stable | reelbox-testing, reelvdr, samba, strace, telnet, tftpd-hpa, time, usb-display-firmware, wget, wireless-tools, wpasupplicant
+Recommends: bftpd, mtr-tiny, netceiver-firmware, nfs-kernel-server, openssh-client, openssh-server, linux-restricted-modules, telnetd-reel, usbmount-reel
+Suggests: tvtv
+Conflicts: update-manager-core
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: rubuntu-meta
+Description: The ReelBox standard system
+ This package depends on all of the packages in the ReelBox standard system.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.

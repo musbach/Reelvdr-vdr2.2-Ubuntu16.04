@@ -1,0 +1,33 @@
+--- channels.h	(revision 15412)
++++ channels.h	(revision 15413)
+@@ -39,6 +39,9 @@
+ #else
+ #define MAXCAIDS  8 // conditional access
+ #endif /*REELVDR*/
++#ifdef USE_TTXTSUBS
++#define MAXTXTPAGES 8 // teletext pages
++#endif /* TTXTSUBS */
+ 
+ #define MAXLANGCODE1 4 // a 3 letter language code, zero terminated
+ #define MAXLANGCODE2 8 // up to two 3 letter language codes, separated by '+' and zero terminated
+@@ -206,7 +236,7 @@
+   bool GroupSep(void) const { return groupSep; }
+ #ifdef REELVDR
+   void SetGroupSep(bool GroupSep) { groupSep=GroupSep; }
+-#endif
++#endif /*REELVDR*/
+   const char *Parameters(void) const { return parameters; }
+   const cLinkChannels* LinkChannels(void) const { return linkChannels; }
+   const cChannel *RefChannel(void) const { return refChannel; }
+@@ -249,7 +285,10 @@
+   bool Load(const char *FileName, bool AllowComments = false, bool MustExist = false);
+ #ifdef REELVDR
+   bool Reload(const char *FileName, bool AllowComments = false, bool MustExist = false);
+-#endif /*REELVDR*/
++#endif
++#ifdef USE_ALTERNATECHANNEL
++  bool LoadAlternativeChannels(const char *FileName);
++#endif /* ALTERNATECHANNEL */
+   void HashChannel(cChannel *Channel);
+   void UnhashChannel(cChannel *Channel);
+   int GetNextGroup(int Idx);   // Get next channel group

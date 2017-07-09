@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/vdr-mcli-plugin/!svn/ver/26/mcast/common/win32/visualstudio/fusewin/src
+END
+FUSE4Win.def
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/FUSE4Win.def
+END
+utils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/utils.cpp
+END
+ScopeGuard.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/ScopeGuard.h
+END
+dokan.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/dokan.h
+END
+fuse_helpers.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/fuse_helpers.c
+END
+fuse_opt.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/fuse_opt.c
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/utils.h
+END
+FUSE4Win.rc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/FUSE4Win.rc
+END
+docanfuse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/docanfuse.cpp
+END
+fusemain.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/fusemain.cpp
+END
+FUSE4Win.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/FUSE4Win.h
+END
+docanfuse.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/docanfuse.h
+END
+fusemain.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/vdr-mcli-plugin/!svn/ver/25/mcast/common/win32/visualstudio/fusewin/src/fusemain.h
+END

@@ -1,0 +1,219 @@
+<!--media edit-->
+<body class="frame">
+<div id="body">
+
+
+<h1><?% IF data.id %?><?% gettext("Edit media") %?><?% ELSE %?><?% gettext("Create new media") %?><?% END %?></h1>
+
+<form method="post" action="?cmd=mlsave" name="library">
+<input type="hidden" name="data" value="<?% IF data.id %?><?% data.id %?><?% ELSE %?><?% param.id %?><?% END %?>" />
+<input type="hidden" name="__range" value="<?% param.range %?>" />
+    <table class="largetable" summary="">
+        <tr class="two">
+          <td class="largehead">
+            <font class="title">
+            <?% title %?><?% IF subtitle %?> - <?% subtitle %?><?% END %?>
+            </font>
+          </td>
+        </tr>
+        <tr class="two">    
+        <td class="largetext">
+          <table width="100%">
+    <tr>
+        <td>
+            <?% gettext('Title') %?>:
+        </td>
+        <td colspan="3">
+            <input type="text" name="__title" id="title" value="<?% data.title || param.title %?>" style="width:50%;"  maxlength="255" />
+            <!--
+            &nbsp;<input type="submit" name="__search" value="<?% gettext('Search at') %?>"  onfocus="document.library.action='?cmd=mlresearch'" onblur="document.library.action='?cmd=mlsave'" />&nbsp;&nbsp;
+            <input type="radio" name="__source" value="dvdpalace" checked="checked" />&nbsp;
+            <a href="http://www.dvd-palace.de" target="_blank">DVD-Palace (DE)</a>
+            -->
+        </td>
+    </tr>
+    <tr class="two">
+        <td>
+            <?% gettext('Subtitle') %?>:
+        </td>
+        <td>
+            <input type="text" name="__subtitle" id="subtitle" value="<?% data.subtitle || param.subtitle %?>" style="width:99%;"  maxlength="255" />
+        </td>
+        <td>
+            <?% gettext('Director') %?>:
+        </td>
+        <td>
+            <input type="text" name="__director" id="director" value="<?% data.director || param.director %?>" style="width:99%;"  maxlength="255" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Cover URL') %?>:
+        </td>
+        <td>
+            <input type="text" name="__imgurl" id="imgurl" value="<?% data.imgurl || param.imgurl %?>" style="width:99%;"  maxlength="255" />
+        </td>
+        <td>
+            <?% gettext('DiskID') %?>:
+        </td>
+        <td>
+            <input type="text" name="__diskid" id="diskid" value="<?% data.diskid || param.diskid %?>" style="width:30%" maxlength="255" />
+            <input type="hidden" name="__id" id="id" value="<?% data.id || param.id %?>" style="width:30%" maxlength="255" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?% gettext('Mediatype') %?>
+            <select name="__mediatype">
+                <option label="" value="0" <?% IF (data.mediatype || param.mediatype) && (data.mediatype == 0 || param.mediatype == 0) %?>selected="selected"<?% END %?>></option>
+                <?% mediatypes = param.mediatypes %?>
+                <?% FOREACH type IN mediatypes %?>
+                <option label="<?% type.1 %?>" value="<?% type.0 %?>" <?% IF data.mediatype == type.0 || param.mediatype == type.0 %?>selected="selected"<?% END %?>><?% type.1 %?></option>
+                <?% END %?>
+            </select>
+        </td>
+    </tr>
+    <tr class="two">
+        <td>
+            <?% gettext('Country') %?>:
+        </td>
+        <td>
+            <input type="text" name="__country" id="country" value="<?% data.country || param.country %?>" style="width:99%;"  maxlength="255" />
+        </td>
+        <td>
+            <?% gettext('Language') %?>:
+        </td>
+        <td>
+            <input type="text" style="width:30%" maxlength="255" name="__language" id="language" value="<?% data.language || param.language %?>" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('TV-Episode') %?>:
+        </td>
+        <td>
+            <input type="checkbox" name="__istv" id="istv" value="<?% data.istv || param.istv %?>" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <?% gettext('Seen') %?>:
+            <input type="checkbox" name="__seen" id="seen" value="<?% data.seen || param.seen %?>" />
+        </td>
+        <td>
+            <?% gettext('Runtime') %?>:
+        </td>
+        <td>
+            <input type="text" name="__runtime" id="runtime" value="<?% data.runtime || param.runtime %?>" style="width:30%" maxlength="5" />min
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <?% gettext('Year') %?>:
+            <input type="text" name="__year" id="year" value="<?% data.year || param.year %?>" style="width:30%" maxlength="4" />
+        </td>
+    </tr>
+    <tr class="two">
+        <td>
+            <?% gettext('Filename') %?>:
+        </td>
+        <td>
+            <input type="text" name="__filename" id="filename" value="<?% data.filename || param.filename %?>" style="width:99%;"  maxlength="255" />
+        </td>
+        <td>
+            <?% gettext('Size') %?>:
+        </td>
+        <td>
+            <input type="text" name="__video_width" id="video_width" value="<?% data.video_width || param.video_width %?>" style="width:30%" maxlength="4" /> x
+            <input type="text" name="__video_height" id="video_height" value="<?% data.video_height || param.video_height %?>" style="width:30%" maxlength="4" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?% gettext('Filesize') %?>:
+        </td>
+        <td>
+            <input type="text" name="__filesize" id="filesize" value="<?% data.filesize || param.filesize %?>" style="width:30%" maxlength="15" /> bytes
+        </td>
+        <td>
+            <?% gettext('Filedate') %?>:
+        </td>
+        <td>
+            <input type="text" name="__filedate" id="filedate" value="<?% data.filedate || param.filedate %?>" style="width:30%" maxlength="20" />
+        </td>
+    </tr>
+    <tr class="two">
+        <td>
+            <?% gettext('Audio Codec') %?>:
+        </td>
+        <td>
+            <input type="text" name="__audio_codec" id="audio_codec" value="<?% data.audio_codec || param.audio_codec %?>" style="width:30%"  />
+        </td>
+        <td>
+            <?% gettext('Video Codec') %?>:
+        </td>
+        <td>
+            <input type="text" name="__video_codec" id="video_codec" value="<?% data.video_codec || param.video_codec %?>" style="width:30%"  />
+        </td>
+    </tr>
+    <tr>
+      <td>
+        <?% gettext('Plot') %?>:<br />
+      </td>
+      <td colspan="3">
+        <textarea style="width:99%;" rows="4" name="__plot" id="plot" wrap="virtual"><?% data.plot || param.plot %?></textarea>
+      </td>
+    </tr>
+    <tr class="two">
+      <td>
+           <?% gettext('Comment') %?>:<br />
+      </td>
+      <td colspan="3">
+           <textarea style="width:99%;" rows="4" name="__comment" id="comment" wrap="virtual"><?% data.comment || param.comment %?></textarea>
+      </td>
+    </tr>
+    <tr>
+        <td colspan="2"><?% gettext('Genre') %?>:
+            <br/>
+            <table class="genreselect" width="100%">
+                <?% genres = param.allgenres %?>
+                <?% WHILE genres.size %?>
+                <tr>
+                <?% FOREACH [ 1..5 ] %?>
+                <?% set = genres.shift %?>
+                    <td nowrap="nowrap">
+                    <?% IF set.first %?>
+                        <input type="checkbox" name="__genres" id="<?% set.0 %?>" value="<?% set.0 %?>" <?% IF  param.genres.grep("^$set.0\$").size > 0 %?>checked="checked"<?% END %?>/>
+                        <label for="<?% set.0 %?>"><?% set.1 %?></label>
+                    <?% END %?>
+                    </td>
+                <?% END %?>
+                </tr>
+                <?% END %?>
+                </tr>
+            </table>
+        </td>
+      <td colspan="2">
+            <?% gettext('Actors') %?>:<br />
+            <textarea style="width:99%;" rows="6" name="__actors" id="actors" wrap="off"><?% data.actors || param.actors %?></textarea>
+        </td>
+    </tr>
+    <tr>
+          <td colspan="4" align="right">
+            <input type="reset" value="<?% gettext("Reset") %?>" />&nbsp;
+            <input type="submit" name="__save" value="<?% gettext('Apply') %?>"  onblur="document.library.action='?cmd=mlresearch'" onfocus="document.library.action='?cmd=mlsave'" />&nbsp;&nbsp;
+        </td>
+    </tr>
+</table>
+    </td>
+</tr>
+<tr class="two"><td class="largebottom"></td></tr>
+</table>
+</form>
+
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Media library",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+        <a href="javascript:back()"><img src="images/back.<?% global.imagetyp %?>" alt="" title="<?% gettext("Back",20) %?>" /></a>&nbsp;
+        <a href="javascript:back()"><?% gettext("Back",20) %?></a><br />
+    </td>
+    </tr>
+    <tr><td class="sidebottom"></td></tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

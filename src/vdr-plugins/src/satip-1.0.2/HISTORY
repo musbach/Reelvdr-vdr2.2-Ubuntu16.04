@@ -1,0 +1,110 @@
+===================================
+VDR Plugin 'satip' Revision History
+===================================
+
+2014-03-08: Version 0.0.1
+
+- Initial revision.
+- Added German translation (Thanks to Frank Neumann).
+
+2014-03-15: Version 0.1.0
+
+- Switched to the standard S/T/C source identifiers.
+- Added a new operation mode setup parameter.
+- Added new SVDRP commands.
+
+2014-03-16: Version 0.1.1
+
+- Changed code to utilize a proper XML library.
+- Refactored the session code.
+- Fixed EIT scan functionality.
+- Updated for vdr-2.1.6.
+
+2014-03-28: Version 0.2.0
+
+- Added support for cDevice::Ready().
+- Fixed pid leaking while disabling section filters.
+- Fixed keepalive heartbeat.
+
+2014-04-01: Version 0.2.1
+
+- Changed implementation to report about RTP packet
+  errors on 5 minutes interval only.
+- Added a check to write new sections only if there
+  is no data in the read socket.
+- Fixed keepalive heartbeat again.
+
+2014-04-05: Version 0.2.2
+
+- Fixed the default keepalive interval.
+- Refactored the section filtering.
+- Added Catalan translation (Thanks to Gabriel Bonich).
+
+2014-04-12: Version 0.2.3
+
+- Added Spanish translation (Thanks to Gabriel Bonich).
+- Fixed parameters of the OPTIONS command.
+- Added a device identication into the user agent string.
+- Removed unnecessary PLAY commands and header callbacks.
+
+2014-04-20: Version 0.3.0
+
+- Tweaked the pid update mechanism.
+
+2014-04-27: Version 0.3.1
+
+- Fixed the device discovery.
+
+2014-05-10: Version 0.3.2
+
+- Fixed model detection and OctopusNet DVB-C model quirks.
+- Added a session id quirk for GSSBOX.
+
+2014-05-18: Version 0.3.3
+
+- Added a validity check for the session member.
+- Added a session id quirk for Triax TSS 400.
+
+2014-12-24: Version 1.0.0
+
+- Fixed the cable only device detection.
+- Added support for blacklisted sources.
+- Fixed server reuse for active transponders.
+- Added a preliminary support for Fritz!WLAN
+  Repeater DVB-C (Thanks to Christian Wick).
+- Added a preliminary support for Telestar
+  Digibit R1 (Thanks to Dirk Wagner).
+- Added a new device status menu.
+- Added support for SAT>IP frontend selection via
+  Radio ID.
+- Added command-line switches for manually defining
+  used SAT>IP servers and setting used tracing mode.
+- Added new STAT and TRAC commands into the SVDRP
+  interface.
+- Refactored the tuner implementation.
+- Updated against SAT>IP protocol specification
+  version 1.2.1.
+- Refactored input thread to increase performance.
+- Added plenty of performance tweaks (Thanks to
+  Stefan Schallenberg).
+- Fixed EIT scan (Thanks to Stefan Schallenberg).
+
+2015-01-10: Version 1.0.1
+
+- Updated the command-line help and README.
+- Fixed the server teardown.
+- Removed the unnecessary config directory definition.
+- Added a fallback for older glibc libraries.
+- Improved pid selection performance.
+- Added support for Digital Devices CI extension.
+
+2015-01-18: Version 1.0.2
+
+- Added configurable CI slots.
+- Fixed parsing of the setup values.
+- Added an option to disable sources via sources.conf.
+- Added a command-line option to disable all the
+  SAT>IP server quirks.
+- Updated Spanish and Catalan translations (Thanks to
+  Gabriel Bonich).
+- Updated German translations (Thanks to Frank Neumann).

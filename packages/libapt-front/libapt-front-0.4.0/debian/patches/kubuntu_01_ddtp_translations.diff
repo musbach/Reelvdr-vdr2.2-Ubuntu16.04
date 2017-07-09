@@ -1,0 +1,26 @@
+--- libapt-front/apt-front/cache/component/records.cpp	2007-06-26 17:31:44.000000000 +0000
++++ libapt-front/apt-front/cache/component/records.cpp	2007-07-11 12:18:07.000000000 +0000
+@@ -11,6 +11,9 @@
+ #include <iostream>
+ #include <map>
+ 
++#include <apt-pkg/pkgcache.h>
++#include <apt-front/cache/entity/package.h>
++
+ using namespace aptFront::cache;
+ using namespace aptFront::cache::component;
+ 
+@@ -48,8 +51,11 @@
+         throw 0; // XXX
+     parser = &(m_records->Lookup(Vf));
+     Record rec;
+-    rec.shortDescription = parser->ShortDesc();
+-    rec.longDescription = parser->LongDesc();
++    pkgCache::VerIterator ver( v.packageCache(), v.data() );
++    pkgCache::DescIterator Desc = ver.DescriptionList();
++    pkgRecords::Parser &d_parser = m_records->Lookup(Desc.FileList());
++    rec.shortDescription = d_parser.ShortDesc();
++    rec.longDescription = d_parser.LongDesc();
+     rec.maintainer = parser->Maintainer();
+     rec.fileName = parser->FileName();
+     rec.source = parser->SourcePkg();

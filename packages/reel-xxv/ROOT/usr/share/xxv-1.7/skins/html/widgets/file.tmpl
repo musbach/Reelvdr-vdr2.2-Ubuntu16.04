@@ -1,0 +1,20 @@
+<!-- file -->
+<tr>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% data.msg %?>
+    </td>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% val = cgi.param(data.NAME) || data.def %?>
+            <input type="text" name="<?% data.NAME %?>" value="<?% val %?>" <?% FOREACH p IN param.tags; "$p ";END %?>
+                onBlur="check<?% data.NAME %?>File()"><br>
+            <span id='id<?% param.count %?>'></span>
+    </td>
+</tr>
+<script>
+function check<?% data.NAME %?>File () {
+    checkValue(document.forms[0].<?% data.NAME %?>, 'id<?% param.count %?>', "isfile",
+	'<?% gettext("File does not exist!") %?>', 
+	'<?% gettext("File exists!") %?>');
+}
+window.setTimeout("check<?% data.NAME %?>File()", 500);
+</script>

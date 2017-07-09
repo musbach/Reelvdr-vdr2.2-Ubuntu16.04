@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/xinemediaplayer-0.13/tests/gstreamer
+END
+test_dvd_chapter_title.c
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/xinemediaplayer-0.13/tests/gstreamer/test_dvd_chapter_title.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/xinemediaplayer-0.13/tests/gstreamer/main.c
+END
+gstreamer_tags.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/xinemediaplayer-0.13/tests/gstreamer/gstreamer_tags.c
+END
+test_simple.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/xinemediaplayer-0.13/tests/gstreamer/test_simple.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/xinemediaplayer-0.13/tests/gstreamer/Makefile
+END

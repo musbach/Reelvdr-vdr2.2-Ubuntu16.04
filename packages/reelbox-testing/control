@@ -1,0 +1,18 @@
+Package: reelbox-testing
+Version: 1.0
+Section: reel
+Priority: important
+Architecture: all
+Conflicts: reelbox-stable
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-testing
+Description: testing software tree for the reelbox
+ This package will make shure that the newest, latest and mostly "untested"
+ software fresh from the developers will be installed onto the ReelBox.
+ .
+ If you are a developer or tester or you always want the latest but greatest
+ pieces of software and do not care to deal with untestet software this is
+ most probably want you want.
+ .
+ Do not install this package on a production box as this may destroy your 
+ timers, recordings, marriage or even does not work at all.

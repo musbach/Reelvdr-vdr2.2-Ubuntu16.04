@@ -1,0 +1,23 @@
+#!/bin/sh
+
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+#set -x
+
+if [ -x /root/bin/flash_erase ]; then
+
+echo "Erasing kernel flash..."
+/root/bin/flash_erase /dev/mtd2 0 32
+echo "Writing new kernel image..."
+cat /root/vmlinux-#9.tlv >/dev/mtd2
+echo "done."
+
+sync
+
+else
+	echo "/root/bin/flash_erase not executeable. Doing nothing."
+fi
+
+exit 0

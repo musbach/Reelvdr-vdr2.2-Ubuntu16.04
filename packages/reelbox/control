@@ -1,0 +1,12 @@
+Package: reelbox
+Version: 1.34
+Section: reel
+Priority: standard
+Architecture: i386
+Depends: extensionHD, netceiver-client, reelbox-mr-service, reelbox-frontpanel, reelvdr-output-reelbox, reel-umts, wlan-rtl8192, v86d
+Conflicts: reelvdr-baseconfig (<< 1.68), noreelbox
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox
+Description: Meta package needed by the ReelBox
+ This package depends on all of the packages needed by the ReelBox hardware
+ (i.e. frontpanel, hd extension).

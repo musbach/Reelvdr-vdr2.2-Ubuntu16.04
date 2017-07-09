@@ -1,0 +1,22 @@
+#libvdr-*.so.*                    usr/lib/vdr/plugins/
+
+debian/plugin.burn.conf          etc/vdr/plugins/
+vdrburn-archive.sh               usr/share/vdr-plugin-burn/
+vdrburn-dvd.sh                   usr/share/vdr-plugin-burn/
+#burn-buffers                     usr/lib/vdr-plugin-burn/
+debian/pxsup2dast                usr/lib/vdr-plugin-burn/
+
+burn/menu-button.png             usr/share/vdr-plugin-burn/
+burn/menu-silence.mp2            usr/share/vdr-plugin-burn/
+burn/menu-bg.png                 usr/share/vdr-plugin-burn/
+burn/ProjectX.ini                usr/share/vdr-plugin-burn/
+burn/counters/standard           usr/share/vdr-plugin-burn/counters/
+burn/vdrburn-dvd.conf		 var/lib/vdr/plugins/burn/
+
+#debian/template.png              usr/share/vdr-plugin-burn/
+debian/grab.sh                   usr/share/vdr-plugin-burn/
+debian/commands.vdr-burn.conf    usr/share/vdr/command-hooks/
+
+#locale                           usr/share/
+
+debian/vdr-plugin-burn.groups    usr/share/vdr/groups.d/

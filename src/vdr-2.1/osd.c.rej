@@ -1,0 +1,22 @@
+--- osd.c	(revision 15412)
++++ osd.c	(revision 15413)
+@@ -743,6 +743,9 @@
+ int cOsd::osdWidth = 0;
+ int cOsd::osdHeight = 0;
+ cVector<cOsd *> cOsd::Osds;
++#ifdef USE_PINPLUGIN
++bool cOsd::pinValid = false;
++#endif /* PINPLUGIN */
+ 
+ cOsd::cOsd(int Left, int Top, uint Level)
+ {
+@@ -753,6 +756,9 @@
+   width = height = 0;
+   level = Level;
+   active = false;
++#ifdef USE_YAEPG
++  vidWin.bpp = 0;
++#endif /* YAEPG */
+   for (int i = 0; i < Osds.Size(); i++) {
+       if (Osds[i]->level > level) {
+          Osds.Insert(this, i);

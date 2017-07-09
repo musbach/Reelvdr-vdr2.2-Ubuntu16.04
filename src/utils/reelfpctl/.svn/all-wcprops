@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/reelbox/!svn/ver/17/testing/src/utils/reelfpctl
+END
+reelfpctl.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/reelfpctl/reelfpctl.c
+END
+frontpanel_usb.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/utils/reelfpctl/frontpanel_usb.c
+END
+frontpanel_rs232.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/utils/reelfpctl/frontpanel_rs232.c
+END
+frontpanel.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/reelfpctl/frontpanel.c
+END
+frontpanel_ice.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/utils/reelfpctl/frontpanel_ice.c
+END
+frontpanel_nc.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/reelfpctl/frontpanel_nc.c
+END
+rb_control.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/reelfpctl/rb_control.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/17/testing/src/utils/reelfpctl/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/utils/reelfpctl/README
+END
+frontpanel.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/reelfpctl/frontpanel.h
+END

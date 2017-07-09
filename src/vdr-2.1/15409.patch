@@ -1,0 +1,345 @@
+Index: submenu.c
+===================================================================
+--- submenu.c	(revision 15408)
++++ submenu.c	(revision 15409)
+@@ -24,10 +24,39 @@
+ static const char* TAG_COMMAND     = "command";
+ static const char* TAG_THREAD      = "thread";
+ static const char* TAG_MENU        = "menu";
++#ifdef REELVDR
++static const char* TAG_INCLUDE     = "include";
++#endif /*REELVDR*/
+ static const char* TAG_UNDEFINED   = "undefined";
+ static const char* TRUE_STR        = "yes";
+ 
++#ifdef REELVDR
++bool getfiles(const char *string, std::vector<char*> *files)
++{
++    char command[128];
++    FILE *file;
+ 
++    sprintf(command, "ls %s 2>/dev/null", string);
++    file = popen(command, "r");
++    if(file)
++    {
++        char *strBuff;
++        cReadLine readline;
++        strBuff = readline.Read(file);
++        while(strBuff)
++        {
++            files->push_back(strdup(strBuff));
++            strBuff = readline.Read(file);
++        }
++        pclose(file);
++    }
++    else
++       return false;
++
++    return true;
++}
++#endif /* REELVDR */
++
+ //################################################################################
+ //# SubMenuNode
+ //################################################################################
+@@ -44,7 +73,23 @@
+ 
+      if (cSubMenuNode::IsType(tag) != cSubMenuNode::UNDEFINED) {
+         SetType(tag);
++#ifdef REELVDR
++        const char *name = xml->Attribute("name");
++        const char *info = xml->Attribute("info");
++        const char *help = xml->Attribute("help");
++        const char *iconNumber = xml->Attribute("icon_number");
++        SetName(name);
++        SetIconNumber(iconNumber);
++        if (info) SetInfo(info);
++        if (help) {
++           if (!info) SetInfo("(?)");
++           SetHelp(help);
++        }
++        if (strcmp(name,"setup") == 0)
++            SetSetupLink(xml->Attribute("link"));
++#else
+         SetName(xml->Attribute("name"));
++#endif /* REELVDR */
+         if ((_type == COMMAND) || (_type == THREAD)) {
+            SetCommand(xml->Attribute("execute"));
+            const char *confirmStr = xml->Attribute("confirm");
+@@ -53,13 +98,40 @@
+            }
+         else if (_type == PLUGIN) { // Add Plugin Index
+            SetCustomTitle(xml->Attribute("title"));
++#ifdef REELVDR
++           SetPlugin(GetSetupLink());
++#else
+            SetPlugin();
++#endif
+            }
+         else if (_type == MENU && xml->NoChildren() == false) {
+            xml = xml->FirstChildElement();
+            do {
++#ifdef REELVDR
++              if(cSubMenuNode::IsType(xml->Value()) == cSubMenuNode::INCLUDE)
++              {
++                  char *includeXML;
++                  asprintf(&includeXML, "%s/setup/%s", cPlugin::ConfigDirectory(), xml->Attribute("name"));
++                  if(strchr(includeXML, '*'))
++                  {
++                      std::vector<char*> includeXMLs;
++                      getfiles(includeXML, &includeXMLs);
++                      for(unsigned int i=0; i<includeXMLs.size(); ++i)
++                          IncludeXml(includeXMLs.at(i));
++                  }
++                  else
++                      IncludeXml(includeXML);
++                  free(includeXML);
++              }
++              else
++              {
++                  cSubMenuNode *node = new cSubMenuNode(xml, level+1, &_subMenus, currentMenu);
++                  _subMenus.Add(node);
++              }
++#else
+               cSubMenuNode *node = new cSubMenuNode(xml, level+1, &_subMenus, currentMenu);
+               _subMenus.Add(node);
++#endif
+               } while ((xml=xml->NextSiblingElement()) != NULL);
+            }
+         }
+@@ -97,6 +169,12 @@
+   _currentMenu         = NULL;
+   _pluginIndex         = 0;
+   _commandConfirm      = false;
++#ifdef REELVDR
++  _help                = NULL;
++  _info                = NULL;
++  _iconNumber          = NULL;
++  _setupLink           = NULL;
++#endif /* REELVDR */
+ }
+ 
+ 
+@@ -110,8 +188,157 @@
+      free((void*)_title);
+   if (_pluginMainMenuEntry != NULL)
+      free((void*)_pluginMainMenuEntry);
++#ifdef REELVDR
++  if (_help != NULL)
++     free((void*)_help);
++  if (_info != NULL)
++     free((void*)_info);
++  if (_iconNumber != NULL)
++     free((void*)_iconNumber);
++  if (_setupLink != NULL)
++     free((void*)_setupLink);
++#endif /* REELVDR */
+ }
+ 
++#ifdef REELVDR
++bool cSubMenuNode::IncludeXml(const char *includeXML)
++{
++    TiXmlDocument  xmlDoc = TiXmlDocument(includeXML);
++    TiXmlElement *xml;
++    bool  ok =true;
++
++    if ((ok=xmlDoc.LoadFile()))
++    {
++        if ((xml = xmlDoc.FirstChildElement()) != NULL)
++        {
++            do
++            {
++                if (xml != NULL && xml->Type() == TiXmlNode::TINYXML_ELEMENT)
++                {
++                    int type = IsType(xml->Value());
++
++                    if ((type == PLUGIN) || (type == COMMAND) || (type == MENU && xml->NoChildren() == false))
++                    {
++                        cSubMenuNode *node = new cSubMenuNode(xml, _level+1, &_subMenus, _currentMenu);
++                        _subMenus.Add(node);
++                    }
++                    else if(type == INCLUDE)
++                    {
++                        char *includeXML;
++                        asprintf(&includeXML, "%s/setup/%s", cPlugin::ConfigDirectory(), xml->Attribute("name"));
++                        if(strchr(includeXML, '*'))
++                        {
++                            std::vector<char*> includeXMLs;
++                            getfiles(includeXML, &includeXMLs);
++                            for(unsigned int i=0; i<includeXMLs.size(); ++i)
++                                IncludeXml(includeXMLs.at(i));
++                        }
++                        else
++                            IncludeXml(includeXML);
++                        free(includeXML);
++                    }
++                }
++                else
++                    throw "Invalid XML Node";
++            }
++            while(ok==true && (xml=xml->NextSiblingElement()) !=NULL);
++        }
++    }
++    else
++    {
++        esyslog("ERROR: in %s : %s  Col=%d Row=%d\n", includeXML,
++                xmlDoc.ErrorDesc(),
++                xmlDoc.ErrorCol(),
++                xmlDoc.ErrorRow());
++
++        ok=false;
++    }
++
++    return ok;
++}
++
++void cSubMenuNode::SetSetupLink(const char *link)
++{
++  if (_setupLink) free (_setupLink);
++
++  if (link && strlen(link) > 0 )
++  {
++    _setupLink = strdup(link);
++  }
++  else
++  {
++    _setupLink = NULL;
++  }
++}
++
++void cSubMenuNode::SetPlugin(const char *link)
++{
++  bool found = false;
++
++  for (unsigned int pIndex = 0; ; pIndex++)
++  {
++     cPlugin *p = cPluginManager::GetPlugin(pIndex);
++     if (p)
++     {
++        if (strcmp(_name, p->Name()) == 0 && p->MainMenuEntry() != NULL)
++        {
++           if (strcmp("setup",p->Name()) == 0 && p->MainMenuEntry() != NULL)
++           {
++              if (link)
++              {
++                SetPluginMainMenuEntry(link);
++                _pluginIndex = pIndex;
++                found=true;
++                break;
++              }
++           }
++
++           SetPluginMainMenuEntry(p->MainMenuEntry());
++           _pluginIndex = pIndex;
++           found=true;
++           break;
++        }
++    }
++    else
++    {
++      break;
++    }
++  }
++
++  if (!found)
++  {
++     _type=UNDEFINED;
++  }
++}
++
++void cSubMenuNode::SetIconNumber(const char*icon)
++{
++    if (_iconNumber)
++    {
++        free((void*)_iconNumber);
++        _iconNumber = NULL;
++    }
++    if (icon) _iconNumber = strdup(icon);
++}
++
++void cSubMenuNode::SetHelp(const char *help)
++{
++  if (_help) free ((void*)_help);
++  help? _help = strdup(help):help = NULL;
++}
++
++void cSubMenuNode::SetInfo(const char *info)
++{
++  if (_info) free((void*)_info);
++
++  //info? _info = strdup(info):info = NULL;
++  if (info)
++      _info = strdup(tr(info));
++  else _info = NULL;
++}
++
++#else
++
+ /**
+  *
+  */
+@@ -135,8 +362,8 @@
+       if (!found)
+          _type = UNDEFINED;
+ }
++#endif /* REELVDR */
+ 
+-
+ bool cSubMenuNode::SaveXml(TiXmlElement *root)
+ {
+   bool ok = true;
+@@ -203,6 +430,10 @@
+      type = cSubMenuNode::THREAD;
+   else if (strcmp(name ,TAG_MENU) == 0)
+      type = cSubMenuNode::MENU;
++#ifdef REELVDR
++  else if (strcmp(name ,TAG_INCLUDE) == 0)
++     type =  cSubMenuNode::INCLUDE;
++#endif /* REELVDR */
+ 
+   return(type);
+ }
+@@ -460,6 +691,18 @@
+            do {
+               try {
+                  node = new cSubMenuNode(root, 0,  &_menuTree, NULL);
++#ifdef REELVDR
++                 const char* tmp_name = root->Attribute("name");
++                 //printf("%s : %i \n",tmp_name, node->SubMenuSize());
++                 if (tmp_name && strcmp("Additional Software",tmp_name) == 0 /*no translation of "Additional Software" here*/
++                              && node->SubMenuSize() <= 0) // empty submenu;
++                 // no additional plugins installed
++                 {
++                   delete node;
++                   node = NULL;
++                 }
++                 else
++#endif /* REELVDR */
+                  _menuTree.Add(node);
+                  }
+               catch (char *message) {
+Index: Makefile
+===================================================================
+--- Makefile	(revision 15408)
++++ Makefile	(revision 15409)
+@@ -64,17 +64,17 @@
+ endif
+ 
+ ifdef USE_TINYXML
+-	LIBS += -Ltinyxml -ltinyxml
++TINYXMLLIB = tinyxml/libtinyxml.a
++	LIBS += $(TINYXMLLIB)
+ 	INCLUDES += -I.
+ 
+-TINYXMLLIB = tinyxml/libtinyxml.a
+ $(TINYXMLLIB):
+ 	@make -C tinyxml
+ 
+ endif
+ 
+ ifdef USE_SETUP
+-	OBJS += submenu.o
++  OBJS += submenu.o
+ endif
+ 
+ ifdef USEMYSQL

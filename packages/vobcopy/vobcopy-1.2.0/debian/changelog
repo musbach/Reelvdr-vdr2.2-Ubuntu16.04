@@ -1,0 +1,75 @@
+vobcopy (1.2.0-2) unstable; urgency=low
+
+  * fixes for "floating point error" crash
+  * validate column with got by ioctrl(), when run via vdr, vobcopy receives 
+    column width as 47000!
+
+ -- Reel Multimedia Team <reelbox-deve@mailings.reelbox.org>  Wed, 17 Sep 2012 16:58:45 +0100
+
+vobcopy (1.2.0-1) unstable; urgency=low
+
+  * Updated to version 1.2.0 from original tarball
+
+ -- Reel Multimedia Team <reelbox-deve@mailings.reelbox.org>  Wed, 03 Feb 2010 12:25:36 +0100
+
+vobcopy (1.0.1-1) unstable; urgency=low
+
+  * Updated to version 1.0.1 from original tarball
+
+ -- Reel Multimedia Team <reelbox-deve@mailings.reelbox.org>  Mon, 26 Mar 2007 16:08:46 +0200
+
+vobcopy (0.5.14-2) unstable; urgency=low
+
+  * Put libdvdread3 ahead of libdvdread2 in control file
+  * Change from native to non native Debian package
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Sat, 27 Nov 2004 15:04:21 +0000
+
+vobcopy (0.5.14-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Thu, 18 Nov 2004 11:18:55 +0000
+
+vobcopy (0.5.12-3) unstable; urgency=low
+
+  * Set up vobcopy for backport into woody
+
+ -- Stephen Birch <sgbirch@woody.uk.birch.ws>  Tue,  9 Mar 2004 10:08:07 +0000
+
+vobcopy (0.5.12-2) unstable; urgency=low
+
+  * Add comment to control file per upstream request
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Tue,  9 Mar 2004 06:36:36 +0000
+
+vobcopy (0.5.12-1) unstable; urgency=low
+
+  * New version from upstream
+  * Tidy up changelog files
+  * Added postinst and postrm files for dh_installmenu
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Mon,  8 Mar 2004 11:10:54 +0000
+
+vobcopy (0.5.11-2) unstable; urgency=low
+
+  * Add -f to rm lines in Makefile
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Mon,  8 Mar 2004 09:57:26 +0000
+
+vobcopy (0.5.11-1) unstable; urgency=low
+
+  * New version from upstream
+  * Use dh_installchangelogs -k ChangeLog to install changelogs
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Mon,  1 Mar 2004 15:59:47 +0000
+
+vobcopy (0.5.10-0) unstable; urgency=low
+
+  * Converted Debian control files to policy 3.6.1
+  * Created debian format changelog, old log is archived in changelog.archive
+  * Update vobcopy to use libdvdread3 instead of libdvd2
+  * Clean up copying file a little, add reference to GPL file
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Thu, 26 Feb 2004 15:12:31 +0000
+

@@ -1,0 +1,17 @@
+<!-- textfield -->
+<tr>
+    <td valign='top'>
+        <?% data.msg %?>
+    </td>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% IF data.readonly %?>
+        <p style="width:395px;">
+        <?% val %?>
+        </p>
+        <?% ELSE %?>
+        <textarea style="height:7em;width:395px;" name="<?% data.NAME %?>"><?% val | replace("<br />","
+") %?></textarea>
+        <?% END %?>
+    </td>
+</tr>

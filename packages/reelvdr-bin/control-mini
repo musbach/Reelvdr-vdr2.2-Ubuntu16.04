@@ -1,0 +1,12 @@
+Package: reelvdr-bin
+Version: 1.7.21.19470
+Section: reel
+Priority: important
+Architecture: armel
+Depends: libcap1, libfontconfig1, libfreetype6, libjpeg62, libmysqlclient15off, ttf-dejavu-core
+Conflicts: vdr, ttf-bitstream-vera
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-bin
+Description: The ReelBox VDR
+ This is the basic software component for the ReelBox.
+ The ReelVDR manages recordings, Live-TV, Timeshift, OSD, remote control etc.

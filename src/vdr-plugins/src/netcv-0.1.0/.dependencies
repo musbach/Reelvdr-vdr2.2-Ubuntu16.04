@@ -1,0 +1,703 @@
+netcv.o: netcv.c ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvmenu.h \
+ netcv.h netcvdevice.h netcvtuner.h diseqcsetting.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/diseqc.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ netcvcam.h netcvthread.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/tools.h diseqcsettingsimple.h \
+ netcvinstallmenu.h netcvinfomenu.h netcvdiag.h netcvservice.h
+diseqcsetting.o: diseqcsetting.c diseqcsetting.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/diseqc.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvtuner.h \
+ netcvcam.h diseqcsettingitem.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/config.h
+diseqcsettingsimple.o: diseqcsettingsimple.c \
+ ../../../vdr/include/vdr/diseqc.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/thread.h diseqcsettingsimple.h diseqcsetting.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ ../../../vdr/include/vdr/keys.h ../../../vdr/include/vdr/recording.h \
+ ../../../vdr/include/vdr/timers.h ../../../vdr/include/vdr/themes.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvtuner.h \
+ netcvcam.h diseqcsettingitem.h ../../../vdr/include/vdr/menuitems.h
+diseqcsettingitem.o: diseqcsettingitem.c diseqcsettingitem.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h diseqcsetting.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/diseqc.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/recorder.h ../../../vdr/include/vdr/receiver.h \
+ ../../../vdr/include/vdr/submenu.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../tinyxml/tinyxml.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvtuner.h \
+ netcvcam.h ../../../vdr/include/vdr/remote.h
+netcvcam.o: netcvcam.c netcvcam.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h
+netcvdevice.o: netcvdevice.c netcvdevice.h netcvtuner.h diseqcsetting.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/diseqc.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvcam.h
+netcvdiag.o: netcvdiag.c netcvdiag.h netcvdevice.h netcvtuner.h \
+ diseqcsetting.h /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/diseqc.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvcam.h \
+ ../../../vdr/include/vdr/tools.h
+netcvinstallmenu.o: netcvinstallmenu.c netcvdiag.h netcvdevice.h \
+ netcvtuner.h diseqcsetting.h /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/diseqc.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvcam.h \
+ netcvinstallmenu.h diseqcsettingitem.h \
+ ../../../vdr/include/vdr/menuitems.h ../../../vdr/include/vdr/plugin.h
+netcvinfomenu.o: netcvinfomenu.c netcvinfomenu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h netcv.h netcvmenu.h netcvdevice.h \
+ netcvtuner.h diseqcsetting.h /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ ../../../vdr/include/vdr/diseqc.h ../../../vdr/include/vdr/menu.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvcam.h \
+ netcvthread.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/tools.h diseqcsettingsimple.h \
+ ../../../vdr/include/vdr/skins.h netcvdiag.h
+netcvmenu.o: netcvmenu.c netcvmenu.h netcv.h netcvdevice.h netcvtuner.h \
+ diseqcsetting.h /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/diseqc.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvcam.h \
+ netcvthread.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/tools.h diseqcsettingsimple.h netcvdiag.h \
+ diseqcsettingitem.h ../../../vdr/include/vdr/menuitems.h \
+ netcvupdatemenu.h ../netcvrotor/netcvrotorservice.h \
+ ../../../vdr/include/vdr/skins.h ../../../vdr/include/vdr/interface.h \
+ ../../../vdr/include/vdr/remote.h ../../../vdr/include/vdr/svdrp.h \
+ ../../../vdr/include/vdr/plugin.h
+netcvthread.o: netcvthread.c netcvthread.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h
+netcvupdatemenu.o: netcvupdatemenu.c ../../../vdr/include/vdr/interface.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/remote.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/svdrp.h \
+ netcvupdatemenu.h ../../../vdr/include/vdr/osdbase.h netcvthread.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/tools.h
+netcvtuner.o: netcvtuner.c netcvtuner.h diseqcsetting.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/diseqc.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/device.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/recorder.h \
+ ../../../vdr/include/vdr/receiver.h ../../../vdr/include/vdr/submenu.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/../tinyxml/tinyxml.h \
+ ../../../vdr/../tinyxml/tinystr.h ../../../vdr/include/vdr/livebuffer.h \
+ ../../../vdr-plugins/src/mcli/mcliheaders.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/version.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/list.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ ../../../vdr-plugins/src/mcli/mcast/common/tools.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ ../../../vdr-plugins/src/mcli/mcast/client/mmi_handler.h netcvcam.h
+netcvupdate.o: netcvupdate.c ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/interface.h \
+ ../../../vdr/include/vdr/remote.h ../../../vdr/include/vdr/svdrp.h \
+ netcvupdatemenu.h ../../../vdr/include/vdr/osdbase.h netcvthread.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/tools.h
+netcvupdatemenu.o: netcvupdatemenu.c ../../../vdr/include/vdr/interface.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/remote.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/svdrp.h \
+ netcvupdatemenu.h ../../../vdr/include/vdr/osdbase.h netcvthread.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/tools.h
+netcvthread.o: netcvthread.c netcvthread.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h

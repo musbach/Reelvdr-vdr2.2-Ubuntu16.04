@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/reelbox/!svn/ver/1/testing/src/etc/reel
+END
+p.streamdev-server.conf
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/etc/reel/p.streamdev-server.conf
+END
+release
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/reelbox/!svn/ver/1/testing/src/etc/reel/release
+END
+p.rbmini.conf
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/etc/reel/p.rbmini.conf
+END
+p.reelbox.conf
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/etc/reel/p.reelbox.conf
+END
+reelvdr
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/reelbox/!svn/ver/1/testing/src/etc/reel/reelvdr
+END
+p.netcvupdate.conf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/etc/reel/p.netcvupdate.conf
+END
+release-8.04
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/etc/reel/release-8.04
+END
+p.streamdev-client.conf
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/etc/reel/p.streamdev-client.conf
+END
+p.ipod.conf
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/reelbox/!svn/ver/1/testing/src/etc/reel/p.ipod.conf
+END
+p.remote.conf
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/etc/reel/p.remote.conf
+END

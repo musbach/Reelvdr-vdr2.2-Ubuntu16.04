@@ -1,0 +1,21 @@
+--- osdbase.h	(revision 15412)
++++ osdbase.h	(revision 15413)
+@@ -14,6 +14,7 @@
+ #include "osd.h"
+ #include "skins.h"
+ #include "tools.h"
++
+ #if defined (USE_SETUP) && defined (USE_PINPLUGIN)
+ #include "submenu.h"
+ #endif /* SETUP & PINPLUGIN */
+@@ -117,6 +118,10 @@
+   char *status;
+   int digit;
+   bool hasHotkeys;
++#ifdef USE_LIEMIEXT
++  int key_nr;
++  cTimeMs lastActivity;
++#endif /* LIEMIEXT */
+ protected:
+   void SetDisplayMenu(void);
+   cSkinDisplayMenu *DisplayMenu(void) { return displayMenu; }

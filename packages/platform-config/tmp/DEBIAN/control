@@ -1,0 +1,9 @@
+Package: platform-config
+Version: 25.0.3-2
+Section: reel-ice
+Priority: optional
+Architecture: i386
+Installed-Size: 246K
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: platform-config
+Description: configuration for Intel platform

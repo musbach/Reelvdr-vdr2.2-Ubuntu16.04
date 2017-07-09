@@ -1,0 +1,15 @@
+<!-- file -->
+<?% global.widgetcount = global.widgetcount + 1 %?>
+<tr<?% ' class="two"' IF global.widgetcount mod 2 == 0 %?>>
+    <?% INCLUDE widgets/topic.inc abbr=data.msg %?>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% TRY %?>
+            <?% USE File(reentities(val), root => reentities(realbin)) %?>
+            <input style="width:395px;" size="<?% val.length + 3 %?>" type="text" name="<?% data.NAME %?>" value="<?% val %?>" />
+        <?% CATCH File %?>
+            <input style="width:395px;" size="<?% val.length + 3 %?>" type="text" name="<?% data.NAME %?>" value="<?% val %?>" class="error" /><br />
+            <font class="error"><?% gettext("File '%s' does not exist!") | replace('%s',val)%?></font>
+        <?% END %?>
+    </td>
+</tr>

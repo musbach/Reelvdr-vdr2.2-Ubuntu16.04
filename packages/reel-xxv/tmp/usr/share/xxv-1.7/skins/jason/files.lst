@@ -1,0 +1,37 @@
+FILES = \
+extjs/adapter/ext/ext-base.js \
+extjs/ext-all.js \
+fixes.js \
+ux/Carousel.js \
+ux/DDView.js \
+ux/Multiselect.js \
+ux/TabCloseMenu.js \
+ux/Search.js \
+ux/SlideZone.js \
+audio-player/audio-player.js \
+common.js \
+reader.js \
+help.js \
+form.js \
+channelspanel.js \
+stream.js \
+audio.js \
+monitor.js \
+remote.js \
+channels.js \
+timers.js \
+epg.js \
+now.js \
+program.js \
+search.js \
+movetimers.js \
+autotimers.js \
+recordings.js \
+chronicle.js \
+music.js \
+teletext.js \
+users.js \
+vdr.js \
+menus.js  \
+tabpanel.js  \
+main.js

@@ -1,0 +1,3 @@
+compiles
+undefined symbol: _ZTI12cScDvbDevice 
+change undefine option in MAKEFILE

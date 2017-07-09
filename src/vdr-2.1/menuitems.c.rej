@@ -1,0 +1,48 @@
+--- menuitems.c	(revision 15412)
++++ menuitems.c	(revision 15413)
+@@ -33,9 +33,21 @@
+   free(name);
+ }
+ 
++#ifdef USE_VALIDINPUT
++void cMenuEditItem::SetValue(const char *Value, bool HasPre, bool HasSucc)
++#else
+ void cMenuEditItem::SetValue(const char *Value)
++#endif /* VALIDINPUT */
+ {
+   cString buffer = cString::sprintf("%s:\t%s", name, Value);
++#ifdef USE_VALIDINPUT
++  if (Setup.ShowValidInput) {
++     if (HasPre && HasSucc) buffer = cString::sprintf("%s:\t<%s>", name, Value);
++     else if (HasPre)       buffer = cString::sprintf("%s:\t<%s",  name, Value);
++     else if (HasSucc)      buffer = cString::sprintf("%s:\t%s>",  name, Value);
++     }
++#endif /* VALIDINPUT */
++
+   SetText(buffer);
+   cStatus::MsgOsdCurrentItem(buffer);
+ }
+@@ -127,7 +139,11 @@
+ {
+   char buf[16];
+   snprintf(buf, sizeof(buf), "%s", *value ? trueString : falseString);
++#ifdef USE_VALIDINPUT
++  SetValue(buf, *value, !*value);
++#else
+   SetValue(buf);
++#endif /* VALIDINPUT */
+ }
+ 
+ // --- cMenuEditBitItem ------------------------------------------------------
+@@ -705,7 +721,11 @@
+ 
+ void cMenuEditStraItem::Set(void)
+ {
++#ifdef USE_VALIDINPUT
++  SetValue(strings[*value], (*value > min), (*value < max));
++#else
+   SetValue(strings[*value]);
++#endif /* VALIDINPUT */
+ }
+ 
+ // --- cMenuEditChanItem -----------------------------------------------------

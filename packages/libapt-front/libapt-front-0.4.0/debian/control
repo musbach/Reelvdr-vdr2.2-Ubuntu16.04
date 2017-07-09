@@ -1,0 +1,20 @@
+Source: libapt-front
+Section: libdevel
+Priority: optional
+Maintainer: libapt-front developers <libapt-front-devel@lists.alioth.debian.org>
+Uploaders: Peter Rockai <me@mornfall.net>, Enrico Zini <enrico@debian.org>, Michael Vogt <mvo@debian.org>
+Build-Depends: cdbs, debhelper (>> 4.1), dh-buildinfo, doxygen, libtool, libapt-pkg-dev, libept-dev (>= 0.5.7), libept-dev (<< 0.6), libtagcoll2-dev (>= 2.0.6), libtagcoll2-dev (<< 2.1), libwibble-dev (>= 0.1.10), libwibble-dev (<< 0.2), pkg-config, help2man
+Standards-Version: 3.7.2.2
+
+Package: libapt-front-dev
+Section: libdevel
+Architecture: any
+Recommends: pkg-config
+Depends: libept-dev (>= 0.5.7), libept-dev (<< 0.6), libtagcoll2-dev (>= 2.0.6), libtagcoll2-dev (<< 2.1), libwibble-dev (>= 0.1.10), libwibble-dev (<< 0.2), libapt-pkg-dev (>= 0.6.41)
+Description: High-level library for managing Debian packages
+ libapt-front is an high-level wrapper for libapt-pkg and libdebtags
+ that makes it easier to develop package-aware applications such as
+ package managers.
+ .
+ libapt-front is a joint effort by the debtags and adept teams.
+

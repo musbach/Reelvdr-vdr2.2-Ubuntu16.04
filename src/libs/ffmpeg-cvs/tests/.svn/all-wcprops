@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests
+END
+videogen.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/videogen.c
+END
+rotozoom.regression.ref
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/rotozoom.regression.ref
+END
+libav.regression.ref
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/libav.regression.ref
+END
+regression.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/regression.sh
+END
+server-regression.sh
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/server-regression.sh
+END
+ffmpeg.regression.ref
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/ffmpeg.regression.ref
+END
+test.conf
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/test.conf
+END
+tiny_psnr.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/tiny_psnr.c
+END
+dsptest.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/dsptest.c
+END
+lena.pnm
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/lena.pnm
+END
+rotozoom.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/rotozoom.c
+END
+ffserver.regression.ref
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/ffserver.regression.ref
+END
+audiogen.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/audiogen.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/Makefile
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/tests/.cvsignore
+END

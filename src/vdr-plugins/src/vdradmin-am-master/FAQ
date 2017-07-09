@@ -1,0 +1,22 @@
+Q: Setting the language for VDRAdmin-AM does not work. What can I do?
+A: There are some things to check:
+    - Check if "perl -V:d_setlocale" prints "d_setlocale='define';".
+		  If it doesn't contact your Linux distributor.
+		- Run: echo -e "LANGUAGE=$LANGUAGE\nLANG=$LANG\nLC_ALL=$LC_ALL"
+		  LANGUAGE *must* be empty so that you can set the language
+			in VDRAdmin-AM's configuration menu. If it's not empty VDRAdmin-AM
+			will *always* use that language if it supports it or English if
+			it doesn't support it.
+			LANG and/or LC_ALL are used if you set the language to "System
+			default" in VDRAdmin-AM.
+
+Q: I don't get a picture in "Watch TV"!
+A: This feature uses VDR's "GRAB" SVDRP command that requires a Full-Featured
+   DVB card or an output plugin that implements the GRAB command.
+	 In VDRAdmin-AM you can use the "Commands" menu to check if grabbing works
+	 in VDR. Execute "grab -". If it returns "Grab image failed" your VDR can't
+	 grab and you can't watch TV in VDRAdmin-AM.
+
+Q: Can I run VDRAdmin-AM on Windows?
+A: Yes, have a look at http://www.open7x0.org/wiki/VDRAdmin-AM_unter_Windows
+   (German language only).

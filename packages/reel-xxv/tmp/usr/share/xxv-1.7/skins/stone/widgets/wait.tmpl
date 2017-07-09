@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="<?% charset %?>"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de">
+<head>
+    <link rel="stylesheet" type="text/css" href="style-<?% skin %?>.css" media="all" />
+    <title>XXV</title>
+    <meta http-equiv="content-type" content="text/html; charset=<?% charset %?>" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="robots" content="noindex,noarchive,nofollow" />
+</head>
+<?% IF info.http_useragent.match('.*MSIE.*') && !info.http_useragent.match('.*Opera.*');
+    global.imagetyp = "gif";
+ELSE;
+    global.imagetyp = "png";
+END %?>
+<!-- WaitTemplate -->
+<body class="hilfsframed">
+<?% percent = (data.current / data.maximum) * 100 %?>
+<?% step = data.maximum / data.steps %?>
+<?% c = -1 %?>
+<table class="editortable" summary="">
+    <tr>
+        <td class="editorhead">
+            <div style="float:left;"><?% chop(data.msg,80) %?></div>
+            <?% INCLUDE shutter.inc %?>
+        </td>
+    </tr>
+    <tr>  
+        <td class="editortext" align="center">
+            <table class="wait">
+               <tr>  
+                <td><img src="images/wait.gif" alt="" /></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <?% WHILE c <= data.steps %?>
+                    <?% c = c + 1 %?>
+                        <?% color = (step * c) <= data.current ? "wait_full" : "wait_clear" %?>
+                             <td class="<?% color %?>">&nbsp;</td>
+                    <?% END %?>
+                            <td>&nbsp;<b><?% percent div 1 | format "%02d" %?>%</b> (<?% data.eta %?>)</td>
+              </tr>
+           </table>
+        </td>
+    </tr>
+    <tr><td class="editorbottom"></td></tr>
+</table>
+</body>
+</html>

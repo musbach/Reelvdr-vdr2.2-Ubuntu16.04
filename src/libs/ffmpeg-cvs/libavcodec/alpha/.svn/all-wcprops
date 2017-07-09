@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alpha
+END
+regdef.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alpha/regdef.h
+END
+simple_idct_alpha.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alpha/simple_idct_alpha.c
+END
+mpegvideo_alpha.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alpha/mpegvideo_alpha.c
+END
+asm.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alpha/asm.h
+END
+motion_est_alpha.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alpha/motion_est_alpha.c
+END
+dsputil_alpha.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alpha/dsputil_alpha.c
+END
+dsputil_alpha_asm.S
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alpha/dsputil_alpha_asm.S
+END
+motion_est_mvi_asm.S
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alpha/motion_est_mvi_asm.S
+END

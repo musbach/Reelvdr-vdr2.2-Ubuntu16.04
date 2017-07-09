@@ -1,0 +1,119 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          xxvd
+# Required-Start:    $local_fs $remote_fs $syslog
+# Required-Stop:     $local_fs $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      S 0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
+### END INIT INFO
+#
+# xxvd          Start/Stop the xxvd daemon.
+#
+# chkconfig: 2345 90 11
+# description: xxvd is a telnet/http config       \
+# server, for ther DVB Settop box vdr program.       \
+#                                                    \
+#                                                    \
+#                                                    .
+# processname: xxvd
+# config: xxvd.cfg
+#
+# Need to setup :
+
+if [ "$1" = "" ];then
+	SOPTION="start"
+else
+	SOPTION="$1"
+fi
+
+# Define FOLDER directory, ( $FOLDER/bin/xxvd )
+FOLDER="/usr/share/xxv-1.7"
+
+# How verbose should log file (0 ... 5)
+VERBOSE="3"
+
+# Run as noprivileged user, else set empty
+RUNAS="root"
+
+# Which translation is used
+LANGUAGE="de_DE.UTF-8";
+
+# Adjust some moduls directories
+MODPATH="$FOLDER/lib/XXV/MODULES"
+CONFIG="/etc/default/xxvd.cfg"
+HTMLDIR="$FOLDER/skins/"
+DOCUDIR="$FOLDER/doc/"
+PODDIR="$FOLDER/doc/"
+CONTRIB="$FOLDER/contrib"
+NEWSMODS="$FOLDER/lib/XXV/OUTPUT/NEWS"
+NEWSTMPL="$FOLDER/share/news"
+VERBOSE="3"
+
+PIDFILE="/var/run/xxvd.pid"
+LOGFILE="/var/log/xxvd.log"
+
+# Create options from 
+OPTIONS="--configfile $CONFIG \
+         --logfile $LOGFILE \
+         --pidfile $PIDFILE \
+         --docudir $DOCUDIR \
+         --poddir $PODDIR \
+         --htmldir $HTMLDIR \
+         --contrib $CONTRIB \
+         --newsmods $NEWSMODS \
+         --newstmpl $NEWSTMPL \
+         --moduledir $MODPATH \
+         --verbose $VERBOSE"
+
+# See how we were called.
+PROG="bin/xxvd"
+
+start() {
+  echo -n "Start $PROG: "
+  chmod ugo+w	/tmp
+  chmod o+t	/tmp
+
+  if [ -r "$PIDFILE" ]; then
+    PID=$(cat "$PIDFILE")
+    if [ -r "/proc/$PID/cmdline" ]; then
+      grep "xxvd" /proc/$PID/cmdline >/dev/null 2>&1 \
+        || rm -f "$PIDFILE"
+    else
+      rm -f "$PIDFILE"
+    fi
+  fi
+
+  su - $RUNAS -c "export LANG="$LANGUAGE";cd $FOLDER;nice -n 10 ./$PROG $OPTIONS"
+}
+
+stop() {
+  echo -n "Stop $PROG: "
+  su - $RUNAS -c "export LANG="$LANGUAGE";cd $FOLDER;./$PROG --kill $OPTIONS"
+}
+
+restart() {
+  stop
+  start
+}
+
+case "$1" in
+  start)
+    start
+    exit 0;
+    ;;
+  stop)
+    stop
+    exit 0;
+    ;;
+  restart)
+    restart
+    exit 0;
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|status|restart}"
+    exit 1
+esac
+
+exit $?

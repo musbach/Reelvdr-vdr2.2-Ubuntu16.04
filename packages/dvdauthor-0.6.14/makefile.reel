@@ -1,0 +1,23 @@
+#just for the reelbox package build-system
+
+#include ../Make.common
+
+package := $(shell grep Package debian/control | cut -f2 -d" ")
+version := $(shell dpkg-parsechangelog | grep Version: | cut -f2 -d" ")
+
+all: build-stamp
+
+build-stamp: configure
+	echo "this here is really really experimental..."
+	dpkg-buildpackage -rfakeroot -us -uc -d -ti686-pc-linux-gnu -tc
+	touch $@
+
+configure: configure.ac
+	autoconf
+
+clean:
+	-$(MAKE) distclean
+	-rm -f debian/DEBIAN
+	-rm -rf debian/dvdauthor
+	-rm -f debian/files debian/dvdauthor.substvars *.1 *-stamp
+	-rm -f config-stamp unpack-stamp autom4te.cache mpeg2desc.1

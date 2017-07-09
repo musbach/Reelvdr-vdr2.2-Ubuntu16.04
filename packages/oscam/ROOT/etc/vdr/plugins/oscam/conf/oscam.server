@@ -1,0 +1,167 @@
+# oscam.server generated automatically by Streamboard OSCAM 1.20-unstable_svn SVN r11271
+# Read more: http://www.streamboard.tv/svn/oscam/trunk/Distribution/doc/txt/oscam.server.txt
+
+[reader]
+label                         = avg1_s02-d02_seriel(6mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyS1
+caid                          = 1702,1722
+detect                        = cd
+mhz                           = 600
+cardmhz                       = 600
+group                         = 1
+emmcache                      = 1,3,2,0
+
+[reader]
+label                         = avg1_s02-d02_usb(6mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyUSB0
+caid                          = 1702,1722
+boxkey                        = 1122334455667788
+detect                        = cd
+mhz                           = 600
+cardmhz                       = 600
+group                         = 1
+emmcache                      = 1,3,2,0
+
+[reader]
+label                         = avg1_d09_seriel(6mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyS1
+caid                          = 1834
+boxkey                        = 6660A9AE55A4847B
+rsakey                        = 8A54468867159C1188D13ACE7DF348FA08BDF8BE33F1B2F72F74FBCD184C825519E517E3494A6DD8CF046630456111F952979DECCFF5176D890AE93F4E267711
+detect                        = cd
+mhz                           = 600
+cardmhz                       = 600
+group                         = 1
+emmcache                      = 1,3,2,0
+
+[reader]
+label                         = avg1_d09_usb(6mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyUSB0
+caid                          = 1834
+boxkey                        = 6660A9AE55A4847B
+rsakey                        = 8A54468867159C1188D13ACE7DF348FA08BDF8BE33F1B2F72F74FBCD184C825519E517E3494A6DD8CF046630456111F952979DECCFF5176D890AE93F4E267711
+detect                        = cd
+mhz                           = 600
+cardmhz                       = 600
+group                         = 1
+emmcache                      = 1,3,2,0
+
+[reader]
+label                         = avg1_hd+_cw_seriel(3,5_mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyS1
+autospeed                     = 0
+caid                          = 1843
+boxkey                        = A7642F57BC96D37C
+rsakey                        = BF358B5461863130686FC933FB541FFCED682F3680F09DBC1A23829FB3B2F766B9DD1BF3B3ECC9AD6661B753DCC3A9624156F9EB64E8168EF09E4D9C5CCA4DD5
+detect                        = cd
+cardmhz                       = 368
+group                         = 1
+emmcache                      = 1,3,1,0
+
+[reader]
+label                         = avg1_hd_plus
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyUSB0
+caid                          = 1843
+boxkey                        = A7642F57BC96D37C
+rsakey                        = BF358B5461863130686FC933FB541FFCED682F3680F09DBC1A23829FB3B2F766B9DD1BF3B3ECC9AD6661B753DCC3A9624156F9EB64E8168EF09E4D9C5CCA4DD5
+detect                        = cd
+cardmhz                       = 367
+group                         = 1,2
+emmcache                      = 1,3,2,0
+
+[reader]
+label                         = avg1_v13/14/g09_seriel(3,5_mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyS1
+caid                          = 09C4,09C7,098C
+boxid                         = 12345678
+detect                        = cd
+group                         = 1
+emmcache                      = 1,3,2,0
+blockemm-unknown              = 1
+blockemm-g                    = 1
+
+[reader]
+label                         = avg1_v13/14/g09_usb(3,5_mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyUSB0
+caid                          = 09C4,09C7,098C
+boxid                         = 12345678
+boxkey                        = 1122334455667788
+detect                        = cd
+group                         = 1
+emmcache                      = 1,3,2,0
+blockemm-unknown              = 1
+blockemm-g                    = 1
+
+[reader]
+label                         = avg1_via_seriel(3,5_mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyS1
+caid                          = 0500
+detect                        = cd
+mhz                           = 480
+cardmhz                       = 480
+group                         = 1
+emmcache                      = 1,3,2,0
+deprecated                    = 1
+
+[reader]
+label                         = avg1_via_usb(3,5_mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyUSB0
+caid                          = 0500
+boxkey                        = 1122334455667788
+detect                        = cd
+mhz                           = 480
+cardmhz                       = 480
+group                         = 1
+emmcache                      = 1,3,2,0
+deprecated                    = 1
+
+[reader]
+label                         = avg1_um02_seriel(3,5_mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyS1
+caid                          = 1838
+boxkey                        = A7642F57BC96D37C
+rsakey                        = B55E0EB0562805F1788BDA0CD8B856BF696CFF1CBF4ED62B85E643F385B0F8899275DEA669AC77BDA43A20CCB844A3AF5A2BE0622779FAB153D156957DF367FF
+detect                        = cd
+mhz                           = 369
+cardmhz                       = 368
+ident                         = 1838:000000,000401,001103
+group                         = 1
+emmcache                      = 1,3,2,0
+
+[reader]
+label                         = avg1_um02_usb(3,5_mhz)
+enable                        = 0
+protocol                      = mouse
+device                        = /dev/ttyUSB0
+caid                          = 1838
+boxkey                        = A7642F57BC96D37C
+rsakey                        = B55E0EB0562805F1788BDA0CD8B856BF696CFF1CBF4ED62B85E643F385B0F8899275DEA669AC77BDA43A20CCB844A3AF5A2BE0622779FAB153D156957DF367FF
+detect                        = cd
+mhz                           = 369
+cardmhz                       = 368
+ident                         = 1838:000000,000401,001103
+group                         = 1
+emmcache                      = 1,3,2,0
+

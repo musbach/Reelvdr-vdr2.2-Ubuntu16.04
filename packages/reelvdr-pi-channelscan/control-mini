@@ -1,0 +1,10 @@
+Package: reelvdr-pi-channelscan
+Version: 0.6.2.3
+Section: reel
+Priority: important
+Architecture: armel
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/channelscan
+Conflicts: reelvdr-baseconfig (<< 1.18), reelvdr-plugins-base (<< 1.4.17), reelvdr-langpack (<< 1.9)
+Description: Channelscan for the ReelBox
+Description-de: Kanalsuche für die ReelBox

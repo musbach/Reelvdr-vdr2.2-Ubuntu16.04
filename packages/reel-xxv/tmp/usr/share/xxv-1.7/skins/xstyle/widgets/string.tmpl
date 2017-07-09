@@ -1,0 +1,16 @@
+<!-- string -->
+<tr>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% data.msg %?>
+    </td>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% IF data.readonly %?>
+        <span<?% FOREACH p IN param.tags; "$p ";END %?>>
+        <?% val %?>
+        </span>
+        <?% ELSE %?>
+            <input type="text" name="<?% data.NAME %?>" value="<?% val %?>" <?% FOREACH p IN param.tags; "$p ";END %?>>
+        <?% END %?>
+    </td>
+</tr>

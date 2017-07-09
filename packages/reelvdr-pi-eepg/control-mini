@@ -1,0 +1,9 @@
+Package: reelvdr-pi-eepg
+Version: 0.0.5.0
+Section: reel-opt
+Priority: optional
+Architecture: armel
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/eepg
+Description: Extended EPG retrievel program for Mediahighway, Freeview, Premiere
+Description-de: Empfängt erweiterte EPG informationen für Mediahighway, Freeview, Premiere

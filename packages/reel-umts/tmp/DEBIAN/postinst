@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#we now use upstart so remove init links
+if [ ! -f /etc/usb_modeswitch.conf-org ]; then
+    cp /etc/usb_modeswitch.conf /etc/usb_modeswitch.conf-org
+fi
+#install -c -m 755 /etc/usb_modeswitch.conf-reel /etc/usb_modeswitch.conf
+update-rc.d reel-umts remove >/dev/null
+
+exit 0

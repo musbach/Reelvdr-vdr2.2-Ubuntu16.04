@@ -1,0 +1,92 @@
+xine_sxfe_frontend.o: xine_sxfe_frontend.c features.h logdefs.h \
+ xine_osd_command.h xine_frontend_internal.h xine_frontend.h \
+ xine_input_vdr.h xine_input_vdr_mrl.h xine/post.h \
+ tools/gnome_screensaver.h tools/rle.h tools/time_ms.h vdrlogo_32x32.c
+xine_frontend.o: xine_frontend.c features.h logdefs.h \
+ xine_frontend_internal.h xine_frontend.h xine_input_vdr.h \
+ xine_input_vdr_mrl.h xine/post.h xine/vo_post.h xine/vo_osdscaler.h \
+ xine/vo_osdreorder.h xine/vo_lastpts.h xine/vo_frameoutput.h
+logdefs.o: logdefs.c logdefs.h
+xine/post.o: xine/post.c xine/post.h xine/../logdefs.h
+xine/vo_hook.o: xine/vo_hook.c xine/../logdefs.h xine/vo_hook.h \
+ xine/vo_post.h
+xine/vo_osdscaler.o: xine/vo_osdscaler.c xine/../logdefs.h \
+ xine/vo_props.h xine/vo_hook.h xine/../tools/rle.h xine/vo_osdscaler.h
+xine/vo_osdreorder.o: xine/vo_osdreorder.c xine/vo_props.h xine/vo_hook.h \
+ xine/vo_osdreorder.h
+xine/vo_lastpts.o: xine/vo_lastpts.c xine/xvdr_metronom.h xine/vo_hook.h \
+ xine/../logdefs.h xine/vo_lastpts.h
+xine/vo_frameoutput.o: xine/vo_frameoutput.c xine/vo_hook.h \
+ xine/../logdefs.h xine/vo_frameoutput.h
+tools/rle.o: tools/rle.c tools/../xine_osd_command.h tools/rle.h
+tools/vdrdiscovery.o: tools/vdrdiscovery.c tools/../logdefs.h \
+ tools/vdrdiscovery.h
+xine_frontend_main.o: xine_frontend_main.c features.h logdefs.h \
+ xine_input_vdr_mrl.h xine_frontend.h tools/vdrdiscovery.h \
+ xine_frontend_lirc.h xine_frontend_kbd.h
+xine_frontend_lirc.o: xine_frontend_lirc.c tools/time_ms.h logdefs.h \
+ xine_frontend.h xine_frontend_lirc.h
+xine_frontend_kbd.o: xine_frontend_kbd.c features.h logdefs.h \
+ xine_frontend.h xine_frontend_kbd.h
+tools/gnome_screensaver.o: tools/gnome_screensaver.c tools/../features.h \
+ tools/../logdefs.h tools/gnome_screensaver.h
+xine_fbfe_frontend.o: xine_fbfe_frontend.c logdefs.h \
+ xine_frontend_internal.h xine_frontend.h xine_input_vdr.h \
+ xine_input_vdr_mrl.h xine/post.h
+xine_frontend.o: xine_frontend.c features.h logdefs.h \
+ xine_frontend_internal.h xine_frontend.h xine_input_vdr.h \
+ xine_input_vdr_mrl.h xine/post.h xine/vo_post.h xine/vo_osdscaler.h \
+ xine/vo_osdreorder.h xine/vo_lastpts.h xine/vo_frameoutput.h
+logdefs.o: logdefs.c logdefs.h
+xine/post.o: xine/post.c xine/post.h xine/../logdefs.h
+xine/vo_hook.o: xine/vo_hook.c xine/../logdefs.h xine/vo_hook.h \
+ xine/vo_post.h
+xine/vo_osdscaler.o: xine/vo_osdscaler.c xine/../logdefs.h \
+ xine/vo_props.h xine/vo_hook.h xine/../tools/rle.h xine/vo_osdscaler.h
+xine/vo_osdreorder.o: xine/vo_osdreorder.c xine/vo_props.h xine/vo_hook.h \
+ xine/vo_osdreorder.h
+xine/vo_lastpts.o: xine/vo_lastpts.c xine/xvdr_metronom.h xine/vo_hook.h \
+ xine/../logdefs.h xine/vo_lastpts.h
+xine/vo_frameoutput.o: xine/vo_frameoutput.c xine/vo_hook.h \
+ xine/../logdefs.h xine/vo_frameoutput.h
+tools/rle.o: tools/rle.c tools/../xine_osd_command.h tools/rle.h
+tools/vdrdiscovery.o: tools/vdrdiscovery.c tools/../logdefs.h \
+ tools/vdrdiscovery.h
+xine_frontend_main.o: xine_frontend_main.c features.h logdefs.h \
+ xine_input_vdr_mrl.h xine_frontend.h tools/vdrdiscovery.h \
+ xine_frontend_lirc.h xine_frontend_kbd.h
+xine_frontend_lirc.o: xine_frontend_lirc.c tools/time_ms.h logdefs.h \
+ xine_frontend.h xine_frontend_lirc.h
+xine_frontend_kbd.o: xine_frontend_kbd.c features.h logdefs.h \
+ xine_frontend.h xine_frontend_kbd.h
+xine_input_vdr.o: xine_input_vdr.c features.h xine/adjustable_scr.h \
+ xine/osd_manager.h xine/xvdr_metronom.h xine_input_vdr.h \
+ xine_input_vdr_mrl.h xine_input_vdr_net.h tools/rtp.h xine_osd_command.h \
+ tools/mpeg.h tools/pes.h tools/ts.h tools/rle.h logdefs.h \
+ nosignal_720x576.c
+xine/demux_xvdr.o: xine/demux_xvdr.c xine/../xine_input_vdr_mrl.h \
+ xine/../tools/mpeg.h xine/../tools/h264.h xine/../tools/mpeg.h \
+ xine/../tools/pes.h xine/../tools/ts.h xine/ts2es.h \
+ xine/demux_xvdr_tsdata.h xine/xvdr_metronom.h xine/../logdefs.h
+xine/ts2es.o: xine/ts2es.c xine/../tools/ts.h xine/../tools/pes.h \
+ xine/ts2es.h xine/../logdefs.h
+xine/demux_xvdr_tsdata.o: xine/demux_xvdr_tsdata.c xine/../logdefs.h \
+ xine/../tools/ts.h xine/ts2es.h xine/demux_xvdr_tsdata.h
+xine/adjustable_scr.o: xine/adjustable_scr.c xine/../tools/time_ms.h \
+ xine/../logdefs.h xine/adjustable_scr.h
+xine/xvdr_metronom.o: xine/xvdr_metronom.c xine/../tools/time_ms.h \
+ xine/../logdefs.h xine/adjustable_scr.h xine/xvdr_metronom.h
+xine/osd_manager.o: xine/osd_manager.c xine/../xine_osd_command.h \
+ xine/../xine_input_vdr.h xine/../xine_input_vdr_mrl.h \
+ xine/../tools/rle.h xine/vo_props.h xine/osd_manager.h xine/../logdefs.h
+tools/rle.o: tools/rle.c tools/../xine_osd_command.h tools/rle.h
+tools/ts.o: tools/ts.c tools/../logdefs.h tools/mpeg.h tools/ts.h \
+ tools/pes.h tools/h264.h
+tools/pes.o: tools/pes.c tools/../logdefs.h tools/mpeg.h tools/h264.h \
+ tools/pes.h
+tools/mpeg.o: tools/mpeg.c tools/mpeg.h
+tools/h264.o: tools/h264.c tools/../logdefs.h tools/bitstream.h \
+ tools/mpeg.h tools/h264.h
+xine_post_autocrop.o: xine_post_autocrop.c
+xine_post_swscale.o: xine_post_swscale.c xine/post_util.h
+xine_post_audiochannel.o: xine_post_audiochannel.c

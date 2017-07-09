@@ -1,0 +1,15 @@
+Package: reelbox-devel-mini
+Version: 1.4-20
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 9,4K
+Depends: autoconf, automake, ccache, cdbs, dh-buildinfo, dpatch, fontconfig-config, gcc-4.3-arm-linux-gnueabi, g++-4.3-arm-linux-gnueabi, libapt-front-dev-armel-cross, libavahi-client-dev-armel-cross, libcap-dev-armel-cross, libcddb2-dev-armel-cross, libcdio-dev-armel-cross, libcommoncpp2-dev-armel-cross, libcurl4-openssl-dev-armel-cross, libdbus-1-dev-armel-cross, libept-dev-armel-cross, libfontconfig1-dev-armel-cross, libfreetype6-dev-armel-cross, libgcrypt11-armel-cross, libjpeg62-dev-armel-cross, libmagick++9-dev-armel-cross, libmagic-dev-armel-cross, libmysqlclient15-dev-armel-cross, libparted1.8-dev-armel-cross, libpng12-dev-armel-cross, libtag1-dev-armel-cross, libtagcoll2-dev-armel-cross, libudev-dev-armel-cross, libusb-dev-armel-cross, libwibble-dev-armel-cross, libx11-dev-armel-cross, linux-libc-dev-armel-cross, make, mtools, pkg-config, quilt, sudo, subversion
+Provides: libc6-armel-dcv1, libc6-dev-armel-dcv1, libc-dev-armel-dcv1
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-devel-mini
+Description: Development meta package for ReelBox Mini
+ This package depends on all of the packages needed to develop for the ReelBox Mini.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it is not be removed.

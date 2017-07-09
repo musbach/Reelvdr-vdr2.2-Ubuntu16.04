@@ -1,0 +1,28 @@
+<!-- MessageTemplate -->
+<?% IF ! global.bodyinc.defined;global.bodyinc = 1 %?>
+<body class="hilfsframed">
+<div>
+<?% END %?>
+
+<?% trimmed = data FILTER trim %?>
+<?% IF data.size > 1 || trimmed != "" %?>
+<table class="editortable" summary="">
+    <tr><td class="editorhead"><div class="editorhead">&nbsp;</div><?% INCLUDE shutter.inc %?></td></tr>
+    <tr>  
+        <td class="editortext" align="left">
+        <?% IF data.size <= 0 %?>
+            <?% data %?>
+        <?% ELSE %?>
+            <table summary="" width="100%">
+            <?% FOREACH zeile IN data %?>
+                <tr<?% " class='two'" IF loop.count mod 2 == 0 %?>>
+                    <td><?% zeile %?></td>
+                </tr>
+             <?% END %?>
+            </table>
+        <?% END %?>
+        </td>
+    </tr>
+    <tr><td class="editorbottom"></td></tr>
+</table>
+<?% END %?>

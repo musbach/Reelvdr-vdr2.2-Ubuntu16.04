@@ -1,0 +1,2 @@
+tmp/usr/lib/vdr/libvdr-netwatcher.so.2.2.0: /usr/src/reelbox/testing/src/vdr-plugins/lib/libvdr-netwatcher.so.2.2.0
+tmp/usr/share/locale/de_DE/LC_MESSAGES/vdr-netwatcher.mo: /usr/src/reelbox/testing/src/vdr-2.2.0/locale/de_DE/LC_MESSAGES/vdr-netwatcher.mo

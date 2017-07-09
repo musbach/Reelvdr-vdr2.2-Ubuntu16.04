@@ -1,0 +1,113 @@
+<!-- topten -->
+<div id="body">
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+                <?% INCLUDE widgets/tooltip.inc cmd="display"  eventid=id linkid=id ttp_offset=-400 %?>
+                <a href="?cmd=search&amp;data=<?% url( title ) %?>">
+                    <img src="images/find.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search for repeats") %?>" />
+                </a>
+                <?% IF timerid && allow('tedit') %?>
+                <a href="?cmd=tedit&amp;data=<?% timerid %?>">
+                    <img src="images/onoff.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit this timer") %?>" />
+                </a>
+                <?% ELSIF allow('tnew') %?>
+                <a href="?cmd=tnew&amp;data=<?% id %?>">
+                     <img src="images/record.<?% global.imagetyp %?>" alt="" title="<?% gettext("To record") %?>" />
+                </a>
+                <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+    <?% state = '' %?>
+    <?% IF running %?>
+        <?% state = "running" %?>
+    <?% ELSIF timerid %?>
+      <?% UNLESS recording %?>
+        <?% state = "deactive" %?>
+      <?% ELSE %?>
+        <?% state = "active" %?>
+      <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsFlat %?>
+      <?% PROCESS SetState %?>
+        <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+            <td>
+            <a <?% IF state != "" %?>class="<?% state %?>"<?% END %?> style="vertical-align:bottom;" href="?cmd=program&amp;data=<?% channel %?><?% IF id > 0 %?>#E<?% id %?><?% END %?>" title="<?% gettext("Program guide for") %?>&nbsp;<?% sender %?>">
+            <font class="channel"><?% channel %?>.&nbsp;</font><?% chop(sender,20) %?></a>
+            </td>
+            <td>
+                  <a href="?cmd=display&amp;data=<?% id %?>">
+                  <font class="title<?% IF state != "";" ";state;END %?>"><?% chop(title,45) %?></font>
+                  <?% IF subtitle.length > 0 %?><font class="subtitle<?% IF state != "";" ";state;END %?>">&nbsp;-&nbsp;<?% chop(subtitle,55) %?></font><?% END %?>
+				  </a>
+            </td>
+            <td class="subtitle<?% IF state != "";" ";state;END %?>" style="white-space: nowrap">
+              <?% day %?>
+            </td>
+            </td>
+            <td class="subtitle<?% IF state != "";" ";state;END %?>" style="white-space: nowrap">
+              <?% start %?>-<?% stop %?>
+            </td>
+            <td class="push">
+                <?% PROCESS RowButtons %?>
+            </td>
+        </tr>
+        <?% IF global.hideDescription != 1  && description.length > 0 %?>
+        <tr<?% ' class="two"' IF z mod 2 == 0 %?>>
+            <td>&nbsp;</td>
+            <td colspan="5">
+                  <a href="?cmd=display&amp;data=<?% id %?>">
+                  <font class="description<?% IF state != "";" ";state;END %?>"><?% chop(description,100,1) %?></font>
+				  </a>
+            </td>
+        </tr>
+        <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+<h1><?% gettext("Top Ten entrys") %?></h1>
+<table  summary="" width="100%">
+  <tr height="0"><th width="120"></th><th></th><th width="100"></th><th width="40" align="right"></th></tr>
+    <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?% id=zeile.0;title=zeile.1;subtitle=zeile.2;sender=zeile.3;
+            channel=zeile.4;start=zeile.5;stop=zeile.6;day=zeile.7;description=zeile.8;
+            pdc=zeile.9;timerid=zeile.10;recording=zeile.11;running=zeile.12;
+            rank=zeile.13;level=zeile.14;quantity=zeile.15;
+            %?>
+          <?% PROCESS ItemAsFlat %?>
+        <?% END %?>
+</table> 
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+<?% IF enableform || allow('tnew') || allow('tupdate') %?>
+  <p class="section"><?% gettext("Timers",20) %?></p>
+  <p>
+<?% IF allow('topten') %?>
+      <a href="?cmd=topten"><img src="images/topten.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a href="?cmd=topten"><?% gettext("Top Ten entrys",20) %?></a><br />
+<?% END %?>
+<?% IF allow('tnew') %?>
+      <a href="?cmd=tnew"><img src="images/new.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a href="?cmd=tnew"><?% gettext("Create new timer",20) %?></a><br />
+<?% END %?>
+<?% IF allow('tupdate') %?>
+      <a href="javascript:fire('tupdate','0')"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a href="javascript:fire('tupdate','0')"><?% gettext("Update timers",20) %?></a><br />
+<?% END %?>
+  </p>
+<?% END %?>
+  <p class="section"><?% gettext("Search for timers",20) %?></p>
+  <form method="post" action="?cmd=tsearch"> 
+  <p>
+    <input type="text" name="data" size="18" <?% IF cgi.param('cmd')=='ts' || cgi.param('cmd')=='tsearch' %?>value="<?% cgi.param('data')%?>"<?% END %?> />
+  </p>
+  </form>
+</div>
+<?% global.sidebar = 1 %?>
+

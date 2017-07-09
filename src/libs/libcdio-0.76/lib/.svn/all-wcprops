@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/Makefile.in
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/Makefile.am
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/Makefile
+END

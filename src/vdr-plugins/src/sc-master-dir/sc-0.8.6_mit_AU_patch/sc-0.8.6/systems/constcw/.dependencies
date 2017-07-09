@@ -1,0 +1,16 @@
+constcw.o: constcw.c \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sources.h \
+ ../../system.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ ../../data.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ ../../misc.h ../../log-core.h ../../log.h ../../i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
+ ../../system-common.h ../../system.h ../../data.h ../../misc.h

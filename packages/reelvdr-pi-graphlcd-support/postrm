@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+echo "Deleting graphlcd fonts/logos symlinks"
+for i in /etc/vdr/plugins/graphlcd/fonts.conf \
+ /etc/vdr/plugins/graphlcd/fonts/f_m_l.fnt \
+ /etc/vdr/plugins/graphlcd/fonts/f_m_n.fnt \
+ /etc/vdr/plugins/graphlcd/fonts/f_m_s.fnt \
+ /etc/vdr/plugins/graphlcd/fonts/f_m_sym.fnt \
+ /etc/vdr/plugins/graphlcd/logonames.alias
+ do
+    [ -f "$i" ] && rm -f "$i"
+done
+
+exit 0

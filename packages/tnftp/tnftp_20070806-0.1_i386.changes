@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Tue, 20 Nov 2007 18:35:05 +0100
+Source: tnftp
+Binary: tnftp
+Architecture: source i386
+Version: 20070806-0.1
+Distribution: unstable
+Urgency: high
+Maintainer: Takuo KITAME <kitame@debian.org>
+Changed-By: Deti Fliegl <fliegl@baycom.de>
+Description:
+ tnftp      - The enhanced ftp client
+Changes:
+ tnftp (20070806-0.1) unstable; urgency=high
+ .
+   * Non-maintainer upload.
+   * Updated version
+Checksums-Sha1:
+ 75511b53afbfe502b47684623c7df2454a0a6a3b 534 tnftp_20070806-0.1.dsc
+ 37a5082b7530e655504460538160a3756162fd95 382027 tnftp_20070806-0.1.tar.gz
+ 0ef890ee779bee73057b34d11ea859389ee896c5 167494 tnftp_20070806-0.1_i386.deb
+Checksums-Sha256:
+ acc03f6f8894e1fad5ca8a4c465b540c8e2dd7873967e8d70584de3b0ecd12c4 534 tnftp_20070806-0.1.dsc
+ 36616795d094d85afd07314db3f64099b9491a4a5a8b1e09d201c895a8b198ff 382027 tnftp_20070806-0.1.tar.gz
+ efdbb21d4bdc58318a1589eedac3a988cb250a05720929360ff8efe42f16c355 167494 tnftp_20070806-0.1_i386.deb
+Files:
+ 2c48d0dc73bcc22124f49b75db50c954 534 net optional tnftp_20070806-0.1.dsc
+ 2ea241c19dff31f81a64a19ac592de67 382027 net optional tnftp_20070806-0.1.tar.gz
+ a69dd4f5087da29edc6ceb6d6cae049c 167494 net optional tnftp_20070806-0.1_i386.deb

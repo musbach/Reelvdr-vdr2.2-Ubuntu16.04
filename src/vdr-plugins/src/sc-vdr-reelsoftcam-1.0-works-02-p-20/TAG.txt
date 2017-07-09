@@ -1,0 +1,3 @@
+compiles and no runtime error
+change to parallel_int_32
+and some compiler options

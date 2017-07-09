@@ -1,0 +1,96 @@
+tnftp (20070806-0.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Updated version
+
+ -- Deti Fliegl <fliegl@baycom.de>  Tue, 20 Nov 2007 18:35:05 +0100
+
+tnftp (20050625-0.2) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * renamed binary from ftp to tnftp (Closes: #387717)
+  * Urgency high due RCness of the bug
+
+ -- Bastian Venthur <venthur@debian.org>  Thu,  1 Feb 2007 13:37:37 +0100
+
+tnftp (20050625-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream version fixes CVE-2004-1294 (Closes: #285902).
+
+ -- Luk Claes <luk@debian.org>  Wed, 19 Jul 2006 19:13:05 +0200
+
+tnftp (2.0beta1-1) unstable; urgency=low
+
+  * New upstream release
+  * upstream program name has been changed.
+
+ -- Takuo KITAME <kitame@debian.org>  Wed, 21 Jan 2004 12:49:57 +0900
+
+lukemftp (1.5-8) unstable; urgency=low
+
+  * Fix description
+  * change maintainer address to @debian.org
+
+ -- Takuo KITAME <kitame@debian.org>  Wed, 20 Nov 2002 04:53:16 +0900
+
+lukemftp (1.5-7) unstable; urgency=low
+
+  * fix for buffer overflow on PASV from malicious server. (closes: #146148)
+    backported from
+     http://www.freebsd.org/cgi/cvsweb.cgi/src/contrib/lukemftp/src/ftp.c
+ 
+ -- Takuo KITAME <kitame@northeye.org>  Wed,  8 May 2002 10:37:45 +0900
+
+lukemftp (1.5-6) unstable; urgency=low
+
+  * remove Provides: ftp (closes: #130438)
+
+ -- Takuo KITAME <kitame@northeye.org>  Fri, 25 Jan 2002 14:17:44 +0900
+
+lukemftp (1.5-5) unstable; urgency=low
+
+  * Added Build-Depends
+  * Build-Depends: debhelper (>> 3.0.0) (closes: Bug#94950)
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed, 25 Apr 2001 01:25:50 +0900
+
+lukemftp (1.5-4) unstable; urgency=low
+
+  * Added alternatives mechanism support. (priority 110) (closes: Bug#82084)
+
+ -- Takuo KITAME <kitame@northeye.org>  Tue, 13 Feb 2001 14:03:14 +0900
+
+lukemftp (1.5-3) unstable; urgency=low
+
+  * closes: Bug#77165
+    Manpage installed by default is a cat page
+
+ -- Takuo KITAME <kitame@northeye.org>  Fri, 17 Nov 2000 17:24:43 +0900
+
+lukemftp (1.5-2) unstable; urgency=low
+
+  * add 'lukem' into editline.3/editrc.5 filename. (closes: Bug#76965)
+
+ -- Takuo KITAME <kitame@northeye.org>  Tue, 14 Nov 2000 18:40:46 +0900
+
+lukemftp (1.5-1) unstable; urgency=low
+
+  * New upstream release
+  * lukemftp.h: #define	DEFAULTPAGER	"/usr/bin/pager" (closes: Bug#51147)
+
+ -- Takuo KITAME <kitame@northeye.org>  Mon, 13 Nov 2000 10:10:34 +0900
+
+lukemftp (1.1-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Takuo KITAME <kitame@northeye.org>  Tue, 16 Nov 1999 21:47:28 +0900
+
+lukemftp (1.0-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Takuo KITAME <kitame@northeye.org>  Sun,  7 Nov 1999 22:45:54 +0900
+
+

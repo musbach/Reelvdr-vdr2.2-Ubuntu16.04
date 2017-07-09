@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mlib
+END
+dsputil_mlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mlib/dsputil_mlib.c
+END

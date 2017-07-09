@@ -1,0 +1,10 @@
+Package: reelvdr-pi-avahi
+Version: 0.0.1.6
+Section: reel
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/avahi
+Depends: libavahi-client3
+Description: Avahi
+Description-de: Avahi

@@ -1,0 +1,121 @@
+Checking for pkg-config ... yes
+Checking for pkg-config libextractor ... no
+Checking for libextractor ... testhdr.c:2:23: fatal error: extractor.h: Datei oder Verzeichnis nicht gefunden
+ #include <extractor.h>
+                       ^
+compilation terminated.
+no
+--------
+/* cc -g testhdr.c -o testhdr   -lextractor */
+#include <stdio.h> #include <extractor.h> int main(int c, char **v) { EXTRACTOR_getKeywords(0,0); }
+--------
+Checking for pkg-config libcap ... no
+Checking for libcap ... yes
+adding -lcap to LIBS_VDR
+Checking for pkg-config libbluray ... no
+Checking for libbluray ... testhdr.c:2:30: fatal error: libbluray/bluray.h: Datei oder Verzeichnis nicht gefunden
+ #include <libbluray/bluray.h>
+                              ^
+compilation terminated.
+no
+--------
+/* cc -g testhdr.c -o testhdr   -lbluray */
+#include <stdio.h> #include <libbluray/bluray.h> int main(int c, char **v) { bd_get_disc_info(0); }
+--------
+Checking for pkg-config libxine ... adding -lxine to LIBS_XINE
+yes
+Checking for pkg-config dlfcn ... no
+Checking for dlfcn ... yes
+adding -ldl to LIBS_DLFCN
+Checking for xine plugin directory ... /usr/lib/xine/plugins/2.3
+Checking for pkg-config libavutil ... adding -lavutil to LIBS_AVUTIL
+yes
+Checking for pkg-config libjpeg ... no
+Checking for libjpeg ... yes
+adding -ljpeg to LIBS_JPEG
+Checking for pkg-config x11 ... adding -lX11 to LIBS_X11
+yes
+Checking for pkg-config pthread ... no
+Checking for pthread ... testhdr.c: In function ‘main’:
+testhdr.c:4:3: warning: null argument where non-null required (argument 1) [-Wnonnull]
+   pthread_create(0,0,0,0); 
+   ^
+testhdr.c:4:3: warning: null argument where non-null required (argument 3) [-Wnonnull]
+yes
+adding -lpthread to LIBS_PTHREAD
+Checking for pkg-config xext ... adding -lXext to LIBS_X11
+yes
+Checking for pkg-config xshm ... no
+Checking for xshm ... yes
+Checking for pkg-config xrender ... adding -lXrender to LIBS_X11
+yes
+Checking for pkg-config xshape ... no
+Checking for xshape ... yes
+Checking for pkg-config xdpms ... no
+Checking for xdpms ... yes
+Checking for pkg-config xinerama ... adding -lXinerama to LIBS_X11
+yes
+Checking for pkg-config opengl ... no
+Checking for opengl ... yes
+adding -lGL to LIBS_X11
+adding -lGLU to LIBS_X11
+Checking for pkg-config vdpau ... no
+Checking for vdpau ... testhdr.c:2:29: fatal error: vdpau/vdpau_x11.h: Datei oder Verzeichnis nicht gefunden
+ #include <vdpau/vdpau_x11.h>
+                             ^
+compilation terminated.
+no
+--------
+/* cc -g testhdr.c -o testhdr   -lvdpau */
+#include <stdio.h> #include <vdpau/vdpau_x11.h> int main(int c, char **v) { vdp_device_create_x11(0,0,0,0); }
+--------
+Checking for pkg-config dbus-glib-1 ... adding -ldbus-glib-1 to LIBS_X11
+adding -ldbus-1 to LIBS_X11
+adding -lgobject-2.0 to LIBS_X11
+adding -lglib-2.0 to LIBS_X11
+adding -I/usr/include/dbus-1.0 to CFLAGS_X11
+adding -I/usr/lib/i386-linux-gnu/dbus-1.0/include to CFLAGS_X11
+adding -I/usr/include/glib-2.0 to CFLAGS_X11
+adding -I/usr/lib/i386-linux-gnu/glib-2.0/include to CFLAGS_X11
+yes
+Checking for pkg-config mce-dbus-names ... no
+Checking for mce-dbus-names ... testhdr.c:2:28: fatal error: mce/dbus-names.h: Datei oder Verzeichnis nicht gefunden
+ #include <mce/dbus-names.h>
+                            ^
+compilation terminated.
+no
+--------
+/* cc -g testhdr.c -o testhdr    */
+#include <X11/Xlib.h> #include <mce/dbus-names.h> int main(int c, char **v) { ; return 0; }
+--------
+adding -lm to LIBS_X11
+adding -ldl to LIBS_X11
+adding -lpthread to LIBS_X11
+adding -ldl to LIBS_VDR
+
+Enabled features:
+  x11
+  fb
+  vdr
+  libxine
+  libavutil
+  libjpeg
+  dbus_glib_1
+  xshm
+  xdpms
+  xinerama
+  xrender
+  xshape
+  opengl
+  pthread
+  dlfcn
+  i18n
+  libcap
+Disabled features:
+  libextractor
+  vdpau
+  libbluray
+  mce-dbus-names
+
+Creating features.h ...
+Creating config.mak ...

@@ -1,0 +1,191 @@
+<!--alist-->
+<body class="frame">
+<div id="body">
+<?% ######################################################################## %?>
+<?% aus = gettext('Off') %?>
+<?% an = gettext('On') %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+		    <?% IF allow('tlist') %?>
+          <?% IF param.timers.${id}.allTimer.size %?>
+<?% IF verbose %?>
+<!-- active:  <?% param.timers.${id}.activeTimer.size %?>   -->
+<!-- deactive:<?% param.timers.${id}.deactiveTimer.size %?> -->
+<?% END %?>
+                <a href="?cmd=tlist&amp;data=<?% param.timers.${id}.allTimer.join('_') %?>"
+                     onmouseover="ttptlist(this, '<?% gettext("Planned recordings") %?>','<?% param.timers.${id}.allTimer.join('_') %?>', -200);">
+                  <img src="images/info.<?% global.imagetyp %?>" alt="" />
+               </a>
+        <?% END %?>
+        <?% END %?>
+                <a href="?cmd=search&amp;data=<?% url( title ) %?>">
+                    <img src="images/find.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search for repeats") %?>" />
+                </a>
+		    <?% IF allow('aedit') %?>
+                <a href="javascript:popup('aedit','<?% id %?>',620,670,1)">
+                    <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit autotimer") %?>" />
+                </a>
+		    <?% END %?>
+		    <?% IF allow('adelete') %?>
+                <a href="javascript:sureandreload('<?% gettext("Would you like to delete this autotimer?") %?>','<?% escape(title) %?>','adelete','<?% id %?>')">
+                    <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete autotimer") %?>" />
+                </a>
+		    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+        <?% UNLESS aktiv %?>
+            <?% state = "deactive" %?>
+        <?% ELSE %?>
+            <?% state = "" %?>
+        <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsArea %?>
+      <div id="item<?% id %?>" class="areabegin">
+      <?% PROCESS SetState %?>
+        <table class="fieldtable" summary="">
+          <tr>
+            <td class="fieldhead<?% IF state != "";" ";state;END %?>">
+              <div class="fieldhead<?% IF state != "";" ";state;END %?>">
+  	        <?% IF allow('atoggle') %?>
+            <a href="javascript:toggle('atoggle','<?% id %?>')">
+            <?% END %?>
+            <img id="toggle<?% id %?>" src="images/<?% aktiv ? 'on' : 'off'%?>.<?% global.imagetyp %?>" alt="" />
+            <?% "</a>" IF allow('atoggle') %?>
+		  <?% IF allow('aedit') %?>
+                  <a title="<?% title %?>" href="javascript:popup('aedit','<?% id %?>',620,670,1)" class="fieldinline<?% IF state != "";" ";state;END %?>">
+		  <?% END %?>
+                  <font class="title<?% IF state != "";" ";state;END %?>"><?% chop(title,25)%?></font>
+                  <?% "</a>" IF allow('aedit') %?>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldtext<?% IF state != "";" ";state;END %?>" style="height:40px;overflow: hidden;">
+		  <?% IF allow('aedit') %?>
+                  <a title="<?% gettext("Edit autotimer") %?>" href="javascript:popup('aedit','<?% id %?>',620,670,1)" class="fieldinline<?% IF state != "";" ";state;END %?>">
+		  <?% END %?>
+                  <?% IF channels.length > 0 || directory != "" %?>
+                  <font class="description<?% IF state != "";" ";state;END %?>">
+                  <?% IF channels.length > 0;
+                      chop(channels,35) %?><br />
+                  <?% END  %?>
+                  <?% IF directory != ""  %?>
+                    <?% directory %?><br />
+                  <?% END  %?>
+                  </font>
+                  <?% END  %?>
+                  <?% "</a>" IF allow('aedit') %?>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldtext">
+              <table class="fieldinline" summary="">
+                <tr>
+                    <td valign="middle" align="left" class="fieldinline">
+                      <?% IF start != stop  %?>
+                        <font class="description<?% IF state != "";" ";state;END %?>">
+                         <?% start %?>-<?% stop %?>
+                        </font>
+                      <?% END  %?>
+                    </td>
+                    <td class="fieldinline push">
+                      <?% PROCESS RowButtons %?>
+                    </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr><td class="fieldbottom"></td></tr>
+        </table>
+      </div>
+<?% END %?>
+<?% ######################################################################## %?>
+<h1><?% gettext("Wished automated recordings") %?></h1>
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+    <?% FOREACH zeile IN data %?>
+       <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+       <?% id=zeile.0;title=zeile.2;channels=zeile.3;directory=zeile.4;start=zeile.5;stop=zeile.6;minlength=zeile.7 %?>
+       <?% IF zeile.1 == 'y' %?><?% aktiv = 1 %?><?% ELSE %?><?% aktiv = 0 %?><?% END %?>
+       <?% PROCESS ItemAsArea %?>
+    <?% END %?>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+<?% IF allow('anew') || allow('aupdate') %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Autotimer",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+<?% IF allow('anew') %?>
+      <a title="<?% gettext("Create new autotimer") %?>" href="javascript:popupcmd('anew',620,670,1)"><img src="images/new.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Create new autotimer") %?>" href="javascript:popupcmd('anew',620,670,1)"><?% gettext("Create new autotimer",20) %?></a><br />
+<?% END %?>
+<?% IF allow('aupdate') %?>
+      <a title="<?% gettext("Search autotimer") %?>" href="javascript:popupcmd('aupdate',620,670,0)"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Search autotimer") %?>" href="javascript:popupcmd('aupdate',620,670,0)"><?% gettext("Search autotimer",20) %?></a><br />
+<?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+<?% IF param.sortable.defined %?>
+<?% cmd = cgi.param('cmd') %?>
+<?% IF cgi.param('data') %?>
+<?% datax = cgi.param('data') %?>
+<?% datas = "&amp;data=${datax}" %?>
+<?% END %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Sorting",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+<?% BLOCK SortItem %?>
+        <ul>
+            <li><a href="?cmd=<?% cmd %?><?% datas %?>&amp;__sortby=<?% row %?>&amp;__desc=0" ><img src="images/home.<?% global.imagetyp %?>" alt="" /></a></li>
+            <li class="label">
+                <?% "<strong>" IF cgi.param('__sortby') == row %?>
+                <a href="?cmd=<?% cmd %?><?% datas %?>&amp;__sortby=<?% row %?>&amp;__desc=<?% IF cgi.param('__sortby') == row && cgi.param('__desc') == 0 %?>1<?% ELSE %?>0<?% END %?>" >
+                <?% label %?>
+                </a>
+                <?% "</strong>" IF cgi.param('__sortby') == row %?>
+            </li>
+            <li><a href="?cmd=<?% cmd %?><?% datas %?>&amp;__sortby=<?% row %?>&amp;__desc=1" ><img src="images/down.<?% global.imagetyp %?>" alt="" /></a></li>
+        </ul>
+<?% END %?>
+    <?% FOREACH row IN fields %?>
+      <?% NEXT IF row.match('^__') %?>
+        <?% PROCESS SortItem label=chop(row,20) %?>
+      <?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Search text",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <form method="post" action="?cmd=asearch" name="searchform">
+        <input type="text" id="timertext" name="data" alt="<?% gettext("Search text") %?>" 
+               onkeyup="suggest('asuggest','timertext','timersuggest');" 
+                <?% IF cgi.param('cmd')=='as' || cgi.param('cmd')=='asearch' %?>value="<?% cgi.param('data')%?>"<?% END %?>
+               autocomplete="off" />
+        <br /><div class="suggestbox" id="timersuggest"></div>
+    </form>
+    </td>
+    </tr>
+    <tr>
+        <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

@@ -1,0 +1,12 @@
+--- osd.h	(revision 15412)
++++ osd.h	(revision 15413)
+@@ -433,6 +437,9 @@
+ #endif /* REELVDR */
+   virtual void Flush(void);
+        ///< Actually commits all data to the OSD hardware.
++#ifdef USE_PINPLUGIN
++  static bool pinValid;
++#endif /* PINPLUGIN */
+   };
+ 
+ class cOsdProvider {

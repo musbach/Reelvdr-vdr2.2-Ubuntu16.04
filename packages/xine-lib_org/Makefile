@@ -1,0 +1,60 @@
+#just for the reelbox package build-system
+
+RELEASE := $(shell lsb_release -rs)
+
+ifeq ($(RELEASE), 7.10)
+  TARGET_VERSION := 1.1.8
+  #PATCHES := xine-lib-debian.diff xine-lib-reel.diff xine-lib-vdr.diff
+  #PATCHES := xine-lib-debian.diff xine-lib-reel.diff
+  PATCHES := $(RELEASE)/xine-lib_1.1.8-1ubuntu1.diff \
+  	$(RELEASE)/xine-lib-reel.diff \
+  	$(RELEASE)/xine-lib-titlechapter.diff \
+  	$(RELEASE)/xine-lib-maxredirect.diff \
+  	$(RELEASE)/xine-lib-matroska.diff
+else ifeq  ($(RELEASE), 8.04)
+  TARGET_VERSION := 1.1.11.1
+  PATCHES := $(RELEASE)/xine-lib_1.1.11.1-ubuntu.diff \
+  	$(RELEASE)/xine-lib-1.1.11.1-reel.diff \
+  	$(RELEASE)/xine-lib-maxredirect.diff \
+  	$(RELEASE)/xine-lib-matroska.diff
+else ifeq  ($(RELEASE), 14.04)
+  TARGET_VERSION := 1.2.01.1
+  PATCHES := $(RELEASE)/xine-lib_1.1.11.1-ubuntu.diff \
+  	$(RELEASE)/xine-lib-1.1.11.1-reel.diff \
+  	$(RELEASE)/xine-lib-maxredirect.diff \
+  	$(RELEASE)/xine-lib-matroska.diff
+endif
+
+all: deb
+
+deb: xine-lib-$(TARGET_VERSION)/.ispatched
+	#xine-lib-$(TARGET_VERSION)/debian/changelog
+	cp $(RELEASE)/changelog $(<D)/debian/
+	echo "this here is really really experimental..."
+	cd xine-lib-$(TARGET_VERSION) ; dpkg-buildpackage -rfakeroot -us -uc -tc
+
+
+xine-lib-$(TARGET_VERSION)/debian/changelog: $(RELEASE)/changelog
+	#Todo: patch version/timestamp!
+	cp $< $@
+	touch $@
+
+
+xine-lib-$(TARGET_VERSION)/.ispatched: xine-lib-$(TARGET_VERSION)/configure
+	cat $(PATCHES) | patch -d $(<D) -p1
+	chmod 755 $(@D)/debian/rules
+	touch $@
+
+
+xine-lib-$(TARGET_VERSION)/configure: xine-lib-$(TARGET_VERSION).tar.bz2
+	echo "(RELEASE): $(RELEASE)"
+	tar -jxf $<
+	touch $@
+
+xine-lib-$(TARGET_VERSION).tar.bz2:
+	wget http://surfnet.dl.sourceforge.net/project/xine/xine-lib%20%28xine%20core%29/1.1.11.1/xine-lib-1.1.11.1.tar.bz2
+
+
+clean:
+	-rm -rf xine-lib-$(TARGET_VERSION)
+	-rm -f *.deb *.dsc *.changes *.tar.gz

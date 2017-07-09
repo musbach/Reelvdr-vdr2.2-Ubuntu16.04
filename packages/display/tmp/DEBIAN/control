@@ -1,0 +1,10 @@
+Package: display
+Version: 25.0.4-25
+Section: reel-ice
+Priority: optional
+Architecture: i386
+Installed-Size: 2,0M
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: display
+Description: display driver and utils for Intel CE
+Description-de: Display-Treiber und Utilities für Intel CE

@@ -1,0 +1,43 @@
+The basic node hierarchy of the platform_config database is:
+
+platform.
+    startup.
+    memory.
+        layout.
+        media_base_address = 0xXXXXXXXX
+    power.
+    software.
+        threads.
+        drivers.
+            avcap.
+                csc.
+                edid.
+                    50_hz_priority_list.
+                    60_hz_priority_list.
+                    50_hz_addition_list.
+                    60_hz_addition_list.
+                    3D_Format.
+                    audio.
+                hdcp.
+                i2c.
+                infoframe_notification.
+                video.
+            display.
+                stereo.
+            smd.
+                audio.
+                    capture.
+                    render.
+                bufmon.
+                clock.
+                    clock_properties.
+                core.
+                    frame_buffer_properties.
+                demux.
+                tsout.
+                viddec.
+                vidpproc.
+                vidrend.
+            osal.
+            pal.
+            sven.

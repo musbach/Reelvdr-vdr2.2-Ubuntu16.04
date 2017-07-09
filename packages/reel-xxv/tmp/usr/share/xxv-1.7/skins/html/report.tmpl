@@ -1,0 +1,50 @@
+<h1><?% gettext("Protocol of the activities") %?></h1>
+
+<?% FOREACH name IN data.keys.sort %?>
+    <h2><?% gettext("Report for module") %?>&nbsp;
+        <?% name %?>:</h2>
+    <?% IF name == 'RECORDS';
+            link = '?cmd=rdisplay&data=';
+        ELSIF name == 'AUTOTIMER';
+            link = '?cmd=tedit&data=';
+        ELSIF name == 'SVDRP';
+            link = '?cmd=vdredit&data=';
+        ELSE;
+            link = '';
+        END;
+     %?>
+
+    <?% FOREACH typ IN data.$name.keys.sort %?>
+        <?% IF typ == 'message' %?>
+            <?% data.$name.$typ %?><p>
+
+        <?% ELSIF typ == 'table' and data.$name.$typ.size > 1 %?>
+           <?% fields = data.$name.$typ.shift %?>
+                <table>
+                    <tr>
+                    <?% FOREACH field IN fields %?>
+                        <?% NEXT IF field.match('^__') %?>
+                        <th>
+                            <nobr><?% field %?>
+                            </nobr>
+                        </th>
+                    <?% END %?>
+                    </tr>
+                    <?% FOREACH zeile IN data.$name.$typ %?>
+                    <tr>
+                        <?% c = -1 %?>
+                        <?% FOREACH field IN zeile %?>
+                            <?% c = c + 1 %?>
+                            <?% NEXT IF fields.$c.match('^__') %?>
+                            <td><?% IF link %?><a href="<?% link %?><?% zeile.first %?>"><?% END %?>
+                                <?% field %?>
+                                <?% IF link %?></a><?% END %?>
+                            </td>
+                        <?% END %?>
+                    </tr>
+                    <?% END %?>
+            </table>
+        <?% END %?>
+    <?% END %?>
+    <p>
+<?% END %?>

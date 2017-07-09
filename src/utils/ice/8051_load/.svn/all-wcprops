@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/utils/ice/8051_load
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/ice/8051_load/Makefile
+END
+load_8051.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/ice/8051_load/load_8051.c
+END

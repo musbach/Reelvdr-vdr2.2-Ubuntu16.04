@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/reelbox/!svn/ver/1/testing/src/etc/default
+END
+hdboot
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/etc/default/hdboot
+END
+globals
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/default/globals
+END
+setup-shares
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/etc/default/setup-shares
+END
+mcli
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/reelbox/!svn/ver/1/testing/src/etc/default/mcli
+END
+sysconfig
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/etc/default/sysconfig
+END
+dvbloop
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/default/dvbloop
+END
+mcli.factory.ncl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/etc/default/mcli.factory.ncl
+END
+sysconfig.factory.ncl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/etc/default/sysconfig.factory.ncl
+END
+mcli.factory.avg
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/etc/default/mcli.factory.avg
+END
+sysconfig.factory.avg
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/etc/default/sysconfig.factory.avg
+END
+mediaconfigs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/etc/default/mediaconfigs
+END
+hdparm
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/etc/default/hdparm
+END
+tftpd-hpa.conf
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/etc/default/tftpd-hpa.conf
+END
+reel-browser.conf
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/etc/default/reel-browser.conf
+END

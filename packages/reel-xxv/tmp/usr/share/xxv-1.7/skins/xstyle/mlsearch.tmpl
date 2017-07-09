@@ -1,0 +1,51 @@
+<h1><?% gettext("Search Media") %?></h1>
+
+<?% INCLUDE 'mlnavcontainer.tmpl'
+        nav_back = 1
+        nav_ranges = 1
+        nav_new = 1
+%?>
+
+<script language="JavaScript" type="text/javascript">
+function selectAllFields()
+{
+	for (var i = 0; i < document.search['__selfields'].length; i++)
+	{
+		document.search['__selfields'].options[i].selected = true;
+	}
+}
+</script>
+
+<form method="post" action="?cmd=mlsearch" name="search">
+<table width="100%">
+    <tr>
+        <td valign="middle" align="center">
+            <?% gettext('Search Item') %?>:
+            <input type="text" name="__searchitem" id="searchitem" value="<?% param.searchitem %?>" size="50" maxlength="255" />
+        </td>
+        <td valign="middle" align="center">
+            <?% gettext('Search in') %?>:<br>
+            <select name='__selfields' size="8" multiple="multiple">
+            <?% fields = param.fields %?>
+            <?% WHILE fields.size %?>
+            <?% field = fields.shift %?>
+                <option value="<?% field.0 %?>" <?% IF param.selfields.grep("^$field.0\$").size > 0 %?>selected<?% END %?>><?% field.1 %?>
+            <?% END %?>
+            </select>
+            <br>
+            <a href="javascript:selectAllFields()" ><?% gettext('Select all') %?></a>
+        </td>
+        <td valign="middle" align="center">
+            <?% gettext('Search in selected Genres') %?>
+            <?% INCLUDE 'mlgenres.tmpl' %?>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <input type='submit' name="__search" value='<?% gettext('Search') %?>'/>
+        </td>
+    </tr>
+</table>
+</form>
+
+<?% INCLUDE 'mllistmedias.tmpl' %?>

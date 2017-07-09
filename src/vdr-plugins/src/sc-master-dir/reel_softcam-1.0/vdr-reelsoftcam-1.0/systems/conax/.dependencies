@@ -1,0 +1,6 @@
+conax.o: conax.c ../../system-common.h ../../data.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ ../../misc.h ../../system.h ../../crypto.h ../../crypto-bn.h \
+ ../../support/idea.h ../../data.h ../../misc.h ../../log-sys.h \
+ ../../log.h ../../version.h

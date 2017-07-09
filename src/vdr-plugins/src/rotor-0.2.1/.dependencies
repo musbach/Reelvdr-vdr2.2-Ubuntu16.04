@@ -1,0 +1,9 @@
+rotor.o: rotor.c menu.h diseqc.h filter.h rotor.h i18n.h status.h
+i18n.o: i18n.c i18n.h
+menuitems.o: menuitems.c menuitems.h menu.h diseqc.h filter.h rotor.h \
+ i18n.h status.h
+menu.o: menu.c diseqc.h menu.h filter.h rotor.h i18n.h status.h \
+ menuitems.h
+diseqc.o: diseqc.c diseqc.h menu.h filter.h rotor.h i18n.h status.h
+status.o: status.c status.h menu.h diseqc.h filter.h rotor.h i18n.h
+filter.o: filter.c filter.h menu.h diseqc.h rotor.h i18n.h status.h

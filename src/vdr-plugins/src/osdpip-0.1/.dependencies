@@ -1,0 +1,14 @@
+osdpip.o: osdpip.c osd.h osd_info.h player.h pesassembler.h setup.h
+osd_info.o: osd_info.c osd_info.h setup.h
+osd.o: osd.c osd.h osd_info.h player.h pesassembler.h receiver.h setup.h \
+ ../filebrowser/servicestructs.h ../filebrowser/stillpictureplayer.h \
+ ../filebrowser/filecache.h ../filebrowser/convert.h \
+ ../filebrowser/menuBrowserBase.h ../filebrowser/browserItems.h \
+ ../filebrowser/fileType.h ../filebrowser/dirType.h \
+ ../filebrowser/playlist.h ../filebrowser/filetools.h \
+ ../filebrowser/browserStatus.h ../filebrowser/servicestructs.h \
+ ../filebrowser/userIfBase.h ../filebrowser/setup.h
+receiver.o: receiver.c receiver.h player.h pesassembler.h setup.h
+player.o: player.c player.h pesassembler.h
+setup.o: setup.c setup.h
+pesassembler.o: pesassembler.c pesassembler.h

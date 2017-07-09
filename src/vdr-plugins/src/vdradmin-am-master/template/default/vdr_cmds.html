@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="scroller">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=<?% charset %?>" />
+	<title>VDRAdmin-AM - <?% gettext('VDR Commands') %?></title>
+	<link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% IF usercss %?>
+		<link href="user.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% END %?>
+	<script type="text/javascript" language="JavaScript1.2" src="library.js"></script>
+</head>
+
+<body id="vdr_cmds">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id="heading">
+		<tr>
+			<td class="col_title"><h1><?% gettext('VDR Commands') %?></h1></td>
+<?% IF help_url %?>
+			<td class="col_help">
+				<a href="javascript:open_help('<?% help_url %?>');"><img src="bilder/help.png" border="0" alt="help" title="<?% gettext('Help') %?>" /></a>
+			</td>
+<?% END %?>
+		</tr>
+	</table>
+
+<?% IF error_msg %?>
+		<div class="error"><?% error_msg %?></div>
+<?% END %?>
+
+	<form action="<?% url %?>" method="get" name="FormName">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="content" class="group">
+			<tr class="row_odd">
+				<td class="col_label"><h5><?% gettext('Export channels as playlist:') %?></h5></td>
+				<td class="col_value">
+<?% FOREACH cmd = export_cmds %?>
+					[<a href="<?% cmd.url %?>"><?% cmd.text %?></a>]
+<?% END %?>
+				</td>
+			</tr>
+			<tr class="row_even">
+				<td class="col_label"><h5><?% gettext('Number of lines to show:') %?></h5></td>
+				<td class="col_value">
+					<select name="max_lines">
+						<option value="20" <?% IF max_lines == 20 %?>selected="selected"<?% END %?>>20</option>
+						<option value="50" <?% IF max_lines == 50 %?>selected="selected"<?% END %?>>50</option>
+						<option value="100" <?% IF max_lines == 100 %?>selected="selected"<?% END %?>>100</option>
+						<option value="-1" <?% IF max_lines == -1 %?>selected="selected"<?% END %?>><?% gettext('unlimited') %?></option>
+					</select>
+				</td>
+			</tr>
+			<tr class="row_odd">
+				<td class="col_label"><h5><?% gettext('SVDRP commands:') %?></h5></td>
+				<td class="col_value">
+					<input type="text" name="svdrp_cmd" value="<?% svdrp_cmd | html %?>"/>
+					<input type="submit" class="submit" name="run_svdrpcmd" value="<?% gettext('Run') %?>" onclick="return confirm('<?% gettext('Really run this command?') %?>')" />
+				</td>
+			</tr>
+<?% IF commands.size() > 0 %?>
+			<tr class="row_even">
+				<td class="col_label"><h5><?% gettext('Commands defined in commands.conf:') %?></h5></td>
+				<td class="col_value">
+					<select name="vdr_cmd" class="submit">
+						<?% FOREACH cmd = commands %?>
+							<option value="<?% cmd.id %?>" <?% IF vdr_cmd == cmd.id %?>selected="selected"<?% END %?>><?% cmd.title %?></option>
+						<?% END %?>
+					</select>
+					<input type="submit" class="submit" name="run_vdrcmd" value="<?% gettext('Run') %?>" onclick="return confirm('<?% gettext('Really run this command?') %?>')" />
+				</td>
+			</tr>
+<?% END %?>
+
+		</table>
+		<input type="hidden" name="aktion" value="vdr_cmds"/>
+	</form>
+
+<?% IF show_output.size() > 0 %?>
+	<br />
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="group">
+		<tr class="heading">
+			<td><h2><?% gettext('Output') %?></h2></td>
+		</tr>
+
+<?% FOREACH output = show_output %?>
+		<tr class="<?% IF loop.count() % 2 == 0 %?>row_even<?% ELSE %?>row_odd<?% END %?>">
+			<td><pre><?% output.line | html %?></pre></td>
+		</tr>
+<?% END %?>
+	</table>
+<?% END %?>
+</body>
+</html>

@@ -1,0 +1,56 @@
+--- remux.h	(revision 15412)
++++ remux.h	(revision 15413)
+@@ -171,6 +171,9 @@
+   int MakeStream(uchar *Target, uchar Type, int Pid);
+   int MakeAC3Descriptor(uchar *Target, uchar Type);
+   int MakeSubtitlingDescriptor(uchar *Target, const char *Language, uchar SubtitlingType, uint16_t CompositionPageId, uint16_t AncillaryPageId);
++#ifdef USE_TTXTSUBS
++  int MakeTeletextDescriptor(uchar *Target, const tTeletextSubtitlePage *pages, int pageCount);
++#endif /* TTXTSUBS */
+   int MakeLanguageDescriptor(uchar *Target, const char *Language);
+   int MakeCRC(uchar *Target, const uchar *Data, int Length);
+   void GeneratePmtPid(const cChannel *Channel);
+@@ -216,6 +219,9 @@
+   int vpid;
+   int ppid;
+   int vtype;
++#ifdef USE_TTXTSUBS
++  int tpid;
++#endif /* TTXTSUBS */
+   int apids[MAXAPIDS + 1]; // list is zero-terminated
+   int atypes[MAXAPIDS + 1]; // list is zero-terminated
+   char alangs[MAXAPIDS][MAXLANGCODE2];
+@@ -228,6 +234,10 @@
+   uint16_t compositionPageIds[MAXSPIDS];
+   uint16_t ancillaryPageIds[MAXSPIDS];
+   bool updatePrimaryDevice;
++#ifdef USE_TTXTSUBS
++  int totalTtxtSubtitlePages;
++  tTeletextSubtitlePage teletextSubtitlePages[MAXTXTPAGES];
++#endif /* TTXTSUBS */
+ protected:
+   int SectionLength(const uchar *Data, int Length) { return (Length >= 3) ? ((int(Data[1]) & 0x0F) << 8)| Data[2] : 0; }
+ public:
+@@ -260,6 +270,11 @@
+   int Vtype(void) const { return vtype; }
+        ///< Returns the video stream type as defined by the current PMT, or 0 if no video
+        ///< stream type has been detected, yet.
++#ifdef USE_TTXTSUBS
++  int Tpid(void) { return tpid; }
++       ///< Returns the teletext pid as defined by the current PMT, or 0 if no teletext
++       ///< pid has been detected, yet.
++#endif /* TTXTSUBS */
+   const int *Apids(void) const { return apids; }
+   const int *Dpids(void) const { return dpids; }
+   const int *Spids(void) const { return spids; }
+@@ -274,6 +289,10 @@
+   uchar SubtitlingType(int i) const { return (0 <= i && i < MAXSPIDS) ? subtitlingTypes[i] : uchar(0); }
+   uint16_t CompositionPageId(int i) const { return (0 <= i && i < MAXSPIDS) ? compositionPageIds[i] : uint16_t(0); }
+   uint16_t AncillaryPageId(int i) const { return (0 <= i && i < MAXSPIDS) ? ancillaryPageIds[i] : uint16_t(0); }
++#ifdef USE_TTXTSUBS
++  const tTeletextSubtitlePage *TeletextSubtitlePages() const { return teletextSubtitlePages; }
++  int TotalTeletextSubtitlePages() const { return totalTtxtSubtitlePages; }
++#endif /* TTXTSUBS */
+   };
+ 
+ // TS to PES converter:

@@ -1,0 +1,4 @@
+tmp/etc/init.d/remove-symlinks: /usr/src/reelbox/testing/src/etc/init.d/remove-symlinks
+tmp/etc/usbmount/usbmount.conf: /usr/src/reelbox/testing/src/etc/usbmount/usbmount.conf
+tmp//usr/sbin/PTPCameraMount.sh: /usr/src/reelbox/testing/src/sbin/PTPCameraMount.sh
+tmp//usr/share/usbmount/usbmount: /usr/src/reelbox/testing/src/sbin/usbmount

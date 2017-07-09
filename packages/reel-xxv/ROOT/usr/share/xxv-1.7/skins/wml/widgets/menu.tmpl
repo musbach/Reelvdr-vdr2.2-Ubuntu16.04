@@ -1,0 +1,18 @@
+<?% message = data.shift %?>
+<card id="first" title="MenuTemplate">
+<p>
+<?% IF message %?>
+Fehler: <?% message %?><br />
+<?% END %?>
+<?% FOREACH field IN data %?>
+    <?% group = field.0; short = field.1; name = field.2; descr = field.3 %?>
+    <?% IF ! oldgroup.defined %?>
+        <b><?% group | html %?></b><br />
+    <?% ELSIF oldgroup != group && oldgroup.defined %?>
+        <b><?% group %?></b><br />
+    <?% END %?>
+        <a href="?cmd=<?% name %?>"><?% name | uri | html %?></a><br />
+        <?% oldgroup = group %?>
+<?% END %?>
+</p>
+</card>

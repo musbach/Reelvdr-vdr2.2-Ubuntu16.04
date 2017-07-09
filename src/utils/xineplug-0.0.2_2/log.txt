@@ -1,0 +1,88 @@
+g++ -MM -MG -D_GNU_SOURCE -D__LINUX__  -I../xine-lib/src -I../xine-lib/include -I../xine-lib/src/xine-utils -I../xine-lib/src/xine-engine -I../xine-lib/lib -I../xine-lib/src/input/libdvdnav/ audio_out.c mpeg_videodec.c spu.c spu_If.c xine_decoder.c plugin.c audio_out.c mpeg_videodec.c spu.c spu_If.c xine_decoder.c plugin.c ReadBuffer.cpp VideoStreamParser.cpp > .dependencies
+cc -O2 -Wall -c -D_GNU_SOURCE -D__LINUX__  -I../xine-lib/src -I../xine-lib/include -I../xine-lib/src/xine-utils -I../xine-lib/src/xine-engine -I../xine-lib/lib -I../xine-lib/src/input/libdvdnav/ audio_out.c
+audio_out.c: In function ‘ao_write’:
+audio_out.c:158:5: warning: pointer targets in passing argument 1 of ‘VXI->AoWrite’ differ in signedness [-Wpointer-sign]
+     return VXI->AoWrite(data, num_frames);
+     ^
+audio_out.c:158:5: note: expected ‘short unsigned int *’ but argument is of type ‘int16_t *’
+audio_out.c: In function ‘init_plugin_audio_out_reel’:
+audio_out.c:220:5: warning: ‘xine_xmalloc’ is deprecated (declared at /usr/include/xine/xineutils.h:141) [-Wdeprecated-declarations]
+     cls = (audio_driver_class_t *)xine_xmalloc(sizeof(audio_driver_class_t));
+     ^
+audio_out.c: At top level:
+audio_out.c:172:14: warning: ‘aocls_get_description’ defined but not used [-Wunused-function]
+ static char *aocls_get_description (audio_driver_class_t *cls)
+              ^
+audio_out.c:177:14: warning: ‘aocls_get_identifier’ defined but not used [-Wunused-function]
+ static char *aocls_get_identifier (audio_driver_class_t *cls)
+              ^
+cc -O2 -Wall -c -D_GNU_SOURCE -D__LINUX__  -I../xine-lib/src -I../xine-lib/include -I../xine-lib/src/xine-utils -I../xine-lib/src/xine-engine -I../xine-lib/lib -I../xine-lib/src/input/libdvdnav/ mpeg_videodec.c
+mpeg_videodec.c: In function ‘init_plugin_mpeg_videodec_reel’:
+mpeg_videodec.c:148:5: warning: ‘xine_xmalloc’ is deprecated (declared at /usr/include/xine/xineutils.h:141) [-Wdeprecated-declarations]
+     cls = (video_decoder_class_t *)xine_xmalloc(sizeof(video_decoder_class_t));
+     ^
+mpeg_videodec.c: At top level:
+mpeg_videodec.c:105:14: warning: ‘vdcls_get_description’ defined but not used [-Wunused-function]
+ static char *vdcls_get_description(video_decoder_class_t *cls)
+              ^
+mpeg_videodec.c:110:14: warning: ‘vdcls_get_identifier’ defined but not used [-Wunused-function]
+ static char *vdcls_get_identifier(video_decoder_class_t *cls)
+              ^
+cc -O2 -Wall -c -D_GNU_SOURCE -D__LINUX__  -I../xine-lib/src -I../xine-lib/include -I../xine-lib/src/xine-utils -I../xine-lib/src/xine-engine -I../xine-lib/lib -I../xine-lib/src/input/libdvdnav/ spu.c
+spu.c: In function ‘my_spudec_decode_nav’:
+spu.c:230:2: warning: ‘xine_xmalloc’ is deprecated (declared at /usr/include/xine/xineutils.h:141) [-Wdeprecated-declarations]
+  node->next = (pci_node_t *)xine_xmalloc(sizeof(pci_node_t));
+  ^
+In file included from spu.c:77:0:
+spu.c: At top level:
+debug.h:79:13: warning: ‘video_overlay_print_event’ defined but not used [-Wunused-function]
+ static void video_overlay_print_event(video_overlay_event_t *event)
+             ^
+spu.c:84:13: warning: ‘spudec_print_overlay’ declared ‘static’ but never defined [-Wunused-function]
+ static void spudec_print_overlay( vo_overlay_t *overlay );
+             ^
+cc -O2 -Wall -c -D_GNU_SOURCE -D__LINUX__  -I../xine-lib/src -I../xine-lib/include -I../xine-lib/src/xine-utils -I../xine-lib/src/xine-engine -I../xine-lib/lib -I../xine-lib/src/input/libdvdnav/ spu_If.c
+cc -O2 -Wall -c -D_GNU_SOURCE -D__LINUX__  -I../xine-lib/src -I../xine-lib/include -I../xine-lib/src/xine-utils -I../xine-lib/src/xine-engine -I../xine-lib/lib -I../xine-lib/src/input/libdvdnav/ xine_decoder.c
+xine_decoder.c: In function ‘spudec_decode_data’:
+xine_decoder.c:82:23: warning: variable ‘cur_seq’ set but not used [-Wunused-but-set-variable]
+   spudec_seq_t       *cur_seq;
+                       ^
+xine_decoder.c: In function ‘spudec_set_button’:
+xine_decoder.c:240:3: warning: ‘xine_xmalloc’ is deprecated (declared at /usr/include/xine/xineutils.h:141) [-Wdeprecated-declarations]
+   overlay_event = xine_xmalloc (sizeof(video_overlay_event_t));
+   ^
+xine_decoder.c:242:3: warning: ‘xine_xmalloc’ is deprecated (declared at /usr/include/xine/xineutils.h:141) [-Wdeprecated-declarations]
+   overlay = xine_xmalloc (sizeof(vo_overlay_t));
+   ^
+xine_decoder.c: In function ‘open_plugin’:
+xine_decoder.c:334:3: warning: ‘xine_xmalloc’ is deprecated (declared at /usr/include/xine/xineutils.h:141) [-Wdeprecated-declarations]
+   this = (spudec_decoder_t *) xine_xmalloc (sizeof (spudec_decoder_t));
+   ^
+xine_decoder.c:347:3: warning: ‘xine_xmalloc’ is deprecated (declared at /usr/include/xine/xineutils.h:141) [-Wdeprecated-declarations]
+   this->event.object.overlay = xine_xmalloc(sizeof(vo_overlay_t));
+   ^
+xine_decoder.c: In function ‘init_reel_spu_decode_plugin’:
+xine_decoder.c:399:3: warning: ‘xine_xmalloc’ is deprecated (declared at /usr/include/xine/xineutils.h:141) [-Wdeprecated-declarations]
+   this = (spudec_class_t *) xine_xmalloc (sizeof (spudec_class_t));
+   ^
+xine_decoder.c:404:39: warning: assignment from incompatible pointer type [enabled by default]
+   this->decoder_class.identifier      = get_identifier;
+                                       ^
+xine_decoder.c:405:39: warning: assignment from incompatible pointer type [enabled by default]
+   this->decoder_class.description     = get_description;
+                                       ^
+In file included from xine_decoder.c:49:0:
+xine_decoder.c: At top level:
+debug.h:79:13: warning: ‘video_overlay_print_event’ defined but not used [-Wunused-function]
+ static void video_overlay_print_event(video_overlay_event_t *event)
+             ^
+cc -O2 -Wall -c -D_GNU_SOURCE -D__LINUX__  -I../xine-lib/src -I../xine-lib/include -I../xine-lib/src/xine-utils -I../xine-lib/src/xine-engine -I../xine-lib/lib -I../xine-lib/src/input/libdvdnav/ plugin.c
+g++ -O2 -Wall -c -D_GNU_SOURCE -D__LINUX__  -I../xine-lib/src -I../xine-lib/include -I../xine-lib/src/xine-utils -I../xine-lib/src/xine-engine -I../xine-lib/lib -I../xine-lib/src/input/libdvdnav/ ReadBuffer.cpp
+g++ -O2 -Wall -c -D_GNU_SOURCE -D__LINUX__  -I../xine-lib/src -I../xine-lib/include -I../xine-lib/src/xine-utils -I../xine-lib/src/xine-engine -I../xine-lib/lib -I../xine-lib/src/input/libdvdnav/ VideoStreamParser.cpp
+VideoStreamParser.cpp:53:65: warning: narrowing conversion of ‘'\37777777670'’ from ‘char’ to ‘const Byte {aka const unsigned char}’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                   '\x7F', '\xFF', '\xFF', '\xC0'}; // Timecode, closed gop
+                                                                 ^
+VideoStreamParser.cpp:53:65: warning: narrowing conversion of ‘'\37777777777'’ from ‘char’ to ‘const Byte {aka const unsigned char}’ inside { } is ill-formed in C++11 [-Wnarrowing]
+VideoStreamParser.cpp:53:65: warning: narrowing conversion of ‘'\37777777777'’ from ‘char’ to ‘const Byte {aka const unsigned char}’ inside { } is ill-formed in C++11 [-Wnarrowing]
+VideoStreamParser.cpp:53:65: warning: narrowing conversion of ‘'\37777777700'’ from ‘char’ to ‘const Byte {aka const unsigned char}’ inside { } is ill-formed in C++11 [-Wnarrowing]
+g++ -O2 -Wall -shared audio_out.o mpeg_videodec.o spu.o spu_If.o xine_decoder.o plugin.o ReadBuffer.o VideoStreamParser.o   -o xineplug_reelbox.so

@@ -1,0 +1,11 @@
+Package: reelaudiodb
+Version: 0.1.2-19
+Section: reel
+Priority: important
+Architecture: i386
+Installed-Size: 1,8M
+Depends: libmysqlclient16, libc6, libtag1c2a, libsqlite3-0, libmagic1, libjpeg62, zlib1g, libgcc1, libstdc++6, mysql-server
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: libreelaudiodb
+Description: reelaudiodb is the backend behind Reel musicbrowser
+	executables needed for crawling and updating audio database

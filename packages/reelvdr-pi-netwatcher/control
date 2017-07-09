@@ -1,0 +1,9 @@
+Package: reelvdr-pi-netwatcher
+Version: 0.0.3
+Section: reel
+Priority: important
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-netwatcher
+Description: Watches the connectivity with the netceiver
+ This is the Netwatcher plugin for the ReelVdr

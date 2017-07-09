@@ -1,0 +1,332 @@
+#!/bin/sh
+#
+# Update XXV's database
+#
+# Usage: update-xxv [OPTIONS]
+#
+# Options: -b <target>    : Make a backup first to <target>.gz
+#          -h <hostname>  : Host name of the MySQL server (default: localhost)
+#          -P <port>      : Port number of MySQL server
+#          -d <database>  : XXV database name (default: xxv)
+#          -u <user>      : Username (default: root)
+#          -p <password>  : Password (default: no password)
+#          -a             : Ask for password (once every run of mysql)
+#          -A             : Ask for password (just once)
+#          -f             : Force upgrade, do not check version
+#          -v             : Display actual Version
+#          -h             : Help
+
+
+# Increment the version number each time the database changes!
+#
+actualVersion=32
+
+# Specify tables to export before and import after update
+#
+tables='AUTOTIMER CHRONICLE MEDIALIB_ACTORS MEDIALIB_VIDEODATA MEDIALIB_VIDEOGENRE MOVETIMER USER XMLTV RECORDER' 
+
+showTitle()
+{
+    echo
+    echo 'update-xxv'
+    echo '----------'
+    echo
+}
+
+showHelp()
+{
+    echo 'Usage: update-xxv [-b] [-H hostname] [-P port] [-d database]'
+    echo '                  [-u user] [-p password]'
+    echo
+    echo '-b <target>    : Make a backup first to <target>.gz'
+    echo '-H <hostname>  : Host name of the MySQL server (default: localhost)'
+    echo '-P <port>      : Port number of MySQL server'
+    echo '-d <database>  : XXV database name (default: xxv)'
+    echo '-u <user>      : Username (default: root)'
+    echo '-p <password>  : Password (default: no password)'
+    echo '-s <sql-file>  : Upgrade sql script (default: upgrade-xxv-db.sql)'
+    echo '-a             : Ask for password (once every run of mysql)'
+    echo '-A             : Ask for password (just once)'
+    echo '-f             : Force upgrade, do not check version'
+    echo '-v             : Display actual version'
+    echo '-h             : Help'
+}
+
+showCommandLineHint()
+{
+    echo
+    echo 'Hint: You might need to overwrite the defaults for the database'
+    echo 'server, the database name or the user name and password.'
+    echo
+    echo 'See update-xxv -h for a list of available options.'
+    echo
+}
+
+showError()
+{
+    echo "Error: $*" >&2
+}
+
+showInfo()
+{
+    echo "Info: $*"
+}
+
+setDefaults()
+{
+    [ -z $host ] && host='localhost'
+    [ -z $database ] && database='xxv'
+    [ -z $user ] && user='root'
+    [ -z $isForceUpdate ] && isForceUpdate='false'
+    [ -z $askPassword ] && askPassword='false'
+    [ -z $upgrade ] && upgrade='upgrade-xxv-db.sql'
+}
+
+buildMysqlParams()
+{
+    mysqlParams="--host=$host --user=$user"
+    if [ $askPassword == 'true' ] ; then
+        mysqlParams="$mysqlParams -p"
+    else
+        if [ -n "$password" ] ; then
+            mysqlParams="$mysqlParams --password='$password'"
+        fi
+    fi
+    if [ -n "$port" ] ; then
+        mysqlParams="$mysqlParams --port=$port"
+    fi
+}
+
+checkXxv()
+{
+    if pgrep xxvd >/dev/null 2>&1 ; then
+        showError 'XXV is still running, please stop XXV first!'
+        exit 1
+    fi
+}
+
+checkFiles()
+{
+    if [ ! -e "$upgrade" ]; then
+        showError "File '$upgrade' not found!"
+        exit 1
+    fi
+}
+
+checkServer()
+{
+    showInfo 'Checking Server'
+    if ! eval mysql $mysqlParams </dev/null >/dev/null 2>&1 ; then
+        showError "Can not connect to mysql server on '$host' !"
+        showCommandLineHint
+        exit 1
+    fi
+}
+
+checkDatabase()
+{
+    showInfo 'Checking database'
+    if ! eval mysql $mysqlParams -f -B -e '"show databases;"' | \
+      grep -e "^$database$" > /dev/null 2>&1 ; then
+        showError "Can not access database '$database'"
+        showCommandLineHint
+        exit 1
+    fi
+}
+
+exportDb()
+{
+    showInfo 'Export data'
+    for table in $tables ; do
+        savFile="$exportDir/$table.sav"
+        if ! eval mysqldump $mysqlParams -n -t -c -r "$savFile" "$database" "$table" ; then
+            showError "Can't save table '$table'"
+        else
+          if ! eval mysql $mysqlParams -f -B $database -e \
+            "\"DROP TABLE IF EXISTS $table;\"" ; then
+              showError "Can't drop table '$table'"
+              exit 1
+          fi
+        fi
+    done
+}
+
+importDb()
+{
+    showInfo 'Restoring data'
+    for table in $tables ; do
+        savFile="$exportDir/$table.sav"
+        if [ -e "$savFile" ]; then
+          if ! eval mysql $mysqlParams -f -B $database < $savFile ; then
+              showError "Can't load table '$table'"
+              exit 1
+          fi
+        fi
+    done
+}
+
+
+updateDb()
+{
+    showInfo 'Updating database'
+    if ! eval mysql $mysqlParams -f -B $database < $upgrade ; then
+        showError 'Update failed!' ;
+    	  exit 1
+    fi
+}
+
+getActualVersion()
+{
+    showInfo "Retrieving actual version: '$actualVersion'";
+}
+
+getVersion()
+{
+    minver=10000000;
+    maxver=0;
+    showInfo 'Retrieving current version'
+    for table in $tables ; do
+        comment=`eval mysql $mysqlParams -f -B -s $database -e \
+          "\"SHOW TABLE STATUS LIKE '$table';\"" 2>/dev/null | cut -f 18`
+        if echo $comment | egrep -q '^[0-9]+$' ; then
+          if [ "$comment" -lt "$minver" ] ; then
+            minver="$comment"
+          fi
+          if [ "$comment" -gt "$maxver" ] ; then
+            maxver="$comment"
+          fi
+        else
+            minver="0"
+        fi
+    done
+
+    if [ "$minver" -ne "$maxver" ] ; then
+      showInfo "Mixed versions of tables: '$minver' until '$maxver'";
+    fi
+    if [ "$minver" -ne 10000000 ] ; then
+      version=$minver
+    fi
+}
+
+updateVersion()
+{
+    showInfo 'Updateing version'
+    for table in $tables ; do
+        if ! eval mysql $mysqlParams -f -B $database -e \
+          "\"ALTER TABLE $table COMMENT '$actualVersion';\"" ; then
+            showError "Can't alter table '$table'"
+            exit 1
+        fi
+    done
+}
+
+#
+# main()
+#
+
+showTitle
+
+# parse parameters
+while [ $# -ge 1 ] ; do
+    case $1 in
+        -b)
+            backupTarget=$2 ; shift
+        ;;
+        -H)
+            host=$2 ; shift
+        ;;
+        -P)
+            port=$2 ; shift
+        ;;
+        -d)
+            database=$2 ; shift
+        ;;
+        -u)
+            user=$2 ; shift
+        ;;
+        -p)
+            password=$2 ; shift
+        ;;
+        -s)
+            $upgrade=$2 ; shift
+        ;;
+    	  -a)
+            askPassword='true'
+    	  ;;
+	      -A)
+	          read -s -p 'Enter Password (hidden): ' password
+	      ;;
+        -f)
+            isForceUpdate='true'
+        ;;
+        -v)
+            getActualVersion
+            exit 1;
+        ;;
+        *)
+            showHelp
+            exit 1
+        ;;
+    esac
+
+    shift
+done
+
+# check if XXV is still running
+checkXxv
+
+# set defaults and build mysql command line
+setDefaults
+buildMysqlParams
+
+# check needed files
+checkFiles
+
+# check the database
+checkServer
+checkDatabase
+
+# retrieve version and check if update should be performed
+getVersion
+[ -z $version ] && version=0
+showInfo "current database version: $version"
+showInfo "new database version: $actualVersion"
+
+if [ $actualVersion -eq $version ] ; then
+    showInfo 'Database is up to date - no need to update'
+    if [ $isForceUpdate == 'true' ] ;then
+        showInfo 'As requested, the update will be forced!'
+    else
+        exit 0
+    fi
+fi
+if [ $actualVersion -lt $version ] ; then
+    showError 'Database is more actual than the version you want to update to.'
+    showError 'Database downgrades are not advisable!'
+    if [ $isForceUpdate == 'true' ] ;then
+        showInfo 'As requested, a downgrade will be forced anyway!'
+    else
+        exit 1
+    fi
+fi
+
+exportDir=/tmp/xxv-update.$$
+mkdir $exportDir
+chmod a+rwx $exportDir
+# backup
+if [ -z $backupTarget ] ; then
+backupTarget=$exportDir/backup.sql
+fi
+showInfo "Performing backup to $backupTarget"
+if ! eval mysqldump $mysqlParams -r "$backupTarget" "$database" ; then
+    showError 'Backup failed!!!'
+    exit 1
+fi
+# now actually perform the update
+showInfo 'Starting update...'
+exportDb
+updateDb
+importDb
+updateVersion
+showInfo 'Update successful'
+rm -rf $exportDir

@@ -1,0 +1,4 @@
+#!/bin/sh
+links2 -g "$@"
+#!/bin/sh
+links2 -g "$@"

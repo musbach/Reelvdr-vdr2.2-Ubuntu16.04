@@ -1,0 +1,17 @@
+#!/bin/bash
+cd /usr/src/reelbox/testing/packages/base
+make clean
+if make all
+  then
+    echo "OK"
+#    cd /usr/src/reelbox/testing/packages/softcam/
+#    make clean
+#    make all
+    dpkg -i /usr/src/reelbox/testing/packages/reelvdr-plugins-base*.deb
+    sudo service reelvdr stop
+    sleep 6
+    sudo service reelvdr start
+    hwclock --show
+else
+    echo "error"
+fi

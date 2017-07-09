@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1
+END
+i18n.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/i18n.c
+END
+transponders.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/transponders.c
+END
+i18n.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/i18n.h
+END
+netcvmenu.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/netcvmenu.c
+END
+netcvrotor.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/netcvrotor.c
+END
+rotortools.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/rotortools.c
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/COPYING
+END
+transponders.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/transponders.h
+END
+netcvmenu.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/netcvmenu.h
+END
+netcvrotor.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/netcvrotor.h
+END
+netcvrotorservice.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/netcvrotorservice.h
+END
+rotortools.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/rotortools.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/netcvrotor-0.1.1/Makefile
+END

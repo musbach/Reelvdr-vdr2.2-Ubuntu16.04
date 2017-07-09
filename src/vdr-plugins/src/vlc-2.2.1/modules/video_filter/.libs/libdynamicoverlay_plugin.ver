@@ -1,0 +1,5 @@
+{ global:
+vlc_entry__2_2_0b;
+vlc_entry_copyright__2_2_0b;
+vlc_entry_license__2_2_0b;
+local: *; };

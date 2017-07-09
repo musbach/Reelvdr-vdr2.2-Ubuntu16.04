@@ -1,0 +1,22 @@
+# oscam.user generated automatically by Streamboard OSCAM 1.20-unstable_svn SVN r8025
+# Read more: http://www.streamboard.tv/svn/oscam/trunk/Distribution/doc/txt/oscam.user.txt
+
+[account]
+user                          = monitor
+pwd                           = monitor
+
+[account]
+user                          = vdr-sc
+pwd                           = vdr-sc
+au                            = 1
+betatunnel                    = 1833.FFFF:1702
+group                         = 1
+numusers                      = 0
+
+[account]
+user                          = NEWUSER1
+pwd                           = vdr-sc
+caid                          = 1830
+au                            = 1
+group                         = 1
+

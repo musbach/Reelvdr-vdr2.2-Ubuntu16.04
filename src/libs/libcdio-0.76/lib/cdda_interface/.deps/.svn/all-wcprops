@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/.deps
+END
+scan_devices.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/.deps/scan_devices.Plo
+END
+common_interface.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/.deps/common_interface.Plo
+END
+cddap_interface.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/.deps/cddap_interface.Plo
+END
+interface.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/.deps/interface.Plo
+END
+utils.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/.deps/utils.Plo
+END
+smallft.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/.deps/smallft.Plo
+END
+toc.Plo
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/cdda_interface/.deps/toc.Plo
+END

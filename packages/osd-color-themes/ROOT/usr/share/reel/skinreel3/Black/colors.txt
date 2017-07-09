@@ -1,0 +1,21 @@
+RGB Values:
+
+TextColor: #858f99 (normal)
+	   #ffffff (highlight)		
+
+Menu:
+Background: #0c1f33 (80% Opacity) # maybe higher opacity is necessary
+
+Setup:
+Setup-Background: #0c1f33 (80% Opacity) # should be same as Menu-Background
+
+Info-Bar:
+normal: #0c1f33 (80% Opacity)
+message:#0016a0 (80% Opacity)
+error: #a00200 (80% Opacity)
+warning: #9ca000 (80% Opacity)
+info: #31a000 (80% Opacity)
+
+Additional Information:
+space between header, body and footer is 3 pixels
+

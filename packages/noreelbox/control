@@ -1,0 +1,13 @@
+Package: noreelbox
+Version: 1.1
+Section: reel
+Priority: standard
+Architecture: i386
+Depends: reelbox-mr-service, reel-umts
+Conflicts: reelbox
+Recommends: netceiver-client
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: noreelbox
+Description: Meta package needed for non-ReelBox installations
+ You want this package if you are running the Rubuntu/ReelVDR distribution on
+ a non-Reel hardware

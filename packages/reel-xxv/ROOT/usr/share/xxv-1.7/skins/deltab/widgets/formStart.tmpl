@@ -1,0 +1,8 @@
+<!-- FormStart -->
+<div id="body">
+<h1><?% data %?></h1>
+<form method="post" action="?cmd=<?% cgi.param('cmd') %?>">
+  <input type="hidden" name="data" value="<?% cgi.param('data') %?>" />
+  <input type="hidden" name="__action" value="save" />
+  <table summary="">
+    

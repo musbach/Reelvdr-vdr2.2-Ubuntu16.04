@@ -1,0 +1,109 @@
+<!--media research -->
+<body class="frame">
+<div id="body">
+
+<h1>
+<?% IF param.hitcount < 1 %?>
+<?% gettext("Search result : None title found.") %?>
+<?% ELSIF param.hitcount == 1 %?>
+<?% gettext("Search result : One title found.") %?>
+<?% ELSE %?>
+<?% topic = gettext("Search results : %s titles found."); topic | replace('%s',param.hitcount) %?>
+<?% END %?>
+</h1>
+
+
+<?% FOREACH zeile IN data %?>
+  <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+    <?% importurl = zeile.0;imgurl=zeile.1;title=zeile.2;description=zeile.3 %?>
+    <div class="areabegin">
+      <table class="fieldtable" summary="">
+        <tr>
+          <td class="fieldhead">
+            <div class="fieldhead">
+              <?% title %?>
+            </div>
+        </tr>
+    <tr>
+      <td class="fieldtext">
+        <div class="actor">
+          <a href="?cmd=mlimport&__import=<?% importurl %?>&__id=<?% param.id %?>&__range=<?% param.range %?>&__source=<?% param.source %?>">
+            <?% IF imgurl %?>      
+              <img class="actor" src="<?% imgurl %?>" alt="<?% title %?>" />
+            <?% ELSE %?>
+              <img class="actor" src="images/nocover.<?% global.imagetyp %?>" alt="<?% title %?>" />
+            <?% END %?>
+          </a>
+        </div>
+      </td>
+    </tr>
+          <tr>
+            <td class="fieldtext">
+               <div class="epgdescription">
+                  <a href="?cmd=mlimport&__import=<?% importurl %?>&__id=<?% param.id %?>&__range=<?% param.range %?>&__source=<?% param.source %?>">
+                    <?% chop(description,35,3) %?>
+         				  </a>
+              </div>
+            </td>
+          </tr>
+
+    <tr>
+      <td class="fieldbottom"></td>
+    </tr>
+  </table>
+</div>
+<?% END %?>
+<div class="areaclose"></div>
+
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Media library",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+        <a href="javascript:back()"><img src="images/back.<?% global.imagetyp %?>" alt="" title="<?% gettext("Back",20) %?>" /></a>&nbsp;
+        <a href="javascript:back()"><?% gettext("Back",20) %?></a><br />
+    </td>
+    </tr>
+    <tr><td class="sidebottom"></td></tr>
+  </table>
+
+<?% pages = 20 %?>
+<?% maximum = param.hitcount %?>
+<?% IF maximum > pages %?>
+<?% url = "?cmd=mlresearch&__source=${param.source}&__title=${param.title}&__start=" %?>
+<?% offset = cgi.param('__start') %?>
+<?% backpage = offset - pages %?>
+<?% backpageenable = backpage >= 0 ? 1 : 0 %?>
+<?% nextpage = offset + pages %?>
+<?% nextpageenable = nextpage < maximum ? 1 : 0 %?>
+
+<?% BLOCK PAGES %?>    
+        <?% IF enable %?><a href="<?% url %?><?% page %?>"><?% END %?>
+            <img src="images/<?% image %?>.<?% global.imagetyp %?>" alt="" title="<?% label %?>" />
+        <?% "</a>" IF enable %?>
+        &nbsp;
+        <?% IF enable %?><a href="<?% url %?><?% page %?>"><?% END %?>
+        <?% IF !enable %?><font class="deactive"><?% END %?>
+        <?% label %?>
+        <?% IF !enable %?></font><?% END %?>
+        <?% "</a>" IF enable %?>
+    <br />
+<?% END %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Page",20) %?>&nbsp;<?% ( offset div pages ) + 1 %?></td></tr>
+    <tr>
+        <td class="sidetext">
+<?% PROCESS PAGES page="0"      enable=backpageenable   image='home'    label=gettext('First page',20) %?>
+<?% PROCESS PAGES page=backpage enable=backpageenable   image='back'    label=gettext('Previous page',20) %?>
+<?% PROCESS PAGES page=nextpage enable=nextpageenable   image='forward' label=gettext('Next page',20) %?>
+        </td>
+    </tr>
+    <tr><td class="sidebottom"></td></tr>
+  </table>
+<?% END %?>
+
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

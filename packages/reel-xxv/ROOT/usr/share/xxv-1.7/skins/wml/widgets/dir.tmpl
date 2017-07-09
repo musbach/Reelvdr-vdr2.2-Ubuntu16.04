@@ -1,0 +1,12 @@
+<?% data.msg | truncate(15) %?> : 
+<?% val = cgi.param(data.NAME) || data.def %?>
+<?% TRY %?>
+    <?% USE File(val, root => realbin) %?>
+<input type="text" name="<?% data.NAME | replace('__','var') %?>" value="<?% entities(val) %?>" /><br/>
+        <?% CATCH File %?>
+            <?% UNLESS File.isdir %?>
+<i><?% gettext("Directory '%s' does not exist!") | replace('%s',val)%?></i><br/>
+<input type="text" name="<?% data.NAME | replace('__','var') %?>" value="<?% entities(val) %?>" /><br/>
+            <?% END %?>
+        <?% END %?>
+<?% global.fomularfield.push(data.NAME) %?>

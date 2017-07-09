@@ -1,0 +1,148 @@
+<!-- alist -->
+<div id="body">
+<?% ######################################################################## %?>
+<?% aus = gettext('Off') %?>
+<?% an = gettext('On') %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+		    <?% IF allow('tlist') %?>
+          <?% IF param.timers.${id}.allTimer.size %?>
+<?% IF verbose %?>
+<!-- active:  <?% param.timers.${id}.activeTimer.size %?>   -->
+<!-- deactive:<?% param.timers.${id}.deactiveTimer.size %?> -->
+<?% END %?>
+              <a href="?cmd=tlist&amp;data=<?% param.timers.${id}.allTimer.join('_') %?>"
+                   onmouseover="ttptlist(this, '<?% gettext("Planned recordings") %?>','<?% param.timers.${id}.allTimer.join('_') %?>', -400);">
+                <img src="images/info.<?% global.imagetyp %?>" alt="" />
+             </a>
+          <?% END %?>
+        <?% END %?>
+            <a href="?cmd=search&amp;data=<?% url( title ) %?>">
+                <img src="images/find.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search for repeats") %?>" />
+            </a>
+		    <?% IF allow('aedit') %?>
+                        <a href="?cmd=aedit&amp;data=<?% id %?>">
+                            <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit autotimer") %?>" />
+                        </a>
+		    <?% END %?>
+		    <?% IF allow('adelete') %?>
+                        <a href="javascript:sureandreload('<?% gettext("Would you like to delete this autotimer?") %?>\n\'<?% escape( title ) %?>\'','adelete','<?% id %?>')">
+                            <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete autotimer") %?>" />
+                        </a>
+		    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+        <?% UNLESS aktiv %?>
+            <?% state = "deactive" %?>
+        <?% ELSE %?>
+            <?% state = "" %?>
+        <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK item %?>
+        <?% PROCESS SetState %?>
+        <td>
+            <?% IF allow('atoggle') %?><a href="javascript:fire('atoggle','<?% id %?>')"><?% END %?>
+            <img src="images/<?% aktiv ? 'on' : 'off'%?>.<?% global.imagetyp %?>" alt="" title="<?% aktiv ? an : aus %?>" />
+            <?% "</a>" IF allow('atoggle') %?>
+        </td>
+        <td>
+            <?% IF allow( 'aedit' ) %?>
+            <a title="<?% gettext("Edit autotimer") %?>" href="?cmd=aedit&amp;data=<?% id %?>">
+            <?% END %?>
+            <font class="title<?% IF state != "";" ";state;END %?>"><?% title %?></font>
+            <?% "</a>" IF allow( 'aedit' ) %?>
+        </td>
+        <td<?% IF state != "";" class='";state;"'";END %?>>
+            <?% IF start != stop  %?>
+                <?% start %?>&nbsp;-&nbsp;<?% stop %?><br />
+            <?% END  %?>
+        </td>
+        <td<?% IF state != "";" class='";state;"'";END %?>>
+            <?% channel = channels.split(',') %?>
+            <?% IF channel.size > 1 %?>
+            <select>
+            <?% FOREACH chid_name = channel %?>
+                <option><?% chid_name %?></option>
+            <?% END %?>
+            </select>
+            <?% ELSE;
+                channel.first;
+                END  %?>
+        </td>
+        <td<?% IF state != "";" class='";state;"'";END %?>>
+            <?% IF directory != ""  %?>
+                <?% directory %?><br />
+            <?% END  %?>    
+        </td>
+        <td class="push <?% IF state != "";" ";state;;END %?>">
+            <?% PROCESS RowButtons %?>
+        </td>
+<?% END %?>
+
+<h1><?% gettext("Wished automated recordings") %?></h1>
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+<table summary=""  width="100%">
+<?% FOREACH zeile IN data %?>
+    <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+    <tr<?% " class='two'" IF loop.count mod 2 == 0 %?>>
+    <?% id=zeile.0;act=zeile.1;title=zeile.2;channels=zeile.3;directory=zeile.4;start=zeile.5;stop=zeile.6;minlength=zeile.7 %?>
+    <?% IF act == 'y' %?><?% aktiv = 1 %?><?% ELSE %?><?% aktiv = 0 %?><?% END %?>
+    <?% PROCESS item %?>
+    </tr>
+<?% END %?>
+</table>
+<?% END %?>
+</div>
+<?% IF allow( 'anew' ) || allow( 'aupdate' ) %?>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <p class="section"><?% gettext("Autotimer",20) %?></p>
+    <p>
+<?% IF allow( 'anew' ) %?>
+      <a href="?cmd=anew"><img src="images/new.<?% global.imagetyp %?>" alt="" title="<?% gettext("Create new autotimer") %?>" /></a>&nbsp;
+      <a href="?cmd=anew"><?% gettext("Create new autotimer",20) %?></a><br />
+<?% END %?>
+<?% IF allow( 'aupdate' ) %?>
+      <a href="?cmd=aupdate"><img src="images/refresh.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search autotimer") %?>" /></a>&nbsp;
+      <a href="?cmd=aupdate"><?% gettext("Search autotimer",20) %?></a><br />
+<?% END %?>
+    </p>
+<?% IF param.sortable.defined %?>
+<?% cmd = cgi.param('cmd') %?>
+<?% IF cgi.param('data') %?>
+<?% datax = cgi.param('data') %?>
+<?% datas = "&amp;data=${datax}" %?>
+<?% END %?>
+    <p class="section"><?% gettext("Sorting",20) %?></p>
+        <table summary="">
+<?% BLOCK SortItem %?>
+        <tr>
+            <td style="padding:0px;" width="20"><a href="?cmd=<?% cmd %?><?% datas %?>&amp;__sortby=<?% row %?>&amp;__desc=0" ><img src="images/home.<?% global.imagetyp %?>" alt="" /></a></td>
+            <td style="padding:0px;" width="160">
+                <?% "<b>" IF cgi.param('__sortby') == row %?>
+                <a href="?cmd=<?% cmd %?><?% datas %?>&amp;__sortby=<?% row %?>&amp;__desc=<?% IF cgi.param('__sortby') == row && cgi.param('__desc') == 0 %?>1<?% ELSE %?>0<?% END %?>" >
+                <?% label %?>
+                </a>
+                <?% "</b>" IF cgi.param('__sortby') == row %?>
+            </td>
+            <td style="padding:0px;" width="20"><a href="?cmd=<?% cmd %?><?% datas %?>&amp;__sortby=<?% row %?>&amp;__desc=1" ><img src="images/down.<?% global.imagetyp %?>" alt="" /></a></td>
+        </tr>
+<?% END %?>
+    <?% FOREACH row IN fields %?>
+      <?% NEXT IF row.match('^__') %?>
+        <?% PROCESS SortItem label=chop(row,20) %?>
+      <?% END %?>
+      </table>
+<?% END %?>
+  <p class="section"><?% gettext("Search text",20) %?></p>
+  <form method="post" action="?cmd=asearch"> 
+    <p>
+        <input type="text" name="data" size="18" value="" />
+    </p>
+  </form>
+</div>
+<?% global.sidebar = 1 %?>
+<?% END %?>

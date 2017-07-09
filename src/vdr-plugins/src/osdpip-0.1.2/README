@@ -1,0 +1,123 @@
+OSD Picture in Picture plugin for the Video Disk Recorder
+---------------------------------------------------------
+
+Copyright (C) 2010        Mitchm at vdrportal.de
+Copyright (C) 2004 - 2008 Andreas Regel <andreas.regel@powarman.de>
+Copyright (C) 2004 - 2005 Sascha Volkenandt <sascha@akv-soft.de>
+
+Project's homepage: http://projects.vdr-developer.org/projects/show/plg-osdpip
+
+Old homepages:      http://linux.kompiliert.net/index.php?view=osdpip
+                    http://www.powarman.de/files/osdpip
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+See the file COPYING for the full license information.
+
+
+Requirements:
+-------------
+
+- vdr 1.7.27 or higher
+- libavcodec from ffmpeg (http://ffmpeg.sourceforge.net) version 0.4.8 or
+  higher
+
+
+Description:
+------------
+
+OSD Picture-in-Picture is a PlugIn that displays the current channel in a
+small box on the screen (default upper right corner). You can switch up and
+down now, watching the progress of the previous channel in the box. Quality is
+not too good yet, and only I-Frames are displayed.
+The plugin supports five modes:
+ - greyscaled (16 shades of grey)
+ - greyscaled (256 shades of grey)
+ - 256 colors with fixed palette
+ - 256 colors with dithering
+ - 128 colors with variable palette
+They all work with an ordinary vdr installation.
+The plugin has the possibility to choose the PiP size (in the setup menu from
+predefined sizes) and position (by moving it around using the cursor keys) as
+well as crop dimensions.
+
+ATTENTION: To have the position saved, you have to enter the plugin's setup
+menu and hit the ok button.
+
+The plugin lets you choose the MPEG frames to decode and display (in the setup
+menu). For slower machines it is further possible to set an additional frame
+dropping.
+
+The plugin is able to show some channel and schedule info in a second window
+when switching channels. In setup menu you can change it's position, size and
+the amount of information shown.
+
+
+Installation:
+-------------
+
+Let's say osdpip's version is 0.0.9 and vdr's version is 1.4.0. If you
+use anything else please exchange the version numbers appropriately (this
+way I don't have to update this section all the times;) ).
+
+cd vdr-1.4.0/PLUGINS/src
+tar xvfz vdr-osdpip-0.0.9.tgz
+ln -s osdpip-0.0.9 osdpip
+cd ../..
+
+If you have ffmpeg installed, "make plugins" should do just fine now, but if
+you have it next to your vdr folder (e.g. as the DXR3 plugin needs it), you
+have to compile with "make FFMPEG_STATIC=1 plugins". Ffmpeg must then be
+present in a folder (or symlink) called "ffmpeg".
+
+In recent FFMPEG versions the functions img_convert and img_replace where
+replaced by swscale functions. This are used by default. If you don't want to
+use swscale functions for scaling and color format conversions, you will have
+to add WITHOUT_SWSCALE=1 to your Make.config or uncomment this line in
+vdr-osdpip's Makefile. Then deprecated img_convert and img_resample will be
+used instead.
+
+If you have a recent FFMPEG version that has a changed structure of its header
+files you will have to add WITH_NEW_FFMPEG_HEADERS=1 to your Make.config or
+uncomment this line in vdr-osdpip's Makefile.
+
+Controls:
+---------
+
+Normal Mode:
+Up/Down      Switch channel up/down
+Left/Right   Select channel group (only when info window enabled)
+1-9          Select channel (only when info window enabled)
+Red          Swap PiP channel with currently viewed channel
+Green        Switch to move mode
+Yellow       Switch to zapping mode
+Ok           Show/hide channel info window
+0            Switch back to PiP channel and exit PiP
+Back         Exit PiP without switching back
+
+Move Mode:
+Cursor keys  Move PiP window around
+Green        Switch to normal mode
+0            Switch back to PiP channel and exit PiP
+Back         Exit PiP without switching back
+
+Zapping Mode:
+Up/Down      Switch PiP channel up/down
+Red          Swap PiP channel with currently viewed channel
+Green        Switch to move mode
+Yellow       Switch to normal mode
+0            Switch back to PiP channel and exit PiP
+Back         Exit PiP without switching back
+

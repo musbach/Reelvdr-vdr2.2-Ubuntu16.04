@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/reelbox/!svn/ver/1/testing/src/etc/udev/rules.d
+END
+71-persistent-net.rules
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/etc/udev/rules.d/71-persistent-net.rules
+END
+56-hdshm.rules
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/etc/udev/rules.d/56-hdshm.rules
+END
+65-reelbox-fp.rules
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/etc/udev/rules.d/65-reelbox-fp.rules
+END
+50-reel_frontpanel.rules
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/etc/udev/rules.d/50-reel_frontpanel.rules
+END

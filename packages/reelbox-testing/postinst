@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# remove old entries in /etc/apt/sources.list
+sed "\%reelbox%d" -i /etc/apt/sources.list
+sed "\%ReelBox%d" -i /etc/apt/sources.list
+
+exit 0

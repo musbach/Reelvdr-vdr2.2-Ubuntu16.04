@@ -1,0 +1,11 @@
+Package: reelvdr-pi-skinreel3
+Version: 2.0.2
+Section: reel
+Priority: required
+Architecture: i386
+Depends: libcurl3, libmagick++10, reelvdr
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-skinreel3
+Description: Default Skin for the ReelBox Avantgarde
+ This is the default Skin for the ReelBox Avantgarde
+ needs softdevice / xineoutput / ReelBox to work

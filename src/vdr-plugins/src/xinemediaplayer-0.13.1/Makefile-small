@@ -1,0 +1,25 @@
+PLUGIN = xinemediaplayer
+OBJS = $(PLUGIN).o Control.o Player.o Reel.o SpuDecode.o Utils.o \
+		curl_download.o imagetools.o \
+		item_tree.o  m3u_parser.o pls_parser.o timecounter.o \
+		xineOsd.o xineOsdInfoMenu.o xineOsdFunction.o Playlist.o
+VDRDIR = ../../..
+LIBDIR = ../../lib
+TMPDIR = /tmp
+-include $(VDRDIR)/Make.config
+ARCHIVE = $(PLUGIN)-$(VERSION)
+PACKAGE = vdr-$(ARCHIVE)
+  OBJS += cddb.o cdtext.o cdrom.o
+  OBJS += XineLib.o GstreamerLib.o gstTools.o ExternalLib.o
+  LIBS += -lxine `pkg-config --libs gstreamer-0.10` `pkg-config --libs gstreamer-interfaces-0.10`
+  INCLUDES += `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10`
+-include $(VDRDIR)/Make.common
+INCLUDES +=
+  INCLUDES +=`taglib-config --cflags`
+  LDFLAGS  +=`taglib-config --libs`
+  LIBS     += `curl-config --libs` -lcdio -lcddb
+
+DEFINES += -DPLAYER_VERSION=\"$(PLAYER_VERSION)\" -D__LINUX__ -D__STL_CONFIG_H
+
+target-for-compatibility-with-vanilla-vdr:
+	$(LIBDIR)/$@.$(APIVERSION)

@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/bin
+END
+DokanInstall32.msi
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/bin/DokanInstall32.msi
+END

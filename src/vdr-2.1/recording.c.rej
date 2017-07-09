@@ -1,0 +1,281 @@
+--- recording.c	(revision 15412)
++++ recording.c	(revision 15413)
+@@ -8,6 +8,9 @@
+  */
+ 
+ #include "recording.h"
++#ifdef USE_WAREAGLEICON
++#include "iconpatch.h"
++#endif /* WAREAGLEICON */
+ #include <ctype.h>
+ #include <dirent.h>
+ #include <errno.h>
+@@ -63,6 +66,9 @@
+ #define MAX_LINK_LEVEL  6
+ 
+ bool VfatFileSystem = false;
++#ifdef USE_LIEMIEXT
++bool DirOrderState = false;
++#endif /* LIEMIEXT */
+ int InstanceId = 0;
+ 
+ cRecordings DeletedRecordings(true);
+@@ -823,6 +829,10 @@
+ int cRecording::Compare(const cListObject &ListObject) const
+ {
+   cRecording *r = (cRecording *)&ListObject;
++#ifdef USE_LIEMIEXT
++  if (DirOrderState)
++     return strcasecmp(FileName(), r->FileName());
++#endif /* LIEMIEXT */
+   return strcasecmp(SortName(), r->SortName());
+ }
+ 
+@@ -841,9 +851,17 @@
+   return fileName;
+ }
+ 
++#ifdef USE_LIEMIEXT
++const char *cRecording::Title(char Delimiter, bool NewIndicator, int Level, bool Original) const
++#else
+ const char *cRecording::Title(char Delimiter, bool NewIndicator, int Level) const
++#endif /* LIEMIEXT */
+ {
++#ifdef USE_WAREAGLEICON
++  const char *New = NewIndicator && IsNew() ? Setup.WarEagleIcons ? IsLangUtf8() ? ICON_NEW_UTF8 : ICON_NEW : "*" : " ";
++#else
+   char New = NewIndicator && IsNew() ? '*' : ' ';
++#endif /* WAREAGLEICON */
+   free(titleBuffer);
+   titleBuffer = NULL;
+   if (Level < 0 || Level == HierarchyLevels()) {
+@@ -854,7 +872,14 @@
+         s++;
+      else
+         s = name;
++#ifdef USE_LIEMIEXT
++     if (Original) {
++#endif /* LIEMIEXT */
++#ifdef USE_WAREAGLEICON
++     titleBuffer = strdup(cString::sprintf("%02d.%02d.%02d%c%02d:%02d%s%c%s",
++#else
+      titleBuffer = strdup(cString::sprintf("%02d.%02d.%02d%c%02d:%02d%c%c%s",
++#endif /* WAREAGLEICON */
+                             t->tm_mday,
+                             t->tm_mon + 1,
+                             t->tm_year % 100,
+@@ -864,6 +889,33 @@
+                             New,
+                             Delimiter,
+                             s));
++#ifdef USE_LIEMIEXT
++        }
++     else {
++        cString RecLength("---");
++        if (Setup.ShowRecLength && FileName()) {
++           int length = cIndexFile::Length(FileName(), IsPesRecording());
++           if (length >= 0)
++              RecLength = cString::sprintf("%d'", length / SecondsToFrames(60, framesPerSecond));
++           }
++        cString RecDate = cString::sprintf("%02d.%02d.%02d", t->tm_mday, t->tm_mon + 1, t->tm_year % 100);
++        cString RecTime = cString::sprintf("%02d:%02d", t->tm_hour, t->tm_min);
++        cString RecDelimiter = cString::sprintf("%c", Delimiter);
++#ifdef USE_WAREAGLEICON
++        titleBuffer = strdup(cString::sprintf("%s%s%s%s%s%s%s%s",
++#else
++        titleBuffer = strdup(cString::sprintf("%s%s%s%c%s%s%s%s",
++#endif /* WAREAGLEICON */
++                               (Setup.ShowRecDate ? *RecDate        : ""),
++                               (Setup.ShowRecDate && Setup.ShowRecTime ? *RecDelimiter : ""),
++                               (Setup.ShowRecTime ? *RecTime        : ""),
++                               New,
++                               (Setup.ShowRecTime || Setup.ShowRecDate ? *RecDelimiter : ""),
++                               (Setup.ShowRecLength ? *RecLength    : ""),
++                               (Setup.ShowRecLength ? *RecDelimiter : ""),
++                               s));
++        }
++#endif /* LIEMIEXT */
+      // let's not display a trailing FOLDERDELIMCHAR:
+      if (!NewIndicator)
+         stripspace(titleBuffer);
+@@ -892,6 +944,17 @@
+   return titleBuffer;
+ }
+ 
++#ifdef USE_CUTTIME
++void cRecording::SetStartTime(time_t Start)
++{
++  start=Start;
++  if (fileName) {
++           free(fileName);
++           fileName = NULL;
++           }
++}
++#endif /* CUTTIME */
++
+ const char *cRecording::PrefixFileName(char Prefix)
+ {
+   cString p = PrefixVideoFileName(FileName(), Prefix);
+@@ -1000,6 +1063,45 @@
+   resume = RESUME_NOT_INITIALIZED;
+ }
+ 
++#ifdef USE_LIEMIEXT
++bool cRecording::Rename(const char *newName)
++{
++  bool result = false;
++  struct tm tm_r;
++  struct tm *t = localtime_r(&start, &tm_r);
++  char *localNewName = ExchangeChars(strdup(newName), true);
++  const char *fmt = isPesRecording ? NAMEFORMATPES : NAMEFORMATTS;
++  int ch = isPesRecording ? priority : channel;
++  int ri = isPesRecording ? lifetime : instanceId;
++  char *newFileName = strdup(cString::sprintf(fmt, VideoDirectory, localNewName, t->tm_year + 1900, t->tm_mon + 1, t->tm_mday, t->tm_hour, t->tm_min, ch, ri));
++  free(localNewName);
++  if (strcmp(FileName(), newFileName)) {
++     if (access(newFileName, F_OK) == 0) {
++        isyslog("recording %s already exists", newFileName);
++        }
++     else {
++        isyslog("renaming recording %s to %s", FileName(), newFileName);
++        result = MakeDirs(newFileName, true);
++        if (result)
++           result = RenameVideoFile(FileName(), newFileName);
++        if (result) {
++           free(fileName);
++           fileName = strdup(newFileName);
++           free(name);
++           name = strdup(newName);
++           free(sortBuffer);
++           sortBuffer = NULL;
++           free(titleBuffer);
++           titleBuffer = NULL;
++           }
++        }
++     }
++  free(newFileName);
++  return result;
++}
++
++#endif /* LIEMIEXT */
++
+ // --- cRecordings -----------------------------------------------------------
+ 
+ cRecordings Recordings;
+@@ -1298,14 +1400,74 @@
+   return NULL;
+ }
+ 
++#ifdef USE_JUMPPLAY
++// --- cMarksReload ----------------------------------------------------------
++
++#define MARKS_RELOAD_MS 10000
++
++time_t cMarksReload::lastsavetime = 0;
++
++cMarksReload::cMarksReload(const char *RecordingFileName)
++:recDir(RecordingFileName)
++{
++  struct stat sbuf;
++  cRecording rec(recDir);
++  if (Load(recDir, rec.FramesPerSecond(), rec.IsPesRecording()) &&
++      stat(FileName(), &sbuf) == 0)
++     lastmodtime = sbuf.st_mtime;
++  else
++     lastmodtime = 0;
++  nextreload.Set(MARKS_RELOAD_MS - cTimeMs::Now() % MARKS_RELOAD_MS);
++}
++
++bool cMarksReload::Reload(void)
++{
++  // Check the timestamp of marks.vdr in 10 seconds intervals
++  // Independent but synchronized reloading of marks in two threads
++  if ((Setup.ReloadMarks && nextreload.TimedOut()) ||
++      lastsavetime > lastmodtime) {
++     nextreload.Set(MARKS_RELOAD_MS - cTimeMs::Now() % MARKS_RELOAD_MS);
++     struct stat sbuf;
++     if (stat(FileName(), &sbuf) == 0 && sbuf.st_mtime != lastmodtime) {
++        lastmodtime = sbuf.st_mtime;
++        cRecording rec(recDir);
++        if (Load(recDir, rec.FramesPerSecond(), rec.IsPesRecording()))
++           return true;
++        }
++     }
++  return false;
++}
++
++bool cMarksReload::Save(void)
++{
++  bool ok = cMarks::Save();
++  struct stat sbuf;
++  if (ok && stat(FileName(), &sbuf) == 0)
++     lastsavetime = lastmodtime = sbuf.st_mtime;
++  return ok;
++}
++#endif /* JUMPPLAY */
++
+ // --- cRecordingUserCommand -------------------------------------------------
+ 
+ const char *cRecordingUserCommand::command = NULL;
+ 
++#ifdef USE_DVLRECSCRIPTADDON
++void cRecordingUserCommand::InvokeCommand(const char *State, const char *RecordingFileName, char *chanName)
++#else
+ void cRecordingUserCommand::InvokeCommand(const char *State, const char *RecordingFileName)
++#endif /* DVLRECSCRIPTADDON */
+ {
+   if (command) {
++#ifdef USE_DVLRECSCRIPTADDON
++     cString cmd;
++     if (chanName != NULL)
++        cmd = cString::sprintf("%s %s \"%s\" \"%s\"", command, State, *strescape(RecordingFileName, "\\\"$"), chanName);
++     else
++        cmd = cString::sprintf("%s %s \"%s\"", command, State, *strescape(RecordingFileName, "\\\"$"));
++#else
+      cString cmd = cString::sprintf("%s %s \"%s\"", command, State, *strescape(RecordingFileName, "\\\"$"));
++#endif /* DVLRECSCRIPTADDON */
+      isyslog("executing '%s'", *cmd);
+      SystemExec(cmd);
+      }
+@@ -1777,6 +1939,18 @@
+   return false;
+ }
+ 
++#ifdef USE_LIEMIEXT
++int cIndexFile::Length(const char *FileName, bool IsPesRecording)
++{
++  struct stat buf;
++  cString fullname = cString::sprintf("%s%s", FileName, IsPesRecording ? INDEXFILESUFFIX ".vdr" : INDEXFILESUFFIX);
++  if (FileName && *fullname && access(fullname, R_OK) == 0 && stat(fullname, &buf) == 0)
++     return buf.st_size ? (buf.st_size - 1) / sizeof(tIndexTs) + 1 : 0;
++  return -1;
++}
++
++#endif /* LIEMIEXT */
++
+ // --- cFileName -------------------------------------------------------------
+ 
+ #define MAXFILESPERRECORDINGPES 255
+@@ -1935,6 +2109,22 @@
+   return NULL;
+ }
+ 
++#ifdef USE_HARDLINKCUTTER
++off_t cFileName::MaxFileSize() {
++  const int maxVideoFileSize = isPesRecording ? MAXVIDEOFILESIZEPES : MAXVIDEOFILESIZETS;
++  const int setupMaxVideoFileSize = min(maxVideoFileSize, Setup.MaxVideoFileSize);
++  const int maxFileNumber = isPesRecording ? 255 : 65535;
++
++  const off_t smallFiles = (maxFileNumber * off_t(maxVideoFileSize) - 1024 * Setup.MaxRecordingSize)
++                           / max(maxVideoFileSize - setupMaxVideoFileSize, 1);
++
++  if (fileNumber <= smallFiles)
++     return MEGABYTE(off_t(setupMaxVideoFileSize));
++
++  return MEGABYTE(off_t(maxVideoFileSize));
++}
++#endif /* HARDLINKCUTTER */
++
+ cUnbufferedFile *cFileName::NextFile(void)
+ {
+   return SetOffset(fileNumber + 1);

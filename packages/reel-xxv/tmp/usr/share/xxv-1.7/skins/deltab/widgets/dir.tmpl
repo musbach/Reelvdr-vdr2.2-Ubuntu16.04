@@ -1,0 +1,18 @@
+<!-- dir -->
+<tr>
+    <td valign='top'>
+        <?% data.msg %?>
+    </td>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% TRY %?>
+            <?% USE File(reentities(val), root => reentities(realbin)) %?>
+            <input style="width:395px;" size="<?% val.length + 3 %?>" type="text" name="<?% data.NAME %?>" value="<?% val %?>" />
+        <?% CATCH File %?>
+            <?% UNLESS File.isdir %?>
+            <input style="width:395px;" size="<?% val.length + 3 %?>" type="text" name="<?% data.NAME %?>" value="<?% val %?>" class='error' /><br />
+            <font class="error"><?% gettext("Directory '%s' does not exist!") | replace('%s',val)%?></font>
+            <?% END %?>
+        <?% END %?>
+    </td>
+</tr>

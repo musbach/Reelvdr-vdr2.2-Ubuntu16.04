@@ -1,0 +1,3 @@
+dvbsddevice.o: dvbsddevice.c dvbsdffdevice.h
+dvbsdffdevice.o: dvbsdffdevice.c dvbsdffdevice.h dvbsdffosd.h
+dvbsdffosd.o: dvbsdffosd.c dvbsdffosd.h

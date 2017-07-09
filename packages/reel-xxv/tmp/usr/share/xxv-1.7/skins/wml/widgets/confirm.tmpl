@@ -1,0 +1,13 @@
+<?% ############################################################################
+    val = cgi.param(data.NAME) || data.def;
+    selectitem = 1;
+    IF val == 'n';
+        selectitem = 2;
+    END; 
+   ######################################################################### %?>
+<?% data.msg | truncate(15) %?> : 
+<select name="<?% data.NAME | replace('__','var') %?>" ivalue="<?% selectitem %?>">
+    <option value="y"><?% gettext("yes") %?></option>
+    <option value="n"><?% gettext("no") %?></option>
+</select><br/>
+<?% global.fomularfield.push(data.NAME) %?>

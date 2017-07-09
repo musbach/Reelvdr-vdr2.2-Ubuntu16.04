@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libmpeg2/convert
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libmpeg2/convert/Makefile.in
+END
+convert_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libmpeg2/convert/convert_internal.h
+END
+libmpeg2convert.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libmpeg2/convert/libmpeg2convert.pc.in
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libmpeg2/convert/Makefile.am
+END
+rgb.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libmpeg2/convert/rgb.c
+END
+rgb_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libmpeg2/convert/rgb_mmx.c
+END
+rgb_vis.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libmpeg2/convert/rgb_vis.c
+END
+uyvy.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libmpeg2/convert/uyvy.c
+END

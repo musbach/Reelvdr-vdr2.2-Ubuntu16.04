@@ -1,0 +1,836 @@
+cc -D__LINUX__ -I../../src/include -I../../src/driver -I/usr/mipsel-linux-gnu/include -O2 -Wall -c hdboot.c
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:119:3: error: #error 
+ # error
+   ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:124:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __DEV_T_TYPE __dev_t; /* Type of device numbers.  */
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:124:25: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__dev_t’
+ __STD_TYPE __DEV_T_TYPE __dev_t; /* Type of device numbers.  */
+                         ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:92:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __U32_TYPE  unsigned int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:30:23: note: in expansion of macro ‘__U32_TYPE’
+ #define __UID_T_TYPE  __U32_TYPE
+                       ^
+/usr/mipsel-linux-gnu/include/bits/types.h:125:12: note: in expansion of macro ‘__UID_T_TYPE’
+ __STD_TYPE __UID_T_TYPE __uid_t; /* Type of user identifications.  */
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:92:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __U32_TYPE  unsigned int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:31:23: note: in expansion of macro ‘__U32_TYPE’
+ #define __GID_T_TYPE  __U32_TYPE
+                       ^
+/usr/mipsel-linux-gnu/include/bits/types.h:126:12: note: in expansion of macro ‘__GID_T_TYPE’
+ __STD_TYPE __GID_T_TYPE __gid_t; /* Type of group identifications.  */
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:94:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __ULONGWORD_TYPE unsigned long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:32:23: note: in expansion of macro ‘__ULONGWORD_TYPE’
+ #define __INO_T_TYPE  __ULONGWORD_TYPE
+                       ^
+/usr/mipsel-linux-gnu/include/bits/types.h:127:12: note: in expansion of macro ‘__INO_T_TYPE’
+ __STD_TYPE __INO_T_TYPE __ino_t; /* Type of file serial numbers.  */
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:128:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __INO64_T_TYPE __ino64_t; /* Type of file serial numbers (LFS).*/
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:128:27: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__ino64_t’
+ __STD_TYPE __INO64_T_TYPE __ino64_t; /* Type of file serial numbers (LFS).*/
+                           ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:92:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __U32_TYPE  unsigned int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:34:24: note: in expansion of macro ‘__U32_TYPE’
+ #define __MODE_T_TYPE  __U32_TYPE
+                        ^
+/usr/mipsel-linux-gnu/include/bits/types.h:129:12: note: in expansion of macro ‘__MODE_T_TYPE’
+ __STD_TYPE __MODE_T_TYPE __mode_t; /* Type of file attribute bitmasks.  */
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:130:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __NLINK_T_TYPE __nlink_t; /* Type of file link counts.  */
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:130:27: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__nlink_t’
+ __STD_TYPE __NLINK_T_TYPE __nlink_t; /* Type of file link counts.  */
+                           ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:93:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘long’
+ #define __SLONGWORD_TYPE long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:36:23: note: in expansion of macro ‘__SLONGWORD_TYPE’
+ #define __OFF_T_TYPE  __SLONGWORD_TYPE
+                       ^
+/usr/mipsel-linux-gnu/include/bits/types.h:131:12: note: in expansion of macro ‘__OFF_T_TYPE’
+ __STD_TYPE __OFF_T_TYPE __off_t; /* Type of file sizes and offsets.  */
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:132:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __OFF64_T_TYPE __off64_t; /* Type of file sizes and offsets (LFS).  */
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:132:27: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__off64_t’
+ __STD_TYPE __OFF64_T_TYPE __off64_t; /* Type of file sizes and offsets (LFS).  */
+                           ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:91:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘int’
+ #define __S32_TYPE  int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:38:23: note: in expansion of macro ‘__S32_TYPE’
+ #define __PID_T_TYPE  __S32_TYPE
+                       ^
+/usr/mipsel-linux-gnu/include/bits/types.h:133:12: note: in expansion of macro ‘__PID_T_TYPE’
+ __STD_TYPE __PID_T_TYPE __pid_t; /* Type of process identifications.  */
+            ^
+In file included from /usr/mipsel-linux-gnu/include/bits/types.h:121:0,
+                 from /usr/mipsel-linux-gnu/include/stdio.h:35,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:58:24: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘struct’
+ #define __FSID_T_TYPE  struct { int __val[2]; }
+                        ^
+/usr/mipsel-linux-gnu/include/bits/types.h:134:12: note: in expansion of macro ‘__FSID_T_TYPE’
+ __STD_TYPE __FSID_T_TYPE __fsid_t; /* Type of file system IDs.  */
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:93:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘long’
+ #define __SLONGWORD_TYPE long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:49:25: note: in expansion of macro ‘__SLONGWORD_TYPE’
+ #define __CLOCK_T_TYPE  __SLONGWORD_TYPE
+                         ^
+/usr/mipsel-linux-gnu/include/bits/types.h:135:12: note: in expansion of macro ‘__CLOCK_T_TYPE’
+ __STD_TYPE __CLOCK_T_TYPE __clock_t; /* Type of CPU usage counts.  */
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:94:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __ULONGWORD_TYPE unsigned long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:39:24: note: in expansion of macro ‘__ULONGWORD_TYPE’
+ #define __RLIM_T_TYPE  __ULONGWORD_TYPE
+                        ^
+/usr/mipsel-linux-gnu/include/bits/types.h:136:12: note: in expansion of macro ‘__RLIM_T_TYPE’
+ __STD_TYPE __RLIM_T_TYPE __rlim_t; /* Type for resource measurement.  */
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:137:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __RLIM64_T_TYPE __rlim64_t; /* Type for resource measurement (LFS).  */
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:137:28: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__rlim64_t’
+ __STD_TYPE __RLIM64_T_TYPE __rlim64_t; /* Type for resource measurement (LFS).  */
+                            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:92:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __U32_TYPE  unsigned int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:48:22: note: in expansion of macro ‘__U32_TYPE’
+ #define __ID_T_TYPE  __U32_TYPE
+                      ^
+/usr/mipsel-linux-gnu/include/bits/types.h:138:12: note: in expansion of macro ‘__ID_T_TYPE’
+ __STD_TYPE __ID_T_TYPE __id_t;  /* General type for IDs.  */
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:93:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘long’
+ #define __SLONGWORD_TYPE long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:50:24: note: in expansion of macro ‘__SLONGWORD_TYPE’
+ #define __TIME_T_TYPE  __SLONGWORD_TYPE
+                        ^
+/usr/mipsel-linux-gnu/include/bits/types.h:139:12: note: in expansion of macro ‘__TIME_T_TYPE’
+ __STD_TYPE __TIME_T_TYPE __time_t; /* Seconds since the Epoch.  */
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:92:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __U32_TYPE  unsigned int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:51:27: note: in expansion of macro ‘__U32_TYPE’
+ #define __USECONDS_T_TYPE __U32_TYPE
+                           ^
+/usr/mipsel-linux-gnu/include/bits/types.h:140:12: note: in expansion of macro ‘__USECONDS_T_TYPE’
+ __STD_TYPE __USECONDS_T_TYPE __useconds_t; /* Count of microseconds.  */
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:93:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘long’
+ #define __SLONGWORD_TYPE long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:52:28: note: in expansion of macro ‘__SLONGWORD_TYPE’
+ #define __SUSECONDS_T_TYPE __SLONGWORD_TYPE
+                            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:141:12: note: in expansion of macro ‘__SUSECONDS_T_TYPE’
+ __STD_TYPE __SUSECONDS_T_TYPE __suseconds_t; /* Signed count of microseconds.  */
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:91:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘int’
+ #define __S32_TYPE  int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:53:25: note: in expansion of macro ‘__S32_TYPE’
+ #define __DADDR_T_TYPE  __S32_TYPE
+                         ^
+/usr/mipsel-linux-gnu/include/bits/types.h:143:12: note: in expansion of macro ‘__DADDR_T_TYPE’
+ __STD_TYPE __DADDR_T_TYPE __daddr_t; /* The type of a disk address.  */
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:91:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘int’
+ #define __S32_TYPE  int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:54:23: note: in expansion of macro ‘__S32_TYPE’
+ #define __KEY_T_TYPE  __S32_TYPE
+                       ^
+/usr/mipsel-linux-gnu/include/bits/types.h:144:12: note: in expansion of macro ‘__KEY_T_TYPE’
+ __STD_TYPE __KEY_T_TYPE __key_t; /* Type of an IPC key.  */
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:91:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘int’
+ #define __S32_TYPE  int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:55:26: note: in expansion of macro ‘__S32_TYPE’
+ #define __CLOCKID_T_TYPE __S32_TYPE
+                          ^
+/usr/mipsel-linux-gnu/include/bits/types.h:147:12: note: in expansion of macro ‘__CLOCKID_T_TYPE’
+ __STD_TYPE __CLOCKID_T_TYPE __clockid_t;
+            ^
+In file included from /usr/mipsel-linux-gnu/include/bits/types.h:121:0,
+                 from /usr/mipsel-linux-gnu/include/stdio.h:35,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:56:25: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘void’
+ #define __TIMER_T_TYPE  void *
+                         ^
+/usr/mipsel-linux-gnu/include/bits/types.h:150:12: note: in expansion of macro ‘__TIMER_T_TYPE’
+ __STD_TYPE __TIMER_T_TYPE __timer_t;
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:93:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘long’
+ #define __SLONGWORD_TYPE long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:57:26: note: in expansion of macro ‘__SLONGWORD_TYPE’
+ #define __BLKSIZE_T_TYPE __SLONGWORD_TYPE
+                          ^
+/usr/mipsel-linux-gnu/include/bits/types.h:153:12: note: in expansion of macro ‘__BLKSIZE_T_TYPE’
+ __STD_TYPE __BLKSIZE_T_TYPE __blksize_t;
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:93:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘long’
+ #define __SLONGWORD_TYPE long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:41:26: note: in expansion of macro ‘__SLONGWORD_TYPE’
+ #define __BLKCNT_T_TYPE  __SLONGWORD_TYPE
+                          ^
+/usr/mipsel-linux-gnu/include/bits/types.h:158:12: note: in expansion of macro ‘__BLKCNT_T_TYPE’
+ __STD_TYPE __BLKCNT_T_TYPE __blkcnt_t;
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:159:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __BLKCNT64_T_TYPE __blkcnt64_t;
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:159:30: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__blkcnt64_t’
+ __STD_TYPE __BLKCNT64_T_TYPE __blkcnt64_t;
+                              ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:94:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __ULONGWORD_TYPE unsigned long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:43:27: note: in expansion of macro ‘__ULONGWORD_TYPE’
+ #define __FSBLKCNT_T_TYPE __ULONGWORD_TYPE
+                           ^
+/usr/mipsel-linux-gnu/include/bits/types.h:162:12: note: in expansion of macro ‘__FSBLKCNT_T_TYPE’
+ __STD_TYPE __FSBLKCNT_T_TYPE __fsblkcnt_t;
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:163:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __FSBLKCNT64_T_TYPE __fsblkcnt64_t;
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:163:32: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__fsblkcnt64_t’
+ __STD_TYPE __FSBLKCNT64_T_TYPE __fsblkcnt64_t;
+                                ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:94:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __ULONGWORD_TYPE unsigned long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:45:27: note: in expansion of macro ‘__ULONGWORD_TYPE’
+ #define __FSFILCNT_T_TYPE __ULONGWORD_TYPE
+                           ^
+/usr/mipsel-linux-gnu/include/bits/types.h:166:12: note: in expansion of macro ‘__FSFILCNT_T_TYPE’
+ __STD_TYPE __FSFILCNT_T_TYPE __fsfilcnt_t;
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:167:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __FSFILCNT64_T_TYPE __fsfilcnt64_t;
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:167:32: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__fsfilcnt64_t’
+ __STD_TYPE __FSFILCNT64_T_TYPE __fsfilcnt64_t;
+                                ^
+/usr/mipsel-linux-gnu/include/bits/types.h:170:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __FSWORD_T_TYPE __fsword_t;
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:170:28: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__fsword_t’
+ __STD_TYPE __FSWORD_T_TYPE __fsword_t;
+                            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:172:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __SSIZE_T_TYPE __ssize_t; /* Type of a byte count, or error.  */
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:172:27: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__ssize_t’
+ __STD_TYPE __SSIZE_T_TYPE __ssize_t; /* Type of a byte count, or error.  */
+                           ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:93:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘long’
+ #define __SLONGWORD_TYPE long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:60:30: note: in expansion of macro ‘__SLONGWORD_TYPE’
+ #define __SYSCALL_SLONG_TYPE __SLONGWORD_TYPE
+                              ^
+/usr/mipsel-linux-gnu/include/bits/types.h:175:12: note: in expansion of macro ‘__SYSCALL_SLONG_TYPE’
+ __STD_TYPE __SYSCALL_SLONG_TYPE __syscall_slong_t;
+            ^
+/usr/mipsel-linux-gnu/include/bits/types.h:94:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __ULONGWORD_TYPE unsigned long int
+                          ^
+/usr/mipsel-linux-gnu/include/bits/typesizes.h:61:30: note: in expansion of macro ‘__ULONGWORD_TYPE’
+ #define __SYSCALL_ULONG_TYPE __ULONGWORD_TYPE
+                              ^
+/usr/mipsel-linux-gnu/include/bits/types.h:177:12: note: in expansion of macro ‘__SYSCALL_ULONG_TYPE’
+ __STD_TYPE __SYSCALL_ULONG_TYPE __syscall_ulong_t;
+            ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:181:9: error: unknown type name ‘__off64_t’
+ typedef __off64_t __loff_t; /* Type of file sizes and offsets (LFS).  */
+         ^
+/usr/mipsel-linux-gnu/include/bits/types.h:186:1: error: unknown type name ‘__STD_TYPE’
+ __STD_TYPE __SWORD_TYPE __intptr_t;
+ ^
+/usr/mipsel-linux-gnu/include/bits/types.h:186:25: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__intptr_t’
+ __STD_TYPE __SWORD_TYPE __intptr_t;
+                         ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:35:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/bits/types.h:92:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘unsigned’
+ #define __U32_TYPE  unsigned int
+                     ^
+/usr/mipsel-linux-gnu/include/bits/types.h:189:12: note: in expansion of macro ‘__U32_TYPE’
+ __STD_TYPE __U32_TYPE __socklen_t;
+            ^
+In file included from /usr/mipsel-linux-gnu/include/libio.h:31:0,
+                 from /usr/mipsel-linux-gnu/include/stdio.h:74,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/_G_config.h:23:3: error: unknown type name ‘__off_t’
+   __off_t __pos;
+   ^
+/usr/mipsel-linux-gnu/include/_G_config.h:28:3: error: unknown type name ‘__off64_t’
+   __off64_t __pos;
+   ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:74:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/libio.h:37:19: error: unknown type name ‘__off_t’
+ #define _IO_off_t __off_t
+                   ^
+/usr/mipsel-linux-gnu/include/libio.h:270:3: note: in expansion of macro ‘_IO_off_t’
+   _IO_off_t _old_offset; /* This used to be _offset but it's too small.  */
+   ^
+/usr/mipsel-linux-gnu/include/libio.h:38:21: error: unknown type name ‘__off64_t’
+ #define _IO_off64_t __off64_t
+                     ^
+/usr/mipsel-linux-gnu/include/libio.h:289:3: note: in expansion of macro ‘_IO_off64_t’
+   _IO_off64_t _offset;
+   ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:74:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/libio.h:333:9: error: unknown type name ‘__ssize_t’
+ typedef __ssize_t __io_read_fn (void *__cookie, char *__buf, size_t __nbytes);
+         ^
+/usr/mipsel-linux-gnu/include/libio.h:341:9: error: unknown type name ‘__ssize_t’
+ typedef __ssize_t __io_write_fn (void *__cookie, const char *__buf,
+         ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:74:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/libio.h:38:21: error: unknown type name ‘__off64_t’
+ #define _IO_off64_t __off64_t
+                     ^
+/usr/mipsel-linux-gnu/include/libio.h:350:43: note: in expansion of macro ‘_IO_off64_t’
+ typedef int __io_seek_fn (void *__cookie, _IO_off64_t *__pos, int __w);
+                                           ^
+/usr/mipsel-linux-gnu/include/libio.h:36:21: error: unknown type name ‘__ssize_t’
+ #define _IO_ssize_t __ssize_t
+                     ^
+/usr/mipsel-linux-gnu/include/libio.h:463:8: note: in expansion of macro ‘_IO_ssize_t’
+ extern _IO_ssize_t _IO_padn (_IO_FILE *, int, _IO_ssize_t);
+        ^
+/usr/mipsel-linux-gnu/include/libio.h:36:21: error: unknown type name ‘__ssize_t’
+ #define _IO_ssize_t __ssize_t
+                     ^
+/usr/mipsel-linux-gnu/include/libio.h:463:47: note: in expansion of macro ‘_IO_ssize_t’
+ extern _IO_ssize_t _IO_padn (_IO_FILE *, int, _IO_ssize_t);
+                                               ^
+/usr/mipsel-linux-gnu/include/libio.h:38:21: error: unknown type name ‘__off64_t’
+ #define _IO_off64_t __off64_t
+                     ^
+/usr/mipsel-linux-gnu/include/libio.h:466:8: note: in expansion of macro ‘_IO_off64_t’
+ extern _IO_off64_t _IO_seekoff (_IO_FILE *, _IO_off64_t, int, int);
+        ^
+/usr/mipsel-linux-gnu/include/libio.h:38:21: error: unknown type name ‘__off64_t’
+ #define _IO_off64_t __off64_t
+                     ^
+/usr/mipsel-linux-gnu/include/libio.h:466:45: note: in expansion of macro ‘_IO_off64_t’
+ extern _IO_off64_t _IO_seekoff (_IO_FILE *, _IO_off64_t, int, int);
+                                             ^
+/usr/mipsel-linux-gnu/include/libio.h:38:21: error: unknown type name ‘__off64_t’
+ #define _IO_off64_t __off64_t
+                     ^
+/usr/mipsel-linux-gnu/include/libio.h:467:8: note: in expansion of macro ‘_IO_off64_t’
+ extern _IO_off64_t _IO_seekpos (_IO_FILE *, _IO_off64_t, int);
+        ^
+/usr/mipsel-linux-gnu/include/libio.h:38:21: error: unknown type name ‘__off64_t’
+ #define _IO_off64_t __off64_t
+                     ^
+/usr/mipsel-linux-gnu/include/libio.h:467:45: note: in expansion of macro ‘_IO_off64_t’
+ extern _IO_off64_t _IO_seekpos (_IO_FILE *, _IO_off64_t, int);
+                                             ^
+In file included from hdboot.c:13:0:
+/usr/mipsel-linux-gnu/include/stdio.h:90:9: error: unknown type name ‘__off_t’
+ typedef __off_t off_t;
+         ^
+/usr/mipsel-linux-gnu/include/stdio.h:102:9: error: unknown type name ‘__ssize_t’
+ typedef __ssize_t ssize_t;
+         ^
+In file included from /usr/mipsel-linux-gnu/include/stdio.h:74:0,
+                 from hdboot.c:13:
+/usr/mipsel-linux-gnu/include/libio.h:36:21: error: unknown type name ‘__ssize_t’
+ #define _IO_ssize_t __ssize_t
+                     ^
+/usr/mipsel-linux-gnu/include/stdio.h:665:8: note: in expansion of macro ‘_IO_ssize_t’
+ extern _IO_ssize_t __getdelim (char **__restrict __lineptr,
+        ^
+/usr/mipsel-linux-gnu/include/libio.h:36:21: error: unknown type name ‘__ssize_t’
+ #define _IO_ssize_t __ssize_t
+                     ^
+/usr/mipsel-linux-gnu/include/stdio.h:668:8: note: in expansion of macro ‘_IO_ssize_t’
+ extern _IO_ssize_t getdelim (char **__restrict __lineptr,
+        ^
+/usr/mipsel-linux-gnu/include/libio.h:36:21: error: unknown type name ‘__ssize_t’
+ #define _IO_ssize_t __ssize_t
+                     ^
+/usr/mipsel-linux-gnu/include/stdio.h:678:8: note: in expansion of macro ‘_IO_ssize_t’
+ extern _IO_ssize_t getline (char **__restrict __lineptr,
+        ^
+In file included from hdboot.c:13:0:
+/usr/mipsel-linux-gnu/include/stdio.h:773:36: error: unknown type name ‘__off_t’
+ extern int fseeko (FILE *__stream, __off_t __off, int __whence);
+                                    ^
+/usr/mipsel-linux-gnu/include/stdio.h:778:8: error: unknown type name ‘__off_t’
+ extern __off_t ftello (FILE *__stream) __wur;
+        ^
+In file included from /usr/mipsel-linux-gnu/include/stdlib.h:314:0,
+                 from hdboot.c:14:
+/usr/mipsel-linux-gnu/include/sys/types.h:39:18: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘fsid_t’
+ typedef __fsid_t fsid_t;
+                  ^
+/usr/mipsel-linux-gnu/include/sys/types.h:48:9: error: unknown type name ‘__ino_t’
+ typedef __ino_t ino_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:60:9: error: unknown type name ‘__dev_t’
+ typedef __dev_t dev_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:65:9: error: unknown type name ‘__gid_t’
+ typedef __gid_t gid_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:70:9: error: unknown type name ‘__mode_t’
+ typedef __mode_t mode_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:75:9: error: unknown type name ‘__nlink_t’
+ typedef __nlink_t nlink_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:80:9: error: unknown type name ‘__uid_t’
+ typedef __uid_t uid_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:98:9: error: unknown type name ‘__pid_t’
+ typedef __pid_t pid_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:104:9: error: unknown type name ‘__id_t’
+ typedef __id_t id_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:115:9: error: unknown type name ‘__daddr_t’
+ typedef __daddr_t daddr_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:122:9: error: unknown type name ‘__key_t’
+ typedef __key_t key_t;
+         ^
+In file included from /usr/mipsel-linux-gnu/include/sys/types.h:132:0,
+                 from /usr/mipsel-linux-gnu/include/stdlib.h:314,
+                 from hdboot.c:14:
+/usr/mipsel-linux-gnu/include/time.h:59:9: error: unknown type name ‘__clock_t’
+ typedef __clock_t clock_t;
+         ^
+/usr/mipsel-linux-gnu/include/time.h:75:9: error: unknown type name ‘__time_t’
+ typedef __time_t time_t;
+         ^
+/usr/mipsel-linux-gnu/include/time.h:91:9: error: unknown type name ‘__clockid_t’
+ typedef __clockid_t clockid_t;
+         ^
+/usr/mipsel-linux-gnu/include/time.h:103:9: error: unknown type name ‘__timer_t’
+ typedef __timer_t timer_t;
+         ^
+In file included from /usr/mipsel-linux-gnu/include/sys/select.h:43:0,
+                 from /usr/mipsel-linux-gnu/include/sys/types.h:219,
+                 from /usr/mipsel-linux-gnu/include/stdlib.h:314,
+                 from hdboot.c:14:
+/usr/mipsel-linux-gnu/include/time.h:122:5: error: unknown type name ‘__time_t’
+     __time_t tv_sec;  /* Seconds.  */
+     ^
+/usr/mipsel-linux-gnu/include/time.h:123:5: error: unknown type name ‘__syscall_slong_t’
+     __syscall_slong_t tv_nsec; /* Nanoseconds.  */
+     ^
+In file included from /usr/mipsel-linux-gnu/include/sys/select.h:45:0,
+                 from /usr/mipsel-linux-gnu/include/sys/types.h:219,
+                 from /usr/mipsel-linux-gnu/include/stdlib.h:314,
+                 from hdboot.c:14:
+/usr/mipsel-linux-gnu/include/bits/time.h:32:5: error: unknown type name ‘__time_t’
+     __time_t tv_sec;  /* Seconds.  */
+     ^
+/usr/mipsel-linux-gnu/include/bits/time.h:33:5: error: unknown type name ‘__suseconds_t’
+     __suseconds_t tv_usec; /* Microseconds.  */
+     ^
+In file included from /usr/mipsel-linux-gnu/include/sys/types.h:219:0,
+                 from /usr/mipsel-linux-gnu/include/stdlib.h:314,
+                 from hdboot.c:14:
+/usr/mipsel-linux-gnu/include/sys/select.h:48:9: error: unknown type name ‘__suseconds_t’
+ typedef __suseconds_t suseconds_t;
+         ^
+In file included from /usr/mipsel-linux-gnu/include/stdlib.h:314:0,
+                 from hdboot.c:14:
+/usr/mipsel-linux-gnu/include/sys/types.h:228:9: error: unknown type name ‘__blksize_t’
+ typedef __blksize_t blksize_t;
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:235:9: error: unknown type name ‘__blkcnt_t’
+ typedef __blkcnt_t blkcnt_t;  /* Type to count number of disk blocks.  */
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:239:9: error: unknown type name ‘__fsblkcnt_t’
+ typedef __fsblkcnt_t fsblkcnt_t; /* Type to count file system blocks.  */
+         ^
+/usr/mipsel-linux-gnu/include/sys/types.h:243:9: error: unknown type name ‘__fsfilcnt_t’
+ typedef __fsfilcnt_t fsfilcnt_t; /* Type to count file system inodes.  */
+         ^
+In file included from /usr/mipsel-linux-gnu/include/sys/stat.h:104:0,
+                 from hdboot.c:17:
+/usr/mipsel-linux-gnu/include/bits/stat.h:136:5: error: unknown type name ‘__dev_t’
+     __dev_t st_dev;
+     ^
+/usr/mipsel-linux-gnu/include/bits/stat.h:139:5: error: unknown type name ‘__ino_t’
+     __ino_t st_ino;
+     ^
+/usr/mipsel-linux-gnu/include/bits/stat.h:143:5: error: unknown type name ‘__mode_t’
+     __mode_t st_mode;
+     ^
+/usr/mipsel-linux-gnu/include/bits/stat.h:144:5: error: unknown type name ‘__nlink_t’
+     __nlink_t st_nlink;
+     ^
+/usr/mipsel-linux-gnu/include/bits/stat.h:145:5: error: unknown type name ‘__uid_t’
+     __uid_t st_uid;
+     ^
+/usr/mipsel-linux-gnu/include/bits/stat.h:146:5: error: unknown type name ‘__gid_t’
+     __gid_t st_gid;
+     ^
+/usr/mipsel-linux-gnu/include/bits/stat.h:147:5: error: unknown type name ‘__dev_t’
+     __dev_t st_rdev;
+     ^
+/usr/mipsel-linux-gnu/include/bits/stat.h:150:5: error: unknown type name ‘__off_t’
+     __off_t st_size;
+     ^
+/usr/mipsel-linux-gnu/include/bits/stat.h:177:5: error: unknown type name ‘__blksize_t’
+     __blksize_t st_blksize;
+     ^
+/usr/mipsel-linux-gnu/include/bits/stat.h:180:5: error: unknown type name ‘__blkcnt_t’
+     __blkcnt_t st_blocks;
+     ^
+In file included from hdboot.c:17:0:
+/usr/mipsel-linux-gnu/include/sys/stat.h:283:39: error: unknown type name ‘__mode_t’
+ extern int chmod (const char *__file, __mode_t __mode)
+                                       ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:290:40: error: unknown type name ‘__mode_t’
+ extern int lchmod (const char *__file, __mode_t __mode)
+                                        ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:296:30: error: unknown type name ‘__mode_t’
+ extern int fchmod (int __fd, __mode_t __mode) __THROW;
+                              ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:302:52: error: unknown type name ‘__mode_t’
+ extern int fchmodat (int __fd, const char *__file, __mode_t __mode,
+                                                    ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:311:8: error: unknown type name ‘__mode_t’
+ extern __mode_t umask (__mode_t __mask) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:311:24: error: unknown type name ‘__mode_t’
+ extern __mode_t umask (__mode_t __mask) __THROW;
+                        ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:320:39: error: unknown type name ‘__mode_t’
+ extern int mkdir (const char *__path, __mode_t __mode)
+                                       ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:327:51: error: unknown type name ‘__mode_t’
+ extern int mkdirat (int __fd, const char *__path, __mode_t __mode)
+                                                   ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:335:39: error: unknown type name ‘__mode_t’
+ extern int mknod (const char *__path, __mode_t __mode, __dev_t __dev)
+                                       ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:335:56: error: unknown type name ‘__dev_t’
+ extern int mknod (const char *__path, __mode_t __mode, __dev_t __dev)
+                                                        ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:342:51: error: unknown type name ‘__mode_t’
+ extern int mknodat (int __fd, const char *__path, __mode_t __mode,
+                                                   ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:343:7: error: unknown type name ‘__dev_t’
+       __dev_t __dev) __THROW __nonnull ((2));
+       ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:349:40: error: unknown type name ‘__mode_t’
+ extern int mkfifo (const char *__path, __mode_t __mode)
+                                        ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:356:52: error: unknown type name ‘__mode_t’
+ extern int mkfifoat (int __fd, const char *__path, __mode_t __mode)
+                                                    ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:441:53: error: unknown type name ‘__mode_t’
+ extern int __xmknod (int __ver, const char *__path, __mode_t __mode,
+                                                     ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:442:8: error: unknown type name ‘__dev_t’
+        __dev_t *__dev) __THROW __nonnull ((2, 4));
+        ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:445:10: error: unknown type name ‘__mode_t’
+          __mode_t __mode, __dev_t *__dev)
+          ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:445:27: error: unknown type name ‘__dev_t’
+          __mode_t __mode, __dev_t *__dev)
+                           ^
+In file included from /usr/mipsel-linux-gnu/include/features.h:367:0,
+                 from /usr/mipsel-linux-gnu/include/sys/ioctl.h:21,
+                 from hdboot.c:12:
+/usr/mipsel-linux-gnu/include/sys/stat.h:482:35: error: unknown type name ‘__mode_t’
+ __NTH (mknod (const char *__path, __mode_t __mode, __dev_t __dev))
+                                   ^
+/usr/mipsel-linux-gnu/include/sys/cdefs.h:57:59: note: in definition of macro ‘__NTH’
+ #  define __NTH(fct) __attribute__ ((__nothrow__ __LEAF)) fct
+                                                           ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:482:52: error: unknown type name ‘__dev_t’
+ __NTH (mknod (const char *__path, __mode_t __mode, __dev_t __dev))
+                                                    ^
+/usr/mipsel-linux-gnu/include/sys/cdefs.h:57:59: note: in definition of macro ‘__NTH’
+ #  define __NTH(fct) __attribute__ ((__nothrow__ __LEAF)) fct
+                                                           ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:490:47: error: unknown type name ‘__mode_t’
+ __NTH (mknodat (int __fd, const char *__path, __mode_t __mode,
+                                               ^
+/usr/mipsel-linux-gnu/include/sys/cdefs.h:57:59: note: in definition of macro ‘__NTH’
+ #  define __NTH(fct) __attribute__ ((__nothrow__ __LEAF)) fct
+                                                           ^
+/usr/mipsel-linux-gnu/include/sys/stat.h:491:3: error: unknown type name ‘__dev_t’
+   __dev_t __dev))
+   ^
+/usr/mipsel-linux-gnu/include/sys/cdefs.h:57:59: note: in definition of macro ‘__NTH’
+ #  define __NTH(fct) __attribute__ ((__nothrow__ __LEAF)) fct
+                                                           ^
+In file included from /usr/mipsel-linux-gnu/include/fcntl.h:35:0,
+                 from hdboot.c:18:
+/usr/mipsel-linux-gnu/include/bits/fcntl.h:72:5: error: unknown type name ‘__off_t’
+     __off_t l_start; /* Offset where the lock begins.  */
+     ^
+/usr/mipsel-linux-gnu/include/bits/fcntl.h:73:5: error: unknown type name ‘__off_t’
+     __off_t l_len; /* Size of the locked area; zero means until EOF.  */
+     ^
+/usr/mipsel-linux-gnu/include/bits/fcntl.h:83:5: error: unknown type name ‘__pid_t’
+     __pid_t l_pid; /* Process holding the lock.  */
+     ^
+In file included from hdboot.c:20:0:
+/usr/mipsel-linux-gnu/include/unistd.h:258:9: error: unknown type name ‘__useconds_t’
+ typedef __useconds_t useconds_t;
+         ^
+/usr/mipsel-linux-gnu/include/unistd.h:277:9: error: unknown type name ‘__socklen_t’
+ typedef __socklen_t socklen_t;
+         ^
+/usr/mipsel-linux-gnu/include/unistd.h:337:8: error: unknown type name ‘__off_t’
+ extern __off_t lseek (int __fd, __off_t __offset, int __whence) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:337:33: error: unknown type name ‘__off_t’
+ extern __off_t lseek (int __fd, __off_t __offset, int __whence) __THROW;
+                                 ^
+/usr/mipsel-linux-gnu/include/unistd.h:380:9: error: unknown type name ‘__off_t’
+         __off_t __offset) __wur;
+         ^
+/usr/mipsel-linux-gnu/include/unistd.h:388:10: error: unknown type name ‘__off_t’
+          __off_t __offset) __wur;
+          ^
+/usr/mipsel-linux-gnu/include/unistd.h:455:8: error: unknown type name ‘__useconds_t’
+ extern __useconds_t ualarm (__useconds_t __value, __useconds_t __interval)
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:455:29: error: unknown type name ‘__useconds_t’
+ extern __useconds_t ualarm (__useconds_t __value, __useconds_t __interval)
+                             ^
+/usr/mipsel-linux-gnu/include/unistd.h:455:51: error: unknown type name ‘__useconds_t’
+ extern __useconds_t ualarm (__useconds_t __value, __useconds_t __interval)
+                                                   ^
+/usr/mipsel-linux-gnu/include/unistd.h:463:20: error: unknown type name ‘__useconds_t’
+ extern int usleep (__useconds_t __useconds);
+                    ^
+/usr/mipsel-linux-gnu/include/unistd.h:476:39: error: unknown type name ‘__uid_t’
+ extern int chown (const char *__file, __uid_t __owner, __gid_t __group)
+                                       ^
+/usr/mipsel-linux-gnu/include/unistd.h:476:56: error: unknown type name ‘__gid_t’
+ extern int chown (const char *__file, __uid_t __owner, __gid_t __group)
+                                                        ^
+/usr/mipsel-linux-gnu/include/unistd.h:481:30: error: unknown type name ‘__uid_t’
+ extern int fchown (int __fd, __uid_t __owner, __gid_t __group) __THROW __wur;
+                              ^
+/usr/mipsel-linux-gnu/include/unistd.h:481:47: error: unknown type name ‘__gid_t’
+ extern int fchown (int __fd, __uid_t __owner, __gid_t __group) __THROW __wur;
+                                               ^
+/usr/mipsel-linux-gnu/include/unistd.h:486:40: error: unknown type name ‘__uid_t’
+ extern int lchown (const char *__file, __uid_t __owner, __gid_t __group)
+                                        ^
+/usr/mipsel-linux-gnu/include/unistd.h:486:57: error: unknown type name ‘__gid_t’
+ extern int lchown (const char *__file, __uid_t __owner, __gid_t __group)
+                                                         ^
+/usr/mipsel-linux-gnu/include/unistd.h:494:52: error: unknown type name ‘__uid_t’
+ extern int fchownat (int __fd, const char *__file, __uid_t __owner,
+                                                    ^
+/usr/mipsel-linux-gnu/include/unistd.h:495:8: error: unknown type name ‘__gid_t’
+        __gid_t __group, int __flag)
+        ^
+In file included from hdboot.c:20:0:
+/usr/mipsel-linux-gnu/include/unistd.h:631:8: error: unknown type name ‘__pid_t’
+ extern __pid_t getpid (void) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:634:8: error: unknown type name ‘__pid_t’
+ extern __pid_t getppid (void) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:637:8: error: unknown type name ‘__pid_t’
+ extern __pid_t getpgrp (void) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:640:8: error: unknown type name ‘__pid_t’
+ extern __pid_t __getpgid (__pid_t __pid) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:640:27: error: unknown type name ‘__pid_t’
+ extern __pid_t __getpgid (__pid_t __pid) __THROW;
+                           ^
+/usr/mipsel-linux-gnu/include/unistd.h:642:8: error: unknown type name ‘__pid_t’
+ extern __pid_t getpgid (__pid_t __pid) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:642:25: error: unknown type name ‘__pid_t’
+ extern __pid_t getpgid (__pid_t __pid) __THROW;
+                         ^
+/usr/mipsel-linux-gnu/include/unistd.h:649:21: error: unknown type name ‘__pid_t’
+ extern int setpgid (__pid_t __pid, __pid_t __pgid) __THROW;
+                     ^
+/usr/mipsel-linux-gnu/include/unistd.h:649:36: error: unknown type name ‘__pid_t’
+ extern int setpgid (__pid_t __pid, __pid_t __pgid) __THROW;
+                                    ^
+/usr/mipsel-linux-gnu/include/unistd.h:670:8: error: unknown type name ‘__pid_t’
+ extern __pid_t setsid (void) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:674:8: error: unknown type name ‘__pid_t’
+ extern __pid_t getsid (__pid_t __pid) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:674:24: error: unknown type name ‘__pid_t’
+ extern __pid_t getsid (__pid_t __pid) __THROW;
+                        ^
+/usr/mipsel-linux-gnu/include/unistd.h:678:8: error: unknown type name ‘__uid_t’
+ extern __uid_t getuid (void) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:681:8: error: unknown type name ‘__uid_t’
+ extern __uid_t geteuid (void) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:684:8: error: unknown type name ‘__gid_t’
+ extern __gid_t getgid (void) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:687:8: error: unknown type name ‘__gid_t’
+ extern __gid_t getegid (void) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:692:35: error: unknown type name ‘__gid_t’
+ extern int getgroups (int __size, __gid_t __list[]) __THROW __wur;
+                                   ^
+/usr/mipsel-linux-gnu/include/unistd.h:703:20: error: unknown type name ‘__uid_t’
+ extern int setuid (__uid_t __uid) __THROW __wur;
+                    ^
+/usr/mipsel-linux-gnu/include/unistd.h:708:22: error: unknown type name ‘__uid_t’
+ extern int setreuid (__uid_t __ruid, __uid_t __euid) __THROW __wur;
+                      ^
+/usr/mipsel-linux-gnu/include/unistd.h:708:38: error: unknown type name ‘__uid_t’
+ extern int setreuid (__uid_t __ruid, __uid_t __euid) __THROW __wur;
+                                      ^
+/usr/mipsel-linux-gnu/include/unistd.h:713:21: error: unknown type name ‘__uid_t’
+ extern int seteuid (__uid_t __uid) __THROW __wur;
+                     ^
+/usr/mipsel-linux-gnu/include/unistd.h:720:20: error: unknown type name ‘__gid_t’
+ extern int setgid (__gid_t __gid) __THROW __wur;
+                    ^
+/usr/mipsel-linux-gnu/include/unistd.h:725:22: error: unknown type name ‘__gid_t’
+ extern int setregid (__gid_t __rgid, __gid_t __egid) __THROW __wur;
+                      ^
+/usr/mipsel-linux-gnu/include/unistd.h:725:38: error: unknown type name ‘__gid_t’
+ extern int setregid (__gid_t __rgid, __gid_t __egid) __THROW __wur;
+                                      ^
+/usr/mipsel-linux-gnu/include/unistd.h:730:21: error: unknown type name ‘__gid_t’
+ extern int setegid (__gid_t __gid) __THROW __wur;
+                     ^
+/usr/mipsel-linux-gnu/include/unistd.h:759:8: error: unknown type name ‘__pid_t’
+ extern __pid_t fork (void) __THROWNL;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:767:8: error: unknown type name ‘__pid_t’
+ extern __pid_t vfork (void) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:842:8: error: unknown type name ‘__pid_t’
+ extern __pid_t tcgetpgrp (int __fd) __THROW;
+        ^
+/usr/mipsel-linux-gnu/include/unistd.h:845:33: error: unknown type name ‘__pid_t’
+ extern int tcsetpgrp (int __fd, __pid_t __pgrp_id) __THROW;
+                                 ^
+In file included from hdboot.c:20:0:
+/usr/mipsel-linux-gnu/include/unistd.h:996:42: error: unknown type name ‘__off_t’
+ extern int truncate (const char *__file, __off_t __length)
+                                          ^
+/usr/mipsel-linux-gnu/include/unistd.h:1019:33: error: unknown type name ‘__off_t’
+ extern int ftruncate (int __fd, __off_t __length) __THROW __wur;
+                                 ^
+In file included from /usr/mipsel-linux-gnu/include/unistd.h:1151:0,
+                 from hdboot.c:20:
+/usr/mipsel-linux-gnu/include/bits/unistd.h:254:41: error: unknown type name ‘__gid_t’
+ extern int __getgroups_chk (int __size, __gid_t __list[], size_t __listlen)
+                                         ^
+In file included from /usr/mipsel-linux-gnu/include/features.h:367:0,
+                 from /usr/mipsel-linux-gnu/include/sys/ioctl.h:21,
+                 from hdboot.c:12:
+/usr/mipsel-linux-gnu/include/bits/unistd.h:256:60: error: unknown type name ‘__gid_t’
+ extern int __REDIRECT_NTH (__getgroups_alias, (int __size, __gid_t __list[]),
+                                                            ^
+/usr/mipsel-linux-gnu/include/sys/cdefs.h:185:11: note: in definition of macro ‘__REDIRECT_NTH’
+      name proto __asm__ (__ASMNAME (#alias)) __THROW
+           ^
+/usr/mipsel-linux-gnu/include/bits/unistd.h:259:20: error: unknown type name ‘__gid_t’
+       (int __size, __gid_t __list[], size_t __listlen),
+                    ^
+/usr/mipsel-linux-gnu/include/sys/cdefs.h:185:11: note: in definition of macro ‘__REDIRECT_NTH’
+      name proto __asm__ (__ASMNAME (#alias)) __THROW
+           ^
+/usr/mipsel-linux-gnu/include/bits/unistd.h:265:31: error: unknown type name ‘__gid_t’
+ __NTH (getgroups (int __size, __gid_t __list[]))
+                               ^
+/usr/mipsel-linux-gnu/include/sys/cdefs.h:57:59: note: in definition of macro ‘__NTH’
+ #  define __NTH(fct) __attribute__ ((__nothrow__ __LEAF)) fct
+                                                           ^
+In file included from hdboot.c:21:0:
+/usr/mipsel-linux-gnu/include/sys/mman.h:58:29: error: unknown type name ‘__off_t’
+      int __flags, int __fd, __off_t __offset) __THROW;
+                             ^
+hdboot.c:24:22: fatal error: asm/mtrr.h: Datei oder Verzeichnis nicht gefunden
+compilation terminated.
+Makefile:19: die Regel für Ziel „hdboot.o“ scheiterte
+make: *** [hdboot.o] Fehler 1

@@ -1,0 +1,213 @@
+<!-- now -->
+<?% USE date %?>
+<div id="body">
+<?% ######################################################################## %?>
+<?% BLOCK dur %?>
+    <?% height=6;IF d >= 0 and d < 100 %?>
+        	<?% IF d >= 1 %?>
+          <?% d = d / 2;d = d div 1 %?>
+				<img class="progressleft" src="images/blank.gif" width="<?% 50 - d div 1 %?>" height="<?% height %?>" alt="<?% 50 - d %?>%" /><img class="progressright" src="images/blank.gif" width="<?% d %?>" height="<?% height %?>" alt="" />
+            <?% ELSE %?>
+				<img class="progress" src="images/blank.gif" width="50" height="<?% height %?>" alt="" />
+            <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+    <?% state = '' %?>
+    <?% IF running %?>
+        <?% state = "running" %?>
+    <?% ELSIF timerid %?>
+      <?% UNLESS recording %?>
+        <?% state = "deactive" %?>
+      <?% ELSE %?>
+        <?% state = "active" %?>
+      <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK item %?>
+    <?% PROCESS SetState %?>
+    <td>
+    <?% IF global.preferedlocal && allow('switch') %?>
+            <a href="javascript:post('switch','<?% channel %?>')">
+              <img src="images/watch.<?% global.imagetyp %?>" alt="" title="<?% gettext("Switch") %?>" />
+            </a>
+    <?% ELSIF allow('livestream') %?>
+          <a href="?cmd=livestream&amp;data=<?% channel %?>">
+            <img src="images/webcast.<?% global.imagetyp %?>" alt="" title="<?% gettext("Live TV web cast") %?>" /></a>
+    <?% END %?>
+        <a style="vertical-align:bottom;" href="?cmd=program&amp;data=<?% channel %?>" title="<?% gettext("Program guide for") %?>&nbsp;<?% sender %?>">
+            <font class="channel<?% IF state != "";" ";state;END %?>"><?% sender %?></font>
+        </a>
+    </td>
+    <td>
+        <a title="<?% title %?>" href="?cmd=display&amp;data=<?% id %?>">
+            <font class="title<?% IF state != "";" ";state;END %?>"><?% title %?></font>
+            <?% IF subtitle.length > 0 %?>
+                &nbsp;<font class="subtitle<?% IF state != "";" ";state;END %?>"><?% subtitle %?></font>
+            <?% END %?>
+            <?% IF global.hideDescription != 1 && description.length > 0 %?><br /><font class="description<?% IF state != "";" ";state;END %?>"><?% chop(description,100,2) %?></font><?% END %?>
+        </a>
+    </td>
+    <td>
+        <?% PROCESS dur d=duration %?>
+    </td>
+    <td>
+        <?% start %?>&nbsp;-&nbsp;<?% stop %?>
+        <?% IF pdc && pdc != start %?> (<?% gettext("PDC") %?>:<?% PDC %?>) <?% END %?>
+    </td>
+    <td class="push">
+        <?% INCLUDE widgets/tooltip.inc cmd="display"  eventid=id linkid=id ttp_offset=-400 %?>
+        <a href="?cmd=search&amp;data=<?% url( title ) %?>">
+            <img src="images/find.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search for repeats") %?>" />
+        </a>
+        <?% IF timerid && allow('tedit') %?>
+        <a href="?cmd=tedit&amp;data=<?% timerid %?>">
+            <img src="images/onoff.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit this timer") %?>" />
+        </a>
+        <?% ELSIF allow('tnew') %?>
+        <a href="?cmd=tnew&amp;data=<?% id %?>">
+             <img src="images/record.<?% global.imagetyp %?>" alt="" title="<?% gettext("To record") %?>" />
+        </a>
+        <?% END %?>
+    </td>
+<?% END %?>
+<?% ######################################################################## %?>
+<?%
+    IF cgi.param('data') && cgi.param('data') > 100;
+        day = date.format(cgi.param('data'), '%A, %H:%M', locale);
+        time = date.format(cgi.param('data'), '%H:%M', locale);
+    ELSIF cgi.param('data') && param.zeit;
+        time = day = date.format(param.zeit, '%H:%M', locale);
+    ELSE;
+        day = date.format(date.now, '%H:%M', locale);
+        now = 1;
+    END;
+%?>
+<?% ######################################################################## %?>
+<h1><?% IF cgi.param('cmd') == 'next' %?>
+    <?% gettext("What is running at next") %?>
+    <?% ELSIF now %?>
+    <?% gettext("What is running now") %?>
+    <?% ELSE %?>
+    <?% gettext("What is running at") %?>&nbsp;<?% day %?>
+    <?% END %?>
+</h1>
+<?% IF data.size > 1%?>
+<?% fields = data.shift %?>
+<table summary=""  width="100%">
+<tr>
+    <th width="180"></th>
+    <th></th>
+    <th width="60">
+    </th><th width="80"></th>
+    <th width="40" align="right"></th>
+</tr>
+<?% FOREACH zeile IN data %?>
+    <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+    <tr<?% " class='two'" IF loop.count mod 2 == 0 %?>>
+        <?% id=zeile.0;title=zeile.1;subtitle=zeile.2;sender=zeile.3;
+            channel=zeile.4;group=zeile.5;start=zeile.6;stop=zeile.7;
+            description=zeile.8;duration=zeile.9;
+            timerid=zeile.10;recording=zeile.11;running=zeile.12;
+            pdc=zeile.13; %?>
+        <?% IF old.defined && group != old %?>
+    </tr>
+</table>
+<h2><?% group %?></h2>
+<table summary="" width="100%">
+<tr>
+    <th width="180"></th>
+    <th></th>
+    <th width="60">
+    </th><th width="80"></th>
+    <th width="40" align="right"></th>
+</tr>
+       <?% END %?>
+       <?% PROCESS item %?>
+       <?% old = group %?>
+    </tr>
+<?% END %?>
+</table>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+    <p class="section"><?% gettext("What is running at",20) %?></p>
+    <form action="">
+    <p>
+        <select name="cgroups" onchange="di('?cmd=<?% cgi.param('cmd') %?>&amp;data=<?% cgi.param('data') %?>&amp;__cgrp=',this.form.cgroups.options[this.form.cgroups.options.selectedIndex].value)">
+            <?% FOREACH cgrp IN param.cgroups %?>
+              <option value="<?% cgrp.last %?>"<?% ' selected="selected"' IF param.channelgroup == cgrp.last %?>><?% cgrp.first %?></option>
+            <?% END %?>
+        </select>
+    </p>
+    </form>
+    <p>
+        <a href="?cmd=now&amp;__cgrp=<?% cgi.param('__cgrp') %?>"><img src="images/forward.<?% global.imagetyp %?>" alt="" title="<?% gettext("Running now") %?>" /></a>&nbsp;
+        <a href="?cmd=now&amp;__cgrp=<?% cgi.param('__cgrp') %?>"><?% gettext("Running now",20) %?></a><br />
+        <a href="?cmd=next&amp;__cgrp=<?% cgi.param('__cgrp') %?>"><img src="images/forward.<?% global.imagetyp %?>" alt="" title="<?% gettext("Next") %?>" /></a>&nbsp;
+        <a href="?cmd=next&amp;__cgrp=<?% cgi.param('__cgrp') %?>"><?% gettext("Next",20) %?></a><br />
+        <a href="?cmd=sch<?% IF param.zeit && cgi.param('cmd') != 'next' && now != 1;"&amp;data=";param.zeit;END;%?>&amp;__cgrp=<?% cgi.param('__cgrp') %?>">
+            <img alt="" src="images/forward.<?% global.imagetyp %?>" title="<?% gettext("Schema") %?>" /></a>&nbsp;
+        <a href="?cmd=sch<?% IF param.zeit && cgi.param('cmd') != 'next' && now != 1;"&amp;data=";param.zeit;END;%?>&amp;__cgrp=<?% cgi.param('__cgrp') %?>">
+            <?% gettext("Schema",20) %?><?% IF param.zeit && cgi.param('cmd') != 'next' && now != 1;" ";day;END;%?></a>
+    </p>
+    <form method="post" action="?cmd=now"> 
+    <p>
+        <input type="text" name="data" value="<?% IF time.defined %?><?% time %?><?% ELSE %?>20:15<?% END %?>" size="18" />
+        <input type="hidden" name="__cgrp" value="<?% cgi.param('__cgrp') %?>" />
+    </p>
+    </form>
+    <form action="">
+        <p>
+            <?% zeiten = param.periods.split(','); %?>
+            <select size="<?% zeiten.size + 3 %?>" name='data' onchange="di('?cmd=now&amp;__cgrp=<?% cgi.param('__cgrp') %?>&amp;data=',this.form.data.options[this.form.data.options.selectedIndex].value)">
+            <?% today = [] %?>
+            <?% tomor = [] %?>
+        <?% FOREACH zeit IN zeiten %?>
+            <?% tom = 0 %?>
+            <?% PERL %?>
+                use Date::Manip;
+                my $z;
+                $z   = UnixDate(ParseDate($stash->{zeit}),"%s") || 0;
+                if($z and $z < time) {
+                    $z += 86400;
+                    $stash->set('tom', 1);
+                }
+                $stash->set('z', $z);
+            <?% END %?>
+            <?% NEXT UNLESS z;
+            IF tom;
+                tomor.push(z);
+            ELSE;
+                today.push(z);
+            END %?>
+        <?% END %?>
+        <?% IF today.size > 0 %?>
+            <optgroup label="<?% date.format(today.0, "%A", locale) %?>">
+        <?% FOREACH z IN today %?><option value="<?% z %?>"><?% date.format(z, "%H:%M", locale) %?></option><?% END %?> 
+            </optgroup>
+        <?% END %?>
+        <?% IF tomor.size > 0 %?>
+            <optgroup label="<?% date.format(tomor.0, "%A", locale) %?>">
+        <?% FOREACH z IN tomor %?><option value="<?% z %?>"><?% date.format(z, "%H:%M", locale) %?></option><?% END %?> 
+            </optgroup>
+        <?% END %?>
+            </select>
+<?% IF allow('erestart') %?>
+      <br />
+      <a title="<?% gettext("Update EPG data") %?>" href="?cmd=erestart"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Update EPG data") %?>" href="?cmd=erestart"><?% gettext("Update EPG data",20) %?></a>
+<?% END %?>
+        </p>
+    </form>
+    <p class="section"><?% gettext("Search",20) %?></p>
+    <form method="post" action="?cmd=search">
+    <p>
+        <input type="text" name="data" size="18" />
+    </p>
+    </form>
+</div>
+<?% global.sidebar = 1 %?>

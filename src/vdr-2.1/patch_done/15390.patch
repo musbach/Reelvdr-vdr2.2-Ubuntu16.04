@@ -1,0 +1,94 @@
+Index: debug.h
+===================================================================
+--- debug.h	(revision 0)
++++ debug.h	(revision 15390)
+@@ -0,0 +1,44 @@
++
++#ifndef DEBUG_H
++#define DEBUG_H
++#include <assert.h>
++
++#ifdef DBG
++  #undef DBG
++  #undef DERR
++  #undef DLOG
++  #undef PRINTF
++#endif
++
++
++#if defined DEBUG
++    #ifdef PLUGIN_NAME_I18N
++        #define CONTEXT PLUGIN_NAME_I18N
++    #else
++        #define CONTEXT "VDR, " __FILE__
++    #endif
++
++    // standard debug macro
++    #define DDD(x...)    printf("["CONTEXT"]: "x); printf("\n")
++
++    // standard error macro (red background)
++    #define DERR(x...)   printf("\033[0;37m\033[1;41m["CONTEXT"]: "x); printf("\033[0m\n")
++
++    // special macro: logs to syslog AND console
++    #define DLOG(x...)   printf("["CONTEXT"]: "x); printf("\n"); dsyslog("["CONTEXT"]: "x)
++
++    // for automatic conversion of printf's - i.e. use sed s/" printf"/" PRINTF"/
++    #define PRINTF(x...) printf("["CONTEXT"]: "x)
++#else
++    #define DDD(x...)
++    #define DERR(x...)
++    #define DLOG(x...)
++    #define PRINTF(x...)
++#endif
++
++//only here for compatibility reasons, don't use any more
++#define ERR "Error"
++
++#define DBG          ""
++
++#endif /* DEBUG_H */
+Index: debugmacros.h
+===================================================================
+--- debugmacros.h	(revision 0)
++++ debugmacros.h	(revision 15390)
+@@ -0,0 +1,40 @@
++
++
++#ifndef __DEBUG_MACROS__H
++#define __DEBUG_MACROS__H
++
++#include<cstdio>
++#include<iostream>
++
++
++
++#if 1
++
++
++/* just a helper for code location */
++#define LOC std::cout << "DEBUG: \t\t(" << __FILE__ << ":" << __LINE__ << ")  "<<__PRETTY_FUNCTION__<<"  ";
++
++#define HERE LOC printf("\n");
++
++/* macro using var args */
++#define DEBUG_PRINT(fmt,...) LOC printf(fmt,__VA_ARGS__);
++
++/* macro for general debug print statements. */
++#define DEBUG_VAL(text) LOC std::cout << text << std::endl;
++
++/* macro that dumps a variable name and its actual value */
++#define DEBUG_VAR(text) LOC std::cout << (#text) << "=" << text << std::endl;
++
++
++
++#else
++
++/* when debug isn't defined all the macro calls do absolutely nothing */
++#define DEBUG_PRINT(fmt,...)
++#define DEBUG_VAL(text)
++#define DEBUG_VAR(text)
++#define HERE 
++
++#endif
++#endif
++

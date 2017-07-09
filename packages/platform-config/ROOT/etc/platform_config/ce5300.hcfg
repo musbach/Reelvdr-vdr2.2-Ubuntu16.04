@@ -1,0 +1,122 @@
+platform
+{
+    startup
+    {
+        {
+            action      "load"
+            filename    "/etc/platform_config/common.hcfg"
+        }
+        {
+            action      "load"
+            filename    "/etc/platform_config/ce5300/local_tweaks.hcfg"
+        }
+    }
+
+    memory { media_base_address = 0xC800000   /* 200 Megabytes */ }
+
+    power
+    {
+        // Active power managment for ce5300 not implemented yet
+        modes
+        {
+            ON        = 0
+        }
+    }
+
+    software
+    {
+        drivers
+        {
+            avcap
+            {
+                i2c { hdmi_rx_bus = 2 }
+
+                video { channel_map = 1 }
+
+                hot_plug
+                {
+                    // Hot Plug Detect polarity configuration
+                    // The value is set according to if there is an external
+                    // inverter connected with rx hot plug line
+                    // 0 : HPD is driven to high to indicates rx is connected
+                    // 1 : HPD is driven to low  to indicates rx is connected
+                    polarity = 1
+                }
+            }
+
+            display
+            {
+                stereo
+                {
+                    // LRID (left/right ID) toggling service marks
+                    // each outgoing frame as either left or right.
+                    // Frames can be marked by:
+                    // 1. SW GPIO toggling
+                    // 2. HW GPIO toggling
+                    // 3. Embedding LRID in LVDS stream
+                    //
+                    // In a case of SW toggling lrid_gpio is used
+
+                    // LRID is only applicable to frame sequential modes
+                    // In the case of GPIO toggling lrid_invert_polarity
+                    // controls which GPIO state (on/off) corresponds to which
+                    // 3d view (left/right)
+
+                    // If lrid_invert_polarity is set to 0, GPIO is turned on
+                    // for the right frame and turned off for the left frame.
+                    // Setting lrid_invert_polarity to 1 inverts that behavior
+
+                    lrid_sw_toggled = 0
+                    lrid_hw_toggled = 1
+                    lrid_embedded   = 1
+
+                    // Only used for SW toggling
+                    lrid_gpio = 78
+                }
+            }
+
+            smd
+            {
+                firmware
+                {
+                    audio_dsp0  { filename = "/lib/firmware/smd/audio_fw_dsp0_96.bin" location = "smd_fw_ADSPFW0" size = 0 }
+                    audio_dsp1  { filename = "/lib/firmware/smd/audio_fw_dsp1.bin"    location = "smd_fw_ADSPFW1" size = 0 }
+                    video_ces_gv_code0  { filename = "/lib/firmware/smd/video_ces_gv_pd_gen5.bin" location = "smd_fw_VIDEO_CES_GV_CODE0" size = 0 }
+                    video_ces_gv_bss0  { filename = "/lib/firmware/smd/video_ces_gv_pd_gen5_bss.bin" location = "smd_fw_VIDEO_CES_GV_BSS0" size = 0 }
+                    video_ces_gv_code1  { filename = "/lib/firmware/smd/video_ces_gv_me_gen5.bin" location = "smd_fw_VIDEO_CES_GV_CODE1" size = 0 }
+                    video_ces_gv_bss1  { filename = "/lib/firmware/smd/video_ces_gv_me_gen5_bss.bin" location = "smd_fw_VIDEO_CES_GV_BSS1" size = 0 }
+                    video_ces_mp4_normal  { filename = "/lib/firmware/smd/video_ces_mfd_mp4_normal.bin" location = "smd_fw_VIDEO_CES_MP4_NORMAL" size = 0 }
+                    video_ces_mp4_dp  { filename = "/lib/firmware/smd/video_ces_mfd_mp4_dp.bin" location = "smd_fw_VIDEO_CES_MP4_DP" size = 0 }
+                    vidpproc    { filename = "/lib/firmware/smd/vpp_fw_gen5.bin"      location = "smd_fw_VPPFW"   size = 0 }
+                    demux_fw    { filename = "/lib/firmware/smd/tsd_fw_ver3.bin"      location = "smd_DMX_FW_IMAGE" size = 0 }
+                }
+                audio
+                {
+                    capture { i2s0_bitclk_direction = 1 }
+                }
+
+                core
+                {
+                    frame_buffer_properties { tile_width = 128 }
+                }
+                vidpproc
+                {
+                   ext_buffer_size = 0x002000
+                }
+                videnc
+                {
+                   // Default number of lookahead frames for scene change
+                   // detection is zero. This is enforced in the driver
+                   // by checking this value.
+                   //
+                   // For each frame that you add here you must add to the
+                   // memory layout:
+                   //
+                   // 1. Add ISMD_VIDENC_MAX_STREAMS frame buffers
+                   // 2. Add user data buffers, 16 per frame X ISMD_VIDENC_MAX_STREAMS
+                   max_scd_lookahead = 0
+                }
+            }
+        }
+    }
+}

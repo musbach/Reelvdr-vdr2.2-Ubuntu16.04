@@ -1,0 +1,7 @@
+hdctrld.o: hdctrld.c ../../src/include/hdshmlib.h \
+ ../../src/include/../driver/hdshm.h \
+ ../../src/include/hdshm_user_structs.h
+hdshmlib.o: hdshmlib.c ../driver/hdshm.h
+hdvideo.o: hdvideo.c ../../src/include/hdshmlib.h \
+ ../../src/include/../driver/hdshm.h \
+ ../../src/include/hdshm_user_structs.h

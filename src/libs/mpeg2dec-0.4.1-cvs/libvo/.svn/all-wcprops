@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo
+END
+video_out_sdl.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo/video_out_sdl.c
+END
+video_out_pgm.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo/video_out_pgm.c
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo/Makefile.in
+END
+configure.incl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo/configure.incl
+END
+video_out_x11.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo/video_out_x11.c
+END
+video_out_null.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo/video_out_null.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo/Makefile.am
+END
+video_out_dx.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo/video_out_dx.c
+END
+video_out.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/libvo/video_out.c
+END

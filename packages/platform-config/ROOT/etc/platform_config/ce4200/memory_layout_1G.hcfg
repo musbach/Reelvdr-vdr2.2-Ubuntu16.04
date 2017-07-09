@@ -1,0 +1,75 @@
+// NOTE: This layout starts at the media_base_address specified in platform config
+// Entries starting with smd_buffers* and smd_frame_buffers are processed by the SMD core, 
+// the name really doesn't matter other than the beginning, except that each entry must have a unique name.
+
+
+//name { type = <type> pmr = <pmr_identifier> size = <size> page_size = <page_size> align = <alignment>}
+
+//----------------------------------
+//Buffers needed to install drivers/FW (~79MB)
+smd_fw_ADSPFW0               {                     size = 0x00200000 align = 0x100000} // (2MB) Audio DSP Firmware and Debug 
+smd_fw_ADSPFW1               {                     size = 0x00200000 align = 0x100000} // (2MB) Audio DSP Firmware and Debug
+smd_fw_VPPFW                 {                     size = 0x00020000                 } // (128KB) VidPProc Firmware
+smd_DMX_FW_IMAGE             {                     size = 0x00020000                 } // (128KB) Demux FW image
+smd_fw_VIDEO_CES_GV_CODE     {                     size = 0x00040000 align = 0x040000} // (256KB) for loading Parser FW (this includes Transcode Encoder FW)
+smd_fw_VIDEO_CES_MFD         {                     size = 0x00018000 align = 0x020000} // (96KB) for loading decoder FW (this includes Transcode Mux FW)
+smd_fw_VIDEO_CES_GV_BSS      {                     size = 0x00008000                 } // (32KB) for loading Parser and encoder FW BSS 
+smd_fw_VIDEO_CES_MP4_NORMAL  {                     size = 0x00004000                 } // (16KB)for loading FW MP4 normal 
+smd_fw_VIDEO_CES_MP4_DP      {                     size = 0x00004000                 } // (16KB)for loading FW MP4 DP 
+smd_fw_VIDEO_CES_IPC_BUFFER  {                     size = 0x00002000                 } // (8KB) for Sync msg and global memory
+omar_buf                     {                     size = 0x00100000 align = 0x100000} // (1MB) OMAR trace buffer, must be aligned to size
+sven_buf                     {                     size = 0x00100000 align = 0x100000} // (1MB) SVEN trace buffer, must be aligned to size
+sven_hdr                     {                     size = 0x00001000                 } // (4KB) sven header buffer
+omar_hdr                     {                     size = 0x00001000                 } // (4KB) omar header buffer
+smd_VPP_BLACK                {                     size = 0x001E0000                 } // (1.6MB) VidPProc Black Border
+display_hdmi_dma             {                     size = 0x00008000                 } // (32KB) HDMI DMA Descriptors
+display                      {                     size = 0x04600000                 } // (70MB) Display Memory
+
+//----------------------------------
+//SMD Video Frame buffers (213MB)
+//Each buffer region is 2*1088*2*stride bytes = 8,912,896 bytes if stride is 2k
+//For 1080p, two buffers fit in one region.
+//For 720p, a 3:2 packing ratio is achieved. 
+//The region height is a configurable option, specified in platform_config.hcfg
+//
+// core->frame_buffer_properties->region_height
+//
+// 
+smd_frame_buffers            { type = "frames"     size = 0x0D500000                 } // (213MB) used to allocate frame buffer regions, include normal, YUV, MH buffer, VC1 MBinfo & Transcoding buffers
+
+//----------------------------------
+//SMD linear buffers (116MB)
+//Enough for dual HD 3D playback + dual HD transcode + 5 audio decodes
+smd_buffers_linear           { type = "linear"     size = 0x07400000                 } // (116MB) all SMD linear buffer allocations
+
+
+// TOP of layout ~= 408MB + the offset assigned with media_base_address
+
+//------------------------------------------------------------------------------
+//----  SEE COMMENT BELOW FOR ENTRIES BELOW THIS POINT
+//------------------------------------------------------------------------------
+
+// The entries above define static memory regions REQUIRED by the stack.
+// Software components will query these regions using the pre-defined names in
+// the above entries when the stack is initialized.
+//
+// Additional definitions can be added for regions of memory that can be made
+// *dynamically* available (at runtime) to the display driver via the
+// gdl_attach_heap() API; this memory then becomes available for graphics
+// applications (see the documentation of the gdl_attach_heap() API for
+// details).
+//
+// It is assumed that dynamic regions will overlap the static regions defined
+// above for video playback, and that a controlling application will terminate
+// all video playback to make the memory available before starting a
+// graphics-intensive application that will call gdl_attach_heap().
+//
+// Add definitions below this point, using the same format as above; i.e.,
+//
+//    <heap_name> { size = <heap_size_in_bytes> }
+//
+// <size> must be multiples of the system page size.
+//
+// <heap_name> can be any unique arbitrary string.  It should be passed
+// to gdl_attach_heap() at runtime.
+

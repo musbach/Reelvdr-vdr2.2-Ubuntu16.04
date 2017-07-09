@@ -1,0 +1,10 @@
+Package: reelvdr-plugins-base
+Version: 2.2.0-160816
+Section: reel
+Priority: important
+Architecture: i386
+Depends: dosfstools, jfsutils, libavahi-client3, libmysqlclient20, libtag1v5, libparted2, libudev1, lsscsi, lynx, mencoder, mjpegtools, netpbm, pmount
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-plugins-base
+Description: Required plugins for the ReelBox vdr
+ Required plugins for the ReelVDR

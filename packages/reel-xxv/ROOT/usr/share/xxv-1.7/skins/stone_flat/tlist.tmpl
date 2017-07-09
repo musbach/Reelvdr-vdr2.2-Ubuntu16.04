@@ -1,0 +1,318 @@
+<!-- tlist -->
+<body class="frame">
+<div id="body">
+<?% ######################################################################## %?>
+<?% aus = gettext('Off') %?>
+<?% an = gettext('On') %?>
+<?% enableform = ( allow('ttoggle') || allow('tdelete') ) && data.size > 1 %?>
+<?% ######################################################################## %?>
+<?% total = 0 %?>
+<?% BLOCK summe %?>
+			<?% IF aktiv == 1; # Errechnen der Differenzen
+					total = total + duration;
+			END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK printsumme %?>
+<p class="description" style="padding: 0; width:<?% width %?>px; text-align:right;">
+<?% IF total > 0;
+    sec  = total mod 60;
+    min  = total div 60 mod 60;
+    hour = total div 3600;
+%?>
+<?% hour FILTER format('%02d') %?>:<?% min FILTER format('%02d') %?>
+<?% END %?>
+</p>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK totalsumme %?>
+<p class="description" style="padding: 0; width:<?% width %?>px; text-align:right;">
+<?% IF total > 0;
+    sec  = total mod 60;
+    min  = total div 60 mod 60;
+    hour = total div 3600;
+%?>
+<?% gettext("total time") %?> : 
+<?% IF hour > 0 %?><?% hour FILTER format('%02d') %?>:<?% END %?><?% min FILTER format('%02d') %?><br />
+<?% END %?>
+<?% IF param.capacity;
+        secf  = param.capacity mod 60;
+        minf  = param.capacity div 60 mod 60;
+        hourf = param.capacity div 3600;
+%?>
+<?% gettext("available capacity") %?> : 
+<?% IF hourf > 0 %?><?% hourf FILTER format('%02d') %?>:<?% END %?><?% minf FILTER format('%02d') %?>
+<?% END %?>
+</p>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+                        <a href="?cmd=search&amp;data=<?% url( title.split('&#x7e;').first ) %?>">
+                            <img src="images/find.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search for repeats") %?>" />
+                        </a>
+			<?% IF allow('tedit') %?>
+                        <a href="javascript:popup('tedit','<?% id %?>',620,670,1)">
+                            <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit this timer") %?>" />
+                        </a>
+			<?% END %?>
+			<?% IF allow('tdelete') %?>
+                        <a href="javascript:surecmd('<?% gettext("Would you like to delete this timer?") %?>','<?% escape(title) %?><?% IF subtitle != "";"~";escape(subtitle);END %?>','tdelete','<?% id %?>',620,670)">
+                            <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete timer") %?>" />
+                        </a>
+			<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+    <?% state = '' %?>
+    <?% UNLESS aktiv %?>
+        <?% state = "deactive" %?>
+    <?% ELSIF conflict %?>
+        <?% state = "problem" %?>
+    <?% ELSIF running %?>
+        <?% state = "running" %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK StateImage %?>
+            <?% IF aktiv %?>
+              <?% IF param.capacity && param.capacity <= total %?>
+              <img id='toggle<?% id %?>' src="images/warning.<?% global.imagetyp %?>" alt="" title="<?% gettext("Not enough space to record this timer!") %?>" />
+              <?% ELSE %?>
+              <img id='toggle<?% id %?>' src="images/on.<?% global.imagetyp %?>" alt="" title="<?% an %?>" />
+              <?% END %?>
+            <?% ELSE %?>
+              <img id='toggle<?% id %?>' src="images/off.<?% global.imagetyp %?>" alt="" title="<?% aus %?>" />
+            <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsFlat %?>
+      <?% PROCESS SetState %?>
+        <tr id="item<?% id %?>" valign="bottom" <?% ' class="two"' IF z mod 2 == 0 %?>>
+            <td class="fieldinline">
+            <?% IF allow('ttoggle') %?>
+            <a href="javascript:toggle('ttoggle','<?% id %?>')">
+            <?% END %?>
+            <?% PROCESS StateImage %?>
+            <?% '</a>' IF allow('ttoggle') %?>
+            </td>
+            <td class="fieldinline">
+            <?% IF allow('program') %?><a class="fieldinline" href="?cmd=program&amp;data=<?% channel %?><?% IF eventid %?>#E<?% eventid %?><?% END %?>" title="<?% gettext("Jump to program:") %?><?% sender %?>" style="vertical-align:bottom;"><?% END %?>
+            <font class="title<?% IF state != "";" ";state;END %?>"><?% sender %?></font>
+            <?% '</a>' IF allow('program') %?>
+            </td>
+            <td class="fieldinline">
+                <?% IF enableform %?>
+                 <input class="push" type="checkbox" value="<?% id %?>" name="<?% title %?><?% IF subtitle != "";"~";subtitle;END %?>" />
+	             <?% END %?>
+                 <font class="description<?% IF state != "";" ";state;END %?>">
+                 <?% start %?>-<?% stop %?>
+                 <?% IF pdc;"(";gettext("PDC");")";END %?>
+                 </font>
+            </td>
+            <td class="fieldinline">
+	          <?% IF allow('tedit') %?>
+                  <a href="javascript:popup('tedit','<?% id %?>',620,670,1)" class="fieldinline">
+              <?% END %?>
+                  <font class="title<?% IF state != "";" ";state;END %?>"><?% title %?></font>
+              <?% IF subtitle.length > 0 %?>
+                  <font class="subtitle<?% IF state != "";" ";state;END %?>">&nbsp;-&nbsp;<?% subtitle %?></font>
+              <?% END %?>
+                  <?% '</a>' IF allow('tedit') %?>
+            </td>
+            <td class="fieldinline push">
+                <?% INCLUDE widgets/tooltip.inc cmd="display" linkid=eventid ttp_offset=-300 %?>
+                <?% PROCESS RowButtons %?>
+            </td>
+        </tr>
+        <?% IF ( param.recorder > 1 ) || ( global.hideDescription != 1 && description.length > 0 ) %?>
+        <tr id="desc<?% id %?>"<?% ' class="two"' IF z mod 2 == 0 %?>>
+            <td class="fieldinline"></td>
+            <td class="fieldinline"><?% IF param.recorder > 1;host;END %?></td>
+            <td class="fieldinline" colspan="3">
+                  <?% IF global.hideDescription != 1 && description.length > 0 %?>
+                  <a href="javascript:popup('display','<?% eventid %?>',620,670,0)" class="fieldinline">
+                  <font class="description<?% IF state != "";" ";state;END %?>"><?% chop(description,100,1) %?></font>
+      	          </a>
+                  <?% END %?>
+            </td>
+        </tr>
+        <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<h1><?% gettext("Planned recordings") %?></h1>
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+<form name="tlist" action="">
+    <?% z = 1 %?>
+    <?% FOREACH zeile IN data %?>
+   	  <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+			<?%- id=zeile.0;
+          aktiv= ( zeile.1 ? zeile.1 mod 2 : 0 );
+          sender=zeile.2;
+          channel=zeile.3;
+          day=zeile.4;
+          start=zeile.5;
+          stop=zeile.6;
+          title=zeile.7;
+          priority=zeile.8;
+          conflict=zeile.9;
+          eventid=zeile.10;
+          autotimerid=zeile.11;
+          duration=zeile.12;
+          description=zeile.13;
+          running=zeile.14;
+          host=zeile.15;
+          t = zeile.7.split('&#x7e;');IF t.size > 1;subtitle = t.pop;ELSE;subtitle="";END;title=t.join('&#x7e;');
+          pdc= ( zeile.1 ? zeile.1 mod 8 div 4 : 0 ) %?>
+        <?% IF !old.defined || day != old %?>
+            <?% IF old.defined  %?>
+                        </table>
+                        </td>
+                    </tr>
+                <tr><td class="largebottom"></td></tr>
+            </table> 
+        		<?% PROCESS printsumme width=980 %?>
+            <?% END %?>
+            <table class="largetable" summary="">
+                <tr><td class="largehead"><?% day %?></td></tr>
+                    <tr>
+                        <td class="largetext" align="left">
+                        <table summary="" width="100%">
+                        <?% z = 1 %?>
+                        <tr height="0"><th width="20"></th><th width="130"></th><th width="130"></th><th></th><th width="60" align="right"></th></tr>
+        <?% END %?>
+  			<?% PROCESS summe %?>
+        <?% PROCESS ItemAsFlat %?>
+        <?% old = day %?>
+        <?% z = z + 1 %?>
+    <?% END %?>
+                        </table>
+                        </td>
+                    </tr>
+                <tr><td class="largebottom"></td></tr>
+            </table> 
+        		<?% PROCESS totalsumme width=980 %?>
+</form>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+<?% IF enableform || allow('tnew') || allow('tupdate') %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Timers",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+<?% IF allow('topten') %?>
+      <a href="?cmd=topten"><img src="images/topten.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a href="?cmd=topten"><?% gettext("Top Ten entrys",20) %?></a><br />
+<?% END %?>
+<?% IF allow('tnew') %?>
+      <a href="javascript:popupcmd('tnew',620,670,1)"><img src="images/new.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a href="javascript:popupcmd('tnew',620,670,1)"><?% gettext("Create new timer",20) %?></a><br />
+<?% END %?>
+<?% IF allow('tupdate') %?>
+      <a href="javascript:fire('tupdate','0')"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a href="javascript:fire('tupdate','0')"><?% gettext("Update timers",20) %?></a><br />
+<?% END %?>
+<?% IF allow('movetimerlist') %?>
+      <a href="?cmd=movetimerlist"><img src="images/edit.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a href="?cmd=movetimerlist"><?% gettext("Rules to move timer",20) %?></a><br />
+<?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+<?% IF enableform %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Selection") %?></td></tr>
+    <tr>
+    <td class="sidetext">
+        <a href="javascript:selAll(document.tlist,1)"><img src="images/select.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.tlist,1)"><?% gettext("Select all",20) %?></a><br />
+        <a href="javascript:selAll(document.tlist,0)"><img src="images/deselect.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.tlist,0)"><?% gettext("Unselect all",20) %?></a><br />
+        <a href="javascript:reverse(document.tlist)"><img src="images/invers.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:reverse(document.tlist)"><?% gettext("Reverse select",20) %?></a>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidetext">
+<?% IF allow('ttoggle') %?>
+        <a href="javascript:selToggle('<?% gettext("Nothing selected!") %?>',document.tlist)"><img src="images/onoff.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selToggle('<?% gettext("Nothing selected!") %?>',document.tlist)"><?% gettext("Toggle timer",20) %?></a><br />
+<?% END %?>
+<?% IF allow('tdelete') %?>
+        <a href="javascript:DoitReally('<?% gettext("Would you like to delete these timers?") %?>','<?% gettext("Nothing selected!") %?>','tdelete',document.tlist,620,670,'delete')"><img src="images/delete.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:DoitReally('<?% gettext("Would you like to delete these timers?") %?>','<?% gettext("Nothing selected!") %?>','tdelete',document.tlist,620,670,'delete')"><?% gettext("Delete timer",20) %?></a><br />
+<?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Search for timers",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <form name="searchform" action="">
+        <input type="hidden" name="cmd" value="tsearch" />
+        <input type="text" id="timertext" name="data" alt="<?% gettext("Search for timers") %?>" 
+               onkeyup="suggest('tsuggest','timertext','timersuggest');" 
+                <?% IF cgi.param('cmd')=='ts' || cgi.param('cmd')=='tsearch' %?>value="<?% cgi.param('data')%?>"<?% END %?>
+               autocomplete="off" />
+        <br /><div class="suggestbox" id="timersuggest"></div>
+    </form>
+    </td>
+    </tr>
+    <tr><td class="sidebottom"></td></tr>
+  </table>
+  <?% IF param.keywords.size > 0 && allow('tk') %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Keywords",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+        <?% steps = 25 %?>
+        <?% range = (param.keywordsmax - param.keywordsmin) %?>
+        <?% IF range > 2 %?>
+          <?% factor = steps / range %?>
+          <?% basis = param.keywordsmin %?>
+        <?% ELSE %?>
+          <?% factor = 1 %?>
+          <?% basis = param.keywordsmin - steps %?>
+        <?% END %?>
+        <?% IF param.keywords.size <  steps %?>
+          <?% factor = factor * (param.keywords.size /  steps) %?>
+        <?% END %?>
+        <?% FOREACH keyword IN param.keywords %?>
+              <?% level = 80 + (3*(((keyword.1 - basis) * factor) div 1)) %?>
+              <a href="?cmd=tk&amp;data=<?% keyword.0 %?>">
+                <font style="font-size:<?% level %?>%"><?% keyword.0 %?></font>
+              </a>&nbsp;
+        <?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidetext">
+    <form name="keywordsform" action="">
+        <input type="hidden" name="cmd" value="tkeywords" />
+        <input type="text" id="keytext" name="data" alt="<?% gettext("Keywords") %?>" 
+               onkeyup="suggest('tsuggestkeywords','keytext','keysuggest');" 
+               <?% IF keywords.defined %?>value="<?% keywords %?>"<?% END %?>
+               autocomplete="off" />
+        <br /><div class="suggestbox" id="keysuggest"></div>
+    </form>
+    </td>
+    </tr>
+    <tr>
+        <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <?% END %?>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

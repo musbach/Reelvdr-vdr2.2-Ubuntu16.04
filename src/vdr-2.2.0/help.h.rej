@@ -1,0 +1,12 @@
+--- help.h	(revision 15426)
++++ help.h	(revision 15427)
+@@ -1,3 +1,4 @@
++#ifdef REELVDR
+ /*
+  * sources.h: Source handling
+  *
+@@ -151,3 +152,4 @@
+   };
+ 
+ #endif //__HELP_H
++#endif /*REELVDR*/

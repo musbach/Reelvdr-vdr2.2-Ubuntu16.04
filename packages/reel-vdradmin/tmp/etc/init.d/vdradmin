@@ -1,0 +1,129 @@
+#! /bin/sh
+#
+# vdr start-stop script
+#
+### BEGIN INIT INFO
+# Provides:          vdradmin-am
+# Required-Start:    $network $syslog
+# Required-Stop:     $network $syslog
+# Should-Start:      $local_fs $remote_fs
+# Should-Stop:       $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Starts vdradmin-am
+# Description:       Starts vdradmin-am, the web-based administration
+#                    tool for VDR, if it is enabled in /etc/default/vdradmin-am.
+### END INIT INFO
+
+# Default settings - don't change them here, override them in
+# /etc/default-vdradmin-am!
+#
+USER=root
+GROUP=root
+#USER=vdradmin-am   # can't connect to port 80
+#GROUP=vdradmin-am
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/bin/vdradmind
+NAME=vdradmind
+DESC="VDR Webadministration interface"
+PIDFILE=/var/run/vdradmin.pid
+NICE="10"
+
+test -x $DAEMON || exit 0
+
+. /lib/lsb/init-functions
+
+# Include vdradmin defaults if available
+if [ -f /etc/default/vdradmin-am ] ; then
+    . /etc/default/vdradmin-am
+fi
+
+set -e
+
+# Check if the logfile exists allready, if not, create it and set 
+# group and owner to $USER:$GROUP
+create_logfile ()
+{
+    LOGFILE="/var/log/vdradmind.log"
+    if [ ! -e $LOGFILE ] ; then
+        touch $LOGFILE 
+        chown $USER:$GROUP $LOGFILE
+    fi
+}
+
+# configure locale which is used for running vdradmin-am from
+# /etc/default/locale or /etc/environment
+init_language_environment()
+{
+    ENV_FILE="none"
+    [ -r /etc/environment ] && ENV_FILE="/etc/environment"
+    [ -r /etc/default/locale ] && ENV_FILE="/etc/default/locale"
+    if  [ ! $ENV_FILE = none ] ; then
+        for var in LANG LC_ALL LC_CTYPE ; do
+            value=$(egrep "^[^#]*${var}=" $ENV_FILE | tail -n1 | cut -d= -f2)
+            eval $var=$value
+        done
+    fi
+}
+
+start_daemon()
+{
+    if [ "$ENABLED" != "0" ] ; then
+        log_daemon_msg "Starting $DESC" $NAME
+	[ -d /var/log/vdradmin ] || mkdir /var/log/vdradmin
+	[ -d /var/run/vdradmin ] || mkdir /var/run/vdradmin
+	[ -d /var/cache/vdradmin ] || mkdir /var/cache/vdradmin
+        init_language_environment
+        create_logfile
+        LANG=$LANG start-stop-daemon --start \
+          -c $USER:$GROUP -b -m --nicelevel $NICE --pidfile $PIDFILE \
+          --exec $DAEMON -- -nf --ipv6
+        log_end_msg $?
+    else
+        log_warning_msg "VDRAdmin-AM disabled - enable in /etc/default/vdradmin-am"
+    fi
+}
+
+get_status()
+{
+    if start-stop-daemon --start --startas $DAEMON --test \
+        --name $(basename $DAEMON) --pidfile $PIDFILE >/dev/null
+    then
+        echo " - is not running."
+        exit 3
+    else
+        echo " - is running."
+        exit 0
+    fi
+}
+
+stop_daemon()
+{
+    log_daemon_msg "Stopping $DESC" $NAME
+    start-stop-daemon --stop -q -o --pidfile $PIDFILE > /dev/null
+    log_end_msg $?
+}
+
+case "$1" in
+    start)
+        start_daemon 
+        ;;
+    stop)
+        stop_daemon
+        ;;
+  restart|force-reload)
+        stop_daemon
+        start_daemon
+        ;;
+  status)
+        echo -n "Getting status of $DESC: $NAME"
+        get_status
+        ;;
+  *)
+        N=/etc/init.d/$NAME
+        echo "Usage: $N {start|stop|restart|force-reload}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

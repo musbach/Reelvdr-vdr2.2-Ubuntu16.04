@@ -1,0 +1,50 @@
+/* The user.css is mainly an example to demonstrate the possibilities */
+
+/*
+	Disable items in navigation bar.
+	For valid ids read navigation.html.
+*/
+#rc {
+	display: none;
+}
+#tv {
+	display: none;
+}
+
+/*
+	Disable action icons.
+	e.g.: close, switch, record, imdb, info, stream
+*/
+/* disable info and stream buttons in lists */
+.list .action.info,
+.list .action.stream {
+	display: none;
+}
+
+/* Disable scrollbars in prog_summary detail view. */
+#prog_summary .epg_summary {
+	overflow: auto;
+}
+
+/*
+  Workaround for scrollbar problem in InternetExplorer.
+*/
+table#heading,
+table.list,
+table#buttons,
+div#buttons,
+#at_timer_new .group,
+#timer_new .group,
+#rec_edit .group,
+#vdr_cmds .group,
+#about .group,
+#config .group {
+	width: 95%;
+}
+
+/*
+	Change color of links from EPG title to prog_detail.
+*/
+.epg_title a {
+	color: blue;
+}

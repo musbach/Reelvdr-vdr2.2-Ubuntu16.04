@@ -1,0 +1,77 @@
+<!-- ulist Template -->
+<body class="frame">
+<div id="body">
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+<?% IF allow('uedit') %?>
+                        <a href="javascript:popup('uedit','<?% id %?>',620,670,1)">
+                            <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit account of user") %?>" />
+                        </a>
+<?% END %?>
+<?% IF allow('udelete') %?>
+                        <a href="javascript:sureandreload('<?% gettext("Would you like to delete this account?") %?>','<?% escape(user) %?>','udelete','<?% id %?>')">
+                            <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete user account") %?>" />
+                        </a>
+<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsFlat %?>
+        <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+            <td>
+                  <?% IF allow('uedit') %?>
+                  <a title="<?% gettext("Edit account of user") %?>" href="javascript:popup('uedit','<?% id %?>',620,670,1)" class="fieldinline" >
+                  <?% END %?>
+                  <strong><?% user %?></strong>
+                  <?% IF allow('uedit') %?>
+                  </a>
+                  <?% END %?>
+            </td>
+            <td align="right">
+                <?% right %?>
+            </td>
+            <td class="push">
+                <?% PROCESS RowButtons %?>
+            </td>
+        </tr>
+<?% END %?>
+<?% ######################################################################## %?>
+<h1><?% gettext("User administration") %?></h1>
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+            <table class="largetable" summary="">
+                <tr><td class="largehead"><?% gettext("User administration") %?></td></tr>
+                    <tr>
+                        <td class="largetext" align="left">
+                        <table  summary="" width="100%">
+                        <tr height="0"><th></th><th></th><th width="60" align="right"></th></tr>
+    <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?% id=zeile.0;user=zeile.1;right=zeile.2 %?>
+        <?% PROCESS ItemAsFlat %?>
+    <?% END %?>
+                        </table>
+                        </td>
+                    </tr>
+                <tr><td class="largebottom"></td></tr>
+            </table> 
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("User administration",20) %?></td></tr>
+<?% IF allow('unew') %?>
+    <tr>
+    <td class="sidetext">
+      <a title="<?% gettext("Create new account for user") %?>" href="javascript:popupcmd('unew',620,670,1)"><img src="images/new.<?% global.imagetyp %?>" alt="" title="<?% gettext("Create new account for user") %?>" /></a>&nbsp;
+      <a title="<?% gettext("Create new account for user") %?>" href="javascript:popupcmd('unew',620,670,1)"><?% gettext("Create new account for user",20) %?></a><br />
+    </td>
+    </tr>
+<?% END %?>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

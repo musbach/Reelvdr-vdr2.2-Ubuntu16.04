@@ -1,0 +1,19 @@
+#!/bin/sh
+dir="`pwd`/`dirname $0`"
+(scons -C "$dir" -k ; (
+
+	test "$1" != "python" &&
+	test "$1" != "ruby" &&
+	LD_LIBRARY_PATH="$dir/apt-front" \
+    "$dir/tests/libapt-front-test" ;
+
+	test "$1" != "cpp" &&
+	test "$1" != "ruby" &&
+	cd "$dir/swig" &&
+	PYTHONPATH="$dir/swig/python" \
+	LD_LIBRARY_PATH="$dir/apt-front:$dir/swig/python" \
+	python "$dir/tests/libapt-front-test.py" ;
+	test "$1" != "cpp" &&
+	test "$1" != "python" &&
+	LD_LIBRARY_PATH="$dir/apt-front" \
+	ruby "-I$dir/swig/ruby" "$dir/tests/libapt-front-test.rb") )

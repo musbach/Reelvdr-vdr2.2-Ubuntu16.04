@@ -1,0 +1,9 @@
+tmp/etc/init.d/decypher: /usr/src/reelbox/testing/src/etc/init.d/decypher
+tmp/etc/init.d/shmnet: /usr/src/reelbox/testing/src/etc/init.d/shmnet
+tmp/etc/modprobe.d/reel-hdshm: /usr/src/reelbox/testing/src/etc/modprobe.d/reel-hdshm
+tmp/etc/udev/rules.d/56-hdshm.rules: /usr/src/reelbox/testing/src/etc/udev/rules.d/56-hdshm.rules
+tmp/usr/sbin/hdboot: /usr/src/reelbox/testing/src/utils/hdshm3/x86/hdboot/hdboot
+tmp/usr/sbin/hdctrld: /usr/src/reelbox/testing/src/utils/hdshm3/x86/hdctrld/hdctrld
+tmp/usr/sbin/hdfbctl: /usr/src/reelbox/testing/src/utils/hdshm3/x86/hdfbctl/hdfbctl
+tmp/usr/sbin/hdfbshot: /usr/src/reelbox/testing/src/utils/hdfbshot/hdfbshot
+tmp/usr/sbin/shmnetd: /usr/src/reelbox/testing/src/utils/hdshm3/x86/shmnetd/shmnetd

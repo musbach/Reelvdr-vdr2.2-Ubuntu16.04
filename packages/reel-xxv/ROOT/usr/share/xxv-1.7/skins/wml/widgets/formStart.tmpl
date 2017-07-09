@@ -1,0 +1,18 @@
+<?% global.hiddenfield  = [] %?>
+<?% h = ['cmd',cgi.param('cmd')] %?>
+<?% global.hiddenfield.push( h.join('=') ) %?>
+<?% IF cgi.param('data') %?>
+    <?% h = ['data',cgi.param('data')] %?>
+    <?% global.hiddenfield.push( h.join('=') ) %?>
+<?% END %?>
+<?% h = ['__action','save'] %?>
+<?% global.hiddenfield.push( h.join('=') ) %?>
+<?% global.fomularfield = [] %?>
+<?% IF global.wml_card.defined %?>
+<card title="<?% data %?>" newcontext="true">
+<?% global.wml_card = global.wml_card + 1 %?>
+<?% ELSE %?>
+<card title="<?% data %?>" newcontext="true">
+<?% global.wml_card = 1 %?>
+<?% END %?>
+<p>

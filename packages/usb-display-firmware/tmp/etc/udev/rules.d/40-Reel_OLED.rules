@@ -1,0 +1,2 @@
+# UDEV-Rule for Reel USB OLED display
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="054b", SYMLINK+="reel_oled", RUN+="/sbin/reel-usb-display-updater"

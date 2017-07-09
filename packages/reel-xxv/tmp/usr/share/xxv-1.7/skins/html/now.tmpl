@@ -1,0 +1,104 @@
+<script language="javascript" type="text/javascript">
+<!--
+
+    <?% INCLUDE javascript/records.js %?>
+
+-->
+</SCRIPT>
+<!-- TableTemplate -->
+<form>
+    <input type="hidden" name="cmd" value="now">
+<?%
+    USE date( );
+    zeitformat = gettext("%A the %D at %H:%M o'clock");
+    IF cgi.param('data') > 2400;
+        t = date.format(cgi.param('data'), '%H:%M', locale);
+        day = date.format(cgi.param('data'), zeitformat, locale) ;
+    ELSIF cgi.param('data') && param.zeit;
+        t = date.format(param.zeit, '%H:%M', locale);
+        day = date.format(param.zeit, zeitformat, locale) ;
+    ELSE;
+        t = date.format(date.now, '%H:%M', locale);
+        day = date.format(date.now, zeitformat, locale) ;
+        now = 1;
+    END;
+%?>
+<h1><?% IF cgi.param('cmd') == 'next' %?>
+    <?% gettext("What is running at next") %?>
+    <?% ELSIF now %?>
+    <?% gettext("What is running now") %?>
+    <?% ELSE %?>
+    <?% gettext("What is running at") %?>&nbsp;<?% day %?>
+    <?% END %?>
+</h1>
+    <select name='cgroups' onChange="di(this.form.cgroups.options[this.form.cgroups.options.selectedIndex].value, '?cmd=<?% cgi.param('cmd') %?>&amp;data=<?% param.zeitvon || cgi.param('data') %?>&amp;__cgrp=')">
+        <?% FOREACH cgrp IN param.cgroups %?>
+        <option value='<?% cgrp.last %?>' <?% "selected" IF param.channelgroup == cgrp.last %?>><?% cgrp.first %?>
+        <?% END %?>
+    </select>
+    <input type="text" name="data" value="<?% t %?>" size="5">
+    <input type="hidden" name="__cgrp" value="<?% cgi.param('__cgrp') %?>" />
+    <input type="submit" value="<?% gettext("Go") %?>">
+    <input type="button" value="<?% gettext("Update EPG data") %?>" onclick="location.href='?cmd=erestart'">
+</form>
+
+<table border="0" width="95%">
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <?% NEXT IF field.match('^__') %?>
+            <th><?% field %?></th>
+        <?% END %?>
+        </tr>
+        <?% FOREACH zeile IN data %?>
+        <?% id=zeile.0;title=zeile.1;subtitle=zeile.2;sender=zeile.3;channel=zeile.4;group=zeile.5;start=zeile.6;stop=zeile.7;desc=zeile.8;duration=zeile.9 %?>
+            <?% IF group != old %?>
+                <tr><td colspan="6" bgcolor='#DDDDDD'>
+                <b><?% group %?></b>
+                </td></tr>
+            <?% END %?>
+        <tr class="<?% myclass %?>" <?% IF (loop.count mod 2) == 0 %?>bgcolor='#F5F5F5'<?% END %?>>
+                <td><nobr>
+                <?% IF zeile.11  %?><b><?% END %?>
+                    <a href="?cmd=search&amp;data=<?% url( title ) %?>">[<?% gettext("Rep") %?>]</a>
+                <?% IF zeile.10 && allow('tedit') %?>
+                    <a href="?cmd=tedit&amp;data=<?% zeile.10 %?>">[<?% gettext("Edit") %?>]</a><br>
+                <?% ELSIF allow('tnew') %?>
+                    <a href="?cmd=tnew&amp;data=<?% id %?>"><span name='recordlink' id='<?% id %?>' class='normal'>[<?% gettext("Rec") %?>]</span></a><br>
+                <?% END %?>
+                <?% IF allow('switch') %?>
+                    <a href="?cmd=switch&amp;data=<?% channel %?>" target='Status'>[<?% gettext("Swt") %?>]</a>
+                <?% END %?>
+                </td>
+                <td>
+                    <?% IF zeile.11 %?><b><?% END %?>
+                    <?% INCLUDE bloecke/tooltip.tmpl cmd="display" eventid=id linkid=id ttp_offset=0 %?><?% title %?></a>
+                    <?% IF subtitle != "" %?>
+                    <br><small><?% subtitle %?></small>
+                    <?% END %?>
+                </td>
+                <td>
+                    <?% IF zeile.11  %?><b><?% END %?>
+                    <a href="?cmd=program&amp;data=<?% channel %?>"><?% sender %?></a>
+                </td>
+                <td><?% IF zeile.11 %?><b><?% END %?><?% start %?><?% IF zeile.11 %?></b><?% END %?></td>
+                <td><?% IF zeile.11 %?><b><?% END %?><?% stop %?><?% IF zeile.11 %?></b><?% END %?></td>
+                <?% UNLESS duration > 100 OR duration <= 0 %?>
+                <td width="100" valign='bottom'><nobr>
+                    <?% per = ( (100 - duration) + 0.999 ) div 1 ; per = (per > 100 ? 100 : per)  %?>
+                    <?% per2 = 100 - per %?>
+                    <?% text = per div 1 | format("<br><font size='1'>${per}%%</font>") %?>
+                    <table width="100%" cellspacing='0' cellpadding='0'>
+                        <tr>
+                        <td bgcolor="#dedede"><img src='images/blank.png' width="<?% per %?>" height='1' hspace=0 vspace=0><?% IF zeile.11 %?><b><?% END %?><?% (per > 19 ? text : "&nbsp;") %?></td>
+                        <td bgcolor="#ffffff"><img src='images/blank.png' width="<?% per2 %?>" height='1' hspace=0 vspace=0><?% IF zeile.11 %?><b><?% END %?><?% (per < 20 ? text : "") %?></td>
+                        <tr>
+                    </table>
+                </td>
+                <?% END %?>
+        </tr>
+        <?% old = group %?>
+        <?% END %?>
+<?% END %?>
+</table>

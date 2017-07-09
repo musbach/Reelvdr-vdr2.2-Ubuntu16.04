@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/src/hdctrld
+END
+decypher_tricks.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/src/hdctrld/decypher_tricks.c
+END
+hdvideo.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/src/hdctrld/hdvideo.c
+END
+hdctrld.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/src/hdctrld/hdctrld.c
+END
+decypher_tricks.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/src/hdctrld/decypher_tricks.h
+END

@@ -1,0 +1,50 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Hannu Savolainen <hannu@opensound.com>, 2002
+# Jaakko Hyv‰tti <jaakko@hyvatti.iki.fi>, 2002
+# Niko Tarnanen <niko.tarnanen@hut.fi>, 2003
+# Rolf Ahrenberg <rahrenbe@cc.hut.fi>, 2003
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <micky979@free.fr>\n"
+"POT-Creation-Date: 2016-11-25 20:14+0100\n"
+"PO-Revision-Date: 2008-04-15 05:04+0200\n"
+"Last-Translator: Rolf Ahrenberg <rahrenbe@cc.hut.fi>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "ignore primary interface"
+msgstr "J‰t‰ p‰‰vastaanotin huomioimatta"
+
+msgid "Show timer overview and collisions"
+msgstr "N‰ytt‰‰ p‰‰llekk‰iset ajastimet"
+
+msgid "Timeline"
+msgstr "Aikajana"
+
+msgid "Prio"
+msgstr "prioriteetti"
+
+msgid "Conflict on"
+msgstr "P‰‰llekk‰isyys"
+
+msgid "same input device"
+msgstr "sama vastaanotin"
+
+msgid "Repeating conflict on"
+msgstr "Toistuva p‰‰llekk‰isyys"
+
+msgid "No conflicts"
+msgstr "Ei p‰‰llekk‰isyyksi‰"
+
+msgid "Cursor up/down/left/right+Nums"
+msgstr "Ylˆs/Alas/Vasen/Oikea/Numeron‰pp‰imet"
+
+msgid "(today)"
+msgstr "(t‰n‰‰n)"

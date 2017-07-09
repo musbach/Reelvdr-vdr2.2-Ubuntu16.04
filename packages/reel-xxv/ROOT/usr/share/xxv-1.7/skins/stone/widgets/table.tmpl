@@ -1,0 +1,42 @@
+<!-- TableTemplate -->
+<table class="editortable" summary="">
+    <tr><td class="editorhead"><?% param.headingText %?></td></tr>
+    <tr>
+        <td class="editortext" align="left">
+
+<table  summary="" width="100%">
+<?% IF type == 'HASH' %?>
+    <th>Name</th><th>Value</th>
+     <?% FOREACH name IN data.keys.sort %?>
+     <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+        <td><?% name %?></td><td><?% data.$name %?></td>
+    </tr>
+    <?% END %?>
+<?% ELSE %?>
+    <?% fields = data.shift %?>
+        <?% IF fields.size > 1 %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <th style="white-space: nowrap">
+                <?% field %?>
+                <?% IF param.sortable %?>
+                <a href="?cmd=<?% cgi.param('cmd') %?>&__sortby=<?% field %?>&__desc=0">&and;</a>
+                <a href="?cmd=<?% cgi.param('cmd') %?>&__sortby=<?% field %?>&__desc=1">&or;</a>
+                <?% END %?>
+            </th>
+        <?% END %?>
+        </tr>
+        <?% END %?>
+        <?% FOREACH zeile IN data %?>
+        <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+            <?% FOREACH field IN zeile %?>
+            <td><?% field %?></td>
+            <?% END %?>
+        </tr>
+        <?% END %?>
+<?% END %?>
+</table>
+        </td>
+    </tr>
+    <tr><td class="editorbottom"></td></tr>
+</table>    

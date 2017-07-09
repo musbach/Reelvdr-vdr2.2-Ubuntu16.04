@@ -1,0 +1,115 @@
+<script language="javascript" type="text/javascript">
+<!--
+
+    <?% INCLUDE javascript/records.js %?>
+
+-->
+</SCRIPT>
+
+<!-- TableTemplate -->
+<?% FOREACH ch IN param.channels %?>
+    <?% IF cgi.param('data') == ch.1 || cgi.param('data') == ch.0 || param.current == ch.1 %?>
+        <?% channel = ch.0 %?>
+        <?% channelpos = ch.1 %?>
+        <?% LAST %?>
+    <?% END %?>
+<?% END %?>
+<h1><?% gettext("Program guide for") %?>&nbsp;<?% channel %?></h1>
+<table>
+<tr>
+<form>
+    <td>
+        <input type="hidden" name="cmd" value="search" />
+        <input type="hidden" name="__channel" value="<?% channelpos %?>" />
+        <?% gettext("Search on Channel") %?>:<input type="text" name="data" size="10" />
+    </td>
+</form>
+<form>
+    <td>
+    <select name='data' onChange="di(this.form.data.options[this.form.data.options.selectedIndex].value, '?cmd=program&amp;data=')">
+    <?% FOREACH ch IN param.channels %?>
+      <?% IF ch.2 && ch.2 != channelgroup %?>
+        <?% IF channelgroup %?>
+        </optgroup>
+        <?% END %?>
+        <optgroup label="<?% channelgroup = ch.2;ch.2 %?>">
+    <?% END %?>
+        <option value="<?% ch.1 %?>"<?% ' selected="selected"' IF channelpos == ch.1 %?>><?% ch.0 %?></option>
+    <?% END %?>
+    <?% IF channelgroup %?>
+      </optgroup>
+    <?% END %?>
+    </select>
+    </td>
+</form>
+    <td>
+        <a href='?cmd=switch&amp;data=<?% channelpos %?>'>[<?% gettext('Switch') %?>]</a>
+        <a href='?cmd=livestream&amp;data=<?% channelpos %?>'>[<?% gettext('Live TV web cast') %?>]</a>
+    </td>
+</tr>
+</table>
+
+<table border="0" width="95%">
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <?% NEXT IF field.match('^__') || loop.count == 6 %?>
+            <th><?% field %?></th>
+        <?% END %?>
+        </tr>
+        <?% FOREACH zeile IN data %?>
+            <?% c = 0 %?>
+            <?% day = zeile.5 %?>
+            <?% IF !oldday.defined || day != oldday %?>
+                <tr><td colspan="<?% zeile.size %?>" bgcolor='#DDDDDD'>
+                <b><?% day %?></b>
+                </td></tr>
+            <?% END %?>
+        <tr class="<?% myclass %?>"<?% IF (loop.count mod 2) == 0 %?> bgcolor='#F5F5F5'<?% END %?>>
+            <?% FOREACH field IN zeile %?>
+                <?% c = c + 1 %?>
+                <?% IF c == 1; # Id Field %?>
+                <td>
+                    <a href="?cmd=search&amp;data=<?% url( zeile.1 ) %?>">[<?% gettext("Rep") %?>]</a>
+    <?% IF zeile.10 && allow('tedit') %?>
+                    <a href="?cmd=tedit&amp;data=<?% zeile.10 %?>"><b><span name='recordlink' id='<?% zeile.0 %?>' class='normal'>[<?% gettext("Edit this timer") %?>]</span></b></a>
+    <?% ELSIF allow('tnew') %?>
+                    <a href="?cmd=tnew&amp;data=<?% zeile.0 %?>"><span name='recordlink' id='<?% zeile.0 %?>' class='normal'>[<?% gettext("To record") %?>]</span></a>
+    <?% END %?>
+                <?% level = zeile.13 %?>
+                <?% IF level && allow('topten') %?><br/><a href="?cmd=topten" title="<?% gettext("Top Ten entrys") %?>" ><?% "*" FILTER repeat(level) %?></a><?% END %?>
+                </td>
+                <?% ELSIF c == 2; # Text Field %?>
+                <td>
+                    <?% INCLUDE bloecke/tooltip.tmpl cmd="display" title=field subtitle=zeile.2 desc=zeile.6 eventid=zeile.0 linkid=zeile.0 ttp_offset=0 %?>
+                    <?% IF zeile.11 %?>
+                    <b><?% field %?></b>
+                    <?% ELSE %?>
+                    <?% field %?>
+                    <?% END %?>
+                    <?% IF zeile.2.length > 0  %?>
+                    <br><small><?% zeile.2 %?></small>
+                    <?% END %?>
+                    <?% IF zeile.6.length > 0 %?>
+                    <br><small><em><?% chop(zeile.6,80) | replace('<br />',' ') %?></em></small>
+                    <?% END %?>
+                    </a>
+                </td>
+                <?% ELSIF c == 3; # Subtitle Field %?>
+                <?% ELSIF c == 6; # Day Field %?>
+                <?% ELSIF c >= 7; # Desc Field %?>
+                <?% ELSE %?>
+                    <?% IF zeile.11 %?>
+                            <td><b><?% field %?></b></td>
+                    <?% ELSE %?>
+                            <td><?% field %?></td>
+                    <?% END %?>
+                <?% END %?>
+            <?% END %?>
+        </tr>
+        <?% oldday = day %?>
+        <?% END %?>
+<?% END %?>
+</table>
+

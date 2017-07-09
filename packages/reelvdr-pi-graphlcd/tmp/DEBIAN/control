@@ -1,0 +1,11 @@
+Package: reelvdr-pi-graphlcd
+Version: 0.1.4.16619-42
+Section: reel
+Priority: important
+Architecture: i386
+Installed-Size: 457K
+Depends: reelvdr-pi-graphlcd-support, libgraphlcd
+Conflicts: reelvdr-plugins-base (<< 1.4.16), reelvdr-baseconfig (<< 1.20), reelvdr-langpack (<< 1.9)
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/graphlcd
+Description: GraphLcd Plugin for the ReelBox

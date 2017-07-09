@@ -1,0 +1,5 @@
+#! /bin/sh
+
+update-rc.d reel-umts remove >/dev/null
+
+exit 0

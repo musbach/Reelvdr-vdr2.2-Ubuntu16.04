@@ -1,0 +1,12 @@
+--- svdrp.h	(revision 15412)
++++ svdrp.h	(revision 15413)
+@@ -79,6 +79,9 @@
+   void CmdPLUG(const char *Option);
+   void CmdPUTE(const char *Option);
+   void CmdREMO(const char *Option);
++#ifdef USE_LIEMIEXT
++  void CmdRENR(const char *Option);
++#endif /* LIEMIEXT */
+   void CmdSCAN(const char *Option);
+   void CmdSTAT(const char *Option);
+   void CmdUPDT(const char *Option);

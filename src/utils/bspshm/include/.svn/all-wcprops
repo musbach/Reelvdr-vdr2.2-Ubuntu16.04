@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/include
+END
+bspchannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/include/bspchannel.h
+END
+bspshm_user_structs.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/include/bspshm_user_structs.h
+END
+bspshmlib.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/include/bspshmlib.h
+END

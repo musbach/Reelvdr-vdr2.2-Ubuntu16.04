@@ -1,0 +1,127 @@
+Script Sammlung fuer Yacoto (Yet another convert tool for VDR)
+--------------------------------------------------------------
+
+Voraussetzungen:
+
+Benoetigt werden (ausser VDR Aufnahmen und ein bischen Plattenplatz) folgende Pakete:
+
+- vdr inclusive yacoto Plugin.
+- gepatchtes replex 0.1.6.8 (patch hierfuer ist dabei unter patches)
+  www.metzlerbros.org/dvb/index.html
+- vdrsync.pl
+- mencoder/mplayer
+- lame (fuer mp3)
+- oggenc (fuer ogg)
+- ffmpeg (Syntax passt ab 2.Quartal 2007)
+- screen
+- dvdauthor,mkisofs,growisofs,vamps,ImageMagick (fuer dvd)
+- MP4Box (fuer Ipod)
+- hlcut (zum Schneiden der Aufnahmen: http://www.htpc-forum.de/download/hlcut.tgz )
+  Danke an Xeatre /www.xeatre.tv) dafuer !
+- egrep zur Fortschrittsberechnung  
+- Zur Statusanzeige wird (falls vorhanden) bgprocess benutzt,
+  http://www.htpc-forum.de/download/vdr-bgprocess-0.1.0.tgz
+  Danke an reelmultimedia dafuer !
+
+
+Installation:
+
+- Das Paket ins VDR Konfigurationsverzeichnis fuer Plugins entpacken (z.B. /etc/vdr/plugins)
+  Daraus resultiert YAC_CONF_DIR (/etc/vdr/plugins/yacoto)
+- In der darin enthaltenen yacoto.conf die Pfade anpassen (z.B. VDR_VIDEO) 
+  Auch die Kommentare werden ausgewertet ! (siehe weiter unten)
+- Mit ./yac_update.sh die conf Dateien erstellen (bereits vorhandene werden nicht ueberschrieben)
+- Zum Abschluss mit ./yac_setplgconf.sh das Plugin conf fiel erstellen.
+
+  
+Interner Ablauf:
+
+Fuer jede Umwandlungsmethode wird ein conf und ein sh File benoetigt, Beispiele dafuer gibts im yacoto Verzeichnis.
+Aus den conf Dateien sowie der yacoto.conf wird bei VDR Start mittels yac_admin.sh/yac_setplgconf.sh die config Datei
+fuers Plugin erstellt (aehnliche Funktionsweise wie im Admin Plugin).
+Existiert zudem ein .conf.sh file, dann wird dieses von yac_setplgconf.sh ausgefuehrt.
+Damit kann z.B. das jeweilige .conf file geaendert werden (siehe conf/dvd.conf.sh)
+
+YAC_CONF_DIR/yac_start.sh (wird vom Plugin gestartet)
+baut aus der gewaehlten Config fuer die gewuenschten Aufnahmen ein Script zusammen welches unter
+YAC_CONF_DIR/queue abgelegt wird.
+Nun wird das Script yac_manager.sh gestartet, welches der Reihe nach alle Scripte im queue Verzeichnis abarbeitet.
+
+Das Convert Script selbst startet zuerst yac_remux.sh fuer jede Aufnahme, womit mittels replex mpg Dateien erstellt werden, 
+bzw mittels vdrsync die Tonspuren extrahiert werden.
+Diese Dateien werden nun durch den jeweiligen Converter ( function yac_convert ) geschleift.
+
+
+Syntax der conf Dateien:
+
+z.B.
+AUDIO_BITRATE="96"         #~Audio bitrate~I~3~64,256~
+
+bedeutet:
+AUDIO_BITRATE = Variablenname fuers Script
+96 = Werte der Variablen
+Audio bitrate = Name im Einstellungsmenu (bzw dessen Übersetzung, falls in po/de_DE.po angegeben)
+I = Integer Variable ( Alternativen: F=Fixed (nur readonly m Menu zu sehen), A=Alphanumerisch, L=Liste, B=Binaer(Ja/Nein)
+3 = maximale Laenge des Wertes
+64,256 = Wertebereich ( bei variablentyp A stehen hier die erlaubten Zeichen, bei L die Listenwerte und bei B die beiden Werte )
+
+Vorgegebene Variable die jedes Config File verwenden sollte sind:
+
+REMUX_TYPE 
+   Erlaubte Werte: 
+      demux_audio(nur Audio herausziehen)
+      remux_convert(fuer Konvertierung vorbereiten)
+      remux_dvd(fuer DVD vorbereiten)
+      remux_mpeg2(direkt in mpeg2 wandeln)
+      
+AUDIO_SOURCE
+   Erlaubte Werte:
+      mp2 (mp2 audio stream beim demux verwenden)
+      all (Alle selektierten Audio streams verwenden)
+      ac3 (ac3 Audio stream verwenden)
+      
+Nach Erstellen einer conf und des sh Files werden mit yac_setplgconf.sh diese Einstellungen in die yacadmin.conf geschrieben.
+
+
+Sonstiges:
+
+Um eigene Menues fuer DVDs einzubinden muss folgendes gemacht werden:
+- unter conf/dvd/ ein Verzeichnis mit passendem Namen anlegen
+- darin die Dateien:
+  mm-background.png  mm-button.png  tm-background.png  tm-button.png
+  bereitstellen, bzw verlinken
+- Bei Bedarf eine passende menu.conf erstellen (siehe conf/dvd/menu.conf)
+- yac_setplgconf.sh ausfuehren
+
+
+Vorhandene pdaexport Konfiguratonen lassen sich leicht zum yacoto Format konvertieren
+( siehe yacoto/conf/ffmpeg.conf.sample )
+
+
+Konfigurationsparameter:
+
+- Bedeutung der Werte fuer die Namenskonvention(gilt fuer die Zieldatei):
+  - NameCfgDate:   Name_Configuration_Datum
+  - NameCfgRDate:  Name_Configuration_AufnahmeDatum
+  - NameDate:      Name_Datum
+  - NameRDate:     Name_AufnahmeDatum
+  - NameCfg:       Name_Configuration
+  - Name:          Name
+
+- Verzeichnis übernehmen bedeutet dass die Verzeichnisstruktur unter /video uebernommen wird,
+  d.h. /video/Simpsons/Folge_0815 wird ins Zielverzeichnis unter das Verzeichnis Simpsons gestellt
+
+
+Danksagungen:
+
+Vielen Dank an alle die dieses Plugin ermoeglicht haben, in erster Linie an Klaus Schmidinger fuer VDR und an 
+Toxic Tonic dessen pdaexport ich als Vorlage fuer das ffmpeg encodieren benutzt habe.
+Ebenso an die Firmen Reelmultimedia und Xeatre fuer deren Unterstuetzung !
+
+
+Wuensche, Lobhuldigungen, Bugs etc an:
+http://bugs.htpc-forum.de/
+
+bzw. im VDR-Portal oder HTPC-Forum
+
+Helmut Auer ( http://htpc-forum.de/index.php?url=about.php )

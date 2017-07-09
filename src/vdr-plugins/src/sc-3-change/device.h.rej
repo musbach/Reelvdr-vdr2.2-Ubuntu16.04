@@ -1,0 +1,15 @@
+--- device.h	2014-04-29 15:09:34.169738565 +0200
++++ device.h	2014-04-29 15:11:14.009734922 +0200
+@@ -25,6 +25,12 @@
+ #include <vdr/thread.h>
+ #include "misc.h"
+ 
++#ifndef LIBDVBCSA
++#define RINGBUFFERNAME "FFdecsa-TS"
++#else
++#define RINGBUFFERNAME "libdvbcsa-ts"
++#endif
++
+ class cDeCSA;
+ 
+ // ----------------------------------------------------------------

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -x "/etc/init.d/djmount" ]; then
+	update-rc.d djmount defaults >/dev/null
+	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+		invoke-rc.d djmount start || exit $?
+	else
+		/etc/init.d/djmount start || exit $?
+	fi
+fi
+
+exit 0

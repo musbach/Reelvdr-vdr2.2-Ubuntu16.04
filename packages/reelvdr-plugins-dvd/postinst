@@ -1,0 +1,18 @@
+#!/bin/sh
+
+
+myln () {
+src="$2"
+target="$3"
+
+	if [ ! -L $target ]; then
+		ln -f $*
+	fi
+}
+
+echo "Linking dvdlink"
+[ -d /etc/vdr/plugins/dvdswitch ] || mkdir -p /etc/vdr/plugins/dvdswitch
+myln -s /dev/dvd /etc/vdr/plugins/dvdswitch/dvdlink
+
+
+exit 0

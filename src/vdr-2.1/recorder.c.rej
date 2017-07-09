@@ -1,0 +1,14 @@
+--- recorder.c	(revision 15412)
++++ recorder.c	(revision 15413)
+@@ -87,7 +87,11 @@
+ bool cRecorder::NextFile(void)
+ {
+   if (recordFile && frameDetector->IndependentFrame()) { // every file shall start with an independent frame
++#ifdef USE_HARDLINKCUTTER
++     if (fileSize > fileName->MaxFileSize() || RunningLowOnDiskSpace()) {
++#else
+      if (fileSize > MEGABYTE(off_t(Setup.MaxVideoFileSize)) || RunningLowOnDiskSpace()) {
++#endif /* HARDLINKCUTTER */
+         recordFile = fileName->NextFile();
+         fileSize = 0;
+         }

@@ -1,0 +1,12 @@
+<!-- confirm -->
+<tr>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% data.msg %?>
+    </td>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <nobr>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <input type="radio" name="<?% data.NAME %?>" value="y" <?% "checked" IF val == 'y' %?>><?% gettext("yes") %?>&nbsp;
+        <input type="radio" name="<?% data.NAME %?>" value="n" <?% "checked" IF val == 'n' %?>><?% gettext("no") %?>
+    </td>
+</tr>

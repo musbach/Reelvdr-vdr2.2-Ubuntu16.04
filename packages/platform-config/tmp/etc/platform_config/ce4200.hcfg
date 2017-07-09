@@ -1,0 +1,72 @@
+platform
+{
+    startup
+    {
+        {
+            action      "load"
+            filename    "/etc/platform_config/common.hcfg"
+        }
+        {
+            action      "load"
+            filename    "/etc/platform_config/ce4200/local_tweaks_1G.hcfg"
+        }
+    }
+
+    //memory { media_base_address = 0xC800000   /* 200 Megabytes */ }
+    memory { media_base_address = 0x10000000   /* 256 Megabytes */ }
+    //memory { media_base_address = 0x20000000   /* 512 Megabytes */ }
+    //memory { media_base_address = 0x26800000   /* 616 Megabytes */ }
+
+    power
+    {
+        modes
+        {
+            ON        = 0
+            STANDBY3  = 1
+        }
+    }
+
+    software
+    {
+        drivers
+        {   
+            avcap
+            {
+                i2c { hdmi_rx_bus = 2 }
+
+                video { channel_map = 0 }
+
+            }
+
+            display
+            {
+                stereo { lrid_gpio = 78 }
+            }
+
+            smd
+            {
+                firmware
+                {
+                    audio_dsp0  { filename = "/lib/firmware/smd/audio_fw_dsp0.bin" location = "smd_fw_ADSPFW0" size = 0 }
+                    audio_dsp1  { filename = "/lib/firmware/smd/audio_fw_dsp1.bin" location = "smd_fw_ADSPFW1" size = 0 }
+                    video_ces_gv_code  { filename = "/lib/firmware/smd/video_ces_gv_pe_gen4.bin" location = "smd_fw_VIDEO_CES_GV_CODE" size = 0 }
+                    video_ces_gv_bss  { filename = "/lib/firmware/smd/video_ces_gv_pe_gen4_bss.bin" location = "smd_fw_VIDEO_CES_GV_BSS" size = 0 }
+                    video_ces_mfd  { filename = "/lib/firmware/smd/video_ces_mfd_md_gen4.bin" location = "smd_fw_VIDEO_CES_MFD" size = 0 }
+                    video_ces_mp4_normal  { filename = "/lib/firmware/smd/video_ces_mfd_mp4_normal.bin" location = "smd_fw_VIDEO_CES_MP4_NORMAL" size = 0 }
+                    video_ces_mp4_dp  { filename = "/lib/firmware/smd/video_ces_mfd_mp4_dp.bin" location = "smd_fw_VIDEO_CES_MP4_DP" size = 0 }
+                    vidpproc    { filename = "/lib/firmware/smd/vpp_fw_gen3.bin"   location = "smd_fw_VPPFW"   size = 0 }
+                    demux_fw    { filename = "/lib/firmware/smd/tsd_fw_ver3.bin"   location = "smd_DMX_FW_IMAGE" size = 0 }
+                }
+                audio
+                {
+                    capture { i2s0_bitclk_direction = 1 }
+                }
+
+                core
+                {
+                    frame_buffer_properties { tile_width = 128 }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+runtime error
+compiles without SASC, 
+find ./ -name "*.c" -exec sed -i "s/MAXDVBDEVICES/MAXDEVICES/g" {} \;
+
+undefined:
+/usr/src/reelbox/testing/src/plugins/src/sc21/sc.c:1096: Nicht definierter Verweis auf `typeinfo for cScDvbDevice'
+/usr/src/reelbox/testing/src/plugins/src/sc21/cam.c:3150: Nicht definierter Verweis auf `vtable for cScDvbDevice'
+/usr/src/reelbox/testing/src/plugins/src/sc21/cam.c:3150: Nicht definierter Verweis auf `vtable for cScDvbDevice'
+/usr/src/reelbox/testing/src/plugins/src/sc21/cam.c:3166: Nicht definierter Verweis auf `vtable for cScDvbDevice'
+/usr/src/reelbox/testing/src/plugins/src/sc21/cam.c:3166: Nicht definierter Verweis auf `vtable for cScDvbDevice'
+/usr/src/reelbox/testing/src/plugins/src/sc21/cam.c:3227: Nicht definierter Verweis auf `typeinfo for cScDvbDevice'
+/usr/src/reelbox/testing/src/plugins/src/sc21/cam.c:3237: Nicht definierter Verweis auf `typeinfo for cScDvbDevice'

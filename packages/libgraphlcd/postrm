@@ -1,0 +1,7 @@
+#!/bin/sh
+
+
+[ -f /usr/lib/libglcdgraphics.so ] && rm -f /usr/lib/libglcdgraphics.so
+[ -f /usr/lib/libglcddrivers.so ] && rm -f /usr/lib/libglcddrivers.so
+
+ldconfig

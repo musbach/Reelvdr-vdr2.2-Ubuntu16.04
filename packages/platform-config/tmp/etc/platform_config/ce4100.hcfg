@@ -1,0 +1,177 @@
+platform
+{
+    startup
+    {
+        {
+            action      "load"
+            filename    "/etc/platform_config/common.hcfg"
+        }
+        {
+            action      "load"
+            filename    "/etc/platform_config/ce4100/local_tweaks.hcfg"
+        }
+    }
+
+    memory 
+    { 
+        media_base_address = 0xC800000   /* 200 Megabytes */
+        enable_pmr = 0 /* 0=disable, 1=enable*/        
+    }
+
+    power
+    {
+        modes
+        {
+            ON      = 0
+            STANDBY = 1
+        }
+    }
+
+    software
+    {
+        drivers
+        {   
+            avcap
+            {
+                i2c { hdmi_rx_bus = 1 }
+
+                video { channel_map = 0 }
+            }
+
+            display
+            {
+                stereo { lrid_gpio = 15 }
+            }
+
+            smd
+            {
+                firmware
+                {
+                    audio_dsp0  { filename = "/lib/firmware/smd/audio_fw_dsp0.bin" location = "smd_fw_ADSPFW0" size = 0 }
+                    audio_dsp1  { filename = "/lib/firmware/smd/audio_fw_dsp1.bin" location = "smd_fw_ADSPFW1" size = 0 }
+                    vidpproc    { filename = "/lib/firmware/smd/vpp_fw_gen3.bin"   location = "smd_fw_VPPFW"   size = 0 }
+                    demux_fw    { filename = "/lib/firmware/smd/tsd_fw_ver2.bin"   location = "smd_fw_TSDFW" size = 0 }
+                    viddec_parser_code  { filename = "/lib/firmware/smd/mfd_fw_parser_code.bin" location = "smd_fw_MFD_PFW" size = 0 }
+                    viddec_parser_bss   { filename = "/lib/firmware/smd/mfd_fw_parser_bss.bin"  location = "smd_fw_MFD_PFW_BSS" size = 0 }
+                    viddec_decoder      { filename = "/lib/firmware/smd/mfd_fw_decoder.bin"     location = "smd_fw_MFD_DFW" size = 0 }
+                    viddec_decoder_mp4_dp      { filename = "/lib/firmware/smd/mfd_fw_decoder_mp4_dp.bin"     location = "smd_fw_MFD_DFW_MP4_DP" size = 0 }
+                    viddec_decoder_mp4_normal  { filename = "/lib/firmware/smd/mfd_fw_decoder_mp4_normal.bin" location = "smd_fw_MFD_DFW_MP4_NORMAL" size = 0 }
+                }
+                audio
+                {
+                    capture { i2s0_bitclk_direction = 0 }
+                }
+
+                core
+                {
+                    frame_buffer_properties { tile_width = 256 }
+                }
+            }
+        }
+    }
+
+    external_clock
+    {
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // THIS SECTION SHOULD BE EDITED TO CORRECT DISCREPANCIES WITH THE
+        // ACTUAL TARGET SYSTEM AND PROBABLY TO REMOVE DEFINITIONS FOR UNUSED
+        // EXERNAL CLOCKS.
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // At boot time the clock_control component will cycle through each of
+        // the external clock descriptions here and attempt to read config
+        // register 0 at the specified offset using the specified device address
+        // on the specified bus. If data is successfully returned, it will be
+        // assumed to be the external clock, and the rest of the description
+        // will be used to control access to it.  If there is a different device
+        // at the probed location, it is important to remove the clock
+        // definition from this file.
+        //
+        // An external clock source is defined with the following values:
+        //
+        // Clock chip addresses and register offsets:
+        //  i2c_bus                      I2C bus number on which device is found
+        //  device_addr                  I2C device address
+        //  config_reg0_addr             offset of configuration register 0
+        //  config_reg1_addr             offset of configuration register 1
+        //
+        // 0-based bit positions in configuration register 0:
+        //  aud_clk_freq_sel_offset      msb of the audio clk field
+        //  aud_clk_freq_sel_width       audio clk bit width 
+        //  vdc_clk1_freq_sel_offset     msb of the vdc clk 1 field
+        //  vdc_clk1_freq_sel_width      vdc clk 1 bit width 
+        //  vdc_clk2_freq_sel_offset     msb of the vdc clk 2 field
+        //  vdc_clk2_freq_sel_width      vdc clk 2 bit width 
+        //
+        // 0-based bit positions in configuration register 1:
+        //  aud_clk0_enable_offset       aud_clk0 enable bit
+        //  aud_clk1_enable_offset       aud_clk1 enable bit
+        //  aud_clk2_enable_offset       aud_clk2 enable bit
+        //  aud_clk3_enable_offset       aud_clk3 enable bit
+        //  vdc_clk1_enable_offset       vdc_clk1 enable bit
+        //  vdc_clk2_enable_offset       vdc_clk2 enable bit
+        //  vdc_master_clk_enable_offset 27 MHz VDC master clock enable bit
+
+        // IDT_6V48061 and IDT_6V49185 have the same i2c device address.
+        // So the detection can't distiguish these two chips.
+        //
+        // Different values for IDT_6V48061 and IDT_6V49185 are listed below.
+        // Only one of IDT_6V48061 and IDT_6V49185 should be uncommented at a
+        // time.
+        //
+        // The default configuration values are for IDT_6V48061.
+        // Those who use IDT_6V49185 must select right values as listed.
+        IDT_6V49xxx
+        {
+            i2c_bus                      = 0
+            device_addr                  = 0xD4
+
+            config_reg0_addr             = 0x80
+            aud_clk_freq_sel_offset      = 1
+            aud_clk_freq_sel_width       = 2
+            vdc_clk1_freq_sel_offset     = 2
+            vdc_clk1_freq_sel_width      = 1
+            // 6V49061 vdc_clk2_sel 
+            // offset: 3, width : 1 
+            // 0 :108MHz, 1 :100.7MHz 
+            vdc_clk2_freq_sel_offset     = 3
+            vdc_clk2_freq_sel_width      = 1
+            // 6V49185 vdc_clk2_sel 
+            // offset: 4, width : 2
+            // 00:108MHz, 01:100.7MHz, 10:130MHz, 11: 216MHz
+            //vdc_clk2_freq_sel_offset     = 4
+            //vdc_clk2_freq_sel_width      = 2
+
+            config_reg1_addr             = 0x81
+            aud_clk0_enable_offset       = 0
+            aud_clk1_enable_offset       = 1
+            aud_clk2_enable_offset       = 2
+            aud_clk3_enable_offset       = 7
+            vdc_master_clk_enable_offset = 3
+            vdc_clk1_enable_offset       = 6
+            vdc_clk2_enable_offset       = 5
+        }
+
+        AKM_AK8136
+        {
+            i2c_bus                      = 0
+            device_addr                  = 0xAC
+
+            config_reg0_addr             = 0xFF
+            aud_clk_freq_sel_offset      = 3
+            aud_clk_freq_sel_width       = 2
+            vdc_clk1_freq_sel_offset     = 0
+            vdc_clk1_freq_sel_width      = 1
+            vdc_clk2_freq_sel_offset     = 1
+            vdc_clk2_freq_sel_width      = 1
+
+            config_reg1_addr             = 0xFE
+            aud_clk0_enable_offset       = 6
+            aud_clk1_enable_offset       = 6
+            aud_clk2_enable_offset       = 7
+            aud_clk3_enable_offset       = 7
+            vdc_master_clk_enable_offset = 3
+            vdc_clk1_enable_offset       = 4
+            vdc_clk2_enable_offset       = 5
+        }
+    }
+}

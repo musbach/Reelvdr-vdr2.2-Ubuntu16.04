@@ -1,0 +1,13 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "purge" ]
+then
+	update-rc.d -f reelbox-control remove
+fi
+
+rm -f /dev/frontpanel
+rm -f /usr/sbin/fpleds
+
+exit 0

@@ -1,0 +1,3 @@
+constcw.o: constcw.c ../../system.h ../../data.h ../../misc.h \
+ ../../system-common.h ../../system.h ../../data.h ../../misc.h \
+ ../../version.h

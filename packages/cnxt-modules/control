@@ -1,0 +1,12 @@
+Package: cnxt-modules
+Version: 2.1-reel0.101
+Section: reel
+Priority: important
+Architecture: armel
+Conflicts: cnxt-modules-2.6.18
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: cnxt-modules
+Description: Modules needed for the ReelBox Mpeg Decoder Card.
+ Includes kernel modules
+ .
+ This package provides modules for Linux version 2.6.18 on ARM(el).

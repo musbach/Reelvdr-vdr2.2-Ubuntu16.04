@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="scroller">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=<?% charset %?>" />
+	<title>VDRAdmin-AM - <?% gettext('Channels') %?></title>
+	<link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% IF usercss %?>
+		<link href="user.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% END %?>
+	<script type="text/javascript" language="JavaScript" src="library.js"></script>
+</head>
+
+<body id="prog_list">
+	<form action="<?% url %?>" method="get" name="FormName">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="heading">
+			<tr>
+				<td class="col_title">
+<?% IF progname %?>
+					<h1>
+						<a href="javascript:callurl('<?% switchurl %?>');" title="<?% gettext('TV select') %?>"><?% progname %?></a>
+	<?% IF stream_live_on %?>
+						<span class="action stream"><a href="<?% streamurl %?>" title="<?% gettext('Stream') %?>"><img src="bilder/stream.png" border="0" alt="<?% gettext('Stream') %?>" onmouseover="window.status='<?% gettext('Stream') %?>';return true" title="<?% gettext('Stream') %?>" /></a></span>
+	<?% END %?>
+					</h1>
+<?% ELSE %?>
+					&nbsp;
+<?% END %?>
+				</td>
+				<td class="col_other">
+					<?% gettext('Channel group:') %?> 
+					<select name="select_wanted_channels" size="1" class="submit" onchange="window.open(this.options[this.selectedIndex].value,'main')">
+<?% FOREACH ch_grp = ch_groups %?> 
+						<option value="<?% ch_grp.url %?>" <?% IF ch_grp.selected %?>selected="selected"<?% END %?> ><?% ch_grp.title %?></option>
+<?% END %?>
+					</select> 
+<?% IF chanloop.size() > 0 %?>
+					<?% gettext('Channel:') %?>&nbsp; 
+					<select name="vdr_id" class="submit" onchange="window.open('<?% url %?>?aktion=prog_list&amp;vdr_id=' + this.options[this.selectedIndex].value,'main')">
+	<?% FOREACH chan = chanloop %?>
+						<option value="<?% chan.vdr_id %?>" <?% IF chan.current %?>selected="selected"<?% END %?>><?% chan.name | html %?></option>
+	<?% END %?>
+					</select>
+					<input type="submit" class="submit" name="submit" value="<?% gettext('Go!') %?>" />
+<?% END %?>
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" name="aktion" value="prog_list" />
+	</form>
+
+<?% IF error_msg %?>
+		<div class="error"><?% error_msg %?></div>
+<?% END %?>
+
+	<div id="content">
+<?% IF loop.size() > 0 %?>
+	<?% FOREACH bc = loop %?>
+		<?% IF bc.newd %?>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list hilight">
+				<tr class="heading">
+					<td colspan="2">
+						<span class="channel_name"><?% bc.progname %?></span>
+						<span class="date_long"><?% bc.longdate %?></span>
+					</td>
+					<td class="col_navi"><?% IF bc.prev_channel %?><a href="<?% bc.prev_channel %?>" title="<?% bc.prev_channel_name %?>"><img src="bilder/pfeile_nachlinks.png" border="0" alt="" /></a><?% ELSE %?><img src="bilder/pfeile_nachlinks_soft.png" border="0" alt="" /><?% END %?><?% IF bc.next_channel %?><a href="<?% bc.next_channel %?>" title="<?% bc.next_channel_name %?>"><img src="bilder/pfeile_nachrechts.png" border="0" alt="" /></a><?% ELSE %?><img src="bilder/pfeile_nachrechts_soft.png" border="0" alt="" /><?% END %?></td>
+				</tr>
+		<?% ELSE %?>
+			<?% UNLESS bc.endd %?>
+				<tr class="<?% IF loop.count() % 2 == 0 %?>row_even<?% ELSE %?>row_odd<?% END %?>">
+					<td class="col_duration">
+						<a name="<?% bc.anchor %?>"><?% bc.emit %?> - <?% bc.duration %?></a>
+					</td>
+					<td class="col_title">
+						<div class="epg_title">
+						<?% IF bc.infurl %?>
+							<a href="javascript:popup('<?% bc.infurl %?>', <?% config.GUI_POPUP_WIDTH %?>, <?% config.GUI_POPUP_HEIGHT %?>);" title="<?% gettext('More Information') %?>">
+						<?% END %?>
+						<?% bc.title %?>
+						<?% IF bc.infurl %?>
+							</a>
+						<?% END %?>
+						</div>
+						<?% IF bc.subtitle %?>
+							<div class="epg_subtitle"><?% bc.subtitle %?></div>
+						<?% ELSE %?>
+							<br />
+						<?% END %?>
+					</td>
+					<td class="col_buttons">
+						<span class="action repeatings"><a href="vdradmin.pl?search=<?% bc.find_title %?>&amp;aktion=prog_summary&amp;submit=go11"><img src="bilder/find.png" border="0" alt="<?% gettext('Search for other show times') %?>" onmouseover="window.status='<?% gettext('Search for other show times') %?>';return true" title="<?% gettext('Search for other show times') %?>" /></a></span>
+						<?% IF bc.infurl %?>
+							<span class="action info"><a href="javascript:popup('<?% bc.infurl %?>', <?% config.GUI_POPUP_WIDTH %?>, <?% config.GUI_POPUP_HEIGHT %?>);" title="<?% gettext('More Information') %?>"><img src="bilder/info_button.png" border="0" alt="info" /></a></span>
+						<?% ELSE %?>
+							<span class="action info"><img src="bilder/info_button_disabled.png" border="0" alt="noinfo" title="<?% gettext('No Information') %?>" /></span>
+						<?% END %?>
+            <span class="action info"><a href="<?% bc.editurl %?>"><img src="bilder/edit.png" border="0" alt="edit" /></a></span>
+						<?% UNLESS bc.timerset %?>
+              <span class="action record">
+							  <a href="<?% bc.recurl %?>"><img src="bilder/rec_button.png" border="0" alt="record" title="<?% gettext('Record') %?>" /></a>
+              </span>
+            <?% END %?>
+						<?% IF bc.srch1_url %?>
+							<span class="action imdb"><a href="<?% bc.srch1_url %?>" target="_blank"><img src="bilder/imdb.png" border="0" alt="IMDb" onmouseover="window.status='<?% bc.srch1_title %?>';return true" title="<?% bc.srch1_title %?>" /></a></span>
+						<?% END %?>
+						<?% IF bc.srch2_url %?>
+							<span class="action imdb"><a href="<?% bc.srch2_url %?>" target="_blank"><img src="bilder/udef_search.png" border="0" alt="Search" onmouseover="window.status='<?% bc.srch2_title %?>';return true" title="<?% bc.srch2_title %?>" /></a></span>
+						<?% END %?>
+					</td>
+				</tr>
+			<?% END %?>
+		<?% END %?>
+		<?% IF bc.endd %?>
+				<tr class="heading">
+					<td colspan="2"></td>
+					<td class="col_navi"><?% IF bc.prev_channel %?><a href="<?% bc.prev_channel %?>"><img src="bilder/pfeile_nachlinks.png" border="0" alt="" /></a><?% ELSE %?><img src="bilder/pfeile_nachlinks_soft.png" border="0" alt="" /><?% END %?><?% IF bc.next_channel %?><a href="<?% bc.next_channel %?>"><img src="bilder/pfeile_nachrechts.png" border="0" alt="" /></a><?% ELSE %?><img src="bilder/pfeile_nachrechts_soft.png" border="0" alt="" /><?% END %?></td>
+				</tr>
+			</table>
+		<?% END %?>
+	<?% END %?>
+<?% ELSE %?>
+		<div class="warning"><?% gettext('No EPG information available') %?></div>
+<?% END %?>
+	</div>
+</body>
+
+</html>

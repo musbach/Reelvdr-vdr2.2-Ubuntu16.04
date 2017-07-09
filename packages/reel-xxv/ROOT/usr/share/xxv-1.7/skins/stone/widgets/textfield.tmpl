@@ -1,0 +1,14 @@
+<!-- textfield -->
+<?% global.widgetcount = global.widgetcount + 1 %?>
+<tr<?% ' class="two"' IF global.widgetcount mod 2 == 0 %?>>
+        <?% INCLUDE widgets/topic.inc abbr=data.msg %?>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% IF data.readonly %?>
+        <?% val %?>
+        <?% ELSE %?>
+            <textarea style="height:5em;width:395px;" name="<?% data.NAME %?>"><?% val | replace("<br />","
+") %?></textarea>
+        <?% END %?>
+    </td>
+</tr>

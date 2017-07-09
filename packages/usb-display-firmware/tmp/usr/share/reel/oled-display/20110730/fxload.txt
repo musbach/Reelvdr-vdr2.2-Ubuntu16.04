@@ -1,0 +1,1 @@
+sudo fxload -v -c GrauTecUSBOLED-Display160D-054B-20110730.iic -t fx2 -s Vend_Ax.hex  -I GrauTecUSBOLED-Display160D-054B-20110730.hex -D /dev/bus/usb/001/013

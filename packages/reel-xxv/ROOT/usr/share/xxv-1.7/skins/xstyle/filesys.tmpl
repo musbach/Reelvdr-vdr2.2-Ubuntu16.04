@@ -1,0 +1,76 @@
+<?%
+statusfiles = [];
+trash = param.usage.shift;
+# USE Dumper; Dumper.dump_html(param.usage);
+
+IF param.graphic;
+    FILTER null;
+        FOREACH device IN param.usage;
+            name = reentities(device.first).split('/').last;
+
+            free = 100 - device.5;
+            d = [
+                [ device.3, device.4],
+                [ device.5, free],
+            ];
+
+            USE my_graph = GD.Graph.pie(200, 150);
+
+            label = gettext('Total space');
+            label = "${label} ${device.0} ${device.2}";
+            my_graph.set(
+                label => label,
+                pie_height => 6,
+                axislabelclr => 'black',
+                shadow => 1,
+            );
+            my_graph.set_title_font(param.font,8);
+            my_graph.set_value_font(param.font,8);
+            my_graph.set_label_font(param.font,6);
+
+            file = writefile("status_filesys_${name}.gif", my_graph.plot(d).gif );
+            statusfiles.push(file);
+        END;
+    END;
+END;
+%?>
+<!-- Vitals Template -->
+<?% IF param.headingText %?>
+<h3><?% param.headingText %?></h3>
+<?% END %?>
+
+<?% IF param.graphic %?>
+    <table border="0" width="95%">
+    <?% count = 0 %?>
+    <?% FOREACH file IN statusfiles %?>
+    	<?% IF count % 2 == 0 %?>
+    		<?% IF count > 0 %?>
+    </tr>
+    		<?% END %?>
+     <tr>
+    	<?% END %?>
+         <td colspan=2 align=center>
+             <img src="<?% file %?>" hspace=5>
+         </td>
+    	<?% count = count + 1 %?>
+     <?% END %?>
+    <?% IF count > 0 %?>
+     </tr>
+    <?% END %?><tr>
+    </table>
+<?% ELSE %?>
+    <table border="0" width="95%">
+            <tr>
+            <?% FOREACH field IN trash %?>
+                <th><?% field %?></th>
+            <?% END %?>
+            </tr>
+            <?% FOREACH zeile IN data %?>
+            <tr>
+                <?% FOREACH field IN zeile %?>
+                <td><?% field %?></td>
+                <?% END %?>
+            </tr>
+            <?% END %?>
+    </table>
+<?% END %?>

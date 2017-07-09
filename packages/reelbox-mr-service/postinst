@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Update vdr-database if client and vdr-database are installed
+which mysql > /dev/null
+if [ $? ]; then
+    if [ -e /var/lib/mysql/vdr ]; then
+        mysql -u root -proot < /usr/share/reel/mysql/vdr-db-update_0.0.1.sql
+        mysql -u root -proot < /usr/share/reel/mysql/vdr-db-update_0.0.2.sql
+    fi
+fi
+
+if [ ! -s /etc/avahi/avahi-daemon.conf ]; then
+	cp -a /etc/avahi/avahi-daemon.conf-reel /etc/avahi/avahi-daemon.conf
+	/etc/init.d/avahi-daemon restart
+fi
+
+# Remove avahi-service file since its obsolete
+if [ -e /etc/avahi/services/reel-avg-mysql.service ];
+then
+    rm /etc/avahi/services/reel-avg-mysql.service
+fi
+
+exit 0
+

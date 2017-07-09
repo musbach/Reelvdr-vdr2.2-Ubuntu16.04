@@ -1,0 +1,11 @@
+Package: libgraphlcd
+Version: 0.1.3-reel10
+Section: reel
+Priority: important
+Architecture: armel
+Conflicts: graphlcd-base
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: libgraphlcd
+Description: graphlcd library with special drivers for ReelBox frontpanel
+ The graphlcd lib is used for various displays, this package contains the
+ drivers for the ReelBox frontpanel

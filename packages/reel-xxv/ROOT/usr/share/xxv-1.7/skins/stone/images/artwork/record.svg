@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="0.45.1"
+   sodipodi:docbase="/mnt/vdrsrc/xxv/svn/xxv/XXV-Skins/trunk/stone/images/artwork"
+   sodipodi:docname="record.svg"
+   sodipodi:version="0.32"
+   id="svg602"
+   xml:space="preserve"
+   viewBox="0 0 24 24"
+   height="64"
+   width="64"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.0"
+   inkscape:export-filename="/mnt/vdrsrc/xxv/svn/xxv/XXV-Skins/trunk/stone/images/record.png"
+   inkscape:export-xdpi="22.5"
+   inkscape:export-ydpi="22.5">
+  <defs
+   id="defs624">
+    <radialGradient
+   gradientUnits="userSpaceOnUse"
+   fy="7.8397999"
+   fx="8.7124004"
+   r="14.3823"
+   cy="7.8397999"
+   cx="8.7124004"
+   id="aigrd1"
+   gradientTransform="matrix(1.0106182,0,0,1.0106183,-0.1274184,-0.1274186)">
+      <stop
+   id="stop607"
+   style="stop-color:#F6A783"
+   offset="0" />
+      <stop
+   id="stop608"
+   style="stop-color:#F96415"
+   offset="0.2809" />
+      <stop
+   id="stop609"
+   style="stop-color:#99310C"
+   offset="1" />
+    </radialGradient>
+  </defs>
+  <sodipodi:namedview
+   inkscape:current-layer="svg602"
+   inkscape:window-y="0"
+   inkscape:window-x="0"
+   inkscape:window-height="950"
+   inkscape:window-width="1269"
+   inkscape:cy="32"
+   inkscape:cx="32"
+   inkscape:zoom="12.283333"
+   id="base"
+   width="64px"
+   height="64px" />
+  <path
+   inkscape:export-ydpi="48.000000"
+   inkscape:export-xdpi="48.000000"
+   inkscape:export-filename="/mnt/vdrsrc/xxv/XXV-0.11/gray/images/record.png"
+   id="path605"
+   d="M 4.3193014,4.3193015 C 2.298065,6.340538 1.186385,9.0692072 1.186385,12 C 1.186385,14.930793 2.298065,17.659462 4.3193014,19.680698 C 6.3405379,21.701935 9.0692069,22.813615 12,22.813615 C 14.930792,22.813615 17.659461,21.701935 19.680698,19.680698 C 21.701935,17.659462 22.813615,14.930793 22.813615,12 C 22.813615,9.0692072 21.701935,6.340538 19.680698,4.3193015 C 17.659461,2.298065 14.930792,1.186385 12,1.186385 C 9.0692069,1.186385 6.3405379,2.298065 4.3193014,4.3193015 z "
+   style="font-size:12px;fill-rule:nonzero;stroke:#000000;stroke-width:0.87276989" />
+  <path
+   inkscape:export-ydpi="48.000000"
+   inkscape:export-xdpi="48.000000"
+   inkscape:export-filename="/mnt/vdrsrc/xxv/XXV-0.11/gray/images/record.png"
+   id="path610"
+   d="M 22.00512,12 C 22.00512,17.457339 17.5584,22.00512 12,22.00512 C 6.5426617,22.00512 1.9948797,17.5584 1.9948797,12 C 1.9948797,6.5426618 6.4415998,1.9948798 12,1.9948798 C 17.457338,1.9948798 22.00512,6.4416 22.00512,12 L 22.00512,12 z "
+   style="font-size:12px;fill:url(#aigrd1);fill-rule:nonzero" />
+  
+  <metadata
+   id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+   rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+   rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,0 +1,14 @@
+--- menusysteminfo.cpp	(revision 47)
++++ menusysteminfo.cpp	(working copy)
+@@ -165,7 +165,11 @@
+         Add(new cMenuInfoItem(tr("RAM:"), meminfo.Memory().c_str()));
+     bool SkipVideoDiskSpace = false;
+     int FreeMB;
++#if APIVERSNUM <= 10721    
+     int Percent = VideoDiskSpace(&FreeMB);
++#else    
++    int Percent = cVideoDirectory::VideoDiskSpace(&FreeMB);    
++#endif
+     char item_str[64];
+ #ifdef RBMINI
+     // If Usage is 0% and Free space is less than 100MB skip it

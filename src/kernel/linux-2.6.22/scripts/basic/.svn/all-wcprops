@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/basic
+END
+fixdep
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/basic/fixdep
+END
+fixdep.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/basic/fixdep.c
+END
+docproc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/basic/docproc
+END
+docproc.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/basic/docproc.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/basic/Makefile
+END

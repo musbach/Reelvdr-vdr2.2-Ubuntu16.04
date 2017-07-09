@@ -1,0 +1,3 @@
+var/cache/vdr-plugin-burn
+var/lib/vdr/plugins/burn/counters
+var/lib/vdr/plugins/burn/skins/Grabbed

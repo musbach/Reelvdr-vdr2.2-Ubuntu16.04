@@ -1,0 +1,76 @@
+Yet another convert tool (for VDR)
+----------------------------------
+
+Voraussetzungen:
+
+Benoetigt werden (ausser VDR Aufnahmen und ein bischen Plattenplatz) folgende Pakete:
+
+- vdr
+- yacoto-scripts Paket
+- Jede Menge Tools abhaengig vom Script Paket
+- Zur Statusanzeige wird (falls vorhanden) bgprocess benutzt,
+  http://www.htpc-forum.de/download/vdr-bgprocess-0.1.0.tgz
+  Danke an reelmultimedia dafuer !
+
+
+Installation:
+
+- Das Plugin wie jedes andere unter <vdr-source-dir/PLUGINS/src/> entpacken und kompilieren.
+
+- Folgende Patches fuer VDR werden unterstuetzt und mit den dazugehoerigen DEFINES aktiviert:
+  Liemikuutio   / USE_LIEMIKUUTIO
+  SortRecords   / USE_SORTRECORDS
+  GraphTFT      / USE_GRAPHTFT
+  PinPlugin     / USE_PINPLUGIN
+  WareagleIcons / USE_WAREAGLEICON
+
+- Das Verzeichnis in welchem die Scripts stehen (/etc/vdr/plugins/yacoto per default) kann in der
+  Make.config mit der Variablen YAC_CONF_DIR geaendert werden.
+
+- Anweisungen des Script Paketes befolgen !
+
+- Das Script Paket steht im Verzeichnis yacoto und muss nach /etc/vdr/plugins kopiert werden.
+
+
+Bedienung:
+
+- Hoffentlich selbst erklaerend ;)
+
+Achtung:
+Das Zusammenfuehren mehrerer Aufnahmen zu einem File ist kaum getestet und daher vorerst nicht empfohlen :)
+
+
+Konfiguration:
+
+- Einstellungen fuer die jeweiligen Konvertierungsmethoden und das Plugin selbst werden im Plugin, oder ueber 
+  Menu->Einstellungen->Plugins->yacoto vorgenommen.
+
+
+Interner Ablauf (Schnittstelle zu den Scripts):
+
+Beim Starten von VDR wird 
+   YAC_CONF_DIR/yac_admin.sh -start
+aufgerufen.
+
+Beim Abspeichern der Einstellungen wird 
+   YAC_CONF_DIR/yac_admin.sh -save
+aufgerufen.
+
+Wird nun eine Umwandlung gestartet, so startet das Plugin:
+   YAC_CONF_DIR/yac_start.sh <recording~audio_parms> [ <recording~audio_parms> ] ...
+
+Yacoto erkennt anhand einer yacoto.log im Aufnahmeverzeichnis, ob eine Aufnahme bereits umgewandelt wurde.
+Diese sollte von den Scripts angelegt werden.   
+
+Danksagungen:
+
+Vielen Dank an alle die dieses Plugin ermoeglicht haben, in erster Linie an Klaus Schmidinger fuer VDR.
+Ebenso an die Firmen Reelmultimedia und Xeatre fuer deren Unterstuetzung !
+
+
+Wuensche, Lobhuldigungen, Bugs etc an:
+http://redmine.gen2vdr.org/
+
+bzw. im VDR-Portal oder HTPC-Forum
+
+Helmut Auer ( http://htpc-forum.de/index.php?url=about.php )

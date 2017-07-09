@@ -1,0 +1,15 @@
+#!/bin/bash
+cd /usr/src/reelbox/testing/packages/skin
+touch *
+make clean
+if make all
+  then
+    echo "OK"
+    dpkg -i /usr/src/reelbox/testing/packages/reelvdr-pi-skinreel*_i386.deb
+    sudo service reelvdr stop
+    sleep 6
+    sudo service reelvdr start
+    hwclock --show
+else
+    echo "error"
+fi

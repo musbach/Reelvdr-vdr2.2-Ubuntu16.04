@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include
+END
+Kbuild
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/Kbuild
+END

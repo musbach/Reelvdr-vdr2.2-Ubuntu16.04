@@ -1,0 +1,9 @@
+Package: pal-osal
+Version: 25.0.1
+Section: reel-ice
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: pal-osal
+Description: Intel OSAL library and kernel module
+ Intel CE OS abstraction layer

@@ -1,0 +1,72 @@
+<!-- report -->
+<div id="body">
+<h1><?% gettext("Protocol of the activities") %?></h1>
+
+<?% FOREACH name IN data.keys.sort %?>
+    <h2><?% gettext("Report for module") %?>&nbsp;
+        <?% name %?>:</h2>
+    <?% IF name == 'RECORDS';
+            link = '?cmd=rdisplay&data=';
+        ELSIF name == 'AUTOTIMER';
+            link = '?cmd=tedit&data=';
+        ELSIF name == 'SVDRP';
+            link = '?cmd=vdredit&data=';
+        ELSE;
+            link = '';
+        END;
+     %?>
+
+    <?% FOREACH typ IN data.$name.keys.sort %?>
+        <?% IF typ == 'message' %?>
+            <p><?% data.$name.$typ %?>
+            </p>
+        <?% ELSIF typ == 'table' and data.$name.$typ.size > 1 %?>
+           <?% fields = data.$name.$typ.shift %?>
+                  <table summary=""  width="100%">
+                    <tr>
+                    <?% FOREACH field IN fields %?>
+                        <?% NEXT IF field.match('^__') %?>
+                        <th>
+                            <nobr><?% field %?>
+                            </nobr>
+                        </th>
+                    <?% END %?>
+                    </tr>
+                    <?% FOREACH zeile IN data.$name.$typ %?>
+                    <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+                        <?% c = -1 %?>
+                        <?% FOREACH field IN zeile %?>
+                            <?% c = c + 1 %?>
+                            <?% NEXT IF fields.$c.match('^__') %?>
+                            <td><?% IF link %?><a href="<?% link %?><?% zeile.first %?>"><?% END %?>
+                                <?% field %?>
+                                <?% IF link %?></a><?% END %?>
+                            </td>
+                        <?% END %?>
+                    </tr>
+                    <?% END %?>
+                </table>
+        <?% END %?>
+    <?% END %?>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+<?% IF allow('report') %?>
+  <p class="section"><?% gettext("Report",20) %?></p>
+    <p>
+      <a title="<?% gettext("Report") %?>" href="?cmd=rp"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Report") %?>" href="?cmd=rp"><?% gettext("Report",20) %?></a>
+    </p>
+<?% END %?>
+<?% IF allow('lg') %?>
+  <p class="section"><?% gettext("Log files",20) %?></p>
+    <p>
+      <a title="<?% gettext("Standard") %?>" href="?cmd=lg&data=main"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Standard") %?>" href="?cmd=lg&data=main"><?% gettext("Standard",20) %?></a><br />
+      <a title="<?% gettext("Syslog") %?>" href="?cmd=lg&data=syslog"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Syslog") %?>" href="?cmd=lg&data=syslog"><?% gettext("Syslog",20) %?></a><br />
+    </p>
+<?% END %?>
+</div>
+<?% global.sidebar = 1 %?>

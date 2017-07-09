@@ -1,0 +1,8 @@
+#!/bin/sh
+
+chmod 775 /usr/lib/vdr/libvdr-dvbapi.so.2.2.0
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

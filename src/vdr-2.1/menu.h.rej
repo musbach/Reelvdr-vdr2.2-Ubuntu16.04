@@ -1,0 +1,122 @@
+--- menu.h	(revision 15412)
++++ menu.h	(revision 15413)
+@@ -20,7 +20,7 @@
+ #include "skins.h"
+ #ifdef USE_SETUP
+ #include "submenu.h"
+-#endif /* USE_SETUP */
++#endif /* SETUP */
+ 
+ class cMenuText : public cOsdMenu {
+ private:
+@@ -102,6 +108,9 @@
+   cMenuEvent(const cEvent *Event, bool CanSwitch = false, bool Buttons = false);
+   virtual void Display(void);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuEvent"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ #ifdef REELVDR
+@@ -121,31 +130,40 @@
+ #endif /* REELVDR*/
+ 
+ class cMenuMain : public cOsdMenu {
++#ifdef REELVDR
++protected:
++  cMenuMain(const char *Title):cOsdMenu(Title){}; // Allow custom constructor
++#else
+ private:
++#endif
+ #ifdef USE_SETUP
+   int    nrDynamicMenuEntries;
+-#endif /* USE_SETUP */
++#endif /* SETUP */
+   bool replaying;
+   cOsdItem *stopReplayItem;
+   cOsdItem *cancelEditingItem;
+   cOsdItem *stopRecordingItem;
+   int recordControlsState;
+   static cOsdObject *pluginOsdObject;
+-#ifdef REELVDR
+-  static void SetPluginOsdObject(cOsdObject *PluginOsdObject) { pluginOsdObject = PluginOsdObject ; }
+-#endif /* REELVDR */
+ #ifdef USE_SETUP
+   void Set(int current=0);
+   bool Update(bool Force = false);
+   cSubMenu subMenu;
+ #else
+-   void Set(void);
+-   bool Update(bool Force = false);
+-#endif /* USE_SETUP */
++  void Set(void);
++  bool Update(bool Force = false);
++#endif /* SETUP */
+ public:
+   cMenuMain(eOSState State = osUnknown);
+   virtual eOSState ProcessKey(eKeys Key);
+   static cOsdObject *PluginOsdObject(void);
++#ifdef REELVDR
++  static void SetPluginOsdObject(cOsdObject *PluginOsdObject)
++      { pluginOsdObject = PluginOsdObject ; }
++#endif /* REELVDR */
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuMain"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ class cDisplayChannel : public cOsdObject {
+@@ -241,6 +259,9 @@
+   eOSState Delete(void);
+   eOSState Info(void);
+   eOSState Commands(eKeys Key = kNone);
++#ifdef USE_LIEMIEXT
++  eOSState Rename(void);
++#endif /* LIEMIEXT */
+ protected:
+   cRecording *GetRecording(cMenuRecordingItem *Item);
+ public:
+@@ -259,7 +280,11 @@
+   char *fileName;
+   bool GetEvent(void);
+ public:
++#ifdef USE_ALTERNATECHANNEL
++  cRecordControl(cDevice *Device, cTimer *Timer = NULL, bool Pause = false, cChannel *Channel = NULL);
++#else
+   cRecordControl(cDevice *Device, cTimer *Timer = NULL, bool Pause = false);
++#endif /* ALTERNATECHANNEL */
+   virtual ~cRecordControl();
+   bool Process(time_t t);
+   cDevice *Device(void) { return device; }
+@@ -276,6 +301,9 @@
+ public:
+   static bool Start(cTimer *Timer = NULL, bool Pause = false);
+   static void Stop(const char *InstantId);
++#ifdef USE_LNBSHARE
++  static void Stop(cDevice *Device);   // LNB Sharing
++#endif /* LNBSHARE */
+   static bool PauseLiveVideo(void);
+ #ifdef REELVDR
+   static const char *GetInstantId(const char *LastInstantId, bool LIFO=false);
+@@ -294,11 +322,20 @@
+ class cReplayControl : public cDvbPlayerControl {
+ private:
+   cSkinDisplayReplay *displayReplay;
++#ifdef USE_JUMPPLAY
++  cMarksReload marks;
++#else
+   cMarks marks;
++#endif /* JUMPPLAY */
+   bool visible, modeOnly, shown, displayFrames;
+   int lastCurrent, lastTotal;
+   bool lastPlay, lastForward;
+   int lastSpeed;
++#ifdef USE_LIEMIEXT
++  int lastSkipSeconds;
++  eKeys lastSkipKey;
++  cTimeMs lastSkipTimeout;
++#endif /* LIEMIEXT */
+   time_t timeoutShow;
+   bool timeSearchActive, timeSearchHide;
+   int timeSearchTime, timeSearchPos;

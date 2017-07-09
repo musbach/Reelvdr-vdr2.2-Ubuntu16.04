@@ -1,0 +1,119 @@
+This is the "VDRAdmin-AM" a web user interface for VDR.
+
+Written by:                  Andreas Mair (andreas AT vdr - developer DOT org)
+
+Project's homepage:          http://andreas.vdr-developer.org
+
+Latest version available at: http://andreas.vdr-developer.org
+
+
+License
+-------
+
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along
+	with this program; if not, write to the Free Software Foundation, Inc.,
+	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+See the file COPYING for the full GNU GENERAL PUBLIC LICENSE Version 2 (GPLv2).
+
+"Bubblehelp infoboxes" (templates/default/infobox.js) is licensed under 
+GNU GENERAL PUBLIC LICENSE Version 2 (GPLv2) *only*.
+
+"Crystal Theme Icons" are licensed under GNU LESSER GENERAL PUBLIC LICENSE v2.1
+(LGPLv2.1), see LGPL.txt.
+
+
+Requirements
+------------
+
+- VDR (http://www.tvdr.de/)
+- Some Perl modules (see "./install.sh -p"):
+  - Required:
+	  - Template
+	  - Template::Plugin::JavaScript
+	  - CGI
+	  - HTTP::Date
+	  - IO::Socket
+	  - Time::Local
+	  - MIME::Base64
+	  - File::Temp
+	  - URI
+	  - URI::Escape
+	  - Locale::gettext OR Locale::Messages
+	- Optional:
+	  - Required for built-in HTTP response compression:
+	    - Compress::Zlib
+	  - Required for AutoTimer email notification:
+	    - Net::SMTP
+	    - Authen::SASL
+	  - Required for AutoTimer email notification and CRAM-MD5 authentication:
+	    - Digest::HMAC_MD5
+	  - Required for syslog logging:
+	    - Sys::Syslog
+	  - Required for IPv6 support:
+	    - IO::Socket::INET6
+	  - Required for SSL support (https):
+	    - IO::Socket::SSL
+
+Description
+-----------
+
+VDRAdmin-AM is a web based interface to VDR.
+
+
+Installation
+------------
+
+See "INSTALL" file.
+
+
+Options
+-------
+
+	-n, --nofork
+		don't fork, log to stderr.
+
+	-c,  --config
+		run configuration dialog.
+
+	-d [dir], --cfgdir [dir]
+		use [dir] for configuration files.
+
+	-k, --kill
+		kill a forked vdradmind[.pl].
+
+	-p [name], --pid [name]
+		name of pidfile to use.
+
+  -6, --ipv6
+    use IPv6. [EXPERIMENTAL!]
+
+  -s, --ssl
+    only accept https:// connections.
+
+		NOTE: this requires server-cert.pem and server-key.pem in the "certs" directory.
+		      You can create them for example like this:
+		# openssl req -new -x509 -days 9999 -keyout server-rsa-key.pem -out server-cert.pem
+		# openssl rsa -in server-rsa-key.pem > server-key.pem
+
+	-l [level], --log [level]
+		set log level for this session [0 - 7].
+
+	-h, --help
+		print usage information.
+
+
+Credits
+-------
+
+See "CREDITS" file.

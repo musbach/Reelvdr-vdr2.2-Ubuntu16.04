@@ -1,0 +1,11 @@
+[Unit]
+Description=start reelvdr
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/etc/reel/reelvdr start
+ExecStop=/etc/reel/reelvdr stop
+
+[Install]
+WantedBy=multi-user.target

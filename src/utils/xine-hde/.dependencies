@@ -1,0 +1,106 @@
+hde_xine.o: hde_xine.c /usr/include/xine/xine_internal.h hde_xine.h
+hde_xine_video.o: hde_xine_video.c /usr/include/xine/xine_internal.h \
+ hde_xine.h hde_io.h ../hdshm3/src/include/hdchannel.h \
+ ../hdshm3/src/include/hdshmlib.h ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h /usr/include/xine/vo_scale.h
+hde_xine_audio.o: hde_xine_audio.c /usr/include/xine/xine_internal.h \
+ hde_xine.h hde_io.h ../hdshm3/src/include/hdchannel.h \
+ ../hdshm3/src/include/hdshmlib.h ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h
+hde_xine_vd.o: hde_xine_vd.c /usr/include/xine/xine_internal.h hde_xine.h \
+ hde_io.h ../hdshm3/src/include/hdchannel.h \
+ ../hdshm3/src/include/hdshmlib.h ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h parser.h
+hde_xine_ad.o: hde_xine_ad.c /usr/include/xine/xine_internal.h hde_xine.h \
+ hde_tool.h h264data.h bswap.h bitstream.h hde_io.h \
+ ../hdshm3/src/include/hdchannel.h ../hdshm3/src/include/hdshmlib.h \
+ ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_base.h
+hde_xine_sd.o: hde_xine_sd.c /usr/include/xine/xine_internal.h hde_xine.h
+hde_xine_scr.o: hde_xine_scr.c hde_xine.h \
+ /usr/include/xine/xine_internal.h hde_io.h \
+ ../hdshm3/src/include/hdchannel.h ../hdshm3/src/include/hdshmlib.h \
+ ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h
+hde_io.o: hde_io.c /usr/include/xine/xine_internal.h hde_io.h \
+ ../hdshm3/src/include/hdchannel.h ../hdshm3/src/include/hdshmlib.h \
+ ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h hde_cmds.h
+hde_cmds.o: hde_cmds.c /usr/include/xine/xine_internal.h hde_cmds.h \
+ ../hdshm3/src/include/hdshm_user_structs.h \
+ ../hdshm3/src/include/hdchannel.h ../hdshm3/src/include/hdshmlib.h \
+ ../hdshm3/src/include/../driver/hdshm.h hde_base.h hde_tool.h h264data.h \
+ bswap.h bitstream.h ../hdshm3/src/hostlib/hdshmlib.c \
+ ../hdshm3/src/hostlib/../driver/hdshm.h \
+ ../hdshm3/src/hdchannel/hdchannel.c
+hde_tool.o: hde_tool.c hde_tool.h /usr/include/xine/xine_internal.h \
+ h264data.h bswap.h bitstream.h
+parser.o: parser.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h
+mpeg12.o: mpeg12.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h
+mpeg4.o: mpeg4.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h
+h264.o: h264.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h golomb.h
+golomb.o: golomb.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h
+xplayer.o: xplayer.c
+hde_xine.o: hde_xine.c /usr/include/xine/xine_internal.h hde_xine.h
+hde_xine_video.o: hde_xine_video.c /usr/include/xine/xine_internal.h \
+ hde_xine.h hde_io.h ../hdshm3/src/include/hdchannel.h \
+ ../hdshm3/src/include/hdshmlib.h ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h /usr/include/xine/vo_scale.h
+hde_xine_audio.o: hde_xine_audio.c /usr/include/xine/xine_internal.h \
+ hde_xine.h hde_io.h ../hdshm3/src/include/hdchannel.h \
+ ../hdshm3/src/include/hdshmlib.h ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h
+hde_xine_vd.o: hde_xine_vd.c /usr/include/xine/xine_internal.h hde_xine.h \
+ hde_io.h ../hdshm3/src/include/hdchannel.h \
+ ../hdshm3/src/include/hdshmlib.h ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h parser.h
+hde_xine_ad.o: hde_xine_ad.c /usr/include/xine/xine_internal.h hde_xine.h \
+ hde_tool.h h264data.h bswap.h bitstream.h hde_io.h \
+ ../hdshm3/src/include/hdchannel.h ../hdshm3/src/include/hdshmlib.h \
+ ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_base.h
+hde_xine_sd.o: hde_xine_sd.c /usr/include/xine/xine_internal.h hde_xine.h
+hde_xine_scr.o: hde_xine_scr.c hde_xine.h \
+ /usr/include/xine/xine_internal.h hde_io.h \
+ ../hdshm3/src/include/hdchannel.h ../hdshm3/src/include/hdshmlib.h \
+ ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h
+hde_io.o: hde_io.c /usr/include/xine/xine_internal.h hde_io.h \
+ ../hdshm3/src/include/hdchannel.h ../hdshm3/src/include/hdshmlib.h \
+ ../hdshm3/src/include/../driver/hdshm.h \
+ ../hdshm3/src/include/hdshm_user_structs.h hde_tool.h h264data.h bswap.h \
+ bitstream.h hde_base.h hde_cmds.h
+hde_cmds.o: hde_cmds.c /usr/include/xine/xine_internal.h hde_cmds.h \
+ ../hdshm3/src/include/hdshm_user_structs.h \
+ ../hdshm3/src/include/hdchannel.h ../hdshm3/src/include/hdshmlib.h \
+ ../hdshm3/src/include/../driver/hdshm.h hde_base.h hde_tool.h h264data.h \
+ bswap.h bitstream.h ../hdshm3/src/hostlib/hdshmlib.c \
+ ../hdshm3/src/hostlib/../driver/hdshm.h \
+ ../hdshm3/src/hdchannel/hdchannel.c
+hde_tool.o: hde_tool.c hde_tool.h /usr/include/xine/xine_internal.h \
+ h264data.h bswap.h bitstream.h
+parser.o: parser.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h
+mpeg12.o: mpeg12.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h
+mpeg4.o: mpeg4.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h
+h264.o: h264.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h golomb.h
+golomb.o: golomb.c parser.h /usr/include/xine/xine_internal.h hde_tool.h \
+ h264data.h bswap.h bitstream.h
+xplayer.o: xplayer.c

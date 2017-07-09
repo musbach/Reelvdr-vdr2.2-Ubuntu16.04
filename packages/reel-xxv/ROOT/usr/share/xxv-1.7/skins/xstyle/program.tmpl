@@ -1,0 +1,86 @@
+<script language="javascript" type="text/javascript">
+<!--
+
+    <?% INCLUDE javascript/records.js %?>
+
+-->
+</SCRIPT>
+
+<!-- TableTemplate -->
+<?% FOREACH ch IN param.channels %?>
+    <?% IF cgi.param('data') == ch.1 || cgi.param('data') == ch.0 || param.current == ch.1 %?>
+        <?% channel = ch.0 %?>
+        <?% channelpos = ch.1 %?>
+        <?% LAST %?>
+    <?% END %?>
+<?% END %?>
+<h1><?% gettext("Program guide for") %?>&nbsp;<?% channel | html %?></h1>
+<table>
+<tr>
+
+<div id="navcontainer">
+<ul id="navlist">
+    <li><a href="#" onclick="suche('<?% gettext('Search string:') %?>', '?cmd=search&__channel=<?% channelpos %?>&data=', '<?% cgi.param('search') %?>')">
+        <?% gettext("Search on Channel") %?></a></li>
+    <li><a href='?cmd=switch&amp;data=<?% channelpos %?>'><?% gettext('Switch') %?></a></li>
+    <li><a href='?cmd=livestream&amp;data=<?% channelpos %?>'><?% gettext('Live TV web cast') %?></a></li>
+</ul>
+</div>
+
+
+<table border="0" width="95%">
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <?% NEXT IF field.match('^__') || loop.count == 6 %?>
+            <th><?% field %?></th>
+        <?% END %?>
+        </tr>
+        <?% FOREACH zeile IN data %?>
+            <?% c = 0 %?>
+            <?% day = zeile.5 %?>
+            <?% IF !oldday.defined || day != oldday %?>
+                <tr><td colspan="<?% zeile.size %?>" bgcolor='#DDDDDD'>
+                <b><?% day %?></b>
+                </td></tr>
+            <?% END %?>
+        <tr class="<?% myclass %?>"<?% IF (loop.count mod 2) == 0 %?> bgcolor='#F5F5F5'<?% END %?>>
+            <?% FOREACH field IN zeile %?>
+                <?% c = c + 1 %?>
+                <?% IF c == 1; # Id Field %?>
+                <td>
+                <?% INCLUDE 'bloecke/event_links.tmpl' data=zeile timerid=zeile.10 level=zeile.13 %?>
+                </td>
+                <?% ELSIF c == 2; # Text Field %?>
+                <td>
+                    <?% INCLUDE bloecke/tooltip.tmpl cmd="display" title=field subtitle=zeile.2 desc=zeile.6 eventid=zeile.0 linkid=zeile.0 ttp_offset=0 %?>
+                    <?% IF zeile.11 %?>
+                    <b><?% field %?></b>
+                    <?% ELSE %?>
+                    <?% field %?>
+                    <?% END %?>
+                    <?% IF zeile.2.length > 0  %?>
+                    <br><small><?% zeile.2 %?></small>
+                    <?% END %?>
+                    </a>
+                    <?% IF zeile.6.length > 0 %?>
+                    <br><small><em><?% chop(zeile.6,80) | replace('<br />',' ') %?></em></small>
+                    <?% END %?>
+                </td>
+                <?% ELSIF c == 3; # Subtitle Field %?>
+                <?% ELSIF c == 6; # Day Field %?>
+                <?% ELSIF c >= 7; # Desc Field %?>
+                <?% ELSE %?>
+                    <?% IF zeile.11 %?>
+                            <td><b><?% field %?></b></td>
+                    <?% ELSE %?>
+                            <td><?% field %?></td>
+                    <?% END %?>
+                <?% END %?>
+            <?% END %?>
+        </tr>
+        <?% oldday = day %?>
+        <?% END %?>
+<?% END %?>
+</table>

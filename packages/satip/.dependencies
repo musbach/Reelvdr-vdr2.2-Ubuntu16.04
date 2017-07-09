@@ -1,0 +1,5 @@
+tmp/usr/lib/vdr/libvdr-satip.so.2.2.0: /usr/src/reelbox/testing/src/vdr-plugins/lib/libvdr-satip.so.2.2.0
+tmp/usr/share/locale/ca_ES/LC_MESSAGES/vdr-satip.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/satip/po/ca_ES.mo
+tmp/usr/share/locale/de_DE/LC_MESSAGES/vdr-satip.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/satip/po/de_DE.mo
+tmp/usr/share/locale/es_ES/LC_MESSAGES/vdr-satip.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/satip/po/es_ES.mo
+tmp/usr/share/locale/fi_FI/LC_MESSAGES/vdr-satip.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/satip/po/fi_FI.mo

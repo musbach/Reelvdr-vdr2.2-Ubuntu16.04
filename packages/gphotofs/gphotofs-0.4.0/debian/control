@@ -1,0 +1,17 @@
+Source: gphotofs
+Section: utils
+Priority: optional
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reebox.org>
+Build-Depends: cdbs, debhelper (>= 5.0.0), libfuse-dev, libglib2.0-dev, libgphoto2-2-dev
+Standards-Version: 3.7.2
+
+Package: gphotofs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, fuse-utils
+Description: filesystem to mount digital cameras
+ GPhotoFS is a filesystem client based on libgphoto2 that exposes
+ supported cameras as filesystems; while some cameras implement the USB
+ Mass Storage class and already appear as filesystems (making this
+ program redundant), many use the Picture Transfer Protocol (PTP) or
+ some other custom protocol. But as long as the camera is supported
+ by libgphoto2, it can be mounted as a filesystem using this  program.

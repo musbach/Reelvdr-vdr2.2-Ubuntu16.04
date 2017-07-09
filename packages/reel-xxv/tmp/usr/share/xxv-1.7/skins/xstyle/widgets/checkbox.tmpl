@@ -1,0 +1,17 @@
+<!-- string -->
+<tr>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% data.msg %?>
+    </td>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <table style="border:0px solid #000000;"><tr>
+        <?% c = 0 %?>
+        <?% FOREACH wert IN data.choices %?>
+            <?% "</tr><tr>" IF (c mod 3) == 0 %?>
+            <td><input type="checkbox" name="<?% data.NAME %?>" value="<?% wert %?>" <?% "checked" IF val.grep("^${wert}").size %?> <?% FOREACH p IN param.tags; "$p ";END %?>><?% wert %?></td>
+            <?% c = c + 1 %?>
+        <?% END %?>
+        </tr></table>
+    </td>
+</tr>

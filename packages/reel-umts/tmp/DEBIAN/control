@@ -1,0 +1,10 @@
+Package: reel-umts
+Version: 0.5-26
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 68K
+Depends: wvdial
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reel-umts
+Description: start umts connection"

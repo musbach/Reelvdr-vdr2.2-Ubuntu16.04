@@ -1,0 +1,9 @@
+tmp/etc/default/reel-browser.conf: /usr/src/reelbox/testing/src/etc/default/reel-browser.conf
+tmp/etc/init/reel-browser.conf: /usr/src/reelbox/testing/src/etc/init/reel-browser.conf
+tmp/etc/init/ttyS0.conf: /usr/src/reelbox/testing/src/etc/init/ttyS0.conf
+tmp/etc/initramfs-tools/scripts/local-premount/reel_desaster_recovery: /usr/src/reelbox/testing/src/etc/initramfs-tools/scripts/local-premount/reel_desaster_recovery
+tmp/etc/udev/rules.d/71-persistent-net.rules: /usr/src/reelbox/testing/src/etc/udev/rules.d/71-persistent-net.rules
+tmp//sbin/ice_wol: /usr/src/reelbox/testing/src/utils/ice/ice_wol/ice_wol
+tmp//sbin/ice_pm: /usr/src/reelbox/testing/src/utils/ice/ice_pm/ice_pm
+tmp//sbin/load_8051: /usr/src/reelbox/testing/src/utils/ice/8051_load/load_8051
+tmp//usr/share/reel/frontpanel/ice4200_8051_firmware.bin: /usr/src/reelbox/testing/src/utils/ice/8051_fw/build/ce4200_8051_firmware.bin

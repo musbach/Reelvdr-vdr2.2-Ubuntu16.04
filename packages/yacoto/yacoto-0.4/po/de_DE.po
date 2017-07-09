@@ -1,0 +1,293 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@cadsoft.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <helmut@helmutauer.de>\n"
+"POT-Creation-Date: 2010-10-11 22:53+0200\n"
+"PO-Revision-Date: 2008-05-20 12:39+0200\n"
+"Last-Translator: Klaus Schmidinger <kls@cadsoft.de>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Start conversion"
+msgstr "Umwandlung starten"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Merge recordings"
+msgstr "Aufnahmen zusammenfügen"
+
+msgid "Audiotracks"
+msgstr "Tonspuren"
+
+msgid "length"
+msgstr "Länge"
+
+msgid "cutlen"
+msgstr "Schnitt"
+
+msgid "Ignore"
+msgstr "Nicht benutzen"
+
+msgid "Use if possible"
+msgstr "Evtl. benutzen"
+
+msgid "Master"
+msgstr "Master"
+
+msgid "Choose audio tracks"
+msgstr "AudioSpur wählen"
+
+msgid "Convert"
+msgstr "Konvertiere"
+
+msgid "Convert recordings"
+msgstr "Aufnahmen umwandeln"
+
+msgid "free"
+msgstr "frei"
+
+msgid "Move down"
+msgstr "Runter"
+
+msgid "Move up"
+msgstr "Rauf"
+
+msgid "Remove"
+msgstr "Entfernen"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Empty list"
+msgstr "Nichts ausgewählt"
+
+msgid "Recording info"
+msgstr "Aufnahme Info"
+
+msgid "Video info"
+msgstr "Video Info"
+
+msgid "Audio info"
+msgstr "Audio Info"
+
+msgid "Duration"
+msgstr "Dauer"
+
+msgid "Size"
+msgstr "Grösse"
+
+msgid "Recordings"
+msgstr "Aufnahmen"
+
+msgid "Sort"
+msgstr "Sortiere"
+
+msgid "Select"
+msgstr "Auswählen"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "No recordings found"
+msgstr "Keine Aufnahmen vorhanden"
+
+msgid "main dir alphabetically, subdirs flexible"
+msgstr "Videoverzeichnis alphabetisch, Unterverz. flexibel"
+
+msgid "main dir by date, subdirs flexible"
+msgstr "Videoverzeichnis nach Datum, Unterverz. flexibel"
+
+msgid "all alphabetically"
+msgstr "Alles alphabetisch"
+
+msgid "all by date"
+msgstr "Alles nach Datum"
+
+msgid "Sorting"
+msgstr "Sortiere"
+
+msgid "Starting convert"
+msgstr "Umwandlung starten"
+
+msgid "Config file not found"
+msgstr "Konfigurations Datei nicht vorhanden"
+
+msgid "Save changes?"
+msgstr "Änderungen speichern?"
+
+msgid "Yacoto Setup"
+msgstr "Yacoto Einstellungen"
+
+msgid "settings"
+msgstr "Einstellungen"
+
+msgid "Save+Exit"
+msgstr "Sp+Exit"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Saving settings"
+msgstr "Speichere Einstellungen"
+
+msgid "Yacoto conversion is running"
+msgstr "Yacoto Umwandlung laeuft"
+
+msgid "Additional parms"
+msgstr "Weitere Parameter"
+
+msgid "Audio bitrate"
+msgstr "Audio Bitrate"
+
+msgid "Audio codec"
+msgstr "Audio Codec"
+
+msgid "Audio parms"
+msgstr "Audio Parameter"
+
+msgid "Audio source"
+msgstr "Audio Quelle"
+
+msgid "Burn device"
+msgstr "Brenn Laufwerk"
+
+msgid "Burn speed"
+msgstr "Brenngeschwindigkeit"
+
+msgid "Burn video dvd"
+msgstr "DVD brennen"
+
+msgid "CROP"
+msgstr "Ränder abschneiden"
+
+msgid "Chapter each mark"
+msgstr "Kapitel je Marke"
+
+msgid "Chapter each n minutes"
+msgstr "Kapitel alle n Minuten"
+
+msgid "Configuration"
+msgstr "Konfiguration"
+
+msgid "Create iso image"
+msgstr "ISO erstellen"
+
+msgid "Create video_ts"
+msgstr "VIDEO_TS erstellen"
+
+msgid "Cut recordings"
+msgstr "Aufnahmen schneiden"
+
+msgid "Disc size"
+msgstr "Disk Größe"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Groesse"
+msgstr ""
+
+msgid "Keep dir structure"
+msgstr "Verzeichnis uebernehmen"
+
+msgid "Keep logfiles"
+msgstr "Log-Dateien behalten"
+
+msgid "LogFile directory"
+msgstr "Log Verzeichnis"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Naming convention"
+msgstr "Namenskonvention"
+
+msgid "Other parms"
+msgstr "Weitere Parameter"
+
+msgid "Output parms"
+msgstr "Ausgabe Parameter"
+
+msgid "Parallel conversion"
+msgstr "Parallel konvertieren"
+
+msgid "Priority(Min=19)"
+msgstr "Priorität(19=min)"
+
+msgid "Quality"
+msgstr "Qualität"
+
+msgid "Remux mode"
+msgstr "Remux Modus"
+
+msgid "Resample rate"
+msgstr "Resample Rate"
+
+msgid "Scale"
+msgstr "Skalierung"
+
+msgid "Single pass parms"
+msgstr "Parameter single pass"
+
+msgid "Skalierung"
+msgstr ""
+
+msgid "Split films"
+msgstr "Filme einzeln bearbeiten"
+
+msgid "Target audio dir"
+msgstr "Audio Zielverzeichnis"
+
+msgid "Target video dir"
+msgstr "Video Zielverzeichnis"
+
+msgid "Temp directory"
+msgstr "Temp Verzeichnis"
+
+msgid "VDR video dir"
+msgstr "VDR video Verzeichnis"
+
+msgid "Video bitrate"
+msgstr "Video Bitrate"
+
+msgid "Video codec"
+msgstr "Video Codec"
+
+msgid "Video max. bitrate"
+msgstr ""
+
+msgid "Video parms"
+msgstr "Video Parameter"
+
+msgid "Video parms pass 1"
+msgstr "Video Parameter 1.Lauf"
+
+msgid "Video parms pass 2"
+msgstr "Video Parameter 2.Lauf"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Zusatzoptionen"
+msgstr ""
+
+msgid "ffmpeg parms"
+msgstr "ffmpeg Parameter"
+
+msgid "lame parms"
+msgstr "lame Parameter"
+
+msgid "mencoder parms"
+msgstr "mencoder Parameter"

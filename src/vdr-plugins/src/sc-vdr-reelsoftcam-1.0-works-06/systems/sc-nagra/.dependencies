@@ -1,0 +1,7 @@
+sc-nagra.o: sc-nagra.c ../../system-common.h ../../data.h \
+ ../../../../../vdr/../vdr/thread.h ../../../../../vdr/../vdr/tools.h \
+ ../../misc.h ../../system.h ../../smartcard.h ../../parse.h \
+ ../../crypto.h ../../crypto-bn.h ../../support/idea.h ../../helper.h \
+ ../../opts.h ../../i18n.h ../../../../../vdr/../vdr/i18n.h \
+ ../../../../../vdr/../vdr/tools.h ../../log-sc.h ../../log.h \
+ ../../log-core.h ../../version.h

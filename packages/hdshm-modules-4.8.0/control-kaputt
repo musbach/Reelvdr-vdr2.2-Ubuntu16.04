@@ -1,0 +1,13 @@
+Package: hdshm-modules-$(shell uname -r | cut -d- -f1-2)
+Version: 3
+Section: reel
+Priority: important
+Architecture: i386
+Depends: linux-image-generic (>= $(shell uname -r | cut -d- -f1-2))
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: hdshm-modules-$(shell uname -r | cut -d- -f1-2)
+Description: Modules needed for the Reel DeCypher Video Card.
+ Includes kernel modules
+ .                                                                                                                      
+ This package provides modules for the extensionHD 
+ for Linux version $(shell uname -r | cut -d- -f1-2) on x86/x86_64.

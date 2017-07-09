@@ -1,0 +1,22 @@
+<!-- MenuTemplate -->
+<?% message = data.shift %?>
+<?% IF message %?>
+<h1><?% gettext("ERROR")%?> : <?% message %?></h1>
+<?% END %?>
+
+<ul>
+<?% FOREACH field IN data %?>
+    <?% group = field.0; short = field.1; name = field.2; descr = field.3 %?>
+    <?% IF ! oldgroup.defined %?>
+<li><?% group %?><ul>
+    <?% ELSIF oldgroup != group && oldgroup.defined %?>
+</ul></li></ul>
+<ul><li><?% group %?><ul>
+    <?% END %?>
+<li><a href="?cmd=<?% name %?>" title="<?% descr %?>"><?% name %?></a></li>
+    <?% oldgroup = group %?>
+<?% END %?>
+</ul>
+</li>
+</ul>
+

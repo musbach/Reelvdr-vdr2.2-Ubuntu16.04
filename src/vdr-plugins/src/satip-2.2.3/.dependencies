@@ -1,0 +1,27 @@
+common.o: common.c common.h
+config.o: config.c discover.h common.h discoverif.h msearch.h socket.h \
+ pollerif.h server.h log.h config.h
+device.o: device.c config.h common.h discover.h discoverif.h msearch.h \
+ socket.h pollerif.h server.h log.h param.h device.h deviceif.h tuner.h \
+ rtp.h tunerif.h rtcp.h rtsp.h statistics.h sectionfilter.h
+discover.o: discover.c common.h config.h log.h socket.h discover.h \
+ discoverif.h msearch.h pollerif.h server.h
+msearch.o: msearch.c config.h common.h discover.h discoverif.h msearch.h \
+ socket.h pollerif.h server.h log.h poller.h
+param.o: param.c common.h param.h
+poller.o: poller.c config.h common.h log.h poller.h pollerif.h
+rtp.o: rtp.c config.h common.h log.h rtp.h socket.h tunerif.h pollerif.h
+rtcp.o: rtcp.c config.h common.h log.h rtcp.h socket.h tunerif.h \
+ pollerif.h
+rtsp.o: rtsp.c config.h common.h log.h rtsp.h tunerif.h
+sectionfilter.o: sectionfilter.c config.h common.h log.h sectionfilter.h \
+ statistics.h
+server.o: server.c config.h common.h log.h server.h
+setup.o: setup.c common.h config.h device.h deviceif.h tuner.h discover.h \
+ discoverif.h msearch.h socket.h pollerif.h server.h rtp.h tunerif.h \
+ rtcp.h rtsp.h statistics.h sectionfilter.h log.h setup.h
+socket.o: socket.c common.h config.h log.h socket.h
+statistics.o: statistics.c common.h statistics.h log.h config.h
+tuner.o: tuner.c common.h config.h discover.h discoverif.h msearch.h \
+ socket.h pollerif.h server.h log.h poller.h tuner.h deviceif.h rtp.h \
+ tunerif.h rtcp.h rtsp.h statistics.h

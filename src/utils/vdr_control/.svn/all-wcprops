@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/1/testing/src/utils/vdr_control
+END
+frontpanel.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/utils/vdr_control/frontpanel.c
+END
+vdr_control.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/vdr_control/vdr_control.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/vdr_control/Makefile
+END
+frontpanel.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/utils/vdr_control/frontpanel.h
+END

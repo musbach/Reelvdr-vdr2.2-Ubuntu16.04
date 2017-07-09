@@ -1,0 +1,15 @@
+#
+# Makefile for Reel-Wlan
+#
+#
+
+include ../Make.common
+
+$(TARGET): .root-copied
+#$(TARGET): $(VROOT)/DEBIAN/conffiles
+#$(TARGET): $(VROOT)/DEBIAN/changelog
+$(TARGET): $(VROOT)/DEBIAN/postinst
+#$(TARGET): $(VROOT)/DEBIAN/postrm
+
+all: $(TARGET)
+

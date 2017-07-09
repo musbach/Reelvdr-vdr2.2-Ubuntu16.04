@@ -1,0 +1,56 @@
+--- xine-lib-1.1.8_vanilla/src/input/input_http.c	2007-08-19 01:36:45.000000000 +0200
++++ xine-lib-1.1.8/src/input/input_http.c	2009-03-09 11:27:49.249076542 +0100
+@@ -91,6 +91,7 @@
+   char            *host;
+   int              port;
+   char            *uri;
++  int              redirect_count;
+   
+   char             preview[MAX_PREVIEW_SIZE];
+   off_t            preview_size;
+@@ -668,6 +669,19 @@
+   int                  proxyport;
+   int                  mpegurl_redirect = 0;
+   
++  { /*check for number of redirections*/ 
++    int max_redirect = 3; /*default*/
++
++    xine_cfg_entry_t cfgentry;
++    if (xine_config_lookup_entry (this->stream->xine, "media.network.maxredirect", &cfgentry)) 
++	  max_redirect = cfgentry.num_value;
++    printf("\nredirect_count : %i using %d as max_redirect\n", this->redirect_count,  max_redirect);
++
++    if (this->redirect_count >= max_redirect) { this->redirect_count = 0; return -1; /*correct plugin, but could not open*/ }
++  }
++  this->redirect_count++;
++
++  printf("%s\n", __FUNCTION__);
+   use_proxy = this_class->proxyhost && strlen(this_class->proxyhost);
+   
+   if (use_proxy) {
+@@ -804,6 +818,7 @@
+   done = 0; len = 0; linenum = 0;
+   this->contentlength = 0;
+ 
++
+   while (!done) {
+     /* fprintf (stderr, "input_http: read...\n"); */
+ 
+@@ -880,6 +895,7 @@
+         }
+ 	
+ 	if (!strncasecmp(this->buf, "Location: ", 10)) {
++		printf("\033[1;92mGot:'%s'\033[0m\n", this->buf);
+ 	  char *href = (this->buf + 10);
+ 	  
+ 	  lprintf ("trying to open target of redirection: >%s<\n", href);
+@@ -1036,6 +1052,9 @@
+   this->stream = stream;
+   this->fh     = -1;
+   this->nbc    = nbc_init (this->stream);
++
++  this->redirect_count = 0;
++  printf("\033[1;92mCALLED: http_call_get_instance() http_plugin\033[0m\n");
+   
+   this->input_plugin.open              = http_plugin_open;
+   this->input_plugin.get_capabilities  = http_plugin_get_capabilities;

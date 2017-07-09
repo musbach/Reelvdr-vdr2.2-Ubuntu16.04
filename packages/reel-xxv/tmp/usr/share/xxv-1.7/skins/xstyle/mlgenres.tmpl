@@ -1,0 +1,17 @@
+<table class="genreselect" width="100%">
+    <?% allgenres = param.allgenres %?>
+    <?% WHILE allgenres.size %?>
+    <tr>
+    <?% FOREACH [ 1..5 ] %?>
+    <?% set = allgenres.shift %?>
+        <td nowrap="nowrap">
+        <?% IF set.first %?>
+            <input type="checkbox" name="__genres" id="<?% set.0 %?>" value="<?% set.0 %?>" <?% IF  param.genres.grep("^$set.0\$").size > 0 %?>checked="checked"<?% END %?>/>
+            <label for="<?% set.0 %?>"><?% set.1 %?></label>
+        <?% END %?>
+        </td>
+    <?% END %?>
+    </tr>
+    <?% END %?>
+    </tr>
+</table>

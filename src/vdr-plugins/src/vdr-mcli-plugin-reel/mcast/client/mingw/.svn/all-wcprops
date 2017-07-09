@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/mingw
+END
+build.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/mingw/build.cmd
+END
+clean.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/mingw/clean.cmd
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/mingw/Makefile
+END

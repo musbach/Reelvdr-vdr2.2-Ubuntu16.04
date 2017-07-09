@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://mediatomb.cc/0.11.0-pre/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mediatomb.cc/0.11.0-pre/config http://mediatomb.cc/0.11.0-pre/config.xsd">
+  <server>
+    <ui enabled="yes">
+      <accounts enabled="no" session-timeout="30"/>
+    </ui>
+    <name>ReelBox</name>
+    <home>/var/lib/mediatomb</home>
+    <webroot>/usr/share/mediatomb/web</webroot>
+    <storage>
+      <sqlite3 enabled="yes">
+        <database-file>mediatomb.db</database-file>
+      </sqlite3>
+    </storage>
+        <pc-directory upnp-hide="yes"/>
+  </server>
+  <import hidden-files="no">
+    <scripting script-charset="UTF-8">
+      <common-script>/usr/share/mediatomb/js/common.js</common-script>
+      <playlist-script>/usr/share/mediatomb/js/playlists.js</playlist-script>
+      <virtual-layout type="builtin">
+     <!-- <virtual-layout type="js"> -->
+        <import-script>/usr/share/mediatomb/js/import-vdr.js</import-script>
+      </virtual-layout>
+    </scripting>
+    
+    <autoscan>
+        <!--         <directory location="/media" mode="timed" interval="3600" level="full" recursive="no" hidden-files="no"/> -->
+        <directory location="/media" mode="inotify" level="full" recursive="yes" hidden-files="no"/>
+        <!--         <directory location="/audio" mode="inotify" recursive="yes" hidden-files="no"/> -->
+    </autoscan>
+    
+    <mappings>
+      <extension-mimetype ignore-unknown="no">
+        <map from="mp3" to="audio/mpeg"/>
+        <map from="ogg" to="application/ogg"/>
+        <map from="asf" to="video/x-ms-asf"/>
+        <map from="asx" to="video/x-ms-asf"/>
+        <map from="wma" to="audio/x-ms-wma"/>
+        <map from="wax" to="audio/x-ms-wax"/>
+        <map from="wmv" to="video/x-ms-wmv"/>
+        <map from="wvx" to="video/x-ms-wvx"/>
+        <map from="wm" to="video/x-ms-wm"/>
+        <map from="wmx" to="video/x-ms-wmx"/>
+        <map from="m3u" to="audio/x-mpegurl"/>
+        <map from="pls" to="audio/x-scpls"/>
+        <map from="flv" to="video/x-flv"/>
+        <map from="vdr" to="video/mpeg"/>
+      </extension-mimetype>
+      <mimetype-upnpclass>
+        <map from="audio/*" to="object.item.audioItem.musicTrack"/>
+        <map from="application/ogg" to="object.item.audioItem.musicTrack"/>
+        <map from="video/*" to="object.item.videoItem"/>
+        <map from="image/*" to="object.item.imageItem"/>
+      </mimetype-upnpclass>
+      <mimetype-contenttype>
+        <treat mimetype="audio/mpeg" as="mp3"/>
+        <treat mimetype="application/ogg" as="ogg"/>
+        <treat mimetype="audio/x-flac" as="flac"/>
+        <treat mimetype="image/jpeg" as="jpg"/>
+        <treat mimetype="audio/x-mpegurl" as="playlist"/>
+        <treat mimetype="audio/x-scpls" as="playlist"/>
+      </mimetype-contenttype>
+    </mappings>
+  </import>
+  
+  <transcoding enabled="yes">
+      <mappings>
+        <mimetype-profile>
+            <transcode mimetype="video/mpeg" using="vlc"/>
+        </mimetype-profile>
+      </mappings>
+      
+      <profiles>
+          <profile name="vlc" enabled="yes" type="external">
+              <mimetype>video/mpeg</mimetype>
+              <accept-url>yes</accept-url>
+              <first-resource>yes</first-resource>
+              <!-- <agent command="vlc-transcode" arguments="%in %out"/> -->
+              <agent command="vlc-repack.sh" arguments="%in %out"/>
+              <buffer size="10485760" chunk-size="131072" fill-size="5242"/>
+          </profile>
+      </profiles>
+  </transcoding>
+  
+</config>

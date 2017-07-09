@@ -1,0 +1,454 @@
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o reelbox.o reelbox.c
+In file included from /usr/include/vdr/dvbdevice.h:15:0,
+                 from /usr/include/vdr/menuitems.h:14,
+                 from /usr/include/vdr/plugin.h:14,
+                 from reelbox.h:26,
+                 from reelbox.c:23:
+/usr/include/vdr/device.h:787:16: warning: ‘virtual void cDevice::TrickSpeed(int, bool)’ was hidden [-Woverloaded-virtual]
+   virtual void TrickSpeed(int Speed, bool Forward);
+                ^
+In file included from reelbox.c:29:0:
+ReelBoxDevice.h:129:29: warning:   by ‘void Reel::ReelBoxDevice::TrickSpeed(Reel::Int)’ [-Woverloaded-virtual]
+         /* override */ void TrickSpeed(Int speed);
+                             ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o ac3.o ac3.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioDecoder.o AudioDecoder.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioDecoderIec60958.o AudioDecoderIec60958.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioDecoderMpeg1.o AudioDecoderMpeg1.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioDecoderNull.o AudioDecoderNull.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioDecoderPcm.o AudioDecoderPcm.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioOut.o AudioOut.c
+In file included from /usr/include/vdr/dvbdevice.h:15:0,
+                 from /usr/include/vdr/menuitems.h:14,
+                 from ReelBoxMenu.h:5,
+                 from ReelBoxDevice.h:29,
+                 from AudioOut.c:24:
+/usr/include/vdr/device.h:787:16: warning: ‘virtual void cDevice::TrickSpeed(int, bool)’ was hidden [-Woverloaded-virtual]
+   virtual void TrickSpeed(int Speed, bool Forward);
+                ^
+In file included from AudioOut.c:24:0:
+ReelBoxDevice.h:129:29: warning:   by ‘void Reel::ReelBoxDevice::TrickSpeed(Reel::Int)’ [-Woverloaded-virtual]
+         /* override */ void TrickSpeed(Int speed);
+                             ^
+In file included from AudioOut.h:28:0,
+                 from AudioOut.c:23:
+Thread.h: In instantiation of ‘void Reel::Thread<T>::SetSchedParam(int, int) [with T = Reel::AudioOut]’:
+AudioOut.c:133:42:   required from here
+Thread.h:84:30: warning: variable ‘param’ set but not used [-Wunused-but-set-variable]
+         struct ::sched_param param;
+                              ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioPacketQueue.o AudioPacketQueue.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioPlayer.o AudioPlayer.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioPlayerBsp.o AudioPlayerBsp.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o AudioPlayerHd.o AudioPlayerHd.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o BspCommChannel.o BspCommChannel.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o BspOsd.o BspOsd.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o BspOsdProvider.o BspOsdProvider.c
+In file included from BspOsdProvider.h:26:0,
+                 from BspOsdProvider.c:23:
+/usr/include/vdr/osd.h:853:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, const cImage&)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, const cImage &Image);
+                ^
+In file included from BspOsdProvider.c:27:0:
+BspTrueColorOsd.h:77:29: warning:   by ‘virtual void Reel::BspTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+In file included from BspOsdProvider.h:26:0,
+                 from BspOsdProvider.c:23:
+/usr/include/vdr/osd.h:856:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, int)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, int ImageHandle);
+                ^
+In file included from BspOsdProvider.c:27:0:
+BspTrueColorOsd.h:77:29: warning:   by ‘virtual void Reel::BspTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o BkgPicPlayer.o BkgPicPlayer.c
+In file included from /usr/include/vdr/dvbdevice.h:15:0,
+                 from /usr/include/vdr/menuitems.h:14,
+                 from ReelBoxMenu.h:5,
+                 from ReelBoxDevice.h:29,
+                 from BkgPicPlayer.c:26:
+/usr/include/vdr/device.h:787:16: warning: ‘virtual void cDevice::TrickSpeed(int, bool)’ was hidden [-Woverloaded-virtual]
+   virtual void TrickSpeed(int Speed, bool Forward);
+                ^
+In file included from BkgPicPlayer.c:26:0:
+ReelBoxDevice.h:129:29: warning:   by ‘void Reel::ReelBoxDevice::TrickSpeed(Reel::Int)’ [-Woverloaded-virtual]
+         /* override */ void TrickSpeed(Int speed);
+                             ^
+In file included from BkgPicPlayer.c:23:0:
+BkgPicPlayer.h: In constructor ‘Reel::BkgPicPlayer::BkgPicPlayer(Reel::ReelBoxDevice&)’:
+BkgPicPlayer.h:74:16: warning: ‘Reel::BkgPicPlayer::lastPicTime_’ will be initialized after [-Wreorder]
+         time_t lastPicTime_, lastVideoTime_, lastAudioTime_, lastReplayTime_;
+                ^
+BkgPicPlayer.h:73:14: warning:   ‘int Reel::BkgPicPlayer::nextPic_’ [-Wreorder]
+         int  nextPic_, picInterval_;
+              ^
+BkgPicPlayer.c:42:5: warning:   when initialized here [-Wreorder]
+     BkgPicPlayer::BkgPicPlayer(ReelBoxDevice &device)
+     ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o bspchannel.o bspchannel.c
+In file included from bspchannel.c:1:0:
+../../../utils/bspshm/channel/bspchannel.c: In function ‘void bsp_channel_free_areas(bsp_channel_t*)’:
+../../../utils/bspshm/channel/bspchannel.c:204:8: warning: variable ‘areas’ set but not used [-Wunused-but-set-variable]
+  int n,areas;
+        ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o bspshmlib.o bspshmlib.c
+In file included from bspshmlib.c:1:0:
+../../../utils/bspshm/hostlib/bspshmlib.c: In function ‘void bsp_unmap_area(bspshm_area_t*)’:
+../../../utils/bspshm/hostlib/bspshmlib.c:91:6: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+  int ret;
+      ^
+../../../utils/bspshm/hostlib/bspshmlib.c: In function ‘int bsp_check_area(bspshm_area_t*)’:
+../../../utils/bspshm/hostlib/bspshmlib.c:115:6: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+  int ret;
+      ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o dts.o dts.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o fs453settings.o fs453settings.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o iec60958.o iec60958.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o MpegPes.o MpegPes.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o hdchannel.o hdchannel.c
+In file included from hdchannel.c:1:0:
+../../../utils/hdshm3/src/hdchannel/hdchannel.c: In function ‘void hd_channel_free_areas(hd_channel_t*)’:
+../../../utils/hdshm3/src/hdchannel/hdchannel.c:217:8: warning: variable ‘areas’ set but not used [-Wunused-but-set-variable]
+  int n,areas;
+        ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o hdshmlib.o hdshmlib.c
+In file included from hdshmlib.c:1:0:
+../../../utils/hdshm3/src/hostlib/hdshmlib.c: In function ‘void hd_unmap_area(hdshm_area_t*)’:
+../../../utils/hdshm3/src/hostlib/hdshmlib.c:107:9: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+     int ret;
+         ^
+../../../utils/hdshm3/src/hostlib/hdshmlib.c: In function ‘int hd_check_area(hdshm_area_t*)’:
+../../../utils/hdshm3/src/hostlib/hdshmlib.c:133:9: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+     int ret;
+         ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o HdCommChannel.o HdCommChannel.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o Reel.o Reel.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o ReelBoxDevice.o ReelBoxDevice.c
+In file included from /usr/include/vdr/dvbdevice.h:15:0,
+                 from /usr/include/vdr/menuitems.h:14,
+                 from ReelBoxMenu.h:5,
+                 from ReelBoxDevice.h:29,
+                 from ReelBoxDevice.c:23:
+/usr/include/vdr/device.h:787:16: warning: ‘virtual void cDevice::TrickSpeed(int, bool)’ was hidden [-Woverloaded-virtual]
+   virtual void TrickSpeed(int Speed, bool Forward);
+                ^
+In file included from ReelBoxDevice.c:23:0:
+ReelBoxDevice.h:129:29: warning:   by ‘void Reel::ReelBoxDevice::TrickSpeed(Reel::Int)’ [-Woverloaded-virtual]
+         /* override */ void TrickSpeed(Int speed);
+                             ^
+ReelBoxDevice.c: In member function ‘virtual Reel::Int Reel::ReelBoxDevice::PlayAudio(const Byte*, Reel::Int, uchar)’:
+ReelBoxDevice.c:635:25: warning: unused variable ‘trackId’ [-Wunused-variable]
+         const tTrackId *trackId = GetTrack(GetCurrentAudioTrack());
+                         ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o ReelBoxMenu.o ReelBoxMenu.c
+In file included from /usr/include/vdr/dvbdevice.h:15:0,
+                 from /usr/include/vdr/menuitems.h:14,
+                 from /usr/include/vdr/plugin.h:14,
+                 from reelbox.h:26,
+                 from ReelBoxMenu.c:10:
+/usr/include/vdr/device.h:787:16: warning: ‘virtual void cDevice::TrickSpeed(int, bool)’ was hidden [-Woverloaded-virtual]
+   virtual void TrickSpeed(int Speed, bool Forward);
+                ^
+In file included from ReelBoxMenu.c:11:0:
+ReelBoxDevice.h:129:29: warning:   by ‘void Reel::ReelBoxDevice::TrickSpeed(Reel::Int)’ [-Woverloaded-virtual]
+         /* override */ void TrickSpeed(Int speed);
+                             ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o VideoPlayer.o VideoPlayer.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o VideoPlayerBsp.o VideoPlayerBsp.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o VideoPlayerHd.o VideoPlayerHd.c
+In file included from /usr/include/vdr/dvbdevice.h:15:0,
+                 from /usr/include/vdr/menuitems.h:14,
+                 from ReelBoxMenu.h:5,
+                 from ReelBoxDevice.h:29,
+                 from VideoPlayerHd.c:25:
+/usr/include/vdr/device.h:787:16: warning: ‘virtual void cDevice::TrickSpeed(int, bool)’ was hidden [-Woverloaded-virtual]
+   virtual void TrickSpeed(int Speed, bool Forward);
+                ^
+In file included from VideoPlayerHd.c:25:0:
+ReelBoxDevice.h:129:29: warning:   by ‘void Reel::ReelBoxDevice::TrickSpeed(Reel::Int)’ [-Woverloaded-virtual]
+         /* override */ void TrickSpeed(Int speed);
+                             ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o VdrXineMpIf.o VdrXineMpIf.c
+In file included from /usr/include/vdr/dvbdevice.h:15:0,
+                 from /usr/include/vdr/menuitems.h:14,
+                 from ReelBoxMenu.h:5,
+                 from ReelBoxDevice.h:29,
+                 from VdrXineMpIf.c:26:
+/usr/include/vdr/device.h:787:16: warning: ‘virtual void cDevice::TrickSpeed(int, bool)’ was hidden [-Woverloaded-virtual]
+   virtual void TrickSpeed(int Speed, bool Forward);
+                ^
+In file included from VdrXineMpIf.c:26:0:
+ReelBoxDevice.h:129:29: warning:   by ‘void Reel::ReelBoxDevice::TrickSpeed(Reel::Int)’ [-Woverloaded-virtual]
+         /* override */ void TrickSpeed(Int speed);
+                             ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o HdOsd.o HdOsd.c
+In file included from HdOsd.h:29:0,
+                 from HdOsd.c:23:
+/usr/include/vdr/osd.h:853:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, const cImage&)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, const cImage &Image);
+                ^
+In file included from HdOsd.c:24:0:
+HdTrueColorOsd.h:86:29: warning:   by ‘virtual void Reel::HdTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+In file included from HdOsd.h:29:0,
+                 from HdOsd.c:23:
+/usr/include/vdr/osd.h:856:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, int)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, int ImageHandle);
+                ^
+In file included from HdOsd.c:24:0:
+HdTrueColorOsd.h:86:29: warning:   by ‘virtual void Reel::HdTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o HdOsdProvider.o HdOsdProvider.c
+In file included from HdOsdProvider.h:26:0,
+                 from HdOsdProvider.c:23:
+/usr/include/vdr/osd.h:853:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, const cImage&)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, const cImage &Image);
+                ^
+In file included from HdOsdProvider.c:26:0:
+HdTrueColorOsd.h:86:29: warning:   by ‘virtual void Reel::HdTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+In file included from HdOsdProvider.h:26:0,
+                 from HdOsdProvider.c:23:
+/usr/include/vdr/osd.h:856:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, int)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, int ImageHandle);
+                ^
+In file included from HdOsdProvider.c:26:0:
+HdTrueColorOsd.h:86:29: warning:   by ‘virtual void Reel::HdTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+In file included from HdOsdProvider.h:26:0,
+                 from HdOsdProvider.c:23:
+/usr/include/vdr/osd.h:853:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, const cImage&)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, const cImage &Image);
+                ^
+In file included from HdOsdProvider.c:27:0:
+HdFbTrueColorOsd.h:114:29: warning:   by ‘virtual void Reel::HdFbTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+In file included from HdOsdProvider.h:26:0,
+                 from HdOsdProvider.c:23:
+/usr/include/vdr/osd.h:856:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, int)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, int ImageHandle);
+                ^
+In file included from HdOsdProvider.c:27:0:
+HdFbTrueColorOsd.h:114:29: warning:   by ‘virtual void Reel::HdFbTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o HdTrueColorOsd.o HdTrueColorOsd.c
+In file included from HdTrueColorOsd.h:31:0,
+                 from HdTrueColorOsd.c:24:
+/usr/include/vdr/osd.h:853:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, const cImage&)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, const cImage &Image);
+                ^
+In file included from HdTrueColorOsd.c:24:0:
+HdTrueColorOsd.h:86:29: warning:   by ‘virtual void Reel::HdTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+In file included from HdTrueColorOsd.h:31:0,
+                 from HdTrueColorOsd.c:24:
+/usr/include/vdr/osd.h:856:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, int)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, int ImageHandle);
+                ^
+In file included from HdTrueColorOsd.c:24:0:
+HdTrueColorOsd.h:86:29: warning:   by ‘virtual void Reel::HdTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+HdTrueColorOsd.c: In member function ‘virtual void Reel::HdTrueColorOsd::DrawEllipse(int, int, int, int, tColor, int)’:
+HdTrueColorOsd.c:451:51: warning: narrowing conversion of ‘(((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::left + x1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                              left + x1,
+                                                   ^
+HdTrueColorOsd.c:452:50: warning: narrowing conversion of ‘(((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::top + y1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                              top + y1,
+                                                  ^
+HdTrueColorOsd.c:453:56: warning: narrowing conversion of ‘((((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::left + x2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                              left + x2 + 1,
+                                                        ^
+HdTrueColorOsd.c:454:55: warning: narrowing conversion of ‘((((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::top + y2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                              top + y2 + 1,
+                                                       ^
+HdTrueColorOsd.c: In member function ‘virtual void Reel::HdTrueColorOsd::DrawRectangle(int, int, int, int, tColor)’:
+HdTrueColorOsd.c:522:48: warning: narrowing conversion of ‘(((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::left + x1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           left + x1,
+                                                ^
+HdTrueColorOsd.c:523:47: warning: narrowing conversion of ‘(((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::top + y1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           top + y1,
+                                               ^
+HdTrueColorOsd.c:524:53: warning: narrowing conversion of ‘((((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::left + x2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           left + x2 + 1,
+                                                     ^
+HdTrueColorOsd.c:525:52: warning: narrowing conversion of ‘((((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::top + y2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           top + y2 + 1,
+                                                    ^
+HdTrueColorOsd.c: In member function ‘void Reel::HdTrueColorOsd::DrawRectangle(int, int, int, int, tColor, int, int, int, int)’:
+HdTrueColorOsd.c:540:48: warning: narrowing conversion of ‘(((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::left + x1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           left + x1,
+                                                ^
+HdTrueColorOsd.c:541:47: warning: narrowing conversion of ‘(((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::top + y1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           top + y1,
+                                               ^
+HdTrueColorOsd.c:542:53: warning: narrowing conversion of ‘((((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::left + x2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           left + x2 + 1,
+                                                     ^
+HdTrueColorOsd.c:543:52: warning: narrowing conversion of ‘((((Reel::HdTrueColorOsd*)this)->Reel::HdTrueColorOsd::<anonymous>.cOsd::top + y2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           top + y2 + 1,
+                                                    ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o HdFbTrueColorOsd.o HdFbTrueColorOsd.c
+In file included from HdFbTrueColorOsd.h:31:0,
+                 from HdFbTrueColorOsd.c:24:
+/usr/include/vdr/osd.h:853:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, const cImage&)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, const cImage &Image);
+                ^
+In file included from HdFbTrueColorOsd.c:24:0:
+HdFbTrueColorOsd.h:114:29: warning:   by ‘virtual void Reel::HdFbTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+In file included from HdFbTrueColorOsd.h:31:0,
+                 from HdFbTrueColorOsd.c:24:
+/usr/include/vdr/osd.h:856:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, int)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, int ImageHandle);
+                ^
+In file included from HdFbTrueColorOsd.c:24:0:
+HdFbTrueColorOsd.h:114:29: warning:   by ‘virtual void Reel::HdFbTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+HdFbTrueColorOsd.c: In member function ‘void Reel::HdFbTrueColorOsd::DrawBitmap32(int, int, const cBitmap&, tColor, tColor, bool, bool, int, int)’:
+HdFbTrueColorOsd.c:639:42: warning: variable ‘yt1’ set but not used [-Wunused-but-set-variable]
+         static unsigned int qx, qy, xt1, yt1, x, y, w, h, *px, line, row;
+                                          ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o setupmenu.o setupmenu.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o VideoPlayerPip.o VideoPlayerPip.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o VideoPlayerPipBsp.o VideoPlayerPipBsp.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o VideoPlayerPipHd.o VideoPlayerPipHd.c
+VideoPlayerPipHd.c:53:2: warning: #warning "Using new ffmpeg..." [-Wcpp]
+ #warning "Using new ffmpeg..."
+  ^
+VideoPlayerPipHd.c: In function ‘bool Reel::png_file_2_rgb(const char*, Reel::Byte**&, int&, int&)’:
+VideoPlayerPipHd.c:152:14: warning: unused variable ‘w’ [-Wunused-variable]
+     png_byte w = info_ptr->width;
+              ^
+VideoPlayerPipHd.c: In member function ‘void Reel::SWDecoder::EmptyFrame(bool)’:
+VideoPlayerPipHd.c:491:25: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 if (h < height_ar)
+                         ^
+VideoPlayerPipHd.c:464:8: warning: unused variable ‘n’ [-Wunused-variable]
+   uint n,m;
+        ^
+VideoPlayerPipHd.c:464:10: warning: unused variable ‘m’ [-Wunused-variable]
+   uint n,m;
+          ^
+VideoPlayerPipHd.c:467:7: warning: unused variable ‘bval’ [-Wunused-variable]
+   int bval=(aval<<24)|(aval<<16)|(aval<<8)|aval;
+       ^
+VideoPlayerPipHd.c:539:7: warning: unused variable ‘al’ [-Wunused-variable]
+   int al = (0xff<<24); // alpha ch
+       ^
+VideoPlayerPipHd.c: In member function ‘int Reel::SWDecoder::Convert()’:
+VideoPlayerPipHd.c:691:47: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if ((!img_convert_ctx || av_context->width!=dec_width || av_context->height!=dec_height ||
+                                               ^
+VideoPlayerPipHd.c:691:80: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if ((!img_convert_ctx || av_context->width!=dec_width || av_context->height!=dec_height ||
+                                                                                ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o BspTrueColorOsd.o BspTrueColorOsd.c
+In file included from BspTrueColorOsd.h:31:0,
+                 from BspTrueColorOsd.c:23:
+/usr/include/vdr/osd.h:853:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, const cImage&)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, const cImage &Image);
+                ^
+In file included from BspTrueColorOsd.c:23:0:
+BspTrueColorOsd.h:77:29: warning:   by ‘virtual void Reel::BspTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+In file included from BspTrueColorOsd.h:31:0,
+                 from BspTrueColorOsd.c:23:
+/usr/include/vdr/osd.h:856:16: warning: ‘virtual void cOsd::DrawImage(const cPoint&, int)’ was hidden [-Woverloaded-virtual]
+   virtual void DrawImage(const cPoint &Point, int ImageHandle);
+                ^
+In file included from BspTrueColorOsd.c:23:0:
+BspTrueColorOsd.h:77:29: warning:   by ‘virtual void Reel::BspTrueColorOsd::DrawImage(Reel::UInt, int, int, bool, int, int)’ [-Woverloaded-virtual]
+         /* override */ void DrawImage(UInt imageId, int x, int y, bool blend,
+                             ^
+BspTrueColorOsd.c: In member function ‘virtual void Reel::BspTrueColorOsd::DrawEllipse(int, int, int, int, tColor, int)’:
+BspTrueColorOsd.c:303:51: warning: narrowing conversion of ‘(((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::left + x1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                              left + x1,
+                                                   ^
+BspTrueColorOsd.c:304:50: warning: narrowing conversion of ‘(((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::top + y1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                              top + y1,
+                                                  ^
+BspTrueColorOsd.c:305:56: warning: narrowing conversion of ‘((((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::left + x2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                              left + x2 + 1,
+                                                        ^
+BspTrueColorOsd.c:306:55: warning: narrowing conversion of ‘((((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::top + y2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                              top + y2 + 1,
+                                                       ^
+BspTrueColorOsd.c: In member function ‘virtual void Reel::BspTrueColorOsd::DrawRectangle(int, int, int, int, tColor)’:
+BspTrueColorOsd.c:345:48: warning: narrowing conversion of ‘(((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::left + x1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           left + x1,
+                                                ^
+BspTrueColorOsd.c:346:47: warning: narrowing conversion of ‘(((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::top + y1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           top + y1,
+                                               ^
+BspTrueColorOsd.c:347:53: warning: narrowing conversion of ‘((((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::left + x2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           left + x2 + 1,
+                                                     ^
+BspTrueColorOsd.c:348:52: warning: narrowing conversion of ‘((((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::top + y2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           top + y2 + 1,
+                                                    ^
+BspTrueColorOsd.c: In member function ‘void Reel::BspTrueColorOsd::DrawRectangle(int, int, int, int, tColor, int, int, int, int)’:
+BspTrueColorOsd.c:362:48: warning: narrowing conversion of ‘(((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::left + x1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           left + x1,
+                                                ^
+BspTrueColorOsd.c:363:47: warning: narrowing conversion of ‘(((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::top + y1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           top + y1,
+                                               ^
+BspTrueColorOsd.c:364:53: warning: narrowing conversion of ‘((((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::left + x2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           left + x2 + 1,
+                                                     ^
+BspTrueColorOsd.c:365:52: warning: narrowing conversion of ‘((((Reel::BspTrueColorOsd*)this)->Reel::BspTrueColorOsd::<anonymous>.cOsd::top + y2) + 1)’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+                                           top + y2 + 1,
+                                                    ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -DREELSKIN -DONLY_REELSKIN -DPLAYER_VERSION=\"\" -D__LINUX__ -DREELVDR -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLUGIN_NAME='"reelbox"' -DPLUGIN_NAME_I18N='"reelbox"' -I./include -I../../../vdr-2.1/include -I../../../../temp/docimage/libs/alsa-lib/include -I../../../utils/bspshm -I../../../utils/bspshm/include -I../../../utils/hdshm3/src -I../../../utils/hdshm3/src/include -I../../../../temp/docimage/libs/libmad `freetype-config --cflags` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -o ReelSkin.o ReelSkin.c
+In file included from /usr/include/vdr/dvbdevice.h:15:0,
+                 from /usr/include/vdr/menuitems.h:14,
+                 from ReelBoxMenu.h:5,
+                 from ReelSkin.c:24:
+/usr/include/vdr/device.h:787:16: warning: ‘virtual void cDevice::TrickSpeed(int, bool)’ was hidden [-Woverloaded-virtual]
+   virtual void TrickSpeed(int Speed, bool Forward);
+                ^
+In file included from ReelSkin.c:44:0:
+ReelBoxDevice.h:129:29: warning:   by ‘void Reel::ReelBoxDevice::TrickSpeed(Reel::Int)’ [-Woverloaded-virtual]
+         /* override */ void TrickSpeed(Int speed);
+                             ^
+ReelSkin.c: In member function ‘virtual void Reel::ReelSkinMenu::SetItem(const char*, int, bool, bool)’:
+ReelSkin.c:1785:16: warning: case label value exceeds maximum value for type [enabled by default]
+           case 129:
+                ^
+ReelSkin.c:1789:16: warning: case label value exceeds maximum value for type [enabled by default]
+           case 128:
+                ^
+ReelSkin.c:1793:16: warning: case label value exceeds maximum value for type [enabled by default]
+           case 130:
+                ^
+ReelSkin.c:1797:16: warning: case label value exceeds maximum value for type [enabled by default]
+           case 132:
+                ^
+ReelSkin.c:1801:16: warning: case label value exceeds maximum value for type [enabled by default]
+           case 133:
+                ^
+ReelSkin.c:1816:16: warning: case label value exceeds maximum value for type [enabled by default]
+           case 136:
+                ^
+ReelSkin.c:1820:16: warning: case label value exceeds maximum value for type [enabled by default]
+           case 137:
+                ^
+ReelSkin.c:1824:16: warning: case label value exceeds maximum value for type [enabled by default]
+           case 138:
+                ^
+ReelSkin.c:1828:16: warning: case label value exceeds maximum value for type [enabled by default]
+           case 139:
+                ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -g -shared reelbox.o ac3.o AudioDecoder.o AudioDecoderIec60958.o AudioDecoderMpeg1.o AudioDecoderNull.o AudioDecoderPcm.o AudioOut.o AudioPacketQueue.o AudioPlayer.o AudioPlayerBsp.o AudioPlayerHd.o BspCommChannel.o BspOsd.o BspOsdProvider.o BkgPicPlayer.o bspchannel.o bspshmlib.o dts.o fs453settings.o iec60958.o MpegPes.o hdchannel.o hdshmlib.o HdCommChannel.o Reel.o ReelBoxDevice.o ReelBoxMenu.o VideoPlayer.o VideoPlayerBsp.o VideoPlayerHd.o VdrXineMpIf.o HdOsd.o HdOsdProvider.o HdTrueColorOsd.o HdFbTrueColorOsd.o setupmenu.o VideoPlayerPip.o VideoPlayerPipBsp.o VideoPlayerPipHd.o BspTrueColorOsd.o ReelSkin.o -L../../../../temp/docimage/libs/alsa-lib/src/.libs -L../../../../temp/docimage/libs/libmad/.libs -lpng -lasound -lmad -lpng  -lavcodec -lswscale -o libvdr-reelbox.so

@@ -1,0 +1,5 @@
+#! /bin/sh
+
+update-rc.d -f reel-wlan remove >/dev/null
+
+exit 0

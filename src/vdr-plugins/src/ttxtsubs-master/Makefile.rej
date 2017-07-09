@@ -1,0 +1,11 @@
+--- Makefile
++++ Makefile
+@@ -73,6 +73,8 @@
+        skinclassic.o skinlcars.o skins.o skinsttng.o sourceparams.o sources.o spu.o status.o svdrp.o themes.o thread.o\
+        timers.o tools.o transfer.o vdr.o videodir.o
+ 
++OBJS += vdrttxtsubshooks.o
++
+ DEFINES  += $(CDEFINES)
+ INCLUDES += $(CINCLUDES)
+ 

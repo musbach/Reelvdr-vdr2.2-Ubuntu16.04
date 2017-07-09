@@ -1,0 +1,12 @@
+makeing reelvdr-plugins-base.deb
+sed -i "s/Version:.*/Version: 2.2.0.19492-4/" tmp/DEBIAN/control
+if grep -q Installed-Size tmp/DEBIAN/control ; then \
+		sed -i "s/Installed-Size.*/Installed-Size: 5,4M/" tmp/DEBIAN/control  ;\
+	else \
+		sed -i /Architecture.*/a"Installed-Size: 5,4M" tmp/DEBIAN/control ; fi
+echo 4 > .build
+echo 2.2.0.19492 > .lastversion
+dpkg -b tmp reelvdr-plugins-base.deb
+dpkg-deb: Paket »reelvdr-plugins-base« wird in »reelvdr-plugins-base.deb« gebaut.
+rm -f ../reelvdr-plugins-base_*_i386.deb
+cp -a reelvdr-plugins-base.deb ../reelvdr-plugins-base_1.7.21.19492-4_i386.deb

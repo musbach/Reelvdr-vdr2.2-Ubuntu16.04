@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/AUTHORS
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/INSTALL
+END
+fbshot.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/fbshot.c
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/COPYING
+END
+CREDITS
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/CREDITS
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/README
+END
+fbshot.1.man.orig
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/fbshot.1.man.orig
+END
+fbshot.1.man
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/hdfbshot/fbshot.1.man
+END

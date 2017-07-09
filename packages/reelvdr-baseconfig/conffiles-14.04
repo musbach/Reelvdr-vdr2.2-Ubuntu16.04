@@ -1,0 +1,16 @@
+etc/exports
+etc/default/sysconfig
+etc/reel/reelvdr
+etc/samba/smb.conf
+etc/samba/smbpasswd
+etc/vdr/commands.conf
+etc/vdr/diseqc.conf
+etc/vdr/keymacros.conf
+etc/vdr/noepgchannels.conf
+etc/vdr/plugins/eggtimer.conf
+etc/vdr/plugins/epgsearch/epgsearchcmds.conf
+etc/vdr/plugins/streamdevhosts.conf
+etc/vdr/providercharsets.conf
+etc/vdr/setup.conf
+etc/vdr/svdrphosts.conf
+etc/vdr/timers.conf

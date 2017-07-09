@@ -1,0 +1,8 @@
+/var/log/xxvd.log {
+    compress
+    rotate 99
+    size=+2096k
+    notifempty
+    missingok
+    copytruncate
+}

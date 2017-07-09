@@ -1,0 +1,20 @@
+Index: device.h
+===================================================================
+--- device.h	(revision 15394)
++++ device.h	(revision 15395)
+@@ -272,6 +272,15 @@
+          ///< Switches the primary device to the next available channel in the given
+          ///< Direction (only the sign of Direction is evaluated, positive values
+          ///< switch to higher channel numbers).
++#ifdef DEVICE_ATTRIBUTES
++public:
++          ///< Reel extension
++          ///< Gets various attributes of device (like names, reception values, ...)
++          ///< Returns -1 when attribute or type not available
++  virtual int GetAttribute(const char *attr_name, uint64_t *val) { return -1;}
++  virtual int GetAttribute(const char *attr_name, char *val, int maxret) {return -1;}
++
++#endif
+ private:
+   eSetChannelResult SetChannel(const cChannel *Channel, bool LiveView);
+          ///< Sets the device to the given channel (general setup).

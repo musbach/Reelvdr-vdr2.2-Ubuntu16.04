@@ -1,0 +1,185 @@
+#
+# Makefile for ReelBox packages
+#
+#
+
+#.DELETE_ON_ERROR:
+
+CC       ?= ccache $(CROSS)gcc
+CFLAGS   ?= -g -O2 -Wall
+
+CXX      ?= ccache $(CROSS)g++
+CXXFLAGS ?= -g -O2 -Wall -Woverloaded-virtual
+
+SRCDIR      = $(shell cd ../../src ; pwd)
+PRECOMPILED = ../../../precompiled
+VROOT       = tmp
+
+OWNER = root.root
+PERM = 644
+
+#-include Make.config
+-include ../Make.config
+
+HELPERDIR   = ../helpers
+MAKEDEP     = $(HELPERDIR)/makedep.sh
+GETTARGETS  = $(HELPERDIR)/makedep.sh -t
+ifdef RBMINI
+    DISTRIB_RELEASE = mini
+else
+    DISTRIB_RELEASE = $(shell lsb_release -sr )
+endif
+FILELIST    = $(shell test -f files-$(DISTRIB_RELEASE) && echo files-$(DISTRIB_RELEASE) || echo files )
+CONTROL = $(shell test -f control-$(DISTRIB_RELEASE) && echo control-$(DISTRIB_RELEASE) || echo control )
+CONFFILES = $(shell test -f conffiles-$(DISTRIB_RELEASE) && echo conffiles-$(DISTRIB_RELEASE) || echo conffiles)
+
+install_exe = install -m 755 -D
+install_script = install -m 755 -D
+install_sexe = install -m 4755 -D
+install_cfg = install -m 644 -D
+install_config = install -m 644 -D
+install_bin = install -m 644 -D
+install_lib = install -m 755 -D
+
+TARGET = $(shell grep Package $(CONTROL) | cut -f2 -d" ").deb
+vers     := $(shell grep Version $(CONTROL) | cut -f2 -d" ")
+lastvers := $(shell cat .lastversion)
+ifeq ($(vers), $(lastvers))
+	build  := $(shell echo $$((`cat .build`+1)))
+else
+	build  = 1
+endif
+
+
+all: $(TARGET)
+
+DEPFILE = .dependencies
+$(DEPFILE): $(FILELIST)
+	-sudo rm -rf $(VROOT)
+	$(MAKEDEP) $(SRCDIR) $(VROOT) < $(FILELIST) > $@
+-include $(DEPFILE)
+
+FILES = $(shell $(GETTARGETS) $(VROOT) < $(FILELIST))
+
+$(VROOT)/DEBIAN/control: $(CONTROL)
+	-sudo rm -rf $(VROOT) .root-copied
+	if [ ! -d $(@D) ] ; then mkdir -p $(@D); fi
+	sudo install -D $< $@
+	date +%s > ../lastbuild
+
+$(VROOT)/DEBIAN/changelog: changelog
+	sudo install -D $< $@
+
+$(VROOT)/DEBIAN/conffiles: $(CONFFILES)
+	sudo install -D $< $@
+
+$(VROOT)/DEBIAN/postinst: postinst
+	sudo install -D $< $@
+
+$(VROOT)/DEBIAN/postrm: postrm
+	sudo install -D $< $@
+
+$(VROOT)/DEBIAN/preinst: preinst
+	sudo install -D $< $@
+
+$(VROOT)/DEBIAN/prerm: prerm
+	sudo install -D $< $@
+
+.root-copied:
+	test -d $(VROOT) || mkdir $(VROOT)
+	sudo cp -dr --preserve=mode,timestamps  ROOT/* $(VROOT)
+	for i in ".svn" "*~" ; do \
+		find $(VROOT) -name "$$i" | sudo xargs -r rm -r ;\
+	done
+	touch $@
+
+#$(TARGET): vers=$(shell grep Version $< | cut -f2 -d" ")
+$(TARGET): arch=$(shell grep Architecture $< | cut -f2 -d" ")
+$(TARGET): name=$(shell grep Package $< | cut -f2 -d" ")
+$(TARGET): size=$(shell du --apparent-size -sh $(VROOT) | awk '{print $$1}')
+$(TARGET): $(VROOT)/DEBIAN/control $(FILES) $(FILELIST) Makefile
+	@[ -f /proc/mounts ] || ( echo "/proc is not mounted. Cannot continue" ; exit 1 )
+	@echo "makeing $@"
+	sed -i "s/Version:.*/Version: $(vers)-$(build)/" $<
+	if grep -q Installed-Size $< ; then \
+		sed -i "s/Installed-Size.*/Installed-Size: $(size)/" $<  ;\
+	else \
+		sed -i /Architecture.*/a"Installed-Size: $(size)" $< ; fi
+	echo $(build) > .build
+	echo $(vers) > .lastversion
+	dpkg -b $(VROOT) $@
+	-rm -f ../${name}_*_${arch}.deb
+	cp -a $(TARGET) ../$(name)_$(vers)-$(build)_$(arch).deb
+
+$(VROOT)/DEBIAN/%:
+	#just a dummy rule to prevent DEBIAN/* files from being overwritten
+
+#wildcard target for all files that must be installed. more dependencies are in .dependencies!
+$(VROOT)/%: TYPE = $(shell grep $* $(FILELIST) | ( read src dest type owner ; \
+		if [ "$$type" = "" ] || [ "$$type" = "-" ] ; then echo cfg ; else echo $$type; fi ) )
+$(VROOT)/%: OWNER = $(shell grep $* $(FILELIST) | ( read src dest type owner group ; \
+		if [ "$$owner" != "" ] &&  [ "$$owner" != "-" ] ; then echo "-o $$owner"; fi ) )
+$(VROOT)/%: GROUP = $(shell grep $* $(FILELIST) | ( read src dest type owner group ; \
+		if [ "$$group" != "" ] &&  [ "$$group" != "-" ] ; then echo "-g $$group"; fi ) )
+$(VROOT)/%: SRC  = $(shell grep -w $* $(DEPFILE) | ( read target prereq ; echo $$prereq ) )
+$(VROOT)/%: $(FILELIST)
+	@sudo $(install_$(TYPE)) $(OWNER) $(GROUP) -D $(SRC) $@
+	@case $(TYPE) in exe|sexe|lib) sudo $(CROSS)strip -p $@ ; esac
+
+clean:
+	@#sudo rm -f $(FILES)
+	sudo rm -rf $(VROOT)
+	rm -f $(DEPFILE)
+	rm -f $(TARGET)
+	-@rm -f .root-copied
+
+#
+# some special rules
+#
+$(SRCDIR)/vdr-plugins/lib/libvdr-conflictcheckonly.so.$(APIVERSION): \
+		$(SRCDIR)/vdr-plugins/lib/libvdr-epgsearch.so.$(APIVERSION)
+	#dummy line, don't remove
+	@echo making: $@
+	@touch $@
+
+$(SRCDIR)/vdr-plugins/lib/libvdr-mediaplayerdvd.so.$(APIVERSION):
+	$(MAKE) -C $(SRCDIR)/vdr-plugins/src/mediaplayer plug i18n-dist
+
+$(SRCDIR)/vdr-plugins/lib/libvdr-streamdev-client.so.$(APIVERSION):
+	$(MAKE) -C $(SRCDIR)/vdr-plugins/src/streamdev plug i18n-dist
+
+# Generic plugin rule
+$(SRCDIR)/vdr-plugins/lib/libvdr-%.so.$(APIVERSION):
+	# $(SRCDIR)/vdr-plugins/src/%/*.[ch]
+	$(MAKE) -C $(SRCDIR)/vdr-plugins/src/$* plug i18n-dist
+
+# mo / langfile creation
+$(SRCDIR)/vdr-$(VDRVER)/locale/%/LC_MESSAGES/vdr-streamdev-client.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/%/LC_MESSAGES/vdr-streamdev-server.mo:
+	$(MAKE) -C $(SRCDIR)/vdr-plugins/src/streamdev i18n-dist
+
+
+$(SRCDIR)/vdr-$(VDRVER)/locale/ca_ES/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/cs_CZ/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/da_DK/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/de_DE/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/el_GR/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/es_ES/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/et_EE/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/fi_FI/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/fr_FR/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/hr_HR/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/hu_HU/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/it_IT/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/nl_NL/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/nn_NO/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/pl_PL/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/pt_PT/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/ro_RO/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/ru_RU/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/sl_SI/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/sv_SE/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/tr_TR/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/uk_UA/LC_MESSAGES/vdr-%.mo \
+$(SRCDIR)/vdr-$(VDRVER)/locale/zh_CN/LC_MESSAGES/vdr-%.mo:
+	$(MAKE) -C $(SRCDIR)/vdr-plugins/src/$* i18n-dist

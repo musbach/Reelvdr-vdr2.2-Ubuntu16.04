@@ -1,0 +1,40 @@
+Source: links2
+Section: net
+Priority: optional
+Maintainer: Gürkan Sengün <gurkan@linuks.mine.nu>
+Build-Depends: debhelper (>= 5), libpng12-dev | libpng3-dev, libtiff4-dev, libjpeg62-dev, libx11-dev, libgpmg1-dev [i386 ia64 alpha amd64 arm hppa m68k mips mipsel powerpc ppc64 s390 sparc], libsvga1-dev [i386 amd64], libdirectfb-dev, libssl-dev, libsdl1.2-dev, libxau-dev, libxdmcp-dev, libxt-dev
+Standards-Version: 3.7.2
+
+Package: links2
+Architecture: any
+Provides: www-browser
+Depends: ${shlibs:Depends}
+Description: Web browser running in both graphics and text mode
+ Links is a graphics and text mode WWW browser, similar to Lynx. It
+ displays tables, frames, downloads on background, uses HTTP/1.1
+ keepalive connections, and features Javascript. In graphics mode
+ it displays PNG, JPEG, GIF, TIFF, and XBM pictures, runs external
+ bindings on other types, and features anti-aliased font, smooth
+ image zooming, 48-bit dithering, and gamma and aspect ratio correction.
+ .
+  Homepage: http://links.twibright.com/
+Source: links2
+Section: net
+Priority: optional
+Maintainer: Gürkan Sengün <gurkan@linuks.mine.nu>
+Build-Depends: debhelper (>= 5), libpng12-dev | libpng3-dev, libtiff4-dev, libjpeg62-dev, libx11-dev, libgpmg1-dev [i386 ia64 alpha amd64 arm hppa m68k mips mipsel powerpc ppc64 s390 sparc], libsvga1-dev [i386 amd64], libdirectfb-dev, libssl-dev, libsdl1.2-dev, libxau-dev, libxdmcp-dev, libxt-dev
+Standards-Version: 3.7.2
+
+Package: links2
+Architecture: any
+Provides: www-browser
+Depends: ${shlibs:Depends}
+Description: Web browser running in both graphics and text mode
+ Links is a graphics and text mode WWW browser, similar to Lynx. It
+ displays tables, frames, downloads on background, uses HTTP/1.1
+ keepalive connections, and features Javascript. In graphics mode
+ it displays PNG, JPEG, GIF, TIFF, and XBM pictures, runs external
+ bindings on other types, and features anti-aliased font, smooth
+ image zooming, 48-bit dithering, and gamma and aspect ratio correction.
+ .
+  Homepage: http://links.twibright.com/

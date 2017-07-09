@@ -1,0 +1,17 @@
+#! /bin/sh
+
+set -e
+
+case "$1" in
+	purge|remove)
+		update-rc.d xxvd remove >/dev/null
+		rm -rf /var/cache/xxv
+
+		echo "drop database only works if default password still is set"
+		if [ `echo "show databases like 'xxv'" | mysql -uroot -proot | wc -l` -eq 2 ]
+		then
+			mysqladmin -f -uroot -proot drop xxv
+		fi
+	;;
+esac
+

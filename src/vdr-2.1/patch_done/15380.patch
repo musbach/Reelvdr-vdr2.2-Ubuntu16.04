@@ -1,0 +1,47 @@
+Index: plugin.c
+===================================================================
+--- plugin.c	(revision 15379)
++++ plugin.c	(revision 15380)
+@@ -317,6 +317,14 @@
+   char *p = strchr(s, ' ');
+   if (p)
+      *p = 0;
++#ifdef REELVDR
++  struct stat st;
++  if (stat (cString::sprintf("%s/%s%s%s%s", directory, LIBVDR_PREFIX, s, SO_INDICATOR, APIVERSION), &st) && errno == ENOENT) {
++     esyslog("WARN: missing plugin '%s'", s);
++     fprintf(stderr, "vdr: missing plugin '%s'\n", s);
++     }
++  else
++#endif /*REELVDR*/
+   dlls.Add(new cDll(cString::sprintf("%s/%s%s%s%s", directory, LIBVDR_PREFIX, s, SO_INDICATOR, APIVERSION), Args));
+   free(s);
+ }
+@@ -325,7 +333,11 @@
+ {
+   for (cDll *dll = dlls.First(); dll; dll = dlls.Next(dll)) {
+       if (!dll->Load(Log))
++#ifdef REELVDR
++         ;
++#else
+          return false;
++#endif /*REELVDR*/
+       }
+   return true;
+ }
+@@ -336,8 +348,15 @@
+       cPlugin *p = dll->Plugin();
+       if (p) {
+          isyslog("initializing plugin: %s (%s): %s", p->Name(), p->Version(), p->Description());
++#ifdef REELVDR
++         if (!p->Initialize()) {
++               isyslog("Error: initializing plugin %s failed, continuing without...", p->Name());
++               dlls.Del(dll, true);
++            }
++#else
+          if (!p->Initialize())
+             return false;
++#endif /* REELVDR */
+          }
+       }
+   return true;

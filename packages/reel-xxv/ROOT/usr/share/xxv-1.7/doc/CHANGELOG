@@ -1,0 +1,575 @@
+1.6.1 - Stable release (bugfixed)
+--------------------------------------------------------------------------------
+
+* improve multi recorder environment (some moduls)
+- don't show epg-events twice
+- group channel list by recorder
+- order events by recorder
+- REMOTE/STREAM : allow select recorder (switch/livestream)
+- EPG: search data by channel, instead of recorder
+
+* CONFIG: show moduls description on editing preferences
+* RECORDS: refactoring status handler
+           show error message if command 'play' failed
+           after edit description - update datebase entry
+* SHARE: change order of topten view
+         show level on any skins
+         add paging support
+* update localisation detection(Bug #17082)
+* refactoring createTmpDir
+* html/jason (skin):
+- fix misspelled javascript syntax (Bug #017539)
+- improve select time at 'now'
+- keep selection if timer programmed
+- remote control - allow select recorder
+- remote fix wrong keycodes for adjust volume
+- update timer view if autotimer upgraded
+- allow download music files (save button on player window)
+
+1.6 - Stable release
+--------------------------------------------------------------------------------
+
+* html/xstyle: adjust the checkvalue function to new notation [ Bug #16669 ]
+* MEDIALIB: hide unusable media search button
+* RECORDS: rewrite handling of commands
+* VTX: show real channel on error messages
+* update-xxv: add a new password option "-A Ask for password only once" (Thanks to Matthias Wächter)
+
+1.5 - Feature release (Release candidate)
+--------------------------------------------------------------------------------
+
+Core changes:
+* Allow form based login using cookies/sessions (REQUEST #004763)
+* Support new filestructure (since VDR-1.7.3) (REQUEST #15540)
+* Add italian translation (Thanks to Diego Pierotto)
+* Changed database layout version 32
+* update-xxv: add a new password option "-A Ask for password only once" (Thanks to Matthias Wächter)
+
+  AUTOTIMER:
+* adjust timer himself, before create new autotimer
+* make timer search more tolerant
+
+  CHRONICALE:
+* store epg description 
+
+  CHANNELS:
+* allow query a compact list ( by cmd=clist&compact=1 )
+* allow clist for guest users
+
+  CONFIG:
+* command help, don't show disabled commands
+
+  HTTPD: 
+* allow skins with swf files
+* html/xstyle: footer updated
+* xstyle: css fix correct z-index on schema for timemarker
+* ajax: change message response to a shorter response {data:msg,success=true}
+* Support form based login using cookies/sessions (REQUEST #004763)
+
+  MUSIC: 
+* get cover deny startup - make Amazon developer's token none mandatory, 
+  by 2009-08-15 Amazon will require that all requests be signed with an 
+  Amazon assigned Secret Key.
+* Fix: Avoid destroy muggle database connection on fork
+* add option data=all:1 to deliver all tracks
+
+  GRAB/STATUS:
+* select fonts by real names (need perl modul Font::TTF::Font)
+
+  STATUS:
+* allow activated modul at runtime
+* Refactoring output (network/filesys/memory)
+
+  STREAM:
+* support new filestructure (since VDR-1.7.3) (REQUEST #15540)
+
+  RECORDS:
+* improve find files (Fix Bug #16516)
+* support new filestructure (since VDR-1.7.3) (REQUEST #15540)
+* rewrite rconvert 
+
+  TIMERS:
+* adjust inactive timer too (avoid double created autotimer)
+
+  VTX:
+* rewrite command interface, make functions stateless
+* remove embedded image, use css sprite for faster pages rendering
+* use css class to highlight search text
+* redesign teletext widget (show any subpages as same time)
+
+
+1.4 - Stable release
+--------------------------------------------------------------------------------
+
+* add automated detect for environment with UTF-8 ('export LANG=de_DE.utf8; xxvd'), remove xxvd option --utf8
+* update install scripts
+* ignore if contrib/update-xxv missed
+* doc: remove outdated files
+* Update locale
+
+* AUTOTIMER: remove warn message, if none done choices defined
+
+* HTTPD: Add widget for input time based values
+* HTTPD: Fix HTTP State 403 (forbidden) deliver wrong state 404
+* KEYWORDS: Update routines
+* MUSIC: refactory database handling
+* RECORDS: redit remove useless edit of recording 'priority'
+* RECORDS: Fix file monitor don't work if path contain symbolic links (resolv now real file name)
+* RECORDS/EPG: separating eventid pedantic
+* REPORT: Add log message
+* WML: Backport changes from module HTTPD
+
+1.3.1
+--------------------------------------------------------------------------------
+* RECORDS: Fix allow missing video directory (after fresh install)
+
+
+1.3 - Feature release (Release candidate)
+--------------------------------------------------------------------------------
+
+New features: 
+* Redesign SVDRP communication to support multiple video disk recorder
+  + Changed database layout version 31
+  + Store VDR defines into database
+		(this should adjusted vdrlist/vdredit)
+	  support different video directory per recorder (REQUEST #4306)
+* New module to manage keywords within recordings
+* New import module for XML-TV sources and template for scheme based programs.  
+			New commands xn (new) xe (edit) xd (delete) xl (list) xt (manual update)
+* UTF8 Support. Run 'export LANG="de_DE.utf8"; ./xxvd'  to use encoding utf8 as data char set.
+
+Common changes:
+* Log referrer to wrong filename, if database version mismatch
+* Correct file COPYING
+* Reformat message 'Couldn't load perl module...'
+* Reorder locale routines
+* refactoring loading binary/text files
+* use correct SI unit (kiB,MiB,GiB)
+* remove unused variables
+* remove command "restart"
+* show pid at startup
+* handle losing mysql connection if process fork
+* update-xxv: add file check, avoid missing upgrade-xxv-db.sql
+* and many more
+
+
+
+Changes and bug fixes inside modules:
+
+	AUTOTIMER:
++ generate title by abstract from epg description with DIR: %title%~%abstract% (#Request:004408)
++ create new timer by native order of events
++ rewrite event/news handling
++ alist: Move generation of channels name from template to perl code
++ alist: add paging support by &start= .. &limit=
+- Don't display success, if try to delete a none exist auto-timer
+- remove astatus (wrong callback)
+
+	CHANNELS:
++ Read data via SVDRP (drop direct reading channels.conf)
++ change layout of CHANNELSGROUPS avoid floating id
++ don't delete all database entries at import, update only changed data.
++ better detect new channels.
++ missing group delimiter without number for next channel (REQUEST #13950)
++ cdelete - refactoring code
+- ignore empty group delimiter like :@500
+- fix missing header with TID
+- fix format of message if new channel found
+- fix detect radio channels
+- fix hang at read channels, if recorder off line
+
+	CHRONICLE:
++ add cgi-parameter start/limit for paging query
++ add message to console by delete entry
+
+	CONFIG:
+- remove double reconfigure
+- remove unusable command write configuration
+
+	Console:
+- fix message by command "usage"
+
+	EPG:
++ replace direct access to epg images by cmd=eimage&data<imageid>
++ Compare preview images at update
++ Give warning message if none search text defined
++ Keep channels if search query empty (REQUEST #13339)
++ add cgi-parameter __cgrp=all to get all data by command "now"
++ program: add paging support by &start= .. &limit=
+- program callback hanged if channels empty
+- nx/next failed with cgrp=all
+
+	EVENTS:
++ store news from last month into database
++ new command "elist" as function to list news as table
++ respect minimum level to exclude unwanted harmless news
+	+ RSS: dump news from database
+	+ RSS: Better encode with UTF-8
+	+ MAIL: Mail::SendEasy, failed with standard eval  { use _$ } (Bug #14843)
+	+ RSS/MAIL... : remove dependency to module REPORT
+
+	GRAB:
++ add cgi parameter to select size of picture
++ Font scaling depends size of picture
++ Make overlay optionally, if GD not installed
+- remove unusable command "grab"
+
+	HTTPD:
++ Speedup lookup find skins
++ Deliver options for start page delayed, avoid wrong UTF8 translation
+  + ajax: send tables without header
+  + ajax: send present count of rows
++ rename flag to diagnose from debug to verbose
++ skins: header add generator meta-tag with version
++ redirect to help template, if command not be understood
++ reformat help page
++ xstyle move main menu from help.tmpl to mainmenu.inc
++ xstyle/html: CONFIG - check value, translate messages
++ xstyle/html - include active char set
++ split template string into string for single line and text field for multi line.
+		( Avoid carriage return by long timer title )
++ Verbose messages if parse of templates failed (HTML/MAIL/GRAB)
++	AJAX: 
+	+ Messages now with state param.state:success or param.state:error
+	+ add handler 'question'
+	+ Reduce transmitted parameter
+	+ Prepare data avoid double encoding with utf8
+	+ Avoid wrong JSON Object with comma like 'CapacityFree : 1234,4' with float point values by RECORDS::CapacityFree
+	+ CHANNELS/RECORDS: Fix multi list options to work with ajax
+- Remove linked templates [a,m,r,t]search.tmpl, 
+		widget selected now by console->setcall('tlist')
+- remove unused ->{cgi} from 'question'
+
+	KEYWORDS:
++ New module
++ Hide keyword input field if module disabled
++ Refactoring routines to handle xml structure
+- Ignore not well-formed (invalid token) xml data Bug report[14073]
+- Fix reread changed items, if recording edited
+
+	MEDIALIB:
+- Remove fix number of columns, use now floating layout
+
+	MOVETIMER:
++ mte: adapt for ajax
+
+	MUSIC:
++ Use UTF8 if enabled
+
+	RECORDS:
++ transmit preview image by command rimage 'id_frame'
++ add options to define default order for series
++ store cutting state inside database
++ calculate cut marks, display length of by cutted recording
++ rlist add paging support
++ hold founded preview image into database
++ prepare list of recording commands at perl code and not into template code
++ search preview images less strictness
++ info.vdr parse field 'V' VPS/PDC time into database
++ add option to define image width for generation for preview images
++ dynamic add or remove watched video directory depends state of recorder (inotify)
++ rdelete,rrecover - refactoring code
++ rdisplay: transmit keywords as data fields
+- ignore empty info.vdr
+- full update recordings only once per interval, don't at startup
+- redit: fix selecting channel
+- fix clone database handle at fork for preview image generation
+- Avoid wrong message, if lost SVDRP connection
+- fix rcut failed
+- ignore mark for cutting recording by order
+
+	REPORT:
++ Refactoring event handling, move any function to module EVENTS.
+- Don't fail, if module HTTPD not loaded
+- clean up some routines
+
+	SHARE:
++ Submit event data delayed and transmit data as block
++ use persist random id
+- Fix hang, if couldn't connect to popularity web service
+
+	STATUS:
++ remove usage of /bin/wc, use native perl code
++ Add option to define warning level, if volume filled more then this level
+
+	STREAM:	
++ make type of live stream selectable. See streamdev - PES(default), TS, PS, ES, Extern (Request #4040)
++ Add simple proxy mode to relay live stream
++ Add option to select method of live stream (playlist, redirect, proxy)
+
+	SVDRP:
++ Redesign communication to support multiple video disk recorder
++ Rewrite communication functions, no more depends to NET:TELNET
++ split queue_cmds into queue_add,queue_count,queue_flush
++ add status message
++ notify state of recorder to module
+- remove double error handling
+
+	TELNET:
+- remove 'quit' command, it do same as 'exit'
+
+	TIMERS:
++ Redesign collisions detection, ignore CA > 16 and allow define 16 dvb-cards
++ Rename message about founded sources of channels (Request #013839)
++ Use regular expressions to compare transponder source to detect collision like '(S19.2E|S13.0),T'
++ rewrite event/news handling
++ dump news event if timer adjusted
++ Store parameter aux inside timer now as xml structure (autotimer id, keywords)
++ tlist: display used recorder
++ tlist: add paging support by &start= .. &limit=
++ add more parameter check 
++ use pdc only if data valid and event not already running
++ tdelete, ttoggle,findOverlapping - refactoring code
+
+	USER:
++ user own config profiles reimplemented
+	* Need module Data::COW (Copy on write handling for user own config profile)
++ display preferences selected by user own settings, at edit user profile by admin
++ ulist show translated access level
+- Fix some warning message
+
+	VTX:
++ Fix page links, if more then two links inside one line
++ Warning, if missing base directory
+
+	XMTTV:
++	New module
+	* import XML-TV sources and template for scheme based programs.  
+		New commands xn (new) xe (edit) xd (delete) xl (list) xt (manual update)
++ adjust times depends daylight saving time
++ fix import, add multi recorder capability
+
+
+1.2 - Stable release
+--------------------------------------------------------------------------------
+
+* Fix typos
+* debian-install.sh missed by packaging
+* HTTPD: deliver static html pages never as attachment
+* RECORDS: rdelete group of recording, join double SQL-query to single query
+* REPORT: dump date with common format
+* TIMER: Warn if try to edit a none exist timer.
+* VTX: get font failed with wrong parameter
+* alist/clist/rlist: reorder sorting parameter, remove double sql query
+* report: RECORDS - status message with wrong id
+* rlist: move time formating from template to perl code
+
+1.1 - Feature release (Release candidate)
+--------------------------------------------------------------------------------
+
+Database:
+* Database: Change method of version control, use comment from table, instead table 'VERSION'
+* contrib/upgrade-xxv-db.sql dump always database before update executed
+* Improve SQL-Queries
+  Merge twice SQL to single query (CHANNELS/EPG/TIMERS/RECORDS)
+  Query name from channels with single SQL-Query - MOVETIMER/CHRONICLE: mtl/chrl/chrs
+  Remove double query to select fields from SQL Query
+* Handle field names from table now with special character, remove prior workaround
+* Bug #12986, upgrade failed if remote mysql server used
+
+AUTOTIMER:
+* Speed up background scan, compare now only changed and added epg-events
+* add startdate/stopdate to limit search for time ranges
+* More fuzzy compare between matching event and exists timers, recordings, chronicle.
+* alist: move time formating from template to perl code
+* Allow search without topic, e.g. any event inside time range
+* Hide 'use pdc/vps' if TIMER::use pdc disabled
+* Show lookup at waiter, after epg update
+* Create only one timer if single event requested
+* Allow simple wild card search with single *  (replace reg-ex '.*')
+* Bug #12960 - AUTOTIMER with VPS/PDC ignore user settings
+* Bug #12611 - Don't redirect on query result page
+* Bug #12623 - Avoid lost table TEMPEPG if database connection interrupted
+* Bug #12960 - don't create timer with pdc, if TIMER::use pdc disabled
+* Detect exists timer with changed starttime inside pretime and aftertime from timers
+* Don't create timer with same data
+* Don't sort fields of result output
+* Double create timer if starttime less then 60 seconds changed
+* Show matched title 
+* Show pdc/vps-time if use on dumped table
+* Status report now with translated field headers
+* aedit: choices with group of channels
+* alist: show matched timer as tool-tip
+
+CHANNELS: 
+* Don't redirect if deletion of channel failed
+
+CHRONICLE:
+* Request #3911 : chrs: Enhance search with logical operators
+* Bug #12605 : Search with paragraphs
+
+CONFIG:
+* Warn if real module name missed
+
+EPG:
+* search: program timer from selected events by joined list
+* rename VPS to PDC, Programme Delivery Control
+* now/next/schema: show weekday as group
+* program/search: choices with group of channels
+* display: use channelid for web cast
+* small improve reading data
+* search: Allow simple wild-card search with single *
+* search: redesign avoid SQL-Injection
+* Move time formating from template to perl code
+
+EVENT:
+* Dump date with local format
+
+GRAB:
+* Load image direct from svdrp to memory, and send it direct to socket.
+* Support multi line overlay
+* Simply variable names of overlay
+* Check range of parameter width/height
+
+HTTPD/Skins:
+* Block recursive file access
+* Fix typo at binary access
+* Optimize code
+* Remove binary from url as parameter, now defined at cmdobj, inside module header
+* Show 'Internal Server Error' if requested module isn't loaded
+* Add Player with selectable widget (vlc/default media)
+* Ajax: Add support for JSON version 2.0
+* Ajax: Ignore now unknown formats
+* drop widget url
+* html/xstyle: some times missing footer
+* html/xstyle: Don't use referrer for redirect, after display result.
+* html: remove double html encoded field header
+* xstyle: Fix searchbox+cancel => call command <undef> 
+* stone/stone_flat/deltab: Add more images (mute,loud,quiet)
+* stone/stone_flat/deltab: add skin.cfg / global.preferedlocal as default button for Switch inside VDR or web cast
+* stone/stone_flat/deltab: remove skin.cfg / global.playbackmode
+* stone/stone_flat/deltab: format images to common size
+* stone/stone_flat/deltab: marks wasn't visible
+* stone/stone_flat/deltab: redirect: close frame automated after 3 seconds
+* stone/stone_flat/deltab: rdisplay failed on short recordings (Illegal division by zero)
+
+MOVETIMER:
+* New module: MOVETIMER - This module move timers between channels.
+* Add redirect if move timer updated
+* movetimeredit: Show channels groups 
+
+MEDIALIB:
+* stone/snow/.. Add image if no actor image present
+* stone/snow/.. Align image at middle
+* html/xstyle use common style for navcontainer
+
+MUSIC:
+* Cover lookup, more strict
+* check object methods
+* remove proxy from playlist building, use proxy only to playing files
+* Warn if socket blocked
+* mlist: don't force cover update
+
+NEWS:
+* Select category name in seed integer value
+* Dump channel on messages about epg-events
+* Reformatted output on edited timers
+* RSS: Show category on message
+* RSS: send with utc time from message
+
+RECORDS:
+* Use Linux::Inotify2, to detect new recordings
+* Add command to recover deleted recordings
+* Use MD5 for mapping preview images
+* Start playback with startup time
+* Optimize scan directory
+* Rename to RECORDS::interval to RECORDS::reading in minutes, 
+  use as backup secondary update interval, if inotify failed.
+* Bug #13014 : vfat-Recordings with '/' can't assign
+* a little optimize at analyze function
+* Update preview images if duration or addtime changed
+  Create images later, if recording just started
+  Don't use 2nd try to generate preview images
+* Option 'undefined channel' wasn't showed
+* Redirect encode url
+* reorder info.vdr routines
+* write title and subtitle into info.vdr after editing
+* Show message after editing recording
+* Update if marks.vdr changed
+* redit: choices with group of channels
+* rdelete: redirect to parent folder, instead root folder
+* rdisplay: add input field for start time
+* rdisplay: hide setstart if time on legend bigger then duration
+* rlist/rdisplay: Fix isn't numeric in sprintf at Filters.pm
+* rcut/rplay: redirect to rdisplay
+* rupdate: remove double redirect
+
+SHARE:
+* Rewrite - holding data now into database
+* set useragent optionally
+* Bug #13022 : Fix typo 
+
+STATUS: 
+* Fix some filter warning (isn't numeric)
+
+STREAM:
+* Add HTTPD Streaming for recording, with starttime
+* Add embed player of playback (selectable widget)
+
+TIMERS:
+* Use MD5 to reference timer
+* tnew with fast=1 create timer from event, without prompt
+* tedit: choices with group of channels
+* Parse date with locale format
+* Search lookup also into description 
+* drop workaround getOldDeactivTimer - 'Search for old and deactivated Timers and delete this'
+* Bug #12971 : html/xstyle: javascript to toggle timer failed
+* On VPS assign event based vpsstarttime
+* use date format from VDR 1.4, %Y-%m-%d
+* Move time formating from template to perl code
+
+VTX:
+* Embedded vtx-font inside module, drop graphics from VTXPATH
+
+Common fixes:
+* Lot's of typo and update translations
+* Change language, change now any locale settings
+* Warn now if requested module isn't loaded
+* Drop support for older then vdr 1.3.44
+* cleanup etc/xxvd.cfg.example, skin.cfg
+* tools: add con_err,con_msg to dump message on console and log file
+* tools: refactoring date function, add date format with weekday
+* tools: fix multi line messages
+
+
+
+
+1.0.1 - Maintenance release
+--------------------------------------------------------------------------------
+
+* Remove unused/doubled provided external perl module
+* Update depends module / installation list with required modules
+* update install script, to be more compatibility
+* upgrade-xxv-db.sql use now only with user data tables
+* contrib/script: use /bin/sh to be consistent with posix standard
+* Warn now, if none usable modules found
+* Reorder exit routines
+* Reorder file names of documentation
+* Fix: missing dump caller's module name
+* Fix: Modification of a read-only value attempted at Tools.pm line 154
+* Fix: some typos at module CHANNELS/MUSIC
+
+AUTOTIMER/TIMERS:
+* Fix: Event with vps at midnight (00:00) programmed at wrong (prior) day
+* Fix: Use of uninitialized value in sprintf at AUTOTIMER.pm line 1316.
+
+HTTPD:
+* Fix: warning if output_header undefined (only on html push)
+
+MUSIC:
+* Use same log format as HTTPD
+* Fix: msearch failed without search text
+
+RECORDS:
+* Calc free recording capacity, now based on used file size sums
+* Fix: calculate free capacity if none recording present
+* Fix: Assign EPG-event fail if event has subtitle, but timer without subtitle programmed
+
+Skin html:
+* Fix: avoid some warning from template if timer inactive
+* Fix: Result of query inside wrong frame on IE7
+* Fix: Save media at media library
+
+--------------------------------------------------------------------------------
+see HISTORY for older changes -- in Datei HISTORY sind ältere Änderungen notiert.
+

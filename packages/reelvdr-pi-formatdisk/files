@@ -1,0 +1,25 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)			dest	type	owner.group
+vdr-plugins/lib/libvdr-formatdisk.so.2.2.0	usr/lib/vdr/libvdr-formatdisk.so.2.2.0	lib
+vdr-2.2.0/locale/ca_ES/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/cs_CZ/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/da_DK/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/de_DE/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/el_GR/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/es_ES/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/et_EE/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/fi_FI/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/fr_FR/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/hr_HR/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/hu_HU/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/it_IT/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/nl_NL/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/nn_NO/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/pl_PL/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/pt_PT/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/ro_RO/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/ru_RU/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/sl_SI/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/sv_SE/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-formatdisk.mo
+vdr-2.2.0/locale/tr_TR/LC_MESSAGES/vdr-formatdisk.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-formatdisk.mo

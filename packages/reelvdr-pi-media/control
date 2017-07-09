@@ -1,0 +1,29 @@
+Package: reelvdr-pi-media
+Version: 1.56
+Section: reel
+Priority: important
+Architecture: i386
+Breaks: reelvdr-plugins-base (<< 1.4.28), reelvdr-baseconfig (<< 1.62), reelvdr-langpack (<< 1.12)
+Depends: libcddb-get-perl, libcddb2, libcdio-cdda1, libcurl3 | libcurl3-gnutls, libdbus-glib-1-2, libtag1v5, libxine2, libxine2-ffmpeg, xine-reel-ehd
+Conflicts: reelvdr-plugins-dvd (<< 1.21)
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-media
+Description: Provides the menu entries for the "play media" functions
+ These plugins provide neccessary plugins and menu entries  ("Audio Archvie",
+ "Video Archive" "Image Archive" and "Mediaplayer", plugins "radio", 
+ "shoutcast", "xinemediaplayer") and start the filebrowser
+ with the correct options for browsing multimedia files
+ You must not remove this package.
+ .
+ Written by:                  RMM Team <reelbox-devel@mailings.reelbox.org>
+ Project's homepage:          http://www.reelbox.org
+Description-de: Diese Plugins enthalten Plugins und Menüeinträge für 
+ Multimediadateien
+ Diese Plugins enthalten notwendige Menüeinträge ("Audioarchiv",
+ "Bildarchiv", "Videoarchiv" und "Mediaplayer" sowie "Radio" und "Mediaplayer")
+ und starten den Dateimanager
+ mit den korrekten Optionen um Multimediadateien zu verwaltung und abzuspielen.
+ Dieses Paket darf nicht deinstalliert werden.
+ .
+ Written by:                  RMM Team <reelbox-devel@mailings.reelbox.org>
+ Project's homepage:          http://www.reelbox.org

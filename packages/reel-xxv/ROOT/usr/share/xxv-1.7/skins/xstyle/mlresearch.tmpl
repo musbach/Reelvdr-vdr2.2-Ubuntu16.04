@@ -1,0 +1,71 @@
+<h1>
+<?% IF param.hitcount < 1 %?>
+<?% gettext("Search result : None title found.") %?>
+<?% ELSIF param.hitcount == 1 %?>
+<?% gettext("Search result : One title found.") %?>
+<?% ELSE %?>
+<?% topic = gettext("Search results : %s titles found."); topic | replace('%s',param.hitcount) %?>
+<?% END %?>
+</h1>
+
+<?% INCLUDE 'mlnavcontainer.tmpl'
+        nav_back = 1
+        nav_new = 1
+        nav_search = 1
+        nav_ranges = 1
+%?>
+
+
+<table>
+<?% WHILE data.size %?>
+<?% fields = data.shift %?>
+    <tr>
+        <td>
+            <?% IF fields.1 %?>
+            <a href="?cmd=mlimport&__import=<?% fields.0 %?>&__id=<?% param.id %?>&__range=<?% param.range %?>&__source=<?% param.source %?>">
+                <img src="<?% fields.1 %?>">
+            </a>
+            <?% END %?>
+        </td>
+        <td>
+            <?% IF fields.0 %?>
+            <a href="?cmd=mlimport&__import=<?% fields.0 %?>&__id=<?% param.id %?>&__range=<?% param.range %?>&__source=<?% param.source %?>">
+            <?% END %?>
+                <b><?% fields.2 %?></b>
+            <?% IF fields.0 %?>
+            </a>
+            <?% END %?>
+        </td>
+        <td>
+            <?% IF fields.3 %?>
+            <font size="-2">
+                <?% fields.3 | replace('\n', '<br>') %?>
+            </font>
+            <?% END %?>
+        </td>
+    </tr>
+<?% END %?>
+    <tr>
+        <td align="center" colspan="3">
+            <b>
+                <font size="+1">
+                    &nbsp;
+                    <?% c = 1 %?>
+                    <?% d = 0 %?>
+                    <?% WHILE d < param.hitcount %?>
+                    <?% IF ( param.start.defined || d != 0 ) && param.start != d %?>
+                        <a href="?cmd=mlresearch&__source=<?% param.source %?>&__title=<?% param.title %?>&__start=<?% d %?>">
+                    <?% END %?>
+                        <?% c %?>
+                    <?% IF ( param.start.defined || d != 0 ) && param.start != d %?>
+                        </a>
+                    <?% END %?>
+                    <?% c = c + 1 %?>
+                    <?% d = d + 20 %?>
+                    <?% END %?>
+                    &nbsp;
+                </font>
+            </b>
+        </td>
+    </tr>
+</table>

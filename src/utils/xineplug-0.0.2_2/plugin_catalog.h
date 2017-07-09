@@ -1,0 +1,1 @@
+/usr/include/xine/plugin_catalog.h

@@ -1,0 +1,570 @@
+/*
+ * jason - Javascript based skin for xxv
+ * Copyright(c) 2008-2012, anbr
+ * 
+ * http://projects.vdr-developer.org/projects/xxv
+ *
+ */
+
+html, body {
+font: normal 12px tahoma,arial,helvetica,sans-serif;
+margin: 0;
+padding: 0;
+border: 0 none;
+overflow: hidden;
+height: 100%;
+}
+
+.ext-el-mask {
+background:#dadadb;
+}
+.x-grid3-td-title b {
+display:block;
+color:#333;
+}
+.x-grid3-td-title b i {
+font-weight:normal;
+font-style: normal;
+color:#000;
+}
+.x-grid3-td-title .topic {
+padding-left:20px;
+background:transparent no-repeat 0 2px;
+}
+.x-grid3-td-title .x-grid3-cell-inner {
+white-space:normal;
+}
+.x-grid3-td-title a {
+color: #385F95;
+text-decoration:none;
+}
+.x-grid3-td-title a:hover {
+text-decoration:underline;
+}
+
+.x-grid3-row-body p {
+margin:5px 20px 10px 25px !important;
+color:#555;
+}
+
+
+.x-tree {
+background:#fff !important;
+}
+
+.x-tree-node div.channels-node{
+background:#eee url(pic/bg.png) repeat-x;
+margin-top:1px;
+border-top:1px solid #ddd;
+border-bottom:1px solid #ccc;
+padding-top:2px;
+padding-bottom:1px;
+}
+.channels-node .x-tree-node-icon {
+display:none;
+}
+.forum-ct a span {
+font-weight:bold;
+color:#222;
+}
+.channel {
+border:1px solid #fff;
+margin:3px;
+}
+.channel .x-tree-ec-icon {
+display:none;
+}
+
+/*
+.xxv-icon {
+width:16px;
+height:16px;
+background-image:url(pic/xxv-icon.png) !important;
+background-repeat:no-repeat;
+}
+
+.xxv-icon-xxv { background-position:0 0;}
+.xxv-icon-record { background-position:-16px 0;}
+.xxv-icon-backward { background-position:-32px 0;}
+.xxv-icon-forward { background-position:-48px 0;}
+.xxv-icon-pause { background-position:-64px 0;}
+.xxv-icon-playback { background-position:-72px 0;}
+.xxv-icon-stream { background-position:-88px 0;}
+
+.xxv-icon-remote-blue{ background-position:0	-16px;}
+.xxv-icon-remote-green{ background-position:-16px	-16px;}
+.xxv-icon-remote-red{ background-position:-32px	-16px;}
+.xxv-icon-remote-yellow{ background-position:-48px	-16px;}
+.xxv-icon-remote-play { background-position:-64px	-16px;}
+.xxv-icon-remote{ background-position:-72px	-16px;}
+.xxv-icon-channel{ background-position:-88px	-16px;}
+
+.xxv-icon-preview { background-position:0 -32px;}
+.xxv-icon-preview-bottom { background-position:-16px -32px;}
+.xxv-icon-preview-right { background-position:-32px -32px;}
+.xxv-icon-remote-menu { background-position:-48px -32px;}
+.xxv-icon-monitor { background-position:-64px -32px;}
+.xxv-icon-recordings { background-position:-72px -32px;}
+.xxv-icon-remote-back { background-position:-88px -32px;}
+
+.xxv-icon-movetimer { background-position:0 -32px;}
+.xxv-icon-chronicle { background-position:-16px -32px;}
+.xxv-icon-edit { background-position:-32px -32px;}
+.xxv-icon-setup { background-position:-48px -32px;}
+.xxv-icon-upgrade { background-position:-64px -32px;}
+.xxv-icon-users { background-position:-72px -32px;}
+.xxv-icon-vdr { background-position:-88px -32px;}
+.xxv-icon-logout { background-position:-104px -32px;}
+
+.xxv-icon-autotimer { background-position:0 -48px;}
+.xxv-icon-find { background-position:-16px -48px;}
+.xxv-icon-timer { background-position:-32px -48px;}
+.xxv-icon-timer-toggle { background-position:-48px -48px;}
+.xxv-icon-new { background-position:-64px -48px;}
+.xxv-icon-unviewed { background-position:-72px -48px;}
+.xxv-icon-cut { background-position:-88px -48px;}
+.xxv-icon-recover { background-position:-104px -48px;}
+.xxv-icon-delete { background-position:-120px -48px;}
+.xxv-timer-icon-delete { background-position:-120px -48px;}
+
+.xxv-icon-playing-music { background-position:0 -64px;}
+.xxv-icon-music { background-position:-16px -64px;}
+.xxv-icon-remote-loud { background-position:-32px -64px;}
+.xxv-icon-remote-quiet { background-position:-48px -64px;}
+.xxv-icon-remote-up { background-position:-64px -64px;}
+.xxv-icon-remote-down { background-position:-72px -64px;}
+.xxv-icon-remote-left { background-position:-88px -64px;}
+.xxv-icon-remote-right { background-position:-104px -64px;}
+*/
+
+.refresh-icon {         background-image:url(pic/refresh.png) !important; }
+.autotimer-icon {       background-image:url(pic/autotimer.png) !important; }
+.find-icon {            background-image:url(pic/search.png) !important;  }
+.channel-icon {         background-image:url(pic/channel.png) !important; }
+.recordings-icon {      background-image:url(pic/video.png) !important; }
+.timer-icon {           background-image:url(pic/timer.png) !important; }
+.timer-new-icon {       background-image:url(pic/timer.png) !important; }
+.timer-edit-icon {      background-image:url(pic/edit.png) !important; }
+.timer-toggle-icon {    background-image:url(pic/timer-toggle.png) !important; }
+.select-channel-icon {  background-image:url(pic/channel-select.png) !important; }
+.stream-icon {          background-image:url(pic/web-playback.png) !important; }
+.switch-icon {          background-image:url(pic/remote-playback.png) !important; }
+.teletext-icon {        background-image:url(pic/menu.png) !important;  }
+.xxv-icon {             background-image:url(pic/xxv.png) !important;  }
+.program-icon {         background-image:url(pic/channel.png) !important; }
+.media-icon {           background-image:url(pic/video.png) !important;  }
+.logout-icon {          background-image:url(pic/logout.png) !important; }
+.audio-icon {           background-image:url(pic/audio.png) !important;  }
+.delete-icon {          background-image:url(pic/delete.png) !important; }
+.timer-delete-icon {    background-image:url(pic/delete.png) !important; }
+.play-icon {            background-image:url(pic/remote-playback.png) !important;  }
+.record-icon {          background-image:url(pic/record.png) !important;  }
+.recover-icon {         background-image:url(pic/recover.png) !important;  }
+.new-icon {             background-image:url(pic/new.png) !important;  }
+.edit-icon {            background-image:url(pic/edit.png) !important;  }
+.cut-icon {             background-image:url(pic/cut.png) !important;  }
+.convert-icon {         background-image:url(pic/convert.png) !important;  }
+.chronicle-icon {       background-image:url(pic/chronicle.png) !important; }
+.remote-icon {          background-image:url(pic/remote.png) !important; }
+.monitor-icon {         background-image:url(pic/monitor.png) !important; }
+.setup-icon {           background-image:url(pic/setup.png) !important; }
+.movetimers-icon {      background-image:url(pic/movetimers.png) !important;  }
+.vdr-icon {             background-image:url(pic/vdr-logo.png) !important;  }
+.upgrade-icon {         background-image:url(pic/upgrade.png) !important; }
+.users-icon {           background-image:url(pic/users.png) !important;  }
+.view-icon {            background-image:url(pic/preview.png) !important; }
+.preview-icon {         background-image:url(pic/preview.png) !important; }
+.preview-bottom {       background-image:url(pic/preview-bottom.png) !important; }
+.preview-right {        background-image:url(pic/preview-right.png) !important; }
+.preview-hide {         background-image:url(pic/preview.png) !important; }
+.music-icon {           background-image:url(pic/audio.png) !important; }
+.playing-music-icon {   background-image:url(pic/audio-playback.png) !important; }
+
+
+.remote-logout-icon {   background-image:url(pic/logout.png) !important; }
+.remote-up-icon {   background-image:url(pic/up.png) !important; }
+.remote-left-icon {   background-image:url(pic/left.png) !important; }
+.remote-right-icon {   background-image:url(pic/right.png) !important; }
+.remote-menu-icon {   background-image:url(pic/menu.png) !important; }
+.remote-down-icon {   background-image:url(pic/down.png) !important; }
+.remote-back-icon {   background-image:url(pic/back.png) !important; }
+.remote-red-icon {   background-image:url(pic/red.png) !important; }
+.remote-green-icon {   background-image:url(pic/green.png) !important; }
+.remote-yellow-icon {   background-image:url(pic/yellow.png) !important; }
+.remote-blue-icon {   background-image:url(pic/blue.png) !important; }
+.remote-record-icon {   background-image:url(pic/record.png) !important; }
+.remote-playback-icon {   background-image:url(pic/playback.png) !important; }
+.remote-pause-icon {   background-image:url(pic/pause.png) !important; }
+.remote-stop-icon {   background-image:url(pic/stop.png) !important; }
+.remote-backward-icon {   background-image:url(pic/backward.png) !important; }
+.remote-quiet-icon {   background-image:url(pic/quiet.png) !important; }
+.remote-loud-icon {   background-image:url(pic/loud.png) !important; }
+.remote-forward-icon {   background-image:url(pic/forward.png) !important; }
+
+.x-tree-selected {
+border:1px dotted #a3bae9;
+background:#DFE8F6;
+}
+.x-tree-node .x-tree-selected a span{
+background:transparent;
+color:#15428b;
+font-weight:bold;
+}
+
+#program-grid .x-panel-tbar .x-toolbar {
+/* border-top:0 none; */
+}
+
+
+#main-tabs .x-tab-panel-body {
+background:transparent;
+border:0 none;
+}
+
+/* Preview classes */
+
+.preview .x-panel-body {
+background:#fff;
+color:#222;
+}
+
+.preview .x-panel-body p {
+line-height:18px;
+margin:8px 0;
+}
+
+.preview .x-panel-body ul {
+margin-left:18px;
+}
+
+.preview .x-panel-body ul li {
+display:list-item;
+list-style-image:none !important;
+list-style-position:outside !important;
+list-style-type:disc !important;
+margin-left:18px;
+}
+
+.preview .x-panel-body .preview-topic {
+overflow:hidden;
+clear:left;
+white-space:nowrap;
+height:1.2em;
+}
+
+.preview .x-panel-body h3.preview-title {
+text-align:left;
+font-weight:bold;
+font-size:1.1em;
+color:#000;
+font-size:1em;
+float:left;
+}
+
+.preview .x-panel-body h4.preview-shorttitle {
+text-align:left;
+font-weight:bold;
+color:#555;
+font-size:1.0em;
+/*clear:left;*/
+}
+
+.preview .x-panel-body div.preview-date {
+font-weight:normal;
+color:#555;
+text-align:right;
+font-size:1.0em;
+width:100%;
+}
+
+.preview .x-panel-body div.preview-channel {
+font-weight:normal;
+color:#555;
+text-align:left;
+font-size:1.0em;
+float:left;
+}
+
+.preview .x-panel-body {
+font-weight:normal;
+color:#555;
+/*float:right;*/
+font-size:0.9em;
+}
+.preview .x-panel-body div.preview-header {
+background:#f1f2f4;
+padding:5px;
+border-bottom:1px solid #dadadb;
+}
+.preview .x-panel-body div.preview-body {
+padding:10px;
+overflow: auto;
+}
+
+.preview .x-panel-body div.preview-footer {
+padding:10px;
+overflow: auto;
+bottom: 10px;
+position: fixed;
+}
+
+.reading-menu .x-menu-item-checked {
+border:1px dotted #a3bae9 !important;
+background:#DFE8F6;
+padding:0;
+}
+.x-tab-panel-header {
+border-bottom-width:0 !important;
+}
+#suggested {
+border-top:0 none;
+}
+#suggested a {
+text-decoration:none;
+font-size:1em;
+color:#15428B;
+display:block;
+padding:3px;
+float:right;
+margin-right:4px;
+}
+#suggested a:hover {
+text-decoration:underline;
+color:#15428B;
+}
+.x-combo-list-item {
+/*    zoom:1;*/
+}
+.x-combo-list-item strong {
+color:#777;
+font-size:1em;
+font-style: normal;
+float:left;
+}
+.x-combo-list-item em {
+color:#222;
+font-size:1em;
+font-style: normal;
+float:left;
+}
+.x-node-ctx {
+background:#eee !important;
+border:1px solid #ccc !important;
+}
+
+#msg-div {
+width: 500px;
+z-index: 20000;
+}
+
+/* rlist */
+#rl .x-panel-body{
+background: white;
+}
+#rl .thumb{
+background: #dddddd;
+padding: 3px;
+height: 6em;
+width: 8em;
+overflow: hidden;
+}
+#rl .thumb img{
+height: 6em;
+width: 8em;
+}
+
+#rl .thumb div.unviewed {
+position:relative;
+overflow:hidden;
+top:-5.75em;
+left:6.25em;
+height: 16px;
+width: 16px;
+background-image:url(pic/unviewed.png) !important;
+}
+
+#rl .thumb-wrap{
+float: left;
+margin: 4px;
+margin-right: 0;
+padding: 5px;
+}
+#rl .thumb-wrap span{
+display: block;
+overflow: hidden;
+text-align: center;
+font-size:0.8em;
+font-weight:bold;
+}
+
+#rl .x-view-over{
+border:1px solid #dddddd;
+background: #efefef url(extjs/resources/images/default/grid/row-over.gif) repeat-x left top;
+padding: 4px;
+}
+
+#rl .x-view-selected{
+background: #eff5fb no-repeat right bottom;
+border:1px solid #99bbe8;
+padding: 4px;
+}
+#rl .x-view-selected .thumb{
+background:transparent;
+}
+
+#rl .loading-indicator {
+font-size:1em;
+background-image:url('extjs/resources/images/default/grid/loading.gif');
+background-repeat: no-repeat;
+background-position: left;
+padding-left:20px;
+margin:10px;
+}
+
+.x-slide-inner {
+position:relative;
+overflow:hidden;
+}
+
+.x-slide-images-wrap {
+  position:absolute;
+  padding:10px;
+}
+
+.x-slide-images {
+white-space:nowrap;
+position:absolute;
+float:left;
+}
+
+#slider {
+  padding-left:16px;
+  padding-right:16px;
+}
+
+.x-slide-zone-horizontal {
+	height: 40px;
+	background-repeat: repeat-x;
+	background-image: url('pic/slider-bg.png');
+	z-index: 1;
+
+}
+
+.x-thumb-slider-horizontal {
+  width:16px;
+  height:24px;
+	top: 5px; 
+  background:transparent url('pic/thumb.png') no-repeat 0 0px;
+	z-index: 10;
+}
+
+.x-range-slider-horizontal {
+	top: 10px;
+	height: 4px;
+	background: url('pic/slider-range.png') repeat-x;
+}
+
+.x-slide-zone-top	{ 
+  position:relative;
+/*	top: 0px;*/
+}
+
+.x-slide-zone-bottom {
+  position:relative;
+	top: 16px
+}
+
+#loading-mask{
+position:absolute;
+left:0;
+top:0;
+width:100%;
+height:100%;
+z-index:20000;
+background-color:white;
+}
+#loading{
+position:absolute;
+left:45%;
+top:40%;
+padding:2px;
+z-index:20001;
+height:auto;
+}
+#loading img {
+margin-bottom:5px;
+}
+#loading .loading-indicator{
+background:white;
+color:#555;
+font-size:1em;
+font-weight:normal;
+padding:10px;
+margin:0;
+text-align:center;
+height:auto;
+}
+
+.deactive {
+color:#AAA;
+}
+
+.running {
+color:#2020b4;
+}
+
+.active {
+color:#202060;
+}
+
+.problem {
+color:#b03e28;
+}
+
+.error {
+color:red;
+}
+
+.x-cloud-list {
+  padding:10px;
+}
+
+.x-cloud-item  {
+	display:inline;
+	padding-right:5px;
+}
+.x-cloud-item a  {
+  text-decoration:none;
+	color:#555555;
+}
+
+.x-cloud-item a:hover  {
+	color:#002a85;
+  text-decoration:none;
+}
+
+.x-cloud-item.smallest { font-size: 0.7em; }
+.x-cloud-item.smaller { font-size: 0.8em; }
+.x-cloud-item.small { font-size: 0.9em; }
+.x-cloud-item.medium { font-size: 1.0em; }
+.x-cloud-item.large { font-size: 1.1em; }
+.x-cloud-item.larger { font-size: 1.1em; }
+.x-cloud-item.largest { font-size: 1.3em; } 
+
+
+.x-form-check-group .x-panel-body {background-color: transparent;}
+.x-form-check-wrap { height:auto; }
+
+div#audio-player { text-align:center; }
+object#audio-player { display:inline; }
+
+.x-highlight{
+	background:repeat-x bottom;
+	background-image:url(extjs/resources/images/default/grid/invalid_line.gif);
+}
+
+.coverimage {
+  text-align:right;
+  height:200px;
+  width:200px;
+}

@@ -1,0 +1,18 @@
+#enter all files here that have to be copied from the src/satip/poDIR to the package root
+#note: use only tabs and only one tab between fields!
+#
+#valid types:
+# script - for scripts, default 755, root.root
+# exe    - like script, but will be stripped on packaging
+# sexe   - setuid root executeable, 4755, root.root, strip
+# lib	 - library,     755, root.root, no strip
+# cfg    - config file, 644, root.root
+# bin    - binaries, i.e. firmware, 644, root.root
+# any other files will be installed "as they are", so be careful about permissions!
+#
+# src/satip/po rel. to $(src/satip/poDIR)			dest				type	owner	group
+vdr-plugins/lib/libvdr-satip.so.2.2.0	usr/lib/vdr/libvdr-satip.so.2.2.0			lib
+vdr-plugins/src/satip/po/ca_ES.mo 	usr/share/locale/ca_ES/LC_MESSAGES/vdr-satip.mo
+vdr-plugins/src/satip/po/de_DE.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-satip.mo
+vdr-plugins/src/satip/po/es_ES.mo 	usr/share/locale/es_ES/LC_MESSAGES/vdr-satip.mo
+vdr-plugins/src/satip/po/fi_FI.mo 	usr/share/locale/fi_FI/LC_MESSAGES/vdr-satip.mo

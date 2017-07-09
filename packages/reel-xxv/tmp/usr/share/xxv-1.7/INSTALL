@@ -1,0 +1,211 @@
+
+After download xxv package, it's must unpacked. Please replace {VERSION} with 
+your active release number and $SOURCEDIR with your prefered directory used by 
+unpacking.
+
+#> cd $SOURCEDIR
+#> tar xvzf xxv-{VERSION}.tgz
+#> cd xxv-{VERSION}
+
+--------------------------------------------------------------------------------
+Install mysql ------------------------------------------------------------------
+
+If MySQL is not yet installed, install it from prebuilded packages or build 
+it from source.
+
+http://www.mysql.com/
+http://dev.mysql.com/doc/refman/5.0/en/installing-source.html
+
+--------------------------------------------------------------------------------
+Lets install.sh do the work ----------------------------------------------------
+
+If you don't have prebuilded perl package for your system.  XXV help with a 
+installation script $SOURCEDIR/install.sh. ( On Debian use ./install-debian.sh )
+
+#> cd $SOURCEDIR/xxv-{VERSION}/
+#> ./install.sh
+
+It's will be install xxv and depends perl modules inside /usr/local/... and 
+create configuration, database and runlevel scripts. 
+
+--------------------------------------------------------------------------------
+Manual build and install depends perl modules ----------------------------------
+
+For alternative way is installation with a little helper "Bundle::Xxv". 
+It's enable the build of depends perl modules with online installation via cpan.
+http://www.cpan.org/
+
+#> cd $SOURCEDIR/xxv-{VERSION}/lib
+#> mkdir -p ~/.cpan/Bundle
+#> cp Bundle/Xxv.pm ~/.cpan/Bundle
+#> perl -MCPAN -e 'install Bundle::Xxv'
+
+--------------------------------------------------------------------------------
+Copy some files ----------------------------------------------------------------
+
+Install the man-page, which can be viewed later with man xxvd.
+
+#> cd $SOURCEDIR/xxv-{VERSION}/
+#> cp doc/xxvd.1 /usr/share/man/man1
+
+--------------------------------------------------------------------------------
+Enable rotation of logging files -----------------------------------------------
+
+And don't forgot to activate the rotate of the log files.
+
+#> cd $SOURCEDIR/xxv-{VERSION}/
+#> cp etc/logrotate.d/xxvd /etc/logrotate.d/xxvd
+
+--------------------------------------------------------------------------------
+Adjust and install configuration file ------------------------------------------
+
+There is a example of configuration file, used by xxvd. Adjust now database 
+connection and the mysql account, see below at database creation for details.
+
+#> cd $SOURCEDIR/xxv-{VERSION}/
+#> nano etc/xxvd.cfg.example
+#> cp etc/xxvd.cfg.example /etc/xxvd.cfg
+
+And as last step adjust your settings, like installation folder, location of 
+configuration file and copy this runlevel script.
+
+#> cd $SOURCEDIR/xxv-{VERSION}/
+#> nano etc/xxvd
+#> cp etc/xxvd /etc/init.d/xxvd
+
+--------------------------------------------------------------------------------
+Create initial database by prepared sql-script ---------------------------------
+
+Use the provided script, to create the xxv database. But adapt before username 
+and its password on 'contrib/create-database.sql', for a xxv used mysql account, 
+with your personal preferences. If utf-8 encoding should used, your must 
+edit 'contrib/create-database.sql'.
+
+#> cd $SOURCEDIR/xxv-{VERSION}/
+#> cat contrib/create-database.sql | mysql -u root
+
+
+--------------------------------------------------------------------------------
+Create initial database by hand ------------------------------------------------
+
+Same can do alternatively in follow individually steps:
+
+#> mysql -u root -e "CREATE DATABASE IF NOT EXISTS xxv \
+ DEFAULT CHARACTER SET latin1 COLLATE latin1_general_ci;"
+
+or if utf-8 encoding should used
+
+#> mysql -u root -e "CREATE DATABASE IF NOT EXISTS xxv \
+ DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"
+
+
+and grant access for your own mysql account (adjust username/password) 
+
+#> mysql -u root -e "grant all privileges on xxv.* to \
+  username@localhost IDENTIFIED BY 'password';"
+
+#> mysql -u root -e "flush privileges;"
+
+
+Now register the database connection and the mysql account in /etc/xxvd.cfg:
+
+[General]
+DSN=DBI:mysql:database=xxv;host=localhost;port=3306
+PWD=password
+USR=username
+
+
+--------------------------------------------------------------------------------
+Upgrade from older installations -----------------------------------------------
+
+New or extended xxv-functions involve often also a change of the database 
+structure. After the installation of an update, you should therefore call first 
+always the script contrib/update-xxv. XXV should not be started at this time.
+
+In the simplest case must transfer no parameters to her to the script. 
+This presupposes however that MySQL on the local computer is installed that the 
+database is called 'xxv' and the database administrator 'root' does not possess
+a password.
+
+#> cd $SOURCEDIR/contrib
+#> ./update-xxv
+
+Beyond that can to the script a set of parameters hand over, which also control
+a few extended functions apart from the access to the database you.
+An overview of all parameters receive you with:
+
+#> cd $SOURCEDIR/contrib
+#> ./update-xxv -h
+  
+  update-xxv
+  ----------
+  
+  Usage: update-xxv [-b] [-h hostname] [-P port] [-d database]
+                    [-u user] [-p password]
+  
+  -b {target}    : Make a backup first to {target}.gz
+  -H {hostname}  : Host name of the MySQL server (default: localhost)
+  -P {port}      : Port number of MySQL server
+  -d {database}  : XXV database name (default: xxv)
+  -u {user}      : Username (default: root)
+  -p {password}  : Password (default: no password)
+  -a             : Ask for password (once every run of mysql)
+  -A             : Ask for password (just once)
+  -f             : Force upgrade, do not check version
+  -h             : Help
+
+With the parameter -b is accomplished before the update a backup of the database. 
+In addition the name of the backupfile (without the ending gz) must be indicated. 
+The parameters -H (hostname) and -P (port) control the access to the MySQL server. 
+This localhost and haven are according to standard 3306. 
+If the database should not be called 'xxv', then can you with -D another name select.
+
+The database user can specify you with -u and its password with -p. 
+In order to be able to accomplish the update, the database user needs this 
+access rights. Maybe usually only the administrator 'root' has this rights.
+
+Safety reference:
+With the delivery of the password in the command line parameters the password 
+becomes visible for one moment for all other user of the local system
+('ps -fA' indicates all processes with their parameters!). 
+Alternatively have you therefore the possibility, by means of -a the update 
+script for the password ask of letting. However the password is several 
+times queried, since different database operations are necessary.
+
+
+Database updates are accomplished by update xxv only if you are really necessary. 
+Should times somewhat inclined run or if you would like on an old database 
+structure 'downgrade', then can you the update with -f force.
+
+With a successful database update a list of the accomplished actions spends update xxv:
+
+  update-xxv
+  ----------
+  
+  Info: Checking Server
+  Info: Checking Database
+  Info: Retrieving current version
+  Info: current database version: 23
+  Info: new database version: 26
+  Info: Starting update...
+  Info: Saving Data
+  Info: Updating Database
+  Info: Restoring Data
+  Info: Updateing Version
+  Info: Update successful
+
+In the event of an error "error:..." messages spent. 
+The most probable cause for an error is the database access. 
+You should examine first thus username, password, database name and host.
+
+After the update can you XXV again start:
+
+#> /etc/init.d/xxvd start
+
+Subsequently, control the log file:
+
+#> tail -f /var/log/xxvd.log
+
+If any error messages should emerge because of missing Perl modules in the log 
+file, then should install these for her.
+ 

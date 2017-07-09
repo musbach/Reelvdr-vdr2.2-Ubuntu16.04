@@ -1,0 +1,10 @@
+Package: reel-vdradmin
+Version: 3.6.9-reel11
+Section: reel
+Priority: optional
+Conflicts: reel-xxv, vdradmin-am
+Architecture: i386
+Depends: perl,  libappconfig-perl, libio-socket-inet6-perl, libsocket6-perl, libtemplate-perl, libtemplate-plugin-javascript-perl, libjson-xs-perl, libjson-perl
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reel-vdradmin
+Description: Webinterface for VDR

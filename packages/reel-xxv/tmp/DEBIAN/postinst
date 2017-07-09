@@ -1,0 +1,41 @@
+#!/bin/sh
+
+
+FOLDER="/usr/share/xxv-1.7"
+
+# folder add
+echo "create folder for xxv"
+if [ ! -d /var/cache/xxv ]; then
+    mkdir -p /var/cache/xxv/cover
+    mkdir -p /var/cache/xxv/preview
+    mkdir -p /var/cache/xxv/epgimages
+    mkdir -p /var/cache/xxv/libraryimages
+    mkdir -p /var/cache/xxv/temp
+else
+    echo "Info: folder exist"
+fi
+
+cd $FOLDER
+
+if [ -f contrib/create-database.sql ]; then
+    echo "create database for xxv"
+#    cat contrib/create-database.sql | mysql -u root -proot;
+    mysql -u root -e "create database xxv;" -proot;
+    mysql -u root -e "grant all privileges on xxv.* to root@localhost IDENTIFIED BY 'root';" -proot;
+    mysql -u root -e "flush privileges;" -proot;
+    mv contrib/create-database.sql contrib/create-database.sql.inst
+else
+    echo "database for xxv exist" 
+fi
+
+echo "disable log for mysql"
+	sed 's/\(^log_bin.*\)mysql-bin.log/#\1mysql-bin.log/' -i /etc/mysql/my.cnf
+	sed 's/\(^expire_logs_days.*\)10/#\110/' -i /etc/mysql/my.cnf
+	sed 's/\(^max_binlog_size.*\)100/#\1100/' -i /etc/mysql/my.cnf
+	rm -f /var/log/mysql/*
+
+echo "creating init levels for xxv daemon"
+update-rc.d xxvd defaults 22 80
+
+/etc/init.d/xxvd restart
+

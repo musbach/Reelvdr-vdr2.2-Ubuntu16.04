@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "you should only run this command from within a ReelBox ICE, not on any other platform"
+
+set -x
+
+eval `dbus-launch`
+export DBUS_SESSION_BUS_ADDRESS
+export DBUS_SESSION_BUS_PID
+export LD_LIBRARY_PATH=/usr/lib/chrome-ice/lib
+
+/usr/lib/chrome-ice/chrome --ignore-gpu-blacklist -use-gl=egl  --disable-accelerated-compositing --enable-accelerated-2d-canvas $*
+
+# -user-data-dir=/home
+

@@ -1,0 +1,136 @@
+<!-- movetimerlist -->
+<body class="frame">
+<div id="body">
+<?% ######################################################################## %?>
+<?% enableform = allow('movetimerdelete') && data.size > 1  %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+<?% IF allow('movetimeredit') %?>
+                        <a href="javascript:popup('movetimeredit','<?% id %?>',620,670,1)">
+                            <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit rule to move timer") %?>" />
+                        </a>
+<?% END %?>
+<?% IF allow('movetimerdelete') %?>
+                        <a href="javascript:surecmd('<?% gettext("Would you like to delete this rule?") %?>','<?% escape(source) %?> - <?% escape(destination) %?>','movetimerdelete','<?% id %?>',620,670)">
+                            <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete rule to move timer") %?>" />
+                        </a>
+<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK Item %?>
+        <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+          <td class="fieldinline">
+            <?% IF enableform %?>
+        			<input type="checkbox" value="<?% id %?>" name="<?% source %?> - <?% destination %?>" />
+             <?% END %?>
+          </td>
+          <td class="fieldinline">
+<?% IF allow('movetimeredit') %?>
+            <a name="<?% id %?>" href="javascript:popup('movetimeredit','<?% id %?>',620,670,1)">
+<?% END %?>
+            <?% source %?>
+<?% IF allow('movetimeredit') %?>
+            </a>
+<?% END %?>
+          </td>
+          <td class="fieldinline">
+            <?% destination %?>
+          </td>
+          <td class="fieldinline">
+            <?% when %?>
+          </td>
+          <td class="fieldinline">
+            <?% action %?>
+          </td>
+          <td class="fieldinline push">
+            <?% PROCESS RowButtons %?>
+           </td>
+        </tr>
+<?% END %?>
+<?% ######################################################################## %?>
+<h1>
+    <?% gettext("Rules to move timer between channels") %?>
+</h1>
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+<form name="movetimerlist" action="">
+    <table class="largetable" summary="">
+        <tr>
+          <td class="largehead">
+              <?% gettext("Rules to move timer") %?>
+          </td>
+        </tr>
+        <tr>
+            <td class="largetext" align="left">
+            <table summary="" width="100%">
+            <tr><th width="20"></th>
+                <th width="120"><?% gettext('Source') %?></th>
+                <th><?% gettext('Destination')%?></th>
+                <th><?% gettext('Move timer') %?></th>
+                <th><?% gettext('Change original timer') %?></th>
+                <th width="64" align="right"></th>
+            </tr>
+    <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?%- id=zeile.0;source=zeile.1;destination=zeile.2;when=zeile.3;action=zeile.4 -%?>
+        <?% PROCESS Item %?>
+    <?% END %?>
+                </table>
+                </td>
+            </tr>
+        <tr><td class="largebottom"></td></tr>
+    </table>
+</form>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+<?% IF allow('movetimercreate') %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Rules to move timer",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+<?% IF allow('movetimercreate') %?>
+      <a title="<?% gettext("Create a new rule to move timer") %?>" href="javascript:popupcmd('movetimercreate',620,670,1)"><img src="images/new.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Create a new rule to move timer") %?>" href="javascript:popupcmd('movetimercreate',620,670,1)"><?% gettext("Create a new rule to move timer",20) %?></a><br />
+<?% END %?>
+<?% IF allow('movetimer') && data.size > 0 %?>
+      <a title="<?% gettext("Manual move timer between channels") %?>" href="javascript:popupcmd('movetimer',620,670,0)"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Manual move timer between channels") %?>" href="javascript:popupcmd('movetimer',620,670,0)"><?% gettext("Manual move timer between channels",20) %?></a>
+<?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+<?% IF enableform %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Selection",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+        <a href="javascript:selAll(document.movetimerlist,1)"><img src="images/select.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.movetimerlist,1)"><?% gettext("Select all",20) %?></a><br />
+        <a href="javascript:selAll(document.movetimerlist,0)"><img src="images/deselect.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.movetimerlist,0)"><?% gettext("Unselect all",20) %?></a><br />
+        <a href="javascript:reverse(document.movetimerlist)"><img src="images/invers.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:reverse(document.movetimerlist)"><?% gettext("Reverse select",20) %?></a>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidetext">
+<?% IF allow('movetimerdelete') %?>
+        <a href="javascript:DoitReally('<?% gettext("Would you like to delete these rules?") %?>','<?% gettext("Nothing selected!") %?>','movetimerdelete',document.movetimerlist,620,670,'delete')"><img src="images/delete.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:DoitReally('<?% gettext("Would you like to delete these rules?") %?>','<?% gettext("Nothing selected!") %?>','movetimerdelete',document.movetimerlist,620,670,'delete')"><?% gettext("Delete rules to move timer",20) %?></a><br />
+<?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

@@ -1,0 +1,424 @@
+sc.o: sc.c /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/debug.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/spu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/themes.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/submenu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinystr.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinyxml.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinystr.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/status.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/player.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/interface.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/remote.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/svdrp.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/menu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbplayer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/recorder.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/receiver.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/livebuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h sc.h \
+ scsetup.h filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h misc.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/device.h mcli_sc.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/packetbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcliheaders.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/version.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/list.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/mmi_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/mcli.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/player.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/cam_menu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/si.h system.h \
+ data.h cam.h smartcard.h network.h opts.h i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h log-core.h \
+ log.h version.h
+data.o: data.c mcli_sc.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/packetbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/debug.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/spu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcliheaders.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/version.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/list.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/mmi_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/mcli.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/themes.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/submenu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinystr.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinyxml.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinystr.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/player.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/cam_menu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osdbase.h data.h \
+ misc.h override.h scsetup.h log-core.h log.h i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h
+filter.o: filter.c \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h misc.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/debug.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/spu.h mcli_sc.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/packetbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcliheaders.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/version.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/list.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/mmi_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/mcli.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/themes.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/submenu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinystr.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinyxml.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinystr.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/player.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/cam_menu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/si.h sc.h \
+ log-core.h log.h
+system.o: system.c \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h sc.h \
+ system.h data.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h misc.h \
+ override.h opts.h i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h log-core.h \
+ log.h
+misc.o: misc.c \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h misc.h
+cam.o: cam.c \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/font.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/channels.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ci.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbsubtitle.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osd.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/eit.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/nit.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/pat.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/remux.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/debug.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sdt.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sections.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/spu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbci.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ FFdecsa/FFdecsa.h cam.h data.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h misc.h \
+ mcli_sc.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/packetbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/ringbuffer.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcliheaders.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/defs.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/version.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/list.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/satlists.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/mcast.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/recv_ccpp.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/recv_tv.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/mld_reporter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/tca_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/tra_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/common/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/api_server.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/mcast/client/mmi_handler.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/mcli.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/plugin.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/menuitems.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osdbase.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/skins.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/epg.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/section.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/si.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/util.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/headers.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/keys.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/recording.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/timers.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/themes.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/submenu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinystr.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinyxml.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/tinyxml/tinystr.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/player.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/filter.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/device.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//../vdr-plugins/src/mcli/../mcli/cam_menu.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/osdbase.h scsetup.h \
+ filter.h /usr/src/reelbox/testing/src/vdr-1.7.28//include/libsi/si.h \
+ system.h override.h log-core.h log.h mcli_sc.c crypto.h crypto-bn.h \
+ support/idea.h helper.h
+smartcard.o: smartcard.c \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ smartcard.h data.h misc.h sc.h log-core.h log.h
+network.o: network.c \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h network.h \
+ misc.h log-core.h log.h
+crypto.o: crypto.c crypto.h crypto-bn.h support/idea.h helper.h log.h \
+ misc.h support/i_cbc.c support/idea.h support/idea_lcl.h support/i_ecb.c \
+ support/i_skey.c
+system-common.o: system-common.c \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ system-common.h data.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h misc.h \
+ system.h smartcard.h crypto-bn.h
+parse.o: parse.c parse.h misc.h log.h
+log.o: log.c /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h log.h \
+ misc.h
+override.o: override.c \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/sources.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/config.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/font.h override.h \
+ data.h /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
+ /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h misc.h sc.h \
+ log-core.h log.h

@@ -1,0 +1,12 @@
+--- videodir.h	(revision 15412)
++++ videodir.h	(revision 15413)
+@@ -22,6 +22,9 @@
+ int CloseVideoFile(cUnbufferedFile *File);
+ bool RenameVideoFile(const char *OldName, const char *NewName);
+ bool RemoveVideoFile(const char *FileName);
++#ifdef USE_HARDLINKCUTTER
++bool HardLinkVideoFile(const char *OldName, const char *NewName);
++#endif /* HARDLINKCUTTER */
+ bool VideoFileSpaceAvailable(int SizeMB);
+ int VideoDiskSpace(int *FreeMB = NULL, int *UsedMB = NULL); // returns the used disk space in percent
+ cString PrefixVideoFileName(const char *FileName, char Prefix);

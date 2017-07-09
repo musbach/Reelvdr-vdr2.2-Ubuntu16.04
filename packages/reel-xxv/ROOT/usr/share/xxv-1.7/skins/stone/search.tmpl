@@ -1,0 +1,220 @@
+<!-- search -->
+<body class="frame">
+<div id="body">
+<?% enableform = ( allow('tnew') ) && data.size > 1 %?>
+<?% activeform = 0 %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+                        <a href="?cmd=search&amp;data=<?% url( title ) %?>">
+                            <img src="images/find.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search for repeats") %?>" />
+                        </a>
+                        <?% IF timerid %?>
+                          <?% IF allow('tedit') %?>
+                        <a href="javascript:popup('tedit','<?% timerid %?>',620,670,1)">
+                            <img src="images/onoff.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit this timer") %?>" />
+                        </a>
+                          <?% END %?>
+                          <?% IF allow('tdelete') %?>
+                        <a href="javascript:surecmd('<?% gettext("Would you like to delete this timer?") %?>','<?% escape(title) %?><?% IF subtitle != "";"~";escape(subtitle);END %?>','tdelete','<?% timerid %?>',620,670)">
+                            <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete timer") %?>" />
+                        </a>
+                          <?% END %?>
+                        <?% ELSE %?>
+                          <?% IF allow('tnew') %?>
+                        <a href="javascript:popup('tnew','<?% id %?>',620,670,1)">
+                            <img src="images/record.<?% global.imagetyp %?>" alt="" title="<?% gettext("To record") %?>" />
+                        </a>
+                          <?% END %?>
+                        <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+    <?% state = '' %?>
+    <?% IF running %?>
+        <?% state = "running" %?>
+    <?% ELSIF timerid %?>
+      <?% UNLESS recording %?>
+        <?% state = "deactive" %?>
+      <?% ELSE %?>
+        <?% state = "active" %?>
+      <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsArea %?>
+      <div class="areabegin">
+      <?% PROCESS SetState %?>
+        <table class="fieldtable" summary="">
+          <tr>
+            <td class="fieldhead">
+              <div class="fieldhead">
+              <a class="fieldinline<?% IF state != "";" ";state;END %?>" style="vertical-align:bottom;" href="?cmd=program&amp;data=<?% channel %?><?% IF id > 0 %?>#E<?% id %?><?% END %?>" title="<?% gettext("Program guide for") %?>&nbsp;<?% sender %?>">
+                <font class="fieldinline<?% IF state != "";" ";state;END %?>"><?% chop(sender,20) %?></font>
+              </a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldtext">
+                  <a href="javascript:popup('display','<?% id %?>',620,670,0)">
+                  <font class="title<?% IF state != "";" ";state;END %?>"><?% chop(title,30) %?></font><br />
+                  <font class="subtitle<?% IF state != "";" ";state;END %?>">&nbsp;<?% chop(subtitle,32) %?></font>
+        				  </a>
+                  <?% IF global.hideDescription != 1 %?>
+                  <div class="epgdescription">
+                    <a href="javascript:popup('display','<?% id %?>',620,670,0)">
+                    <font class="fieldinline<?% IF state != "";" ";state;END %?>"><?% chop(description,35,3) %?>&nbsp;</font>
+          				  </a>
+                  </div>
+                  <?% END %?>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldtext">
+              <table class="fieldinline" summary="">
+                <tr>
+                    <td valign="middle" align="left" style="white-space: nowrap">
+                        <?% IF enableform && !timerid; activeform = 1 %?>
+                  			<input class="push" type="checkbox" value="<?% id %?>" name="<?% title %?><?% IF subtitle != "";"~";subtitle;END %?>" />
+    	 		              <?% END %?>
+                    </td>
+                    <td class="fieldinline" style="white-space: nowrap">
+                       <font class="description<?% IF state != "";" ";state;END %?>">
+                       <?% start %?>&nbsp;-&nbsp;<?% stop %?>
+                       </font>
+                    </td>
+                    <td class="fieldinline push">
+                        <?% INCLUDE widgets/tooltip.inc cmd="display" eventid=id linkid=id ttp_offset=-200 %?>
+                        <?% PROCESS RowButtons %?>
+                    </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldbottom"></td>
+          </tr>
+        </table>
+      </div>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% IF data.size <= 1 %?>
+<h1><?% gettext("Search text") %?> : <?% cgi.param('data') %?></h1>
+<?% ELSE %?>
+<?% fields = data.shift %?>
+<h1><?% gettext("Search text") %?> : <?% cgi.param('data') %?> - <?% data.first.7 %?></h1>
+<form name="searchlist" action="">
+    <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?% id=zeile.0;title=zeile.1;subtitle=zeile.2;sender=zeile.3;
+            channel=zeile.4;start=zeile.5;stop=zeile.6;day=zeile.7;description=zeile.8;
+            pdc=zeile.9;timerid=zeile.10;recording=zeile.11;running=zeile.12 %?>
+        <?% IF old.defined && day != old %?>
+<div class="areaclose"></div>
+<h2><?% day %?></h2>
+        <?% END %?>
+        <?% PROCESS ItemAsArea %?>
+        <?% old = day %?>
+    <?% END %?>
+<div class="areaclose"></div>
+</form>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Search text",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+        <form action="" name="searchform" >
+            <input type='hidden' name='cmd' value='search' />
+            <input type="text" id="epgtext" name="data" alt="<?% gettext("Search") %?>" 
+               onkeyup="suggest('esuggest&amp;__channel=' + escape(this.form.__channel[this.form.__channel.options.selectedIndex].value),'epgtext','epgsuggest');"
+               value="<?% cgi.param('data') %?>"
+               autocomplete="off" />
+            <br /><div class="suggestbox" id="epgsuggest"></div>
+            <br />
+            <?% gettext('Search in fields',30) %?><br />
+            <input style="width:auto;" type="radio" name="__Where" value="all" <?% IF ! cgi.param('__Where') || cgi.param('__Where') == 'all' %?>checked="checked"<?% END %?> /><?% gettext('All') %?><br />
+            <input style="width:auto;" type="radio" name="__Where" value="title" <?% IF cgi.param('__Where') == 'title' %?>checked="checked"<?% END %?> /><?% gettext('Only in title') %?><br />
+            <input style="width:auto;" type="radio" name="__Where" value="titlesubtitle" <?% IF cgi.param('__Where') == 'titlesubtitle' %?>checked="checked"<?% END %?> /><?% gettext('Only in title and subtitle') %?><br />
+            <br />
+            <?% gettext('Minimum length (in minutes)',30) %?><br />
+            <input type="text" name="__MinLength" value="<?% cgi.param('__MinLength') %?>" />
+            <br /><br />
+            <?% gettext('Channel',30) %?><br />
+            <select name='__channel'>
+                <option value="0"><?% gettext('All channels') %?></option>
+                <?% FOREACH ch IN param.channels %?>
+                  <?% IF ch.2 && ch.2 != channelgroup %?>
+                    <?% IF channelgroup %?>
+                    </optgroup>
+                    <?% END %?>
+                    <optgroup label="<?% channelgroup = ch.2;ch.2 %?>">
+                <?% END %?>
+                    <option value="<?% ch.1 %?>"<?% ' selected="selected"' IF cgi.param('__channel') == ch.1 %?>><?% ch.0 %?></option>
+                <?% END %?>
+                <?% IF channelgroup %?>
+                  </optgroup>
+                <?% END %?>
+            </select>
+            <br /><br />
+            <?% gettext('Content',30) %?><br />
+            <select name='__contentid'>
+                <option value="0"><?% gettext('All contents') %?></option>
+                <?% h = 1;WHILE h < 16 %?>
+                    <?% c = h | format "%x" %?>
+                    <?% ct = getModule('EPG').content(c) %?>
+                    <?% IF ct %?>
+                      <optgroup label="<?% ct %?>">
+                      <option value="<?% c %?>"<?% ' selected="selected"' IF cgi.param('__contentid') == c %?>><?% gettext('All')%?> - <?% ct %?></option>
+                      <?% l = 0;WHILE l < 16 %?>
+                      <?% c = ((16 * h) + l) | format "%x" %?>
+                      <?% ct = getModule('EPG').content(c) %?>
+                        <?% IF ct %?>
+                          <option value="<?% c %?>"<?% ' selected="selected"' IF cgi.param('__contentid') == c %?>><?% ct %?></option>
+                        <?% END %?>
+                      <?% l = l + 1 %?>
+                      <?% END %?>
+                      </optgroup>
+                    <?% END %?>
+                  <?% h = h + 1 %?>
+                <?% END %?>
+            </select>
+            <br /><br />
+
+            <input type='submit' value='<?% gettext('Search') %?>' />
+        </form>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% IF activeform %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("To record") %?></td></tr>
+    <tr>
+    <td class="sidetext">
+        <a href="javascript:selAll(document.searchlist,1)"><img src="images/select.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.searchlist,1)"><?% gettext("Select all",20) %?></a><br />
+        <a href="javascript:selAll(document.searchlist,0)"><img src="images/deselect.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.searchlist,0)"><?% gettext("Unselect all",20) %?></a><br />
+        <a href="javascript:reverse(document.searchlist)"><img src="images/invers.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:reverse(document.searchlist)"><?% gettext("Reverse select",20) %?></a>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidetext">
+        <a href="javascript:DoitReally('<?% gettext("Would you like to record these events?") %?>','<?% gettext("Nothing selected!") %?>','tnew&amp;__fast=1',document.searchlist,620,670,'record')"><img src="images/record.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:DoitReally('<?% gettext("Would you like to record these events?") %?>','<?% gettext("Nothing selected!") %?>','tnew&amp;__fast=1',document.searchlist,620,670,'record')"><?% gettext("Record selected events",20) %?></a><br />
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

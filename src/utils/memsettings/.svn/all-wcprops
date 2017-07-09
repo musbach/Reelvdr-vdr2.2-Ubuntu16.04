@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/1/testing/src/utils/memsettings
+END
+memsettings.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/memsettings/memsettings.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/memsettings/Makefile
+END

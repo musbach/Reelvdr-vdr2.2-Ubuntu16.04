@@ -1,0 +1,7 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)		dest				type	owner  group
+etc/init.d/reeltvtv		etc/init.d/reeltvtv		script	daemon daemon
+utils/tvtv/tvtvchannels.map	etc/tvtv/tvtvchannels.map
+utils/tvtv/reeltvtvd		usr/sbin/reeltvtvd		script	daemon daemon
+utils/tvtv/tvtv4l		usr/sbin/tvtv4l			exe

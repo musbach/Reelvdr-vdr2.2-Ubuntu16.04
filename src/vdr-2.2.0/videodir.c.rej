@@ -1,0 +1,303 @@
+--- videodir.c	(revision 15412)
++++ videodir.c	(revision 15413)
+@@ -39,6 +39,11 @@
+   bool Next(void);
+   void Store(void);
+   const char *Adjust(const char *FileName);
++#ifdef USE_DVLVIDPREFER
++  char *GetVidPath(int nVid);
++  bool GetPreferedVideoDir(void);
++  bool IsVidDirOK(int nVid, int *freeMB = NULL);
++#endif /* DVLVIDPREFER */
+   };
+ 
+ cVideoDirectory::cVideoDirectory(void)
+@@ -120,6 +125,9 @@
+   if ((Flags & O_CREAT) != 0) {
+      cVideoDirectory Dir;
+      if (Dir.IsDistributed()) {
++#ifdef USE_DVLVIDPREFER
++        if (Setup.UseVidPrefer == 0) {
++#endif /* DVLVIDPREFER */
+         // Find the directory with the most free space:
+         int MaxFree = Dir.FreeMB();
+         while (Dir.Next()) {
+@@ -129,14 +137,24 @@
+                  MaxFree = Free;
+                  }
+               }
++#ifdef USE_DVLVIDPREFER
++        }
++          else Dir.GetPreferedVideoDir();
++#endif /* DVLVIDPREFER */
+         if (Dir.Stored()) {
+            ActualFileName = Dir.Adjust(FileName);
+            if (!MakeDirs(ActualFileName, false))
+               return NULL; // errno has been set by MakeDirs()
++#ifdef USE_DVLVIDPREFER
++           if (strcmp(ActualFileName, FileName) != 0) {
++#endif /* DVLVIDPREFER */
+            if (symlink(ActualFileName, FileName) < 0) {
+               LOG_ERROR_STR(FileName);
+               return NULL;
+               }
++#ifdef USE_DVLVIDPREFER
++              }
++#endif /* DVLVIDPREFER */
+            ActualFileName = strdup(ActualFileName); // must survive Dir!
+            }
+         }
+@@ -171,6 +189,123 @@
+   return RemoveFileOrDir(FileName, true);
+ }
+ 
++#ifdef USE_HARDLINKCUTTER
++static bool StatNearestDir(const char *FileName, struct stat *Stat)
++{
++  cString Name(FileName);
++  char *p;
++  while ((p = strrchr((char*)(const char*)Name + 1, '/')) != NULL) {
++     *p = 0; // truncate at last '/'
++     if (stat(Name, Stat) == 0) {
++        isyslog("StatNearestDir: Stating %s", (const char*)Name);
++        return true;
++        }
++     }
++  return false;
++}
++
++bool HardLinkVideoFile(const char *OldName, const char *NewName)
++{
++  // Incoming name must be in base video directory:
++  if (strstr(OldName, VideoDirectory) != OldName) {
++     esyslog("ERROR: %s not in %s", OldName, VideoDirectory);
++     return false;
++     }
++  if (strstr(NewName, VideoDirectory) != NewName) {
++     esyslog("ERROR: %s not in %s", NewName, VideoDirectory);
++     return false;
++     }
++
++  const char *ActualNewName = NewName;
++  cString ActualOldName(ReadLink(OldName), true);
++
++  // Some safety checks:
++  struct stat StatOldName;
++  if (lstat(ActualOldName, &StatOldName) == 0) {
++     if (S_ISLNK(StatOldName.st_mode)) {
++        esyslog("HardLinkVideoFile: Failed to resolve symbolic link %s", (const char*)ActualOldName);
++        return false;
++        }
++     }
++  else {
++     esyslog("HardLinkVideoFile: lstat failed on %s", (const char*)ActualOldName);
++     return false;
++     }
++  isyslog("HardLinkVideoFile: %s is on %i", (const char*)ActualOldName, (int)StatOldName.st_dev);
++
++  // Find the video directory where ActualOldName is located
++
++  cVideoDirectory Dir;
++  struct stat StatDir;
++  if (!StatNearestDir(NewName, &StatDir)) {
++     esyslog("HardLinkVideoFile: stat failed on %s", NewName);
++     return false;
++     }
++
++  isyslog("HardLinkVideoFile: %s is on %i", NewName, (int)StatDir.st_dev);
++  if (StatDir.st_dev != StatOldName.st_dev) {
++     // Not yet found.
++
++     if (!Dir.IsDistributed()) {
++        esyslog("HardLinkVideoFile: No matching video folder to hard link %s", (const char*)ActualOldName);
++        return false;
++        }
++
++     // Search in video01 and upwards
++     bool found = false;
++     while (Dir.Next()) {
++        Dir.Store();
++        const char *TmpNewName = Dir.Adjust(NewName);
++        if (StatNearestDir(TmpNewName, &StatDir) && StatDir.st_dev == StatOldName.st_dev) {
++           isyslog("HardLinkVideoFile: %s is on %i (match)", TmpNewName, (int)StatDir.st_dev);
++           ActualNewName = TmpNewName;
++           found = true;
++           break;
++           }
++        isyslog("HardLinkVideoFile: %s is on %i", TmpNewName, (int)StatDir.st_dev);
++        }
++     if (ActualNewName == NewName) {
++        esyslog("HardLinkVideoFile: No matching video folder to hard link %s", (const char*)ActualOldName);
++        return false;
++        }
++
++     // Looking good, we have a match. Create necessary folders.
++     if (!MakeDirs(ActualNewName, false))
++        return false;
++     // There's no guarantee that the directory of ActualNewName
++     // is on the same device as the dir that StatNearestDir found.
++     // But worst case is that the link fails.
++     }
++
++#ifdef HARDLINK_TEST_ONLY
++  // Do the hard link to *.vdr_ for testing only
++  char *name = NULL;
++  asprintf(&name, "%s_",ActualNewName);
++  link(ActualOldName, name);
++  free(name);
++  return false;
++#endif // HARDLINK_TEST_ONLY
++
++  // Try creating the hard link
++  if (link(ActualOldName, ActualNewName) != 0) {
++     // Failed to hard link. Maybe not allowed on file system.
++     LOG_ERROR_STR(ActualNewName);
++     isyslog("HardLinkVideoFile: failed to hard link from %s to %s", (const char*)ActualOldName, ActualNewName);
++     return false;
++     }
++
++  if (ActualNewName != NewName) {
++     // video01 and up. Do the remaining symlink
++     if (symlink(ActualNewName, NewName) < 0) {
++        LOG_ERROR_STR(NewName);
++        return false;
++        }
++     }
++  return true;
++}
++
++#endif /* HARDLINKCUTTER */
++
+ bool VideoFileSpaceAvailable(int SizeMB)
+ {
+   cVideoDirectory Dir;
+@@ -235,6 +370,129 @@
+      } while (Dir.Next());
+ }
+ 
++#ifdef USE_DVLVIDPREFER
++// returns path to nVid'th video directory or NULL if not existing
++char *cVideoDirectory::GetVidPath(int nVid)
++{
++  char *b = strdup(VideoDirectory);
++  int l = strlen(b), di, n;
++
++  while (l-- > 0 && isdigit(b[ l ]));
++
++  l++;
++  di = strlen(b) - l;
++
++  // di == number of digits
++  n = atoi(&b[ l ]);
++  if (n != 0)
++     return NULL;
++
++  // add requested number to dir name
++  sprintf(&b[ l ], "%0*d", di, nVid);
++
++  if (DirectoryOk(b) == true)
++     return b;
++
++  free(b);
++  return NULL;
++}
++
++// checks if a video dir is 'valid'
++bool cVideoDirectory::IsVidDirOK(int nVid, int *freeMB)
++{
++  char *dn;
++  int fMB;
++
++  if (nVid >= Setup.nVidPrefer)
++     return false;
++
++  if (Setup.VidPreferSize[ nVid ] == -1)
++     return false;
++
++  dn = GetVidPath(nVid);
++  if (dn == NULL)
++     return false;
++
++  fMB = FreeDiskSpaceMB(dn, NULL);
++  if (freeMB != NULL)
++     *freeMB = fMB;
++
++  free(dn);
++
++  if (Setup.VidPreferSize[ nVid ] >= fMB)
++     return false;
++  return true;
++}
++
++
++// calculates which video dir to use
++bool cVideoDirectory::GetPreferedVideoDir(void)
++{
++  cVideoDirectory d;
++  int nDirs = 1,
++  vidUse = Setup.nVidPrefer;
++  int i, top, topFree, x;
++
++  if (name == NULL)
++     return(false);
++
++  // count available video dirs
++  while (d.Next() == true)
++        nDirs++;
++
++  if (vidUse > nDirs)
++     vidUse = nDirs;
++
++  // check for prefered video dir
++  for (i = 0, top = -1, topFree = 0; i < vidUse; i++) {
++      if (IsVidDirOK(i, &x) == true) {
++         if (top == -1) {
++            // nothing set yet, use first 'ok' dir
++            top = i;
++            topFree = x;
++            }
++         else {
++            // check if we got a higher priority
++            if (Setup.VidPreferPrio[ i ] >= Setup.VidPreferPrio[ top ]) {
++               top = i;
++               topFree = x;
++               }
++            // check if we got same priority but more space
++            else if (Setup.VidPreferPrio[ i ] == Setup.VidPreferPrio[ top ] && x >= topFree) {
++               top = i;
++               topFree = x;
++               }
++            }
++         }
++      }
++
++  if (top == -1) {
++     isyslog("VidPrefer: no prefered video directory could be determined!");
++
++     // something went wrong here...
++     // let VDR determine the video directory
++     int MaxFree = FreeMB();
++
++     while (Next()) {
++           int Free = FreeDiskSpaceMB(Name());
++
++           if (Free > MaxFree) {
++              Store();
++              MaxFree = Free;
++              }
++           }
++     }
++  else {
++     isyslog("VidPrefer: prefered video directory '%d' set.", top);
++     if (stored != NULL)
++        free(stored);
++     stored = GetVidPath(top);
++     }
++
++  return true;
++}
++#endif /* DVLVIDPREFER */
++
+ bool IsOnVideoDirectoryFileSystem(const char *FileName)
+ {
+   cVideoDirectory Dir;

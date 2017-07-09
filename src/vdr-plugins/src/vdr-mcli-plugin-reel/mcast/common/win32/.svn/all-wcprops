@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/common/win32
+END
+inet_ntop.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/inet_ntop.c
+END
+inet_pton.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/inet_pton.c
+END
+inet_aton.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/inet_aton.c
+END
+getopt.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/getopt.c
+END
+poll.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/common/win32/poll.c
+END

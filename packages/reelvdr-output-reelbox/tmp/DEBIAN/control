@@ -1,0 +1,13 @@
+Package: reelvdr-output-reelbox
+Version: 3.42-39
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 2,0M
+Conflicts: reelvdr-reelbox
+Replaces: reelvdr-reelbox
+Depends: reelvdr, liba52-0.7.4, libavcodec-ffmpeg56 | libavcodec-ffmpeg-extra56, libmad0, libogg0, libswscale-ffmpeg3, libvorbis0a, libvorbisenc2
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-output-reelbox
+Description: ReelBox plugin for the ReelBox extension HD card
+ Is required to run Reel HDTV extension card on ReelVDR

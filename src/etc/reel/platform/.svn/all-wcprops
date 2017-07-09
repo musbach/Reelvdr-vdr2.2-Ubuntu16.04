@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/1/testing/src/etc/reel/platform
+END
+rbmini.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/etc/reel/platform/rbmini.inc
+END
+rbavg.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/etc/reel/platform/rbavg.inc
+END
+rbavg.inc-10.04
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/etc/reel/platform/rbavg.inc-10.04
+END

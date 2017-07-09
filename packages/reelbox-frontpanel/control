@@ -1,0 +1,13 @@
+Package: reelbox-frontpanel
+Version: 4.2.1
+Section: reel
+Priority: important
+Architecture: i386
+Depends: lm-sensors, libusb-0.1-4
+Replaces: reelbox-control
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-frontpanel
+Description: Tools needed by the ReelBox frontpanel
+ Required tools for the ReelBox frontpanel
+ This package contains the reelbox-control, reelfpctl and avr_flasher
+

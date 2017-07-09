@@ -1,0 +1,83 @@
+10
+
+dir
+188
+https://svn.baycom.de/repos/vdr-mcli-plugin/mcast/common/win32/visualstudio
+https://svn.baycom.de/repos/vdr-mcli-plugin
+
+
+
+2009-11-16T14:14:42.311103Z
+127
+fliegl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fc751244-6d69-0410-b144-98fd9a06952e
+
+fusewin
+dir
+
+netcvfuse
+dir
+
+demo
+dir
+
+netcvdiag
+dir
+
+Debug
+dir
+
+netcv2dvbip
+dir
+
+libmcli
+dir
+
+netceiver-client.sln
+file
+
+
+
+
+2012-10-21T10:41:27.000000Z
+ab884e7fe6013ee864f1114dc34dc48a
+2009-11-16T14:02:50.158307Z
+125
+fliegl
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3202
+

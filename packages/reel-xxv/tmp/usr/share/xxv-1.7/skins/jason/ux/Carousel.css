@@ -1,0 +1,67 @@
+	.x-carousel-layout {
+	    overflow: hidden;
+	    position: relative;
+	    zoom: 1;
+	}
+
+	.x-carousel-left-scrollbutton {
+	    width: 10px;
+	    position: absolute;
+	    top: 0px;
+	    background: url(../pic/slide-left.png) no-repeat 0px center;
+	    height: 100%;
+	    cursor:hand;
+	}
+
+	.x-carousel-layout.x-scroll-button-position-right .x-carousel-left-scrollbutton {
+	    right: 5px;
+	}
+	.x-carousel-layout.x-scroll-button-position-left .x-carousel-left-scrollbutton,
+	.x-carousel-layout.x-scroll-button-position-split .x-carousel-left-scrollbutton {
+	    left: 0px;
+	}
+
+	.x-carousel-right-scrollbutton {
+	    width: 10px;
+	    position: absolute;
+	    top:0px;
+	    background: url(../pic/slide-right.png) no-repeat 0px center;
+	    height:100%;
+	    cursor:hand;
+	}
+
+	.x-carousel-layout.x-scroll-button-position-right .x-carousel-right-scrollbutton,
+	.x-carousel-layout.x-scroll-button-position-split .x-carousel-right-scrollbutton {
+	    right: 0px;
+	}
+
+	.x-carousel-layout.x-scroll-button-position-left .x-carousel-right-scrollbutton {
+	    left: 23px;
+	}
+
+	.x-carousel-scroller {
+	    overflow: hidden;
+	    position: relative;
+	    left: 5px
+	}
+
+	.x-carousel-layout.x-scroll-button-position-left .x-carousel-scroller {
+	    left: 41px;
+	}
+
+	.x-carousel-layout.x-scroll-button-position-split .x-carousel-scroller {
+	    left: 10px;
+	}
+
+	.x-carousel-body {
+	    width: 10000px;
+	    overflow: hidden;
+	    zoom: 1;
+	}
+
+	.x-carousel-scroller .x-carousel-body .x-carousel-item {
+	    float: left;
+	    overflow: hidden;
+	    zoom: 1
+	}
+

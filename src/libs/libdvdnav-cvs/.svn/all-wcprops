@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/configure.ac
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/AUTHORS
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/TODO
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/INSTALL
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/COPYING
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/Makefile.am
+END
+autogen.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/autogen.sh
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/NEWS
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/README
+END

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "creating module entries for HDTV extension module"
+#create /etc/modules entry
+if ! grep -q hdshm /etc/modules ; then
+	echo hdshm >> /etc/modules
+fi
+
+#lrm-manager --kver=4.4.0-57-generic
+
+depmod -a
+#depmod -a 4.8.0-41-generic

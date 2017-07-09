@@ -1,0 +1,43 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#
+#valid types:
+# script - for scripts, default 755, root.root
+# exe    - like script, but will be stripped on packaging
+# sexe   - setuid root executeable, 4755, root.root, strip
+# lib    - library,     755, root.root, no strip
+# cfg    - config file, 644, root.root
+# bin    - binaries, i.e. firmware, 644, root.root
+# any other files will be installed "as they are", so be careful about permissions!
+#
+#src rel. to $(SRCDIR)	dest	type	owner.group
+vdr-2.2.0/vdr	usr/sbin/vdr	lib		-
+vdr-2.2.0/po/ar.mo	usr/share/locale/ar/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/ca_ES.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/cs_CZ.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/da_DK.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/de_DE.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/el_GR.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/es_ES.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/et_EE.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/fi_FI.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/fr_FR.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/hr_HR.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/hu_HU.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/it_IT.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/lt_LT.mo	usr/share/locale/lt_LT/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/mk_MK.mo	usr/share/locale/mk_MK/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/nl_NL.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/nn_NO.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/pl_PL.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/pt_PT.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/ro_RO.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/ru_RU.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/sk_SK.mo	usr/share/locale/sk_SK/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/sl_SI.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/sr_RS.mo	usr/share/locale/sr_RS/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/sv_SE.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/tr_TR.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/uk_UA.mo	usr/share/locale/uk_UA/LC_MESSAGES/vdr.mo
+vdr-2.2.0/po/zh_CN.mo	usr/share/locale/zh_CN/LC_MESSAGES/vdr.mo
+

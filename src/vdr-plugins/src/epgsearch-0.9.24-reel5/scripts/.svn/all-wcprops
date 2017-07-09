@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts
+END
+convert_info_vdr.pl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/convert_info_vdr.pl
+END
+undoneepgsearch.sh
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/undoneepgsearch.sh
+END
+recrep.sh
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/recrep.sh
+END
+recordingdone.sh
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/recordingdone.sh
+END
+epgsearchcmds.conf
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/epgsearchcmds.conf
+END
+autotimer2searchtimer.pl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/autotimer2searchtimer.pl
+END
+epgsearchcmds-french.conf
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/epgsearchcmds-french.conf
+END
+timerrep.sh
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/timerrep.sh
+END
+epg2master-timer.sh
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/epg2master-timer.sh
+END
+epg2autotimer.sh
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/epg2autotimer.sh
+END
+epgsearchcmds-fin.conf
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/epgsearchcmds-fin.conf
+END
+epg2taste.sh
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/epg2taste.sh
+END
+timercmds-auxinfo.sh
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/timercmds-auxinfo.sh
+END
+rememberevent.sh
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/rememberevent.sh
+END
+mtdone2epgsearchdone.sh
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/mtdone2epgsearchdone.sh
+END
+convert_epgsearchdone_data.pl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/convert_epgsearchdone_data.pl
+END
+sendEmail.pl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/scripts/sendEmail.pl
+END

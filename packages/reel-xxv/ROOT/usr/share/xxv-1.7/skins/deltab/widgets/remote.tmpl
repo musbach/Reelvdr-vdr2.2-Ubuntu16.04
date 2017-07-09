@@ -1,0 +1,310 @@
+<!-- remote -->
+<div id="body">
+
+<?% IF cgi.param('monitor').defined;monitor = cgi.param('monitor');ELSE;monitor = param.monitor;END %?>
+<?% totalheight=param.height %?>
+<?% width=param.width %?>
+<?% height=param.height %?>
+
+<script language="javascript" type="text/javascript">
+<!--
+
+var interval = 5
+var last = 0;
+
+function remote(key) {
+    var vdr = ( document.channelform.vdr.options ? document.channelform.vdr.options[document.channelform.vdr.options.selectedIndex].value : document.channelform.vdr.value );
+    post('remote',key + '&__vdr=' + vdr );
+<?% IF monitor %?>
+    if(last + 1000 < Date.UTC()) {
+        grab();
+    }
+<?% END %?>
+}
+
+<?% IF monitor %?>
+function grab() {
+    if(document.remoteform.grabinterval.value > 0) {
+      Now = new Date();
+      var vdr = ( document.channelform.vdr.options ? document.channelform.vdr.options[document.channelform.vdr.options.selectedIndex].value : document.channelform.vdr.value );
+    	document.livepicture.src = '?cmd=gdisplay&__vdr='+vdr+'&random=' + Now.getTime();
+    }
+    last = Date.UTC();
+}
+
+function changeInterval(newinterval) {
+    window.clearInterval(aktiv);
+    if(newinterval > 0) {
+        inter = newinterval * 1000;
+        aktiv = window.setInterval("grab()", inter);
+    }
+}
+
+inter = interval * 1000;
+aktiv = window.setInterval("grab()", inter);
+<?% END %?>
+-->
+</script>
+
+<h1><?% gettext("Remote") %?></h1>
+<table summary="">
+<tr>
+  <td width="200" >
+    <form name="channelform" action="">
+        <table summary="">
+        <tr>
+            <td width="200" height="<?% totalheight %?>" >
+                <table summary="">
+                    <tr>
+                        <td colspan="7" >
+                            <table width="100%" summary="">
+                                <tr>
+                                    <td colspan="2" class="rcbuttonlarge" >
+                                        <a class="rcbutton" href="javascript:remote('Power')"><?% gettext("Switch off") %?></a>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td colspan="2" class="rcbuttonlarge" >
+                                        <a class="rcbutton" href="?cmd=r&monitor=<?% monitor ? 0 : 1 %?>"><?% gettext("Monitor") %?></a>
+                                    </td>
+                                </tr>
+                            </table>
+                         </td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('1')">1</a></td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('2')">2</a></td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('3')">3</a></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('4')">4</a></td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('5')">5</a></td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('6')">6</a></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('7')">7</a></td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('8')">8</a></td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('9')">9</a></td>
+                        <td>&nbsp;</td>
+
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('Null')">0</a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td colspan="7" align="center">
+                            <table summary="">
+                                <tr>
+                                    <td class="rcbutton"><a title="Rot" class="rcbutton" href="javascript:remote('Red')"><img alt="red" src="images/rcred.png" /></a></td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbutton"><a title="Gr&uuml;n" class="rcbutton" href="javascript:remote('Green')"><img alt="green" src="images/rcgreen.png" /></a></td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbutton"><a title="Gelb" class="rcbutton" href="javascript:remote('Yellow')"><img alt="yellow" src="images/rcyellow.png" /></a></td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbutton"><a title="Blau" class="rcbutton" href="javascript:remote('Blue')"><img alt="blue" src="images/rcblue.png" /></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a title="Auf" class="rcbutton" href="javascript:remote('Up')"><img alt="" src="images/rcup.gif" /></a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a title="Links" class="rcbutton" href="javascript:remote('Left')"><img alt="" src="images/rcleft.gif" /></a></td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a class="rcbutton" href="javascript:remote('Ok')"><?% gettext("Ok") %?></a></td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a title="Rechts" class="rcbutton" href="javascript:remote('Right')"><img alt="" src="images/rcright.gif" /></a></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="rcbutton"><a title="Ab" class="rcbutton" href="javascript:remote('Down')"><img alt="" src="images/rcdown.gif" /></a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td colspan="7" >
+                            <table width="100%" summary="">
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbuttonlarge">
+                                        <a class="rcbutton" href="javascript:remote('Menu')"><?% gettext("Menu") %?></a>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbuttonlarge" >
+                                        <a class="rcbutton" href="javascript:remote('Back')"><?% gettext("Back") %?></a>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td colspan="7" align="center">
+                            <table summary="">
+                                <tr>
+                                    <td class="rcbutton">
+                                        <a title="<?% gettext("Record") %?>" class="rcbutton" href="javascript:remote('Record')">
+                                            <img src="images/record.<?% global.imagetyp %?>" alt="" title="<?% gettext("Record") %?>" />
+                                       </a>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbutton">
+                                        <a title="<?% gettext("Playback") %?>" class="rcbutton" href="javascript:remote('Play')">
+                                            <img src="images/play.<?% global.imagetyp %?>" alt="" title="<?% gettext("Playback") %?>" />
+                                       </a>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbutton">
+                                        <a title="<?% gettext("Pause") %?>" class="rcbutton" href="javascript:remote('Pause')">
+                                            <img src="images/pause.<?% global.imagetyp %?>" alt="" title="<?% gettext("Pause") %?>" />
+                                       </a>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbutton">
+                                        <a title="<?% gettext("Stop") %?>" class="rcbutton" href="javascript:remote('Stop')">
+                                            <img src="images/stop.<?% global.imagetyp %?>" alt="" title="<?% gettext("Stop") %?>" />
+                                       </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td height="4" colspan="7"></td></tr>
+                    <tr>
+                        <td colspan="7" >
+                            <table width="100%" summary="">
+                                <tr>
+                                    <td class="rcbutton"><a title="R&uuml;ckspulen" class="rcbutton" href="javascript:remote('FastRew')"><b>&lt;&lt;&lt;</b></a></td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbutton"><a title="<?% gettext("Decrease volume") %?>" class="rcbutton" href="javascript:remote('VolumeMinus')">
+                                        <img alt="<?% gettext("Decrease volume") %?>" src="images/quiet.<?% global.imagetyp %?>" /></a></td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbutton"><a title="<?% gettext("Increase volume") %?>" class="rcbutton" href="javascript:remote('VolumePlus')">
+                                        <img alt="<?% gettext("Increase volume") %?>" src="images/loud.<?% global.imagetyp %?>" /></a></td>
+                                    <td>&nbsp;</td>
+                                    <td class="rcbutton"><a title="Vorspulen" class="rcbutton" href="javascript:remote('FastFwd')"><b>&gt;&gt;&gt;</b></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <?% IF param.vdrlist.size > 1 %?>
+                    <tr>
+                        <td colspan="7" align="center">
+                            <select style="width:175px;" name="vdr">
+                            <?% FOREACH l IN param.vdrlist %?>
+                                <option value='<?% l.1 %?>'<?% IF l.1 == param.vdr %?> selected<?% END %?>><?% l.0 %?></option>
+                            <?% END %?>
+                            </select>
+                        </td>
+                    </tr>
+                    <?% ELSE %?>
+                    <tr>
+                        <td colspan="7" align="center">
+                        <input type="hidden" name="vdr" value="<?% param.vdr %?>" />
+                        </td>
+                    </tr>
+                    <?% END %?>
+                    <tr>
+                        <td colspan="7" align="center">
+                            <select style="width:175px;" name="channels" onchange="post('switch', this.form.channels.options[this.form.channels.options.selectedIndex].value + '&amp;__vdr=' + ( this.form.vdr.options ? this.form.vdr.options[this.form.vdr.options.selectedIndex].value : this.form.vdr.value ))">
+                            <?% FOREACH l IN param.channels %?>
+                            <?% IF l.2 && l.2 != optgroup %?>
+                              <?% IF optgroup %?>
+                              </optgroup>
+                              <?% END %?>
+                              <optgroup label="<?% optgroup = l.2;l.2 %?>">
+                            <?% END %?>
+                                <option value='<?% l.1 %?>'><?% l.0 %?></option>
+                            <?% END %?>
+                            <?% IF optgroup %?>
+                              </optgroup>
+                            <?% END %?>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+</td>
+<?% IF monitor %?>
+  <td width="20">
+    &nbsp;
+  </td>
+
+  <td width="<?% width + 20 %?>">
+    <table summary="">
+    <tr>
+        <td valign="middle" align="center">
+            <table summary="">
+                <tr>
+                    <td valign="middle" align="center">
+                        <img alt="<?% date.now %?>" src="?cmd=gdisplay&amp;random=<?% date.now %?>&amp;__vdr=<?% param.vdr %?>" width="<?% width %?>" height="<?% height %?>" name="livepicture" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr><td height="<?% ( totalheight -  height )%?>" align="right">
+    <form name="remoteform" action="" onsubmit="changeInterval(document.remoteform.grabinterval.value); return false">
+        <input name="grabinterval" type="text" size="2" />
+        <input type="button" onclick="changeInterval(document.remoteform.grabinterval.value)" value="<?% gettext("Set") %?>" />
+    </form>
+    </td></tr>
+     </table>
+  </td>
+  <td>
+    &nbsp;
+  </td>
+<?% END %?>
+</tr>
+</table>
+
+<?% IF monitor %?>
+<script language="javascript" type="text/javascript">
+<!--
+document.remoteform.grabinterval.value = interval;
+//-->
+</script>
+<?% END %?>
+
+</div>

@@ -1,0 +1,149 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:538: checking for gcc
+configure:651: checking whether the C compiler (/usr/bin/ccache  gcc -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes ) works
+configure:667: /usr/bin/ccache  gcc -o conftest -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes   conftest.c  1>&5
+configure:664:1: warning: return type defaults to 'int' [-Wreturn-type]
+ main(){return(0);}
+ ^
+configure:664:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure:693: checking whether the C compiler (/usr/bin/ccache  gcc -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes ) is a cross-compiler
+configure:698: checking whether we are using GNU C
+configure:707: /usr/bin/ccache  gcc -E conftest.c
+configure:726: checking whether /usr/bin/ccache  gcc accepts -g
+configure:758: checking how to run the C preprocessor
+configure:779: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:838: checking for AIX
+configure:892: checking for a BSD compatible install
+configure:949: checking for getusershell in -lc
+configure:968: /usr/bin/ccache  gcc -o conftest -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes   conftest.c -lc   1>&5
+configure:961:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ char getusershell();
+ ^
+configure:963:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int main() {
+     ^
+configure:997: checking for inet_ntoa in -lc
+configure:1016: /usr/bin/ccache  gcc -o conftest -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes   conftest.c -lc   1>&5
+configure:1009:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ char inet_ntoa();
+ ^
+configure:1011:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int main() {
+     ^
+configure:1084: checking for socket in -lsocket
+configure:1103: /usr/bin/ccache  gcc -o conftest -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes   conftest.c -lsocket   1>&5
+configure:1096:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ char socket();
+ ^
+configure:1098:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int main() {
+     ^
+/usr/bin/ld: cannot find -lsocket
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 1092 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char socket();
+
+int main() {
+socket()
+; return 0; }
+configure:1128: checking for connect in -lsocket
+configure:1147: /usr/bin/ccache  gcc -o conftest -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes   conftest.c -lsocket   1>&5
+configure:1140:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ char connect();
+ ^
+configure:1142:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int main() {
+     ^
+/usr/bin/ld: cannot find -lsocket
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 1136 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char connect();
+
+int main() {
+connect()
+; return 0; }
+configure:1174: checking for crypt in -lcrypt
+configure:1193: /usr/bin/ccache  gcc -o conftest -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes   conftest.c -lcrypt   1>&5
+configure:1186:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ char crypt();
+ ^
+configure:1188:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int main() {
+     ^
+configure:1223: checking for dirent.h that defines DIR
+configure:1236: /usr/bin/ccache  gcc -c -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes  conftest.c 1>&5
+configure:1231:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int main() {
+     ^
+configure: In function 'main':
+configure:1232:6: warning: unused variable 'dirp' [-Wunused-variable]
+ DIR *dirp = 0;
+      ^
+configure:1261: checking for opendir in -ldir
+configure:1280: /usr/bin/ccache  gcc -o conftest -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes   conftest.c -ldir   -lcrypt 1>&5
+configure:1273:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ char opendir();
+ ^
+configure:1275:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int main() {
+     ^
+/usr/bin/ld: cannot find -ldir
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 1269 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char opendir();
+
+int main() {
+opendir()
+; return 0; }
+configure:1347: checking for paths.h
+configure:1357: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1387: checking for netinet/in.h
+configure:1397: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1427: checking for sys/time.h
+configure:1437: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1467: checking for time.h
+configure:1477: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1507: checking for sys/types.h
+configure:1517: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1547: checking for sys/stat.h
+configure:1557: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1587: checking for sys/socket.h
+configure:1597: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1627: checking for asm/socket.h
+configure:1637: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1667: checking for wait.h
+configure:1677: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1707: checking for sys/wait.h
+configure:1717: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1747: checking for shadow.h
+configure:1757: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1787: checking for arpa/inet.h
+configure:1797: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1827: checking for syslog.h
+configure:1837: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1867: checking for crypt.h
+configure:1877: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1907: checking for utmp.h
+configure:1917: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1947: checking for sys/sendfile.h
+configure:1957: /usr/bin/ccache  gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1990: checking whether to enable pam
+configure:2059: checking whether to enable libz
+configure:2154: checking whether to enable debug

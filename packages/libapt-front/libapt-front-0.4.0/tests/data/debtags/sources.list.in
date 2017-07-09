@@ -1,0 +1,13 @@
+# Source locations to get tag database info
+
+# Regularly updated database on the web
+#tags http://people.debian.org/~enrico/tags/
+tags file://SOURCE
+
+
+# Tested database shipped with debtags
+#
+# It comes commented by default, since it's still not quite tested.
+# Uncomment it if you don't have net access.
+#
+#tags file:/usr/share/debtags/

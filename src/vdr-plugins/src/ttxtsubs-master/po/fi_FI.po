@@ -1,0 +1,89 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <Klaus.Schmidinger@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Rolf Ahrenberg <rahrenbe@cc.hut.fi>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ttxtsubs 0.2.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-03-10 13:30+0100\n"
+"PO-Revision-Date: 2013-03-14 21:54+0200\n"
+"Last-Translator: Ville Skyttä <ville.skytta@iki.fi>\n"
+"Language-Team: Finnish <vdr@linuxtv.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Teletext subtitles"
+msgstr "Tekstitys (Teksti-TV)"
+
+msgid "Hide teletext subtitles"
+msgstr "Piilota tekstitys (Teksti-TV)"
+
+msgid "Display teletext subtitles"
+msgstr "Näytä tekstitys (Teksti-TV)"
+
+msgid "deprecated"
+msgstr "käytöstä poistunut"
+
+msgid "Page Selection"
+msgstr "Tekstityssivun valinta"
+
+msgid "Display on/off"
+msgstr "aktivointi"
+
+msgid "4:3/Letterbox (deprecated)"
+msgstr "4:3/Letterbox (käytöstä poistunut)"
+
+msgid "Page Mode"
+msgstr "sivun valinta"
+
+msgid "Center"
+msgstr "Keskitetty"
+
+msgid "Left"
+msgstr "Vasen"
+
+msgid "Right"
+msgstr "Oikea"
+
+msgid "Display Subtitles"
+msgstr "Näytä tekstitykset"
+
+msgid "Main Menu Alternative"
+msgstr "Päävalikon toiminnot"
+
+msgid "Font Size (pixel)"
+msgstr "Kirjasintyypin koko (px)"
+
+msgid "Font OutlineWidth (pixel)"
+msgstr "Kirjasinreunuksen koko (px)"
+
+msgid "Subtitles alignment"
+msgstr "Tekstitysten keskitys"
+
+msgid "Language"
+msgstr "Tekstityskieli"
+
+msgid "Hearing Impaired"
+msgstr "kuulorajoitteisille"
+
+msgid "Subtitle Page Settings"
+msgstr "Tekstityssivun asetukset"
+
+msgid "Auto"
+msgstr "automaattinen"
+
+msgid "Manual"
+msgstr "manuaalinen"
+
+msgid "Disabled"
+msgstr "pois"
+
+msgid "Subtitle Mode"
+msgstr "Tekstitystapa"
+
+msgid "Manual Subtitle Page"
+msgstr "Asetettu tekstityssivu"

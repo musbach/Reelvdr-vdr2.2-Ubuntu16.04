@@ -1,0 +1,16 @@
+--- config.h	(revision 15426)
++++ config.h	(revision 15427)
+@@ -251,7 +251,13 @@
+   void StoreLanguages(const char *Name, int *Values);
+   bool ParseLanguages(const char *Value, int *Values);
+   bool Parse(const char *Name, const char *Value);
++#ifdef REELVDR
++public:
+   cSetupLine *Get(const char *Name, const char *Plugin = NULL);
++private:
++#else
++  cSetupLine *Get(const char *Name, const char *Plugin = NULL);
++#endif
+   void Store(const char *Name, const char *Value, const char *Plugin = NULL, bool AllowMultiple = false);
+   void Store(const char *Name, int Value, const char *Plugin = NULL);
+   void Store(const char *Name, double &Value, const char *Plugin = NULL);

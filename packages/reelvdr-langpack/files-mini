@@ -1,0 +1,364 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#
+#valid types:
+# script - for scripts, default 755, root.root
+# exe    - like script, but will be stripped on packaging
+# sexe   - setuid root executeable, 4755, root.root, strip
+# lib	 - library,     755, root.root, no strip
+# cfg    - config file, 644, root.root
+# bin    - binaries, i.e. firmware, 644, root.root
+# any other files will be installed "as they are", so be careful about permissions!
+#
+# src rel. to $(SRCDIR)	dest			type	owner	group
+
+### Catalan
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-femon.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-install.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-pin.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-setup.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/ca_ES/LC_MESSAGES/vdr.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr.mo
+### Czech
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-femon.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-install.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-pin.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-setup.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/cs_CZ/LC_MESSAGES/vdr.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr.mo
+### Dansk
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-arghdirector.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-bgprocess.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-epgsearch.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-extrecmenu.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-femon.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-femon.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-filebrowser.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-install.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-install.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-netcv.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-netcvupdate.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-osdteletext.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-pin.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-pin.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-premiereepg.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-setup.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-setup.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-sleeptimer.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-streamdev-client.mo
+# vdr-1.7/locale/da_DK/LC_MESSAGES/vdr.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-femon.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-install.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-pin.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-setup.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/de_DE/LC_MESSAGES/vdr.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-femon.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-install.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-pin.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-setup.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/el_GR/LC_MESSAGES/vdr.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-femon.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-install.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-pin.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-setup.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/es_ES/LC_MESSAGES/vdr.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr.mo
+### Eesti
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-arghdirector.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-bgprocess.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-epgsearch.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-extrecmenu.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-femon.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-femon.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-filebrowser.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-install.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-install.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-netcv.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-netcvupdate.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-osdteletext.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-pin.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-pin.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-premiereepg.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-setup.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-setup.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-sleeptimer.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-streamdev-client.mo
+# vdr-1.7/locale/et_EE/LC_MESSAGES/vdr.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr.mo
+### finnish / suomi
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-femon.mo		usr/share/locale/fi_FI/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-install.mo		usr/share/locale/fi_FI/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-netcv.mo		usr/share/locale/fi_FI/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-pin.mo		usr/share/locale/fi_FI/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-setup.mo		usr/share/locale/fi_FI/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/fi_FI/LC_MESSAGES/vdr.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr.mo
+### french
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-femon.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-install.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-pin.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-setup.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/fr_FR/LC_MESSAGES/vdr.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr.mo
+### Kroatian
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-arghdirector.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-bgprocess.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-epgsearch.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-extrecmenu.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-femon.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-femon.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-filebrowser.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-netcv.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-netcvupdate.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-osdteletext.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-pin.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-pin.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-premiereepg.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-setup.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-setup.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-sleeptimer.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-streamdev-client.mo
+# vdr-1.7/locale/hr_HR/LC_MESSAGES/vdr.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-femon.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-install.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-pin.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-setup.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/hu_HU/LC_MESSAGES/vdr.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-femon.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-install.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-pin.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-setup.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/it_IT/LC_MESSAGES/vdr.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-femon.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-install.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-pin.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-setup.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/nl_NL/LC_MESSAGES/vdr.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr.mo
+### Norsk
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-arghdirector.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-bgprocess.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-epgsearch.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-extrecmenu.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-femon.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-femon.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-filebrowser.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-install.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-install.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-netcv.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-netcvupdate.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-osdteletext.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-pin.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-pin.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-premiereepg.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-setup.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-setup.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-sleeptimer.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-streamdev-client.mo
+# vdr-1.7/locale/nn_NO/LC_MESSAGES/vdr.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-femon.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-install.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-pin.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-setup.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/pl_PL/LC_MESSAGES/vdr.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr.mo
+### Portuguese
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-arghdirector.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-bgprocess.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-epgsearch.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-extrecmenu.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-femon.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-femon.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-filebrowser.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-install.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-install.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-netcv.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-netcvupdate.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-osdteletext.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-pin.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-pin.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-premiereepg.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-setup.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-setup.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-sleeptimer.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-streamdev-client.mo
+# vdr-1.7/locale/pt_PT/LC_MESSAGES/vdr.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr.mo
+### Romanian
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-femon.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-install.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-pin.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-setup.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/ro_RO/LC_MESSAGES/vdr.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-femon.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-install.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-pin.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-setup.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/ru_RU/LC_MESSAGES/vdr.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr.mo
+### Slovanian
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-arghdirector.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-bgprocess.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-epgsearch.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-extrecmenu.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-femon.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-femon.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-filebrowser.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-install.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-install.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-netcv.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-netcvupdate.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-osdteletext.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-pin.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-pin.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-premiereepg.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-setup.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-setup.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-sleeptimer.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-streamdev-client.mo
+# vdr-1.7/locale/sl_SI/LC_MESSAGES/vdr.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-femon.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-install.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-pin.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-setup.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/sv_SE/LC_MESSAGES/vdr.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-arghdirector.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-arghdirector.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-bgprocess.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-bgprocess.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-epgsearch.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-epgsearch.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-extrecmenu.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-extrecmenu.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-femon.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-femon.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-filebrowser.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-filebrowser.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-install.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-install.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-netcv.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-netcv.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-netcvupdate.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-netcvupdate.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-osdteletext.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-osdteletext.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-pin.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-pin.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-premiereepg.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-premiereepg.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-setup.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-setup.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-sleeptimer.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-sleeptimer.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr-streamdev-client.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-streamdev-client.mo
+vdr-1.7/locale/tr_TR/LC_MESSAGES/vdr.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr.mo
+### Ukraine
+# vdr-1.7/locale/uk_UA/LC_MESSAGES/vdr.mo	usr/share/locale/uk_UA/LC_MESSAGES/vdr.mo
+### simplified chineese
+# vdr-1.7/locale/zh_CN/LC_MESSAGES/vdr.mo	usr/share/locale/zh_CN/LC_MESSAGES/vdr.mo

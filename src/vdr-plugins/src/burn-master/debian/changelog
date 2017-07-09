@@ -1,0 +1,731 @@
+vdr-plugin-burn (0.2.2-4yavdr0~precise) precise; urgency=medium
+
+  * forgot SUBLIBS at linker
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 08 Mar 2013 10:41:50 +0100
+
+vdr-plugin-burn (0.2.2-3yavdr1~precise) precise; urgency=medium
+
+  * correct version number in changelog
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 07 Mar 2013 15:05:34 +0100
+
+vdr-plugin-burn (0.2.2-3yavdr0~preciseubuntu1) precise; urgency=medium
+
+  * refactored Makefile to new style
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 07 Mar 2013 14:43:14 +0100
+
+vdr-plugin-burn (0.2.2-2yavdr0~precise) precise; urgency=medium
+
+  * set VDRDIR on build, Makefile is a mixture of old and new...
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 07 Mar 2013 12:32:58 +0100
+
+vdr-plugin-burn (0.2.2-1yavdr0~precise) precise; urgency=medium
+
+  * update patch (correct include to libsi)
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 07 Mar 2013 03:15:07 +0100
+
+vdr-plugin-burn (0.2.2-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 07 Mar 2013 01:31:58 +0100
+
+vdr-plugin-burn (0.2.0~final-8yavdr0~precise) precise; urgency=medium
+
+  * refactored vdr-1.7.33-patch
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 06 Mar 2013 20:18:56 +0100
+
+vdr-plugin-burn (0.2.0~final-7yavdr1~precise) precise; urgency=medium
+
+  * isofix2 patch
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Mon, 24 Dec 2012 11:49:23 +0100
+
+vdr-plugin-burn (0.2.0~final-6yavdr1~precise) precise; urgency=medium
+
+  * isofix patch 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sun, 23 Dec 2012 19:24:34 +0100
+
+vdr-plugin-burn (0.2.0~final-5yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:21:00 +0100
+
+vdr-plugin-burn (0.2.0~final-5yavdr0~precise) precise; urgency=medium
+
+  * added vdr-1.7.33-burn-0.2.0.patch
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 18:37:26 +0100
+
+vdr-plugin-burn (0.2.0~final-4yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:01:04 +0100
+
+vdr-plugin-burn (0.2.0~final-4yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:48:43 +0100
+
+vdr-plugin-burn (0.2.0~final-4yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 19:59:25 +0100
+
+vdr-plugin-burn (0.2.0~final-4yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:31:46 +0100
+
+vdr-plugin-burn (0.2.0~final-4yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:12:32 +0200
+
+vdr-plugin-burn (0.2.0~final-4yavdr0~precise) precise; urgency=high
+
+  * Added vdr-1.7.27-burn-0.2.0.patch (by firefly)
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 03 Apr 2012 18:32:02 +0200
+
+vdr-plugin-burn (0.2.0~final-3yavdr0~precise) precise; urgency=medium
+
+  * New upstream release
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 02 Jan 2012 16:57:33 +0100
+
+vdr-plugin-burn (0.2.0~beta7-2yavdr1~precise) precise; urgency=medium
+
+  * removed project-x patch
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 22 Oct 2011 08:28:28 +0200
+
+vdr-plugin-burn (0.2.0~beta7-1yavdr1~precise) precise; urgency=medium
+
+  * Build-depend on vdr-dev >= 1.7.21
+  * New upstream release
+  * Install burn/vdrburn-dvd.conf -> var/lib/vdr/plugins/burn/
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 10 Oct 2011 07:57:31 +0200
+
+vdr-plugin-burn (0.2.0~beta6-1yavdr1~precise) precise; urgency=medium
+
+  * New upstream release
+  * Standards-Version: 3.9.2
+  * Build-depend on vdr-dev >= 1.7.20
+  * Switched to debhelper 7 and dropped cdbs
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 27 Aug 2011 11:07:56 +0200
+
+vdr-plugin-burn (0.2.0~beta5-11yavdr1~precise) precise; urgency=medium
+
+  * Removed vdrsync depends
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 15 Jun 2011 13:41:35 +0200
+
+vdr-plugin-burn (0.2.0~beta5-10yavdr3~precise) precise; urgency=low
+
+  * new upstream release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 03 Apr 2011 21:22:19 +0200
+
+vdr-plugin-burn (0.2.0~beta3-7yavdr1) lucid; urgency=low
+
+  * project-x default 
+  * iso dir /srv/vdr/video.00
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 03 Jun 2010 16:41:48 +0200
+
+vdr-plugin-burn (0.2.0~beta3-4yavdr1) lucid; urgency=low
+
+  * added disable-hd.dpatch
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 22 May 2010 15:49:25 +0200
+
+vdr-plugin-burn (0.2.0~beta3-1yavdr1) lucid; urgency=low
+
+  * New upstream release
+  * fixed links vdrburn-dvd.sh + vdrburn-archive.sh	
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 10 May 2010 14:07:42 +0200
+
+vdr-plugin-burn (0.2.0~beta2-0yavdr1) lucid; urgency=low
+
+  * New upstream release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 06 Apr 2010 11:23:05 +0100
+
+vdr-plugin-burn (0.1.0~pre22-ff1-6ubuntu2) karmic; urgency=low
+
+  * changed patches (set-pathes-disabled-pxsup2dast) <-wont work with burn+vdr-1.7.9
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Oct 2009 08:50:56 +0200
+
+vdr-plugin-burn (0.1.0~pre22-ff1-2) experimental; urgency=low
+
+  [ Felix Geyer ]
+  * debian/pxsup2dast.c: Fix FTBFS on POSIX.1-2008 systems (glibc >= 2.10) by
+    renaming getline() to get_line()
+  * Use ttf-dejavu instead of ttf-bitstream-vera as it has been
+    removed from Ubuntu/karmic (LP: #434176) and Debian/Sid
+    - debian/control: Change dependencies
+    - debian/links: Symlink DejaVuSans.ttf instead of Vera.ttf
+
+  [ Tobias Grimm ]
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 03 Oct 2009 20:43:16 +0200
+
+vdr-plugin-burn (0.1.0~pre22-ff1-1) experimental; urgency=low
+
+  * New upstream release
+  * Removed 05_project_x.dpatch
+  * Removed 90_i18n-fix.dpatch
+  * Removed 91_trim-fix.dpatch
+  * Removed 92_requantfactor.dpatch
+  * Removed 93_burn-0.1.0-pre22_i18n-gettext.dpatch
+  * Removed 95_charset-vdr-1.5.3.dpatch
+  * Removed 96_gcc4.3-includes.dpatch
+  * Updated debian/copyright
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 07 Jul 2009 22:02:55 +0200
+
+vdr-plugin-burn (0.1.0~pre21-30) experimental; urgency=low
+
+  * Updated pxsup2dast.c
+  * Added ${misc:Depends}
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 17 May 2009 16:01:02 +0200
+
+vdr-plugin-burn (0.1.0~pre21-29) experimental; urgency=low
+
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+  * Added 05_project_x.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 25 Jul 2008 15:52:47 +0200
+
+vdr-plugin-burn (0.1.0~pre21-28) experimental; urgency=low
+
+  * Now really use vdr-groups.sh to add vdr to the group 'cdrom'
+
+ -- Tobias Grimm <tg@e-tobi.net>  Wed, 11 Jun 2008 19:20:16 +0200
+
+vdr-plugin-burn (0.1.0~pre21-27) experimental; urgency=low
+
+  * Added 96_gcc4.3-includes.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue, 10 Jun 2008 20:13:06 +0200
+
+vdr-plugin-burn (0.1.0~pre21-26) experimental; urgency=low
+
+  * Install groups file to /usr/share/vdr/groups.d to make vdr a member of the
+    group 'cdrom', so the plugin has access to the CD or DVD writer
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 09 Jun 2008 22:43:06 +0200
+
+vdr-plugin-burn (0.1.0~pre21-25) experimental; urgency=low
+
+  * Depend on genisoimage insteade of the deprecated mkisofs
+  * Added 04_genisoimage.dpatch
+  * Depend on project-x instead of projectx (the projectx package has been
+    renamed to match the package in Ubuntu
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 17 May 2008 21:36:37 +0200
+
+vdr-plugin-burn (0.1.0~pre21-24) experimental; urgency=low
+
+  * Added 95_charset-vdr-1.5.3.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 11 May 2008 14:53:25 +0200
+
+vdr-plugin-burn (0.1.0~pre21-23) experimental; urgency=low
+
+  * Added 93_burn-0.1.0-pre22_i18n-gettext.dpatch (Thx to randy at vdrportal.de)
+  * Added 94_burnfr_FR.dpatch (Thx to pat at vdrportal.de)
+  * Switched Build-System to cdbs, Build-Depend on cdbs
+  * Added Homepage field to debian/control
+  * Bumped Standards-Version to 3.7.3
+  * Updated debian/copyright to our new format
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 29 Mar 2008 20:26:52 +0100
+
+vdr-plugin-burn (0.1.0~pre21-22) experimental; urgency=low
+
+  * Build-Depend on vdr-dev (>= 1.6.0)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 24 Mar 2008 20:14:04 +0100
+
+vdr-plugin-burn (0.1.0~pre21-21) experimental; urgency=low
+
+  * Force rebuild for vdr 1.5.15
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 18 Feb 2008 21:32:23 +0100
+
+vdr-plugin-burn (0.1.0~pre21-20) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.13
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 16 Jan 2008 10:31:43 +0100
+
+vdr-plugin-burn (0.1.0~pre21-19) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.12
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 20 Nov 2007 23:46:37 +0100
+
+vdr-plugin-burn (0.1.0~pre21-18) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.11
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  6 Nov 2007 23:34:28 +0100
+
+vdr-plugin-burn (0.1.0~pre21-17) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:51:08 +0200
+
+vdr-plugin-burn (0.1.0~pre21-16) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.9
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 28 Aug 2007 01:01:18 +0200
+
+vdr-plugin-burn (0.1.0~pre21-15) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:09:18 +0200
+
+vdr-plugin-burn (0.1.0~pre21-14) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:30 +0200
+
+vdr-plugin-burn (0.1.0~pre21-13) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.5
+  * Build-Depend on vdr-dev (>= 1.4.7-2)
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 27 Jun 2007 23:02:53 +0200
+
+vdr-plugin-burn (0.1.0~pre21-12) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:00:57 +0200
+
+vdr-plugin-burn (0.1.0~pre21-11) unstable; urgency=low
+
+  * Updated pxsup2dast.c
+
+ -- Tobias Grimm <tg@e-tobi.net>  Thu,  5 Apr 2007 23:56:05 +0200
+
+vdr-plugin-burn (0.1.0~pre21-10) unstable; urgency=low
+
+  * Added 92_requantfactor.dpatch
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 11 Mar 2007 23:15:13 +0100
+
+vdr-plugin-burn (0.1.0~pre21-9) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.1
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:28 +0100
+
+vdr-plugin-burn (0.1.0~pre21-8) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.0 with fixed detection of *.vdr files
+  * Build-Depend on vdr-dev (>= 1.4.5-1ctvdr2)
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 25 Jan 2007 02:01:56 +0100
+
+vdr-plugin-burn (0.1.0~pre21-7) unstable; urgency=low
+
+  [ Thomas Günther ]
+  * Replaced VDRdevel adaptions in debian/rules with make-special-vdr
+  * Adapted call of dependencies.sh and patchlevel.sh to the new location
+    in /usr/share/vdr-dev/
+
+  [ Tobias Grimm ]
+  * Build-Depend on vdr-dev (>=1.4.5-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Jan 2007 19:07:10 +0100
+
+vdr-plugin-burn (0.1.0~pre21-6) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.4-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  5 Nov 2006 11:45:37 +0100
+
+vdr-plugin-burn (0.1.0~pre21-5) unstable; urgency=low
+
+  * Added 91_trim-fix.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue, 31 Oct 2006 17:01:47 +0100
+
+vdr-plugin-burn (0.1.0~pre21-4) unstable; urgency=low
+
+  * Added 90_i18n-fix.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue, 24 Oct 2006 01:07:24 +0200
+
+vdr-plugin-burn (0.1.0~pre21-3) unstable; urgency=low
+
+  * Conflicts: vdr-burnbackgrounds (<= 0.0.1-3)
+  * Build-Depend and Depend on sharutils
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  1 Oct 2006 00:08:01 +0200
+
+vdr-plugin-burn (0.1.0~pre21-2) unstable; urgency=low
+
+  * Added pxsup2dast.c from the m2vmp2cut project
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 30 Sep 2006 22:45:40 +0200
+
+vdr-plugin-burn (0.1.0~pre21-1) unstable; urgency=low
+
+  * New upstream release
+  * Build-Depend on vdr-dev (>=1.4.3-1)
+  * Updated 01_burn-set-pathes.dpatch
+  * Updated 02_projectx.dpatch
+  * Removed build dependencies to libimlib2-dev and libcdio-dev
+  * Added build dependencies to libgd2-noxpm-dev (>= 2.0.33) |
+    libgd2-xpm-dev (>= 2.0.33) and libboost-dev (>= 1.32.0)
+  * Added 03_default-requantizer.dpatch to make tcrequant the default
+    requantizer
+  * Depend on ttf-bitstream-vera
+  * Added capability to grab a background image
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 30 Sep 2006 17:10:11 +0200
+
+vdr-plugin-burn (0.0.009+0.1pre20-2) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.2-1)
+  * Bumped Standards-Version to 3.7.2
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 27 Aug 2006 14:39:27 +0200
+
+vdr-plugin-burn (0.0.009+0.1pre20-1) unstable; urgency=low
+
+  [ Michael Mauksch ]
+  * New upstream pre-release
+  * Removed debian/reccmds.burn.conf
+  * Removed 01_ppmtoy4m.dpatch
+  * Removed 03_setup.conf-path.dpatch
+  * Removed 90_APIVERSION.dpatch
+  * Removed 90_burn-1.3.47.dpatch
+
+  [ Thomas Günther ]
+  * Added 01_burn-set-pathes.dpatch
+  * Removed DVBDIR from debian/rules
+  * Updated dependencies in debian/control
+
+  [ Tobias Grimm ]
+  * Added 02_projectx.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 23 Jul 2006 19:21:41 +0200
+
+vdr-plugin-burn (0.0.009-13) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.1-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Fri, 16 Jun 2006 21:27:05 +0200
+
+vdr-plugin-burn (0.0.009-12) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.0-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  3 May 2006 23:05:44 +0200
+
+vdr-plugin-burn (0.0.009-11) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.48-1)
+    - Added 90_APIVERSION.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 24 Apr 2006 22:08:29 +0200
+
+vdr-plugin-burn (0.0.009-10) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - Added 90_burn-1.3.47.dpatch
+    - Removed S50.vdr-plugin-burn
+    - Build-Depend on vdr-dev (>= 1.3.47-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 19 Apr 2006 02:25:00 +0200
+
+vdr-plugin-burn (0.0.009-9) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.46-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 12 Apr 2006 22:14:01 +0200
+
+vdr-plugin-burn (0.0.009-8) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.45-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 27 Mar 2006 21:06:44 +0200
+
+vdr-plugin-burn (0.0.009-7) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.41-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 Jan 2006 01:40:46 +0100
+
+vdr-plugin-burn (0.0.009-6) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.40-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 Jan 2006 01:36:38 +0100
+
+vdr-plugin-burn (0.0.009-5) unstable; urgency=low
+
+  * Now really installing shutdown hook
+
+ -- Tobias Grimm <tg@e-tobi.net>  Wed,  4 Jan 2006 19:19:53 +0100
+
+vdr-plugin-burn (0.0.009-4) unstable; urgency=low
+
+  * Depend on mjpegtools >= 1.8.0 and fix call to ppmtoy4m in vdrburn.sh
+    (Fixes bug reported by Stefan Wagner)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon,  2 Jan 2006 00:21:37 +0100
+
+vdr-plugin-burn (0.0.009-3) unstable; urgency=low
+
+  * Added shutdown hook
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  1 Jan 2006 23:47:22 +0100
+
+vdr-plugin-burn (0.0.009-2) unstable; urgency=low
+
+  * Build-Depend on vdr (>=1.3.37-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat,  3 Dec 2005 20:56:22 +0100
+
+vdr-plugin-burn (0.0.009-1) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - New upstream release
+    - Removed 01_Makefile-fPIC-fix.dpatch
+    - Removed 04_revert-defaults.dpatch
+    - Removed 05_mkdir-isodir.dpatch
+    - Removed 06_script-path.dpatch
+    - Removed 91_compatibility.dpatch
+    - Install vdrburnscript.conf into /etc/vdr/plugins/burn/
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 23 Nov 2005 16:12:44 +0100
+
+vdr-plugin-burn (0.0.6k-1) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - New upstream release
+    - Removed 04_burn-0.0.6i-requant-fix.dpatch
+    - Removed 05_vdrburn.sh-factor.dpatch
+    - Removed 06_chapters.dpatch
+    - Added 91_compatibility.dpatch
+    - Added 04_revert-defaults.dpatch
+    - Added 05_mkdir-isodir.dpatch
+    - Added 06_script-path.dpatch
+    - Added script option to plugin.burn.conf
+    - Removed 02_vdrburn.sh-path.dpatch
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 10 Nov 2005 00:36:49 +0100
+
+vdr-plugin-burn (0.0.6i-2) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - Added 06_chapters.dpatch (Thx to dmh at vdrportal.de)
+
+ -- Thomas Günther <tom@toms-cafe.de>  Mon, 31 Oct 2005 00:50:21 +0100
+
+vdr-plugin-burn (0.0.6i-1) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - New upstream release
+    - Adapted 02_vdrburn.sh-path.dpatch
+    - Added 04_burn-0.0.6i-requant-fix.dpatch
+    - Added dependency to y4mscaler
+    - Added conflict to vdr-burnbackgrounds < 0.0.1-3
+    - Adapted debian/install to vdrdevel-plugin-burn
+
+ -- Tobias Grimm <tg@e-tobi.net>  Wed, 26 Oct 2005 20:39:06 +0200
+
+vdr-plugin-burn (0.0.6h-2) unstable; urgency=low
+
+  * Build-Depend on vdr (>=1.3.33-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  2 Oct 2005 10:31:36 +0200
+
+vdr-plugin-burn (0.0.6h-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.32-1)
+    - New upstream release
+    - Adapted fPIC patch
+  * Thomas Günther <tom@toms-cafe.de>
+    - Updated debian/watch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Wed, 14 Sep 2005 19:17:57 +0200
+
+vdr-plugin-burn (0.0.6f-8) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.31-1)
+  * Conflict with vdr (>=1.3.31.99)
+  * Use dependencies.sh from vdr-dev to set vdr dependencies and
+    conflicts
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue, 30 Aug 2005 23:06:41 +0200
+
+vdr-plugin-burn (0.0.6f-7) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.30-1)
+  * Conflict with vdr (>=1.3.30.99)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 22 Aug 2005 17:26:05 +0200
+
+vdr-plugin-burn (0.0.6f-6) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.29-1)
+  * Conflict with vdr (>=1.3.30)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 15 Aug 2005 21:08:23 +0200
+
+vdr-plugin-burn (0.0.6f-5) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.28-1)
+  * Conflict with vdr (>=1.3.29)
+  * Bumped Standards-Version to 3.6.2
+  * Avoid installing CVS dir from upstream source
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon,  8 Aug 2005 20:24:44 +0200
+
+vdr-plugin-burn (0.0.6f-4) unstable; urgency=low
+
+  * Remove background link on purge
+  * Set owner of background link directory to vdr:vdr
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 25 Jun 2005 21:49:29 +0200
+
+vdr-plugin-burn (0.0.6f-3) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.27-1)
+  * Conflict with vdr (>=1.3.28)
+  * Don't depend on vdr-burnbackrounds anymore - just suggest it
+  * Install default backround, if no background file exists
+  * Added patch for vdrburn.sh to convert a comma in the factor to a
+    decimal point, because tcrequant doesn't read localized floats
+
+ -- Tobias Grimm <tg@e-tobi.net>  Thu, 23 Jun 2005 01:16:23 +0200
+
+vdr-plugin-burn (0.0.6f-2) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.26-1)
+  * Conflict with vdr (>=1.3.27)
+  * Depend on vdrsync (>= 0.1.2.2dev2+050322)
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun, 12 Jun 2005 18:42:43 +0200
+
+vdr-plugin-burn (0.0.6f-1) experimental; urgency=low
+
+  * New upstream release
+    - Updated 02_vdrburn.sh-path.dpatch
+    - Updated 03_setup.conf-path.dpatch
+  * Depend/Build-Depend on vdr (>=1.3.25-1)
+  * Conflict with vdr (>=1.3.26)
+  * Added 04_vdr_1.3.25-fix.dpatch
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Tue, 31 May 2005 17:13:43 +0200
+
+vdr-plugin-burn (0.0.6e-2) experimental; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.24-1)
+  * Conflict with vdr (>=1.3.25)
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Mon,  9 May 2005 19:11:25 +0200
+
+vdr-plugin-burn (0.0.6e-1) experimental; urgency=low
+  
+  * New upstream release
+  * Depend/Build-Depend on vdr (>=1.3.23-1)
+  * Conflict with vdr (>=1.3.24)
+  * Disabled 01_burn_bigpatch
+  * Updated debian/watch
+  * Depend on vdrsync (>=0.1.2.2dev2+0.1.3pre1)
+  * Install burnmark.sh.example as burnmark.sh instead of our 
+    self-build one
+  * Added 02_vdrburn.sh-path.dpatch  to be able to change the 
+    path of the vdrburn.sh script
+  * Added 03_setup.conf-path.dpatch to change the path to the 
+    setup.conf of vdr in the shell scripts
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun, 10 Apr 2005 15:34:34 +0200
+
+vdr-plugin-burn (0.0.5-5) unstable; urgency=low
+
+  * Updated 95_vdrdevel.dpatch to version 0.0.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 30 Jan 2005 23:01:08 +0100
+
+vdrdevel-plugin-burn (0.0.5-4) unstable; urgency=low
+
+  * burn_bigpatch: minimized and changed requant to tcrequant
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 30 Jan 2005 22:53:30 +0100
+
+vdrdevel-plugin-burn (0.0.5-3) unstable; urgency=low
+
+  * vdr -> vdrdevel
+  * Added burn_bigpatch patch (nice-patch + moronimo-mplex-patch + VDR>=1.3.18)
+  * Added vdrdevel-backgrounds to Depends
+
+ -- Andreas Wissel <dunar@darkmages.de>  Mon, 24 Jan 2005 19:19:45 +0100
+
+vdr-plugin-burn (0.0.5-3) unstable; urgency=low
+
+  * Fixed dependencies
+  * Translated package description
+  * Removed vdrsync - package will now depend on vdrsync
+  * Shortened debian/copyright
+  * Using "standard" rules-File, installing HISTORY as changelog,
+    using debian/compat now
+  * Using -fPIC to fix potential FTBFS
+  * Removed wrong comments from reccmds.burn.conf
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 08 Jan 2005 23:00:00 +0100
+
+vdr-plugin-burn (0.0.5-2) unstable; urgency=low
+
+  * Andreas Wissel <dunar@darkmages.de>
+    - fixed wrong path in install 
+
+ -- Andreas Wissel <dunar@darkmages.de>  Mon, 03 Jan 2005 12:18:03 +0100
+
+vdr-plugin-burn (0.0.5-1) unstable; urgency=low
+
+  * Andreas Wissel <dunar@darkmages.de>
+    - initial debian package
+
+ -- Andreas Wissel <dunar@darkmages.de>  Sun, 02 Jan 2005 15:31:17 +0100

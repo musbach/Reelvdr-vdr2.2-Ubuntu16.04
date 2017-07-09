@@ -1,0 +1,67 @@
+Index: submenu.c
+===================================================================
+--- submenu.c	(revision 15403)
++++ submenu.c	(revision 15404)
+@@ -467,7 +467,9 @@
+                  ok = false;
+                  }
+               } while (ok == true && (root = root->NextSiblingElement()) != NULL);
+-           addMissingPlugins();
++#ifndef REELVDR
++            addMissingPlugins();
++#endif /* REELVDR */
+            removeUndefinedNodes();
+            }
+         }
+Index: submenu.h
+===================================================================
+--- submenu.h	(revision 15403)
++++ submenu.h	(revision 15404)
+@@ -54,7 +54,11 @@
+ //################################################################################
+ class cSubMenuNode : public cListObject {
+ public:
+-  enum Type { UNDEFINED, SYSTEM, COMMAND, THREAD, PLUGIN, MENU };
++#ifdef REELVDR
++  enum Type { UNDEFINED, SYSTEM, COMMAND, THREAD, PLUGIN, MENU, INCLUDE };
++#else
++   enum Type { UNDEFINED, SYSTEM, COMMAND, THREAD, PLUGIN, MENU };
++#endif /* REELVDR */
+   cSubMenuNode(TiXmlElement *xml, int level, cSubMenuNodes *currentMenu, cSubMenuNodes *parentMenu);
+   cSubMenuNode(cSubMenuNodes *currentMenu, cSubMenuNodes *parentMenu);
+   ~cSubMenuNode();
+@@ -62,7 +66,21 @@
+   static cSubMenuNode::Type IsType(const char *name);
+   void  SetType(const char *name);
+   void  SetType(enum Type type);
++#ifdef REELVDR
++  int SubMenuSize(){return _subMenus.Count();}
++  bool IncludeXml(const char *includeXML);
++  void SetHelp(const char *Help);
++  const char *GetHelp() {return _help;};
++  void SetInfo(const char *Info);
++  const char *GetInfo() {return _info;};
++  void SetIconNumber(const char* iconNumber);
++  const char *GetIconNumber() {return _iconNumber;};
++  void SetSetupLink(const char*name);
++  const char *GetSetupLink() {return _setupLink;};
++  void  SetPlugin(const char *link=NULL);
++#else
+   void  SetPlugin();
++#endif /* REELVDR */
+   cSubMenuNode::Type GetType();
+   const char *GetTypeAsString();
+   void SetCommand(const char *command);
+@@ -97,6 +115,12 @@
+   const char *_command;
+   bool _commandConfirm;
+   const char *_title;
++#ifdef REELVDR
++  const char *_help;
++  const char *_info;
++  const char *_iconNumber;
++  char *_setupLink;
++#endif /* REELVDR */
+   cSubMenuNodes _subMenus;
+   cSubMenuNodes *_parentMenu;
+   cSubMenuNodes *_currentMenu;

@@ -1,0 +1,13 @@
+Package: dvbloop
+Version: 1.0.6
+Section: reel
+Priority: important
+Architecture: armel
+Depends: dvbloop-2.6.18, module-init-tools
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: dvbloop
+Description: Generic DVB loop driver
+ Needed for inserting a dvb stream into the kernel that doesn't
+ come from a real dvb card
+ .
+ This package will always depend on the latest dvbloop modules available for the reelbox kernel.

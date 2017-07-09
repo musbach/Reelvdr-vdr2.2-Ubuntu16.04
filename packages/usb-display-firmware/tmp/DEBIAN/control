@@ -1,0 +1,11 @@
+Package: usb-display-firmware
+Version: 20110730.1-20
+Section: reel
+Priority: optional
+Architecture: all
+Depends: fxload
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: usb-display-firmware
+Installed-Size: 101K
+Description: Latest firmware for the Reel USB OLED display
+Description-de: Aktuellste firmware für das Reel USB OLED Display

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386
+END
+vp3dsp_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/vp3dsp_mmx.c
+END
+mpegvideo_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/mpegvideo_mmx.c
+END
+motion_est_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/motion_est_mmx.c
+END
+fdct_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/fdct_mmx.c
+END
+dsputil_h264_template_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/dsputil_h264_template_mmx.c
+END
+idct_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/idct_mmx.c
+END
+dsputil_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/dsputil_mmx.c
+END
+mmx.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/mmx.h
+END
+dsputil_mmx_avg.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/dsputil_mmx_avg.h
+END
+h264dsp_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/h264dsp_mmx.c
+END
+vp3dsp_sse2.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/vp3dsp_sse2.c
+END
+dsputil_mmx_rnd.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/dsputil_mmx_rnd.h
+END
+simple_idct_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/simple_idct_mmx.c
+END
+cputest.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/cputest.c
+END
+fft_sse.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/fft_sse.c
+END
+mpegvideo_mmx_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/i386/mpegvideo_mmx_template.c
+END

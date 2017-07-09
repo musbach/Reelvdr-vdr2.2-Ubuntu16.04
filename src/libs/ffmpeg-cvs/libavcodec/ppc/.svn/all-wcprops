@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc
+END
+dsputil_h264_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/dsputil_h264_altivec.c
+END
+gcc_fixes.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/gcc_fixes.h
+END
+dsputil_altivec.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/dsputil_altivec.h
+END
+mpegvideo_ppc.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/mpegvideo_ppc.c
+END
+dsputil_ppc.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/dsputil_ppc.c
+END
+fft_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/fft_altivec.c
+END
+mpegvideo_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/mpegvideo_altivec.c
+END
+fdct_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/fdct_altivec.c
+END
+dsputil_h264_template_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/dsputil_h264_template_altivec.c
+END
+idct_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/idct_altivec.c
+END
+dsputil_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/dsputil_altivec.c
+END
+dsputil_ppc.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/dsputil_ppc.h
+END
+gmc_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ppc/gmc_altivec.c
+END

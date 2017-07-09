@@ -1,0 +1,27 @@
+To create a empty database und create a mysql-useraccount, change on 
+file create-database.sql on all placed username 'xxv' and password 'xxv' 
+to your our values.
+
+$ cat ./contrib/create-database.sql | mysql -u root
+
+Adjust your mysql-username and password also on xxvd.cfg 
+[General]
+DSN=DBI:mysql:database=xxv;host=localhost;port=3306
+PWD=xxv
+USR=xxv
+
+
+--------------------------------------------------------------------------------
+
+To upgrade database from prior release from xxv call 'update-xxv'
+It's backup your own data like Autotimer or XXV-Useraccount.
+
+$ ./contrib/update-xxv
+
+
+--------------------------------------------------------------------------------
+
+To migrate autotimer from vdradmin to xxv call 'at-vdradmin2xxv.pl'
+It's could use to export some data from xxv autotimer to vdradmin.
+
+$ ./contrib/at-vdradmin2xxv.pl /path/vdradmind.at

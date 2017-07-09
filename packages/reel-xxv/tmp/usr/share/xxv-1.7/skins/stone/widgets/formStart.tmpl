@@ -1,0 +1,16 @@
+<!-- FormStart -->
+<?% IF ! global.bodyinc.defined; global.bodyinc = 1 %?>
+<body class="hilfsframed">
+<div>
+<?% END %?>
+<div id="TOOLTIP"></div>
+<form method="post" action="?cmd=<?% cgi.param('cmd') %?>">
+  <input type="hidden" name="data" value="<?% cgi.param('data') %?>" />
+  <input type="hidden" name="__action" value="save" />
+  <table class="editortable" summary="">
+    <tr><td class="editorhead"><div class="editorhead"><?% data %?></div><?% INCLUDE shutter.inc %?></td></tr>
+    <tr>
+        <td class="editortext">
+                <table summary="">
+                <tr><td width="200" height="1"></td><td width="400"></td></tr>
+<?% global.widgetcount = 0 %?>

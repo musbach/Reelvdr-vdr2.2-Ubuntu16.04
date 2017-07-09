@@ -1,0 +1,41 @@
+Index: mainmenu.cpp
+===================================================================
+--- mainmenu.cpp	(revision 47)
++++ mainmenu.cpp	(working copy)
+@@ -710,6 +710,7 @@
+         result = true;
+     }
+ 
++#if APIVERSNUM <= 10721 
+     // Editing control:
+     bool CutterActive = cCutter::Active();
+     if (CutterActive && !cancelEditingItem)
+@@ -723,7 +724,10 @@
+         cancelEditingItem = NULL;
+         result = true;
+     }
+-
++#else
++  Skins.QueueMessage(mtError, tr("setup-Plugin: vdr 2.x Cutter is not static any more. Need to be fixed!"));
++  dsyslog("setup-Plugin: vdr 2.x Cutter is not static any more. Need to be fixed!");
++#endif
+     // Record control:
+     if (1 || cRecordControls::StateChanged(recordControlsState))
+     {                           // balaji: this condition does not redraw recordings-items on mainmenu when a submenu is entered into and returned back to main-menu via kExit
+@@ -928,11 +932,15 @@
+         }
+         break;
+     case osCancelEdit:
+-        if (Interface->Confirm(tr("Cancel editing?")))
++#if APIVERSNUM <= 10721 
+         {
+             cCutter::Stop();
+             return osEnd;
+         }
++#else
++  Skins.QueueMessage(mtError, tr("setup-Plugin: vdr 2.x Cutter is not static any more. Need to be fixed!"));
++  dsyslog("setup-Plugin: vdr 2.x Cutter is not static any more. Need to be fixed!");
++#endif        if (Interface->Confirm(tr("Cancel editing?")))
+         break;
+     case osPlugin:
+         {

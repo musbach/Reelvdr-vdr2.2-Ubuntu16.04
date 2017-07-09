@@ -1,0 +1,106 @@
+ttxtsubs.o: ttxtsubs.c ../../../vdr/../vdr/plugin.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/player.h \
+ vdrttxtsubshooks.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/tools.h \
+ ttxtsubsglobals.h ttxtsubsdisplayer.h ../../../vdr/../vdr/ringbuffer.h \
+ utils.h ttxtsubspagemenu.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/channels.h ttxtsubschannelsettings.h \
+ ttxtsubslivereceiver.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/remux.h
+ttxtsubsdisplayer.o: ttxtsubsdisplayer.c ttxtsubsdisplayer.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/tools.h ttxtsubsdisplay.h teletext.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/font.h utils.h ttxtsubsglobals.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h
+ttxtsubsdisplay.o: ttxtsubsdisplay.c ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/tools.h \
+ ttxtsubsglobals.h ttxtsubsdisplay.h teletext.h utils.h
+teletext.o: teletext.c ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h teletext.h teletext-tables.h teletext-chars.h \
+ utils.h
+ttxtsubspagemenu.o: ttxtsubspagemenu.c ttxtsubschannelsettings.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/device.h ttxtsubspagemenu.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/osd.h ttxtsubsglobals.h
+ttxtsubschannelsettings.o: ttxtsubschannelsettings.c \
+ ttxtsubschannelsettings.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/plugin.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h
+ttxtsubslivereceiver.o: ttxtsubslivereceiver.c \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/remux.h \
+ ttxtsubslivereceiver.h ../../../vdr/../vdr/receiver.h \
+ ../../../vdr/../vdr/device.h vdrttxtsubshooks.h

@@ -1,0 +1,1 @@
+../stone_flat/Makefile

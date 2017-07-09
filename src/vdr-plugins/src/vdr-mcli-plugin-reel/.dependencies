@@ -1,0 +1,106 @@
+mcli.o: mcli.c filter.h packetbuffer.h device.h mcliheaders.h \
+ mcast/common/defs.h /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h mcast/common/version.h \
+ mcast/common/list.h mcast/common/satlists.h mcast/common/mcast.h \
+ mcast/common/recv_ccpp.h mcast/client/recv_tv.h \
+ mcast/client/mld_reporter.h mcast/client/tca_handler.h \
+ mcast/client/tra_handler.h mcast/common/tools.h \
+ mcast/client/api_server.h mcast/client/mmi_handler.h cam_menu.h \
+ mcli_service.h mcli.h
+cam_menu.o: cam_menu.c cam_menu.h filter.h packetbuffer.h device.h \
+ mcliheaders.h mcast/common/defs.h /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h mcast/common/version.h \
+ mcast/common/list.h mcast/common/satlists.h mcast/common/mcast.h \
+ mcast/common/recv_ccpp.h mcast/client/recv_tv.h \
+ mcast/client/mld_reporter.h mcast/client/tca_handler.h \
+ mcast/client/tra_handler.h mcast/common/tools.h \
+ mcast/client/api_server.h mcast/client/mmi_handler.h
+device.o: device.c filter.h packetbuffer.h device.h mcliheaders.h \
+ mcast/common/defs.h /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h mcast/common/version.h \
+ mcast/common/list.h mcast/common/satlists.h mcast/common/mcast.h \
+ mcast/common/recv_ccpp.h mcast/client/recv_tv.h \
+ mcast/client/mld_reporter.h mcast/client/tca_handler.h \
+ mcast/client/tra_handler.h mcast/common/tools.h \
+ mcast/client/api_server.h mcast/client/mmi_handler.h mcli.h cam_menu.h
+filter.o: filter.c filter.h packetbuffer.h device.h mcliheaders.h \
+ mcast/common/defs.h /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xmlwriter.h \
+ /usr/include/libxml2/libxml/xpath.h mcast/common/version.h \
+ mcast/common/list.h mcast/common/satlists.h mcast/common/mcast.h \
+ mcast/common/recv_ccpp.h mcast/client/recv_tv.h \
+ mcast/client/mld_reporter.h mcast/client/tca_handler.h \
+ mcast/client/tra_handler.h mcast/common/tools.h \
+ mcast/client/api_server.h mcast/client/mmi_handler.h
+packetbuffer.o: packetbuffer.c packetbuffer.h

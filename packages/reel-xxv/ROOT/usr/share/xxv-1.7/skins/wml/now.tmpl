@@ -1,0 +1,53 @@
+<?% BLOCK item %?>
+    <?% "<i>" IF param.timers.${id} %?>
+    <?% IF global.ShowCardTitle %?>
+    <a href="?cmd=p&amp;data=<?% channel %?>">
+        <?% sender | truncate(20) | html %?>
+    </a><br />
+    <?% END %?>
+    <?% start %?> - <?% stop %?><br />
+    <b><?% title | truncate(20) | html %?></b><?% IF subtitle %?><br /><?% subtitle | truncate(20) | html%?><?% END %?>
+    <br />
+    <?% IF global.ShowDescription %?>
+    <?% desc | truncate(50) | html %?><br />
+    <?% END %?>
+    <?% "</i>" IF param.timers.${id} %?>
+        <a href="?cmd=s&amp;data=<?% title | uri | html | replace ('~','%7E') %?>"><img src="images/find.wbm" alt="<?% gettext("Search") %?>" /></a>
+    <?% IF param.timers.${id} && allow('tedit') %?>
+        <a href="?cmd=te&amp;data=<?% param.timers.${id}.Id %?>"><img src="images/onoff.wbm" alt="<?% gettext("Edit this timer") %?>" /></a>
+    <?% ELSIF allow('tnew') %?>
+        <a href="?cmd=tn&amp;data=<?% id %?>"><img src="images/record.wbm" alt="<?% gettext("To record") %?>" /></a>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% skip = cgi.param('offset') || 1 %?>
+<?% offset = skip + global.MaxCards %?>
+<?% IF data.size > skip %?>
+<?% fields = data.shift %?>
+   	<?% FOREACH zeile IN data %?>
+        <?% IF loop.count < skip;NEXT;END %?>
+        <?% title=zeile.1;subtitle=zeile.2;sender=zeile.3;
+            channel=zeile.4;group=zeile.5;start=zeile.6;stop=zeile.7;
+            desc=zeile.8;duration=zeile.9;
+            timerid=zeile.10;recording=zeile.11;running=zeile.12;
+            pdc=zeile.13; %?>
+    	<?% IF id.defined %?>
+        <a href="#n<?% loop.count %?>"><img src="images/forward.wbm" alt="<?% gettext("Forward") %?>" /></a>
+        <a href="#index"><img src="images/home.wbm" alt="<?% gettext("Menu") %?>" /></a>
+    </p>
+</card>
+        <?% END %?>
+<card id="<?% IF loop.count > 1 %?>n<?% loop.count;ELSE %?>first<?% END %?>" title="<?% sender | truncate(10)| html %?>">
+        <?% id=zeile.0 %?>
+    <p>
+		<?% PROCESS item %?>
+        <?% count =  loop.count + 1 %?>
+        <?% IF count >= offset;LAST;END %?>
+    <?% END %?>
+    <?% IF count < data.size %?>
+        <a href="?cmd=<?% cgi.param('cmd') %?>&amp;offset=<?% offset %?>#n<?% offset %?>"><img src="images/forward.wbm" alt="<?% gettext("Forward") %?>" /></a>
+    <?% END %?>
+        <a href="#index"><img src="images/home.wbm" alt="<?% gettext("Menu") %?>" /></a>
+    </p>
+</card>
+<?% END %?>

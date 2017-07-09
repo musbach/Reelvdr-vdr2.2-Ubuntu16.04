@@ -1,0 +1,9 @@
+Package: reelvdr-output-ice
+Version: 1.0.19501
+Section: reel-ice
+Priority: required
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-output-ice
+Description: The output plugin for the Reel ICE platform
+Description-de: Ausgabegerät für die Reel ICE Platform

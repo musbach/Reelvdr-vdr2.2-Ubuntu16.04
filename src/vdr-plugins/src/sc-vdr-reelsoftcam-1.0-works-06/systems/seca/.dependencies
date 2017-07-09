@@ -1,0 +1,5 @@
+seca.o: seca.c ../../system-common.h ../../data.h \
+ ../../../../../vdr/../vdr/thread.h ../../../../../vdr/../vdr/tools.h \
+ ../../misc.h ../../system.h ../../data.h ../../helper.h ../../crypto.h \
+ ../../crypto-bn.h ../../support/idea.h ../../parse.h ../../misc.h \
+ ../../log-sys.h ../../log.h ../../log-core.h ../../version.h

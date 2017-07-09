@@ -1,0 +1,22 @@
+<?% ######################################################################## %?>
+<card id="index" title="XXV <?% gettext("Menu") %?>">
+<p><img src="images/xxv.wbm" width="32" height="32" alt="xxv" /></p>
+<p>
+<?% IF allow('n') %?>
+<a title="<?% gettext("Running now") %?>" href="?cmd=n#first"><?% gettext("Running now") %?></a><br />
+<?% END %?>
+<?% IF allow('nx') %?>
+<a title="<?% gettext("Next") %?>" href="?cmd=nx#first"><?% gettext("Next") %?></a><br />
+<?% END %?>
+<?% IF allow('p') %?>
+<a title="<?% gettext("Program guide") %?>" href="?cmd=p#first"><?% gettext("Program guide") %?></a><br />
+<?% END %?>
+<?% IF allow('tl') %?>
+<a title="<?% gettext("Timers") %?>" href="?cmd=tl#first"><?% gettext("Timers") %?></a><br />
+<?% END %?>
+<?% #<a title="#?% gettext("Autotimer") %?#" href="?cmd=al#first"><?% gettext("Autotimer") %?#</a><br /> %?>
+<?% #<a title="#?% gettext("Recordings") %?#" href="?cmd=rl#first">#?% gettext("Recordings") %?#</a><br /> %?>
+<?% #<a title="#?% gettext("Remote") %?#" href="?cmd=remote#first">#?% gettext("Remote") %?#</a><br /> %?>
+</p>
+</card>
+</wml>

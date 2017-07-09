@@ -1,0 +1,12 @@
+radio.o: radio.c radioaudio.h radiotools.h radioepg.h inforx.h
+radioaudio.o: radioaudio.c radioaudio.h radioskin.h radiotools.h \
+ symbols/rds.xpm symbols/arec.xpm symbols/rass.xpm symbols/radio.xpm \
+ symbols/index.xpm symbols/marker.xpm symbols/page1.xpm \
+ symbols/pages2.xpm symbols/pages3.xpm symbols/pages4.xpm symbols/no0.xpm \
+ symbols/no1.xpm symbols/no2.xpm symbols/no3.xpm symbols/no4.xpm \
+ symbols/no5.xpm symbols/no6.xpm symbols/no7.xpm symbols/no8.xpm \
+ symbols/no9.xpm symbols/bok.xpm symbols/pageE.xpm
+radioskin.o: radioskin.c radioskin.h
+radiotools.o: radiotools.c radiotools.h radioaudio.h
+radioepg.o: radioepg.c radioepg.h radioaudio.h
+inforx.o: inforx.c inforx.h radioaudio.h radiotools.h

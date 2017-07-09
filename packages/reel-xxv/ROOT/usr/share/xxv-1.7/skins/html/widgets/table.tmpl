@@ -1,0 +1,47 @@
+<p><p>
+<!-- TableTemplate -->
+<?% IF param.headingText %?>
+<table width=100%><tr><td class='tableheader'><h3><?% param.headingText %?></h3>
+<?% END %?>
+<table border="0" width="95%">
+<?% IF type == 'HASH' %?>
+    <?% IF ! param.hide_HeadRow %?>
+    <th width="1%">Name</th><th>Value</th>
+    <?% END %?>
+    <?% FOREACH name IN data.keys.sort %?>
+    <?% NEXT IF name.match('^__') %?>
+    <tr>
+        <td width="50%"><?% name %?></td><td><?% data.$name %?></td>
+    </tr>
+    <?% END %?>
+<?% ELSE %?>
+    <?% fields = data.shift %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <?% NEXT IF field.match('^__') %?>
+            <th>
+                <nobr><?% field %?>
+                <?% IF param.sortable %?>
+                <a href="?cmd=<?% cgi.param('cmd') %?>&__sortby=<?% field %?>&__desc=0"><img src="images/asc.png"></a>
+                <a href="?cmd=<?% cgi.param('cmd') %?>&__sortby=<?% field %?>&__desc=1"><img src="images/desc.png"></a>
+                <?% END %?>
+                </nobr>
+            </th>
+        <?% END %?>
+        </tr>
+        <?% FOREACH zeile IN data %?>
+        <tr>
+            <?% c = -1 %?>
+            <?% FOREACH field IN zeile %?>
+                <?% c = c + 1 %?>
+                <?% NEXT IF fields.$c.match('^__') %?>
+                <td><?% field %?></td>
+            <?% END %?>
+        </tr>
+        <?% END %?>
+<?% END %?>
+</table>
+<?% IF param.headingText %?>
+</td></tr></table>
+<p>
+<?% END %?>

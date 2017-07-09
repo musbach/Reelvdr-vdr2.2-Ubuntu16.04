@@ -1,0 +1,5 @@
+sc-videoguard2.o: sc-videoguard2.c ../../system-common.h ../../data.h \
+ ../../misc.h ../../system.h ../../smartcard.h ../../data.h \
+ ../../crypto.h ../../crypto-bn.h ../../support/idea.h ../../misc.h \
+ ../../parse.h ../../helper.h ../../log-sc.h ../../log.h ../../log-core.h \
+ ../../version.h

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/config.h.in
+END
+mpeg2.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/mpeg2.h
+END
+mpeg2convert.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/mpeg2convert.h
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/Makefile.in
+END
+tendra.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/tendra.h
+END
+video_out.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/video_out.h
+END
+mmx.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/mmx.h
+END
+vis.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/vis.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/Makefile.am
+END
+alpha_asm.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/alpha_asm.h
+END
+attributes.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/include/attributes.h
+END

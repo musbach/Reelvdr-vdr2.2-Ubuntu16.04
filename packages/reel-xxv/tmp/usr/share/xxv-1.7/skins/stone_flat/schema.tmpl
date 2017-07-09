@@ -1,0 +1,294 @@
+<!-- schema -->
+<body class="frame">
+<?% ######################################################################## %?>
+<div id="body">
+<?% widthtable = 925 %?>
+<?% widthfirst = 100 %?>
+<?% IF allow('switch') %?>
+    <?% widthfirst = widthfirst + 25 %?>
+<?% END %?>
+<?% width = widthtable - widthfirst %?>
+<?% USE date %?>
+<h1>
+<?% gettext("Schema") %?>
+ : <?% date.format(param.zeitvon, '%A, %H:%M', locale) %?>
+ - <?% date.format(param.zeitbis, '%H:%M', locale) %?>
+</h1>
+<?% ######################################################################## %?>
+<?% Duration = param.zeitbis - param.zeitvon %?>
+<table class="largetable" summary="">
+    <tr><td class="largehead">
+            <?% FOREACH cgrp IN param.cgroups %?>
+              <?% IF param.channelgroup == cgrp.last;cgrp.first;LAST;END %?>
+            <?% END %?>
+        </td></tr>
+        <tr>
+            <td class="largetext">
+                <table summary="" width="<?% widthtable %?>">
+                <tr>
+                    <td><img alt="" src="images/blank.gif" width="<?% widthfirst %?>" height="1" /></td>
+                    <?% c = 0 %?>
+                    <?% colspan = 0 %?>
+                    <?% abstand = 15 * 60; # 15 Minuten %?>
+                    <?%- WHILE c < Duration -%?>
+                        <?%-
+                                c = c + abstand;
+                                percent = (abstand / Duration) * width
+                                colspan = colspan + 1;
+                                zeit = param.zeitvon + c;
+                        -%?>
+                    <td width="<?% offset = (c % 3600 ? 1 : 2);(percent - offset) div 1 %?>" align="right">
+                        <?% IF c == abstand && zeit > date.now %?>
+                        <a href="?cmd=schema&amp;data=<?% (param.zeitvon - Duration) %?>&amp;__cgrp=<?% param.channelgroup %?>">
+                            <img alt="" src="images/back.<?% global.imagetyp %?>" title="" />
+                        </a>
+                        &nbsp;
+                        <?% END %?>
+                        <?% IF c >= Duration %?>
+                        <a href="?cmd=schema&amp;data=<?% (param.zeitvon + Duration) %?>&amp;__cgrp=<?% param.channelgroup %?>">
+                            <img alt="" src="images/forward.<?% global.imagetyp %?>" title="" />
+                        </a>
+                        &nbsp;
+                        <?% END %?>
+                        <?% date.format(zeit, '%H:%M') %?></td>
+                    <?% END %?>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="<?% colspan %?>" style="white-space: nowrap">
+                        <?% c = 0 %?>
+                        <?% abstand = abstand div 3 %?>
+                        <?%- WHILE c < Duration;
+                                c = c + abstand;
+                                percent = (abstand / Duration) * width
+                        -%?><img alt="" src="images/blank.gif" width="<?%-
+                            offset = (c % 3600 ? 1 : 2);
+                            (percent - offset) div 1
+                        -%?>" height="10" /><img alt=""
+                            style="background:<?% c % 900 ? "gray" : "black" %?>"
+                            src="images/blank.gif"
+                            width="<?% c % 3600 ? "1" : "2" %?>"
+                            height="<?% (c % 900 ? "5" : "10") %?>" />
+                        <?%- END -%?>
+                        <?%- ############################################## -%?>                                
+                        <?%- IF !info.http_useragent.match('.*MSIE.*') && date.now > param.zeitvon && date.now < param.zeitbis -%?>
+                        <?% a = date.now - param.zeitvon;
+                            p = (a / Duration) * width;
+                         %?>
+                        <div style="position:absolute;">
+                            <div id="timewindow" style="left:0px; width:<?% p div 1 %?>px;">
+                              <font size="1">&nbsp;</font>
+                            </div>
+                        </div>
+                        <div style="position:absolute;">
+                            <div id="timeline" style="left:<?% p div 1 %?>px;">
+                              <img alt="" src="images/blank.gif" width="1" height="<?% data.keys.size * 19 %?>" />
+                            </div>
+                        </div>
+                        <?%- END -%?>
+                        <?%- ############################################## -%?>   
+                    </td>
+                </tr>
+                <?% FOREACH cpos IN data.keys.nsort %?>
+                <tr<?% IF (loop.count mod 2) == 0 %?> class="two"<?% END %?>>
+                    <td>
+                    <?% channel = data.$cpos.first.4 %?>
+                    <?% IF global.preferedlocal && allow('switch') %?>
+                      <a href="javascript:post('switch','<?% channel %?>')">
+                        <img class="push" src="images/watch.<?% global.imagetyp %?>" alt="" title="<?% gettext("Switch") %?>" />
+                      </a>
+                    <?% ELSIF allow('livestream') %?>
+                      <?% IF getModule('STREAM').widget == 'external' %?>
+                        <a href="?cmd=livestream&amp;data=<?% channel %?>">
+                        <img class="push" src="images/webcast.<?% global.imagetyp %?>" alt="" title="<?% gettext("Live TV web cast") %?>" /></a>
+                      <?% ELSE %?>
+                        <a href="javascript:popup('livestream','<?% channel %?>',620,670,0)">
+                        <img class="push" src="images/webcast.<?% global.imagetyp %?>" alt="" title="<?% gettext("Live TV web cast") %?>" /></a>
+                      <?% END %?>
+                    <?% END %?>
+<?% IF allow('program') %?>
+                        <a href="?cmd=program&amp;data=<?% channel %?>" title="<?% gettext("Program guide for") %?>&nbsp;<?% data.$cpos.first.3 %?>">
+<?% END %?>
+                            <?% chop(data.$cpos.first.3,15) %?>
+<?% IF allow('program') %?>
+                        </a>
+<?% END %?>
+                    </td>
+                    <td colspan="<?% colspan %?>" style="white-space: nowrap;">
+                        <?%- ges = 0; oldend = param.zeitvon -%?>
+                        <?%- FOREACH event IN data.$cpos;
+                                id = event.0;
+                                title = event.1;
+                                subtitle = event.2;
+                                sender = event.3;
+                                channel = event.4;
+                                start = event.5;
+                                stop = event.6;
+                                percent100 = event.7;
+                                description = event.8;
+                                second_start = event.9;
+                                second_stop = event.10;
+                                image = event.11;
+                                timerid     = event.12;
+                                recording   = event.13;
+                                running     = event.14;
+                                IF second_start > oldend;
+                                    laenge = second_start - oldend;
+                                    percent = (laenge / Duration) * width;
+                                    ges = ges + percent; -%?>
+                        <img style="float:left" alt="" src="images/blank.gif" width="<?% percent div 1 %?>" height="1" align="left" />
+                                <?% END;
+                                IF second_start < oldend;
+                                    dur = second_stop - oldend; 
+                                ELSE;
+                                    dur = second_stop - second_start; 
+                                END;
+                                IF dur < 0; dur = 1; END;
+                                percent = (dur / Duration) * width;
+                                IF (ges + percent) > (width - 20);
+                                    percent = width - ges - 20;
+                                END;
+                                ges = ges + percent;
+                                trun = ( ( percent / 6 ) - 1 ) div 1;
+                                IF dur < 300;
+                                    trun = 3;
+                                END;
+                                -%?>
+                        <?% IF trun <= 3 %?>
+                        <!-- <a border="1" href="javascript:popup('display','<?% id %?>',620,670,0)" title="<?% start %?> - <?% stop %?> - <?% dur %?>"> -->
+                            <img style="float:left" alt="" src="images/blank.gif" width="<?% percent div 1 %?>" height="1" align="left" />
+                        <!-- </a> -->
+                        <?% ELSE %?>
+                        <?% PROCESS SetState %?>
+                        <table summary="" class="schema" style="width:<?% percent div 1 %?>px">
+                            <tr>
+                                <td>
+                                    <a href="javascript:popup('display','<?% id %?>',620,670,0)" 
+                                        onmouseover="ttpreq(this, '<?% escape(title) %?>
+                                                   <?% IF subtitle.length > 0 %?>~<?% escape(subtitle) %?>
+                                                   <?% END %?>',<?% id %?>, -200 );" >
+                                      <font class="<?% IF state != "";" ";state;END %?>"><?% chop(title,trun) %?></font>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                        <?% END %?>
+                        <?% oldend = second_stop; END %?>
+                    </td>
+                </tr>
+                <?% END %?>
+                </table>
+            </td>
+        </tr>
+    <tr><td class="largebottom"></td></tr>
+</table> 
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+    <?% state = '' %?>
+    <?% IF running %?>
+        <?% state = "running" %?>
+    <?% ELSIF timerid %?>
+      <?% UNLESS recording %?>
+        <?% state = "deactive" %?>
+      <?% ELSE %?>
+        <?% state = "active" %?>
+      <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Schema",20) %?></td></tr>
+    <tr>
+      <td class="sidetext">
+        <form action="">
+        <select name="cgroups" onchange="di('?cmd=<?% cgi.param('cmd') %?>&amp;data=<?% param.zeitvon %?>&amp;__cgrp=',this.form.cgroups.options[this.form.cgroups.options.selectedIndex].value)">
+            <?% FOREACH cgrp IN param.cgroups %?>
+              <option value="<?% cgrp.last %?>"<?% ' selected="selected"' IF param.channelgroup == cgrp.last %?>><?% cgrp.first %?></option>
+            <?% END %?>
+        </select>
+        </form>
+
+        <a href="?cmd=now&amp;__cgrp=<?% cgi.param('__cgrp') %?>"><img src="images/forward.<?% global.imagetyp %?>" alt="" title="<?% gettext("Running now") %?>" /></a>&nbsp;
+        <a href="?cmd=now&amp;__cgrp=<?% cgi.param('__cgrp') %?>"><?% gettext("Running now",20) %?></a><br />
+        <a href="?cmd=next&amp;__cgrp=<?% cgi.param('__cgrp') %?>"><img src="images/forward.<?% global.imagetyp %?>" alt="" title="<?% gettext("Next") %?>" /></a>&nbsp;
+        <a href="?cmd=next&amp;__cgrp=<?% cgi.param('__cgrp') %?>"><?% gettext("Next",20) %?></a><br />
+        <a href="?cmd=sch<?% IF param.zeit && cgi.param('cmd') != 'next' && now != 1;"&amp;data=";param.zeit;END;%?>&amp;__cgrp=<?% cgi.param('__cgrp') %?>">
+            <img alt="" src="images/forward.<?% global.imagetyp %?>" title="<?% gettext("Schema") %?>" /></a>&nbsp;
+        <a href="?cmd=sch<?% IF param.zeit && cgi.param('cmd') != 'next' && now != 1;"&amp;data=";param.zeit;END;%?>&amp;__cgrp=<?% cgi.param('__cgrp') %?>">
+            <?% gettext("Schema",20) %?><?% IF param.zeit && cgi.param('cmd') != 'next' && now != 1;" ";day;END;%?></a><br /><br />
+        <form method="post" action="?cmd=sch"> 
+            <input type="text" name="data" value="<?% IF time.defined %?><?% time %?><?% ELSE %?>20:15<?% END %?>" size="18" />
+            <input type="hidden" name="__cgrp" value="<?% cgi.param('__cgrp') %?>" />
+        </form>
+        <form action="">
+            <?% zeiten = param.periods.split(','); %?>
+            <select size="<?% zeiten.size + 3 %?>" name='data' onchange="di('?cmd=sch&amp;__cgrp=<?% cgi.param('__cgrp') %?>&amp;data=',this.form.data.options[this.form.data.options.selectedIndex].value)">
+           <?% today = [] %?>
+            <?% tomor = [] %?>
+        <?% FOREACH zeit IN zeiten %?>
+            <?% tom = 0 %?>
+            <?% PERL %?>
+                use Date::Manip;
+                my $z;
+                $z   = UnixDate(ParseDate($stash->{zeit}),"%s") || 0;
+                if($z and $z < time) {
+                    $z += 86400;
+                    $stash->set('tom', 1);
+                }
+                $stash->set('z', $z);
+            <?% END %?>
+            <?% NEXT UNLESS z;
+            IF tom;
+                tomor.push(z);
+            ELSE;
+                today.push(z);
+            END %?>
+        <?% END %?>
+        <?% IF today.size > 0 %?>
+            <optgroup label="<?% date.format(today.0, "%A", locale) %?>">
+        <?% FOREACH z IN today %?><option value="<?% z %?>"><?% date.format(z, "%H:%M", locale) %?></option><?% END %?> 
+            </optgroup>
+        <?% END %?>
+        <?% IF tomor.size > 0 %?>
+            <optgroup label="<?% date.format(tomor.0, "%A", locale) %?>">
+        <?% FOREACH z IN tomor %?><option value="<?% z %?>"><?% date.format(z, "%H:%M", locale) %?></option><?% END %?> 
+            </optgroup>
+        <?% END %?>
+            </select>
+       </form>
+     </td>
+    </tr>
+<?% IF allow('erestart') %?>
+    <tr>
+    <td class="sidetext">
+      <a title="<?% gettext("Update EPG data") %?>" href="javascript:popupcmd('erestart',620,670,1)"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Update EPG data") %?>" href="javascript:popupcmd('erestart',620,670,1)"><?% gettext("Update EPG data",20) %?></a>
+    </td>
+    </tr>
+<?% END %?>
+    <tr>
+      <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Search",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <form method="post" action="?cmd=search" name="searchform">
+        <input type="text" id="epgtext" name="data" alt="<?% gettext("Search") %?>" 
+               onkeyup="suggest('esuggest','epgtext','epgsuggest');" 
+               autocomplete="off" />
+        <br /><div class="suggestbox" id="epgsuggest"></div>
+    </form>
+    </td>
+    </tr>
+    <tr>
+        <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

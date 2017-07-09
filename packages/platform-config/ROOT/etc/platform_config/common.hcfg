@@ -1,0 +1,1173 @@
+// THIS FILE IS INCLUDED BY ALL SOC-SPECIFIC FILES
+
+platform
+{
+    memory
+    {
+        // Populate platform.memory.layout during bootup by performing the
+        // following steps:
+        //
+        // 1. Load primary config file:
+        //
+        //    platform_config_app load /etc/platform_config/<SOC>.hcfg
+        //
+        // 2. Load ZERO-BASED media memory layout description:
+        //
+        //    platform_config_app load <path of memory layout file>
+        //
+        // 3. SHIFT All zero-based memory addresses into desired physical
+        //    location:
+        //
+        //      platform_config_app memshift platform.memory.media_base_address
+        //
+        // *********  SOC-DEPENDENT  *********
+        //media_base_address =
+    }
+
+    power
+    {
+        // When set to 1, instrumented drivers will print a trace of the
+        // calls to their power management callback functions.
+        trace = 0
+    }
+
+    software
+    {
+        drivers
+        {
+            avcap
+            {
+                // This section describes EDID replacements for HDMI RX driver.
+                // Certain sections of EDID will be replaced with values specified
+                // below.
+
+                edid
+                {
+                    manufacturer_id = "ZZZ"           // 3 character UPnP value
+                    product_id      = 0x0052          // 2 byte ID
+                    serial          = 0x00000000      // 4 byte serial number
+                    week            = 01              // Week of Manufacture
+                    year            = 2010            // Year of Manufacture
+
+                    // Monitor name up to 13 characters.
+                    // Trailing spaces are ignored.
+                    monitor_name    = "MyName       "
+
+                    // Monitor serial# up to 13 characters.
+                    // Trailing spaces are ignored.
+                    monitor_serial  = "123456789    "
+
+                    // Indicates if the platform is used as part of a television.
+                    // A television's Source Physical Address (SPA) is always
+                    // the root node ie. x.0.0.0. Other devices are not allowed
+                    // to be the root node. Instead the SPA is set to f.f.f.f 
+                    // if not connected to downstream device.
+                    // 1 = Television  0 = Other device
+                    is_tv = 0
+
+                    // The underscan bit indicates that a television panel is 
+                    // capable of showing the entire video without overscaning.
+                    // Generally only used by television platforms.
+                    // 1 = Supported/Set the bit  0 = Clear the bit
+                    underscan = 0
+
+                    // The following option is for clearing the native bit
+                    // on short video modes. When cleared, no video mode
+                    // will be advertised as the "native" mode.
+                    // 1 = Use the native bit  0 = Clear the native bit
+                    native_bit = 1
+
+                    // Deep Color 36 bit support.
+                    // 1 = True  0 = False
+                    dc_36bit = 0
+
+                    // Deep Color 30 bit support.
+                    // 1 = True  0 = False
+                    dc_30bit = 0
+
+                    // Refresh rate to use if TV doesn't indicate a supported
+                    // video resolution refresh rate (50Hz or 60Hz).
+                    // Valid values: 50 or 60.
+                    native_refresh_rate = 60
+
+                    // Requests the current mode be set as the preferred mode in
+                    // the upstream EDID.
+                    //      0: Don't use current mode.
+                    //      1: Use current mode.
+                    current_mode_set_to_priority = 0
+
+                    // Indicate how to handle EDID 3D support
+                    //  0: Disable EDID 3D support
+                    //  1: Add 3D support if the downstream supports 3D
+                    //  2: Always add EDID 3D support regardles of downstream 
+                    //     support
+                    3D_support = 1
+
+                    // Latency values for progressive and interlaced signals.
+                    // Progressive and interlaced latency values must be set
+                    // separately. Unit is milliseconds. The value from 0 to 500
+                    // is valid lateny range. Any value bigger than 500 
+                    // indicates no video/audio support for this device.
+                    p_video_latency = 0
+                    p_audio_latency = 0
+                    i_video_latency = 0
+                    i_audio_latency = 0
+
+                    // AI Support - Indicates that the device is capable of 
+                    // supporting ACP, ISRC1, or ISRC2 packets.
+                    // 0 = Disabled 1 = Enabled 2 = Passthrough the downstream
+                    supports_ai = 0
+
+                    // Content Type indicators - Indicate a device has certain
+                    //                           processing capabilities.
+                    // 2 = Passthrough the downstream capabilities. If there is 
+                    //     no downstream device, defaults to 0.
+                    // 1 = Device does have the processing ability
+                    // 0 = Device doesn't have the processing ability
+                    CNC0 = 0 // Graphics/text - Can replicate pixels exactly   
+                             //                 as received, i.e. no filtering.
+                    CNC1 = 0 // Photo         - Has still picture processing
+                    CNC2 = 0 // Cinema        - Has cinema processing such as 
+                             //                 film tone reproduction.
+                    CNC3 = 0 // Game          - Has a mode with low Audio/Video 
+                             //                 latency
+
+                    // Colorimetry
+                    // Allows the specification of additional colorspaces.
+                    // xvYCC601 <- Standard Definition - IEC 61966-2-4
+                    // xvYCC709 <- High Definition     - IEC 61966-2-4
+                    // 1 = Enabled 0 = Disabled 2 = Passthrough the downstream
+                    xvYCC601 = 0
+                    xvYCC709 = 0
+
+                    // Video Geometry Limit
+                    // Limits the upstream modes to be the same size or smaller
+                    // than the largest upstream mode height. By enabling this
+                    // feature then downscaling can be reduced. For example, if
+                    // enabled with a 720p max downstream size, all 1080i/p
+                    // modes are eliminated from the upstream EDID. Stereo
+                    // type is ignored.
+                    // 1 = Enabled 0 = Disabled
+                    geometry_limit = 0
+
+                    // Priority/filter list indicates how to sort the video
+                    // modes. Modes listed first in the list indicate highest
+                    // priority. This list also serves as a filter.  If the
+                    // mode is not listed, the mode is not used in the upstream
+                    // EDID.  The modes are taken from CEA-861 Table 4 "Video
+                    // Formats - Video ID Code and Aspect Ratios". Entry 
+                    // identifiers are read in the order they are read and are 
+                    // not alphabetized first.
+                    // FP  : Frame packing
+                    // TBH : Top bottom half vertical resolution
+                    // SBSH: Side by side half horizontal resolution
+                    50_hz_priority_list
+                    {
+                        aa = "31             " // 1920x1080p     50Hz 16x9
+                        ab = "20  FP     SBSH" // 1920x1080i     50Hz 16x9
+                        ac = "19  FP TBH SBSH" // 1280x720p      50Hz 16x9
+                        ad = "18             " // 720x576p       50Hz 16x9
+                        ae = "17             " // 720x576p       50Hz 4x3
+                        af = "33             " // 1920x1080p     25Hz 16x9
+                        ag = "32  FP TBH SBSH" // 1920x1080p     24Hz 16x9
+                        ah = "22             " // 720(1440)x576i 50Hz 16x9
+                        ai = "21             " // 720(1440)x576i 50Hz 4x3
+
+                        aj = "16             " // 1920x1080p     60Hz 16x9
+                        ak = " 5  FP     SBSH" // 1920x1080i     60Hz 16x9
+                        al = " 4  FP TBH SBSH" // 1280x720p      60Hz 16x9
+                        am = " 3             " // 720x480p       60Hz 16x9
+                        an = " 2  FP         " // 720x480p       60Hz 4x3
+                        ao = "34             " // 1920x1080p     30Hz 16x9
+                        ap = " 7             " // 720(1440)x480i 60Hz 16x9
+                        aq = " 6             " // 720(1440)x480i 60Hz 4x3
+
+                        ar = "60             " // 1280x720p      24Hz 16x9
+                        as = " 1             " // 640x480p       60Hz 4x3
+                    }
+
+                    60_hz_priority_list
+                    {
+                        aa = "16             " // 1920x1080p     60Hz 16x9
+                        ab = " 5  FP     SBSH" // 1920x1080i     60Hz 16x9
+                        ac = " 4  FP TBH SBSH" // 1280x720p      60Hz 16x9
+                        ad = " 3             " // 720x480p       60Hz 16x9
+                        ae = " 2             " // 720x480p       60Hz 4x3
+                        af = "34             " // 1920x1080p     30Hz 16x9
+                        ag = "32  FP TBH SBSH" // 1920x1080p     24Hz 16x9
+                        ah = " 7             " // 720(1440)x480i 60Hz 16x9
+                        ai = " 6             " // 720(1440)x480i 60Hz 4x3
+
+                        aj = "31             " // 1920x1080p     50Hz 16x9
+                        ak = "20  FP     SBSH" // 1920x1080i     50Hz 16x9
+                        al = "19  FP TBH SBSH" // 1280x720p      50Hz 16x9
+                        am = "18             " // 720x576p       50Hz 16x9
+                        an = "17  FP         " // 720x576p       50Hz 4x3
+                        ao = "33             " // 1920x1080p     25Hz 16x9
+                        ap = "22             " // 720(1440)x576i 50Hz 16x9
+                        aq = "21             " // 720(1440)x576i 50Hz 4x3
+
+                        ar = "60             " // 1280x720p      24Hz 16x9
+                        as = " 1             " // 640x480p       60Hz 4x3
+                    }
+
+                    // This list of modes will be added to the upstream EIDD
+                    // regardless of TV support. Ensure that the modes in this
+                    // list are included in their respective priority/filter
+                    // lists above or else they will be filtered out.
+                    // This list uses the same entry format as the 
+                    // priority/filter lists above.
+                    // FP  : Frame packing
+                    // TBH : Top bottom half vertical resolution
+                    // SBSH: Side by side half horizontal resolution
+                    50_hz_addition_list
+                    {
+                        aa = "20        SBSH" // 1920x1080i     50Hz 16x9
+                        ab = "32 FP         " // 1920x1080p     24Hz 16x9
+                        ac = "19            " // 1280x720p      50Hz 16x9
+                        ad = "18            " // 720x576p       50Hz 16x9
+                        ae = "21            " // 720(1440)x576i 50Hz 4x3
+                    }
+
+                    60_hz_addition_list
+                    {
+                        aa = " 5        SBSH" // 1920x1080i     60Hz 16x9
+                        ab = "32 FP         " // 1920x1080p     24Hz 16x9
+                        ac = " 4            " // 1280x720p      60Hz 16x9
+                        ad = " 3            " // 720x480p       60Hz 16x9
+                        ae = " 6            " // 720(1440)x480i 60Hz 4x3
+                    }
+
+                    audio
+                    {
+                        // Audio pass through will take all audio modes
+                        // supported downstream and add them (unmodified) to
+                        // the upstream EDID. If there are conflicting audio
+                        // modes (ie PCM mode is specified with only 16 bit
+                        // below, but the downstream EDID supports PCM with 24,
+                        // 20, & 16 bit) then the specified mode below will be
+                        // used and the downstream mode will be ignored.
+                        // 0: False
+                        // 1: True
+                        pass_through = 0
+
+                        // Audio sink filter will remove any audio formats from
+                        // the upstream EDID that are NOT in the downstream
+                        // EDID. Formats that are in common from the downstream
+                        // and the platform config file are merged together and 
+                        // the common values used. This includes:
+                        //   -Lesser of the two maximum channels
+                        //   -Intersection of the formats' frequencies
+                        //   -Intersection of the PCM bit rates
+                        //   -Lesser of the two's special format value
+                        // 1 => Enabled
+                        // 0 => Disabled
+                        sink_filter = 0
+
+                        // Each of the audio entries describe the supported
+                        // audio modes for the platform. The format used for
+                        // the entries is the "Short Audio Descriptors" as
+                        // described in the EDID extension block of CEA-861.
+                        //   Byte 1: format and max number of channels-1.
+                        //   Byte 2: supported audio frequencies.
+                        //   Byte 3: format specific.
+                        // The entry format uses Byte 3 as the  MSB and Byte 1
+                        // as the LSB. entry_a = 0x332211
+                        // Example: PCM 4-channel 48kHz 44.1kHz 16bit
+                        //    entry_a = 0x01060B
+                        // In the comments below:
+                        //    DD     = AC3
+                        //    DD+    = E-AC-3
+                        //    TrueHD = MLP
+                        entry_a = 0x050709    // PCM      2-ch 16/24bit 32 44.1 48
+                        entry_b = 0x05570F    // PCM      8-ch 16/24bit 32 44.1 48 96 192
+                        entry_c = 0x500715    // DD       6-ch 640kbs   32 44.1 48
+                        // entry_d = 0x180719 // MPEG-1   2-ch 192kbs   32 44.1 48 
+                        // entry_e = 0x280721 // MP3      2-ch 320kbs   32 44.1 48 
+                        // entry_f = 0x18072D // MPEG-2   6-ch 192kbs   32 44.1 48
+                        entry_g = 0xFF1F37    // AAC-LC   8-ch 4400kbs  32 44.1 48 88.2 96
+                        entry_h = 0xC0063D    // DTS      6-ch 1536kbs     44.1 48
+                        entry_i = 0x000757    // DD+      8-ch 6144kbs  32 44.1 48
+                        entry_j = 0x081F7F    // AAC-HEv1 8-ch          32 44.1 48 88.2 96
+                        entry_k = 0x101F7F    // AAC-HEv2 8-ch          32 44.1 48 88.2 96
+                        entry_l = 0x007e5f    // DTSHD    8-ch 24Mbps      44.1 - 192khz
+                        entry_m = 0x007e67    // trueHD   8-ch 18Mbps      44.1 - 192khz
+
+
+                    }
+
+                    // The speaker entry specifies the speaker configuration
+                    // for the platform.  The 3 byte speaker entry is taken
+                    // from the EDID extension block described in the CEA-861
+                    // standard.
+                    //      Byte 1's 8 bits are used.
+                    //      Byte 2's 3 least significant bits are used.
+                    //      Byte 3 is required to be zero.
+                    // Example:
+                    //  speaker_entry = 0x0005 // Front Left/Right, Front Center
+                    speaker_entry = 0x4f // L,R,FC,LFE,RL,RR,RLC,RRC
+
+                    // Extra amount of time [in ms] between updating EEPROM and
+                    // making it available to external requests
+                    post_eeprom_power_on_wait = 0
+                }
+
+                // This section describes infoframe notification configuration
+                // of Silicon Image driver. When enabled packets of
+                // specified type will be submitted to capture driver which in
+                // its turn will notify a rendering application via an event.
+                // The rate of notification is once per second for every packet
+                // type except once per 300ms for ACP packet. Notifications are
+                // sent only when capture is enabled. Notifications about up to
+                // 4 different infoframes is supported at the same time.
+
+                // Make sure EDID reflects proper capabilities in order to let
+                // source know that packets of certain types are accepted and
+                // understood.
+
+                infoframe_notification
+                {
+                    spd   = 0
+                    acp   = 0
+                    isrc1 = 0
+                    isrc2 = 0
+                    mpeg  = 0
+                    vs    = 0
+                }
+
+                // This section describes colorspace conversion policy
+                // Default behavior is to downscale input of any depth to
+                // 24 bits and convert input of any pixel format to YUV422.
+                // Pixel format conversion can be bypassed if necessary.
+                // Depth downscaling bypass is not supported at the moment.
+                // This setting is applicable to Silicon Image unit only
+                csc
+                {
+                    color_bypass = 0 // Controls YUV422 conversion bypass
+                }
+
+                hdcp   // Various HDCP-related tweaks
+                {
+                    // Controls AV mute bypass due to bad HDCP conditions
+                    // downstream
+                    mute_bypass = 0
+
+                    // By default, with presence of downstream devices, HDMI RX
+                    // reports itself as a repeater.  This option overrides
+                    // that and makes HDMI RX pretending to be a non-repeater.
+                    //
+                    // !!! WARNING !!!
+                    //   Pretending to be non-repeater is inconsistent with
+                    //   HDCP specification
+                    // !!! WARNING !!!
+                    repeater_bypass = 0
+
+                    // Per HDCP spec, HDMI RX initiates downstream
+                    // re-authentication each time there is upstream
+                    // authentication. Enabling this option eliminates
+                    // downstream re-authentication if upstream authentication
+                    // was not caused by downstream pulse
+                    repeater_cache = 0
+
+                    // Controls optional disabling of HDCP port upon video loss
+                    // and subsequent reenabling upon video detect
+                    port_always_on = 1
+
+                    // Number of ms from downstream hot plug detection that
+                    // HDMI RX waits for upstream authentication request before
+                    // enabling downstream authentication anyway.
+                    // Supported range: 3000...7000.
+                    // Value out of range is overriden with default (5500).
+                    auto_enable_timeout = 5500
+
+                    // Amount of time [in ms] where several back to back
+                    // authentications separated by amount less than this
+                    // argument specifies result in generation of hot plug pulse
+                    // Supported range: 0...7000.
+                    // Setting to 0 disables the feature completely.
+                    multi_auth_track = 0
+
+                    // By default, HDMI RX hides downstream HDMI TX PHY changes
+                    // from the source.  Set this option to 1 to notify the
+                    // source of downstream PHY status change via generation of
+                    // hot plug pulse.
+                    downstream_phy_track = 1
+                }
+
+                i2c
+                {
+                    // *********  SOC-DEPENDENT  *********
+                    // The bus that the HDMI RX chip resides on.
+                    // hdmi_rx_bus =
+                }
+
+                video
+                {
+                    // Silicon Image unit does distinguish between 1/1.000 and
+                    // 1/1.001 modes. The following switch enables 1/1.001 modes
+                    // detection based on input audio transmission rate
+                    detect_1_over_1_001 = 1
+
+                    // ********* SOC-DEPENDENT ************
+                    // Channel mapping adjusts the color channels assigned
+                    // to the output of the HDMI RX
+                    //   Q23:16  Q15:8   Q7:0
+                    // 0    R       G      B
+                    // 1    R       B      G
+                    // 2    G       R      B
+                    // 3    G       B      R
+                    // 4    B       R      G
+                    // 5    B       G      R
+                    // channel_map =
+
+                    stereo
+                    {
+                        // The GPIO number used by video capture driver to query
+                        // left/right ID info in frame sequential modes.
+                        vcap_lrid_gpio = 5
+
+                        // Interpretation of  frame sequential GPIO state:
+                        // - If 0, GPIO 'on' => left frame, 'off' => right frame
+                        // - If 1, GPIO 'off'=> left frame, 'on'  => right frame
+                        vcap_lrid_invert_polarity = 0
+                    }
+                }
+
+                hot_plug
+                {
+                    // Describes the amount of time to wait for Tx hot plug assert
+                    // after TX hot plug loss before hotplugging the Rx. If this
+                    // value is too short and a sink has a hot plug pulse that is
+                    // longer than this value, then it will become two RX hotplug
+                    // pulses seperated by at least "wait_time".
+                    wait_time = 500
+                }
+                
+                // Device name for external and internal hdmi-Rx drivers. 
+                // When a name is "none", the corresponding driver is disabled.    
+                // Only the first 15 letters are accepted.              
+                // Following device names can be selected:
+                // "rx_simg9xxx", "rx_hdmi_ce","rx_adv78xx","none"
+                rx_ext = "rx_simg9xxx"
+                rx_int = "rx_hdmi_ce"
+                
+                // Discribes AFE hardware configuration
+                // Currently support ADV7850 only
+                afe
+                {
+                    // The GPIO number used by AFE to switch the SPI bus between
+                    // CE5300 SPI or AFE SPI
+                    spi_gpio = 13
+                    // Option for on-off AFE TX HDCP. Availabe value is 0 and 1.
+                    // 1 is to enable TX HDCP; 0 is to disable TX HDCP
+                    tx_hdcp = 0
+                    // Input interfaces
+                    // Must be configured as hardware platform defines. The default
+                    // configuration is for Hidden River board
+                    // Valid format is: IF = "CONFIGs"
+                    // List of IF: hdmi1, hdmi2, hdmi2, hdmi4, cvbs1, cvbs2, cvbs3,
+                    // cmp1, gr1, scart1.
+                    // CONFIGs is the list of CONFIG for different IF, separated by space.
+                    // CONFIG is from PORT,ARC_TX,AIN_CH,HS_SEL,VS_SEL,EMBSYNC_SEL,CDEC_IN,BOOL
+                    // List of BOOL: TRUE, FALSE 
+                    // List of PORT: PORT_A, PORT_B, PORT_C, PORT_D, PORT_NONE
+                    // List of ARC_TX: ARC_TX1, ARC_TX2, ARC_TX3, ARC_TX4, ARC_NONE
+                    // List of AIN_CH: AIN1 to AIN13, AIN_NONE 
+                    // List of HS_SEL: HS_AUTO, HS_IN1, HS_IN2, HS_HDMI
+                    // List of vS_SEL: vS_AUTO, vS_IN1, vS_IN2, VS_HDMI
+                    // List of EMBSYNC_SEL: SYNC_AUTO, SYNC_1 to SYNC_4, SOY, SOG, SYNC_LO
+                    // List of CDEC_IN: LR_IN1 to LR_IN5, I2S_IN1, NONE_IN 
+                    // List of CDEC_OUT: LR_OUT1, DAC_HP_OUT1, DAC_LR_OUT1, OUT_NONE
+                    // List of RX_PIN: TRI1_PIN to TRI8_PIN
+                    //----------------------------------
+                    // List of Graphics Inputs 
+                    // AIN_CH       GrGAinIp;
+                    // AIN_CH       GrBAinIp;
+                    // AIN_CH       GrRAinIp;
+                    // HS_SEL       GrHsIp;
+                    // VS_SEL       GrVsIp;
+                    // EMBSYNC_SEL  GrEmbSynIp;
+                    // CDEC_IN      GrAudIp;
+                    // AIN_CH       VidOutCh1;
+                    // AIN_CH       VidOutCh2;
+                    // CDEC_IN      AudOutCh1;
+                    //----------------------------------
+                    // List of Component Inputs 
+                    // AIN_CH       CmpYAinIp;
+                    // AIN_CH       CmpPbAinIp;
+                    // AIN_CH       CmpPrAinIp;
+                    // EMBSYNC_SEL  CmpEmbSynIp;
+                    // CDEC_IN      CmpAudIp;
+                    // AIN_CH       VidOutCh1;
+                    // AIN_CH       VidOutCh2;
+                    // CDEC_IN      AudOutCh1;
+                    //----------------------------------
+                    // List of CVBS Inputs 
+                    // AIN_CH       CVBSAinIp;
+                    // CDEC_IN      CvbsAudIp;
+                    // AIN_CH       VidOutCh1;
+                    // AIN_CH       VidOutCh2;
+                    // CDEC_IN      AudOutCh1;
+                    //----------------------------------
+                    // List of S-Video Inputs 
+                    // AIN_CH       YAinIp;
+                    // AIN_CH       CAinIp;
+                    // CDEC_IN      YcAudIp;
+                    // AIN_CH       VidOutCh1;
+                    // AIN_CH       VidOutCh2;
+                    // CDEC_IN      AudOutCh1;
+                    //----------------------------------
+                    // List of SCART Inputs 
+                    // AIN_CH       GAinIp;
+                    // AIN_CH       BAinIp;
+                    // AIN_CH       RAinIp;
+                    // AIN_CH       CvbsYAinIp;
+                    // AIN_CH       CAinIp;
+                    // CDEC_IN      LRAudIp
+                    // CDEC_OUT     LRAudOp;
+                    // RX_PIN       FastBlank;
+                    // RX_PIN       Function;
+                    // BOOL         UseAutoYcIp;
+                    // BOOL         AVLINK;
+                    // BOOL         UseCVBSOutput;
+                    // AIN_CH       VidOutCh1;
+                    // AIN_CH       VidOutCh2;
+                    // CDEC_IN      AudOutCh1;
+                    //----------------------------------
+                    // List of HDMI Inputs 
+                    // HDMI_PORT    Port;
+                    // BOOL         HdmiMode;
+                    // ARC_TX       ArcTxId;
+                    // CDEC_IN      DviAudIp;
+                    // AIN_CH       VidOutCh1;
+                    // AIN_CH       VidOutCh2;
+                    // CDEC_IN      AudOutCh1;
+                    //----------------------------------
+                    interface 
+                    {
+                        hdmi1 = "PORT_A TRUE ARC_TX1 NONE_IN AIN_NONE AIN_NONE NONE_IN"
+                        hdmi2 = "PORT_B TRUE ARC_TX2 NONE_IN AIN10 AIN_NONE LR_IN2"
+                        hdmi3 = "PORT_C TRUE ARC_TX3 NONE_IN AIN11 AIN_NONE LR_IN3"
+                        hdmi4 = "PORT_D TRUE ARC_TX4 NONE_IN AIN12 AIN_NONE LR_IN1"
+                        gr1 = "AIN1 AIN2 AIN3 HS_IN1 VS_IN1 SYNC_1 LR_IN1 AIN10 AIN_NONE LR_IN2"
+                        cvbs1 = "AIN10 LR_IN2 AIN10 AIN_NONE LR_IN2"
+                        cvbs2 = "AIN11 LR_IN3 AIN11 AIN_NONE LR_IN3"
+                        cvbs3 = "AIN12 LR_IN1 AIN12 AIN_NONE LR_IN1"
+                        cmp1 = "AIN4 AIN6 AIN5 SYNC_2 LR_IN2 AIN10 AIN_NONE LR_IN2"
+                        cmp2 = "AIN7 AIN9 AIN8 SYNC_3 LR_IN3 AIN11 AIN_NONE LR_IN3"
+                        scart1 = "AIN7 AIN9 AIN8 AIN10 AIN11 LR_IN5 LR_OUT1 TRI6_PIN TRI5_PIN FALSE FALSE TRUE AIN10 AIN11 LR_IN5"
+                        scart2 = "AIN7 AIN9 AIN8 AIN10 AIN11 LR_IN5 LR_OUT1 TRI6_PIN TRI5_PIN TRUE FALSE TRUE AIN10 AIN11 LR_IN5"
+                    }
+                }
+
+            } // END avcap ---------------------------------------------
+
+            display
+            {
+                stereo
+                {
+                    // LRID (left/right ID) toggling service marks each outgoing
+                    // frame as either left or right view by setting specified
+                    // GPIO to "on" or "off" position. LRID toggling only
+                    // happens in FRAME_SEQUENTIAL video modes.
+
+                    // *********  SOC-DEPENDENT  *********
+                    // GPIO to toggle
+                    // lrid_gpio =
+
+                    // Used by SW and HW gpio toggling
+                    // If lrid_invert_polarity is set to 0, GPIO is turned on
+                    // for the left frame and turned off for the right frame.
+                    // Setting lrid_invert_polarity to 1 inverts that behavior.
+                    lrid_invert_polarity = 0
+
+                    // Minimum delay in milliseconds between VSYNC and when the
+                    // LRID GPIO is toggled. The actual delay may be greater due
+                    // to system load. This value is only valid for SW toggling.
+                    lrid_delay = 1
+                }
+            }
+
+            osal
+            {
+            }
+
+            pal
+            {
+            }
+
+            sven // sven kernel driver configuration parameters //
+            {
+                // SVEN Event Transmission "Hot Disable" Mask
+                //
+                // DISABLE_ANY     (1<<0) - All writers should check for this
+                // DISABLE_STRINGS (1<<1) - String Writers should check for this
+                // DISABLE_REGIO   (1<<2) - Register IO functions check
+                // DISABLE_FUNCTION(1<<3) - Function Entered/Exited/AutoTrace
+                // DISABLE_SMD     (1<<7) - Streaming Media Driver Activity
+                // DISABLE_MODULE  (1<<8) - Module Specific Events
+                //
+                // Default value: 0xffffffff - All event transmission disabled
+                //
+                // To turn all events on at any time run:
+                //          csven hot enable all
+
+                dismask = 0xffffffff
+
+                // SVEN Kernel Driver Debug Level
+                debug_level = 0
+
+                // # of individual buffers to split the shared memory area into.
+                // Default Value:  2 (two buffers)
+                num_bufs = 2
+            }
+
+            smd
+            {
+                // 0: Disable all SVEN logging in all SMD drivers
+                // 1: Enable all SVEN logging in all SMD drivers.  This will
+                //    override the sven_level provided by individual drivers.
+                //    One switch to turn ON all SVEN logging
+                // 2: (Default) Use the sven_level masks provided by individual
+                //    drivers.
+
+                sven_log_level_override = 2;
+
+                audio
+                {
+                    debug_level = 5
+                    debug_method = 0 //0=sven 1=os_print 2=disabled
+
+                    // Number of inputs supported per audio processor instance.
+                    // The lower the number, the fewer the resources consumed by
+                    // the audio driver. Should not be less than 1 or greater
+                    // than AUDIO_MAX_INPUTS (defined in ismd_audio_defs.h).
+                    max_num_inputs_per_processor = 5
+
+                    // While in timed mode at rates greater than
+                    // 1x, up to 2x, enable fast audio playback.
+                    enable_timed_trick_modes = 1
+
+                    truehd_inport_port_depth = 100
+
+                    // Set the DSP memory path.
+                    // 0 = coherent with IA cache (decreased audio DSP performance)
+                    // 1 = non-coherent with IA cache (increased audio DSP performance)
+                    dsp_memory_path = 1
+                    
+                    // Assign an audio DSP to do specific type of processing.
+                    // (Decoding or Post Processing(mix, sample rate convert,
+                    // etc.))
+                    //      0: DSP small cache
+                    //      1: DSP large cache
+                    dsp_post_processing = 0
+
+                    //      0: DSP small cache
+                    //      1: DSP large cache
+                    dsp_decode = 1
+
+                    // 0: disable
+                    // 1: enable
+                    asrc_support = 0
+
+                    // 0: audio independent clock recovery mode normal using
+                    //    samples render rate
+                    // 1: audio independent clock recovery mode phase adjust
+                    //    using samples capture rate
+                    clock_recovery_mode = 1;
+
+                    render
+                    {
+                        //Invert i2s0 bit clock
+                        //  0: normal
+                        //  1: inverted
+                        invert_i2s0_bit_clk = 1
+
+                        //Invert i2s1 bit clock
+                        //  0: normal
+                        //  1: inverted
+                        invert_i2s1_bit_clk = 1
+                    }
+
+                    capture
+                    {
+                        // bitclock direction for i2s input
+                        //  0: external (SI9135 route)
+                        //  1: internal (ADC route)
+
+                        // *********  SOC-DEPENDENT  *********
+                        // i2s0_bitclk_direction =
+
+                        i2s1_bitclk_direction = 0
+
+                        // i2s format
+                        //  0: standard (SI9135 configured for this)
+                        //  1: MSB right justified
+                        i2s0_msb_justified = 0
+                        i2s1_msb_justified = 0
+
+                        // SPDIF measured clock update rate:
+                        //  0: every 192 stereo samples
+                        //  1: every stereo sample
+                        spdif_clock_update_rate = 0
+                    }
+                }
+                core
+                {
+                    // Enable different types of sven messages
+                    //   0: silent
+                    //   1: Error / Critical Conditions / API
+                    //   2: Data flow
+                    //   3: Generic Debug
+                    // Default : 12
+                    //
+                    // E.g.:
+                    //  Enable Error + Function enter/exit: sven_log_level=13
+                    //  Enable all events:                  sven_log_level=123
+                    //  Enable just data flow:              sven_log_level=2
+                    //  Disable all sven messages:          sven_log_level=0
+
+                     sven_log_level = 12
+
+                    frame_buffer_properties
+                    {
+                        stride = 2048
+                        region_height = 4352
+                        tile_height = 64
+                        // *********  SOC-DEPENDENT  *********
+                        // tile_width =
+                    }
+                    
+                    linear_buffer_properties 
+                    {
+                        // sizes to "snap" allocations to.  This prevents too 
+                        // many discrete sizes from dedicating excess pages
+                        // Allocations of sizes not listed here will use the  
+                        // next largest size.  Allocations larger than the
+                        // largest size here are not snapped at all.
+                        // Can have any number of entries here, as long as each
+                        // is named uniquely.
+                        allocation_sizes
+                        {
+                            size2k   = 2048
+                            size4k   = 4096
+                            size8k   = 8192
+                            size16k  = 16384
+                            size32k  = 32768
+                            size48k  = 49152
+                            size64k  = 65536
+                            size96k  = 98304
+                            size128k = 131072
+                            size256k = 262144
+                        }
+                    }
+                }
+                clock
+                {
+                    clock_properties
+                    {
+                        master_clock_source = 0 // VCXO = 0, MASTER_DDS = 1
+
+                        // vcxo_upper_limit and vcxo_lower_limit are VCXO
+                        // part-specific parameters. The default values are
+                        // characterized for the VCXO part available on Intel
+                        // CE boards.  VCXO center frequency will be the center
+                        // of the VCXO tunable range.
+
+                        // Upper tunable limit of VCXO in Hz
+                        vcxo_upper_limit = 27002000
+
+                        // Lower tunable limit of VCXO in Hz
+                        vcxo_lower_limit = 26998000
+
+                        default_clock_domain = 1  // Audio = 0,  Video = 1,  Local = 2                     
+                                                                                                            
+                        clock_configuration = 0 // CAV_BROADCAST = 0, CAV_PASSTHROUGH = 1, DTV = 2  
+                        
+                        ssc_mode = 0  // None = 0, Center = 2, Down = 3
+                        
+                        ssc_spread = 0 
+                        
+                        ssc_rate = 0
+                    }
+                }
+                demux
+                {
+                    // Level of messages to print from the demux driver
+                    //  0: fatal errors
+                    //  1: all possible errors and warnings
+                    //  2: errors, warnings, most debug messages
+                    //  3+: everything and the kitchen sink
+
+                    debug_level = 0
+
+                    // Whether(1) or not(0) to throttle messages sent to the
+                    // console to prevent flooding when repeated errors are
+                    // encountered.  Does not affect messages sent to SVEN.
+
+                    console_flood_prevention = 1 // IGNORED ON CE4100
+
+                    // Enable different types of sven messages
+                    //   0: silent
+                    //   1: Error / Critical Conditions / API
+                    //   2: Data flow
+                    //   3: Generic Debug
+                    //   4: Function enter/exit
+                    // Default : 12
+                    //
+                    // E.g.:
+                    //  Enable Error + Function enter/exit: sven_log_level=14
+                    //  Enable all events:                  sven_log_level=1234
+                    //  Enable just data flow:              sven_log_level=2
+                    //  Disable all sven messages:          sven_log_level=0
+
+                    sven_log_level = 12
+
+                    // Set to 1 to ignore the error signal on all TSI interfaces
+                    tsi_err_disabled = 0
+                }
+                remux
+                {
+                    // Enable different types of sven messages
+                    //   0: silent
+                    //   1: Error / Critical Conditions / API
+                    //   2: Data flow
+                    //   3: Generic Debug
+                    //   4: Function enter/exit
+                    // Default : 12
+                    //
+                    // E.g.:
+                    //  Enable Error + Function enter/exit: sven_log_level=14
+                    //  Enable all events:                  sven_log_level=1234
+                    //  Enable just data flow:              sven_log_level=2
+                    //  Disable all sven messages:          sven_log_level=0
+
+                     sven_log_level = 12
+                }
+                viddec
+                {
+                    // Level of messages to print from the vidrend driver
+                    //   0: silent
+                    //   1: errors only
+                    //   2: warnings
+                    //   3: major events
+
+                    debug_level = 1
+
+                    // Enable different types of sven messages
+                    //   0: silent
+                    //   1: Error / Critical Conditions / API
+                    //   2: Data flow
+                    //   3: Generic Debug
+                    //   4: Function enter/exit
+                    // Default : 12
+                    //
+                    // E.g.:
+                    //  Enable Error + Function enter/exit: sven_log_level=14
+                    //  Enable all events:                  sven_log_level=1234
+                    //  Enable just data flow:              sven_log_level=2
+                    //  Disable all sven messages:          sven_log_level=0
+
+                     sven_log_level = 12
+
+                    // Maximum number of frames that can be reversed for H264
+                    // contents during smooth reverse. This can be changed
+                    // based on the memory layout.
+
+                    max_frames_to_reverse_in_H264 = 10
+                   
+                    // When stream height and width is less than max values
+                    // provided below, the allocated frame will be of size 
+                    // max_low_res_height x max_low_res_width. This is done
+                    // to avoid usage of different frame buffer regions for
+                    // similar sized frames.
+                    // Note: height and width will be truncated to 720x576
+                    // by viddec if very large invalid numbers are entered here
+                    max_low_res_width  = 360;
+                    max_low_res_height = 280;
+                 
+                    // flag to configure viddec in interrupt or polling mode
+                    // 0: polling mode, 1: interrupt mode
+                    isr_mode = 1;
+                }
+                vidpproc
+                {
+                    // debug flag determines what is sent to the serial port
+                    // and supports the following options:
+                    //  0: silent
+                    //  1: errors only
+                    //  2: warnings/major events
+                    //  3: all messages
+
+                    debug_level = 1
+
+                    // Enable different types of sven messages
+                    //   0: silent
+                    //   1: Error / Critical Conditions / API
+                    //   2: Data flow
+                    //   3: Generic Debug
+                    //   4: Function enter/exit
+                    // Default : 12
+                    //
+                    // E.g.:
+                    //  Enable Error + Function enter/exit: sven_log_level=14
+                    //  Enable all events:                  sven_log_level=1234
+                    //  Enable just data flow:              sven_log_level=2
+                    //  Disable all sven messages:          sven_log_level=0
+
+                     sven_log_level = 12
+                }
+                vidrend
+                {
+                    // Level of messages to print from the vidrend driver
+                    //  0: silent
+                    //  1: errors only
+                    //  2: warnings
+                    //  3: major events
+
+                    debug_level = 1
+
+                    // Enable different types of sven messages
+                    //   0: silent
+                    //   1: Error / Critical Conditions / API
+                    //   2: Data flow
+                    //   3: Generic Debug
+                    //   4: Function enter/exit
+                    // Default : 12
+                    //
+                    // E.g.:
+                    //  Enable Error + Function enter/exit: sven_log_level=14
+                    //  Enable all events:                  sven_log_level=1234
+                    //  Enable just data flow:              sven_log_level=2
+                    //  Disable all sven messages:          sven_log_level=0
+
+                     sven_log_level = 12
+                     
+                    // Level for DEVH_DBG (printing to the sven console)
+
+                    sven_level = 5
+                    
+                    
+
+                    // Frames sent to display at half rate
+                    //  0: false or half rate disabled
+                    //  1 (non-zero): true or half rate enabled
+
+                    half_rate_enable = 0
+
+                    // Send first frame to display as soon as it is received
+                    //  0: false or display first frame based on pts
+                    //  1 (non-zero): true or first frame displayed as soon as
+                    //                  received
+
+                    display_first_frame_fast = 0
+                }
+               videnc
+                {
+                    // Enable different types of sven messages
+                    //   0: silent
+                    //   1: Error / Critical Conditions / API
+                    //   2: Data flow
+                    //   3: Generic Debug
+                    //   4: Function enter/exit
+                    // Default : 12
+                    //
+                    // E.g.:
+                    //  Enable Error + Function enter/exit: sven_log_level=14
+                    //  Enable all events:                  sven_log_level=1234
+                    //  Enable just data flow:              sven_log_level=2
+                    //  Disable all sven messages:          sven_log_level=0
+
+                    sven_log_level = 12
+                }
+                mux
+                {
+                    // Enable different types of sven messages
+                    //   0: silent
+                    //   1: Error / Critical Conditions / API
+                    //   2: Data flow
+                    //   3: Generic Debug
+                    //   4: Function enter/exit
+                    // Default : 12
+                    //
+                    // E.g.:
+                    //  Enable Error + Function enter/exit: sven_log_level=14
+                    //  Enable all events:                  sven_log_level=1234
+                    //  Enable just data flow:              sven_log_level=2
+                    //  Disable all sven messages:          sven_log_level=0
+
+                    sven_log_level = 12
+                }
+                bufmon
+                {
+                    // debug level determines what is sent to the serial port
+                    // and supports the following options:
+                    //  0: silent
+                    //  1: errors only
+                    //  2: errors and warnings
+                    //  3: errors, warnings, major events
+                    //  4: everything
+                    //
+                    // If not specified, it will default to errors only.
+
+                    debug_level = 1
+                                        
+                    // Enable different types of sven messages
+                    //   0 : silent
+                    //   1 : Error / Critical Conditions / API
+                    //   2 : Data flow
+                   
+                    // E.g. To enable all events assign sven_log_level = 12
+                    // E.g. To enable just data flow assign sven_log_level = 2                   
+                    // E.g. To disable all sven messages assign sven_log_level = 0                    
+                    // Default : 12
+   
+                     sven_log_level = 12
+                }
+                tsout
+                {
+                    // Debug level determines what is sent to the serial port
+                    // and supports the following options:
+                    //  0: silent
+                    //  1: errors only
+                    //  2: errors and warnings
+                    //  3: errors, warnings, major events
+                    //  4: errors, warnings, major events, Memory
+                    //  5+: Verbose levels
+                    //
+                    // If not specified, it will default to errors only.
+
+                    debug_level = 2
+
+                    // Level of messages for sven logging
+
+                    sven_level  = 3
+
+                    //  Signal configuration for the TSOut signals
+
+                    // CE TX Interface Packet SYNC (1394_OSYNC) mode :
+                    //  0: Pulse marking the first bit of the first byte of the
+                    //      DIF packer;
+                    //  1: Pulse marking the first byte of the DIF packer;
+                    //  2: level covering entire DIF packet from first bit of
+                    //     first byte to last bit of last byte.
+
+                    sync_len = 0
+
+                    // CE TX Interface Data Valid output (1394_ODAV) polarity:
+                    //  0: active high
+                    //  1: active low
+
+                    odav_pol = 0
+
+                    // CE TX Interface Packet Enable/Error output (1394_OENABLE)
+                    // polarity:
+                    //  0: active high
+                    //  1: active low
+
+                    oenable_pol = 0
+
+                    // CE TX Interface Packet SYNC output (1394_OSYNC) polarity.
+                    //  0: active high
+                    //  1: active low
+
+                    osync_pol = 0
+
+                    // CE TX Interface Clock sampling edge:
+                    //  0: rising edge
+                    //  1: falling edge
+
+                    oclk_edge = 1
+
+                    // Clock Frequency
+                    //  0: 27 MHz
+                    //  1: 54 MHz
+                    //  2: 74.25 MHz
+
+                    oclk_freq = 1
+                }
+            }
+        }
+
+        // Predefined threads and thread groups in the Intel CE stack.
+        //
+        // This configuration node lists the names of the defined threads,
+        // and the priorities with which they will be created.
+        //
+        // In the current implementation the legal priorities are:
+        //
+        // [1,99]   Any priority in this range causes the thread to be created
+        //          with the Linux "realtime" scheduling policy and the
+        //          specified priority, where 99 is the highest priority.
+        //
+        // 0        The lowest priority.  A thread with priority 0 will be
+        //          created with the Linux "non-realtime" scheduling policy.
+        //
+        // The primary reasons for the existence of this node are to allow
+        // developers of the stack to easily tune thread priorities and to ease
+        // porting to new kernels or OS's.
+        //
+        // End users:
+        // - should not add to this list.  Adding a thread name without
+        //   corresponding changes in the stack source has no effect.
+        // - may change the absolute priorities (in order to accommodate
+        //   application threads) but should not change the relative order of
+        //   the priorities of these threads.  Changing the relative priorities
+        //   or creating realtime application threads with competing priorities
+        //   could require re-evaluation of the system.
+        threads
+        {
+            DisplayInterrupt   { priority = 99 }
+            VidPProc_IO        { priority = 90 }
+            VidDec_hal_Poll    { priority = 90 }
+            Audio_Output       { priority = 80 }
+            Audio_Pipe_Mgr     { priority = 80 }
+            Audio_Timing       { priority = 80 }
+            Audio_Recovery     { priority = 80 }
+            AVCap_RX_CE        { priority = 80 }
+            DisplayVBD         { priority = 80 }
+            ICEPM_notify       { priority = 75 }
+            DisplayGDL         { priority = 70 }
+            Mux_isr            { priority = 70 }
+            Mux                { priority = 70 }
+            VidEnc_hal_isr     { priority = 70 }
+            VidEnc_hal_Wkld    { priority = 70 }
+            VidRend_IO         { priority = 70 }
+            VidRend_Output     { priority = 70 }
+            DisplayWBPproduce  { priority = 70 }
+            DisplayWBPconsume  { priority = 70 }
+            DisplayVBI         { priority = 70 }
+            VidDec_Output      { priority = 60 }
+            VidEnc_Output      { priority = 60 }
+            AVCap_Input        { priority = 60 }
+            VidDec_hal_Parser  { priority = 55 } // Not used for CE4100
+            VidDec_hal_Decoder { priority = 55 } // Not used for CE4100
+            DisplayHDMI        { priority = 50 }
+            DisplayLRID        { priority = 50 }
+            Audio_Input        { priority = 50 }
+            VidDec_hal_Wkld    { priority = 50 }
+            VidDec_Input       { priority = 40 }
+            VidEnc_Input       { priority = 40 }
+            Alsa_Shim          { priority = 30 }
+            Demux_Input        { priority = 20 } // Used for CE4100 only
+            Demux_Output       { priority = 20 } // Used for CE4100 only
+            Demux_IO           { priority = 20 } // Not used for CE4100
+            Remux              { priority = 20 }
+            TSOut              { priority = 20 }
+            Audio_hal          { priority = 10 }
+            AVCap_RX           { priority = 10 }
+            VidDec_User        { priority = 10 }
+            Core_WrapperClock  { priority =  5 }
+            LibgdlEventNotify  { priority =  0 }
+            BufMon_Thread      { priority =  0 }
+            EGLWindowSwap      { priority =  0 }
+            DirectFB_Critical  { priority =  0 }
+            DirectFB_Messaging { priority =  0 }
+            DirectFB_Output    { priority =  0 }
+            DirectFB_Input     { priority =  0 }
+            DirectFB_Cleanup   { priority =  0 }
+            DirectFB_Default   { priority =  0 }
+            XPageFlip          { priority =  0 }
+        }
+    }
+}

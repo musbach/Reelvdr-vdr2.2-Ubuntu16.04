@@ -1,0 +1,6 @@
+#
+# The Burn plugin requires vdr to be a member of the group 'cdrom' in order to
+# get access to the CD or DVD writer.
+#
+
+cdrom

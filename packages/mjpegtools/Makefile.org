@@ -1,0 +1,46 @@
+#just for the reelbox package build-system
+#TARGET_VERSION := 1.9.0rc3
+TARGET_VERSION := 1.9.0
+  # look at mjpegtools_$(TARGET_VERSION)/debian/changelog for BUILD #
+BUILD          := 0
+
+ifdef RBMINI
+    ARCH = armel
+else
+    ARCH = i386
+    GNU_TYPE = -tpentium3-linux-gnu
+endif
+
+TARGET = mjpegtools_$(TARGET_VERSION)-$(BUILD)_$(ARCH).deb
+
+TMP = mjpegtools-$(TARGET_VERSION)
+
+REEL_VERSION := $(shell grep -m1 mjpegtools mjpegtools-$(TARGET_VERSION)/debian/changelog | cut -f 2 -d"(" | cut -f1 -d")" )
+
+all: $(TARGET)
+
+$(TARGET): $(TMP)/configure \
+		$(TMP)/debian/control \
+		$(TMP)/debian/changelog \
+		$(TMP)/debian/mjpegtools.postinst \
+		$(TMP)/debian/mjpegtools.prerm
+	echo "this here is really really experimental..."
+	cd $(TMP) ; dpkg-buildpackage -a$(ARCH) $(GNU_TYPE) -rfakeroot -us -uc -tc
+	cp -av *.deb ..
+
+
+$(TMP)/configure:
+	tar -zxf $(TMP).tar.gz
+	cat reel*.diff | patch -p1 -d $(TMP)
+	touch $@
+
+$(TMP)/debian/changelog \
+$(TMP)/debian/control \
+$(TMP)/debian/mjpegtools.postinst \
+$(TMP)/debian/mjpegtools.prerm:
+	cp -a $(@F) $@
+
+clean:
+	-make -C mjpegtools-$(TARGET_VERSION) clean
+	-rm -f *.deb *.dsc *.changes mjpegtools_$(TARGET_VERSION)-$(BUILD).tar.gz
+	-rm -rf $(TMP)

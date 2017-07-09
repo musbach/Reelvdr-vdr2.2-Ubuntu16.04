@@ -1,0 +1,127 @@
+TOC
+1. Introduction
+2. Getting the source code
+3. Basic Installation
+4. OScam compatibility
+5. Plugin setup
+6. Commandline options
+7. Known problems
+8. Thanks area
+
+-----------------------------------------------------------------------------
+1. Introduction
+-----------------------------------------------------------------------------
+
+DVBAPI plugin for VDR
+
+  This plugin is simplified version of VDR-SC plugin. The main purpose of the
+plugin is to act as a bridge between VDR and OScam.
+
+Refer to INSTALL/README for installation and usage procedure
+Refer to FAQ for frequently asked questions
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+Latest version available at: https://github.com/manio/vdr-plugin-dvbapi
+
+NOTE TO NEW LINUX USERS: All lines that are prefixed with the '$'
+character are commands that need to be typed into a terminal window /
+console (similar to the command prompt for Windows). Note that the '$'
+character itself should NOT be typed as part of the command.
+
+-----------------------------------------------------------------------------
+2. Getting the source code
+-----------------------------------------------------------------------------
+
+You will have to grab the source code of course. First install the git
+package provided by your distribution. Then from a terminal, type:
+
+   $ cd /usr/local/src/vdr/PLUGINS/src
+   $ git clone git://github.com/manio/vdr-plugin-dvbapi.git
+   $ ln -s vdr-plugin-dvbapi dvbapi
+
+-----------------------------------------------------------------------------
+3. Basic Installation
+-----------------------------------------------------------------------------
+
+For sample installation instructions refer to INSTALL file.
+For Kathrein UFS 9xx support refer to extra/sh4-ufs9xx/README file.
+
+-----------------------------------------------------------------------------
+4. OScam compatibility
+-----------------------------------------------------------------------------
+
+If you are building newest oscam from sources, then just use newest plugin
+git revision. The following table explain details.
+
+OScam version        dvbapi plugin version
+svn rev >= 7314      1.0.3 or recent git versions
+svn rev < 7314       1.0.2
+
+-----------------------------------------------------------------------------
+5. Plugin setup
+-----------------------------------------------------------------------------
+
+The log level parameter of the plugin can be configured either from VDR
+menu or manually editing the VDR's setup.conf file (remember to change
+the file when VDR is not running).
+
+The parameter line for the plugin is:
+dvbapi.LogLevel = 2
+
+The values for the log level are:
+  0 - totally disable debug
+  1 - only error messages
+  2 - information and error messages (default)
+  3 - all information including debug
+
+
+The size of DeCSA TS buffer can also be changed using this config line:
+dvbapi.DeCsaTsBuffSize = 4
+The default is 4 MB which should be sufficient, but if you have overflow
+errors in the log and/or the output stream has errors, you can try to adjust
+this value experimentally.
+
+-----------------------------------------------------------------------------
+6. Commandline options
+-----------------------------------------------------------------------------
+
+Some budget card drivers provide a CA device (eg: /dev/dvb/adapter0/ca0).
+This leads the plugin to detect the card as a full-featured one, thus
+disabling software CSA. You should use commandline option -B to force
+detection as a budget card in such a case.
+
+If you want to enable budget mode on adapter 0 and 1 you need to run vdr
+like this:
+  vdr -P"dvbapi -B0 -B1"
+
+-----------------------------------------------------------------------------
+7. Known problems
+-----------------------------------------------------------------------------
+
+The plugin may conflict with dynamite plugin. You need to disable dynamite
+plugin in case of problems.
+
+-----------------------------------------------------------------------------
+8. Thanks area
+-----------------------------------------------------------------------------
+
+ I would like to give a big thanks to a number of people from the OScam Board
+ (oscam.to) and eurocardsharing forum for their great help and support.
+
+ To Aigars for creating the first simplified version of this plugin using
+ VDR-SC and with modifications from dvbapi-patch.tar.gz
+
+ To Narog for implementing the multiple adapter support
+
+ To Peje, Unixer, Copper, HALLO01, udobroemme, ninjagp, JeroenT for their
+ patience, support and testing on own hardware.
+
+ To the authors of VDR-SC plugin, FFdecsa and Oscam for their great work and
+ dedication
+
+ In last to all other forum members that have/will contribute to this plugin.

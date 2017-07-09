@@ -1,0 +1,9 @@
+<!-- integer -->
+<tr>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% data.msg %?>
+    </td>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <input type="text" name="<?% data.NAME %?>" value="<?% cgi.param(data.NAME) || data.def %?>" <?% FOREACH p IN param.tags; "$p ";END %?>>
+    </td>
+</tr>

@@ -1,0 +1,6 @@
+libtombupnp_a-upnpdebug.o: ../upnp/src/api/upnpdebug.c \
+ /usr/include/stdc-predef.h ../../tombupnp/upnp/inc/upnpconfig.h
+
+/usr/include/stdc-predef.h:
+
+../../tombupnp/upnp/inc/upnpconfig.h:

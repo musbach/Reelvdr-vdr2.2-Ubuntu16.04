@@ -1,0 +1,293 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Vyacheslav Dikonov <sdiconov@mail.ru>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <helmut@helmutauer.de>\n"
+"POT-Creation-Date: 2010-10-11 22:53+0200\n"
+"PO-Revision-Date: 2008-05-20 12:39+0200\n"
+"Last-Translator: Vyacheslav Dikonov <sdiconov@mail.ru>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-5\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Start conversion"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Merge recordings"
+msgstr ""
+
+msgid "Audiotracks"
+msgstr ""
+
+msgid "length"
+msgstr ""
+
+msgid "cutlen"
+msgstr ""
+
+msgid "Ignore"
+msgstr ""
+
+msgid "Use if possible"
+msgstr ""
+
+msgid "Master"
+msgstr ""
+
+msgid "Choose audio tracks"
+msgstr ""
+
+msgid "Convert"
+msgstr ""
+
+msgid "Convert recordings"
+msgstr ""
+
+msgid "free"
+msgstr ""
+
+msgid "Move down"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Audio"
+msgstr ""
+
+msgid "Empty list"
+msgstr ""
+
+msgid "Recording info"
+msgstr ""
+
+msgid "Video info"
+msgstr ""
+
+msgid "Audio info"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Recordings"
+msgstr ""
+
+msgid "Sort"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "No recordings found"
+msgstr ""
+
+msgid "main dir alphabetically, subdirs flexible"
+msgstr ""
+
+msgid "main dir by date, subdirs flexible"
+msgstr ""
+
+msgid "all alphabetically"
+msgstr ""
+
+msgid "all by date"
+msgstr ""
+
+msgid "Sorting"
+msgstr ""
+
+msgid "Starting convert"
+msgstr ""
+
+msgid "Config file not found"
+msgstr ""
+
+msgid "Save changes?"
+msgstr ""
+
+msgid "Yacoto Setup"
+msgstr ""
+
+msgid "settings"
+msgstr ""
+
+msgid "Save+Exit"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Saving settings"
+msgstr ""
+
+msgid "Yacoto conversion is running"
+msgstr ""
+
+msgid "Additional parms"
+msgstr ""
+
+msgid "Audio bitrate"
+msgstr ""
+
+msgid "Audio codec"
+msgstr ""
+
+msgid "Audio parms"
+msgstr ""
+
+msgid "Audio source"
+msgstr ""
+
+msgid "Burn device"
+msgstr ""
+
+msgid "Burn speed"
+msgstr ""
+
+msgid "Burn video dvd"
+msgstr ""
+
+msgid "CROP"
+msgstr ""
+
+msgid "Chapter each mark"
+msgstr ""
+
+msgid "Chapter each n minutes"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Create iso image"
+msgstr ""
+
+msgid "Create video_ts"
+msgstr ""
+
+msgid "Cut recordings"
+msgstr ""
+
+msgid "Disc size"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "Groesse"
+msgstr ""
+
+msgid "Keep dir structure"
+msgstr ""
+
+msgid "Keep logfiles"
+msgstr ""
+
+msgid "LogFile directory"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Naming convention"
+msgstr ""
+
+msgid "Other parms"
+msgstr ""
+
+msgid "Output parms"
+msgstr ""
+
+msgid "Parallel conversion"
+msgstr ""
+
+msgid "Priority(Min=19)"
+msgstr ""
+
+msgid "Quality"
+msgstr ""
+
+msgid "Remux mode"
+msgstr ""
+
+msgid "Resample rate"
+msgstr ""
+
+msgid "Scale"
+msgstr ""
+
+msgid "Single pass parms"
+msgstr ""
+
+msgid "Skalierung"
+msgstr ""
+
+msgid "Split films"
+msgstr ""
+
+msgid "Target audio dir"
+msgstr ""
+
+msgid "Target video dir"
+msgstr ""
+
+msgid "Temp directory"
+msgstr ""
+
+msgid "VDR video dir"
+msgstr ""
+
+msgid "Video bitrate"
+msgstr ""
+
+msgid "Video codec"
+msgstr ""
+
+msgid "Video max. bitrate"
+msgstr ""
+
+msgid "Video parms"
+msgstr ""
+
+msgid "Video parms pass 1"
+msgstr ""
+
+msgid "Video parms pass 2"
+msgstr ""
+
+msgid "Zoom"
+msgstr ""
+
+msgid "Zusatzoptionen"
+msgstr ""
+
+msgid "ffmpeg parms"
+msgstr ""
+
+msgid "lame parms"
+msgstr ""
+
+msgid "mencoder parms"
+msgstr ""

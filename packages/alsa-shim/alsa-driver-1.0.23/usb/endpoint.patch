@@ -1,0 +1,67 @@
+--- endpoint.c.orig	2011-07-20 12:46:13.553719989 +0800
++++ endpoint.c	2011-07-20 12:55:15.117719999 +0800
+@@ -1,3 +1,5 @@
++#define __NO_VERSION__
++#include "usbaudio.inc"
+ /*
+  *   This program is free software; you can redistribute it and/or modify
+  *   it under the terms of the GNU General Public License as published by
+@@ -34,6 +36,22 @@
+ #include "helper.h"
+ #include "format.h"
+ 
++#if LINUX_VERSION_CODE > KERNEL_VERSION(2, 6, 35)
++/* 4.9.2 Class-Specific AS Interface Descriptor */
++
++struct uac_as_header_descriptor_v2 {
++	__u8 bLength;
++	__u8 bDescriptorType;
++	__u8 bDescriptorSubtype;
++	__u8 bTerminalLink;
++	__u8 bmControls;
++	__u8 bFormatType;
++	__u32 bmFormats;
++	__u8 bNrChannels;
++	__u32 bmChannelConfig;
++	__u8 iChannelNames;
++} __attribute__((packed));
++#endif
+ 
+ /*
+  * free a substream
+@@ -186,7 +204,11 @@
+ 		    (altsd->bInterfaceSubClass != USB_SUBCLASS_AUDIOSTREAMING &&
+ 		     altsd->bInterfaceSubClass != USB_SUBCLASS_VENDOR_SPEC) ||
+ 		    altsd->bNumEndpoints < 1 ||
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 11)
+ 		    le16_to_cpu(get_endpoint(alts, 0)->wMaxPacketSize) == 0)
++#else
++		    get_endpoint(alts, 0)->wMaxPacketSize == 0)
++#endif
+ 			continue;
+ 		/* must be isochronous */
+ 		if ((get_endpoint(alts, 0)->bmAttributes & USB_ENDPOINT_XFERTYPE_MASK) !=
+@@ -274,7 +296,11 @@
+ 		    fp && fp->altsetting == 1 && fp->channels == 1 &&
+ 		    fp->formats == SNDRV_PCM_FMTBIT_S16_LE &&
+ 		    protocol == UAC_VERSION_1 &&
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 11)
+ 		    le16_to_cpu(get_endpoint(alts, 0)->wMaxPacketSize) ==
++#else
++		    get_endpoint(alts, 0)->wMaxPacketSize ==
++#endif
+ 							fp->maxpacksize * 2)
+ 			continue;
+ 
+@@ -301,7 +327,11 @@
+ 		fp->endpoint = get_endpoint(alts, 0)->bEndpointAddress;
+ 		fp->ep_attr = get_endpoint(alts, 0)->bmAttributes;
+ 		fp->datainterval = snd_usb_parse_datainterval(chip, alts);
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 11)
+ 		fp->maxpacksize = le16_to_cpu(get_endpoint(alts, 0)->wMaxPacketSize);
++#else
++		fp->maxpacksize = get_endpoint(alts, 0)->wMaxPacketSize;
++#endif
+ 		/* num_channels is only set for v2 interfaces */
+ 		fp->channels = num_channels;
+ 		if (snd_usb_get_speed(dev) == USB_SPEED_HIGH)

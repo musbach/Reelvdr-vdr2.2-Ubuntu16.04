@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/vdr-mcli-plugin/!svn/ver/19/mcast/common/win32/visualstudio/netcvfuse
+END
+channels.conf
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/visualstudio/netcvfuse/channels.conf
+END
+netcvfuse.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/vdr-mcli-plugin/!svn/ver/19/mcast/common/win32/visualstudio/netcvfuse/netcvfuse.vcproj
+END

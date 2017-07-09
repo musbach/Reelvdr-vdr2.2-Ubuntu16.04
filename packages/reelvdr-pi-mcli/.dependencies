@@ -1,0 +1,3 @@
+tmp/usr/lib/vdr/libvdr-mcli.so.2.2.0: /usr/src/reelbox/testing/src/vdr-plugins/lib/libvdr-mcli.so.2.2.0
+tmp/usr/share/locale/de_DE/LC_MESSAGES/vdr-mcli.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/mcli/po/de_DE.mo
+tmp/usr/share/locale/nl_NL/LC_MESSAGES/vdr-mcli.mo: /usr/src/reelbox/testing/src/vdr-plugins/src/mcli/po/nl_NL.mo

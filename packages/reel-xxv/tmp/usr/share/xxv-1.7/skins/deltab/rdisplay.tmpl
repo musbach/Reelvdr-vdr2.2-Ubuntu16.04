@@ -1,0 +1,314 @@
+<!-- rdisplay -->
+<?% USE date %?>
+<?% title = data.Title %?>
+<?% subtitle = data.SubTitle %?>
+<?% id = data.RecordId %?>
+<?% allowplay = 1 IF allow('rplay') or allow('playrecord') %?>
+<script language="javascript" type="text/javascript">
+<!--
+  function setstart(wert) {
+    document.forms.offset.__start.value = wert;
+  }  
+  function playstart(cmd) {
+    var url = '?cmd='+ cmd + '&data=<?% id %?>&__start=' + document.forms.offset.__start.value;
+    location.href = url;
+  }
+-->
+</script>
+
+<div id="body">
+<?% ######################################################################## %?>
+<?% BLOCK hfs # d in Sekunden %?>
+  <?% d div 3600 %?>:<?% d div 60 mod 60 | format('%02d') %?>:<?% d mod 60 | format('%02d') %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK dur # d in Sekunden %?>
+    <br /><?% gettext("Duration") %?>: <?% PROCESS hfs %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK image %?>
+	<?% files = data.preview.split(',') %?>
+  <?% IF data.Type == 'RADIO' %?>
+    <img class="recorddetails" src="images/audio.<?% global.imagetyp %?>" alt="" title="<?% gettext('Radio recording') %?>" />
+  <?% ELSIF files.size > 0; %?>
+						<table summary="">
+							<tr>
+								<td>
+                 <?% FOREACH frame IN files %?>
+            		  <?% x = ( frame ) / 25 %?>
+                 <?% IF allowplay %?><a href="javascript:setstart('<?% PROCESS hfs d=x %?>')" ><?% END %?>
+                  <img class="recording" src="?cmd=ri&data=<?% data.RecordId %?>_<?% frame %?>" alt="" title="<?% PROCESS hfs d=x %?>" />
+                  <?% IF allowplay %?></a><?% END %?>
+                <?% IF (loop.count) mod 5 == 0 && loop.count != loop.size %?>
+ 	    					</td>
+							</tr>
+							<tr>
+								<td>
+									<?% END %?>
+									<?% END %?>
+								</td>
+							</tr>
+						</table>
+  <?% ELSE %?>
+    <img class="recorddetails" src="images/movie.<?% global.imagetyp %?>" alt="" title="<?% gettext('Television recording') %?>" />
+  <?% END; %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK marks %?>
+<?% width = 600 %?>
+  <table summary="" style="width:<?% width %?>px; margin:0; padding:0; text-align:left" >
+    <tr>
+        <?%- 
+             multi=1;
+             IF data.Duration;
+               window = 900;
+               ticks = 0;
+               WHILE (ticks <= 3 or ticks >= 8) && window > 15;
+                 ticks = (data.Duration div window) + 1;
+                 IF ticks >= 8;
+                   window = window * 2; 
+                 ELSIF ticks <= 3;
+                   IF    window == 900;window = 600;
+                   ELSIF window == 600;window = 300;
+                   ELSIF window == 300;window = 150;
+                   ELSIF window == 150;window = 60;
+                   ELSE; window = window / 2; 
+                   END;
+                 END;
+               END;
+             END;
+             
+             IF window <= 300;
+              multi=60;
+             END;
+             IF window <= 15 or ticks < 1;
+              ticks = 1;
+              window = 15;
+             END;
+             cols = 0; 
+             WHILE cols < ticks; 
+                cols = cols + 1; 
+                seconds = window * cols; -%?>
+
+         <td colspan="3" style="width:<?% ( ( width / ticks) ) div 1 %?>px; white-space: nowrap; text-align:right">
+            <font size='0.66em'>
+<?% IF allowplay && seconds < data.Duration %?><a href="javascript:setstart('<?% PROCESS hfs d=seconds %?>')" ><?% END %?>
+                <?% ( seconds * multi ) div 3600 %?>:<?% ( seconds * multi ) div 60 mod 60 | format('%02d') %?>
+<?% IF allowplay && seconds < data.Duration %?></a><?% END %?>
+            </font>
+        </td>
+<?% END %?>
+    </tr>
+    <tr>
+        <?%- cols = 0; 
+             window = window div 3;
+             WHILE cols < ( ticks * 3); 
+                cols = cols + 1; 
+                seconds = window * cols; -%?>
+         <td style="width:<?% (width / (ticks * 3)) div 1 %?>px; white-space: nowrap; text-align:right">
+            <img style="background:<?% cols % 3 ? "gray" : "black" %?>" src="images/blank.gif" width="<?% cols % 12 ? "1" : "2" %?>" height='<?% (cols % 3 ? "5" : "10") %?>' />
+        </td>
+<?% END %?>
+    </tr>
+    <tr>
+        <td colspan="<?% cols %?>" style="white-space: nowrap">
+		<?%- secold = 0;
+	        c = -1;
+	        ml = data.Marks.split(',');
+          totaltime = ticks * window * 3;
+		      IF ml.size > 1;
+		FOREACH marker IN ml;
+                b = c;
+                c = c + 1;
+                m = marker.split(':');
+                sec = m.0 * 3600;
+                sec = sec + m.1 * 60;
+                sec = sec + m.2;
+                percent = ((sec-secold) / totaltime) * width;
+            -%?><?% IF c == 0 %?>
+					<?% class = "marksleft" %?>
+				<?% ELSE %?>
+					<?% class = (class == 'marksright2' ? 'marksright1' : 'marksright2'); %?>
+	        	<?% END %?><img<?% IF allowplay %?> onclick="javascript:setstart('<?% PROCESS hfs d=secold %?>')"<?% END %?> class="<?% class %?>" src="images/blank.gif" width="<?% ( percent ) div 1 %?>" height="12" title="<?% (b < 0 ? "0:00:00.00" : ml.$b) %?> - <?% ml.$c %?>" />
+            <?%- secold = sec;
+            END;
+            IF totaltime > secold;
+            class = (class == 'marksright2' ? 'marksright1' : 'marksright2'); 
+            percent = ((data.Duration - secold) / totaltime) * width;
+            -%?><img<?% IF allowplay %?> onclick="javascript:setstart('<?% PROCESS hfs d=secold %?>')"<?% END %?> class="<?% class %?>" src="images/blank.gif" width="<?% ( percent ) div 1 %?>" height="12" title="<?% (c < 0 ? "0:00:00.00" : ml.$c) %?> - <?% PROCESS hfs d=data.Duration %?>" />
+            <?% END %?>
+        <?% ELSE %?>
+			      <img class="marksleft" src="images/blank.gif" width="0" height="12" /><img class="marksright2" src="images/blank.gif" width="<?% (( data.Duration / totaltime) * width ) div 1 %?>" height="12" />
+        <?% END %?>
+        </td>
+    </tr>
+  </table>
+<?% END %?>
+<?% ######################################################################## %?>
+    <h1>
+        <?% IF data.New %?><img src="images/new.<?% global.imagetyp %?>" alt="" title="<?% gettext("New recording") %?>" /><?% END %?>            
+        <?% gettext("Recording") %?>: <?% title %?>
+        <?% IF subtitle != "" %?><small>&nbsp;~&nbsp;<?% subtitle %?></small><?% END %?></h1>
+			<table summary="">
+				<tr>
+					<td valign="top" align="center">
+          <?% PROCESS image %?>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" summary="">
+							<tr>
+								<td>
+			          <?% date.format(data.StartTime,"%A, %x",locale) %?>&nbsp;
+                &nbsp;&nbsp;&nbsp;<?% date.format(data.StartTime,"%H:%M",locale) %?>&nbsp;-&nbsp;<?% date.format(data.StopTime,"%H:%M",locale) %?>
+                <?% PROCESS dur d=data.Duration %?>
+                <?% IF ( data.cutlength + 10 ) <  data.Duration %?>&nbsp;<?% gettext("By cut") %?> : <?% PROCESS hfs d=data.cutlength %?><?% END %?>
+                <?% IF data.Channel %?>
+								<br /><?% gettext('Channel') %?> : <?% data.Channel %?>
+								<?% END %?>
+								</td>
+								<td align="right" >
+									<?% IF allow( 'rconvert' ) && param.reccmds.size > 0 %?>
+									<form action="">
+									<p>
+										<select name='data' onchange="di('?cmd=rconvert&amp;data=<?% id %?>&amp;__action=save&amp;__cmd=',this.form.data.options[this.form.data.options.selectedIndex].value)"> 
+											<option value='0'><?% gettext("Choose a command to edit this recording ...") %?></option>
+											<?% FOREACH cmd IN param.reccmds %?>
+                      <option value='<?% loop.count %?>'><?% cmd %?></option>
+											<?% END %?>
+										</select>
+									</p>
+									</form>
+									<?% END %?>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+                                    <p>
+<?% data.Description %?>
+                                    </p>
+								</td>
+						  </tr>
+              <?% allowkeywords = allow('rk') %?>
+              <?% IF data.keywords && data.keywords.size > 0 %?>
+							<tr>
+								<td colspan="2">
+                        <?% gettext('Keywords') %?>&nbsp;:&nbsp;
+		                    <?% FOREACH keyword IN data.keywords %?>
+                            <?% IF allowkeywords %?>
+                                    <a href="?cmd=rk&amp;data=<?% keyword.0 %?>">
+                            <?% END %?>
+                                      <?% keyword.0 %?>
+                            <?% IF allowkeywords %?>
+                                    </a>
+                            <?% END %?>
+                            &nbsp;
+		                    <?% END %?>
+					      </td>
+							</tr>
+              <?% END %?>
+							<tr>
+								<td colspan="2">
+                                    <p>
+                                       <?% PROCESS marks d=data.Marks %?>
+                                    </p>
+								</td>
+							</tr>						
+                            <tr>
+                                <td colspan="2">
+                                <?% gettext('Lifetime') %?>&nbsp;:&nbsp;<?% data.lifetime %?>,&nbsp;
+                                <?% gettext('Priority') %?>&nbsp;:&nbsp;<?% data.priority %?>
+                                </td>
+                            </tr>
+                        </table>
+					</td>
+				</tr>
+			</table>
+</div>
+
+<?% quest=data.Title;IF data.SubTitle.length > 0;quest=data.SubTitle;END %?>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+    <p class="section"><?% gettext("Recordings",20) %?></p>
+    <form name='offset' method='get' action="">
+    <p>
+        <a href="javascript:back()"><img src="images/back.<?% global.imagetyp %?>" alt="" title="<?% gettext("Back",20) %?>" /></a>&nbsp;
+        <a href="javascript:back()"><?% gettext("Back",20) %?></a><br />
+<?% IF allow( 'rcut' ) %?>
+        <a href="?cmd=rcut&amp;data=<?% id %?>">
+            <img src="images/cut.<?% global.imagetyp %?>" alt="" title="<?% gettext("Cut recording") %?>" />
+        </a>
+        &nbsp;
+        <a href="?cmd=rcut&amp;data=<?% id %?>">
+            <?% gettext("Cut recording",20) %?>
+        </a>
+        <br />
+<?% END %?>
+<?% IF allow( 'redit' ) %?>
+        <a href="?cmd=redit&amp;data=<?% id %?>">
+            <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit recording") %?>" />
+        </a>
+        &nbsp;
+        <a href="?cmd=redit&amp;data=<?% id %?>">
+            <?% gettext("Edit recording",20) %?>
+        </a>
+        <br />
+<?% END %?>
+<?% IF allow( 'rdelete' ) %?>
+        <a href="javascript:sure('<?% gettext("Would you like to delete this recording?") %?> : \'<?% escape( title ) %?>\' ?','?cmd=rdelete&amp;data=<?% id %?>')">
+            <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete recording") %?>" />
+        </a>
+        &nbsp;
+        <a href="javascript:sure('<?% gettext("Would you like to delete this recording?") %?> : \'<?% escape( title ) %?>\' ?','?cmd=rdelete&amp;data=<?% id %?>')">
+            <?% gettext("Delete recording",20) %?>
+        </a>
+        <br />
+<?% END %?>
+    <a target="_blank" href="http://german.imdb.com/find?s=tt&amp;site=aka&amp;q=<?% quest %?>">
+        <img src="images/imdb.<?% global.imagetyp %?>" title="<?% gettext("Search with IMDb") %?>" alt="IMDb" />
+    </a>
+    &nbsp;
+    <a target="_blank" href="http://german.imdb.com/find?s=tt&amp;site=aka&amp;q=<?% quest %?>">
+        <?% gettext("Search with IMDb") %?>
+    </a>
+    <br />
+    <a target="_blank" href="http://www.ofdb.de/view.php?page=suchergebnis&Kat=Titel&SText=<?% quest %?>">
+        <img src="images/ofdb.<?% global.imagetyp %?>" title="<?% gettext("Search with OFDb") %?>" alt="OFDb" />
+    </a>
+    &nbsp;
+    <a target="_blank" href="http://www.ofdb.de/view.php?page=suchergebnis&Kat=Titel&SText=<?% quest %?>">
+        <?% gettext("Search with OFDb") %?>
+    </a>
+    <br />
+    <br />
+
+    <?% IF allow('rplay') %?>
+        <a href="javascript:playstart('rplay')" >
+            <img src="images/watch.<?% global.imagetyp %?>" alt="" title="<?% gettext("Watch recording in VDR") %?>" />
+        </a>
+        &nbsp;
+        <a href="javascript:playstart('rplay')" >
+            <?% gettext("Watch recording in VDR",15) %?>
+        </a>
+        <br />
+    <?% END %?>
+    <?% IF allow('playrecord') %?>
+        <a href="javascript:playstart('playrecord')" >
+            <img src="images/webcast.<?% global.imagetyp %?>" alt="" title="<?% gettext("Watch recording as web cast") %?>" />
+        </a>
+        &nbsp;
+        <a href="javascript:playstart('playrecord')" >
+            <?% gettext("Watch recording as web cast",20) %?>
+        </a>
+        <br />
+    <?% END %?>
+        <br />
+    <?% IF allowplay %?>
+        <input type="hidden" name="cmd" value="<?% IF global.preferedlocal && allow('rplay') %?>rplay<?% ELSE %?>playrecord<?% END %?>" />
+        <input type="hidden" name="data" value="<?% id %?>" />
+        <input size="10"  type="text" name="__start" value="00:00:00.0" />
+    <?% END %?>    </p>
+    </form>
+</div>
+<?% global.sidebar = 1 %?>

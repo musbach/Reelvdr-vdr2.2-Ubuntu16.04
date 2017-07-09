@@ -1,0 +1,8 @@
+Package: dvbapi
+Version: 14.04.4d41e79
+Section: reel
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: dvbapi
+Description: dvbapi

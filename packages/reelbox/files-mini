@@ -1,0 +1,9 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)		dest	type	owner.group
+etc/cron.d/daily_reboot		etc/cron.d/daily_reboot
+etc/reel/platform/rbmini.inc
+sbin/daily-reboot		root/bin/daily-reboot	script
+utils/rbmboot/linuxrc		root/tmp/linuxrc	script
+utils/ppmtofb/ppmtofb		/usr/sbin/ppmtofb	exe
+misc/boot-client_720x576_24.ppm.gz	/usr/share/reel/boot-client_720x576_24.ppm.gz

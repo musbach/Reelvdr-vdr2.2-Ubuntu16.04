@@ -1,0 +1,5 @@
+CREATE DATABASE vdr;
+USE vdr;
+CREATE TABLE vdr_event (id INT NOT NULL AUTO_INCREMENT, timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL, object_id INT NOT NULL, table_name VARCHAR(16) NOT NULL, action VARCHAR(16) NOT NULL, PRIMARY KEY(id));
+GRANT SELECT,INSERT,UPDATE,DELETE on vdr.vdr_event to 'reeluser'@'%' IDENTIFIED BY 'reeluser';
+GRANT SELECT,INSERT,UPDATE,DELETE on vdr.vdr_event to 'reeluser'@'localhost' IDENTIFIED BY 'reeluser';

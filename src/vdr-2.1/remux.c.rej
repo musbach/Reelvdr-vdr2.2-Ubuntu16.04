@@ -1,0 +1,117 @@
+--- remux.c	(revision 15412)
++++ remux.c	(revision 15413)
+@@ -215,6 +215,32 @@
+   return i;
+ }
+ 
++#ifdef USE_TTXTSUBS
++int cPatPmtGenerator::MakeTeletextDescriptor(uchar *Target, const tTeletextSubtitlePage *pages, int pageCount)
++{
++  int i = 0, j = 0;
++  Target[i++] = SI::TeletextDescriptorTag;
++  int l = i;
++  Target[i++] = 0x00; // length
++  for (int n = 0; n < pageCount; n++) {
++      const char* Language = pages[n].ttxtLanguage;
++      Target[i++] = *Language++;
++      Target[i++] = *Language++;
++      Target[i++] = *Language++;
++      Target[i++] = (pages[n].ttxtType << 3) + pages[n].ttxtMagazine;
++      Target[i++] = pages[n].ttxtPage;
++      j++;
++      }
++  if (j > 0) {
++     Target[l] = j * 5; // update length
++     IncEsInfoLength(i);
++     return i;
++     }
++  return 0;
++}
++
++#endif /* TTXTSUBS */
++
+ int cPatPmtGenerator::MakeLanguageDescriptor(uchar *Target, const char *Language)
+ {
+   int i = 0;
+@@ -302,6 +328,9 @@
+   if (Channel) {
+      int Vpid = Channel->Vpid();
+      int Ppid = Channel->Ppid();
++#ifdef USE_TTXTSUBS
++     int Tpid = Channel->Tpid();
++#endif /* TTXTSUBS */
+      uchar *p = buf;
+      int i = 0;
+      p[i++] = 0x02; // table id
+@@ -334,6 +363,12 @@
+          i += MakeStream(buf + i, 0x06, Channel->Spid(n));
+          i += MakeSubtitlingDescriptor(buf + i, Channel->Slang(n), Channel->SubtitlingType(n), Channel->CompositionPageId(n), Channel->AncillaryPageId(n));
+          }
++#ifdef USE_TTXTSUBS
++     if (Tpid) {
++        i += MakeStream(buf + i, 0x06, Tpid);
++        i += MakeTeletextDescriptor(buf + i, Channel->TeletextSubtitlePages(), Channel->TotalTeletextSubtitlePages());
++        }
++#endif /* TTXTSUBS */
+ 
+      int sl = i - SectionLength - 2 + 4; // -2 = SectionLength storage, +4 = length of CRC
+      buf[SectionLength] |= (sl >> 8) & 0x0F;
+@@ -407,6 +442,9 @@
+   pmtPid = -1;
+   vpid = vtype = 0;
+   ppid = 0;
++#ifdef USE_TTXTSUBS
++  tpid = 0;
++#endif /* TTXTSUBS */
+ }
+ 
+ void cPatPmtParser::ParsePat(const uchar *Data, int Length)
+@@ -492,11 +530,17 @@
+      int NumSpids = 0;
+      vpid = vtype = 0;
+      ppid = 0;
++#ifdef USE_TTXTSUBS
++     tpid = 0;
++#endif /* TTXTSUBS */
+      apids[0] = 0;
+      dpids[0] = 0;
+      spids[0] = 0;
+      atypes[0] = 0;
+      dtypes[0] = 0;
++#ifdef USE_TTXTSUBS
++     totalTtxtSubtitlePages = 0;
++#endif /* TTXTSUBS */
+      SI::PMT::Stream stream;
+      for (SI::Loop::Iterator it; Pmt.streamLoop.getNext(stream, it); ) {
+          dbgpatpmt("     stream type = %02X, pid = %d", stream.getStreamType(), stream.getPid());
+@@ -595,6 +639,30 @@
+                                     spids[NumSpids]= 0;
+                                     }
+                                  break;
++#ifdef USE_TTXTSUBS
++                            case SI::TeletextDescriptorTag: {
++                                 dbgpatpmt(" teletext");
++                                 tpid = stream.getPid();
++                                 SI::TeletextDescriptor *sd = (SI::TeletextDescriptor *)d;
++                                 SI::TeletextDescriptor::Teletext ttxt;
++                                 if (totalTtxtSubtitlePages < MAXTXTPAGES) {
++                                    for (SI::Loop::Iterator it; sd->teletextLoop.getNext(ttxt, it); ) {
++                                        bool isSubtitlePage = (ttxt.getTeletextType() == 0x02) || (ttxt.getTeletextType() == 0x05);
++                                        if (isSubtitlePage && ttxt.languageCode[0]) {
++                                           dbgpatpmt(" '%s:%x.%x'", ttxt.languageCode, ttxt.getTeletextMagazineNumber(), ttxt.getTeletextPageNumber());
++                                           strn0cpy(teletextSubtitlePages[totalTtxtSubtitlePages].ttxtLanguage, I18nNormalizeLanguageCode(ttxt.languageCode), MAXLANGCODE1);
++                                           teletextSubtitlePages[totalTtxtSubtitlePages].ttxtPage = ttxt.getTeletextPageNumber();
++                                           teletextSubtitlePages[totalTtxtSubtitlePages].ttxtMagazine = ttxt.getTeletextMagazineNumber();
++                                           teletextSubtitlePages[totalTtxtSubtitlePages].ttxtType = ttxt.getTeletextType();
++                                           totalTtxtSubtitlePages++;
++                                           if (totalTtxtSubtitlePages >= MAXTXTPAGES)
++                                              break;
++                                           }
++                                        }
++                                    }
++                                 }
++                                 break;
++#endif /* TTXTSUBS */
+                             case SI::ISO639LanguageDescriptorTag: {
+                                  SI::ISO639LanguageDescriptor *ld = (SI::ISO639LanguageDescriptor *)d;
+                                  dbgpatpmt(" '%s'", ld->languageCode);

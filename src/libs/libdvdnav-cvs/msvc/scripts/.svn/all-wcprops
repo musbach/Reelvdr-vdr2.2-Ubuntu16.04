@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/scripts
+END
+libdvdnav_install.bat
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/scripts/libdvdnav_install.bat
+END
+libdvdcss_install.bat
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/scripts/libdvdcss_install.bat
+END

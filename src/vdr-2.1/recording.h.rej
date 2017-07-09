@@ -1,0 +1,108 @@
+--- recording.h	(revision 15412)
++++ recording.h	(revision 15413)
+@@ -23,6 +23,9 @@
+ #define TIMERMACRO_EPISODE  "EPISODE"
+ 
+ extern bool VfatFileSystem;
++#ifdef USE_LIEMIEXT
++extern bool DirOrderState;
++#endif /* LIEMIEXT */
+ extern int InstanceId;
+ 
+ void RemoveDeletedRecordings(void);
+@@ -67,6 +70,9 @@
+   const cEvent *GetEvent(void) const { return event; }
+   const char *Title(void) const { return event->Title(); }
+   const char *ShortText(void) const { return event->ShortText(); }
++#ifdef USE_GRAPHTFT
++  tEventID EventID(void) const { return event->EventID(); }
++#endif /* GRAPHTFT */
+   const char *Description(void) const { return event->Description(); }
+   const cComponents *Components(void) const { return event->Components(); }
+   const char *Aux(void) const { return aux; }
+@@ -108,8 +114,15 @@
+   virtual int Compare(const cListObject &ListObject) const;
+   const char *Name(void) const { return name; }
+   const char *FileName(void) const;
++#ifdef USE_LIEMIEXT
++  const char *Title(char Delimiter = ' ', bool NewIndicator = false, int Level = -1, bool Original = true) const;
++#else
+   const char *Title(char Delimiter = ' ', bool NewIndicator = false, int Level = -1) const;
++#endif /* LIEMIEXT */
+   const cRecordingInfo *Info(void) const { return info; }
++#ifdef USE_CUTTIME
++  void SetStartTime(time_t Start);
++#endif /* CUTTIME */
+   const char *PrefixFileName(char Prefix);
+   int HierarchyLevels(void) const;
+   void ResetResume(void) const;
+@@ -128,6 +141,11 @@
+        // Changes the file name so that it will be visible in the "Recordings" menu again and
+        // not processed by cRemoveDeletedRecordingsThread.
+        // Returns false in case of error
++#ifdef USE_LIEMIEXT
++  bool Rename(const char *newName);
++       // Changes the file name
++       // Returns false in case of error
++#endif /* LIEMIEXT */
+   };
+ 
+ class cRecordings : public cList<cRecording>, public cThread {
+@@ -222,7 +255,11 @@
+   static const char *command;
+ public:
+   static void SetCommand(const char *Command) { command = Command; }
++#ifdef USE_DVLRECSCRIPTADDON
++  static void InvokeCommand(const char *State, const char *RecordingFileName, char *chanName = NULL);
++#else
+   static void InvokeCommand(const char *State, const char *RecordingFileName);
++#endif /* DVLRECSCRIPTADDON */
+   };
+ 
+ // The maximum size of a single frame (up to HDTV 1920x1080):
+@@ -235,9 +272,23 @@
+ // before the next independent frame, to have a complete Group Of Pictures):
+ #define MAXVIDEOFILESIZETS  1048570 // MB
+ #define MAXVIDEOFILESIZEPES    2000 // MB
++#ifdef USE_HARDLINKCUTTER
++#define MINVIDEOFILESIZE          1 // MB
++#else
+ #define MINVIDEOFILESIZE        100 // MB
++#endif /* HARDLINKCUTTER */
+ #define MAXVIDEOFILESIZEDEFAULT MAXVIDEOFILESIZEPES
+ 
++#ifdef USE_HARDLINKCUTTER
++#define MINRECORDINGSIZE      25 // GB
++#define MAXRECORDINGSIZE     500 // GB
++#define DEFAULTRECORDINGSIZE 100 // GB
++// Dynamic recording size:
++// Keep recording file size at Setup.MaxVideoFileSize for as long as possible,
++// but switch to MAXVIDEOFILESIZE early enough, so that Setup.MaxRecordingSize
++// will be reached, before recording to file 65535.vdr
++#endif /* HARDLINKCUTTER */
++
+ struct tIndexTs;
+ class cIndexFileGenerator;
+ 
+@@ -267,6 +318,10 @@
+   bool StoreResume(int Index) { return resumeFile.Save(Index); }
+   bool IsStillRecording(void);
+   void Delete(void);
++#ifdef USE_LIEMIEXT
++  static int Length(const char *FileName, bool IsPesRecording = false);
++       ///< Calculates the recording length without reading the index.
++#endif /* LIEMIEXT */
+   };
+ 
+ class cFileName {
+@@ -286,6 +341,10 @@
+   cUnbufferedFile *Open(void);
+   void Close(void);
+   cUnbufferedFile *SetOffset(int Number, off_t Offset = 0); // yes, Number is int for easier internal calculating
++#ifdef USE_HARDLINKCUTTER
++  off_t MaxFileSize();
++      // Dynamic file size for this file
++#endif /* HARDLINKCUTTER */
+   cUnbufferedFile *NextFile(void);
+   };
+ 

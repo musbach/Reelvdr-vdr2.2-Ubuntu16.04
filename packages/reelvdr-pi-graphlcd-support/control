@@ -1,0 +1,10 @@
+Package: reelvdr-pi-graphlcd-support
+Version: 0.1.2
+Section: reel
+Priority: important
+Architecture: all
+Conflicts: reelvdr-pi-graphlcd (<< 0.1.3.1), reelvdr-plugins-base (<< 1.4.16), reelvdr-baseconfig (<< 1.20), reelvdr-langpack (<< 1.9)
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: packages/reelvdr-pi-graphlcd-support
+Description: GraphLcd support files (fonts+logos) for the ReelBox vdr
+Description-de: GraphLCD Support Dateien (Schriften+Logos) für den ReelVDR

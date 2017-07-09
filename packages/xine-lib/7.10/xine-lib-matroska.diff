@@ -1,0 +1,85 @@
+diff -Nru xine-lib-1.1.11.1-orig/src/demuxers/demux_matroska.c xine-lib-1.1.11.1/src/demuxers/demux_matroska.c
+--- xine-lib-1.1.11.1-orig/src/demuxers/demux_matroska.c	2008-03-28 15:24:50.000000000 +0100
++++ xine-lib-1.1.11.1/src/demuxers/demux_matroska.c	2009-10-21 10:14:40.237126607 +0200
+@@ -2054,6 +2054,31 @@
+   return 1;
+ }
+ 
++static int parse_simpleblock(demux_matroska_t *this, size_t block_len, uint64_t cluster_timecode, uint64_t block_duration)
++{
++  int has_block           = 0;
++  off_t block_pos         = 0;
++  off_t file_len          = 0;
++  int normpos             = 0;
++  int is_key              = 1;
++
++  lprintf("simpleblock\n");
++  block_pos = this->input->get_current_pos(this->input);
++  file_len = this->input->get_length(this->input);
++  if( file_len )
++    normpos = (int) ( (double) block_pos * 65535 / file_len );
++  
++  if (!read_block_data(this, block_len))
++    return 0;
++  
++  has_block = 1;
++    /* we have the duration, we can parse the block now */
++  if (!parse_block(this, block_len, cluster_timecode, block_duration,
++                   normpos, is_key))
++    return 0;
++  return 1;
++}
++
+ static int parse_block_group(demux_matroska_t *this,
+                              uint64_t cluster_timecode,
+                              uint64_t cluster_duration) {
+@@ -2118,7 +2143,8 @@
+ 
+ static int parse_cluster(demux_matroska_t *this) {
+   ebml_parser_t *ebml = this->ebml;
+-  int next_level = 2;
++  int this_level = ebml->level;
++  int next_level = this_level;
+   uint64_t timecode = 0;
+   uint64_t duration = 0;
+ 
+@@ -2135,7 +2161,7 @@
+     this->first_cluster_found = 1;
+   }
+ 
+-  while (next_level == 2) {
++  while (next_level == this_level) {
+     ebml_elem_t elem;
+ 
+     if (!ebml_read_elem_head(ebml, &elem))
+@@ -2159,6 +2185,11 @@
+         if ((elem.len > 0) && !parse_block_group(this, timecode, duration))
+           return 0;
+         break;
++      case MATROSKA_ID_CL_SIMPLEBLOCK:
++        lprintf("simpleblock\n");
++        if (!parse_simpleblock(this, elem.len, timecode, duration))
++          return 0;
++        break;
+       case MATROSKA_ID_CL_BLOCK:
+         lprintf("block\n");
+         if (!ebml_skip(ebml, &elem))
+@@ -2305,6 +2336,7 @@
+   ebml_elem_t elem;
+   int ret_value = 1;
+   off_t current_pos;
++
+   
+   current_pos = this->input->get_current_pos(this->input);
+   lprintf("current_pos: %" PRIdMAX "\n", (intmax_t)current_pos);
+diff -Nru xine-lib-1.1.11.1-orig/src/demuxers/matroska.h xine-lib-1.1.11.1/src/demuxers/matroska.h
+--- xine-lib-1.1.11.1-orig/src/demuxers/matroska.h	2008-01-23 06:11:52.000000000 +0100
++++ xine-lib-1.1.11.1/src/demuxers/matroska.h	2009-10-21 10:15:57.241514764 +0200
+@@ -70,6 +70,7 @@
+ #define MATROSKA_ID_CL_REFERENCEPRIORITY          0xFA
+ #define MATROSKA_ID_CL_REFERENCEBLOCK             0xFB
+ #define MATROSKA_ID_CL_REFERENCEVIRTUAL           0xFD
++#define MATROSKA_ID_CL_SIMPLEBLOCK                0xA3
+ #define MATROSKA_ID_CL_CODECSTATE                 0xA4
+ #define MATROSKA_ID_CL_SLICES                     0x8E
+ #define MATROSKA_ID_CL_TIMESLICE                  0xE8

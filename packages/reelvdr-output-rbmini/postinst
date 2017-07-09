@@ -1,0 +1,24 @@
+#!/bin/sh
+
+
+myln () {
+src="$2"
+target="$3"
+
+	if [ ! -L $target ]; then
+		ln -f $*
+	fi
+}
+
+if ! grep '/dev/root' /etc/fstab; then
+	echo 'Adding /dev/root to fstab'
+	echo '/dev/root	/	auto	rw,suid,dev,exec,auto,nouser,async,noatime,nodiratime,errors=remount-ro	0	1' >> /etc/fstab
+fi
+
+echo 'Turning off interval-based filesystem-check on the root-FS'
+tune2fs -i 0 /dev/root
+
+# comment out "1:2345:respawn:\/sbin\/getty 38400 tty1" in /etc/inittab
+sed -e 's/^1:2345:respawn:\/sbin\/getty 38400 tty1$/#1:2345:respawn:\/sbin\/getty 38400 tty1/g' -i /etc/inittab
+
+exit 0

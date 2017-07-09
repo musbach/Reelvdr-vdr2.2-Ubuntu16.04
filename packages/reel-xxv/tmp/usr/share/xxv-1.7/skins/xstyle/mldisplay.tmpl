@@ -1,0 +1,224 @@
+<?% fields = data.shift %?>
+
+<h1><?% gettext("Media details for") %?>: <?% fields.2 %?><?% IF fields.3 %?> - <?% fields.3 %?><?% END %?></h1>
+
+<?% INCLUDE 'mlnavcontainer.tmpl'
+        nav_back = 1
+        nav_copy = 1
+        nav_edit = 1
+        nav_delete = 1
+        nav_newmedia = 1
+        nav_search = 1
+        nav_ranges = 1
+%?>
+
+<table width="100%">
+<tr>    
+    <td width="20%" align="center" rowspan="8">
+        <img src='?cmd=mlcache&__source=<?% fields.10 %?>' width="133" height="200" align="center" />
+    </td>
+    <td colspan="4">
+        <h1><?% fields.2 %?>
+        <?% IF fields.3 %?>
+            - <?% fields.3 %?>
+        <?% END %?>
+        </h1>
+    </td>
+</tr>
+<tr>
+    <td width="10%">
+        <b><?% gettext("Year") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.9 %?>
+            <a href="?cmd=mlsearch&__search&__selfields=year&__searchitem=<?% fields.9 %?>"><?% fields.9 %?></a>
+        <?% END %?>
+    </td>
+    <td width="10%">
+        <b><?% gettext("Runtime") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.13 %?>
+        <?% fields.13 %?>
+        <?% END %?>
+    </td>
+</tr>
+<tr>
+    <td width="10%">
+        <b><?% gettext("Director") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.11 %?>
+            <?% mydirectors = [] %?>
+            <?% FOREACH director IN fields.11.split(',') %?>
+                <?% director = director.replace('^\s+|\s+$','') %?>
+                <?% director = "<a href=\"?cmd=mlsearch&__search&__selfields=director&__searchitem=$director\">$director</a>" %?>
+                <?% mydirectors.push(director) %?>
+            <?% END %?>
+            <?% mydirectors.join(', ') %?>
+        <?% END %?>
+    </td>
+    <td width="10%">
+        <b><?% gettext("Language") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.4 %?>
+            <?% mylanguages = [] %?>
+            <?% FOREACH language IN fields.4.split(',') %?>
+                <?% language = language.replace('^\s+|\s+$','') %?>
+                <?% language = "<a href=\"?cmd=mlsearch&__search&__selfields=director&__searchitem=$language\">$language</a>" %?>
+                <?% mylanguages.push(language) %?>
+            <?% END %?>
+            <?% mylanguages.join(', ') %?>
+        <?% END %?>
+    </td>
+</tr>
+<tr>
+    <td width="10%">
+        <b><?% gettext("Country") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.14 %?>
+            <?% mycountrys = [] %?>
+            <?% FOREACH country IN fields.14.split('&#x2f;') %?>
+                <?% country = country.replace('^\s+|\s+$','') %?>
+                <?% country = "<a href=\"?cmd=mlsearch&__search&__selfields=country&__searchitem=$country\">$country</a>" %?>
+                <?% mycountrys.push(country) %?>
+            <?% END %?>
+            <?% mycountrys.join(' &#x2f; ') %?>
+        <?% END %?>
+    </td>
+    <td width="10%">
+        <b><?% gettext("Mediatype") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF param.mediatype %?>
+        <a href="?cmd=mlsearch&__search&__selfields=mediatype&__searchitem=<?% param.mediatype %?>"><?% param.mediatype %?></a>
+        <?% END %?>
+    </td>
+</tr>
+<tr>
+    <td width="10%">
+        <b><?% gettext("DiskID") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.5 %?>
+            <a href="?cmd=mlsearch&__search&__selfields=diskid&__searchitem=<?% fields.5 %?>"><?% fields.5 %?></a>
+        <?% END %?>
+    </td>
+    <td width="10%">
+        <b><?% gettext("TV-Episode") %?>:</b>
+    </td>
+    <td width="30%">
+        <input type=checkbox disabled="1" value="<?% fields.23 %?>" />
+        &nbsp;&nbsp;
+        <b><?% gettext("Seen") %?>:</b>
+        &nbsp;&nbsp;
+        <input type=checkbox disabled="1" value="<?% fields.25 %?>" />
+    </td>
+</tr>
+<tr>
+    <td width="10%">
+        <b><?% gettext("Filename") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.16 %?>
+            <?% fields.16 %?>
+        <?% END %?>
+    </td>
+    <td width="10%">
+        <b><?% gettext("Filesize") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.17 %?>
+            <?% fields.17 %?>
+        <?% END %?>
+    </td>
+</tr>
+<tr>
+    <td width="10%">
+        <b><?% gettext("Filedate") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.18 %?>
+            <?% fields.18 %?>
+        <?% END %?>
+    </td>
+    <td width="10%">
+        <b><?% gettext("Size") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.21 && fields.22 %?>
+            <?% fields.21 %?>&nbsp;x&nbsp;<?% fields.22 %?>
+        <?% END %?>
+    </td>
+</tr>
+<tr>
+    <td width="10%">
+        <b><?% gettext("Audio Codec") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.19 %?>
+            <?% fields.19 %?>
+        <?% END %?>
+    </td>
+    <td width="10%">
+        <b><?% gettext("Video Codec") %?>:</b>
+    </td>
+    <td width="30%">
+        <?% IF fields.20 %?>
+            <?% fields.20 %?>
+        <?% END %?>
+    </td>
+</tr>
+<?% IF param.genres_sel.0 %?>
+<tr>
+    <td>
+    </td>
+    <td>
+        <b><?% gettext("Genres") %?>:</b>
+    </td>
+    <td colspan=3>
+        <?% selection = param.genres_sel %?>
+        <?% genres = param.genres_all %?>
+        <?% FOREACH id IN selection %?>
+        <a href="?cmd=mlsearch&__search&__genres=<?% genres.$id.id %?>"><?% genres.$id.name %?></a>&nbsp;
+        <?% END %?>
+    </td>
+</tr>
+<?% END %?>
+<?% IF fields.15 %?>
+<tr>
+    <td colspan="5">
+        <b><?% gettext("Plot") %?>:</b><br>
+        <?% fields.15 | replace('\n','<br>') %?>
+    </td>
+</tr>
+<?% END %?>
+<?% IF fields.6 %?>
+<tr>
+    <td colspan="5">
+        <b><?% gettext("Comment") %?>:</b><br>
+        <?% fields.6 | replace('\n','<br>') %?>
+    </td>
+</tr>
+<?% END %?>
+<?% IF param.actors.0.0 %?>
+<tr>
+    <td colspan="5">
+        <b><?% gettext("Actors") %?>:</b><br>
+            <div>    
+            <?% WHILE param.actors.size %?>
+                <?% actor = param.actors.shift %?>
+                    <div style="float:left;height:60px;width:160px;overflow:hidden">
+                        <?% IF actor.0 %?>
+                        <img style="float:left;margin-right:10px" src='?cmd=mlcache&__source=<?% actor.1 %?>' alt="" border="0" width="44" height="60" />
+                        <a href="?cmd=mlsearch&__search&__selfields=actors&__searchitem=<?% actor.0 %?>"><?% actor.0 %?></a>
+                        <?% END %?>
+                    </div>
+            <?% END %?>
+            </div>
+    </td>
+</tr>
+<?% END %?>
+</table>

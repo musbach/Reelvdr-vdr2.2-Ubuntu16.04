@@ -1,0 +1,15 @@
+Package: tvtv
+Version: 0.6.8-19
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Installed-Size: 130K
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Depends: libcurl3
+Source: tvtv
+Description: client for the tvtv timer service
+ tvtv is a service that provides a tv magazine on the internet (www.tvtv.de) and
+ allows you to program your DVR and the ReelBox via the webfrontend.
+ .
+ This package provides the background daemon that receives the joblist ("Merkzettel")
+ and programs the timers and wakeuptime of your ReelBox.

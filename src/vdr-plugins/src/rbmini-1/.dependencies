@@ -1,0 +1,9 @@
+rbmini.o: rbmini.c rbmini.h rbm_debug.h rbm_setup.h include/cnxt_rbm.h
+rbm_device.o: rbm_device.c rbmini.h rbm_debug.h rbm_setup.h \
+ include/cnxt_rbm.h
+rbm_osd.o: rbm_osd.c rbmini.h rbm_debug.h rbm_setup.h include/cnxt_rbm.h \
+ rbm_osd.h
+rbm_setup.o: rbm_setup.c rbmini.h rbm_debug.h rbm_setup.h \
+ include/cnxt_rbm.h
+rbm_hdosd.o: rbm_hdosd.c rbmini.h rbm_debug.h rbm_setup.h \
+ include/cnxt_rbm.h rbm_hdosd.h rbm_osd.h

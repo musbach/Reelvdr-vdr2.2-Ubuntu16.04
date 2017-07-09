@@ -1,0 +1,14 @@
+Package: reelbox-devel-lite
+Version: 2.11-20
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 26K
+Depends: autoconf, automake1.8, bc, bin86, ccache, gcc-3.3, g++-3.3, dosfstools, dvd+rw-tools, ftp, gettext, jfsutils, make, liba52-dev, libboost-iostreams-dev, libbz2-dev, libcap-dev, libcurl3-dev, libcddb2-dev, libdvdread-dev, libexpat1-dev, libfreetype6-dev, libid3tag0-dev, libimlib2, libimlib2-dev, libmad0-dev, libjpeg-dev, libogg-dev, libmagick9, libnetpbm10, libpng-dev, libsndfile1-dev, libssl-dev, libtag1-dev, libtool, libtdb1, libxml2-dev, libvorbis-dev, mkisofs, nfs-kernel-server | nfs-user-server, mtools, netpbm, patchutils, reiserfsprogs, syslinux, subversion
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-devel-lite
+Description: Development package for ReelBox Lite
+ This package depends on all of the packages needed to develop for the ReelBox Lite.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.

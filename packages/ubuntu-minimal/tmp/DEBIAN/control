@@ -1,0 +1,21 @@
+Package: ubuntu-minimal
+Version: 1.39-11-19
+Section: base
+Priority: optional
+Architecture: i386
+Depends: adduser, alsa-base, alsa-utils, apt, apt-utils, aptitude, base-files, base-passwd, bash, bind9-host, bsdutils, bzip2, console-setup, console-tools, coreutils, debconf, debianutils, dhcp3-client, diff, dnsutils, dpkg, e2fsprogs, eject, ethtool, findutils, gettext-base, gnupg, grep, gzip, hostname, ifupdown, initramfs-tools, iproute, iputils-ping, less, libc6-i686, libfribidi0, locales, login, lsb-release, makedev, mawk, mii-diag, mktemp, module-init-tools, mount, ncurses-base, ncurses-bin, net-tools, netbase, ntpdate, passwd, pciutils, pcmciautils, perl-base, procps, sed, startup-tasks, sudo, sysklogd, system-services, tar, tasksel, tzdata, ubuntu-keyring, udev, upstart, upstart-compat-sysv, upstart-logd, usbutils, util-linux, util-linux-locales, vim-tiny, wireless-tools, wpasupplicant
+Installed-Size: 41K
+Maintainer: Matt Zimmerman <mdz@ubuntu.com>
+Source: ubuntu-meta
+Description: Minimal core of Ubuntu
+ This package depends on all of the packages in the Ubuntu minimal system,
+ that is a functional command-line system with the following capabilities:
+ .
+  - Boot
+  - Detect hardware
+  - Connect to a network
+  - Install packages
+  - Perform basic diagnostics
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.

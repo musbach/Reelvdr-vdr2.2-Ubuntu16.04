@@ -1,0 +1,125 @@
+# French translations for vdr-osdpip package.
+# Copyright (C) 2004 - 2008 Sascha Volkenandt, Andreas Regel
+# This file is distributed under the same license as the vdr-osdpip package.
+# micky979 at vdrportal.de, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-osdpip 0.0.8\n"
+"Report-Msgid-Bugs-To: <andreas.regel@powarman.de>\n"
+"POT-Creation-Date: 2012-05-16 21:38+0200\n"
+"PO-Revision-Date: 2008-04-13 20:07+0200\n"
+"Last-Translator: micky979 at vdrportal.de\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Zapping mode"
+msgstr "Mode zapping"
+
+msgid "Move mode"
+msgstr "Mode mouvement"
+
+msgid "Normal mode"
+msgstr "Mode normal"
+
+msgid "Replay mode"
+msgstr "Mode relecture"
+
+msgid "OSD Picture-in-Picture"
+msgstr "OSD-PIP Incrustation d'image dans l'image"
+
+msgid "Picture-in-Picture"
+msgstr "Image dans l'image"
+
+msgid "Greyscale (16)"
+msgstr "Niveaux de gris (16)"
+
+msgid "Greyscale (256)"
+msgstr "Niveaux de gris (256)"
+
+msgid "Color (256, fixed)"
+msgstr "Couleurs (256 fixes)"
+
+msgid "Color (128, variable)"
+msgstr "Couleurs (128 variables)"
+
+msgid "Color (256, dithered)"
+msgstr "Couleurs (256 trames)"
+
+msgid "channel only"
+msgstr "Seulement la chaine"
+
+msgid "simple"
+msgstr "Simple"
+
+msgid "complete"
+msgstr "Complet"
+
+msgid "top left"
+msgstr "En haut à gauche"
+
+msgid "top right"
+msgstr "En haut à droite"
+
+msgid "bottom left"
+msgstr "En bas à gauche"
+
+msgid "bottom right"
+msgstr "En bas à droite"
+
+msgid "automatic"
+msgstr "Automatique"
+
+msgid "none"
+msgstr "Aucun"
+
+msgid "1 frame"
+msgstr "Séquence 1"
+
+msgid "2 frames"
+msgstr "Séquence 2"
+
+msgid "X Position"
+msgstr "Position X"
+
+msgid "Y Position"
+msgstr "Position Y"
+
+msgid "Crop left"
+msgstr "Couper à gauche"
+
+msgid "Crop right"
+msgstr "Couper à droite"
+
+msgid "Crop at top"
+msgstr "Couper la partie haute"
+
+msgid "Crop at bottom"
+msgstr "Couper la partie basse"
+
+msgid "Color depth"
+msgstr "Nombre de couleurs"
+
+msgid "Size"
+msgstr "Taille"
+
+msgid "Frames to display"
+msgstr "Séquence à afficher"
+
+msgid "Drop frames"
+msgstr "Sauter des séquences"
+
+msgid "Swap FFMPEG output"
+msgstr "Changer la sortie de FFMPEG"
+
+msgid "Show info window"
+msgstr "Afficher les info de la fenêtre"
+
+msgid "Info window width"
+msgstr "Info sur taille de la fenêtre"
+
+msgid "Info window position"
+msgstr "Info sur position de la fenêtre"

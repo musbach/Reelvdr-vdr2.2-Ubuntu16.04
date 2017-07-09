@@ -1,0 +1,8 @@
+#! /bin/sh
+
+if [ "$1" = "purge" ]
+then
+    update-rc.d smb_client remove >/dev/null
+    update-rc.d automounter remove >/dev/null
+    update-rc.d setup-shares remove >/dev/null
+fi

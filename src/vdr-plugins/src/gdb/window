@@ -1,0 +1,5 @@
+#!/bin/bash
+shell set c=$(tput cols)
+shell set l=$(tput lines)
+set environment LINES=$(l)
+set environment COLUMNS=$(c)

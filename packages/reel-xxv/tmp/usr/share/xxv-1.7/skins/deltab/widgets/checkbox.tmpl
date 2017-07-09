@@ -1,0 +1,12 @@
+<!-- string -->
+<tr>
+    <td valign='top'>
+        <?% data.msg %?>
+    </td>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% FOREACH wert IN data.choices %?>
+            <input type="checkbox" name="<?% data.NAME %?>" value="<?% wert %?>" <?% 'checked="checked"' IF val.grep("^${wert}").size %?> /><?% wert %?>&nbsp;
+        <?% END %?>
+    </td>
+</tr>

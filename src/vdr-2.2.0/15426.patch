@@ -1,0 +1,72 @@
+Index: Makefile
+===================================================================
+--- Makefile	(revision 15425)
++++ Makefile	(revision 15426)
+@@ -35,6 +35,12 @@
+ include Make.global
+ -include Make.config
+ 
++ifdef REELVDR
++#Need to set again (modified in Make.config)
++MANDIR   = $(PREFIX)/share/man
++BINDIR   = $(PREFIX)/bin
++endif
++
+ SILIB    = $(LSIDIR)/libsi.a
+ 
+ OBJS = audio.o channels.o ci.o config.o cutter.o device.o diseqc.o dvbdevice.o dvbci.o\
+@@ -60,7 +66,7 @@
+ endif
+ 
+ ifdef REELVDR
+-	OBJS += help.o
++	OBJS += help.o resumeDvd.o reelboxbase.o
+ endif
+ 
+ ifdef USE_TINYXML
+@@ -168,20 +174,44 @@
+ 
+ # Plugins:
+ 
++ifdef REELVDR
+ plugins: include-dir
+ 	@failed="";\
+ 	noapiv="";\
++	nocommon="";\
++	for i in `ls $(PLUGINDIR)/src | grep -ve '[^a-z0-9]' $(EXCLUDE_PLUGINS)`; do\
++	    echo "Plugin $$i:";\
++	    if ! grep -q "^[-]\?include \$$(VDRDIR)/Make.common" "$(PLUGINDIR)/src/$$i/Makefile" ; then\
++	       if ! grep -q "\$$(LIBDIR)/.*\$$(APIVERSION)" "$(PLUGINDIR)/src/$$i/Makefile" ; then\
++	         echo "ERROR: plugin $$i doesn't honor APIVERSION - not compiled!";\
++	         noapiv="$$noapiv $$i";\
++	         continue;\
++	       else \
++	         echo "WARNING: plugin $$i doesn't honor Make.common!";\
++	         nocommon="$$nocommon $$i";\
++	       fi;\
++	    fi; \
++	    $(MAKE) -C "$(PLUGINDIR)/src/$$i" plug i18n-dist || failed="$$failed $$i";\
++	done;\
++	if [ -n "$$nocommon" ] ; then echo; echo "*** plugins without Make.common:$$nocommon"; echo; fi; \
++	if [ -n "$$noapiv" ] ; then echo; echo "*** plugins without APIVERSION:$$noapiv"; echo; fi;\
++	if [ -n "$$failed" ] ; then echo; echo "*** failed plugins:$$failed"; echo; exit 1; fi
++else
++plugins: include-dir
++	@failed="";\
++	noapiv="";\
+ 	for i in `ls $(PLUGINDIR)/src | grep -v '[^a-z0-9]'`; do\
+ 	    echo "Plugin $$i:";\
+ 	    if ! grep -q "\$$(LIBDIR)/.*\$$(APIVERSION)" "$(PLUGINDIR)/src/$$i/Makefile" ; then\
+ 	       echo "ERROR: plugin $$i doesn't honor APIVERSION - not compiled!";\
+ 	       noapiv="$$noapiv $$i";\
+ 	       continue;\
+-	       fi;\
++	    fi \
+ 	    $(MAKE) -C "$(PLUGINDIR)/src/$$i" all || failed="$$failed $$i";\
+ 	    done;\
+ 	if [ -n "$$noapiv" ] ; then echo; echo "*** plugins without APIVERSION:$$noapiv"; echo; fi;\
+ 	if [ -n "$$failed" ] ; then echo; echo "*** failed plugins:$$failed"; echo; exit 1; fi
++endif
+ 
+ clean-plugins:
+ 	@for i in `ls $(PLUGINDIR)/src | grep -v '[^a-z0-9]'`; do $(MAKE) -C "$(PLUGINDIR)/src/$$i" clean; done

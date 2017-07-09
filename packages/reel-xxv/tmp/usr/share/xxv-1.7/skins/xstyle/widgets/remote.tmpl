@@ -1,0 +1,174 @@
+<!-- remote -->
+<?% IF cgi.param('monitor').defined;monitor = cgi.param('monitor');ELSE;monitor = param.monitor;END %?>
+<img src="images/trans.gif" name="switchimage" width="2" height="1">
+<form name="remoteform" onsubmit="changeInterval(document.remoteform.grabinterval.value); return false">
+
+<script language="javascript" type="text/javascript">
+<!--
+
+var interval = 5
+var last = 0;
+
+function post(url) {
+    var vdr = ( document.remoteform.vdr.options ? document.remoteform.vdr.options[document.remoteform.vdr.options.selectedIndex].value : document.remoteform.vdr.value );
+    // Hmm, brutal und gemein, das Laden der URL als Bild funktioniert...
+    var img = new Image();
+    img.src = url + '&__vdr=' + vdr;
+}
+
+function switch_channel(url) {
+    post(url);
+<?% IF monitor %?>
+    if(last + 1000 < Date.UTC()) {
+        grab();
+    }
+<?% END %?>
+}
+
+<?% IF monitor %?>
+function grab() {
+    if(document.remoteform.grabinterval.value > 0) {
+      Now = new Date();
+      var vdr = ( document.remoteform.vdr.options ? document.remoteform.vdr.options[document.remoteform.vdr.options.selectedIndex].value : document.remoteform.vdr.value );
+    	document.livepicture.src = '?cmd=gdisplay&__vdr='+vdr+'&random=' + Now.getTime();
+    }
+    last = Date.UTC();
+}
+
+function changeInterval(newinterval) {
+    window.clearInterval(aktiv);
+    if(newinterval > 0) {
+        inter = newinterval * 1000;
+        aktiv = window.setInterval("grab()", inter);
+    }
+}
+
+inter = interval * 1000;
+aktiv = window.setInterval("grab()", inter);
+<?% END %?>
+-->
+</script>
+
+<style type="text/css" media="screen">
+<!--
+#small  { font-weight: normal; width: 20px; height: 20px; font-size: 9px; font-family: Verdana, Arial, Geneva, Helvetica, sans-serif}
+-->
+</style>
+<?% USE date %?>
+<!-- remote -->
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<?% IF monitor %?>
+  <td rowspan="14">
+    <img src="?cmd=gdisplay&random=<?% date.now %?>&amp;__vdr=<?% param.vdr %?>" width="<?% param.width %?>" height="<?% param.height %?>" name="livepicture">
+  </td>
+<?% END %?>
+  <td colspan="2" align="left"><nobr><input type="button" onclick="self.location.href='?cmd=r&monitor=<?% monitor ? 0 : 1 %?>'" name="monitor" value="<?% gettext("Monitor") %?>"></td>
+  <td align="right"><div id='icons'><a href='#' onclick="switch_channel('?cmd=remote&data=Power')" title="<?% gettext("Switch off") %?>"><img src="images/exit.png"></a></div></td>
+</tr>
+<tr>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=1')" type="button" name="1" value="1"></td>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=2')" type="button" name="2" value="2"></td>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=3')" type="button" name="3" value="3"></td>
+</tr>
+<tr>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=4')" type="button" name="4" value="4"></td>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=5')" type="button" name="5" value="5"></td>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=6')" type="button" name="6" value="6"></td>
+</tr>
+<tr>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=7')" type="button" name="7" value="7"></td>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=8')" type="button" name="8" value="8"></td>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=9')" type="button" name="9" value="9"></td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=Null')" type="button" name="0" value="0"></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td colspan="3" align="center"><nobr>
+    <input id='small' onclick="switch_channel('?cmd=remote&data=Red')" type="button" name="red" value=" " style="background:red">
+    <input id='small' onclick="switch_channel('?cmd=remote&data=Green')" type="button" name="green" value=" " style="background:green">
+    <input id='small' onclick="switch_channel('?cmd=remote&data=Yellow')" type="button" name="yellow" value=" " style="background:yellow">
+    <input id='small' onclick="switch_channel('?cmd=remote&data=Blue')" type="button" name="blue" value=" " style="background:blue">
+  </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align='center'><div id='icons'><a href='#' onclick="switch_channel('?cmd=remote&data=Up')" title="^"><img src="images/up.png"></a></div></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td align='center'><div id='icons'><a href='#' onclick="switch_channel('?cmd=remote&data=Left')"  title="<"><img src="images/zurueck.png"></a></div></td>
+  <td align='center'><div id='icons'><a href='#' onclick="switch_channel('?cmd=remote&data=Ok')" title="<?% gettext("Ok") %?>"><img src="images/ok.png"></a></div></td>
+  <td align='center'><div id='icons'><a href='#' onclick="switch_channel('?cmd=remote&data=Right')" title=">"><img src="images/next.png"></a></div></td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td align='center'><div id='icons'><a href='#' onclick="switch_channel('?cmd=remote&data=Down')" title="v"><img src="images/down.png"></a></div></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td><div id='icons'><a href='#' onclick="switch_channel('?cmd=remote&data=Menu')" title="<?% gettext("Menu") %?>"><img src="images/menu_big.png"></a></div></td>
+  <td>&nbsp;</td>
+  <td><div id='icons'><a href='#' onclick="switch_channel('?cmd=remote&data=Back')" title="<?% gettext("Back") %?>"><img src="images/back_big.png"></a></div></td>
+</tr>
+<tr>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=VolumeMinus')" type="button" name="leiser" value="-"></td>
+  <td align='center'>&nbsp;</td>
+  <td align='center'><input id='small' onclick="switch_channel('?cmd=remote&data=VolumePlus')" type="button" name="lauter" value="+"></td>
+</tr>
+<?% IF param.vdrlist.size > 1 %?>
+<tr>
+  <td colspan="3" align="center">
+      <select style="width:150px;" name="vdr">
+      <?% FOREACH l IN param.vdrlist %?>
+          <option value='<?% l.1 %?>'<?% IF l.1 == param.vdr %?> selected<?% END %?>><?% l.0 %?></option>
+      <?% END %?>
+      </select>
+  </td>
+</tr>
+<?% ELSE %?>
+<tr>
+  <td colspan="7" align="center">
+  <input type="hidden" name="vdr" value="<?% param.vdr %?>" />
+  </td>
+</tr>
+<?% END %?>
+<tr>
+  <td colspan="3" align="center">
+      <select style="width:150px;" name="channels" onchange="post('?cmd=switch&amp;data='+ this.form.channels.options[this.form.channels.options.selectedIndex].value)">
+      <?% FOREACH l IN param.channels %?>
+      <?% IF l.2 && l.2 != optgroup %?>
+        <?% IF optgroup %?>
+        </optgroup>
+        <?% END %?>
+        <optgroup label="<?% optgroup = l.2;l.2 %?>">
+      <?% END %?>
+          <option value='<?% l.1 %?>'><?% l.0 %?></option>
+      <?% END %?>
+      <?% IF optgroup %?>
+        </optgroup>
+      <?% END %?>
+      </select>
+  </td>
+</tr>
+<?% IF monitor %?>
+<tr>
+    <td align='center' colspan="3">
+        <input style='width:20px' name="grabinterval" type="text" size="2">
+        <input type="button" onclick="changeInterval(document.remoteform.grabinterval.value)" value="<?% gettext("Set") %?>">
+    </td>
+</tr>
+<?% END %?>
+</form>
+</table>
+
+<?% IF monitor %?>
+<script language="javascript" type="text/javascript">
+<!--
+document.remoteform.grabinterval.value = interval;
+//-->
+</script>
+<?% END %?>

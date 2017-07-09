@@ -1,0 +1,20 @@
+#!/bin/sh
+
+#
+# Login to Netvceiver
+#
+
+. /etc/default/sysconfig
+
+if [ "$NC_BRIDGE" = "yes" ]; then
+    DEV="br0"
+else
+    DEV="eth0"
+fi
+
+#NETCV_IP=`netcvupdate -l | awk '{print $1}'`
+#https://serverfault.com/questions/648140/how-to-scan-ipv6-enabled-hosts-on-my-lan
+NETCV_IP=`ping6 -Lc1 -I eth0 ff02::1 | grep fe80::208 | cut -d: -f1-6 | awk '{print $4}'`
+
+telnet $NETCV_IP%$DEV
+

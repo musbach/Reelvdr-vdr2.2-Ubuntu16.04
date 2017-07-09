@@ -1,0 +1,33 @@
+--- plugin.c	(revision 15412)
++++ plugin.c	(revision 15413)
+@@ -324,14 +324,14 @@
+   char *p = strchr(s, ' ');
+   if (p)
+      *p = 0;
+-#ifdef REELVDR
++#ifdef USE_PLUGINMISSING
+   struct stat st;
+   if (stat (cString::sprintf("%s/%s%s%s%s", directory, LIBVDR_PREFIX, s, SO_INDICATOR, APIVERSION), &st) && errno == ENOENT) {
+      esyslog("WARN: missing plugin '%s'", s);
+      fprintf(stderr, "vdr: missing plugin '%s'\n", s);
+      }
+   else
+-#endif /*REELVDR*/
++#endif /* PLUGINMISSING */
+   dlls.Add(new cDll(cString::sprintf("%s/%s%s%s%s", directory, LIBVDR_PREFIX, s, SO_INDICATOR, APIVERSION), Args));
+   free(s);
+ }
+@@ -340,11 +340,11 @@
+ {
+   for (cDll *dll = dlls.First(); dll; dll = dlls.Next(dll)) {
+       if (!dll->Load(Log))
+-#ifdef REELVDR
++#ifdef USE_PLUGINMISSING
+          ;
+ #else
+          return false;
+-#endif /*REELVDR*/
++#endif /* PLUGINMISSING */
+       }
+   return true;
+ }

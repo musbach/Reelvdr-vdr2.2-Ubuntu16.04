@@ -1,0 +1,32 @@
+<!-- date -->
+<script type="text/javascript">
+
+var weekstring = '<?% gettext('MTWTFSS') %?>';
+var weekdays = weekstring.split('');
+
+function ch_input (checkbox, input) {
+    var txt = '';
+    for(var i=0;i<checkbox.length;++i) {
+        if(checkbox[i].checked) {
+          txt = txt + weekdays[i];      
+        } else {
+          txt = txt + '-';      
+        }
+    }
+    input.value = txt;
+}
+</script>
+
+<?% global.widgetcount = global.widgetcount + 1 %?>
+<tr<?% ' class="two"' IF global.widgetcount mod 2 == 0 %?>>
+    <?% INCLUDE widgets/topic.inc abbr=data.msg %?>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <input style="width:80px;" size="20"  type="text" name="<?% data.NAME %?>" value="<?% val %?>" <?% FOREACH p IN param.tags; "$p ";END %?> />
+        <?% valarr = val.split(''); z = 0 %?>
+        <?% FOREACH dd IN gettext('Mon Tue Wed Thu Fri Sat Sun').split(' ') %?>
+        <input type="checkbox" name="Weekday" <?% "checked" IF ! val.search('^\d+') && valarr.$z != '-' %?> onchange='ch_input(this.form.Weekday, this.form.<?% data.NAME %?>)' /><?% dd %?>        
+        <?% z = z + 1;
+        END %?>
+    </td>
+</tr>

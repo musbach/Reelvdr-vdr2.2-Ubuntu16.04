@@ -1,0 +1,46 @@
+diff -Naur alsa-driver-1.0.23/include/adriver.h alsa-driver-1.0.23.patched/include/adriver.h
+--- alsa-driver-1.0.23/include/adriver.h	2010-04-16 19:11:04.000000000 +0800
++++ alsa-driver-1.0.23.patched/include/adriver.h	2010-08-27 12:13:55.000000000 +0800
+@@ -1888,6 +1888,7 @@
+ }
+ #endif
+ #ifndef CONFIG_SND_HAS_PID_VNR
++#include <linux/pid.h>
+ static inline pid_t pid_vnr(struct pid *pid)
+ {
+ 	return pid ? pid->nr : 0;
+@@ -2011,4 +2012,7 @@
+ #define nonseekable_open(i,f) 0
+ #endif
+ 
++#if LINUX_VERSION_CODE >=  KERNEL_VERSION(2, 6, 35)
++#include "pm_qos_params_compat.h"
++#endif 
+ #endif /* __SOUND_LOCAL_DRIVER_H */
+diff -Naur alsa-driver-1.0.23/include/pm_qos_params_compat.h alsa-driver-1.0.23.patched/include/pm_qos_params_compat.h
+--- alsa-driver-1.0.23/include/pm_qos_params_compat.h	2010-04-16 19:11:04.000000000 +0800
++++ alsa-driver-1.0.23.patched/include/pm_qos_params_compat.h	2010-08-27 12:14:08.000000000 +0800
+@@ -9,9 +9,23 @@
+ #define PM_QOS_NUM_CLASSES 4
+ #define PM_QOS_DEFAULT_VALUE -1
+ 
++
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 35)
++static inline void remove_acceptable_latency(char *name)
++{
++}
++
++static inline void set_acceptable_latency(char *name, s32 value)
++{
++}
++#endif
++
+ #include <linux/version.h>
+ #if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 19)
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 26)
+ #include <linux/latency.h>
++#endif
++
+ 
+ static inline int pm_qos_add_requirement(int qos, char *name, s32 value)
+ {

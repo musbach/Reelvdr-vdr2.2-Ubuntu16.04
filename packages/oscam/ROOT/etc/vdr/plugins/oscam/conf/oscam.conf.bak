@@ -1,0 +1,39 @@
+# oscam.conf generated automatically by Streamboard OSCAM 1.20-unstable_svn SVN r10653
+# Read more: http://www.streamboard.tv/svn/oscam/trunk/Distribution/doc/txt/oscam.conf.txt
+
+[global]
+serverip                      = 192.168.2.60
+logfile                       = /var/log/oscam.log
+maxlogsize                    = 1024
+waitforcards_extra_delay      = 800
+
+[cache]
+
+[cs357x]
+port                          = 20197
+serverip                      = 192.168.2.60
+
+[newcamd]
+port                          = 10001@1843:000000
+serverip                      = 127.0.0.1
+key                           = 0102030405060708091011121314
+keepalive                     = 1
+
+[cccam]
+port                          = 12000
+serverip                      = 192.168.2.60
+nodeid                        = 3625CDF2109614F4
+version                       = 2.3.0
+
+[monitor]
+port                          = 988
+nocrypt                       = 127.0.0.1,192.168.1.0-192.168.255.255
+aulow                         = 120
+
+[webif]
+httpport                      = 82
+serverip                      = 192.168.2.60
+httprefresh                   = 10
+httpallowed                   = 192.168.0.0-192.168.255.255
+aulow                         = 120
+

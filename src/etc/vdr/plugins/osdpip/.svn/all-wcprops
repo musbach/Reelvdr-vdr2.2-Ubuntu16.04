@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/osdpip
+END
+icon_nonpip_02.png
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/osdpip/icon_nonpip_02.png
+END
+nopip.png
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/osdpip/nopip.png
+END
+nopip.xpm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/osdpip/nopip.xpm
+END
+icon_nonpip_01.png
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/osdpip/icon_nonpip_01.png
+END

@@ -1,0 +1,323 @@
+mjpegtools (1:1.9.0rc3) gutsy; urgency=low
+
+  * Version 1.9.0rc3
+
+ -- Tobias Bratfisch <tobias.bratfisch@reel-multimedia.com>  Mon, 11 Aug 2008 15:38:00 +0200
+
+mjpegtools (1:1.8.0-0.2ubuntu5) gutsy; urgency=low
+
+  * Add patch for lav_io memleak (11_mem_leak.dpatch). (LP: #46779)
+    * Thanks to Klaus Stengel for the patch
+
+ -- Barry deFreese <bddebian@comcast.net>  Sat, 29 Sep 2007 00:30:48 -0400
+
+mjpegtools (1:1.8.0-0.2ubuntu4) gutsy; urgency=low
+
+  * Rebuild for libquicktime0 -> libquicktime1 transition.
+  * Add 10_fix_quicktime_t_usage.dpatch to use lqt_fileno instead of
+    trying to use internal libquicktime structures.
+
+ -- Steve Kowalik <stevenk@ubuntu.com>  Mon,  6 Aug 2007 16:46:16 +1000
+
+mjpegtools (1:1.8.0-0.2ubuntu3) feisty; urgency=low
+
+  * Rebuild against the latest libdirectfb-0.9-25 package. (LP: #92156)
+  * Adhere to DebianMaintainerField.
+
+ -- Lionel Le Folgoc <mrpouit@ubuntu.com>  Wed, 14 Mar 2007 16:41:39 +0100
+
+mjpegtools (1:1.8.0-0.2ubuntu2) edgy; urgency=low
+
+  * Install mpeg2enc/mpeg2syntaxcodes.h
+
+ -- Sebastian Dröge <slomo@ubuntu.com>  Mon, 14 Aug 2006 18:58:40 +0200
+
+mjpegtools (1:1.8.0-0.2ubuntu1) edgy; urgency=low
+
+  * Merge with Debian Multimedia
+  * debian/patches/07_gcc41-missing-declaration.dpatch:
+    + Add a missing include on assert.h to fix FTBFS
+
+ -- Sebastian Dröge <slomo@ubuntu.com>  Fri, 28 Jul 2006 11:54:08 +0200
+
+mjpegtools (1:1.8.0-0.2) unstable; urgency=low
+
+  * rebuild for amd64.
+
+ -- Christian Marillat <marillat@debian.org>  Sat, 13 May 2006 13:45:08 +0200
+
+mjpegtools (1:1.8.0-0.1) unstable; urgency=low
+
+  * Replace libgtk1.2-dev build-dependency by libgtk2.0-dev to build the
+    glav binary. Thanks to Carsten B. Jensen
+
+ -- Christian Marillat <marillat@debian.org>  Wed,  4 Jan 2006 19:46:01 +0100
+
+mjpegtools (1:1.8.0-0.0ubuntu1) dapper; urgency=low
+
+  * Sync with Marillat:
+    + Rename lib package for c++ allocator change
+
+ -- Sebastian Dröge <slomo@ubuntu.com>  Tue,  6 Dec 2005 20:12:15 +0100
+
+mjpegtools (1:1.8.0-0.0) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christian Marillat <marillat@debian.org>  Tue, 20 Sep 2005 10:18:44 +0200
+
+mjpegtools (1:1.6.3+rc3-0.0) unstable; urgency=low
+
+  * New upstream pre release.
+  * Remove all patches, ppc included.
+
+ -- Christian Marillat <marillat@debian.org>  Tue,  6 Sep 2005 18:37:21 +0200
+
+mjpegtools (1:1.6.3+rc2-0.0) unstable; urgency=low
+
+  * New upstream release.
+  * Move to dpatch.
+
+ -- Christian Marillat <marillat@debian.org>  Mon, 15 Aug 2005 10:13:36 +0200
+
+mjpegtools (1:1.6.2-0.9) unstable; urgency=low
+
+  * Add libpng-dev in Build-Depends to buid the png2yuv binary.
+
+ -- Christian Marillat <marillat@debian.org>  Thu,  3 Mar 2005 23:11:41 +0100
+
+mjpegtools (1:1.6.2-0.8) unstable; urgency=low
+
+  * Rebuild for testing.
+  * debian/control Add libxt-dev | xlibs-dev in Build-Depends
+
+ -- Christian Marillat <marillat@debian.org>  Wed, 12 Jan 2005 16:19:20 +0100
+
+mjpegtools (1:1.6.2-0.7) unstable; urgency=low
+
+  * Only add -fPIC and -DPIC for amd64
+
+ -- Christian Marillat <marillat@debian.org>  Fri, 31 Dec 2004 12:01:06 +0100
+
+mjpegtools (1:1.6.2-0.6) unstable; urgency=low
+
+  * Fix libraries linkage (Thanks to Laurent Bonnaud)
+  * Build with -fPIC and -DPIC
+
+ -- Christian Marillat <marillat@debian.org>  Wed, 29 Dec 2004 20:26:41 +0100
+
+mjpegtools (1:1.6.2-0.5) unstable; urgency=low
+
+  * Applied patches from Tuomas Jormola. Thanks to him.
+      o Build amd64 with -fPIC
+      o Added two patches to build with gcc 3.4
+
+ -- Christian Marillat <marillat@debian.org>  Wed, 11 Aug 2004 13:59:49 +0200
+
+mjpegtools (1:1.6.2-0.4) unstable; urgency=low
+
+  * Removed alvitec patch.
+
+ -- Christian Marillat <marillat@debian.org>  Mon, 28 Jun 2004 20:39:58 +0200
+
+mjpegtools (1:1.6.2-0.3) unstable; urgency=low
+
+  * Reverted change done in 1:1.6.1.90-0.2 (build the package without
+    --disable-cmov-extension) really a bad idea.
+
+ -- Christian Marillat <marillat@debian.org>  Thu, 29 Apr 2004 10:35:08 +0200
+
+mjpegtools (1:1.6.2-0.2) unstable; urgency=low
+
+  * Build against libdv4-dev for unstable.
+
+ -- Christian Marillat <marillat@debian.org>  Fri, 23 Apr 2004 21:05:40 +0200
+
+mjpegtools (1:1.6.2-0.1) unstable; urgency=low
+
+  * Remove libavifile-0.7-dev in Builde-Depends
+  * Change again nasm build-depency to 0.98.34
+
+ -- Christian Marillat <marillat@debian.org>  Sat,  3 Apr 2004 17:34:39 +0200
+
+mjpegtools (1:1.6.2-0.0) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christian Marillat <marillat@debian.org>  Thu, 12 Feb 2004 10:34:37 +0100
+
+mjpegtools (1:1.6.1.93-0.0) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christian Marillat <marillat@debian.org>  Thu, 22 Jan 2004 00:29:53 +0100
+
+mjpegtools (1:1.6.1.92-0.1) unstable; urgency=low
+
+  * Update the shlibs file to make mjpegtools depends on the latest
+    libmjpegtools0 package.
+
+ -- Christian Marillat <marillat@debian.org>  Mon,  8 Dec 2003 13:54:48 +0100
+
+mjpegtools (1:1.6.1.92-0.0) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christian Marillat <marillat@debian.org>  Fri, 28 Nov 2003 19:02:25 +0100
+
+mjpegtools (1:1.6.1.90-0.2) unstable; urgency=low
+
+  * Build with -fPIC and -DPIC
+  * debian/rules build without --disable-cmov-extension, now this package
+    can't be used on a K6 or Pentium CPU. Idea from Nicolas B
+  * Apply patch from Marc Leeman to fix an infinite loop in jpeg2yuv
+  * Aplly patches from Guido Guenther to fix compilation on powerpc-linux
+  * disble -g for powerpc by default since it crashes the compiler on altivec code
+  * build-depend on libavifile on i386 only
+
+ -- Christian Marillat <marillat@debian.org>  Thu, 30 Oct 2003 11:24:51 +0100
+
+mjpegtools (1:1.6.1.90-0.1) unstable; urgency=low
+
+  * Register info documentation
+  * debian/control Add libavifile0.7-dev in Build-Depends
+
+ -- Christian Marillat <marillat@debian.org>  Tue, 26 Aug 2003 10:37:49 +0200
+
+mjpegtools (1:1.6.1.90-0.0) unstable; urgency=low
+
+  * New upstream release.
+  * Removed the following patches :
+      o 02_assert
+      o 03_Makefile.in
+      o 04_libavifile.h
+  * Rewrote the following patches :
+      o 06_link
+      o 07_configure
+
+ -- Christian Marillat <marillat@debian.org>  Sun, 24 Aug 2003 10:24:44 +0200
+
+mjpegtools (1:1.6.1-0.7) unstable; urgency=low
+
+  * debian/control remove the second libsdl1.2-dev Build-dependency and add
+    a versioned nasm build-dependency (Thanks to Nicolas B). But who is
+    Nicolas B ?
+
+ -- Christian Marillat <marillat@debian.org>  Tue, 19 Aug 2003 19:33:36 +0200
+
+mjpegtools (1:1.6.1-0.6) unstable; urgency=low
+
+  * Build for i386
+
+ -- Christian Marillat <marillat@debian.org>  Fri,  8 Aug 2003 16:02:17 +0200
+
+mjpegtools (1:1.6.1-0.5) unstable; urgency=low
+
+  * From Nicolas B. mjpegtools need to depends on bc
+  * From Tuomas Jormola (thanks):
+    o Add missing assert.h include needed by gcc 3.3
+    o Fix to build against latest libavifile.
+    o Fix to build against gcc 3.3
+  * Pointed out by Stefan Frank, apply patch from Bob McElrath to fix lavrec
+    bug with some audio card.
+  * debian/control Add libsdl1.2-dev
+  * Fix libraries linkage
+
+ -- Christian Marillat <marillat@debian.org>  Sat, 26 Jul 2003 23:22:52 +0200
+
+mjpegtools (1:1.6.1-0.4) unstable; urgency=low
+
+  * Add libquicktime-dev dependecy for the -dev package
+
+ -- Christian Marillat <marillat@debian.org>  Sun, 27 Apr 2003 20:38:41 +0200
+
+mjpegtools (1:1.6.1-0.3) unstable; urgency=low
+
+  * Build against libquicktime-dev
+
+ -- Christian Marillat <marillat@debian.org>  Wed, 23 Apr 2003 21:02:18 +0200
+
+mjpegtools (1:1.6.1-0.2) unstable; urgency=low
+
+  * Rebuild against the latest libavifile.
+
+ -- Christian Marillat <marillat@debian.org>  Mon,  3 Mar 2003 15:17:44 +0100
+
+mjpegtools (1:1.6.1-0.1) unstable; urgency=low
+
+  * Compiled against gcc 3.2 for unstable
+
+ -- Christian Marillat <marillat@debian.org>  Wed,  5 Feb 2003 16:02:20 +0100
+
+mjpegtools (1:1.6.1-0.0) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christian Marillat <marillat@debian.org>  Tue, 28 Jan 2003 17:35:36 +0100
+
+mjpegtools (1:1.6.0-0.4) unstable; urgency=low
+
+  * debian/control Added sox, toolame, mpeg2dec and a52dec in suggests for
+    the mjpegtools package.
+  * debian/control nasm should only depends for i386 arch
+  * Standards-Version: is now 3.5.8
+  * Replace extract_ac3 and ac3dec by extract_ac52 and ac52dec in
+    mpegtranscode
+
+ -- Christian Marillat <marillat@debian.org>  Thu, 12 Dec 2002 14:39:09 +0100
+
+mjpegtools (1:1.6.0-0.3) unstable; urgency=low
+
+  * Move mjpegtools.pc in the -dev package
+  * Build with MMX/3DNow!/SSE extension. I hope this will break nothing.
+
+ -- Christian Marillat <marillat@debian.org>  Sun,  3 Nov 2002 18:42:42 +0100
+
+mjpegtools (1:1.6.0-0.2) unstable; urgency=low
+
+  * Rebuild against libpng3
+
+ -- Christian Marillat <marillat@debian.org>  Fri, 16 Aug 2002 17:10:24 +0200
+
+mjpegtools (1:1.6.0-0.1) unstable; urgency=low
+
+  * Enable quicktime support.
+
+ -- Christian Marillat <marillat@debian.org>  Sun, 19 May 2002 18:05:10 +0200
+
+mjpegtools (1:1.6.0-0.0) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christian Marillat <marillat@debian.org>  Wed, 15 May 2002 23:19:06 +0200
+
+mjpegtools (1.6.0-rc2-0.0) unstable; urgency=low
+
+  * New upstream release.
+  * Build against the latest libavifile-0.7
+
+ -- Christian Marillat <marillat@debian.org>  Sun,  5 May 2002 14:29:17 +0200
+
+mjpegtools (1.6.0-beta2-1) unstable; urgency=low
+
+  * New upstream beta.
+
+ -- Christian Marillat <marillat@debian.org>  Sat, 16 Feb 2002 13:19:44 +0100
+
+mjpegtools (1.6.0-beta1-3) unstable; urgency=low
+
+  * debian/control Add Conflicts: dvb-mpegtools
+
+ -- Christian Marillat <marillat@debian.org>  Sun, 10 Feb 2002 10:47:39 +0100
+
+mjpegtools (1.6.0-beta1-2) unstable; urgency=low
+
+  * Move mjpegtools-config in the -dev package.
+
+ -- Christian Marillat <marillat@debian.org>  Sun, 27 Jan 2002 04:28:34 +0100
+
+mjpegtools (1.6.0-beta1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Christian Marillat <marillat@debian.org>  Fri, 25 Jan 2002 15:09:47 +0100

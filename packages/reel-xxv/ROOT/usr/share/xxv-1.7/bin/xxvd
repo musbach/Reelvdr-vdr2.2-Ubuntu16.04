@@ -1,0 +1,671 @@
+#!/usr/bin/perl -w
+use warnings;
+use strict;
+
+use FindBin qw($RealBin);
+
+my $TEMPLMOD;
+
+# Test on Template Modul in normale Path
+BEGIN {
+    eval ' require Template; require Template::Stash::XS; ';
+    $TEMPLMOD = ($@ ? 0 : 1);
+}
+
+# Paths for debian installation
+use lib            "$RealBin/../lib";
+
+my $PATHS = {
+    LOGFILE     => "/var/log/xxvd.log",
+    PIDFILE     => "/var/run/xxvd.pid",
+    LOCDIRNAME  => "$RealBin/../locale",
+    MODPATH     => "$RealBin/../lib/XXV/MODULES",
+    CFGFILE     => "$RealBin/../etc/xxvd.cfg",
+    PRIVATE_CFGFILE  => "$ENV{HOME}/.xxvd.cfg",
+    DOCPATH     => "$RealBin/../doc",
+    PODPATH     => "$RealBin/../doc",
+    HTMLDIR     => "$RealBin/../skins",
+    FONTPATH    => "$RealBin/../share/fonts/ttf-bitstream-vera",
+    NEWSMODS    => "$RealBin/../lib/XXV/OUTPUT/NEWS",
+    NEWSTMPL    => "$RealBin/../share/news",
+    XMLTV       => "$RealBin/../share/xmltv",
+    CONTRIB     => "$RealBin/../contrib",
+};
+# -------------------------------
+
+use Tools;
+use POSIX qw(locale_h);
+use Cwd 'abs_path';
+use Locale::gettext qw/!gettext/;
+
+$|++;
+
+my $MODULES;
+my $VERSION = '1.7.0';
+my $VDRVERSION = 0;
+my $DBVERSION = 0;
+my $CLEANUP;
+my $AFTER = [0 ... 50];
+my $killer       = 0;
+my $version      = 0;
+my $verbose      = 3;
+my $nofork       = 0;
+my $useutf8      = 0;
+my $charset;
+
+my $Prereq = {
+  'Event'                 => 'Event loop processing',
+  'Getopt::Long'          => 'Extended processing of command line options ',
+  'Config::Tiny'          => 'Read/Write .ini style files with as little code as possible',
+  'DBI'                   => 'Database independent interface for Perl ',
+  'DBD::mysql'            => 'MySQL driver for the Perl5 Database Interface (DBI)',
+  'Proc::Killfam'         => 'kill a list of pids, and all their sub-children',
+};
+
+# THE MAIN PROGRAM --------------------------------- TOP
+my @PARAMETER = @ARGV;
+
+# Try to eval requirements
+map {
+    eval "use $_";
+    if($@) {
+      my $m = (split(/ /, $_))[0];
+      print("\nCouldn't load perl module: $m\nPlease install this module on your system:\nperl -MCPAN -e 'install $m'");
+    }
+} keys %{$Prereq};
+
+
+# Options
+GetOptions (
+    "configfile=s" => \$PATHS->{DEFINED_CFGFILE}, # numeric
+    "logfile=s"    => \$PATHS->{LOGFILE},
+    "pidfile=s"    => \$PATHS->{PIDFILE},
+    "localedir=s"  => \$PATHS->{LOCDIRNAME},
+    "moduledir=s"  => \$PATHS->{MODPATH},
+    "docudir=s"    => \$PATHS->{DOCPATH},
+    "poddir=s"     => \$PATHS->{PODPATH},
+    "htmldir=s"    => \$PATHS->{HTMLDIR},
+    "fontdir=s"    => \$PATHS->{FONTPATH},
+    "contrib=s"    => \$PATHS->{CONTRIB},
+    "newsmods=s"   => \$PATHS->{NEWSMODS},
+    "newstmpl=s"   => \$PATHS->{NEWSTMPL},
+    "xmltv=s"      => \$PATHS->{XMLTV},
+    "verbose=s"    => \$verbose,    # debug output level
+    "version"      => \$version,    # print version
+    "nofork"       => \$nofork,     # switch fork off, for better debugging
+    "kill"         => \$killer,     # kill old xxvd
+);
+
+# Strip last slash
+foreach my $name (keys %$PATHS) {
+    $PATHS->{$name}  =~ s/\/$//g
+        if(exists $PATHS->{$name} and $PATHS->{$name});
+}
+
+# Version information
+if($version) {
+    printf "XXV  -- (Xtreme eXtension for VDR)\nVersion: %s\n", &getVersion;
+    exit(0);
+}
+
+# Check PID ..
+if(! $killer and -e $PATHS->{PIDFILE}) {
+    my $oldpid = load_file($PATHS->{PIDFILE});
+    printf "Sorry, but xxvd is running with PID %s !\nIf'nt a process running remove '%s' !\n", $oldpid, $PATHS->{PIDFILE} ;
+    exit(1);
+} elsif($killer and ! -e $PATHS->{PIDFILE}) {
+    printf "PID File %s does not exist!\n", $PATHS->{PIDFILE};
+    exit(1);
+} elsif($killer and -e $PATHS->{PIDFILE}) {
+    my $oldpid = load_file($PATHS->{PIDFILE});
+
+    printf "xxvd with pid %s killed", $oldpid
+        if(kill('USR1', $oldpid));
+    print "\n";
+    exit(0);
+}
+
+# Go fork for deamon modus
+unless($nofork) {
+    my($pid) = fork;
+    if($pid != 0) {
+        print("xxvd started with pid $pid.\n");
+        save_file($PATHS->{PIDFILE}, $pid);
+        exit(0);
+    }
+}
+
+# Install logging
+&init_logging($PATHS);
+
+# Install i18n system
+($charset,$useutf8) = &init_locale($PATHS);
+
+# Load a config
+my $CFGOBJ = Config::Tiny->new();
+my $cfgFile = &getConfigFile();
+my $Config = $CFGOBJ->read( $cfgFile );
+unless($Config){
+    panic sprintf("Couldn't read file with configuration '%s' : %s", $cfgFile, $CFGOBJ->errstr);
+    exit(1);
+}
+
+
+
+my $cfgUsrFile = &getUsrConfigFile();
+if($cfgUsrFile ne $cfgFile) {
+    debug sprintf('Maybe 1st start, used configuration : read from file "%s" write to file "%s"', $cfgFile, $cfgUsrFile);
+} else {
+    debug sprintf('Use configuration file "%s"', $cfgUsrFile);
+}
+
+
+
+# Check templateModul
+&init_template($TEMPLMOD);
+
+# Install the signal handler
+&init_signal_handler($PATHS);
+
+# Connect the DB
+my $DBH = &init_db_connect($Config, $charset) || die;
+
+
+# General ist'n spezi
+$MODULES->{'XXV::MODULES::General'}->{MOD} = &module;
+
+# Ok initialize the moduls
+&init($PATHS->{MODPATH},$charset);
+
+&docu;
+
+while(Event::loop(1)) {};
+
+# THE MAIN PROGRAM --------------------------------- END
+
+&quit(1);
+
+# END
+
+# ----- SUBS ----
+
+# ------------------
+sub init {
+# ------------------
+    my $modules = shift || return error('No modul path defined!');
+    my $charset = shift || return error('No charset defined!');
+
+    my @mods = glob($modules.'/*.pm');
+    unless(scalar @mods) {
+      panic(sprintf("None usable modules found at '%s'",$modules));
+    }
+
+    foreach my $module (reverse @mods) {
+        my $moduleName = 'XXV::MODULES::'.(split('\.',(split('/', $module))[-1]))[0];
+
+        # make an object for the module
+	      eval "use $moduleName";
+        error $@ if $@;
+        my $modul = $moduleName->new(
+            -config => $Config,
+            -dbh    => $DBH,
+            -paths  => $PATHS,
+            -charset  => $charset
+        );
+
+        if(ref $modul) {
+          $MODULES->{$moduleName} = $modul;
+          debug sprintf("Load module %s", $moduleName);
+        } else {
+          panic sprintf("Load module %s failed!",$moduleName);
+        }
+
+    }
+    &after();
+    return $MODULES;
+}
+
+# Routine um Callbacks zu registrieren und
+# diese nach dem laden der Module zu starten
+# ------------------
+sub after {
+# ------------------
+    my $cb = shift || 0;
+    my $log = shift || 0;
+    my $order = shift || 0;
+
+    if($cb) {
+        if($order) {
+            error(sprintf("Callback %s : '%s' replace with '%s'",$order,
+              ($AFTER->[$order]->[1] ? $AFTER->[$order]->[1] : ""),
+              ($log ? $log : "")
+              ))
+              if(ref $AFTER->[$order] eq 'ARRAY');
+
+            $AFTER->[$order] = [$cb, $log];
+        } else {
+            push(@$AFTER, [$cb, $log]);
+        }
+    } else {
+        foreach my $CB (@$AFTER) {
+            next unless(ref $CB eq 'ARRAY');
+            debug $CB->[1]
+                if($CB->[1]);
+            &{$CB->[0]}()
+                if(ref $CB->[0] eq 'CODE');
+        }
+    }
+}
+
+# ------------------
+sub reconfigure {
+# ------------------
+}
+
+# Folgende Calls sind möglich:
+# main::toCleanUp('xpix', sub{}, 'logout'); # ein CB registrieren
+# main::toCleanUp(undef, undef, 'logout');  # ein Cleanup vornehmen nur für logout
+# main::toCleanUp();                        # alle Cleanups durchführen
+# main::toCleanUp('xpix', undef, 'delete'); # ein CleanUp loeschen
+# main::toCleanUp('xpix', undef, 'exists'); # ein CleanUp prüfen
+# main::toCleanUp('xpix');                  # ein bestimmten CleanUp ausführen
+# ------------------
+sub toCleanUp {
+# ------------------
+    my $name     = shift || 0;
+    my $callback = shift || 0;
+    my $typ      = shift || 'everything'; # everything, logout, delete
+
+    if(not $name and not $callback) {
+        # Call the callbacks
+        foreach my $cbname (sort keys %$CLEANUP) {
+            if($typ eq 'everything') {
+                foreach my $t (sort keys %{$CLEANUP->{$cbname}}) {
+                        $CLEANUP->{$cbname}->{$t}();
+                }
+            } else {
+                $CLEANUP->{$cbname}->{$typ}()
+                    if(exists $CLEANUP->{$cbname}->{$typ} and ref $CLEANUP->{$cbname}->{$typ} eq 'CODE');
+            }
+        }
+    } elsif($name and not $callback and $typ eq 'delete') {
+        delete $CLEANUP->{$name};
+    } elsif($name and not $callback and $typ eq 'exists') {
+        return exists $CLEANUP->{$name};
+    } elsif($name and not $callback) {
+        foreach my $t (sort keys %{$CLEANUP->{$name}}) {
+                $CLEANUP->{$name}->{$t}();
+        }
+    } else {
+        $CLEANUP->{$name}->{$typ} = $callback;
+    }
+}
+
+# ------------------
+sub addModule {
+# ------------------
+    my $name = shift || return error('No modul name defined!');
+    my $modobj  = shift || return error('No modul object defined!');
+    $MODULES->{$name} = $modobj;
+    return $MODULES;
+}
+
+
+# ------------------
+sub getModules {
+# ------------------
+    return $MODULES;
+}
+
+# ------------------
+sub getModule {
+# ------------------
+    my $name = shift || return error('No requested modul defined!');
+
+    my ($modname) = grep(/${name}$/, keys %$MODULES);
+    unless ($modname 
+         && $MODULES->{$modname} 
+         && ref $MODULES->{$modname}) {
+      panic sprintf("Requested modul '%s' is'nt loaded!",$name);
+      return undef;
+    }
+
+    return $MODULES->{$modname};
+}
+
+# ------------------
+sub getGeneralConfig {
+# ------------------
+    return $Config->{General};
+}
+
+# ------------------
+sub getVersion {
+# ------------------
+    return sprintf('%s', $VERSION);
+}
+
+# ------------------
+sub getConfigFile {
+# ------------------
+    if(defined $PATHS->{DEFINED_CFGFILE} and -r $PATHS->{DEFINED_CFGFILE}) { # user defined file via comandline
+        return $PATHS->{DEFINED_CFGFILE};
+    } elsif(-r $PATHS->{PRIVATE_CFGFILE}) { # Check for readable ~/.xxvd.cfg
+        return $PATHS->{PRIVATE_CFGFILE};
+    } else {    # used default values from standard file for first start
+        return $PATHS->{CFGFILE};
+    }
+}
+
+# ------------------
+sub getUsrConfigFile {
+# ------------------
+    if(defined $PATHS->{DEFINED_CFGFILE} and -w $PATHS->{DEFINED_CFGFILE}) { # user defined file via comandline
+        return $PATHS->{DEFINED_CFGFILE};
+    } elsif(-w $PATHS->{PRIVATE_CFGFILE}) { # Check for writeable ~/.xxvd.cfg
+        return $PATHS->{PRIVATE_CFGFILE};
+    } else {
+        return $PATHS->{CFGFILE}; # else fallback to standard file
+    }
+}
+
+# ------------------
+sub quit {
+# ------------------
+    my $ret = shift || 0;
+
+    unlink $PATHS->{PIDFILE} if -e $PATHS->{PIDFILE};
+
+    &toCleanUp();
+
+    $SIG{'TERM'}=sub {};
+    # remove any depends process like preview encoder for recordings
+    &killfam('TERM',$$);
+
+
+    debug sprintf("%s(%s) ended. state : %s", $0, $$, $ret);
+    exit($ret);
+}
+
+# ------------------
+sub docu {
+# ------------------
+    my $console = shift;
+    my $config = shift;
+    my $name  = shift || 0;
+
+    my $HTTPD = getModule("HTTPD");
+    return unless($HTTPD);
+    my $htmlRootDir = sprintf('%s/%s', $HTTPD->{paths}->{HTMLDIR}, $HTTPD->{HtmlRoot});
+
+    # create Template object
+    my $tt = Template->new(
+      START_TAG    => '\<\?\%',		    # Tagstyle
+      END_TAG      => '\%\?\>',		    # Tagstyle
+      INCLUDE_PATH => [ $htmlRootDir, $PATHS->{PODPATH},$PATHS->{DOCPATH} ], # or list ref
+      INTERPOLATE  => 1,                # expand "$var" in plain text
+      EVAL_PERL    => 1,                # evaluate Perl code blocks
+    );
+
+    my $target  = $PATHS->{PODPATH};
+    my $tmpl = 'docu.tmpl';
+    my $mods = getModules;
+
+    foreach my $mod (keys %$mods) {
+        next unless($mods->{$mod}->{MOD}->{Name});
+        my $output = sprintf('%s/%s.pod', $target, $mods->{$mod}->{MOD}->{Name});
+        $tt->process($tmpl, $mods->{$mod}->{MOD}, $output)
+              or return error(sprintf('Error in %s: %s', $mods->{$mod}->{MOD}->{Name}, $tt->error()));
+    }
+
+    if(ref $console and $name) {
+        return $console->pod($name);
+    } elsif(ref $console) {
+        return $console->message(sprintf(gettext("Documentation has been generated in '%s'."), $target));
+    } else {
+        return debug(sprintf("Documentation has been generated in '%s'.", $target) . "\n");
+    }
+}
+
+# ------------------
+sub more {
+# ------------------
+    my $console = shift;
+    my $config = shift;
+    my $name  = shift || return error('No text file defined!');
+    my $param = shift || {};
+
+    if(ref $console) {
+        return $console->txtfile($name, $param);
+    }
+}
+
+# ------------------
+sub getDBVersion {
+# ------------------
+    return $DBVERSION if($DBVERSION);
+
+    my $cmd       = sprintf('%s/update-xxv', $PATHS->{CONTRIB});
+    if( -x $cmd) {
+      my ($ver) = (`$cmd -v`)[-1] =~ /\'(\d+)\'/;
+      $DBVERSION = $ver;
+    } else {
+      $DBVERSION = 32;
+      error sprintf("File '%s' missed!, use database layout %d", $cmd, $DBVERSION);
+    }
+    return $DBVERSION;
+}
+
+# ------------------
+sub init_locale {
+# ------------------
+    my $paths = shift || return error('No path defined!');
+
+    my $lang     = "C";
+    setlocale (LC_ALL, ''); #From environment like 'export LANG="fr_FR"';
+    my $current_locale = setlocale (LC_MESSAGES);
+
+    $lang = (split(/\.|\@/, $current_locale))[0] if($current_locale);
+
+    debug sprintf('Current locale is set to %s (%s)', $current_locale, $lang);
+
+    my $charset;
+    # Check for environment with UTF-8
+    my $useutf8 = 1 if($current_locale &&
+                ($current_locale =~ /UTF.+8/sig
+                || $current_locale =~ /utf8/sig));
+
+    if($useutf8){
+      $charset = 'UTF-8';
+      eval 'use utf8';
+    } else {
+      $charset = 'ISO-8859-1';
+    }
+
+    setcharset($charset, $lang);
+
+    # TODO set to installed folder like /usr/share/locale
+    # set /usr/share/locale/de/LC_MESSAGES/xxv.mo
+    # Message catalogs will be expected at the pathnames dirname/locale/cate-
+    # gory/domainname.mo,  where  locale  is  a locale name and category is a
+    # locale facet such as LC_MESSAGES.
+    bindtextdomain ('xxv', abs_path($paths->{LOCDIRNAME}));
+
+    return ($charset,$useutf8);
+}
+my $LOG_FAILED = undef;
+# ------------------
+sub init_logging {
+# ------------------
+    my $pat = shift || return error('No path defined!');
+
+    my $loggercnt = 0;
+    my $loggerfile = $pat->{LOGFILE};
+
+    # The output level
+    $Tools::VERBOSE = $verbose;
+
+    # This will add a callback for log output
+    $Tools::LOG = sub{
+        my $errcode = shift;
+        my $msg = shift;
+        chomp($msg);
+        $errcode = 200 if(!$errcode);
+
+        my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
+            localtime(time);
+        my $tt = sprintf('%04d-%02d-%02d %02d:%02d:%02d',
+            $year+1900, $mon+1,$mday,  $hour, $min, $sec );
+
+        my $mode = '>>';
+        #$mode .= ':utf8' if($Tools::CHARSET && $Tools::CHARSET eq 'UTF-8');
+
+        my $fh = IO::File->new($loggerfile,$mode);
+        unless ($fh) {
+          return if($LOG_FAILED);# log only once, if failed
+          $LOG_FAILED = 1;
+          return print(sprintf("Couldn't write %s : %s!",$loggerfile,$!));
+        }
+        $LOG_FAILED = undef;
+#       binmode $fh, ":encoding(utf8)" if($Tools::CHARSET eq 'UTF-8');
+        print $fh sprintf("%d (%d) [%s] %s\n",++$loggercnt, $errcode, $tt, $msg);
+        $fh->close;
+    };
+
+    # First log message
+    debug sprintf("%s(%s) started. base version : %s", $0,$$, &getVersion);
+    debug sprintf('verbose level is set to %d', $verbose);
+}
+
+# ------------------
+sub init_template {
+# ------------------
+    my $TMPLMOD = shift || 0;
+
+    # Test on Template Modul ....
+    if($TEMPLMOD) {
+        $Template::Config::STASH = 'Template::Stash::XS';
+        debug 'Fast template support is enabled!';
+    } else {
+        use Template;
+        warn qq|
+
+----- WARNING! ----
+Upps, you use a very slowly version from Template!
+The better (and faster) way is to install the Template
+Modul with Template::Stash::XS support:
+
+with cpan:
+    perl -MCPAN -e 'install Template'
+    (answer with yes '' for XS Support question)
+
+with debian:
+    apt-get install libtemplate-perl
+
+|;
+    }
+}
+
+# ------------------
+sub init_signal_handler {
+# ------------------
+    my $pat = shift || return error('No path defined!');
+
+    # Signal stuff
+    $SIG{__WARN__}  = sub{ error @_; };
+    $SIG{__DIE__}   = sub{ panic @_; };
+    $SIG{USR1} = sub{
+      &quit(0);
+    };
+    $SIG{TERM} = sub{
+      &quit(1);
+    };
+
+    $SIG{HUP} = sub{
+        lg "Reconfiguration ... ";
+        $Config = Config::Tiny->read( $pat->{CFGFILE} )
+            or return error sprintf('Problem to read file %s: %s', $pat->{CFGFILE}, $CFGOBJ->errstr);
+        my $configModule = getModule('CONFIG')
+            or return error("Couldn't load the config modul!");
+        $configModule->reconfigure;
+    };
+}
+# ------------------
+sub init_db_connect {
+# ------------------
+    my $cfg = shift || return error('No configuration defined!');
+    my $charset = shift || return error('No charset defined!');
+
+    debug sprintf("Used database charset '%s'", $charset);
+
+    # Connect to Database
+    my $dbh = &connectDB(
+        $cfg->{General}->{DSN},
+        $cfg->{General}->{USR},
+        $cfg->{General}->{PWD},
+        $charset
+        ) or return error "Couldn't connect to database";
+    &quit(1) unless($dbh);
+
+    # Set DBH for Toolsmodule
+    $Tools::DBH = $dbh;
+
+    return $dbh;
+}
+
+# ------------------
+sub module {
+# ------------------
+    my $args = {
+        Name => 'General',
+        Description => gettext('This is the main program xxvd.'),
+        Preferences => {
+            DSN => {
+                description => gettext('Data source for the connection to the database'),
+                default     => 'DBI:mysql:database=xxv;host=localhost;port=3306',
+                type        => 'string',
+                required    => gettext("This is required!"),
+            },
+            USR => {
+                description => gettext('Password for database access'),
+                default     => 'xxv',
+                type        => 'string',
+                required    => gettext("This is required!"),
+            },
+            PWD => {
+                description => gettext('Password for database access'),
+                default     => 'xxv',
+                type        => 'password',
+                required    => gettext("This is required!"),
+                check       => sub{
+                    my $value = shift || return;
+
+                    return $value unless(ref $value eq 'ARRAY');
+
+                    # If no password given the take the old password as default
+                    if($value->[0] and $value->[0] ne $value->[1]) {
+                        return undef, gettext("The fields with the 1st and the 2nd password must match!");
+                    } else {
+                        return $value->[0];
+                    }
+                },
+            },
+        },
+        Commands => {
+            doc => {
+                description => gettext('Generate the documentation into the doc directory.'),
+                short       => 'dc',
+                callback    => sub{ docu(@_) },
+                Level       => 'admin',
+            },
+            more => {
+                description => gettext('Display program information.'),
+                short       => 'mo',
+                callback    => sub{ more(@_) },
+                Level       => 'user',
+            },
+        },
+    };
+    return $args;
+}
+

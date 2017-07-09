@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/patches
+END
+vdr-replace-schedulemenu.diff
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/patches/vdr-replace-schedulemenu.diff
+END
+timercmd-0.1_1.3.23.diff
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/patches/timercmd-0.1_1.3.23.diff
+END
+timercmd-0.1_1.3.25.diff
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/patches/timercmd-0.1_1.3.25.diff
+END
+MainMenuHooks-v1_0.patch
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/epgsearch-0.9.24-reel3/patches/MainMenuHooks-v1_0.patch
+END

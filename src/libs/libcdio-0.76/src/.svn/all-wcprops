@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src
+END
+cd-read.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-read.c
+END
+cdinfo-linux.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cdinfo-linux.c
+END
+cd-info.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-info.c
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/Makefile.in
+END
+cddb.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cddb.h
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/util.h
+END
+iso-read.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/iso-read.c
+END
+iso-info.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/iso-info.c
+END
+cdda-player.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cdda-player.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/Makefile.am
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/Makefile
+END
+cddb.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cddb.c
+END
+util.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/util.c
+END
+cd-drive.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-drive.c
+END

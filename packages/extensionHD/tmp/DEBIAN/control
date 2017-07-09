@@ -1,0 +1,13 @@
+Package: extensionHD
+Version: 1.7-reel32-33
+Section: reel
+Priority: important
+Architecture: i386
+Installed-Size: 6,8M
+Depends: dkms, hdplayer, tftpd-hpa, xine-reel-ehd
+Conflicts:
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: extensionHD
+Description: drivers needed for the Reel DeCypher Video Card.
+ Includes shm driver and DeCypher boot image
+

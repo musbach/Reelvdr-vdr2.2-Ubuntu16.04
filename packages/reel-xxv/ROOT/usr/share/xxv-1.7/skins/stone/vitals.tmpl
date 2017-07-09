@@ -1,0 +1,117 @@
+<!-- Vitals Template -->
+<?% IF ! global.bodyinc.defined;global.bodyinc = 1 %?>
+<body class="frame">
+<?% INCLUDE status.inc %?>
+<?% INCLUDE header.inc %?>
+<div id="body">
+<?% END %?>
+
+<?%
+    USE date;
+    statusfiles = [];
+
+    FILTER null;
+        name = 'vitals';
+        loaddata = [];
+        utildata = [];
+        userdata = [];
+        timestamps = [];
+        FOREACH item IN param.stack;
+            t = date.format(item.timestamp, '%H:%M');
+            timestamps.push(t);
+            l = item.load.first * 10;
+            loaddata.push(l);
+            utildata.push(item.util);
+            userdata.push(item.users);
+        END;
+
+        # Maximum wert
+        max = loaddata.nsort.last;
+        IF utildata.nsort.last > max;
+            max = utildata.nsort.last;
+        END;
+        IF userdata.nsort.last > max;
+            max = userdata.nsort.last;
+        END;
+        max = (max + (max div 10) + 0.9) div 1;
+
+        # Data ...
+        d = [
+             timestamps ,
+             loaddata ,
+             userdata ,
+             utildata ,
+        ];
+
+        USE my_graph = GD.Graph.lines(375,375);
+
+        # Xsteps
+        steps = param.stack.size div 5;
+        label = gettext('Average load');
+        my_graph.set(
+                x_label_skip => steps,
+                x_long_ticks => 1,
+
+                y_long_ticks => 1,
+                y_max_value => max,
+
+                line_width   => 2,
+                box_axis     => 1,
+                boxclr       => '#FFFFFF',
+                fgclr        => '#BBBBBB'
+                legend_placement => 'BO',
+                legend_spacing => 5,
+        );
+        my_graph.set_title_font(param.font,10);
+        my_graph.set_y_label_font(param.font,10);
+        my_graph.set_x_label_font(param.font,10);
+        my_graph.set_x_axis_font(param.font,6);
+        my_graph.set_y_axis_font(param.font,6);
+        my_graph.set_legend( 'Load (x10)', 'User', 'Util');
+        file = writefile("status_${name}.gif", my_graph.plot(d).gif );
+        statusfiles.push([label, file]);
+        END;
+ %?>
+
+<?% IF param.headingText %?>
+<h1><?% param.headingText %?></h1>
+<?% END %?>
+
+<div class="areabegin">
+<table class="areatable" summary="">
+  <tr>
+    <td class="areahead"><?% file.0 %?>
+    </td>
+  </tr>
+  <tr>
+    <td class="areatext">
+            <table summary="" width="100%">
+                <?% FOREACH name IN data.keys.sort %?>
+                <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+                    <td><?% name %?></td>
+                    <td><?% data.$name.replace('\n', '<br />') %?></td>
+                </tr>
+                <?% END %?>
+            </table>
+    </td>
+  </tr>
+  <tr><td class="areabottom"></td></tr>
+</table>
+</div>
+
+
+<?% FOREACH file IN statusfiles %?>
+<div class="areabegin">
+<table class="areatable" summary="">
+    <tr><td class="areahead"><?% file.0 %?></td></tr>
+    <tr>
+        <td class="areatext" align="center">
+          <img src="<?% file.1 %?>" alt="<?% file.0 %?>" />
+        </td>
+    </tr>
+    <tr><td class="areabottom"></td></tr>
+</table>
+</div>
+<?% END %?>
+
+<div class="areaclose"></div>

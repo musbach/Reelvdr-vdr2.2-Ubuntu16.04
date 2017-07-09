@@ -1,0 +1,61 @@
+Index: dvbdevice.c
+===================================================================
+--- dvbdevice.c	(revision 15383)
++++ dvbdevice.c	(revision 15384)
+@@ -226,6 +226,29 @@
+   return NULL;
+ }
+ 
++#ifdef REELVDR
++const char *cDvbTransponderParameters::ParseOldModulation(const char *s)
++{
++  if (*++s) {
++     char *p = NULL;
++     errno = 0;
++     int n = strtol(s, &p, 10);
++     if (!errno && p != s) {
++        switch(n) {
++            case 4 : modulation = QPSK;  system = SYS_DVBS;  break;
++            case 42: modulation = QPSK;  system = SYS_DVBS2; break;
++            case 8 : modulation = PSK_8; system = SYS_DVBS2; break;
++            default: modulation = MapToDriver(n, ModulationValues);
++        }
++        if (modulation >= 0)
++           return p;
++        }
++     }
++  esyslog("ERROR: invalid value for parameter '%c'", *(s - 1));
++  return NULL;
++}
++#endif /* REELVDR */
++
+ bool cDvbTransponderParameters::Parse(const char *s)
+ {
+   while (s && *s) {
+@@ -237,7 +260,12 @@
+           case 'H': polarization = *s++; break;
+           case 'I': s = ParseParameter(s, inversion, InversionValues); break;
+           case 'L': polarization = *s++; break;
++#ifdef REELVDR
++          case 'M': s = ParseOldModulation(s); break;                     // Support for old reel param
++          case 'E': s = ParseParameter(s, rollOff, RollOffValues); break; // Support for old reel param
++#else
+           case 'M': s = ParseParameter(s, modulation, ModulationValues); break;
++#endif /* REELVDR */
+           case 'O': s = ParseParameter(s, rollOff, RollOffValues); break;
+           case 'R': polarization = *s++; break;
+           case 'S': s = ParseParameter(s, system, SystemValues); break;
+Index: dvbdevice.h
+===================================================================
+--- dvbdevice.h	(revision 15383)
++++ dvbdevice.h	(revision 15384)
+@@ -69,6 +69,9 @@
+   int rollOff;
+   int PrintParameter(char *p, char Name, int Value) const;
+   const char *ParseParameter(const char *s, int &Value, const tDvbParameterMap *Map);
++#ifdef REELVDR
++  const char *ParseOldModulation(const char *s);
++#endif /* REELVDR */
+ public:
+   cDvbTransponderParameters(const char *Parameters = NULL);
+   char Polarization(void) const { return polarization; }

@@ -1,0 +1,191 @@
+#
+#     This file is provided under a dual BSD/LGPLv2.1 license.  When using 
+#     or redistributing this file, you may do so under either license.
+# 
+#     LGPL LICENSE SUMMARY
+# 
+#     Copyright(c) 2008-2009. Intel Corporation. All rights reserved.
+# 
+#     This library is free software; you can redistribute it and/or modify 
+#     it under the terms of the GNU Lesser General Public License as 
+#     published by the Free Software Foundation; either version 2.1 of the 
+#     License.
+# 
+#     This library is distributed in the hope that it will be useful, but 
+#     WITHOUT ANY WARRANTY; without even the implied warranty of 
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+#     Lesser General Public License for more details.
+# 
+#     You should have received a copy of the GNU Lesser General Public 
+#     License along with this library; if not, write to the Free Software 
+#     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 
+#     USA. The full GNU Lesser General Public License is included in this 
+#     distribution in the file called LICENSE.LGPL.
+# 
+#     Contact Information:
+#         Intel Corporation
+#         2200 Mission College Blvd.
+#         Santa Clara, CA  97052
+# 
+#     BSD LICENSE
+# 
+#     Copyright (c) 2008-2009. Intel Corporation. All rights reserved.
+# 
+#     Redistribution and use in source and binary forms, with or without 
+#     modification, are permitted provided that the following conditions 
+#     are met:
+# 
+#       - Redistributions of source code must retain the above copyright 
+#         notice, this list of conditions and the following disclaimer.
+#       - Redistributions in binary form must reproduce the above copyright 
+#         notice, this list of conditions and the following disclaimer in 
+#         the documentation and/or other materials provided with the 
+#         distribution.
+#       - Neither the name of Intel Corporation nor the names of its 
+#         contributors may be used to endorse or promote products derived 
+#         from this software without specific prior written permission.
+# 
+#     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+#     "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+#     LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+#     A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+#     OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+#     SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+#     LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+#     DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY 
+#     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+#     (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+#     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# 
+
+PWD=$(shell pwd)
+ifndef BUILD_DEST
+	export BUILD_DEST=/home/kris/CE-SDK/IntelCE-25.0.11473.304190/build_i686/staging_dir
+endif
+
+ifndef BUILD_DIR
+	export BUILD_DIR=i686-linux-elf
+endif	
+ifndef GSTREAMER_DIR
+	export GSTREAMER_DIR=$(BUILD_DEST)
+endif	
+ifndef MEDIA_DRIVER_DIR
+	export MEDIA_DRIVER_DIR=$(BUILD_DEST)
+endif	
+
+export CC=/home/kris/CE-SDK/IntelCE-25.0.11473.304190/build_i686/i686-linux-elf/bin/i686-cm-linux-gcc
+
+SRCS= 	gstmpegdesc.c \
+		gstsectionfilter.c \
+		ismd_gst_audio_sink.c \
+		ismd_gst_buffer.c \
+		ismd_gst_clock.c \
+		ismd_gst_clock_recovery_provider.c \
+		ismd_gst_demux.c \
+		ismd_gst_dvb_src.c \
+		ismd_gst_dvb_stream.c \
+		ismd_gst_element.c \
+		ismd_gst_enum.c \
+		ismd_gst_h264_viddec.c \
+		ismd_gst_h264_videnc.c \
+		ismd_gst_mpeg2_viddec.c \
+		ismd_gst_mpeg4_viddec.c \
+		ismd_gst_pad.c \
+		ismd_gst_rectangle.c \
+		ismd_gst_refiller.c \
+		ismd_gst_ts_muxer.c \
+		ismd_gst_vc1_viddec.c \
+		ismd_gst_vidpproc.c \
+		ismd_gst_vidrend_bin.c \
+		ismd_gst_vidrend_sink.c \
+		ismd_gst_audio_dec.c \
+		ismd_gst_vidsink.c \
+		ismd_plugin.c \
+		psi_helper.c 
+
+
+
+
+OBJS=${SRCS:.c=.o}
+
+PKG_CONFIG_PATH=$(GSTREAMER_DIR)/lib/pkgconfig
+export PKG_CONFIG_PATH
+
+#export AR=$(TARGETAR)
+#export AS=$(TARGETAS)
+#export CC=$(TARGETCC)
+#export STRIP=$(TARGETSTRIP)
+#export LD=$(TARGETLD)
+
+PLUGIN=libgstfluismd.so
+
+CFLAGS= -pthread -I$(BUILD_DEST)/include -I$(BUILD_DEST)/include/linux_user \
+	-I$(GSTREAMER_DIR)/include/gstreamer-0.10 \
+        -I$(GSTREAMER_DIR)/include/glib-2.0 \
+        -I$(GSTREAMER_DIR)/lib/glib-2.0/include \
+        -I$(GSTREAMER_DIR)/include/libxml2  \
+        -I$(MEDIA_DRIVER_DIR)/include/linux_user \
+        -I$(MEDIA_DRIVER_DIR)/include
+
+CFLAGS+=-Wall
+CFLAGS+=-g
+
+ifdef COMP_VER
+   CFLAGS += -DCOMP_VER=$(COMP_VER)
+endif
+
+LDFLAGS= -Wl,--export-dynamic -pthread -L$(GSTREAMER_DIR)/lib \
+         -L$(MEDIA_DRIVER_DIR)/sdk_additions/usr/lib -L$(MEDIA_DRIVER_DIR)/lib \
+         -lgstreamer-0.10 -lgobject-2.0 \
+         -lgmodule-2.0 -ldl -lgthread-2.0 \
+         -lxml2 -lm -lglib-2.0 \
+         -lgstbase-0.10 -lgstvideo-0.10
+
+PLUGIN_LDFLAGS=$(LDFLAGS)
+PLUGIN_LDFLAGS+=-W1,-soname,$(PLUGIN)
+PLUGIN_LDFLAGS+=-lismd_core -lismd_mux -lismd_demux -lismd_vidrend -lismd_clock -lismd_audio -lismd_videnc -lismd_viddec -lismd_vidpproc -lismdmessage -lsven -lpal -losal -lplatform_config -lsystem_utils -lismd_clock_recovery -lgdl -lismd_bufmon -lismd_vidsink_direct
+LIB_LDFLAGS=$(LDFLAGS)
+LIB_LDFLAGS+=-W1,-soname,$(LIB)
+LIB_LDFLAGS+=-lismd_core -lismd_clock -lismdmessage -lsven -lpal -losal -lplatform_config -lsystem_utils -lismd_clock_recovery
+
+.PHONY: all
+all: $(GSTREAMER_DIR) $(OBJS) 
+	$(CC) --shared $(PLUGIN_LDFLAGS) $(OBJS) -o $(PLUGIN) 
+
+	mkdir -p $(MEDIA_DRIVER_DIR)/usr/lib/fsmd/
+	cp $(PLUGIN) $(MEDIA_DRIVER_DIR)/usr/lib/fsmd/.
+
+.PHONY: default
+default:
+	@echo "Nothing to be done for default yet"
+
+.PHONY: debug
+debug: all doc test
+
+.PHONY: test
+test:
+	@echo "Nothing to be done for test yet"
+
+install:  install_dev install_target
+
+install_dev: all
+
+install_target: all
+	mkdir -p $(FSROOT)/usr/lib/fsmd
+	mkdir -p $(FSROOT)/bin
+	cp $(BUILD_DEST)/usr/lib/fsmd/$(PLUGIN) $(FSROOT)/usr/lib/fsmd
+
+
+$(OBJS): $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS) 
+
+
+clean:
+	rm -f *.o *.so core $(PLUGIN) 
+	$(foreach SUBDIR, $(SUBDIRS), $(MAKE) clean -C $(SUBDIR);)
+	rm -rf *.o *.so *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions
+
+.PHONY: doc
+doc: 
+	@echo "Nothing to be done for doc yet"
+#	doxygen doc/doxyfile.psl_gst_plugin

@@ -1,0 +1,36 @@
+Index: menu.c
+===================================================================
+--- menu.c	(revision 15400)
++++ menu.c	(revision 15401)
+@@ -4288,9 +4288,15 @@
+   return false;
+ }
+ 
++#ifdef REELVDR
++const char *cRecordControls::GetInstantId(const char *LastInstantId, bool LIFO)
++{
++  for (int i = LIFO?MAXRECORDCONTROLS-1:0; LIFO? i>=0:i < MAXRECORDCONTROLS; LIFO?--i:i++) {
++#else
+ const char *cRecordControls::GetInstantId(const char *LastInstantId)
+ {
+   for (int i = 0; i < MAXRECORDCONTROLS; i++) {
++#endif /* REELVDR */
+       if (RecordControls[i]) {
+          if (!LastInstantId && RecordControls[i]->InstantId())
+             return RecordControls[i]->InstantId();
+Index: menu.h
+===================================================================
+--- menu.h	(revision 15400)
++++ menu.h	(revision 15401)
+@@ -243,7 +243,11 @@
+   static bool Start(cTimer *Timer = NULL, bool Pause = false);
+   static void Stop(const char *InstantId);
+   static bool PauseLiveVideo(void);
++#ifdef REELVDR
++  static const char *GetInstantId(const char *LastInstantId, bool LIFO=false);
++#else
+   static const char *GetInstantId(const char *LastInstantId);
++#endif
+   static cRecordControl *GetRecordControl(const char *FileName);
+   static void Process(time_t t);
+   static void ChannelDataModified(cChannel *Channel);

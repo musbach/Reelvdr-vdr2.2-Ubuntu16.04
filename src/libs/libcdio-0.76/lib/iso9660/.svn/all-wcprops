@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660
+END
+iso9660_private.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660/iso9660_private.h
+END
+rock.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660/rock.c
+END
+iso9660.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660/iso9660.c
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660/Makefile.in
+END
+iso9660_fs.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660/iso9660_fs.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660/Makefile.am
+END
+xa.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660/xa.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660/Makefile
+END
+libiso9660.sym
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/iso9660/libiso9660.sym
+END

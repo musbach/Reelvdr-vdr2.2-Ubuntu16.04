@@ -1,0 +1,46 @@
+#
+# Makefile for ReelBox packages
+#
+#
+
+PWD = $(shell pwd)
+
+WORKDIR  = $(SRCDIR)/utils/xine-hde
+XINE_PLUGINDIR := $(shell xine-config --plugindir)
+# XINE_PLUGINDIR := $(shell pkg-config --plugindir)
+
+
+include ../Make.common
+
+#$(TARGET): .root-copied
+#$(TARGET): $(VROOT)/DEBIAN/conffiles
+#$(TARGET): $(VROOT)/DEBIAN/changelog
+$(TARGET): $(VROOT)/DEBIAN/postinst
+#$(TARGET): $(VROOT)/DEBIAN/prerm
+#$(TARGET): $(VROOT)/DEBIAN/postrm
+
+
+all: $(TARGET)
+
+$(TARGET): $(VROOT)/$(XINE_PLUGINDIR)/xineplug_hde.so $(VROOT)/$(XINE_PLUGINDIR)/xineplug_hde1.so
+
+#install
+$(VROOT)/$(XINE_PLUGINDIR)/xineplug_hde.so: $(WORKDIR)/xineplug_hde.so
+	sudo install -sp -m 644 -D $< $@
+
+$(VROOT)/$(XINE_PLUGINDIR)/xineplug_hde1.so: $(WORKDIR)1/xineplug_hde1.so
+	sudo install -sp -m 644 -D $< $@
+
+#build
+$(WORKDIR)/xineplug_hde.so: $(WORKDIR)/Makefile $(CONTROL)
+	make -C $(WORKDIR) clean all
+
+$(WORKDIR)1/xineplug_hde1.so: $(WORKDIR)1/Makefile $(CONTROL)
+	make -C $(WORKDIR)1 clean all
+
+#clean
+clean: clean-workdir
+
+clean-workdir:
+	-make -C $(WORKDIR) clean
+	-make -C $(WORKDIR)1 clean

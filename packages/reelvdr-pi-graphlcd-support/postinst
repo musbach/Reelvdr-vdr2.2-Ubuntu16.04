@@ -1,0 +1,23 @@
+#!/bin/sh
+
+
+myln () {
+src="$2"
+target="$3"
+
+	if [ ! -L $target ]; then
+		ln -f $*
+	fi
+}
+
+echo "Linking graphlcd fonts/logos"
+myln -s /etc/vdr/plugins/graphlcd/fonts.conf.medium /etc/vdr/plugins/graphlcd/fonts.conf
+
+myln -s /etc/vdr/plugins/graphlcd/fonts/f12bn.fnt /etc/vdr/plugins/graphlcd/fonts/f_m_l.fnt
+myln -s /etc/vdr/plugins/graphlcd/fonts/f8n.fnt /etc/vdr/plugins/graphlcd/fonts/f_m_n.fnt
+myln -s /etc/vdr/plugins/graphlcd/fonts/f5n.fnt /etc/vdr/plugins/graphlcd/fonts/f_m_s.fnt
+myln -s /etc/vdr/plugins/graphlcd/fonts/sym7.fnt /etc/vdr/plugins/graphlcd/fonts/f_m_sym.fnt
+
+myln -s /etc/vdr/plugins/graphlcd/logonames.alias.1.3 /etc/vdr/plugins/graphlcd/logonames.alias
+
+exit 0

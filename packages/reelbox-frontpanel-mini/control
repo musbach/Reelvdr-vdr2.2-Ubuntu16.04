@@ -1,0 +1,12 @@
+Package: reelbox-frontpanel-mini
+Version: 4.0
+Section: reel
+Priority: required
+Architecture: armel
+Depends: libusb-0.1-4
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-frontpanel-mini
+Description: Tools needed by the Reel NetClient frontpanel and remote control
+ Required tools for the Reel NetClient frontpanel and remote control
+ This package contains the reelbox-control needed for the IR to work
+

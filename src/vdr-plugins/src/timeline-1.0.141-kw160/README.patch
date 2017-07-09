@@ -1,0 +1,13 @@
+I patched timeline version 1.0.141, so it compiles and runs with vdr-1.6.0.
+The i18n patch from 
+http://vdrbox.lautre.net/fichiers/VDR/patchs/timeline/01-timeline-1.0.141-gettext-i18n.diff 
+is also included (see also http://www.vdr-portal.de/board/thread.php?threadid=76080&hilight=timeline)
+
+Please test this version on UTF-8 systems. 
+
+This version is available at http://www.u32.de/download/vdr-timeline-1.0.141-kw160.tar.gz
+
+Original version at http://www.js-home.org/vdr/timeline/index.php
+
+
+koch@u32.de

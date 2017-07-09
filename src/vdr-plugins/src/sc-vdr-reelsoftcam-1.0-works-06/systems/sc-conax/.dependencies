@@ -1,0 +1,4 @@
+sc-conax.o: sc-conax.c ../../system-common.h ../../data.h \
+ ../../../../../vdr/../vdr/thread.h ../../../../../vdr/../vdr/tools.h \
+ ../../misc.h ../../system.h ../../smartcard.h ../../parse.h ../../misc.h \
+ ../../log-sc.h ../../log.h ../../log-core.h ../../version.h

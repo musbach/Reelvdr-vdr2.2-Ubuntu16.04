@@ -1,0 +1,35 @@
+reelbox-ctrld:
+==============
+kennt jetzt 2 Dateien für die Lüftersteuerung.
+
+Das ist eine Einflussmöglichkeit auf die Minimaldrehzahl für NT und
+CPU-Lüfter. Dazu gibts die Files /etc/reel/fan_control0 (NT) bzw. 1 (CPU).
+Wenn da eine Zahl drinnen steht, wird die als Minimalgeschwindigkeit
+genommen. Der Wert ist aber nicht in RPM, sondern 117000/RPM, also
+kleiner->schneller. Beim NT wäre der Default-Wert jetzt 112 (~1050RPM), CPU
+hat 300 (~400RPM). Damit könnte man per GUI zB. einen "Schrankmodus"
+anknipsen, wo der CPU-Lüfter schneller dreht.
+
+In /tmp/pwrctrl.state sind noch zwei zaheln dazugekommen, das sind
+die RPM-Sollwerte für die Lüfter. 
+
+
+reelfpctl:
+==========
+
+- wakeup reasons:
+
+Die Hex-Antwort ist so codiert:
+
+00 00 RR U1 U2 U3 U4
+
+RR: Wakeup reason: (cleared to 0 after request)
+1: power cycle
+2: FP issued reset
+3: wakeup from standby by Keyboard/FP Power Button
+4: wakeup from standby by IR
+5: timer wakeup
+6: WOL
+
+U1-U4: Wakeup Unixtime (U1: MSB, U4: LSB)
+(also die Zeit, durch die aufgeweckt wurde).

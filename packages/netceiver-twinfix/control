@@ -1,0 +1,9 @@
+Package: netceiver-twinfix
+Version: 0.0.1
+Section: reel
+Priority: important
+Architecture: i386
+Depends: netceiver-twinfix
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: netceiver-twinfix
+Description: Fix for netceiver if broken by Twin-Tuner without firmware upgrade

@@ -1,0 +1,39 @@
+audio_out.o: audio_out.c audio_out.h utils.h VdrXineMpIf.h \
+ reel_video_overlay.h xine_internal.h xineutils.h xine_decoder.h buffer.h
+mpeg_videodec.o: mpeg_videodec.c mpeg_videodec.h utils.h VdrXineMpIf.h \
+ reel_video_overlay.h xine_internal.h VideoStreamParser.h xineutils.h \
+ video_decoder.h
+spu.o: spu.c xine_internal.h xineutils.h spu.h video_out.h \
+ video_overlay.h nav_types.h ifo_types.h dvd_reader.h buffer.h bswap.h \
+ nav_read.h nav_print.h spu_If.h VdrXineMpIf.h reel_video_overlay.h \
+ debug.h
+spu_If.o: spu_If.c spu_If.h VdrXineMpIf.h reel_video_overlay.h \
+ xine_internal.h video_overlay.h spu.h video_out.h nav_types.h \
+ ifo_types.h dvd_reader.h metronom.h
+xine_decoder.o: xine_decoder.c spu.h video_out.h video_overlay.h \
+ nav_types.h ifo_types.h dvd_reader.h nav_read.h xine_decoder.h \
+ xine_internal.h buffer.h debug.h bswap.h xineutils.h spu_If.h \
+ VdrXineMpIf.h reel_video_overlay.h
+plugin.o: plugin.c audio_out.h mpeg_videodec.h xine_decoder.h \
+ xine_internal.h buffer.h spu_decoder.h
+audio_out.o: audio_out.c audio_out.h utils.h VdrXineMpIf.h \
+ reel_video_overlay.h xine_internal.h xineutils.h xine_decoder.h buffer.h
+mpeg_videodec.o: mpeg_videodec.c mpeg_videodec.h utils.h VdrXineMpIf.h \
+ reel_video_overlay.h xine_internal.h VideoStreamParser.h xineutils.h \
+ video_decoder.h
+spu.o: spu.c xine_internal.h xineutils.h spu.h video_out.h \
+ video_overlay.h nav_types.h ifo_types.h dvd_reader.h buffer.h bswap.h \
+ nav_read.h nav_print.h spu_If.h VdrXineMpIf.h reel_video_overlay.h \
+ debug.h
+spu_If.o: spu_If.c spu_If.h VdrXineMpIf.h reel_video_overlay.h \
+ xine_internal.h video_overlay.h spu.h video_out.h nav_types.h \
+ ifo_types.h dvd_reader.h metronom.h
+xine_decoder.o: xine_decoder.c spu.h video_out.h video_overlay.h \
+ nav_types.h ifo_types.h dvd_reader.h nav_read.h xine_decoder.h \
+ xine_internal.h buffer.h debug.h bswap.h xineutils.h spu_If.h \
+ VdrXineMpIf.h reel_video_overlay.h
+plugin.o: plugin.c audio_out.h mpeg_videodec.h xine_decoder.h \
+ xine_internal.h buffer.h spu_decoder.h
+ReadBuffer.o: ReadBuffer.cpp ReadBuffer.h
+VideoStreamParser.o: VideoStreamParser.cpp VideoStreamParser.h \
+ ReadBuffer.h

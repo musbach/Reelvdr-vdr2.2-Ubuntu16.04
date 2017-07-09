@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/repos/vdr-mcli-plugin/!svn/ver/188
+END
+device.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/repos/vdr-mcli-plugin/!svn/ver/187/device.c
+END
+packetbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/vdr-mcli-plugin/!svn/ver/187/packetbuffer.c
+END
+device.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/repos/vdr-mcli-plugin/!svn/ver/181/device.h
+END
+packetbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/vdr-mcli-plugin/!svn/ver/78/packetbuffer.h
+END
+mcli_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/vdr-mcli-plugin/!svn/ver/129/mcli_service.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/vdr-mcli-plugin/!svn/ver/179/README
+END
+HISTORY
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/repos/vdr-mcli-plugin/!svn/ver/168/HISTORY
+END
+mcli.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/vdr-mcli-plugin/!svn/ver/182/mcli.c
+END
+cam_menu.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/vdr-mcli-plugin/!svn/ver/172/cam_menu.c
+END
+mcliheaders.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/vdr-mcli-plugin/!svn/ver/97/mcliheaders.h
+END
+filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/repos/vdr-mcli-plugin/!svn/ver/187/filter.c
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/repos/vdr-mcli-plugin/!svn/ver/1/COPYING
+END
+mcli.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/vdr-mcli-plugin/!svn/ver/181/mcli.h
+END
+cam_menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/vdr-mcli-plugin/!svn/ver/169/cam_menu.h
+END
+filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/repos/vdr-mcli-plugin/!svn/ver/149/filter.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/repos/vdr-mcli-plugin/!svn/ver/187/Makefile
+END

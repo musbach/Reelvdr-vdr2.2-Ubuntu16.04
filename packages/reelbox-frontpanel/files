@@ -1,0 +1,19 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)			dest			type	owner.group
+etc/init/fpleds.conf			-			cfg
+#etc/init/frontpanel-pre.conf		-			cfg
+etc/init/reelbox-control.conf		-			cfg
+etc/init.d/set_wol			-			script
+etc/init.d/fpleds			usr/sbin/fpleds		script
+etc/udev/rules.d/50-reel_frontpanel.rules
+etc/udev/rules.d/65-reelbox-fp.rules
+sbin/dev_frontpanel.sh			-			script
+sbin/reel_fp_progress			-			script
+sbin/shutdownwd.sh			usr/sbin/shutdownwd.sh	script
+utils/reelbox-control/reelbox-ctrld	usr/sbin/reelbox-ctrld	exe	-
+utils/avr_flash/avr_flasher		sbin/avr_flasher	exe
+utils/reelfpctl/reelfpctl		sbin/reelfpctl		exe
+utils/reelfpctl/reelfpctl1		usr/share/reel/frontpanel/reelfpctl1		exe
+utils/avr_flash/main.flash-1.20		usr/share/reel/frontpanel/main.flash-1.20	bin
+

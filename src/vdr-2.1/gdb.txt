@@ -1,0 +1,5 @@
+Reading symbols from /usr/sbin/vdr...(no debugging symbols found)...done.
+Reading symbols from /usr/sbin/vdr...(no debugging symbols found)...done.
+Undefined command: "directories".  Try "help".
+Source directories searched: /usr/src/reelbox/testing/src/vdr:/usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-32:$cdir:$cwd
+Reading symbols from /usr/sbin/vdr...(no debugging symbols found)...done.

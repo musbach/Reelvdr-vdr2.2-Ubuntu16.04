@@ -1,0 +1,4 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)		dest		type	owner.group
+utils/replex-0.1.6/replex	usr/bin/replex	exe

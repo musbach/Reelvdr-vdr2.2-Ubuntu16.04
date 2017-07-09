@@ -1,0 +1,12 @@
+#! /bin/sh
+
+
+[ -L /etc/vdr/plugins/radio/radio.mpg ] && rm /etc/vdr/plugins/radio/radio.mpg
+[ -L /etc/vdr/plugins/radio/replay.mpg ] && rm /etc/vdr/plugins/radio/replay.mpg
+
+if [ "$1" = "purge" ]
+then
+    update-rc.d reelvdr remove >/dev/null
+fi
+
+exit 0

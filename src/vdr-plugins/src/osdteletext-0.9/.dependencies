@@ -1,0 +1,9 @@
+osdteletext.o: osdteletext.c menu.h txtrecv.h setup.h
+menu.o: menu.c menu.h txtrecv.h setup.h display.h displaybase.h \
+ txtrender.h
+txtfont.o: txtfont.c txtfont.h txtrender.h
+txtrecv.o: txtrecv.c txtrecv.h tables.h setup.h menu.h
+txtrender.o: txtrender.c txtrender.h
+displaybase.o: displaybase.c displaybase.h txtrender.h txtfont.h
+display.o: display.c setup.h display.h displaybase.h txtrender.h \
+ txtfont.h

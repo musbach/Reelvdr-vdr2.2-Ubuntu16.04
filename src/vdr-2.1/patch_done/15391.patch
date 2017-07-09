@@ -1,0 +1,18 @@
+Index: i18n.h
+===================================================================
+--- i18n.h	(revision 15390)
++++ i18n.h	(revision 15391)
+@@ -13,7 +13,13 @@
+ #include <stdio.h>
+ #include "tools.h"
+ 
++#ifdef REELVDR
++const int I18nNumLanguages = 22;
++
++typedef const char *tI18nPhrase[I18nNumLanguages];
++#else
+ typedef const char *tI18nPhrase[22]; ///< obsolete - switch to 'gettext'!
++#endif
+ 
+ #define I18N_DEFAULT_LOCALE "en_US"
+ #define I18N_MAX_LOCALE_LEN 16       // for buffers that hold en_US etc.

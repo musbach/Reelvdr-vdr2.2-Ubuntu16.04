@@ -1,0 +1,48 @@
+Format: 1.8
+Date: Wed,  7 Mar 2007 17:03:26 +0100
+Source: mjpegtools
+Binary: libmjpegtools-2.1 libmjpegtools-dev mjpegtools libmjpegtools-i686-2.1 libmjpegtools-i686-dev mjpegtools-i686
+Architecture: source i386
+Version: 1.9.0-0
+Distribution: unstable
+Urgency: low
+Maintainer: KAWAMATA Hitoshi <hitoshi.kawamata@nifty.com>
+Changed-By: Kawamata/Hitoshi <hitoshi.kawamata@nifty.com>
+Description: 
+ libmjpegtools-2.1 - MJPEG video capture/editting/playback runtime libraries
+ libmjpegtools-dev - MJPEG video capture/editting/playback development files
+ libmjpegtools-i686-2.1 - MJPEG video capture/editting/playback runtime libraries (i686)
+ libmjpegtools-i686-dev - MJPEG video capture/editting/playback development files (i686)
+ mjpegtools - MJPEG video capture/editting/playback MPEG encoding
+ mjpegtools-i686 - MJPEG video capture/editting/playback MPEG encoding (i686)
+Changes: 
+ mjpegtools (1.9.0-0) unstable; urgency=low
+ .
+   * New upstream release.
+Checksums-Sha1: 
+ 0071f8f20381248cee976c73d99fb2e3ec0e6cd0 959 mjpegtools_1.9.0-0.dsc
+ aec7df561bcc2ecd8dd7931fa00832fa5d27dceb 1859451 mjpegtools_1.9.0-0.tar.gz
+ a41a524edefe60d20919d0acb80b84500476b4c3 191980 libmjpegtools-2.1_1.9.0-0_i386.deb
+ 3fbab721ce4e0bfebf1956b38daac1f1f6d52b9d 1044778 libmjpegtools-dev_1.9.0-0_i386.deb
+ dbd28c9d903d43a551d2f09a586fb853b7cfaa0f 580330 mjpegtools_1.9.0-0_i386.deb
+ 7b52e4646f72067b849ea8e7a06d5c5790a91974 5766 libmjpegtools-i686-2.1_1.9.0-0_i386.deb
+ 75c7097dbba5eedcdb42e844057cebac3d02ce42 5802 libmjpegtools-i686-dev_1.9.0-0_i386.deb
+ fdcf479030e202fb203c902a07ca9053d76e0a90 5730 mjpegtools-i686_1.9.0-0_i386.deb
+Checksums-Sha256: 
+ 28f250b039ae5d45ba68491cc334867d9e66789607f015cec8071721915f743f 959 mjpegtools_1.9.0-0.dsc
+ 383f7e02680f5245e53f2dbf3c71805dba1cb10adb48a76dcea1dec9d553beb2 1859451 mjpegtools_1.9.0-0.tar.gz
+ 28248f90baed1dc19705a29c81d7e7656c40994317ed8e10e32b8c27597e2d9f 191980 libmjpegtools-2.1_1.9.0-0_i386.deb
+ 9b867385c59ea982c3d6988e8c317961d926fae9b83291d1f799f2f3626d0d45 1044778 libmjpegtools-dev_1.9.0-0_i386.deb
+ b72d62c000b092dc8f2db67e61bf33cf48f148360e14315483bed356f1787be9 580330 mjpegtools_1.9.0-0_i386.deb
+ 2c3b5c27a357657806f413dfd1df5533bd97e5fcfe1687eb829631fcd2f588be 5766 libmjpegtools-i686-2.1_1.9.0-0_i386.deb
+ 9ae28b511c4598d0e5a4d4a483753779f78136ec920e5a79a47141736268bf21 5802 libmjpegtools-i686-dev_1.9.0-0_i386.deb
+ 1d9570ebf43f0c3a6f3f674eb29edfee21b66941ed8794eb8344cc8b99f6c6a2 5730 mjpegtools-i686_1.9.0-0_i386.deb
+Files: 
+ 5e1a31bab547d181d396c4178025db7d 959 graphics extra mjpegtools_1.9.0-0.dsc
+ be54e66694aeaa5781802ef6766daee4 1859451 graphics extra mjpegtools_1.9.0-0.tar.gz
+ 937493c639ed074065f71df3e74d5a88 191980 libs extra libmjpegtools-2.1_1.9.0-0_i386.deb
+ f6dda0ebe9de0aeff9404ae4d3d56428 1044778 libdevel extra libmjpegtools-dev_1.9.0-0_i386.deb
+ 30afb1eb96cb5191d44a3437e3c4b83b 580330 graphics extra mjpegtools_1.9.0-0_i386.deb
+ 8ea1e3e65d12502c1c9b3c41e42602cf 5766 libs extra libmjpegtools-i686-2.1_1.9.0-0_i386.deb
+ 4f45286d1593d7bcf7c4aac57b2ac62b 5802 libdevel extra libmjpegtools-i686-dev_1.9.0-0_i386.deb
+ cc581d104440c0a7362aa781de2b31f6 5730 graphics extra mjpegtools-i686_1.9.0-0_i386.deb

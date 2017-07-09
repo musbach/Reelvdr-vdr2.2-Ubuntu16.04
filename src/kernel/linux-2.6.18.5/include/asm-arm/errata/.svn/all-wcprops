@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/asm-arm/errata
+END
+arm-errata.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/asm-arm/errata/arm-errata.h
+END
+arm-errata.S
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/asm-arm/errata/arm-errata.S
+END

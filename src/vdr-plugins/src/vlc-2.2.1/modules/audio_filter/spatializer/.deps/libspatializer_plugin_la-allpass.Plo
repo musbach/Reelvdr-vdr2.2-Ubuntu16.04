@@ -1,0 +1,9 @@
+spatializer/libspatializer_plugin_la-allpass.lo: spatializer/allpass.cpp \
+ /usr/include/stdc-predef.h spatializer/allpass.hpp \
+ spatializer/denormals.h
+
+/usr/include/stdc-predef.h:
+
+spatializer/allpass.hpp:
+
+spatializer/denormals.h:

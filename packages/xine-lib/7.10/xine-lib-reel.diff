@@ -1,0 +1,500 @@
+--- xine-lib-1.1.8-org/src/demuxers/demux_wav.c	2007-08-19 01:36:45.000000000 +0200
++++ xine-lib-1.1.8/src/demuxers/demux_wav.c	2009-07-29 16:35:42.000000000 +0200
+@@ -43,9 +42,11 @@
+ #include "bswap.h"
+ #include "group_audio.h"
+ 
+-#define WAV_SIGNATURE_SIZE 16
++#define WAV_SIGNATURE_SIZE 12
+ /* this is the hex value for 'data' */
+ #define data_TAG 0x61746164
++/* this is the hex value for 'fmt ' */
++#define fmt_TAG 0x20746D66
+ #define PCM_BLOCK_ALIGN 1024
+ 
+ #define PREFERED_BLOCK_SIZE 4096
+@@ -75,31 +76,66 @@
+ 
+ static int demux_wav_get_stream_length (demux_plugin_t *this_gen);
+ 
+-/* returns 1 if the WAV file was opened successfully, 0 otherwise */
+-static int open_wav_file(demux_wav_t *this) {
+-  uint8_t signature[WAV_SIGNATURE_SIZE];
++#define _X_LE_32(x) (((uint32_t)(((uint8_t*)(x))[3]) << 24) | \
++                  ((uint32_t)(((uint8_t*)(x))[2]) << 16) | \
++                  ((uint32_t)(((uint8_t*)(x))[1]) << 8) | \
++                  ((uint32_t)((uint8_t*)(x))[0]))
++/* searches for the chunk with the given tag from the beginning of WAV file
++ * returns 1 if chunk was found, 0 otherwise,
++ * fills chunk_size and chunk_pos if chunk was found
++ * NOTE: chunk_pos is set to the position of the first byte of chunk data */
++static int find_chunk_by_tag(demux_wav_t *this, const uint32_t given_chunk_tag,
++                             uint32_t *found_chunk_size, off_t *found_chunk_pos) {
+   uint32_t chunk_tag;
+   uint32_t chunk_size;
+   uint8_t chunk_preamble[8];
+ 
++  /* search for the chunks from the start of the WAV file */
++  this->input->seek(this->input, WAV_SIGNATURE_SIZE, SEEK_SET);
++
++  while (1) {
++    if (this->input->read(this->input, chunk_preamble, 8) != 8) {
++      return 0;
++    }
++
++    chunk_tag = _X_LE_32(&chunk_preamble[0]);
++    chunk_size = _X_LE_32(&chunk_preamble[4]);
++
++    if (chunk_tag == given_chunk_tag) {
++      if (found_chunk_size)
++        *found_chunk_size = _X_LE_32(&chunk_preamble[4]);
++      if (found_chunk_pos)
++        *found_chunk_pos = this->input->get_current_pos(this->input);
++      return 1;
++    } else {
++      this->input->seek(this->input, chunk_size, SEEK_CUR);
++    }
++  }
++}
++
++/* returns 1 if the WAV file was opened successfully, 0 otherwise */
++static int open_wav_file(demux_wav_t *this) {
++  uint8_t signature[WAV_SIGNATURE_SIZE];
++  off_t wave_pos;
++  uint32_t wave_size;
++
+   /* check the signature */
+   if (_x_demux_read_header(this->input, signature, WAV_SIGNATURE_SIZE) != WAV_SIGNATURE_SIZE)
+     return 0;
+ 
+-  if (memcmp(signature, "RIFF", 4) || memcmp(&signature[8], "WAVEfmt ", 8) )
++  if (memcmp(signature, "RIFF", 4) || memcmp(&signature[8], "WAVE", 4) )
+     return 0;
+ 
+-  /* file is qualified; skip over the header bytes in the stream */
+-  this->input->seek(this->input, WAV_SIGNATURE_SIZE, SEEK_SET);
+-
+-  /* go after the format structure */
+-  if (this->input->read(this->input,
+-    (unsigned char *)&this->wave_size, 4) != 4)
++  /* search for the 'fmt ' chunk first */
++  wave_pos = 0;
++  if (find_chunk_by_tag(this, fmt_TAG, &wave_size, &wave_pos)==0)
+     return 0;
+-  this->wave_size = le2me_32(this->wave_size);
+-  this->wave = xine_xmalloc( this->wave_size );
+-    
+-  if (this->input->read(this->input, (void *)this->wave, this->wave_size) !=
++  this->wave_size = wave_size;
++
++  this->input->seek(this->input, wave_pos, SEEK_SET);
++  this->wave = malloc( this->wave_size );
++
++  if (!this->wave || this->input->read(this->input, (void *)this->wave, this->wave_size) !=
+     this->wave_size) {
+     free (this->wave);
+     return 0;
+@@ -115,27 +151,17 @@
+     return 0;
+   }
+ 
+-  /* traverse through the chunks to find the 'data' chunk */
++  /* search for the 'data' chunk */
+   this->data_start = this->data_size = 0;
+-  while (this->data_start == 0) {
+-
+-    if (this->input->read(this->input, chunk_preamble, 8) != 8) {
+-      free (this->wave);
+-      return 0;
+-    }
+-    chunk_tag = _X_LE_32(&chunk_preamble[0]);      
+-    chunk_size = _X_LE_32(&chunk_preamble[4]);
+-
+-    if (chunk_tag == data_TAG) {
+-      this->data_start = this->input->get_current_pos(this->input);
+-      /* Get the data length from the file itself, instead of the data
+-       * TAG, for broken files */
+-      this->data_size = this->input->get_length(this->input);
+-    } else {
+-      this->input->seek(this->input, chunk_size, SEEK_CUR);
+-    }
++  if (find_chunk_by_tag(this, data_TAG, NULL, &this->data_start)==0)
++  {
++    free (this->wave);
++    return 0;
+   }
+-
++  /* Get the data length from the file itself, instead of the data
++   * TAG, for broken files */
++  this->input->seek(this->input, this->data_start, SEEK_SET);
++  this->data_size = this->input->get_length(this->input);
+   return 1;
+ }
+ 
+@@ -185,11 +211,16 @@
+       buf->size = remaining_sample_bytes;
+     remaining_sample_bytes -= buf->size;
+ 
+-    if (this->input->read(this->input, buf->content, buf->size) !=
++    off_t read;
++    if ((read = this->input->read(this->input, buf->content, buf->size)) !=
+       buf->size) {
+-      buf->free_buffer(buf);
+-      this->status = DEMUX_FINISHED;
+-      break;
++      if (read == 0) {
++        buf->free_buffer(buf);
++        this->status = DEMUX_FINISHED;
++        break;
++      } else {
++        buf->size = read;
++      }
+     }
+ 
+ #if 0
+diff -Nru xine-lib-1.1.8-org/src/demuxers/demux_matroska.c xine-lib-1.1.8/src/demuxers/demux_matroska.c
+--- xine-lib-1.1.8-org/src/demuxers/demux_matroska.c	2007-08-19 01:36:45.000000000 +0200
++++ xine-lib-1.1.8/src/demuxers/demux_matroska.c	2009-01-15 15:25:22.473627955 +0100
+@@ -1844,7 +1844,7 @@
+   uint8_t          *data;
+   uint8_t           flags;
+   int               gap, lacing, num_len;
+-  int               timecode_diff;
++  int16_t           timecode_diff;
+   int64_t           pts, xduration;
+   int               decoder_flags = 0;
+ 
+@@ -1853,7 +1853,7 @@
+     return 0;
+   data += num_len;
+     
+-  timecode_diff = (int)_X_BE_16(data);
++  timecode_diff = (int16_t)_X_BE_16(data);
+   data += 2;
+ 
+   flags = *data;
+@@ -1863,7 +1863,7 @@
+ 
+   gap = flags & 1;
+   lacing = (flags >> 1) & 0x3;
+-  fprintf(stderr, "lacing: %x\n", lacing);
++//  fprintf(stderr, "lacing: %x\n", lacing);
+ 
+   if (!find_track_by_id(this, (int)track_num, &track)) {
+      xprintf(this->stream->xine, XINE_VERBOSITY_LOG,
+diff -Nru xine-lib-1.1.8-org/src/demuxers/demux_ts.c xine-lib-1.1.8/src/demuxers/demux_ts.c
+--- xine-lib-1.1.8-org/src/demuxers/demux_ts.c	2007-08-19 01:36:45.000000000 +0200
++++ xine-lib-1.1.8/src/demuxers/demux_ts.c	2009-03-17 13:10:21.294560337 +0100
+@@ -161,11 +161,12 @@
+   #define TS_READ_STATS // activates read statistics generation
+   #define TS_HEADER_LOG // prints out the Transport packet header.
+ */
+-
++#define AVCHD_EXTENSIONS "mts m2ts"
+ /*
+  *  The maximum number of PIDs we are prepared to handle in a single program
+  *  is the number that fits in a single-packet PMT.
+  */
++#define AVCHD_SIZE 4
+ #define PKT_SIZE 188
+ #define BODY_SIZE (188 - 4)
+ /* more PIDS are needed due "auto-detection". 40 spare media entries  */
+@@ -176,7 +177,7 @@
+ #define MIN_SYNCS 3
+ #define NPKT_PER_READ 100
+ 
+-#define BUF_SIZE (NPKT_PER_READ * PKT_SIZE)
++#define BUF_SIZE (NPKT_PER_READ * (PKT_SIZE+AVCHD_SIZE))
+ 
+ #define MAX_PES_BUF_SIZE 2048
+ 
+@@ -344,7 +345,7 @@
+   uint8_t buf[BUF_SIZE]; /* == PKT_SIZE * NPKT_PER_READ */
+   
+   int numPreview;
+-
++  int is_avchd;
+ } demux_ts_t;
+ 
+ typedef struct {
+@@ -737,7 +738,9 @@
+   p += header_len + 9;
+   packet_len -= header_len + 3;
+ 
+-  if (stream_id == 0xbd) {
++  if ((stream_id == 0xbd) || 
++      (stream_id == 0xfd)) // pes id for ac3 with avchd
++  {
+ 
+     int spu_id;
+       
+@@ -769,12 +772,15 @@
+     } else if ((p[0] & 0xE0) == 0x20) {
+       spu_id = (p[0] & 0x1f);
+ 
++      if(packet_len < 1) 
++        return 0;
+       m->content   = p+1;
+       m->size      = packet_len-1;
+       m->type      = BUF_SPU_DVD + spu_id;
+       return 1;
+     } else if ((p[0] & 0xF0) == 0x80) {
+-
++      if(packet_len < 4) 
++        return 0;
+       m->content   = p+4;
+       m->size      = packet_len - 4;
+       m->type      |= BUF_AUDIO_A52;
+@@ -1324,6 +1330,11 @@
+       printf ("demux_ts: PMT streamtype 13818_TYPE_C, pid: 0x%.4x type %2.2x\n", pid, stream[0]);
+ #endif
+       break;
++    case 0x90:
++#ifdef TS_PMT_LOG
++      printf ("demux_ts: PMT subtitle pid 0x%.4x type %2.2x IGNORED!\n", pid, stream[0]);
++#endif
++      break;
+     case ISO_13818_PES_PRIVATE:
+       for (i = 5; i < coded_length; i += stream[i+1] + 2) {
+           if ((stream[i] == 0x6a) && (this->audio_tracks_count < MAX_AUDIO_TRACKS)) {
+@@ -1470,6 +1481,51 @@
+   demux_ts_update_spu_channel(this);
+ }
+ 
++static int read_block(demux_ts_t*this, uint8_t *buf, int32_t npkt_read, int bytes) {
++	if(this->is_avchd) {
++#if 0
++		int read_length = this->input->read(this->input, buf, npkt_read * (PKT_SIZE+AVCHD_SIZE));
++		int i, count = read_length / (PKT_SIZE+AVCHD_SIZE);
++		for(i=0;i<count;i++)
++			memcpy(&buf[i*PKT_SIZE], &buf[i*(PKT_SIZE+AVCHD_SIZE)+AVCHD_SIZE], PKT_SIZE);
++		return count*PKT_SIZE + (read_length % (PKT_SIZE+AVCHD_SIZE));
++#else
++		int read_length = this->input->read(this->input, buf, npkt_read * (PKT_SIZE+AVCHD_SIZE));
++		uint8_t *src = buf;
++		int count = 0;
++		int fill = 0;
++		int valid=0;
++		while(!valid && (read_length >= PKT_SIZE+AVCHD_SIZE)) {
++			int i;
++			valid = 1;
++			for(i=0;(i<10*(PKT_SIZE+AVCHD_SIZE)) && valid && (read_length >= (i+PKT_SIZE+AVCHD_SIZE));i+=PKT_SIZE+AVCHD_SIZE)
++				if(src[AVCHD_SIZE+i]!= 0x47)
++					valid=0;
++			if(!valid) {
++				src++;
++				read_length--;
++				fill++;
++			} // if
++		} // if
++		if(fill) {
++			memcpy(buf, src, read_length);
++			read_length += this->input->read(this->input, &buf[read_length], fill);
++			src=buf;
++		} // if
++		if((read_length < PKT_SIZE+AVCHD_SIZE) || (src[AVCHD_SIZE]!= 0x47)) // really bad....no sync
++			return 0;
++		while(read_length >= (PKT_SIZE+AVCHD_SIZE)) {
++			memcpy(&buf[count*PKT_SIZE], &src[AVCHD_SIZE], PKT_SIZE);
++			count++;
++			src += PKT_SIZE+AVCHD_SIZE;
++			read_length -= PKT_SIZE+AVCHD_SIZE;
++		} // while
++		return count*PKT_SIZE + (read_length % (PKT_SIZE+AVCHD_SIZE));
++#endif
++	} // if
++	return this->input->read(this->input, buf, bytes + npkt_read * PKT_SIZE);
++}
++
+ static int sync_correct(demux_ts_t*this, uint8_t *buf, int32_t npkt_read) {
+ 
+   int p = 0;
+@@ -1498,14 +1554,12 @@
+     /* Found sync, fill in */
+     memmove(&buf[0], &buf[n + p * PKT_SIZE],
+ 	    ((PKT_SIZE * (npkt_read - p)) - n));
+-    read_length = this->input->read(this->input,
+-				    &buf[(PKT_SIZE * (npkt_read - p)) - n],
+-				    n + p * PKT_SIZE);
++    read_length = read_block(this, &buf[(PKT_SIZE * (npkt_read - p)) - n], p, n);
+     /* FIXME: when read_length is not as required... we now stop demuxing */
+     if (read_length != (n + p * PKT_SIZE)) {
+-      xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG, 
+-	       "demux_ts_tsync_correct: sync found, but read failed\n");
+-      return 0;
++        xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG, 
++	        "demux_ts_tsync_correct: sync found, but read failed\n");
++        return 0;
+     }
+   } else {
+     xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG, "demux_ts_tsync_correct: sync not found! Stop demuxing\n");
+@@ -1543,16 +1597,15 @@
+ 
+     /* NEW: handle read returning less packets than NPKT_PER_READ... */
+     do {
+-      read_length = this->input->read(this->input, this->buf,
+-				      PKT_SIZE * NPKT_PER_READ);
+-      if (read_length % PKT_SIZE) {
+-	xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG, 
+-		 "demux_ts: read returned %d bytes (not a multiple of %d!)\n",
+-		 read_length, PKT_SIZE);
+-	this->status = DEMUX_FINISHED;
+-	return NULL;
+-      }
+-      this->npkt_read = read_length / PKT_SIZE;
++	read_length = read_block(this, this->buf, NPKT_PER_READ, 0);
++	if (read_length % PKT_SIZE) {
++		xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG, 
++			"demux_ts: read returned %d bytes (not a multiple of %d!)\n",
++			read_length, PKT_SIZE);
++		this->status = DEMUX_FINISHED;
++		return NULL;
++	}
++	this->npkt_read = read_length / PKT_SIZE;
+ 
+ #ifdef TS_READ_STATS
+       this->rstat[this->npkt_read]++;
+@@ -2128,7 +2181,7 @@
+     case DEMUX_OPTIONAL_DATA_SPULANG:
+       if (channel>=0 && channel<this->spu_langs_count) {
+         memcpy(str, this->spu_langs[channel].desc.lang, 3);
+-	str[3] = 0;}
++        str[3] = 0;}
+       else 
+         strcpy(str, "none");
+       return DEMUX_OPTIONAL_SUCCESS;
+@@ -2138,41 +2191,46 @@
+     }
+ }
+ 
++static int check_sync(uint8_t *buf, int size) {
++  int i;
++  for (i = 1; i <= 10; i++)
++    if (buf[i*size] != 0x47)
++      return 0;
++  return 1;
++}
+ 
+ static demux_plugin_t *open_plugin (demux_class_t *class_gen, 
+ 				    xine_stream_t *stream, 
+ 				    input_plugin_t *input) {
+   
+-  demux_ts_t *this;
+-  int         i;
+-
++  demux_ts_t *this = 0;
++  int     i;
++  int is_avchd=0;
+   switch (stream->content_detection_method) {
+ 
+   case METHOD_BY_CONTENT: {
+-    uint8_t buf[2069];
+-    int     i, j;
+-    int     try_again, ts_detected;
++//    uint8_t buf[2069];
++    uint8_t buf[188+10*(PKT_SIZE+AVCHD_SIZE)];
++    int     ts_detected = 0;
+ 
+-    if (!_x_demux_read_header(input, buf, 2069))
++//    if (!_x_demux_read_header(input, buf, 2069))
++    if (!_x_demux_read_header(input, buf, sizeof(buf)))
+       return NULL;
+ 
+-    ts_detected = 0;
+-
+-    for (i = 0; i < 188; i++) {
+-      try_again = 0;
++    for (i = 0; (i < 188) && !ts_detected; i++) {
+       if (buf[i] == 0x47) {
+-	for (j = 1; j <= 10; j++) {
+-	  if (buf[i + j*188] != 0x47) {
+-	    try_again = 1;
+-	    break;
+-	  }
+-	}
+-	if (try_again == 0) {
++	if(check_sync(&buf[i], 188)) {
+ #ifdef TS_LOG
+-	  printf ("demux_ts: found 0x47 pattern at offset %d\n", i);
++          printf ("demux_ts: found 0x47 pattern at offset %d for size 188\n", i);
+ #endif
+-	  ts_detected = 1;
+-	}
++          ts_detected    = 1;
++        } else if (check_sync(&buf[i], 192)) {
++#ifdef TS_LOG
++          printf ("demux_ts: found 0x47 pattern at offset %d for size 192\n", i);
++#endif
++          ts_detected    = 1;
++          is_avchd       = 1;
++        }
+       }
+     }
+ 
+@@ -2187,6 +2245,10 @@
+     /* check extension */
+     const char *const extensions = class_gen->get_extensions (class_gen);
+ 
++    if (_x_demux_check_extension (mrl, AVCHD_EXTENSIONS)) {
++        is_avchd=1;
++        break;
++    }
+     if (_x_demux_check_extension (mrl, extensions))
+       break;
+ 
+@@ -2224,6 +2286,7 @@
+   this->stream    = stream;
+   this->input     = input;
+   this->blockSize = PKT_SIZE;
++  this->is_avchd  = is_avchd;
+ 
+   this->demux_plugin.send_headers      = demux_ts_send_headers;
+   this->demux_plugin.send_chunk        = demux_ts_send_chunk;
+@@ -2293,7 +2356,7 @@
+ }
+ 
+ static const char *get_extensions (demux_class_t *this_gen) {
+-  return "ts m2t trp";
++  return "ts m2t trp "AVCHD_EXTENSIONS;
+ }
+ 
+ static const char *get_mimetypes (demux_class_t *this_gen) {
+diff -Nru xine-lib-1.1.8-org/src/xine-engine/audio_out.h xine-lib-1.1.8/src/xine-engine/audio_out.h
+--- xine-lib-1.1.8-org/src/xine-engine/audio_out.h	2007-08-19 01:36:59.000000000 +0200
++++ xine-lib-1.1.8/src/xine-engine/audio_out.h	2009-01-15 15:25:56.475565445 +0100
+@@ -336,7 +336,7 @@
+ #define AO_CTRL_FLUSH_BUFFERS	2      
+ 
+ /* above that value audio frames are discarded */
+-#define AO_MAX_GAP              15000
++#define AO_MAX_GAP              150000
+ 
+ #ifdef __cplusplus
+ }
+diff -Nru xine-lib-1.1.8-org/src/xine-engine/load_plugins.c xine-lib-1.1.8/src/xine-engine/load_plugins.c
+--- xine-lib-1.1.8-org/src/xine-engine/load_plugins.c	2007-08-19 01:36:59.000000000 +0200
++++ xine-lib-1.1.8/src/xine-engine/load_plugins.c	2009-02-25 14:10:39.000000000 +0100
+@@ -191,7 +191,10 @@
+     plugin_node_t *node = xine_sarray_get(decoder_list, list_id);
+     const uint32_t *type = ((decoder_info_t *)node->info->special_info)->supported_types;
+     int priority = get_decoder_priority(this, node);
+-
++    if(priority < 0) {
++      lprintf ("decoder %s disabled\n", node->info->id);
++      continue;
++    }
+     lprintf ("mapping decoder %s\n", node->info->id);
+ 
+     while (type && (*type)) {
+diff -Nru xine-lib-1.1.8-org/src/xine-engine/xine.c xine-lib-1.1.8/src/xine-engine/xine.c
+--- xine-lib-1.1.8-org/src/xine-engine/xine.c	2007-08-19 01:37:00.000000000 +0200
++++ xine-lib-1.1.8/src/xine-engine/xine.c	2009-01-15 15:34:45.505713273 +0100
+@@ -1347,7 +1347,7 @@
+   /* Wait until the first frame produced is displayed
+    * see video_out.c
+    */
+-  wait_first_frame (stream);
++  //wait_first_frame (stream);
+   
+   xprintf (stream->xine, XINE_VERBOSITY_DEBUG, "play_internal ...done\n");
+ 

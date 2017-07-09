@@ -1,0 +1,18 @@
+[Desktop Entry]
+Comment=
+Comment[de]=
+Encoding=UTF-8
+Exec='/usr/sbin/channeledit'
+GenericName=
+GenericName[de]=
+Icon=/usr/share/icons/reel/channels-edit.png
+MimeType=
+Name=Channels-Edit
+Name[de]=Channel-Edit
+Path=
+StartupNotify=false
+Terminal=0
+Type=Application
+X-DCOP-ServiceType=
+X-KDE-SubstituteUID=true
+X-KDE-Username=root

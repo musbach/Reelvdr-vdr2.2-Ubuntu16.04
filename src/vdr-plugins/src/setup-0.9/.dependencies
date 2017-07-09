@@ -1,0 +1,1057 @@
+setup.o: setup.cpp ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h setup.h setupmenu.h \
+ ../../../vdr-2.1/include/vdr/help.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/menu.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h menusysteminfo.h meminfo.h \
+ ../../../vdr-2.1/include/vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr-2.1/include/vdr/device.h setupsetup.h setupmultiroom.h \
+ setupnetclientmenu.h ../avahi/avahiservice.h i18n.h \
+ ../../../vdr-2.1/include/vdr/i18n.h setupwlanmenu.h wlansetting.h \
+ mainmenu.h vdrsetupclasses.h ../../../vdr-2.1/include/vdr/diseqc.h \
+ ../../../vdr-2.1/include/vdr/sourceparams.h
+blockdevice.o: blockdevice.cpp blockdevice.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/tools.h
+config.o: config.cpp ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h config.h \
+ ../../../vdr-2.1/include/vdr/submenu.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h
+energyoptionsmenu.o: energyoptionsmenu.cpp energyoptionsmenu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h ../../../vdr-2.1/include/vdr/osd.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/skins.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/eit.h ../../../vdr-2.1/include/vdr/filter.h \
+ ../../../vdr-2.1/include/vdr/nit.h ../../../vdr-2.1/include/vdr/sdt.h \
+ ../../../vdr-2.1/include/vdr/pat.h ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/config.h vdrsetupclasses.h \
+ ../../../vdr-2.1/include/vdr/diseqc.h \
+ ../../../vdr-2.1/include/vdr/sourceparams.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h \
+ ../../../vdr-2.1/include/vdr/debug.h
+formatmenu.o: formatmenu.cpp formatmenu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h ../../../vdr-2.1/include/vdr/osd.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/skins.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/eit.h ../../../vdr-2.1/include/vdr/filter.h \
+ ../../../vdr-2.1/include/vdr/nit.h ../../../vdr-2.1/include/vdr/sdt.h \
+ ../../../vdr-2.1/include/vdr/pat.h ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h
+i18n.o: i18n.cpp ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h i18n.h \
+ ../../../vdr-2.1/include/vdr/i18n.h
+mainmenu.o: mainmenu.cpp ../../../vdr-2.1/include/vdr/cutter.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/debug.h ../../../vdr-2.1/include/vdr/help.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/skins.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/device.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/eit.h ../../../vdr-2.1/include/vdr/filter.h \
+ ../../../vdr-2.1/include/vdr/nit.h ../../../vdr-2.1/include/vdr/sdt.h \
+ ../../../vdr-2.1/include/vdr/pat.h ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h ../../../vdr-2.1/include/vdr/menu.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/vdrmysql.h \
+ ../../../vdr-2.1/include/vdr/videodir.h mainmenu.h \
+ ../../../vdr-2.1/include/vdr/config.h vdrsetupclasses.h \
+ ../../../vdr-2.1/include/vdr/diseqc.h \
+ ../../../vdr-2.1/include/vdr/sourceparams.h setupmenu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h menusysteminfo.h meminfo.h \
+ netinfo.h systeminfo.h ../../../vdr-2.1/include/vdr/device.h
+meminfo.o: meminfo.cpp meminfo.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h
+menus.o: menus.cpp ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/submenu.h config.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h menusysteminfo.h \
+ ../../../vdr-2.1/include/vdr/menu.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h meminfo.h \
+ ../../../vdr-2.1/include/vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr-2.1/include/vdr/device.h
+menueditrefreshitems.o: menueditrefreshitems.cpp menueditrefreshitems.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h
+menusysteminfo.o: menusysteminfo.cpp menusysteminfo.h \
+ ../../../vdr-2.1/include/vdr/menu.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/submenu.h meminfo.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr-2.1/include/vdr/device.h config.h plugins.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/videodir.h
+netinfo.o: netinfo.cpp netinfo.h ../../../vdr-2.1/include/vdr/i18n.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/tools.h
+networkfilesystem.o: networkfilesystem.cpp networkfilesystem.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/skins.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/osd.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h
+plugins.o: plugins.cpp ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h
+setupmenu.o: setupmenu.cpp ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/menu.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/videodir.h config.h \
+ ../../../vdr-2.1/include/vdr/submenu.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h energyoptionsmenu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h vdrsetupclasses.h \
+ ../../../vdr-2.1/include/vdr/diseqc.h \
+ ../../../vdr-2.1/include/vdr/sourceparams.h menueditrefreshitems.h \
+ menusetup_vdr.h ../../../vdr-2.1/include/vdr/plugin.h mainmenu.h \
+ setupmenu.h ../../../vdr-2.1/include/vdr/help.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h menusysteminfo.h meminfo.h \
+ netinfo.h systeminfo.h ../../../vdr-2.1/include/vdr/device.h setup.h \
+ setupsetup.h setupmultiroom.h setupnetclientmenu.h \
+ ../avahi/avahiservice.h i18n.h ../../../vdr-2.1/include/vdr/i18n.h \
+ setuprecordingdevicemenu.h blockdevice.h setupwlanmenu.h wlansetting.h \
+ setupnetworkfilesystemmenu.h networkfilesystem.h resetsettingsmenu.h \
+ setupmysqlmenu.h
+setupmultiroom.o: setupmultiroom.cpp setup.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h setupmenu.h \
+ ../../../vdr-2.1/include/vdr/help.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/menu.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h menusysteminfo.h meminfo.h \
+ ../../../vdr-2.1/include/vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr-2.1/include/vdr/device.h setupsetup.h setupmultiroom.h \
+ setupnetclientmenu.h ../avahi/avahiservice.h i18n.h \
+ ../../../vdr-2.1/include/vdr/i18n.h menueditrefreshitems.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/s2reel_compat.h ../mcli/mcli_service.h \
+ ../../../vdr-2.1/include/vdr/vdrmysql.h
+setupnetclientmenu.o: setupnetclientmenu.cpp \
+ ../../../vdr-2.1/include/vdr/debug.h ../../../vdr-2.1/include/vdr/menu.h \
+ ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/vdrmysql.h \
+ ../../../vdr-2.1/include/vdr/videodir.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h setupnetclientmenu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h ../avahi/avahiservice.h \
+ menueditrefreshitems.h ../../../vdr-2.1/include/vdr/menuitems.h \
+ netinfo.h
+setupnetworkfilesystemmenu.o: setupnetworkfilesystemmenu.cpp \
+ setupnetworkfilesystemmenu.h ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h ../../../vdr-2.1/include/vdr/osd.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/skins.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/thread.h networkfilesystem.h \
+ menueditrefreshitems.h ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/eit.h ../../../vdr-2.1/include/vdr/filter.h \
+ ../../../vdr-2.1/include/vdr/nit.h ../../../vdr-2.1/include/vdr/sdt.h \
+ ../../../vdr-2.1/include/vdr/pat.h ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h setupmenu.h \
+ ../../../vdr-2.1/include/vdr/help.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/menu.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h menus.h util.h menusysteminfo.h \
+ meminfo.h ../../../vdr-2.1/include/vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/debug.h
+setuprecordingdevicemenu.o: setuprecordingdevicemenu.cpp \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/videodir.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/skins.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/osd.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h setuprecordingdevicemenu.h \
+ ../../../vdr-2.1/include/vdr/menu.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/eit.h ../../../vdr-2.1/include/vdr/filter.h \
+ ../../../vdr-2.1/include/vdr/nit.h ../../../vdr-2.1/include/vdr/sdt.h \
+ ../../../vdr-2.1/include/vdr/pat.h ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h blockdevice.h formatmenu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/tools.h
+setupsetup.o: setupsetup.cpp ../../../vdr-2.1/include/vdr/menu.h \
+ ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/submenu.h setupsetup.h setup.h \
+ ../../../vdr-2.1/include/vdr/plugin.h setupmenu.h \
+ ../../../vdr-2.1/include/vdr/help.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h menusysteminfo.h meminfo.h \
+ ../../../vdr-2.1/include/vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr-2.1/include/vdr/device.h setupmultiroom.h \
+ setupnetclientmenu.h ../avahi/avahiservice.h i18n.h \
+ ../../../vdr-2.1/include/vdr/i18n.h
+setupwlanmenu.o: setupwlanmenu.cpp setupwlanmenu.h \
+ ../../../vdr-2.1/include/vdr/menu.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h wlansetting.h setupmenu.h \
+ ../../../vdr-2.1/include/vdr/help.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h menusysteminfo.h meminfo.h \
+ ../../../vdr-2.1/include/vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr-2.1/include/vdr/device.h menueditrefreshitems.h
+resetsettingsmenu.o: resetsettingsmenu.cpp resetsettingsmenu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h ../../../vdr-2.1/include/vdr/osd.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/skins.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h
+systeminfo.o: systeminfo.cpp ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/device.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h menusysteminfo.h \
+ ../../../vdr-2.1/include/vdr/menu.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/submenu.h meminfo.h \
+ ../../../vdr-2.1/include/vdr/config.h netinfo.h systeminfo.h \
+ ../../../vdr-2.1/include/vdr/device.h ../mcli/mcli_service.h
+util.o: util.cpp ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h
+wlansetting.o: wlansetting.cpp ../../../vdr-2.1/include/vdr/i18n.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/tools.h wlansetting.h
+menusetup_vdr.o: menusetup_vdr.cpp ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/eitscan.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/device.h ../../../vdr-2.1/include/vdr/ci.h \
+ ../../../vdr-2.1/include/vdr/dvbsubtitle.h \
+ ../../../vdr-2.1/include/vdr/osd.h ../../../vdr-2.1/include/vdr/eit.h \
+ ../../../vdr-2.1/include/vdr/filter.h ../../../vdr-2.1/include/vdr/nit.h \
+ ../../../vdr-2.1/include/vdr/sdt.h ../../../vdr-2.1/include/vdr/pat.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/remux.h \
+ ../../../vdr-2.1/include/vdr/debug.h \
+ ../../../vdr-2.1/include/vdr/ringbuffer.h \
+ ../../../vdr-2.1/include/vdr/sections.h \
+ ../../../vdr-2.1/include/vdr/spu.h ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/dvbdevice.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/skins.h ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/vdr/videodir.h mainmenu.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/menu.h \
+ ../../../vdr-2.1/include/vdr/dvbplayer.h \
+ ../../../vdr-2.1/include/vdr/player.h \
+ ../../../vdr-2.1/include/vdr/recorder.h \
+ ../../../vdr-2.1/include/vdr/receiver.h \
+ ../../../vdr-2.1/include/vdr/livebuffer.h vdrsetupclasses.h \
+ ../../../vdr-2.1/include/vdr/diseqc.h \
+ ../../../vdr-2.1/include/vdr/sourceparams.h menusetup_vdr.h setupmenu.h \
+ ../../../vdr-2.1/include/vdr/help.h \
+ ../../../vdr-2.1/include/vdr/status.h \
+ ../../../vdr-2.1/include/vdr/plugin.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/menuitems.h \
+ ../../../vdr-2.1/include/vdr/interface.h \
+ ../../../vdr-2.1/include/vdr/remote.h \
+ ../../../vdr-2.1/include/vdr/svdrp.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/vdr/debugmacros.h config.h plugins.h \
+ ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/sysconfig_vdr.h menus.h util.h \
+ ../../../vdr-2.1/include/vdr/thread.h menusysteminfo.h meminfo.h \
+ netinfo.h systeminfo.h ../../../vdr-2.1/include/vdr/device.h
+setupmysqlmenu.o: setupmysqlmenu.cpp setupmysqlmenu.h \
+ ../../../vdr-2.1/include/vdr/osdbase.h \
+ ../../../vdr-2.1/include/vdr/config.h \
+ ../../../vdr-2.1/include/vdr/i18n.h ../../../vdr-2.1/include/vdr/tools.h \
+ ../../../vdr-2.1/include/vdr/font.h ../../../vdr-2.1/include/vdr/osd.h \
+ ../../../vdr-2.1/include/vdr/thread.h \
+ ../../../vdr-2.1/include/vdr/skins.h \
+ ../../../vdr-2.1/include/vdr/channels.h \
+ ../../../vdr-2.1/include/vdr/sources.h \
+ ../../../vdr-2.1/include/vdr/epg.h \
+ ../../../vdr-2.1/include/libsi/section.h \
+ ../../../vdr-2.1/include/libsi/si.h \
+ ../../../vdr-2.1/include/libsi/util.h \
+ ../../../vdr-2.1/include/libsi/headers.h \
+ ../../../vdr-2.1/include/vdr/keys.h \
+ ../../../vdr-2.1/include/vdr/positioner.h \
+ ../../../vdr-2.1/include/vdr/recording.h \
+ ../../../vdr-2.1/include/vdr/timers.h \
+ ../../../vdr-2.1/include/vdr/themes.h \
+ ../../../vdr-2.1/include/vdr/submenu.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h \
+ ../../../vdr-2.1/include/tinyxml/tinyxml.h \
+ ../../../vdr-2.1/include/tinyxml/tinystr.h netinfo.h \
+ ../../../vdr-2.1/include/vdr/vdrmysql.h

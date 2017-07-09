@@ -1,0 +1,8 @@
+REMUX_TYPE="remux_convert"  #~Remux mode~F~5~ ~
+AUDIO_SOURCE="mp2"         #~Audio source~F~5~ ~
+AUDIO_BITRATE="96"         #~Audio bitrate~I~3~64,256~
+AUDIO_OPTS="-acodec libfaac -ar 44100 -ab ${AUDIO_BITRATE}K"  #~Audio parms~F~256~a-zA-Z0-9_-~
+VIDEO_BITRATE="600"        #~Video bitrate~I~3~100,2500~
+VIDEO_OPTS="-vcodec mpeg4 -b ${VIDEO_BITRATE}K -s 320x240"  #~Video parms~F~256~a-zA-Z0-9_-~
+FFMPEG_OPTS="-f mp4 $AUDIO_OPTS $VIDEO_OPTS"  #~ffmpeg parms~F~256~a-zA-Z0-9_-~
+MENCODER_OPTS="-lavdopts er=1 -oac pcm -ovc copy"  #~mencoder parms~F~256~a-zA-Z0-9_-~

@@ -1,0 +1,14 @@
+#enter all files here that have to be copied from the src/sc/poDIR to the package root
+#note: use only tabs and only one tab between fields!
+#
+#valid types:
+# script - for scripts, default 755, root.root
+# exe    - like script, but will be stripped on packaging
+# sexe   - setuid root executeable, 4755, root.root, strip
+# lib	 - library,     755, root.root, no strip
+# cfg    - config file, 644, root.root
+# bin    - binaries, i.e. firmware, 644, root.root
+# any other files will be installed "as they are", so be careful about permissions!
+#
+# src/sc/po rel. to $(src/sc/poDIR)			dest					type	owner	group
+vdr-plugins/src/oscam/oscam 	usr/sbin/oscam	lib	-

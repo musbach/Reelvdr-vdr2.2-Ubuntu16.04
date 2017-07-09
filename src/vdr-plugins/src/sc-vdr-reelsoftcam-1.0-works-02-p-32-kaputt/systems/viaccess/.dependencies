@@ -1,0 +1,15 @@
+viaccess.o: viaccess.c ../../system-common.h ../../data.h ../../misc.h \
+ ../../system.h ../../opts.h ../../i18n.h ../../misc.h ../../parse.h \
+ ../../log-core.h ../../log.h ../../helper.h viaccess.h tps.h \
+ ../../data.h ../../crypto.h ../../crypto-bn.h ../../support/idea.h \
+ log-viaccess.h ../../log-sys.h ../../version.h
+tps.o: tps.c viaccess.h log-viaccess.h ../../log-sys.h ../../log.h \
+ ../../misc.h tps.h ../../data.h ../../crypto.h ../../crypto-bn.h \
+ ../../support/idea.h opentv.h st20.h ../../sc.h ../../cam.h ../../data.h \
+ ../../mcli_sc.h ../../../mcli/filter.h ../../../mcli/packetbuffer.h \
+ ../../../mcli/device.h ../../../mcli/mcliheaders.h ../../../mcli/mcli.h \
+ ../../../mcli/filter.h ../../../mcli/device.h ../../../mcli/cam_menu.h \
+ ../../scsetup.h ../../system-common.h ../../system.h ../../filter.h \
+ ../../misc.h ../../helper.h
+st20.o: st20.c log-viaccess.h ../../log-sys.h ../../log.h ../../misc.h \
+ st20.h ../../helper.h ../../misc.h

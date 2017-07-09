@@ -1,0 +1,86 @@
+Index: channels.c
+===================================================================
+--- channels.c	(revision 15387)
++++ channels.c	(revision 15388)
+@@ -13,7 +13,11 @@
+ #include "epg.h"
+ #include "libsi/si.h"
+ #include "timers.h"
++#ifdef REELVDR
++#include <vector>
++#endif /*REELVDR*/
+ 
++
+ // IMPORTANT NOTE: in the 'sscanf()' calls there is a blank after the '%d'
+ // format characters in order to allow any number of blanks after a numeric
+ // value!
+@@ -752,6 +756,55 @@
+   return false;
+ }
+ 
++#ifdef REELVDR
++bool cChannels::Reload(const char *FileName, bool AllowComments, bool MustExist)
++{
++  Timers.Save();
++  std::vector<tChannelID> channelIDs; //TB: remember the channelIDs of the timers, they don't survive loading the channellist
++  for (int i = 0; i<Timers.Count(); i++) {
++    cTimer *timer = Timers.Get(i);
++    if(timer->Channel())
++      channelIDs.push_back(timer->Channel()->GetChannelID());
++    //printf("timer: \"%s\" on channel nr %i: \"%s\"\n", timer->Event() ? timer->Event()->Title() : "(NULL)", timer->Channel() ? timer->Channel()->Number() : -1, timer->Channel() ? timer->Channel()->Name() : "(NULL)");
++  }
++  cChannel *channel = new cChannel;
++  channel->Parse("VDR:1:H:0:27500:0:0:0:0:1:0:0:0");
++  cDevice::PrimaryDevice()->SwitchChannel(channel, true);
++  if (cConfig<cChannel>::Load(FileName, false, true)) {
++    DeleteDuplicateChannels();
++    ReNumber();
++    if (Count()) {
++      cDevice::PrimaryDevice()->SwitchChannel(1);
++      //CheckTimers(tmpTimers);
++      if(Setup.ReelboxModeTemp == eModeStandalone)
++        //    Timers.Load(); // XXX Deletes all
++        for (int i = 0; i<Timers.Count(); i++) {
++          cTimer *timer = Timers.Get(i);
++          cChannel *chan = Channels.GetByChannelID(channelIDs.at(i));
++          if (chan) {
++            timer->SetChannel(chan);
++          } else {
++            chan = Channels.GetByChannelID(channelIDs.at(i), true);
++            if (chan) {
++              timer->SetChannel(chan);
++            } else if(Setup.ReelboxMode != eModeClient) { //TB: do not delete the timer in client-mode, it could have a valid channel on the "AVG-server"
++              Timers.Del(timer);
++            }
++          }
++          //printf("timer: \"%s\" on channel nr %i: \"%s\"\n", timer->Event() ? timer->Event()->Title() : "(NULL)", timer->Channel() ? timer->Channel()->Number() : -1, timer->Channel() ? timer->Channel()->Name() : "(NULL)");
++        }
++#ifdef NOEPG_CHANNELSCONF
++      // build path to noepgchannels.conf from channels.conf path
++      std::string sPath=FileName; int nPos = sPath.rfind('/'); sPath.erase(nPos + 1); sPath += NOEPG_CHANNELSCONF;
++      SyncNoEPGChannels(sPath.c_str());       // After reading channels.conf synchronize n¦epg list
++#endif /* NOEPG_CHANNELSCONF */
++      return true;
++    }
++  }
++  return false;
++}
++#endif /*REELVDR*/
++
+ void cChannels::HashChannel(cChannel *Channel)
+ {
+   channelsHashSid.Add(Channel, Channel->Sid());
+Index: channels.h
+===================================================================
+--- channels.h	(revision 15387)
++++ channels.h	(revision 15388)
+@@ -211,6 +211,9 @@
+ public:
+   cChannels(void);
+   bool Load(const char *FileName, bool AllowComments = false, bool MustExist = false);
++#ifdef REELVDR
++  bool Reload(const char *FileName, bool AllowComments = false, bool MustExist = false);
++#endif /*REELVDR*/
+   void HashChannel(cChannel *Channel);
+   void UnhashChannel(cChannel *Channel);
+   int GetNextGroup(int Idx);   // Get next channel group

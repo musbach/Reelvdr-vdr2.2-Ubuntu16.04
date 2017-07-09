@@ -1,0 +1,20 @@
+<!-- dir -->
+<tr>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% data.msg %?>
+    </td>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <input type="text" name="<?% data.NAME %?>" value="<?% val %?>" <?% FOREACH p IN param.tags; "$p ";END %?>
+            onBlur="check<?% data.NAME %?>Dir()"><br>
+        <span id='id<?% param.count %?>'></span>
+    </td>
+</tr>
+<script>
+function check<?% data.NAME %?>Dir () {
+    checkValue(document.forms[0].<?% data.NAME %?>, 'id<?% param.count %?>', "isdir", 
+	'<?% gettext("Directory does not exist!") %?>', 
+	'<?% gettext("Directory exists!") %?>');
+}
+window.setTimeout("check<?% data.NAME %?>Dir()", 500);
+</script>

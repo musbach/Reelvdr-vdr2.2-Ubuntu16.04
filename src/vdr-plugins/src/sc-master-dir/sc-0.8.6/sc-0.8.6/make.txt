@@ -1,0 +1,56 @@
+g++-4.8 -g -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual -c -DPLUGIN_NAME_I18N='"sc"' -DDVBAPI_V5 -DNEW_FFMPEG -DNEWUBUNTU -DREELVDR -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_CUTTERLIMIT -DUSE_CUTTIME -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_NOEPG -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_TTXTSUBS -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_LIVEBUFFER -DUSE_PROVIDERCHARSET=1 -DVDR_MAXCAID=256 -DAPIVERSNUM=10728 -D_GNU_SOURCE -I/usr/src/reelbox/testing/src/vdr-1.7.28//include cam.c
+In file included from log-core.h:23:0,
+                 from system.h:30,
+                 from cam.c:44:
+log.h:41:0: warning: "PRINTF" redefined [enabled by default]
+ #define PRINTF(c,...)       cLogging::Printf((c),__VA_ARGS__)
+ ^
+In file included from /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/remux.h:15:0,
+                 from /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/device.h:20,
+                 from /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h:15,
+                 from cam.c:31:
+/usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/debug.h:37:0: note: this is the location of the previous definition
+     #define PRINTF(x...)
+ ^
+cam.c: In constructor ‘cScDvbDevice::cScDvbDevice(int, int)’:
+cam.c:2545:13: error: expected primary-expression before ‘int’
+ :cDvbDevice(int n)
+             ^
+cam.c: In static member function ‘static bool cScDvbDevice::Initialize()’:
+cam.c:2676:51: error: no matching function for call to ‘cScDvbDevice::DvbName(const char [9], int&, char [128], unsigned int)’
+       DvbName(DEV_DVB_FRONTEND,i,name,sizeof(name));
+                                                   ^
+cam.c:2676:51: note: candidate is:
+In file included from cam.c:31:0:
+/usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h:154:18: note: static cString cDvbDevice::DvbName(const char*, int, int)
+   static cString DvbName(const char *Name, int Adapter, int Frontend);
+                  ^
+/usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h:154:18: note:   candidate expects 3 arguments, 4 provided
+cam.c:2683:57: error: no matching function for call to ‘cScDvbDevice::DvbOpen(const char [3], int&, int)’
+           new cScDvbDevice(i,DvbOpen(DEV_DVB_CA,i,O_RDWR));
+                                                         ^
+cam.c:2683:57: note: candidate is:
+In file included from cam.c:31:0:
+/usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h:155:14: note: static int cDvbDevice::DvbOpen(const char*, int, int, int, bool)
+   static int DvbOpen(const char *Name, int Adapter, int Frontend, int Mode, bool ReportError = false);
+              ^
+/usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/dvbdevice.h:155:14: note:   candidate expects 5 arguments, 3 provided
+cam.c: In constructor ‘cEcmHandler::cEcmHandler(cCam*, int, int)’:
+cam.c:819:40: warning: ignoring return value of ‘int asprintf(char**, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+   asprintf(&id,"%d.%d",cardNum,cwindex);
+                                        ^
+cam.c: In member function ‘void cEcmHandler::ShiftCwIndex(int)’:
+cam.c:864:42: warning: ignoring return value of ‘int asprintf(char**, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&id,"%d.%d",cardNum,cwindex);
+                                          ^
+In file included from log-core.h:23:0,
+                 from system.h:30,
+                 from cam.c:44:
+cam.c: At global scope:
+log.h:39:42: warning: ‘__add_mod_lm_hex’ defined but not used [-Wunused-variable]
+ #define ADD_MODULE(MOD,NAME) static bool __add_mod_ ## NAME = cLogging::AddModule(MOD,&NAME);
+                                          ^
+cam.c:78:1: note: in expansion of macro ‘ADD_MODULE’
+ ADD_MODULE(L_HEX,lm_hex)
+ ^
+make: *** [cam.o] Fehler 1

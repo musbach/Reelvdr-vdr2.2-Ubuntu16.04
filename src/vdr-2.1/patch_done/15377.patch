@@ -1,0 +1,293 @@
+Index: config.c
+===================================================================
+--- config.c	(revision 15376)
++++ config.c	(revision 15377)
+@@ -22,6 +22,86 @@
+ 
+ #define ChkDoublePlausibility(Variable, Default) { if (Variable < 0.00001) Variable = Default; }
+ 
++#ifdef REELVDR
++namespace setup
++{
++  using namespace std;
++  
++  string FileNameFactory(string FileType)
++  {
++    string configDir = cPlugin::ConfigDirectory();
++    string::size_type pos = configDir.find("plugin");
++    configDir.erase(pos-1);
++
++#ifdef EXTRA_VERBOSE_DEBUG
++    cout << " Config Dir : " << configDir  <<  endl;
++#endif
++
++    if (FileType == "configDirecory") // vdr config base directory 
++    {
++#if EXTRA_VERBOSE_DEBUG
++       cout << "DEBUG [setup]: ConfigDirectory   " << configDir <<   endl;
++#endif
++       return configDir;
++    }
++    if (FileType == "help") // returns symbolic link
++    {
++       string configFile;
++       configFile = cPlugin::ConfigDirectory();
++       configFile += "/setup/help/help."; 
++       string tmp = I18nLanguageCode(I18nCurrentLanguage());
++       // if two token given we take the first one.
++       string::size_type pos = tmp.find(','); 
++       if (pos != string::npos)
++       {
++         configFile += tmp.substr(0,pos);
++       }
++       else 
++       {
++         configFile += tmp;
++       }
++       configFile += ".xml";
++#ifdef EXTRA_VERBOSE_DEBUG
++       cout << " debug config file: " << configFile <<   endl;
++#endif
++       return configFile;
++    }
++
++    //else if (FileType == "channelsFile") // returns  channels.conf
++    else if (FileType == "link") // returns symbolic link
++    {
++#ifdef EXTRA_VERBOSE_DEBUG
++       cout << " Config Dir : " << configDir  << "/channels.conf" <<  endl;
++#endif
++       return configDir += "/channels.conf";
++    }
++    else if (FileType == "channels") // returns channels dir;
++    {
++#ifdef EXTRA_VERBOSE_DEBUG
++       cout << " Config Dir : " << configDir  << "/channels" <<  endl;
++#endif
++       return configDir += "/channels";
++    }
++    else if (FileType == "setup") // returns plugins/setup dir; change to  "configDir"  
++    {
++#ifdef EXTRA_VERBOSE_DEBUG
++       cout << " Config Dir : " << configDir  << "/plugins/setup" <<  endl;
++#endif
++       return configDir += "/plugins/setup";
++    }
++
++    configDir.append("/");
++    configDir += "/channels/";
++    configDir += FileType;
++#ifdef EXTRA_VERBOSE_DEBUG
++    cout << " Config Dir end  : " << configDir << ".conf"  <<  endl;
++#endif
++
++    return configDir += ".conf";
++  }
++}
++#endif /* REELVDR */
++
+ // --- cSVDRPhost ------------------------------------------------------------
+ 
+ cSVDRPhost::cSVDRPhost(void)
+@@ -399,6 +479,29 @@
+   InitialVolume = -1;
+   ChannelsWrap = 0;
+   EmergencyExit = 1;
++#ifdef REELVDR
++  LiveBuffer = 0;
++  LiveBufferSize = 30;
++  LiveTvOnAvg = 1;
++  ReceptionMode = eModeMcli;
++  strcpy(NetServerName, "");
++  strcpy(NetServerMAC, "");
++  ExpertOptions  = 0;
++  OSDRandom = 0;
++  OSDRemainTime = 0;
++  OSDUseSymbol = 1;
++  OSDScrollBarWidth = 5;
++  AddNewChannels = 0;
++  strcpy(NetServerIP, "");
++  ReelboxModeTemp = ReelboxMode = eModeStandalone;
++  RequestShutDownMode = 1;
++  StandbyOrQuickshutdown = 0; // Standby = 0; QuickShutdown = 1;
++  UseBouquetList = 1;
++  OnlyRadioChannels = 0;
++  OnlyEncryptedChannels = 0;
++  OnlyHDChannels = 0;
++  ExpertNavi     = 0;
++#endif /* REELVDR */
+ }
+ 
+ cSetup& cSetup::operator= (const cSetup &s)
+@@ -590,6 +693,30 @@
+   else if (!strcasecmp(Name, "InitialVolume"))       InitialVolume      = atoi(Value);
+   else if (!strcasecmp(Name, "ChannelsWrap"))        ChannelsWrap       = atoi(Value);
+   else if (!strcasecmp(Name, "EmergencyExit"))       EmergencyExit      = atoi(Value);
++#ifdef REELVDR
++  else if (!strcasecmp(Name, "LiveBuffer"))          LiveBuffer         = atoi(Value);
++  else if (!strcasecmp(Name, "LiveBufferSize"))      LiveBufferSize     = atoi(Value);
++  else if (!strcasecmp(Name, "LiveTvOnAvg"))         LiveTvOnAvg        = atoi(Value);
++  else if (!strcasecmp(Name, "ReceptionMode"))       ReceptionMode      = (eReceiverType)atoi(Value);
++  else if (!strcasecmp(Name, "NetServerName"))       Utf8Strn0Cpy(NetServerName, Value, MAXHOSTNAME);
++  else if (!strcasecmp(Name, "NetServerMAC"))        Utf8Strn0Cpy(NetServerMAC, Value, MACLENGTH);
++  else if (!strcasecmp(Name, "ExpertOptions"))       ExpertOptions      = atoi(Value);
++  else if (!strcasecmp(Name, "OSDRandom"))           OSDRandom          = atoi(Value);
++  else if (!strcasecmp(Name, "OSDRemainTime"))       OSDRemainTime      = atoi(Value);
++  else if (!strcasecmp(Name, "OSDUseSymbol"))        OSDUseSymbol       = atoi(Value);
++  else if (!strcasecmp(Name, "OSDScrollBarWidth"))   OSDScrollBarWidth  = atoi(Value);
++  else if (!strcasecmp(Name, "FontSizes"))           FontSizes          = atoi(Value);
++  else if (!strcasecmp(Name, "AddNewChannels"))      AddNewChannels     = atoi(Value);
++  else if (!strcasecmp(Name, "NetServerIP"))         Utf8Strn0Cpy(NetServerIP, Value, MAXHOSTIP);
++  else if (!strcasecmp(Name, "ReelboxMode"))         ReelboxMode        = (eReelboxMode)atoi(Value);
++  else if (!strcasecmp(Name, "RequestShutDownMode")) RequestShutDownMode= atoi(Value);
++  else if (!strcasecmp(Name, "StandbyOrQuickshutdown")) StandbyOrQuickshutdown  = atoi(Value);
++  else if (!strcasecmp(Name, "UseBouquetList"))      UseBouquetList     = atoi(Value);
++  else if (!strcasecmp(Name, "OnlyRadioChannels"))   OnlyRadioChannels  = atoi(Value);
++  else if (!strcasecmp(Name, "OnlyEncryptedChannels"))OnlyEncryptedChannels = atoi(Value);
++  else if (!strcasecmp(Name, "OnlyHDChannels"))      OnlyHDChannels       = atoi(Value);
++  else if (!strcasecmp(Name, "ExpertNavi"))          ExpertNavi         = atoi(Value);
++#endif /* REELVDR */
+   else
+      return false;
+   return true;
+@@ -686,6 +813,30 @@
+   Store("InitialVolume",      InitialVolume);
+   Store("ChannelsWrap",       ChannelsWrap);
+   Store("EmergencyExit",      EmergencyExit);
++#ifdef REELVDR
++  Store("LiveBuffer",         LiveBuffer);
++  Store("LiveBufferSize",     LiveBufferSize);
++  Store("LiveTvOnAvg",        LiveTvOnAvg);
++  Store("ReceptionMode",      ReceptionMode);
++  Store("NetServerName",      NetServerName);
++  Store("NetServerMAC",       NetServerMAC);
++  Store("ExpertOptions",      ExpertOptions);
++  Store("OSDRandom",          OSDRandom);
++  Store("OSDRemainTime",      OSDRemainTime);
++  Store("OSDUseSymbol",       OSDUseSymbol);
++  Store("OSDScrollBarWidth",  OSDScrollBarWidth);
++  Store("FontSizes",          FontSizes);
++  Store("AddNewChannels",     AddNewChannels);
++  Store("NetServerIP",        NetServerIP);
++  Store("ReelboxMode",        ReelboxMode);
++  Store("RequestShutDownMode",RequestShutDownMode);
++  Store("StandbyOrQuickshutdown", StandbyOrQuickshutdown);
++  Store("UseBouquetList",     UseBouquetList);
++  Store("OnlyRadioChannels",  OnlyRadioChannels);
++  Store("OnlyEncryptedChannels", OnlyEncryptedChannels);
++  Store("OnlyHDChannels", OnlyHDChannels);
++  Store("ExpertNavi",         ExpertNavi);
++ #endif /* REELVDR */
+ 
+   Sort();
+ 
+@@ -695,3 +846,22 @@
+      }
+   return false;
+ }
++
++#ifdef REELVDR
++/*call script with appropriate filename and copy the file to tftp root*/
++void CopyToTftpRoot(const char* path)
++{
++    /*strip the filename from path*/
++    const char* p = strrchr(path, '/');
++    if ( !p ||!*p ) return;
++    ++p;
++
++#define CMP(x) strcasecmp(x,p)
++    if ( CMP("channels.conf") &&  CMP("setup.conf") && CMP("sysconfig") && CMP("diseqc.conf") )
++        // interested in only one of these files
++        return;
++
++    std::string command = std::string("CopytoTftpRoot.sh ") + p;
++    SystemExec(command.c_str());
++}
++#endif /* REELVDR */
+Index: config.h
+===================================================================
+--- config.h	(revision 15376)
++++ config.h	(revision 15377)
+@@ -13,7 +13,11 @@
+ #include <arpa/inet.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#ifdef REELVDR
++#include <string>
++#else
+ #include <string.h>
++#endif
+ #include <time.h>
+ #include <unistd.h>
+ #include "i18n.h"
+@@ -50,6 +54,22 @@
+ 
+ typedef uint32_t in_addr_t; //XXX from /usr/include/netinet/in.h (apparently this is not defined on systems with glibc < 2.2)
+ 
++#ifdef REELVDR
++#define MAXHOSTIP 16
++#define MAXHOSTNAME 64
++#define MACLENGTH 18
++
++enum eReelboxMode { eModeStandalone=0, eModeClient=1, eModeServer=2, eModeHotel=3 };
++enum eReceiverType { eModeDVB = 0, eModeMcli = 1, eModeStreamdev = 2 };
++
++void CopyToTftpRoot(const char* filename);
++
++namespace setup
++{
++  extern std::string FileNameFactory(std::string FileType);
++}
++#endif /* REELVDR */
++
+ class cSVDRPhost : public cListObject {
+ private:
+   struct in_addr addr;
+@@ -291,6 +311,31 @@
+   int InitialVolume;
+   int ChannelsWrap;
+   int EmergencyExit;
++#ifdef REELVDR
++  int LiveBuffer;
++  int LiveBufferSize;
++  int LiveTvOnAvg;
++  eReceiverType ReceptionMode;
++  char NetServerName[MAXHOSTNAME];
++  char NetServerMAC[MACLENGTH];
++  int ExpertOptions;
++  int OSDRandom;
++  int OSDRemainTime;
++  int OSDUseSymbol;
++  int OSDScrollBarWidth;
++  int FontSizes;
++  int AddNewChannels;
++  char NetServerIP[MAXHOSTIP];
++  eReelboxMode ReelboxModeTemp;
++  eReelboxMode ReelboxMode;
++  int RequestShutDownMode;
++  int StandbyOrQuickshutdown;
++  int UseBouquetList;
++  int OnlyRadioChannels;
++  int OnlyEncryptedChannels;
++  int OnlyHDChannels;
++  int ExpertNavi;
++#endif /* REELVDR */
+   int __EndData__;
+   cSetup(void);
+   cSetup& operator= (const cSetup &s);
+@@ -298,6 +343,15 @@
+   bool Save(void);
+   };
+ 
++#ifdef REELVDR
++// Additional defines for skinreel3-pi
++// FontSizes:
++#define FONT_SIZE_USER 0
++#define FONT_SIZE_SMALL 1
++#define FONT_SIZE_NORMAL 2
++#define FONT_SIZE_LARGE 3
++#endif
++
+ extern cSetup Setup;
+ 
+ #endif //__CONFIG_H

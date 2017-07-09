@@ -1,0 +1,48 @@
+#! /bin/sh
+#djmount start script
+
+NAME=djmount
+DESCR="upnp client"
+SCRIPTNAME=/etc/init.d/$NAME
+PROGNAME=/usr/local/bin/$NAME
+MOUNTDIR=/media/upnp
+
+do_start() {
+    if [ ! -d $MOUNTDIR ]; then
+	mkdir -p $MOUNTDIR
+    fi
+    $PROGNAME $MOUNTDIR > /dev/null
+}
+
+do_stop() {
+    umount $MOUNTDIR
+    if [ -d $MOUNTDIR ]; then
+	rmdir $MOUNTDIR
+    fi
+}
+
+case "$1" in
+    start)
+	echo -n "Starting $DESCR: $NAME"
+	do_start
+	echo "."
+	;;
+    stop)
+	echo -n "Stopping $DESCR: $NAME"
+	do_stop
+	echo "."
+	;;
+    restart)
+	echo -n "Restarting $DESCR: $NAME"
+	do_stop
+	sleep 1
+	do_start
+	echo "."
+	;;
+    *)
+	echo "Usage: $SCRIPTNAME {start|stop|restart}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

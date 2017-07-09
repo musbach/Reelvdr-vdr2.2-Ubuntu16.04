@@ -1,0 +1,245 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client
+END
+sock_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/sock_test.c
+END
+inet_pton.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/inet_pton.c
+END
+inet_ntop.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/inet_ntop.c
+END
+api_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/api_server.c
+END
+dvblo_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/dvblo_handler.c
+END
+recv_ccpp.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/recv_ccpp.c
+END
+api_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/api_server.h
+END
+tca_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/tca_handler.c
+END
+satlists.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/satlists.c
+END
+api_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/api_test.c
+END
+dvblo_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/dvblo_handler.h
+END
+tca_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/tca_handler.h
+END
+mld_client.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mld_client.c
+END
+.indent.pro
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/.indent.pro
+END
+mmi_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mmi_handler.c
+END
+inet_aton.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/inet_aton.c
+END
+headers.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/headers.h
+END
+interfaces.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/interfaces.c
+END
+mmi_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mmi_handler.h
+END
+ci_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/ci_handler.c
+END
+dummy_client.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/dummy_client.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/Makefile
+END
+ci_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/ci_handler.h
+END
+mld_reporter.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mld_reporter.c
+END
+dummy_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/dummy_client.h
+END
+input.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/input.c
+END
+tools.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/tools.c
+END
+mld_reporter.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mld_reporter.h
+END
+mcast.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mcast.c
+END
+recv_tv.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/recv_tv.c
+END
+ciparser.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/ciparser.c
+END
+recv_tv.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/recv_tv.h
+END
+api_shm_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/api_shm_test.c
+END
+win32
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/win32
+END
+.dependencies
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/.dependencies
+END
+tra_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/tra_handler.c
+END
+mld_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mld_common.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/main.c
+END
+api_sock_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/api_sock_test.c
+END
+tra_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/tra_handler.h
+END

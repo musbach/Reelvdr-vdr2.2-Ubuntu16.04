@@ -1,0 +1,17 @@
+reelbox-frontpanel-mini (2.99.5) feisty; urgency=low
+
+  2000-04-27 (RC)
+  * new version for RB Mini
+
+  2008-04-22 (AR)
+  * fixed reel_fp_progress
+  
+  2007-08-24 (RC)
+  * rename package to reelbox-frontpanel
+  * add reelfpctl, avr_flasher, fpleds etc.
+
+  2007-04-24 (RC)
+  * reelbox-control with uinput support
+
+ -- rollercoaster <reelbox-devel@mailings.reelbox.org>  Fr 24. Aug 13:30:14 CEST 2007
+

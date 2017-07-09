@@ -1,0 +1,14 @@
+Package: reelbox-mr-service
+Version: 1.3
+Conflicts: reelbox-avg-service
+Replaces: reelbox-avg-service
+Section: reel
+Suggests: nbsmtp
+Priority: important
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-mr-service
+Description: avahi service package for reelbox-avantgarde
+ You need this package if your ReelBox should act as a MultiRoom Server 
+
+

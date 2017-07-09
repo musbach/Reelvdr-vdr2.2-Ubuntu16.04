@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "loading new hdplayer"
+
+/bin/echo -e "hdplayermgr -g\r\nexit\n" | nc -w 30 hdext 23
+
+exit 0

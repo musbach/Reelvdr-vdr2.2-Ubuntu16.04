@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the mountall package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: mountall 2.15\n"
+"Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
+"POT-Creation-Date: 2017-04-17 21:36+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/mountall.c:712
+msgid "unable to mount"
+msgstr ""
+
+#: src/mountall.c:1169 src/mountall.c:1173 src/mountall.c:1177
+#: src/mountall.c:1181 src/mountall.c:1185 src/mountall.c:1188
+#: src/mountall.c:1191
+#, c-format
+msgid "%s is %s"
+msgstr ""
+
+#: src/mountall.c:1478 src/mountall.c:1487 src/mountall.c:1496
+#: src/mountall.c:1514
+#, c-format
+msgid "%s finished"
+msgstr ""
+
+#: src/mountall.c:1506
+msgid "All filesystems mounted"
+msgstr ""
+
+#: src/mountall.c:1640
+#, c-format
+msgid "setpgid failed: %s"
+msgstr ""
+
+#: src/mountall.c:1720
+#, c-format
+msgid "%s %s [%d] terminated with status %d"
+msgstr ""
+
+#: src/mountall.c:1724
+#, c-format
+msgid "%s %s [%d] exited normally"
+msgstr ""
+
+#: src/mountall.c:1755
+#, c-format
+msgid "remounting %s"
+msgstr ""
+
+#: src/mountall.c:1766
+#, c-format
+msgid "mounting %s"
+msgstr ""
+
+#: src/mountall.c:1864 src/mountall.c:1870
+#, c-format
+msgid "Filesystem could not be mounted: %s"
+msgstr ""
+
+#: src/mountall.c:1913
+#, c-format
+msgid "activating %s"
+msgstr ""
+
+#: src/mountall.c:1943
+#, c-format
+msgid "Problem activating swap: %s"
+msgstr ""
+
+#: src/mountall.c:1988
+#, c-format
+msgid "checking %s"
+msgstr ""
+
+#: src/mountall.c:2061
+#, c-format
+msgid "System must be rebooted: %s"
+msgstr ""
+
+#: src/mountall.c:2066
+#, c-format
+msgid "Filesystem has errors: %s"
+msgstr ""
+
+#: src/mountall.c:2071
+#, c-format
+msgid "Unrecoverable fsck error: %s"
+msgstr ""
+
+#: src/mountall.c:2081
+#, c-format
+msgid "Filesytem check cancelled: %s"
+msgstr ""
+
+#: src/mountall.c:2086
+#, c-format
+msgid "Filesystem errors corrected: %s"
+msgstr ""
+
+#: src/mountall.c:2186
+#, c-format
+msgid "rmdir %s failed: %s"
+msgstr ""
+
+#: src/mountall.c:2197
+msgid "Disconnected from Upstart"
+msgstr ""
+
+#: src/mountall.c:2688
+#, c-format
+msgid "ioprio_set %d failed: %s"
+msgstr ""
+
+#: src/mountall.c:2821
+msgid "Connected to Plymouth"
+msgstr ""
+
+#: src/mountall.c:2830
+msgid "Disconnected from Plymouth"
+msgstr ""
+
+#: src/mountall.c:2871
+#, c-format
+msgid "Checking disk %1$d of %2$d (%3$d %% complete)"
+msgstr ""
+
+#: src/mountall.c:2895
+#, c-format
+msgid "Skipping mounting %s since Plymouth is not available"
+msgstr ""
+
+#: src/mountall.c:2917
+#, c-format
+msgid "Skipping mounting %s since it is marked \"nofail\" in fstab"
+msgstr ""
+
+#: src/mountall.c:2968
+#, c-format
+msgid "The disk drive for %s is not ready yet or not present"
+msgstr ""
+
+#: src/mountall.c:2971
+msgid "Continue to wait; or Press S to skip mounting or M for manual recovery"
+msgstr ""
+
+#: src/mountall.c:2975
+#, c-format
+msgid "Errors were found while checking the disk drive for %s"
+msgstr ""
+
+#: src/mountall.c:2978
+msgid ""
+"Press F to attempt to fix the errors, I to ignore, S to skip mounting or M "
+"for manual recovery"
+msgstr ""
+
+#: src/mountall.c:2982
+#, c-format
+msgid "Serious errors were found while checking the disk drive for %s"
+msgstr ""
+
+#: src/mountall.c:2985
+msgid "Press I to ignore, S to skip mounting or M for manual recovery"
+msgstr ""
+
+#: src/mountall.c:2989
+#, c-format
+msgid "An error occurred while mounting %s"
+msgstr ""
+
+#: src/mountall.c:2992
+msgid "Press S to skip mounting or M for manual recovery"
+msgstr ""
+
+#: src/mountall.c:2996
+msgid "Your disk drives are being checked for errors, this may take some time"
+msgstr ""
+
+#: src/mountall.c:2998
+msgid "Press C to cancel all checks currently in progress"
+msgstr ""
+
+#: src/mountall.c:3036
+msgid "Plymouth command failed"
+msgstr ""
+
+#: src/mountall.c:3064
+#, c-format
+msgid "Attempting to fix %s filesystem"
+msgstr ""
+
+#: src/mountall.c:3081
+#, c-format
+msgid "Ignoring errors with %s at user request"
+msgstr ""
+
+#: src/mountall.c:3095
+#, c-format
+msgid "Skipping %s at user request"
+msgstr ""
+
+#: src/mountall.c:3108
+msgid "Spawning maintenance shell"
+msgstr ""
+
+#: src/mountall.c:3128
+msgid "User cancelled filesystem checks"
+msgstr ""
+
+#: src/mountall.c:3152
+msgid "Detach and run in the background"
+msgstr ""
+
+#: src/mountall.c:3154
+msgid "Force check of all filesystems"
+msgstr ""
+
+#: src/mountall.c:3156
+msgid "Attempt to fix all fsck errors"
+msgstr ""
+
+#: src/mountall.c:3158
+msgid "Do not emit events after mounting filesystems"
+msgstr ""
+
+#: src/mountall.c:3178
+msgid "Mount filesystems on boot"
+msgstr ""
+
+#: src/mountall.c:3180
+msgid ""
+"By default, mountall does not detach from the console and remains in the "
+"foreground.  Use the --daemon option to have it detach."
+msgstr ""
+
+#: src/mountall.c:3196
+msgid "Could not connect to Upstart"
+msgstr ""
+
+#: src/mountall.c:3210
+msgid "Could not create Upstart proxy"
+msgstr ""
+
+#: src/mountall.c:3264
+msgid "root filesystem isn't mounted"
+msgstr ""
+
+#: src/mountall.c:3278 src/mountall.c:3292
+msgid "Unable to become daemon"
+msgstr ""
+
+#: src/mountall.c:3368
+msgid "Received SIGUSR1 (network device up)"
+msgstr ""

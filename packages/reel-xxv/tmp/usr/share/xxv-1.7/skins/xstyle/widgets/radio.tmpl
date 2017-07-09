@@ -1,0 +1,12 @@
+<!-- radio -->
+<tr>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% data.msg %?>
+    </td>
+    <td class="<?% (param.count mod 2) == 0 ? 'light' : 'dark' %?>" >
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% FOREACH wert IN data.choices %?>
+            <input type="radio" name="<?% data.NAME %?>" value="<?% wert %?>" <?% "checked" IF val == wert %?><?% FOREACH p IN param.tags; " $p";END %?>><?% wert %?><br>
+        <?% END %?>
+    </td>
+</tr>

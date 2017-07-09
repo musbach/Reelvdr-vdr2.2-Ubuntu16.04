@@ -1,0 +1,8 @@
+#!/bin/sh
+
+#echo "creating init levels for setup-net wlan"
+#update-rc.d  reel-wlan defaults 99 85
+
+update-rc.d -f reel-wlan remove >/dev/null
+
+exit 0

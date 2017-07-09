@@ -1,0 +1,9 @@
+reelcam.o: reelcam.c reelcam.h common.h reel.h \
+ ../../../kernel/reeldvb/reeldvb.h observerthread.h status.h \
+ reelcamlink.h i18n.h
+common.o: common.c common.h
+observerthread.o: observerthread.c observerthread.h reel.h \
+ ../../../kernel/reeldvb/reeldvb.h common.h
+status.o: status.c reelcam.h common.h reel.h \
+ ../../../kernel/reeldvb/reeldvb.h observerthread.h status.h
+i18n.o: i18n.c i18n.h

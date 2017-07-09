@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/vdr-mcli-plugin/!svn/ver/9/mcast/common/win32/visualstudio/libmcli
+END
+WS2_32.Lib
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/visualstudio/libmcli/WS2_32.Lib
+END
+zlib.lib
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/visualstudio/libmcli/zlib.lib
+END
+pthreadVC2.lib
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/visualstudio/libmcli/pthreadVC2.lib
+END
+IPHlpApi.Lib
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/visualstudio/libmcli/IPHlpApi.Lib
+END
+libmcli.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/vdr-mcli-plugin/!svn/ver/9/mcast/common/win32/visualstudio/libmcli/libmcli.vcproj
+END
+libmcli.rc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/visualstudio/libmcli/libmcli.rc
+END
+libxml2_a.lib
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/common/win32/visualstudio/libmcli/libxml2_a.lib
+END

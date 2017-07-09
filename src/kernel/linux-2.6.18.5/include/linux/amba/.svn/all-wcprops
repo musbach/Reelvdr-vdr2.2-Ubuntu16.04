@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/amba
+END
+bus.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/amba/bus.h
+END
+serial.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/amba/serial.h
+END
+kmi.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/amba/kmi.h
+END
+clcd.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/amba/clcd.h
+END

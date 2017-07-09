@@ -1,0 +1,10 @@
+Package: reelvdr-plugins-dvd
+Version: 1.27
+Section: reel
+Priority: important
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-plugins-dvd
+Conflicts: reelvdr-plugins-base (<< 1.4.16), reelvdr-baseconfig (<< 1.17), reelvdr-langpack (<< 1.9)
+Depends: cdparanoia, convmv, dvd+rw-tools, dvdauthor, flac, hal, libcurl3, libgd3, libtag1v5, mjpegtools, mkisofs, netpbm, pmount, replex, vobcopy, vorbis-tools, wodim
+Description: DVD Plugins for the ReelBox

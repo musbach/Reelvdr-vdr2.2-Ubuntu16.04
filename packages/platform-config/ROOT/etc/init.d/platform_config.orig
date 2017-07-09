@@ -1,0 +1,132 @@
+#!/bin/sh
+#=========================================================================
+#  This file is provided under a dual BSD/GPLv2 license.  When using or 
+#  redistributing this file, you may do so under either license.
+#
+#  GPL LICENSE SUMMARY
+#
+#  Copyright(c) 2007-2011 Intel Corporation. All rights reserved.
+#
+#  This program is free software; you can redistribute it and/or modify 
+#  it under the terms of version 2 of the GNU General Public License as
+#  published by the Free Software Foundation.
+#
+#  This program is distributed in the hope that it will be useful, but 
+#  WITHOUT ANY WARRANTY; without even the implied warranty of 
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+#  General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License 
+#  along with this program; if not, write to the Free Software 
+#  Foundation, Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+#  The full GNU General Public License is included in this distribution 
+#  in the file called LICENSE.GPL.
+#
+#  Contact Information:
+#  intel.com
+#  Intel Corporation
+#  2200 Mission College Blvd.
+#  Santa Clara, CA  95052
+#  USA
+#  (408) 765-8080
+#
+#
+#  BSD LICENSE 
+#
+#  Copyright(c) 2007-2011 Intel Corporation. All rights reserved.
+#  All rights reserved.
+#
+#  Redistribution and use in source and binary forms, with or without 
+#  modification, are permitted provided that the following conditions 
+#  are met:
+#
+#    * Redistributions of source code must retain the above copyright 
+#      notice, this list of conditions and the following disclaimer.
+#    * Redistributions in binary form must reproduce the above copyright 
+#      notice, this list of conditions and the following disclaimer in 
+#      the documentation and/or other materials provided with the 
+#      distribution.
+#    * Neither the name of Intel Corporation nor the names of its 
+#      contributors may be used to endorse or promote products derived 
+#      from this software without specific prior written permission.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+#  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+#  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+#  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+#  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+#  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY 
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#==========================================================================
+
+# Script name can be the called name, or something more meaningful.
+SCRIPTNAME=$0
+PATH=/usr/local/bin:/usr/bin:/bin:/sbin
+
+. /etc/init.d/init_utilities
+
+start_function() {
+    # Install the platform config module
+    try_command insmod /lib/modules/platform_config.ko
+
+    # Setup the appropriate platform configuration
+    SOC_NAME=`get_soc_info_utility NAME STRING 2>/dev/null`
+    DIR=/etc/platform_config
+    APP=platform_config_app
+    PMR_APP=config_pmrs
+
+    case "$SOC_NAME" in
+    SOC_NAME_CE4100)
+        $APP load $DIR/ce4100.hcfg
+        $APP load $DIR/ce4100/memory_layout_512M.hcfg platform.memory.layout
+        ;;
+    SOC_NAME_CE4200)
+        $APP load $DIR/ce4200.hcfg
+	    $APP load $DIR/ce4200/memory_layout_1G.hcfg platform.memory.layout
+        ;;
+    SOC_NAME_CE5300)
+        $APP load $DIR/ce5300.hcfg
+	    $APP load $DIR/ce5300/memory_layout_1G.hcfg platform.memory.layout
+        ;;
+    *)
+		echo "Unrecognized or unsupported processor ID: \"$SOC_NAME\""	
+        exit 1
+        ;;
+    esac
+
+    # Configure the PMRs and base addresses from the memory layout
+    $PMR_APP
+        
+    $APP execute platform.startup
+
+    # Uncomment this command to dump the database created by processing the
+    # config files.  Good for regression testing changes.
+    # The sed removes the trailing "id" comment output by the dump app.
+    #
+    #   $APP dump | sed 's; */\* id .*;;' > /$SOC_NAME.txt
+}
+
+stop_function() {
+    # Remove the platform config module
+    rmmod platform_config
+}
+
+case $1 in
+    "start")
+        start_function
+        ;;
+    "stop")
+        stop_function
+        ;;
+    "restart")
+        stop_function
+        start_function
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        ;;
+esac

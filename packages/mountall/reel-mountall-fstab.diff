@@ -1,0 +1,11 @@
+--- mountall-2.15.3/src/fstab.org	2010-10-06 19:07:51.000000000 +0200
++++ mountall-2.15.3/src/fstab	2012-03-27 14:32:12.844220317 +0200
+@@ -16,7 +16,7 @@
+ none            /dev                      devtmpfs,tmpfs  mode=0755                         0 0
+ none            /dev/pts                  devpts          noexec,nosuid,gid=tty,mode=0620   0 0
+ none            /dev/shm                  tmpfs           nosuid,nodev                      0 0
+-none            /tmp                      none            defaults                          0 0
++none            /tmp                      tmpfs           defaults,size=25%                 0 0
+ none            /var/run                  tmpfs           mode=0755,nosuid,showthrough      0 0
+ none            /var/lock                 tmpfs           nodev,noexec,nosuid,showthrough   0 0
+ none            /lib/init/rw              tmpfs           mode=0755,nosuid,optional         0 0

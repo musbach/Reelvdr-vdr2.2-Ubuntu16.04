@@ -1,0 +1,245 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/client
+END
+sock_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/sock_test.c
+END
+inet_pton.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/inet_pton.c
+END
+inet_ntop.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/inet_ntop.c
+END
+api_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/91/mcast/client/api_server.c
+END
+dvblo_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/dvblo_handler.c
+END
+recv_ccpp.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/recv_ccpp.c
+END
+api_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/105/mcast/client/api_server.h
+END
+tca_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/117/mcast/client/tca_handler.c
+END
+poll.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/poll.c
+END
+satlists.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/satlists.c
+END
+api_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/api_test.c
+END
+dvblo_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/dvblo_handler.h
+END
+tca_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/tca_handler.h
+END
+mld_client.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/mld_client.c
+END
+.indent.pro
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/.indent.pro
+END
+mmi_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/mmi_handler.c
+END
+inet_aton.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/inet_aton.c
+END
+headers.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/vdr-mcli-plugin/!svn/ver/19/mcast/client/headers.h
+END
+interfaces.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/interfaces.c
+END
+mmi_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/136/mcast/client/mmi_handler.h
+END
+ci_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/ci_handler.c
+END
+dummy_client.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/client/dummy_client.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/client/Makefile
+END
+ci_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/ci_handler.h
+END
+dummy_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/dummy_client.h
+END
+mld_reporter.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/mld_reporter.c
+END
+input.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/input.c
+END
+tools.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/tools.c
+END
+mld_reporter.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/mld_reporter.h
+END
+mcast.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/mcast.c
+END
+ciparser.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/ciparser.c
+END
+recv_tv.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/recv_tv.c
+END
+recv_tv.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/vdr-mcli-plugin/!svn/ver/158/mcast/client/recv_tv.h
+END
+api_shm_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/api_shm_test.c
+END
+win32
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/win32
+END
+tra_handler.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/135/mcast/client/tra_handler.c
+END
+mld_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/mld_common.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/client/main.c
+END
+api_sock_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/api_sock_test.c
+END
+tra_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/1/mcast/client/tra_handler.h
+END

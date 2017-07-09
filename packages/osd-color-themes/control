@@ -1,0 +1,10 @@
+Package: osd-color-themes
+Version: 1.4
+Section: reel-opt
+Priority: optional
+Architecture: all
+Conflicts: reel-opt-themes (<< 0.3)
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source:
+Description: Additonal colored OSD-themes for the ReelBox
+

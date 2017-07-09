@@ -1,0 +1,88 @@
+Requirements to build libapt-front
+==================================
+
+ * libapt-pkg-dev
+ * libtagcoll-dev >= 1.5
+
+
+Compiling out of svn
+====================
+
+Instructions for compiling a fresh subversion checkout.
+
+If you use autotools::
+
+  autoreconf -i
+  ./configure
+  make
+  make check
+
+or alternatively::
+
+  autoreconf -i
+  fakeroot debian/rules build
+  make check
+
+or, with all debugging enabled::
+
+  autoreconf -i
+  export DEB_BUILD_OPTIONS="noopt nostrip"
+  CXXFLAGS="-O0 -g -Wall" fakeroot debian/rules build
+  make check
+
+
+Running checks
+==============
+
+Some examples::
+
+  # Pass arguments to the check:
+  ARGS="cache_component_tags 2" make check
+
+  # Run the tests under gdb
+  DEBUGGER='gdb --args' make check
+
+  # Run the tests under valgrind
+  DEBUGGER='valgrind --db-attach=yes' make check
+
+
+Linking to libapt-front
+=======================
+
+Always use -dlpreopen <.la file> if linking to static libapt-front!
+We depend on static variable constructors to register init functions
+and things won't work if symbols are omitted by the linker!
+
+(errm, is this actually true? i don't think so...)
+
+Coding conventions
+==================
+
+A quick summary:
+
+ * no C style casts - ever
+ * try to make testcases for your code if possible at all (important!)
+ * generic stuff (not depending on rest of libapt-front, possibly
+   useful elsewhere) goes to utils/
+ * use namespaces liberally
+ * don't put using clauses into .h files if avoidable at all
+ * the code that goes in should make sense :-)
+ * API should be well-thought out, don't be afraid to refactor
+   if something doesn't "fit", we don't maintain source compat
+   for now...
+ * however, try to avoid doing excessive and unneccessary incompatible
+   changes on the trunk, we don't want to upset everyone using
+   the lib more than neccessary :-)
+ * no copy and paste unless absolutely neccessary (in the latter case
+   refactor as soon as possible)
+ * don't copy code from apt without fixing it first
+ * don't forget copyright attribution, no code stealing please;
+ * if you can, avoid copying from (L)GPL code, but that's not prohibited;
+   the rest of the lib remains BSD though, so the remaining code can be
+   reused in GPL-incompatible software
+
+That's about it, thanks for following the above and enjoy hacking
+on the lib!
+ 
+..
+ vim:set syntax=rst:

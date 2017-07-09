@@ -1,0 +1,127 @@
+Yet another convert tool (for VDR)
+----------------------------------
+
+Requirements
+
+To use yacoto you need (beside VDR recordings and some disk space):
+
+- vdr including yacoto plugin
+- patched replex 0.1.6.8 (patch is located in patches dir)
+  www.metzlerbros.org/dvb/index.html
+- vdrsync.pl
+- mencoder/mplayer
+- lame (for mp3)
+- oggenc (for ogg)
+- ffmpeg (Syntax is valid for ffmpeg from June 2007 or newer)
+- screen
+- dvdauthor,mkisofs,growisofs,vamps,ImageMagick (for dvd)
+- hlcut (for cutting recordings: http://www.htpc-forum.de/download/hlcut.tgz )
+  Thanks to Xeatre /www.xeatre.tv) !
+- MP4Box (for Ipod)
+- egrep 
+- For status information bgprocess is used,
+  http://www.htpc-forum.de/download/vdr-bgprocess-0.1.0.tgz
+  Thanks to reelmultimedia !
+
+
+Installation:
+
+- Extract the package to the VDR plugins config dir (/etc/vdr/plugins)
+  which results in YAC_CONF_DIR (/etc/vdr/plugins/yacoto)
+- Adjust the settings in yacoto.conf to your needs.
+  The comments are also used by the plugin! (see below)
+- execute ./yac_update.sh to create the conf files (existing ones will not be overwritten)
+- run ./yac_setplgconf.sh and your done.
+
+
+Some Internals
+
+For each converion method one .conf and one .sh file with the same name is needed, for samples see
+the config directory (/etc/vdr/plugins/yacoto/conf).
+If a .conf.sh file exists, this will be executed by yac_setplgconf.sh.
+You can use it for changing the .conf file for example. (see conf/dvd.conf.sh)
+
+When starting vdr the .conf files and yacoto.conf the plugin calls yac_admin.sh/yac_setplgconf.sh to create
+its settings file yacadmin.conf (similar doing as the admin plugin).
+If a conversion is started, the plugin calls:
+YAC_CONF_DIR/yac_start.sh
+This one is creating a script located in YAC_CONF_DIR/queue.
+Now yac_manager.sh will be started (if not already running) and this one starts all script in
+YAC_CONF_DIR/queue
+
+The conversion script uses yac_remux.sh for the de/remux process, using replex for mpg files, 
+or vdrsync.pl for extracting audio tracks.
+Now the mpeg files were transformed with the choosen converter (function yac_convert) .
+
+
+Syntax of .conf files:
+
+e.g..
+AUDIO_BITRATE="96"         #~Audio bitrate~I~3~64,256~
+
+means:
+AUDIO_BITRATE: name of the variable
+96: value of the variablen
+Audio bitrate: name shown in the settings menu (or its translation, if a matching .po file in po exists)
+I = Integer variable (Other values: F=Fixed (readonly in the menu), A=Alphanumerisch, L=List, B=Binary(Yes/No)
+3 = max. Length (in characters) of the value
+64,256 = allowed values ( if VarType A is used here are the allowed characters, if Type L is used the allowed Values are written here)
+
+Default variables which should be used in every config File:
+
+REMUX_TYPE 
+   Possible values: 
+      demux_audio(only demux audiotracks)
+      remux_convert(prepare for complete conversion)
+      remux_dvd(prepare for DVD conversion)
+      remux_mpeg2(convert directly to mpeg2)
+      
+AUDIO_SOURCE
+   Possible values:
+      mp2 (use mp2 audio stream)
+      all (use all selected audio streams)
+      ac3 (use ac3 audio stream)
+      
+After creating .conf and .sh file, start yac_setplgconf.sh to write these settings to yacadmin.conf.
+
+
+Other things:
+
+For creating own DVD menues you have to do the following;
+- create a directory in conf/dvd/ with a fine name :)
+- Put (or link) these files into this directory:
+  mm-background.png  mm-button.png  tm-background.png  tm-button.png
+- If necessary create a menu.conf in this directory (see conf/dvd/menu.conf)
+- execute yac_setplgconf.sh
+    
+Existing pdaexport configuration files can be converted to yacoto format
+( see yacoto/conf/ffmpeg.conf.sample )
+
+
+Configuration parameters:
+
+- Possible values for naming convention(for target file):
+  - NameCfgDate:   Name_Configuration_Date
+  - NameCfgRDate:  Name_Configuration_RecordingDate
+  - NameDate:      Name_Date
+  - NameRDate:     Name_RecordingDate
+  - NameCfg:       Name_Configuration
+  - Name:          Name
+	    
+- "Keep dir structure" means, the directory structure below /video will be used,
+  i.e. /video/Simpsons/Folge_0815 will be stored in the directoy Simpsons in the target directory.
+  	      	      
+
+Acknowledgements:
+
+Many thanks to all eanbling me to build this plugin
+First of all to Klaus Schmidinger for VDR and Toxic Tonic for pdaexport which I used as base for ffmpeg conversion.
+Also many thanks to the companys Reeelmultimedia and Xeatre for their support !
+
+
+Report wishes, bugs etc here:
+http://bugs.htpc-forum.de/
+
+or in VDR-Portal or HTPC-Forum
+
+Helmut Auer ( http://htpc-forum.de/index.php?url=about.php )

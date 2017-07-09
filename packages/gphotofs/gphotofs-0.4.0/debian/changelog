@@ -1,0 +1,27 @@
+gphotofs (0.4.0-1reel1) unstable; urgency=low
+  * Reel Multimedia's package update
+
+ -- Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>  Tue, 19 Feb 2008 12:33:33 +0100
+
+gphotofs (0.2-3) unstable; urgency=low
+
+  * Added README.Debian which describes how to setup permissions properly
+    (Closes: #383561).
+  * Bump-up Standards-Version to 3.7.2.
+  * Use DH_COMPAT 5.
+
+ -- Florian Ragwitz <rafl@debian.org>  Sat,  2 Sep 2006 15:35:48 +0200
+
+gphotofs (0.2-2) unstable; urgency=low
+
+  * Added fuse-utils to Depends as gphotofs executes fusermount.
+    Thanks to Pawel Parys <parys@mimuw.edu.pl> for pointing this out.
+
+ -- Florian Ragwitz <rafl@debian.org>  Mon, 24 Apr 2006 17:52:46 +0200
+
+gphotofs (0.2-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Florian Ragwitz <rafl@debian.org>  Thu,  9 Feb 2006 17:01:51 +0100
+

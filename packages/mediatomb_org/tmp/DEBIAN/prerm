@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/mediatomb" ]; then
+	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+		invoke-rc.d mediatomb stop
+	else
+		/etc/init.d/mediatomb stop
+	fi
+fi
+# End automatically added section
+
+rm -f /var/log/mediatomb
+
+exit 0

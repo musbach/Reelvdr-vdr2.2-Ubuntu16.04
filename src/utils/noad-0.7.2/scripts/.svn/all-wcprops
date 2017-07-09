@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/scripts
+END
+stopnoad.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/scripts/stopnoad.sh
+END
+viewmarks.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/scripts/viewmarks.sh
+END
+countnoad.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/scripts/countnoad.sh
+END
+reccmds.conf
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/scripts/reccmds.conf
+END
+startnoad.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/scripts/startnoad.sh
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/scripts/README
+END

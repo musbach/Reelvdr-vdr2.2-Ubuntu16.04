@@ -1,0 +1,31 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          reel-dyndns
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:     $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      S 0 1 6
+# Short-Description: Example initscript
+# Description:       This file should be used to construct scripts to be
+#                    placed in /etc/init.d.
+### END INIT INFO
+
+
+case "$1" in
+  start|"")
+	/usr/sbin/gnudipd -d
+	/usr/sbin/dyndnsd -d
+	;;
+  restart|reload|force-reload)
+	echo "Error: argument '$1' not supported" >&2
+	exit 3
+	;;
+  stop)
+	/usr/sbin/dyndnsd -t
+	/usr/sbin/gnudipd -t
+	;;
+  *)
+	echo "Usage: reel-dyndns-clean [start|stop]" >&2
+	exit 3
+	;;
+esac

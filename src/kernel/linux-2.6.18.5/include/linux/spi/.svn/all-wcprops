@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/spi
+END
+spi.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/spi/spi.h
+END
+flash.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/spi/flash.h
+END
+ads7846.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/spi/ads7846.h
+END
+spi_bitbang.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/spi/spi_bitbang.h
+END

@@ -1,0 +1,26 @@
+--- osd.h	(revision 15375)
++++ osd.h	(revision 15376)
+@@ -278,7 +289,13 @@
+   cBitmap *savedRegion;
+   cBitmap *bitmaps[MAXOSDAREAS];
+   int numBitmaps;
++#ifdef REELVDR
++protected:
++#endif /* REELVDR */
+   int left, top, width, height;
++#ifdef REELVDR
++private:
++#endif /* REELVDR */
+   uint level;
+   bool active;
+ protected:
+@@ -435,6 +463,9 @@
+   virtual cOsd *CreateOsd(int Left, int Top, uint Level) = 0;
+       ///< Returns a pointer to a newly created cOsd object, which will be located
+       ///< at the given coordinates.
++#ifdef REELVDR
++  virtual cOsd *CreateTrueColorOsd(int Left, int Top, uint Level);
++#endif /* REELVDR */
+ public:
+   cOsdProvider(void);
+       //XXX maybe parameter to make this one "sticky"??? (frame-buffer etc.)

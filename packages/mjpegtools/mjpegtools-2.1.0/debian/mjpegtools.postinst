@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$1" = "configure" ]; then
+	install-info --quiet --section "Miscellaneous" "Miscellaneous" \
+	--menuentry="How to use the mjpeg tools" \
+	--description="mjpeg tools documentation" /usr/share/info/mjpeg-howto.info
+fi
+
+#DEBHELPER#

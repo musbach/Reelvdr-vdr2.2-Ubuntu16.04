@@ -1,0 +1,1 @@
+KERNEL=="dvb[0-16]*.ca[0-16]*", DRIVERS=="budget*", NAME="dvb/budget.%k"

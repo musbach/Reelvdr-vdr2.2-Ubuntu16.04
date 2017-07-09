@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/reelbox/!svn/ver/1/testing/src/misc/i18n
+END
+nl_NL.po
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/misc/i18n/nl_NL.po
+END
+reel.pot
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/misc/i18n/reel.pot
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/misc/i18n/Makefile
+END
+de_DE.po
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/misc/i18n/de_DE.po
+END

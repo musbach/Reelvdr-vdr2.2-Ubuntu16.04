@@ -1,0 +1,105 @@
+Index: config.h
+===================================================================
+--- config.h	(revision 47)
++++ config.h	(working copy)
+@@ -64,6 +64,69 @@
+ #define DVLVIDPREFER_MAX 12
+ #endif /* DVLVIDPREFER */
+ 
++#ifdef REELVDR
++#define MAXHOSTIP 16
++#define MAXHOSTNAME 64
++#define MACLENGTH 18
++
++enum eReelboxMode { eModeStandalone=0, eModeClient=1, eModeServer=2, eModeHotel=3 };
++enum eReceiverType { eModeDVB = 0, eModeMcli = 1, eModeStreamdev = 2 };
++
++void CopyToTftpRoot(const char* filename);
++
++namespace setup
++{
++  extern std::string FileNameFactory(std::string FileType);
++}
++#endif /* REELVDR */
++
++
++#ifdef USE_LIVEBUFFER
++  int LiveBuffer; //TODO: Should be Setup.PauseKeyHandling == 3
++  int LiveBufferSize;
++  int LiveBufferMaxFileSize;
++#endif /*USE_LIVEBUFFER*/
++#ifdef REELVDR
++  int LiveTvOnAvg;
++  int PreviewVideos;
++  eReceiverType ReceptionMode;
++  char NetServerName[MAXHOSTNAME];
++  char NetServerMAC[MACLENGTH];
++  int MaxMultiRoomClients; // Maximum number of MultiRoom clients served by Reelbox in serverMode
++  int ExpertOptions;
++  int OSDRandom;
++  int OSDRemainTime;
++  int OSDUseSymbol;
++  int OSDScrollBarWidth;
++  int FontSizes;
++  int AddNewChannels;
++  char NetServerIP[MAXHOSTIP];
++  eReelboxMode ReelboxModeTemp; // 0=standalone, 1=Client, 2=Server, 3=HotelMode (for Temporary use)
++  eReelboxMode ReelboxMode; // 0=standalone, 1=Client, 2=Server, 3=HotelMode
++  int RequestShutDownMode;
++  int StandbyOrQuickshutdown;
++  int EnergySaveOn; // 1 => MinUserInactivity sends vdr into (hot)standby and then into poweroff
++  int StandbyTimeout; //(in mins) after which poweroff;  effective only  when EnergySaveOn is 1, 
++  int UseBouquetList;
++  int OnlyRadioChannels;
++  int OnlyEncryptedChannels;
++  int OnlyHDChannels;
++  int ExpertNavi;
++  int WantChListOnOk;
++  int ChannelUpDownKeyMode; // 0 Normal, jumps to next or previous channel
++                            // 1 opens bouquet / channel list
++  int JumpWidth;
++  // should vdr allow plugin to restrict channel list to which it can zap to?
++  bool UseZonedChannelList;
++  int EPGScanMaxChannel;
++  int EPGScanMaxDevices;
++  int EPGScanMaxBusyDevices;
++  int EPGScanMode;
++  int EPGScanDailyTime;
++  int EPGScanDailyNext;
++#endif /* REELVDR */
++
++
+ #define LIVEPRIORITY      0                  // priority used when selecting a device for live viewing
+ #define TRANSFERPRIORITY  (LIVEPRIORITY - 1) // priority used for actual local Transfer Mode
+ #define IDLEPRIORITY      (MINPRIORITY - 1)  // priority of an idle device
+@@ -96,22 +159,6 @@
+ 
+ typedef uint32_t in_addr_t; //XXX from /usr/include/netinet/in.h (apparently this is not defined on systems with glibc < 2.2)
+ 
+-#ifdef REELVDR
+-#define MAXHOSTIP 16
+-#define MAXHOSTNAME 64
+-#define MACLENGTH 18
+-
+-enum eReelboxMode { eModeStandalone=0, eModeClient=1, eModeServer=2, eModeHotel=3 };
+-enum eReceiverType { eModeDVB = 0, eModeMcli = 1, eModeStreamdev = 2 };
+-
+-void CopyToTftpRoot(const char* filename);
+-
+-namespace setup
+-{
+-  extern std::string FileNameFactory(std::string FileType);
+-}
+-#endif /* REELVDR */
+-
+ class cSVDRPhost : public cListObject {
+ private:
+   struct in_addr addr;
+@@ -463,6 +510,7 @@
+   eReceiverType ReceptionMode;
+   char NetServerName[MAXHOSTNAME];
+   char NetServerMAC[MACLENGTH];
++  int MaxMultiRoomClients; // Maximum number of MultiRoom clients served by Reelbox in serverMode  
+   int ExpertOptions;
+   int OSDRandom;
+   int OSDRemainTime;

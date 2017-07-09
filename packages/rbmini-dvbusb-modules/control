@@ -1,0 +1,12 @@
+Package: rbmini-dvbusb-modules
+Version: 0.1-reel0.3
+Section: reel-opt
+Priority: optional
+Architecture: armel
+Depends: linux-firmware, linux-firmware-nonfree
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: rbmini-dvbusb-modules
+Description: Modules needed for dvb-usb-devices on the NetClient.
+ Includes kernel modules
+ .
+ This package provides modules for Linux version 2.6.18 on ARM(el).

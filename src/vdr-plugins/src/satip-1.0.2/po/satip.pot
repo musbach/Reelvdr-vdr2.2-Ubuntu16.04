@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vdr-satip package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-satip \n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2017-05-07 17:05+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "PAT (0x00)"
+msgstr ""
+
+msgid "NIT (0x40)"
+msgstr ""
+
+msgid "SDT (0x42)"
+msgstr ""
+
+msgid "EIT (0x4E/0x4F/0x5X/0x6X)"
+msgstr ""
+
+msgid "TDT (0x70)"
+msgstr ""
+
+msgid "SAT>IP information not available!"
+msgstr ""
+
+msgid "SAT>IP Devices"
+msgstr ""
+
+msgid "SAT>IP Server"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Model"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "CI extension"
+msgstr ""
+
+msgid "Creation date"
+msgstr ""
+
+msgid "SAT>IP Device Status"
+msgstr ""
+
+msgid "SAT>IP Information"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "Pids"
+msgstr ""
+
+msgid "Filters"
+msgstr ""
+
+msgid "Bits/bytes"
+msgstr ""
+
+msgid "off"
+msgstr ""
+
+msgid "low"
+msgstr ""
+
+msgid "normal"
+msgstr ""
+
+msgid "high"
+msgstr ""
+
+msgid "Button$Devices"
+msgstr ""
+
+msgid "Operating mode"
+msgstr ""
+
+msgid ""
+"Define the used operating mode for all SAT>IP devices:\n"
+"\n"
+"off - devices are disabled\n"
+"low - devices are working at the lowest priority\n"
+"normal - devices are working within normal parameters\n"
+"high - devices are working at the highest priority"
+msgstr ""
+
+msgid "Enable CI extension"
+msgstr ""
+
+msgid ""
+"Define whether a CI extension shall be used.\n"
+"\n"
+"This setting enables integrated CI/CAM handling found in some SAT>IP hardware (e.g. Digital Devices OctopusNet)."
+msgstr ""
+
+msgid "CI/CAM"
+msgstr ""
+
+msgid ""
+"Define a desired CAM type for the CI slot.\n"
+"\n"
+"The '---' option lets SAT>IP hardware do the auto-selection."
+msgstr ""
+
+msgid "Enable EPG scanning"
+msgstr ""
+
+msgid ""
+"Define whether the EPG background scanning shall be used.\n"
+"\n"
+"This setting disables the automatic EIT scanning functionality for all SAT>IP devices."
+msgstr ""
+
+msgid "Disabled sources"
+msgstr ""
+
+msgid "none"
+msgstr ""
+
+msgid ""
+"Define number of sources to be disabled.\n"
+"\n"
+"SAT>IP servers might not have all satellite positions available and such sources can be blacklisted here."
+msgstr ""
+
+msgid "Define a source to be blacklisted."
+msgstr ""
+
+msgid "Disabled filters"
+msgstr ""
+
+msgid ""
+"Define number of section filters to be disabled.\n"
+"\n"
+"Certain section filters might cause some unwanted behaviour to VDR such as time being falsely synchronized. By blacklisting the filters here, useful section data can be left intact for VDR to process."
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Define an ill-behaving filter to be blacklisted."
+msgstr ""
+
+msgid "Active SAT>IP servers:"
+msgstr ""
+
+msgid "Help"
+msgstr ""

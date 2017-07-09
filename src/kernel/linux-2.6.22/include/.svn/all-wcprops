@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include
+END
+media
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/media
+END
+asm-m68knommu
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-m68knommu
+END
+asm-xtensa
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-xtensa
+END
+asm-ia64
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-ia64
+END
+rdma
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/rdma
+END
+mtd
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/mtd
+END
+asm-mips
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-mips
+END
+asm-sparc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-sparc
+END
+sound
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/sound
+END
+asm-parisc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-parisc
+END
+asm-m32r
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-m32r
+END
+asm-sh64
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-sh64
+END
+asm-m68k
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-m68k
+END
+asm-arm26
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-arm26
+END
+video
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/video
+END
+asm-i386
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-i386
+END
+Kbuild
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/Kbuild
+END
+asm-x86_64
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-x86_64
+END
+asm-cris
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-cris
+END
+asm-v850
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-v850
+END
+crypto
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/crypto
+END
+asm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm
+END
+asm-h8300
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-h8300
+END
+net
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/net
+END
+asm-sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-sh
+END
+asm-generic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-generic
+END
+pcmcia
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/pcmcia
+END
+asm-powerpc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-powerpc
+END
+asm-arm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-arm
+END
+rxrpc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/rxrpc
+END
+asm-um
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-um
+END
+asm-sparc64
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-sparc64
+END
+asm-ppc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-ppc
+END
+scsi
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/scsi
+END
+asm-alpha
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-alpha
+END
+asm-avr32
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-avr32
+END
+asm-frv
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-frv
+END
+keys
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/keys
+END
+asm-s390
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/asm-s390
+END
+acpi
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/acpi
+END
+math-emu
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/include/math-emu
+END

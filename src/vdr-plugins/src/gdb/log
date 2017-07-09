@@ -1,0 +1,1445 @@
+
+Using username "root".
+root@192.168.2.60's password:
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-66-generic i686)
+
+ * Documentation:  https://help.ubuntu.com/
+
+Last login: Thu Jan 13 10:35:38 2022 from 192.168.2.104
+root@ReelBox60:~# cd /usr/src/reelbox/testing/src/plugins/src/gdb
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# gdb
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) source run
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/xine/plugins/2.3:$LD_LIBRARY_PATH:.:/usr/lib/vdr:/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/bin
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+---Type <return> to continue, or q <return> to quit---
+OLDPWD=/root
+LINES=32
+COLUMNS=120
+(gdb) quit
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# tput cols
+120
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# tput lines
+50
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# gdb
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) source run
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+(gdb) show einvironment
+Undefined show command: "einvironment".  Try "help show".
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/xine/plugins/2.3:$LD_LIBRARY_PATH:.:/usr/lib/vdr:/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/bin
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+OLDPWD=/root
+LINES=50
+COLUMNS=120
+(gdb) source run
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/xine/plugins/2.3:$LD_LIBRARY_PATH:.:/usr/lib/vdr:/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/bin
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+OLDPWD=/root
+LINES=50
+COLUMNS=120
+(gdb) show directories
+Source directories searched: /usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-32:/usr/src/reelbox/testing/src/vdr-2.1:/usr/src/reelbox/testing/src/vdr-plugins/src/vdr-plugin-mcli:/usr/lib/vdr:$cdir:$cwd
+(gdb) b cam.c:2672
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Haltepunkt 1 (cam.c:2672) anstehend.
+(gdb) sharedlibrary  libvdr-sc.so.2.1.6
+No loaded shared libraries match the pattern `libvdr-sc.so.2.1.6'.
+(gdb) shell
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# echo $PATH
+/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# vi ~/.profile
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# source ~/.profile
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# exit
+exit
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/xine/plugins/2.3:$LD_LIBRARY_PATH:.:/usr/lib/vdr:/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/bin
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+OLDPWD=/root
+LINES=50
+COLUMNS=120
+(gdb) quit
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# gdb
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) show di
+directories            disassemble-next-line  disconnected-dprintf   displaced-stepping
+disable-randomization  disassembly-flavor     disconnected-tracing
+(gdb) show directories
+Source directories searched: /usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-32:$cdir:$cwd
+(gdb) source run
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+(gdb) show directories
+Source directories searched: /usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-32:/usr/src/reelbox/testing/src/vdr-2.1:/usr/src/reelbox/testing/src/vdr-plugins/src/vdr-plugin-mcli:/usr/lib/vdr:$cdir:$cwd
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/xine/plugins/2.3:$LD_LIBRARY_PATH:.:/usr/lib/vdr:/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/bin
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+OLDPWD=/root
+LINES=50
+COLUMNS=120
+(gdb) sharedlibrary  libvdr-sc.so.2.1.6
+No loaded shared libraries match the pattern `libvdr-sc.so.2.1.6'.
+(gdb) shell
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# source ~/.profile
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# source ~/.bash
+.bash_history  .bashrc
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# source ~/.bas
+.bash_history  .bashrc
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# source ~/.bashrc
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# vi ~/.bashrc
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# source ~/.bashrc
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# echo $PATH
+/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/lib/vdr:/usr/local/bin:/usr/local/bin:/usr/lib/vdr
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# exit
+exit
+(gdb) show en
+endian       environment
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/xine/plugins/2.3:$LD_LIBRARY_PATH:.:/usr/lib/vdr:/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/bin
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+OLDPWD=/root
+LINES=50
+COLUMNS=120
+(gdb) quit
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# gdb tui
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+tui: Datei oder Verzeichnis nicht gefunden.
+(gdb) show en
+endian       environment
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/xine/plugins/2.3:$LD_LIBRARY_PATH:.:/usr/lib/vdr:/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/bin
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+OLDPWD=/root
+LINES=50
+COLUMNS=120
+(gdb) :q
+Undefined command: "".  Try "help".
+(gdb) quit
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# echo $PATH
+/sbin:/bin/:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/bin
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# source /etc/environment
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# vi /etc/environment
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# source /etc/environment
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/vdr
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# gdb
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) show en
+endian       environment
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+OLDPWD=/root
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/xine/plugins/2.3:/usr/lib/xine/plugins/2.3:/usr/lib/xine/plugins/2.3:$LD_LIBRARY_PATH:.:/usr/lib/vdr:/usr/lib/vdr:.:.
+MAIL=/var/mail/root
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/vdr
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+LINES=50
+COLUMNS=120
+(gdb) sharedlibrary  libvdr-sc.so.2.1.6
+No loaded shared libraries match the pattern `libvdr-sc.so.2.1.6'.
+(gdb) file /usr/lib/vdr/libvdr-sc.so.2.1.6
+Reading symbols from /usr/lib/vdr/libvdr-sc.so.2.1.6...(no debugging symbols found)...done.
+(gdb) quit
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# sudo service reelvdr stop
+reelvdr stop/waiting
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# gdb
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) file /usr/L
+lib/   local/
+(gdb) file /usr/lib/vd
+vdr/          vdr-mcli-188/
+(gdb) file /usr/lib/vdr/libvdr-sc.so.2.1.6l
+Reading symbols from /usr/lib/vdr/libvdr-sc.so.2.1.6l...done.
+(gdb) show en
+endian       environment
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+OLDPWD=/root
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/xine/plugins/2.3:/usr/lib/xine/plugins/2.3:/usr/lib/xine/plugins/2.3:$LD_LIBRARY_PATH:.:/usr/lib/vdr:/usr/lib/vdr:.:.
+MAIL=/var/mail/root
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/vdr
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+LINES=50
+COLUMNS=120
+(gdb) exec-file /usr/sbin/vdr
+(gdb) set directories /usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-32 /usr/src/reelbox/testing/src/vdr-2.1 /usr/src/reelbox/testing/src/vdr-plugins/src/vdr-plugin-mcli /usr/lib/vdr
+(gdb) b cam.c:2672
+Haltepunkt 1 at 0x524f6: file cam.c, line 2672.
+(gdb) run --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer
+Starting program: /usr/sbin/vdr --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer
+Warning:
+Cannot insert breakpoint 1.
+Cannot access memory at address 0x524f6
+
+(gdb) c
+Continuing.
+Warning:
+Cannot insert breakpoint 1.
+Cannot access memory at address 0x524f6
+
+(gdb) file /usr/sbin/vdr
+A program is being debugged already.
+Are you sure you want to change the file? (y or n) y
+Load new symbol table from "/usr/sbin/vdr"? (y or n) y
+Reading symbols from /usr/sbin/vdr...done.
+(gdb) sharedlibrary  libvdr-sc.so.2.1.6
+No loaded shared libraries match the pattern `libvdr-sc.so.2.1.6'.
+(gdb) set directories /usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-32 /usr/src/reelbox/testing/src/vdr-2.1 /usr/src/reelbox/testing/src/vdr-plugins/src/vdr-plugin-mcli /usr/lib/vdr
+(gdb) sharedlibrary  libvdr-sc.so.2.1.6
+No loaded shared libraries match the pattern `libvdr-sc.so.2.1.6'.
+(gdb) set directories /usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-32 /usr/src/reelbox/testing/src/vdr-2.1 /usr/src/reelbox/testing/src/vdr-plugins/src/vdr-plugin-mcli /usr/lib/vdr
+(gdb) b cam.c:2672
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Haltepunkt 2 (cam.c:2672) anstehend.
+(gdb) run --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /usr/sbin/vdr --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/i386-linux-gnu/libthread_db.so.1".
+cPluginFemon::cPluginFemon()()
+----- SetupParse('OpenWithFavourites','0')
+----- SetupParse('SavedFavouriteFilters_0','Bouquet Favourites full Hauptsender Österreich')
+name: 'SavedFavouriteFilters_0' param:'Bouquet Favourites full Hauptsender Österreich'
+token 1: 'Bouquet'
+filter parameter: 'Favourites full Hauptsender Österreich'
+channelListFilter.c:350 param:'Favourites full Hauptsender Österreich' list:'Favourites', match: 'full', name:'Hauptsender Österreich'
+Got 3 variables. Strlen list 10, match 4, name 23
+Added filter: Bouquet params: Favourites full Hauptsender Österreich, Count:1
+Count: 1
+----- SetupParse('SavedFavouriteFilters_count','0')
+----- SetupParse('SavedGlobalFilters_count','0')
+vdr: error while reading '/etc/vdr/remote.conf'
+[New Thread 0xb36abb40 (LWP 18597)]
+[New Thread 0xb2eaab40 (LWP 18598)]
+[Thread 0xb36abb40 (LWP 18597) exited]
+[New Thread 0xb36abb40 (LWP 18599)]
+[Thread 0xb2eaab40 (LWP 18598) exited]
+[New Thread 0xb24ffb40 (LWP 18600)]
+[New Thread 0xb2eaab40 (LWP 18601)]
+[New Thread 0xb1affb40 (LWP 18602)]
+[New Thread 0xb12feb40 (LWP 18603)]
+[New Thread 0xb06ffb40 (LWP 18604)]
+[New Thread 0xafefeb40 (LWP 18605)]
+Mcli::cMcliDevice: DVB got device number 1
+[New Thread 0xaf2fcb40 (LWP 18606)]
+Mcli::cMcliDevice: DVB got device number 2
+[New Thread 0xae6fab40 (LWP 18607)]
+Mcli::cMcliDevice: DVB got device number 3
+[New Thread 0xadaf8b40 (LWP 18608)]
+Mcli::cMcliDevice: DVB got device number 4
+[New Thread 0xacef6b40 (LWP 18609)]
+Mcli::cMcliDevice: DVB got device number 5
+[New Thread 0xac0feb40 (LWP 18610)]
+Mcli::cMcliDevice: DVB got device number 6
+[New Thread 0xab4fcb40 (LWP 18611)]
+Mcli::cMcliDevice: DVB got device number 7
+[New Thread 0xaa8fab40 (LWP 18612)]
+Mcli::cMcliDevice: DVB got device number 8
+hd_init:        hdfd -1
+hd_init:    SHMHDDEV /dev/hdshm
+hd_init: errno is 2 and hdfd is 11
+hd_init:        hdfd 11
+hd_get_area: get_area ID 1
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 1, phys 0x1032000 to 0xb2605000, rphys 0x1032000 to virt 0xb2605000, length 2000, kernel_mem 0x17432000
+hd_get_area: get_area ID 40000180
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 40000180, phys 0x1034000 to 0xb1c0e000, rphys 0x1034000 to virt 0xb1c0e000, length 8000, kernel_mem 0x17434000
+hd_get_area: get_area ID 40000181
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 40000181, phys 0x103c000 to 0xac634000, rphys 0x103c000 to virt 0xac634000, length 40000, kernel_mem 0x1743c000
+CH_OPEN: 12
+CH_OPEN: channel 12 phys control 1034000 used areas 1
+hd_get_area: get_area ID 40000140
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 40000140, phys 0x10b5000 to 0xb1c06000, rphys 0x10b5000 to virt 0xb1c06000, length 8000, kernel_mem 0x174b5000
+hd_get_area: get_area ID 40000141
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 40000141, phys 0x10bd000 to 0xb0a33000, rphys 0x10bd000 to virt 0xb0a33000, length 8000, kernel_mem 0x174bd000
+CH_OPEN: 10
+CH_OPEN: channel 10 phys control 10b5000 used areas 1
+Mode: consumer
+Data: audio
+Rate: 44100 Hz
+Copyright: permitted
+Emphasis: none
+Category: general
+Original: 1st generation
+Clock: 1000 ppm
+[New Thread 0xa9affb40 (LWP 18615)]
+ Start Thread ID: -1448084672
+xmlFilePath: /etc/vdr/plugins
+Use AVG frontpanel as secondary display
+[New Thread 0xa92feb40 (LWP 18616)]
+Mcli::Start:
+[New Thread 0xa88ffb40 (LWP 18617)]
+[New Thread 0xa80feb40 (LWP 18618)]
+[New Thread 0xa78fdb40 (LWP 18619)]
+[New Thread 0xa70fcb40 (LWP 18620)]
+[New Thread 0xa68fbb40 (LWP 18621)]
+[New Thread 0xa60fab40 (LWP 18622)]
+[New Thread 0xa58f9b40 (LWP 18623)]
+[New Thread 0xa50f8b40 (LWP 18624)]
+is symbolic link
+[New Thread 0xa3322b40 (LWP 18625)]
+[New Thread 0xa2b21b40 (LWP 18626)]
+[New Thread 0xa2320b40 (LWP 18627)]
+vdr-radio: Radio-Plugin Backgr.Image/RDS-Text starts...
+[New Thread 0xa1b1fb40 (LWP 18628)]
+[New Thread 0xa11ffb40 (LWP 18629)]
+Loading fav channels from '/etc/vdr/plugins/reelchannellist/favourites.conf'
+[New Thread 0xa09feb40 (LWP 18630)]
+[Thread 0xb36abb40 (LWP 18599) exited]
+Mcli::Action: Add CAMs from NetCeiver: [fe80::208:54ff:fe52:24c8] -> 1
+Mcli::Action: Slot:0 CamModule State:MISSING
+Mcli::Action: Slot:1 CamModule State:MISSING
+Mcli::Action: Add Tuner: Conexant CX24116 DVB-S2 [fe80::208:54ff:fe52:24c8:0400], Type 4 @ 1
+Mcli::Action: Add Tuner: Conexant CX24116 DVB-S2 [fe80::208:54ff:fe52:24c8:0402], Type 4 @ 1
+Mcli::TunerAvailable: Testing for tuner type -1 pos 4095
+Mcli::TunerAvailable: type -1 limit (0) reached
+Mcli::TunerAvailable: Testing for tuner type -1 pos 4095
+Mcli::TunerAvailable: type -1 limit (0) reached
+Mcli::Action: cDevice::PrimaryDevice (0x912afa0)
+Mcli::TunerAvailable: Testing for tuner type 0 pos 1992
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::ProvidesChannel: DVB:1 Channel(0x838f058):Das Erste HD, Prio:0 this->Prio:-100 m_chan.Name: NeedsDetachReceivers:0 -> 1
+Mcli::TunerAvailable: Testing for tuner type 0 pos 1992
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::ProvidesChannel: DVB:2 Channel(0x838f058):Das Erste HD, Prio:0 this->Prio:-100 m_chan.Name: NeedsDetachReceivers:0 -> 1
+Mcli::SetChannelDevice: DVB:1 Channel(0x838f058):Das Erste HD, Provider:ARD, Source:1392509120, LiveView:false, IsScan:0, m_chan.Name:
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::TunerAlloc: 0x83282a0 [fe80::208:54ff:fe52:24c8:0400], Type 4
+[New Thread 0xb36abb40 (LWP 18641)]
+[New Thread 0xa0032b40 (LWP 18642)]
+Mcli::SetPid: DVB:1 Pid:5101 (Das Erste HD), Type:5, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5102 (Das Erste HD), Type:6, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5103 (Das Erste HD), Type:7, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5106 (Das Erste HD), Type:8, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5105 (Das Erste HD), Type:9, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+[New Thread 0x9f6ffb40 (LWP 18643)]
+Mcli::OpenDvr:
+[New Thread 0x9dafeb40 (LWP 18646)]
+Mcli::SetPid: DVB:1 Pid:5104 (Das Erste HD), Type:10, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+[New Thread 0x9d2fdb40 (LWP 18647)]
+[New Thread 0x9cafcb40 (LWP 18648)]
+[reelbox]   SetPlayModeOn()
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+cat: /tmp/vdr.wakeup: Datei oder Verzeichnis nicht gefunden
+Status LEDs: 16
+Control LEDs: 2
+   ...done.
+[reelbox]   SetPlayModeOff()
+Mcli::SetPid: DVB:1 Pid:5101 (Das Erste HD), Type:5, On:0, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5102 (Das Erste HD), Type:6, On:0, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5103 (Das Erste HD), Type:7, On:0, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5106 (Das Erste HD), Type:8, On:0, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5105 (Das Erste HD), Type:9, On:0, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5104 (Das Erste HD), Type:10, On:0, used:0 sid:10301 ca_enable:0 channel_ca:0
+[Thread 0x9d2fdb40 (LWP 18647) exited]
+Mcli::ProvidesChannel: DVB:1 Channel(0x838f058):Das Erste HD, Prio:0 this->Prio:-1 m_chan.Name:Das Erste HD NeedsDetachReceivers:0 -> 1
+Mcli::TunerAvailable: Testing for tuner type 0 pos 1992
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::ProvidesChannel: DVB:2 Channel(0x838f058):Das Erste HD, Prio:0 this->Prio:-100 m_chan.Name: NeedsDetachReceivers:0 -> 1
+Mcli::SetChannelDevice: DVB:1 Channel(0x838f058):Das Erste HD, Provider:ARD, Source:1392509120, LiveView:false, IsScan:0, m_chan.Name:Das Erste HD
+Mcli::SetChannelDevice: Already tuned to transponder on DVB 1
+ASIMcli::SetPid: DVB:1 Pid:5104 (Das Erste HD), Type:10, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+/AB[New Thread 0x9d2fdb40 (LWP 18664)]
+/AB/AB/AB/AB/AB/AB/AP[reelbox]   SetPlayModeOn()
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+/AB/AB/AB/AB/AB/AB/AB/AP/AB/AB/AB/AB/AB/AB/AB/AP/AB/AB/AB/AB/AB/AB/AB/ASI
+Delta = 1800  FPS = 50.00  FPPU = 1 NF = 32 TRO = 0
+ERROR: unknown state: started
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Write sanity CH12: Used areas 0.
+ID 0, size 0, rp 0 wp 0
+0c 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 04 00 00 00 00 00 01 00 00 00 00 00 00 00
+00 00 00 00 00 07 00 00 00 00 00 00 00 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+[New Thread 0x9bb62b40 (LWP 18681)]
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+
+Program received signal SIGPIPE, Broken pipe.
+[Switching to Thread 0x9bb62b40 (LWP 18681)]
+0xb7fdd428 in __kernel_vsyscall ()
+(gdb)
+(gdb) c
+Continuing.
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+[Thread 0x9bb62b40 (LWP 18681) exited]
+[Thread 0xa2b21b40 (LWP 18626) exited]
+Discontinuity on receiver 0x90c2708 for pid 5101: 3->3 at pos 0/7
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+^CError in re-setting breakpoint 1: Quit
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+
+Program received signal SIGINT, Interrupt.
+[Switching to Thread 0xb77c1700 (LWP 18593)]
+0xb7fdd428 in __kernel_vsyscall ()
+(gdb) Quit
+(gdb)
+Continuing.
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Discontinuity on receiver 0x90c2708 for pid 5101: 11->1 at pos 0/7
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+^CMcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+^CError in re-setting breakpoint 2: Quit
+Mcli::TunerAvailable: Testing for tuner type 0 pos 4095
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 4095
+Mcli::TunerAvailable: Tuner 1(0x83284a8), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 1(0x83284a8) available
+
+Program received signal SIGINT, Interrupt.
+[Switching to Thread 0x9d2fdb40 (LWP 18664)]
+0xb7fdd428 in __kernel_vsyscall ()
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) set env LD_LIBRARY_PATH /usr/lib/vdr
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+OLDPWD=/root
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/vdr
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+LINES=50
+COLUMNS=120
+(gdb) solib-search-path /usr/lib/vdr
+Undefined command: "solib-search-path".  Try "help".
+(gdb) set solib-search-path /usr/lib/vdr
+(gdb) show solib-search-path
+The search path for loading non-absolute shared library symbol files is /usr/lib/vdr.
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+OLDPWD=/root
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/vdr
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+LINES=50
+COLUMNS=120
+(gdb) file /usr/sbin/vdr
+A program is being debugged already.
+Are you sure you want to change the file? (y or n) y
+Load new symbol table from "/usr/sbin/vdr"? (y or n) y
+Reading symbols from /usr/sbin/vdr...done.
+(gdb) sharedlibrary  libvdr-sc.so.2.1.6
+No loaded shared libraries match the pattern `libvdr-sc.so.2.1.6'.
+(gdb) Quit
+(gdb) add-symbol-file libvdr-sc.so.2.1.6
+The address where libvdr-sc.so.2.1.6 has been loaded is missing
+(gdb) add-symbol-file libvdr-sc.so.2.1.6 /usr/lib/vdr
+add symbol table from file "libvdr-sc.so.2.1.6" at
+A syntax error in expression, near `/usr/lib/vdr'.
+(gdb) add-symbol-file libvdr-sc.so.2.1.6 /usr/lib/vdr/
+add symbol table from file "libvdr-sc.so.2.1.6" at
+A syntax error in expression, near `/usr/lib/vdr/'.
+(gdb) set directories /usr/src/reelbox/testing/src/vdr-plugins/src/sc-vdr-reelsoftcam-1.0-works-02-p-32 /usr/src/reelbox/testing/src/vdr-2.1 /usr/src/reelbox/testing/src/vdr-plugins/src/vdr-plugin-mcli /usr/lib/vdr
+(gdb) sharedlibrary  libvdr-sc.so.2.1.6
+No loaded shared libraries match the pattern `libvdr-sc.so.2.1.6'.
+(gdb) sharedlibrary  libvdr-sc.so.2.1.6 /usr/lib/vdr/
+No loaded shared libraries match the pattern `libvdr-sc.so.2.1.6 /usr/lib/vdr/'.
+(gdb) sharedlibrary  /usr/lib/vdr/libvdr-sc.so.2.1.6
+No loaded shared libraries match the pattern `/usr/lib/vdr/libvdr-sc.so.2.1.6'.
+(gdb) b cam.c:2672
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n])
+(gdb) run --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /usr/sbin/vdr --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/i386-linux-gnu/libthread_db.so.1".
+cPluginFemon::cPluginFemon()()
+----- SetupParse('OpenWithFavourites','0')
+----- SetupParse('SavedFavouriteFilters_0','Bouquet Favourites full Hauptsender Österreich')
+name: 'SavedFavouriteFilters_0' param:'Bouquet Favourites full Hauptsender Österreich'
+token 1: 'Bouquet'
+filter parameter: 'Favourites full Hauptsender Österreich'
+channelListFilter.c:350 param:'Favourites full Hauptsender Österreich' list:'Favourites', match: 'full', name:'Hauptsender Österreich'
+Got 3 variables. Strlen list 10, match 4, name 23
+Added filter: Bouquet params: Favourites full Hauptsender Österreich, Count:1
+Count: 1
+----- SetupParse('SavedFavouriteFilters_count','0')
+----- SetupParse('SavedGlobalFilters_count','0')
+vdr: error while reading '/etc/vdr/remote.conf'
+[New Thread 0xb36abb40 (LWP 22069)]
+[New Thread 0xb2eaab40 (LWP 22071)]
+[Thread 0xb36abb40 (LWP 22069) exited]
+[New Thread 0xb24ffb40 (LWP 22072)]
+[Thread 0xb2eaab40 (LWP 22071) exited]
+[New Thread 0xb36abb40 (LWP 22073)]
+[New Thread 0xb2eaab40 (LWP 22074)]
+[New Thread 0xb1affb40 (LWP 22075)]
+[New Thread 0xb12feb40 (LWP 22076)]
+[New Thread 0xb08ffb40 (LWP 22077)]
+[New Thread 0xb00feb40 (LWP 22078)]
+Mcli::cMcliDevice: DVB got device number 1
+[New Thread 0xaf2feb40 (LWP 22079)]
+Mcli::cMcliDevice: DVB got device number 2
+[New Thread 0xae6fcb40 (LWP 22080)]
+Mcli::cMcliDevice: DVB got device number 3
+[New Thread 0xadafab40 (LWP 22081)]
+Mcli::cMcliDevice: DVB got device number 4
+[New Thread 0xaccfeb40 (LWP 22082)]
+Mcli::cMcliDevice: DVB got device number 5
+[New Thread 0xac0fcb40 (LWP 22083)]
+Mcli::cMcliDevice: DVB got device number 6
+[New Thread 0xab4fab40 (LWP 22084)]
+Mcli::cMcliDevice: DVB got device number 7
+[New Thread 0xaa8f8b40 (LWP 22085)]
+Mcli::cMcliDevice: DVB got device number 8
+hd_init:        hdfd -1
+hd_init:    SHMHDDEV /dev/hdshm
+hd_init: errno is 2 and hdfd is 11
+hd_init:        hdfd 11
+hd_get_area: get_area ID 1
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 1, phys 0x1032000 to 0xb2605000, rphys 0x1032000 to virt 0xb2605000, length 2000, kernel_mem 0x17432000
+hd_get_area: get_area ID 40000180
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 40000180, phys 0x1034000 to 0xb1c0e000, rphys 0x1034000 to virt 0xb1c0e000, length 8000, kernel_mem 0x17434000
+hd_get_area: get_area ID 40000181
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 40000181, phys 0x103c000 to 0xaf83c000, rphys 0x103c000 to virt 0xaf83c000, length 40000, kernel_mem 0x1743c000
+CH_OPEN: 12
+CH_OPEN: channel 12 phys control 1034000 used areas 1
+hd_get_area: get_area ID 40000140
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 40000140, phys 0x10b5000 to 0xb1c06000, rphys 0x10b5000 to virt 0xb1c06000, length 8000, kernel_mem 0x174b5000
+hd_get_area: get_area ID 40000141
+hd_get_area: sizeof(bah) 36
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area:         ret 0
+hd_get_area:        hdfd 11
+hd_get_area: IOCTL_HDSHM_GET_AREA 3221513217
+hd_get_area: errno      Datei oder Verzeichnis nicht gefunden
+HOST: Mapped ID 40000141, phys 0x10bd000 to 0xb0a33000, rphys 0x10bd000 to virt 0xb0a33000, length 8000, kernel_mem 0x174bd000
+CH_OPEN: 10
+CH_OPEN: channel 10 phys control 10b5000 used areas 1
+Mode: consumer
+Data: audio
+Rate: 44100 Hz
+Copyright: permitted
+Emphasis: none
+Category: general
+Original: 1st generation
+Clock: 1000 ppm
+[New Thread 0xa96ffb40 (LWP 22088)]
+ Start Thread ID: -1452278976
+xmlFilePath: /etc/vdr/plugins
+Use AVG frontpanel as secondary display
+[New Thread 0xa8efeb40 (LWP 22089)]
+Mcli::Start:
+[New Thread 0xa86fdb40 (LWP 22090)]
+[New Thread 0xa7efcb40 (LWP 22091)]
+[New Thread 0xa76fbb40 (LWP 22092)]
+[New Thread 0xa6efab40 (LWP 22093)]
+[New Thread 0xa66f9b40 (LWP 22094)]
+[New Thread 0xa5ef8b40 (LWP 22095)]
+[New Thread 0xa56f7b40 (LWP 22096)]
+[New Thread 0xa4ef6b40 (LWP 22097)]
+is symbolic link
+[New Thread 0xa3120b40 (LWP 22098)]
+[New Thread 0xa291fb40 (LWP 22099)]
+[New Thread 0xa211eb40 (LWP 22100)]
+vdr-radio: Radio-Plugin Backgr.Image/RDS-Text starts...
+[New Thread 0xa191db40 (LWP 22101)]
+[New Thread 0xa111cb40 (LWP 22102)]
+Loading fav channels from '/etc/vdr/plugins/reelchannellist/favourites.conf'
+[New Thread 0xa091bb40 (LWP 22103)]
+[Thread 0xb24ffb40 (LWP 22072) exited]
+Mcli::Action: Add CAMs from NetCeiver: [fe80::208:54ff:fe52:24c8] -> 1
+Mcli::Action: Slot:0 CamModule State:MISSING
+Mcli::Action: Slot:1 CamModule State:MISSING
+Mcli::Action: Add Tuner: Conexant CX24116 DVB-S2 [fe80::208:54ff:fe52:24c8:0400], Type 4 @ 1
+Mcli::Action: Add Tuner: Conexant CX24116 DVB-S2 [fe80::208:54ff:fe52:24c8:0402], Type 4 @ 1
+Mcli::TunerAvailable: Testing for tuner type -1 pos 4095
+Mcli::TunerAvailable: type -1 limit (0) reached
+Mcli::TunerAvailable: Testing for tuner type -1 pos 4095
+Mcli::TunerAvailable: type -1 limit (0) reached
+Mcli::Action: cDevice::PrimaryDevice (0x912afb8)
+Mcli::TunerAvailable: Testing for tuner type 0 pos 1992
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::ProvidesChannel: DVB:1 Channel(0x838f058):Das Erste HD, Prio:0 this->Prio:-100 m_chan.Name: NeedsDetachReceivers:0 -> 1
+Mcli::TunerAvailable: Testing for tuner type 0 pos 1992
+Mcli::TunerAvailable: No tuner available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::ProvidesChannel: DVB:2 Channel(0x838f058):Das Erste HD, Prio:0 this->Prio:-100 m_chan.Name: NeedsDetachReceivers:0 -> 1
+Mcli::SetChannelDevice: DVB:1 Channel(0x838f058):Das Erste HD, Provider:ARD, Source:1392509120, LiveView:false, IsScan:0, m_chan.Name:
+Mcli::TunerAvailable: Testing for tuner type 4 pos 1992
+Mcli::TunerAvailable: Tuner 0(0x83282a0), type 4, inuse 0
+Mcli::TunerAvailable: Tuner 0(0x83282a0) available
+Mcli::TunerAlloc: 0x83282a0 [fe80::208:54ff:fe52:24c8:0400], Type 4
+[New Thread 0xb24ffb40 (LWP 22113)]
+[New Thread 0x9ff4fb40 (LWP 22114)]
+Mcli::SetPid: DVB:1 Pid:5101 (Das Erste HD), Type:5, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5102 (Das Erste HD), Type:6, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5103 (Das Erste HD), Type:7, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5106 (Das Erste HD), Type:8, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+Mcli::SetPid: DVB:1 Pid:5105 (Das Erste HD), Type:9, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+[New Thread 0x9f5ffb40 (LWP 22115)]
+Mcli::OpenDvr:
+[New Thread 0x9d9feb40 (LWP 22118)]
+Mcli::SetPid: DVB:1 Pid:5104 (Das Erste HD), Type:10, On:1, used:1 sid:10301 ca_enable:0 channel_ca:0
+[New Thread 0x9d1fdb40 (LWP 22119)]
+Discontinuity on receiver 0x90c2708 for pid 5101: 4->0 at pos 0/7
+ASI/AB/AB/AB/AB/AB/AP/AB/AB/AB/AB/AB/AP/AB/AB/AB/AB/AB/AP/AB/AB/AB/AB/AB/AP/AB/AB/AB/AB/AB/ASI
+Delta = 1800  FPS = 50.00  FPPU = 1 NF = 30 TRO = 0
+ERROR: unknown state: started
+[New Thread 0x9c9fcb40 (LWP 22122)]
+[reelbox]   SetPlayModeOn()
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+RestartAudio, audioOverHDMI_ = 0, digitalAudio_ = 0, audioOverHd = 1
+cat: /tmp/vdr.wakeup: Datei oder Verzeichnis nicht gefunden
+Status LEDs: 16
+Control LEDs: 2
+   ...done.
+[reelbox]   SetPlayModeOff()
+[New Thread 0x9bb18b40 (LWP 22203)]
+
+Program received signal SIGPIPE, Broken pipe.
+[Switching to Thread 0x9bb18b40 (LWP 22203)]
+0xb7fdd428 in __kernel_vsyscall ()
+(gdb) c
+Continuing.
+[Thread 0xa291fb40 (LWP 22099) exited]
+[Thread 0x9bb18b40 (LWP 22203) exited]
+
+Program received signal SIGINT, Interrupt.
+[Switching to Thread 0xb77c1700 (LWP 22064)]
+0xb7fdd428 in __kernel_vsyscall ()
+(gdb) Quit
+(gdb) show environment
+XDG_SESSION_ID=2
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=3b11b1575032bafc13eb7815550b21fc-1642066574.713799-1577123177
+SSH_CLIENT=192.168.2.104 50008 22
+OLDPWD=/root
+SSH_TTY=/dev/pts/4
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/vdr
+MAIL=/var/mail/root
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/vdr
+PWD=/usr/src/reelbox/testing/src/plugins/src/gdb
+LANG=de_DE.UTF-8
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=192.168.2.104 50008 192.168.2.60 22
+LESSOPEN=| /bin/lesspipe %s
+XDG_RUNTIME_DIR=/run/user/0
+LESSCLOSE=/bin/lesspipe %s %s
+_=/usr/bin/gdb
+LINES=50
+COLUMNS=120
+(gdb) quit
+A debugging session is active.
+
+        Inferior 1 [process 22064] will be killed.
+
+Quit anyway? (y or n) y
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# sudo service reelvdr stop
+stop: Unknown instance:
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# gdb
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) source run
+add symbol table from file "libvdr-sc.so.2.1.6" at
+run:2: Error in sourced command file:
+A syntax error in expression, near `/usr/lib/vdr/'.
+(gdb) source run
+add symbol table from file "libvdr-sc.so.2.1.6" at
+run:2: Error in sourced command file:
+A syntax error in expression, near `/usr/lib/vdr'.
+(gdb) add-symbol-file libvdr-sc.so.2.1.6 /usr/lib/vdr
+add symbol table from file "libvdr-sc.so.2.1.6" at
+A syntax error in expression, near `/usr/lib/vdr'.
+(gdb) add-symbol-file libvdr-sc.so.2.1.6 /usr/lib/vdr/
+add symbol table from file "libvdr-sc.so.2.1.6" at
+A syntax error in expression, near `/usr/lib/vdr/'.
+(gdb) add-symbol-file libvdr-sc.so.2.1.6 /usr/lib/vdr/
+add symbol table from file "libvdr-sc.so.2.1.6" at
+A syntax error in expression, near `/usr/lib/vdr/'.
+(gdb)
+(gdb) set solib-search-path /usr/lib/vdrset solib-search-path /usr/lib/vdr
+(gdb) set solib-search-path /usr/lib/vdr
+(gdb) add-symbol-file libvdr-sc.so.2.1.6 /usr/lib/vdr/
+add symbol table from file "libvdr-sc.so.2.1.6" at
+A syntax error in expression, near `/usr/lib/vdr/'.
+(gdb) add-symbol-file libvdr-sc.so.2.1.6 /usr/lib/vdr
+add symbol table from file "libvdr-sc.so.2.1.6" at
+A syntax error in expression, near `/usr/lib/vdr'.
+(gdb)
+(gdb)
+(gdb)
+(gdb)
+(gdb)
+(gdb) quit
+root@ReelBox60:/usr/src/reelbox/testing/src/plugins/src/gdb# quit
+Der Befehl »quit« wurde nicht gefunden, meinten Sie vielleicht:
+ Befehl »qgit« aus dem Paket »qgit« (universe)
+ Befehl »luit« aus dem Paket »x11-utils« (main)
+ Befehl »quilt« aus dem Paket »quilt« (main)
+ Befehl »quiz« aus dem Paket »bsdgames« (universe)
+ Befehl »quot« aus dem Paket »quota« (main)
+

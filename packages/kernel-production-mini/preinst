@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+if ! RbMini ; then
+if [ $(md5sum /boot/grub/menu.lst | cut -f1 -d" ") = 85ecbc7714a2ecbc4287b92aaa97c823 ] ; then
+	echo " found broken grub/menu.lst, generating from scratch"
+	rm -f /boot/grub/menu.lst
+	update-grub -y
+fi
+fi
+
+exit 0

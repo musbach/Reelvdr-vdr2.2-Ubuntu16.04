@@ -1,0 +1,228 @@
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o xinemediaplayer.o xinemediaplayer.c
+In file included from Control.h:32:0,
+                 from xineOsd.h:11,
+                 from xinemediaplayer.h:28,
+                 from xinemediaplayer.c:24:
+SpuDecode.h:86:32: warning: ‘auto_ptr’ is deprecated (declared at /usr/include/c++/4.8/backward/auto_ptr.h:87) [-Wdeprecated-declarations]
+         std::auto_ptr<cBitmap> hlbmp_; 
+                                ^
+In file included from xinemediaplayer.h:28:0,
+                 from xinemediaplayer.c:24:
+xineOsd.h: In static member function ‘static bool Reel::XineMediaplayer::cXineOsd::DeletePlaylistItem(int)’:
+xineOsd.h:91:64: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if (pos >= 0 && pos < playListEntries.size()) {
+                                                                ^
+In file included from xinemediaplayer.c:24:0:
+xinemediaplayer.h: At global scope:
+xinemediaplayer.h:33:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+ static char *version= "0.13";
+                       ^
+xinemediaplayer.c: In member function ‘virtual bool Reel::XineMediaplayer::Plugin::Service(const char*, void*)’:
+xinemediaplayer.c:462:71: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     for (int i=0 ; i < cXineOsd::playListEntries.size(); ++i)
+                                                                       ^
+xinemediaplayer.c:585:67: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 for (int i=0 ; i < cXineOsd::playListEntries.size(); ++i) {
+                                                                   ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o Control.o Control.c
+In file included from Player.h:33:0,
+                 from Control.c:30:
+SpuDecode.h:86:32: warning: ‘auto_ptr’ is deprecated (declared at /usr/include/c++/4.8/backward/auto_ptr.h:87) [-Wdeprecated-declarations]
+         std::auto_ptr<cBitmap> hlbmp_; 
+                                ^
+In file included from Control.c:36:0:
+xineOsd.h: In static member function ‘static bool Reel::XineMediaplayer::cXineOsd::DeletePlaylistItem(int)’:
+xineOsd.h:91:64: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if (pos >= 0 && pos < playListEntries.size()) {
+                                                                ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o Player.o Player.c
+In file included from Player.h:33:0,
+                 from Player.c:34:
+SpuDecode.h:86:32: warning: ‘auto_ptr’ is deprecated (declared at /usr/include/c++/4.8/backward/auto_ptr.h:87) [-Wdeprecated-declarations]
+         std::auto_ptr<cBitmap> hlbmp_; 
+                                ^
+In file included from Player.c:41:0:
+xineOsd.h: In static member function ‘static bool Reel::XineMediaplayer::cXineOsd::DeletePlaylistItem(int)’:
+xineOsd.h:91:64: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if (pos >= 0 && pos < playListEntries.size()) {
+                                                                ^
+Player.c: In member function ‘void Reel::XineMediaplayer::Player::GstProcessKey(eKeys)’:
+Player.c:1132:13: warning: case value ‘32773’ not in enumerated type ‘eKeys’ [-Wswitch]
+             case kLeft|k_Repeat:
+             ^
+Player.c:1143:13: warning: case value ‘32774’ not in enumerated type ‘eKeys’ [-Wswitch]
+             case kRight|k_Repeat:
+             ^
+Player.c:1128:13: warning: case value ‘32776’ not in enumerated type ‘eKeys’ [-Wswitch]
+             case kGreen|k_Repeat:
+             ^
+Player.c:1138:13: warning: case value ‘32777’ not in enumerated type ‘eKeys’ [-Wswitch]
+             case kYellow|k_Repeat:
+             ^
+Player.c: In member function ‘void Reel::XineMediaplayer::Player::SetAllAudioTracks()’:
+Player.c:1315:67: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i= 0;(i< MaxAudioTracks) && (i < MaxAudioChannel());i++)
+                                                                   ^
+Player.c:1282:13: warning: variable ‘currentAudioTrack’ set but not used [-Wunused-but-set-variable]
+         int currentAudioTrack = -2;
+             ^
+Player.c: In member function ‘void Reel::XineMediaplayer::Player::SetTitleInfoString()’:
+Player.c:2512:20: warning: variable ‘titleNumber’ set but not used [-Wunused-but-set-variable]
+                int titleNumber=-1, titleCount=-1, chapterNumber=-1, chapterCount=-1;
+                    ^
+Player.c:2512:36: warning: variable ‘titleCount’ set but not used [-Wunused-but-set-variable]
+                int titleNumber=-1, titleCount=-1, chapterNumber=-1, chapterCount=-1;
+                                    ^
+Player.c:2512:69: warning: variable ‘chapterCount’ set but not used [-Wunused-but-set-variable]
+                int titleNumber=-1, titleCount=-1, chapterNumber=-1, chapterCount=-1;
+                                                                     ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o Reel.o Reel.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o SpuDecode.o SpuDecode.c
+In file included from SpuDecode.c:31:0:
+SpuDecode.h:86:32: warning: ‘auto_ptr’ is deprecated (declared at /usr/include/c++/4.8/backward/auto_ptr.h:87) [-Wdeprecated-declarations]
+         std::auto_ptr<cBitmap> hlbmp_; 
+                                ^
+SpuDecode.c: In member function ‘void Reel::SpuDecoder::RletoBmp(cBitmap&, uint, uint, const reel_rle_elem_t*)’:
+SpuDecode.c:375:17: warning: variable ‘idx’ set but not used [-Wunused-but-set-variable]
+         uint8_t idx = 0;
+                 ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o Utils.o Utils.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o curl_download.o curl_download.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o imagetools.o imagetools.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o item_tree.o item_tree.c
+In file included from Player.h:33:0,
+                 from item_tree.c:2:
+SpuDecode.h:86:32: warning: ‘auto_ptr’ is deprecated (declared at /usr/include/c++/4.8/backward/auto_ptr.h:87) [-Wdeprecated-declarations]
+         std::auto_ptr<cBitmap> hlbmp_; 
+                                ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o m3u_parser.o m3u_parser.c
+m3u_parser.c: In member function ‘int cM3U_parser::Read()’:
+m3u_parser.c:56:9: warning: variable ‘isPlaylist’ set but not used [-Wunused-but-set-variable]
+     int isPlaylist = 0;
+         ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o pls_parser.o pls_parser.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o timecounter.o timecounter.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o xineOsd.o xineOsd.c
+In file included from Control.h:32:0,
+                 from xineOsd.h:11,
+                 from xineOsd.c:3:
+SpuDecode.h:86:32: warning: ‘auto_ptr’ is deprecated (declared at /usr/include/c++/4.8/backward/auto_ptr.h:87) [-Wdeprecated-declarations]
+         std::auto_ptr<cBitmap> hlbmp_; 
+                                ^
+In file included from xineOsd.c:3:0:
+xineOsd.h: In static member function ‘static bool Reel::XineMediaplayer::cXineOsd::DeletePlaylistItem(int)’:
+xineOsd.h:91:64: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if (pos >= 0 && pos < playListEntries.size()) {
+                                                                ^
+In file included from xineOsd.c:7:0:
+xinemediaplayer.h: At global scope:
+xinemediaplayer.h:33:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+ static char *version= "0.13";
+                       ^
+xineOsd.c: In member function ‘void Reel::XineMediaplayer::cXineOsd::showID3TagInfo(std::string, std::string, std::string, std::string, std::string, int, int)’:
+xineOsd.c:149:48: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 for (int i=0; i < ID3Tags.size(); ++i) {
+                                                ^
+xineOsd.c: In member function ‘void Reel::XineMediaplayer::cXineOsd::UpdateEntries()’:
+xineOsd.c:522:25: warning: unused variable ‘success’ [-Wunused-variable]
+                     int success = Id3Info(playListEntries[currentlyPlaying], title, artist, album, comment, genre, &year, &track);
+                         ^
+xineOsd.c: In member function ‘virtual eOSState Reel::XineMediaplayer::cXineOsd::ProcessKey(eKeys)’:
+xineOsd.c:1212:17: warning: case value ‘32769’ not in enumerated type ‘eKeys’ [-Wswitch]
+                 case kDown|k_Repeat: // next
+                 ^
+xineOsd.c:1219:17: warning: case value ‘32800’ not in enumerated type ‘eKeys’ [-Wswitch]
+                 case kChanUp|k_Repeat: // page up
+                 ^
+xineOsd.c:1225:17: warning: case value ‘32801’ not in enumerated type ‘eKeys’ [-Wswitch]
+                 case kChanDn|k_Repeat: // page down
+                 ^
+xineOsd.c: In member function ‘virtual void Reel::XineMediaplayer::cXineStatus::SetVolume(int, bool)’:
+xineOsd.c:1683:20: warning: format ‘%lld’ expects argument of type ‘long long int’, but argument 3 has type ‘time_t {aka long int}’ [-Wformat=]
+                    );
+                    ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o xineOsdInfoMenu.o xineOsdInfoMenu.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o xineOsdFunction.o xineOsdFunction.c
+In file included from Control.h:32:0,
+                 from xineOsd.h:11,
+                 from xineOsdFunction.c:2:
+SpuDecode.h:86:32: warning: ‘auto_ptr’ is deprecated (declared at /usr/include/c++/4.8/backward/auto_ptr.h:87) [-Wdeprecated-declarations]
+         std::auto_ptr<cBitmap> hlbmp_; 
+                                ^
+In file included from xineOsdFunction.c:2:0:
+xineOsd.h: In static member function ‘static bool Reel::XineMediaplayer::cXineOsd::DeletePlaylistItem(int)’:
+xineOsd.h:91:64: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if (pos >= 0 && pos < playListEntries.size()) {
+                                                                ^
+In file included from xineOsdFunction.c:3:0:
+xinemediaplayer.h: At global scope:
+xinemediaplayer.h:33:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+ static char *version= "0.13";
+                       ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o Playlist.o Playlist.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o cddb.o cddb.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o cdtext.o cdtext.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o cdrom.o cdrom.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o XineLib.o XineLib.c
+In file included from Player.h:33:0,
+                 from XineLib.c:37:
+SpuDecode.h:86:32: warning: ‘auto_ptr’ is deprecated (declared at /usr/include/c++/4.8/backward/auto_ptr.h:87) [-Wdeprecated-declarations]
+         std::auto_ptr<cBitmap> hlbmp_; 
+                                ^
+In file included from XineLib.c:42:0:
+xineOsd.h: In static member function ‘static bool Reel::XineMediaplayer::cXineOsd::DeletePlaylistItem(int)’:
+xineOsd.h:91:64: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if (pos >= 0 && pos < playListEntries.size()) {
+                                                                ^
+XineLib.c: In member function ‘void Reel::XineMediaplayer::XineLib::ProcessSeekKey(eKeys, bool)’:
+XineLib.c:593:9: warning: case value ‘32773’ not in enumerated type ‘eKeys’ [-Wswitch]
+         case kLeft | k_Repeat:
+         ^
+XineLib.c:586:9: warning: case value ‘32774’ not in enumerated type ‘eKeys’ [-Wswitch]
+         case kRight | k_Repeat:
+         ^
+XineLib.c:579:9: warning: case value ‘32776’ not in enumerated type ‘eKeys’ [-Wswitch]
+         case kGreen | k_Repeat:
+         ^
+XineLib.c:568:9: warning: case value ‘32777’ not in enumerated type ‘eKeys’ [-Wswitch]
+         case kYellow | k_Repeat:
+         ^
+XineLib.c:564:9: warning: case value ‘32795’ not in enumerated type ‘eKeys’ [-Wswitch]
+         case kFastFwd | k_Repeat:
+         ^
+XineLib.c:575:9: warning: case value ‘32796’ not in enumerated type ‘eKeys’ [-Wswitch]
+         case kFastRew | k_Repeat:
+         ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o GstreamerLib.o GstreamerLib.c
+GstreamerLib.c: In member function ‘void Reel::GstLib::HandleBusMessages()’:
+GstreamerLib.c:135:37: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+         while (msg = gst_bus_pop(bus)) {
+                                     ^
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o gstTools.o gstTools.c
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -c -DDVBAPI_V5 -DNEW_FFMPEG -DDEBUG -DREELVDR -DUSE_PIP -DUSEMYSQL -DDEVICE_ATTRIBUTES -DUSE_CRASHLOG -DUSE_JUMPPLAY -DUSE_LIEMIEXT -DUSE_MCLI -DUSE_PINPLUGIN -DUSE_PLUGINMISSING -DUSE_SETUP -DUSE_YAEPG -DUSE_BOUQUETS -DUSE_DELAYED_TRICKMODE -DUSE_TINYXML -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DAPIVERSNUM=20106 -DDEBUG -DREELVDR -DPLAYER_VERSION=\"\" -D__LINUX__ -D__STL_CONFIG_H -DPLUGIN_NAME='"xinemediaplayer"' -DPLUGIN_NAME_I18N='"xinemediaplayer"' -I./include -I../../../vdr-2.1/include `pkg-config --cflags gstreamer-0.10`  `pkg-config --cflags gstreamer-interfaces-0.10` -I../../../vdr-2.1/include -I/usr/src/linux-headers-3.13.0-66-generic/include/config/dvb/include -I../../../vdr-2.1/tinyxml  `taglib-config --cflags` -o ExternalLib.o ExternalLib.c
+ExternalLib.c:12:23: warning: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wliteral-suffix]
+ #define PLAY_CMD_FILE "/usr/sbin/"PLAY_CMD_NAME
+                       ^
+ExternalLib.c: In member function ‘void Reel::ExternalLib::ProcessKey(eKeys, bool)’:
+ExternalLib.c:162:3: warning: case value ‘32773’ not in enumerated type ‘eKeys’ [-Wswitch]
+   case kLeft|k_Repeat:
+   ^
+ExternalLib.c:160:3: warning: case value ‘32774’ not in enumerated type ‘eKeys’ [-Wswitch]
+   case kRight|k_Repeat:
+   ^
+ExternalLib.c:158:3: warning: case value ‘32776’ not in enumerated type ‘eKeys’ [-Wswitch]
+   case kGreen|k_Repeat:
+   ^
+ExternalLib.c:156:3: warning: case value ‘32777’ not in enumerated type ‘eKeys’ [-Wswitch]
+   case kYellow|k_Repeat:
+   ^
+ExternalLib.c: In member function ‘bool Reel::ExternalLib::HandleEvents()’:
+ExternalLib.c:287:170: warning: format ‘%a’ expects argument of type ‘float*’, but argument 3 has type ‘char**’ [-Wformat=]
+    int num = sscanf(event_buf, "%a[^:]:%lld/%lld:%lld:%lf:%a[^:]:%a[^:]:%a[^:]:%a[^:]:%a[^\n]", &action, &pos, &len, &div, &speed, &a_inf, &v_inf, &t_inf, &s_inf, &u_inf);
+                                                                                                                                                                          ^
+ExternalLib.c:287:170: warning: format ‘%a’ expects argument of type ‘float*’, but argument 8 has type ‘char**’ [-Wformat=]
+ExternalLib.c:287:170: warning: format ‘%a’ expects argument of type ‘float*’, but argument 9 has type ‘char**’ [-Wformat=]
+ExternalLib.c:287:170: warning: format ‘%a’ expects argument of type ‘float*’, but argument 10 has type ‘char**’ [-Wformat=]
+ExternalLib.c:287:170: warning: format ‘%a’ expects argument of type ‘float*’, but argument 11 has type ‘char**’ [-Wformat=]
+ExternalLib.c:287:170: warning: format ‘%a’ expects argument of type ‘float*’, but argument 12 has type ‘char**’ [-Wformat=]
+/usr/bin/ccache  g++-4.8 -g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -std=c++11 -g -shared xinemediaplayer.o Control.o Player.o Reel.o SpuDecode.o Utils.o curl_download.o imagetools.o item_tree.o  m3u_parser.o pls_parser.o timecounter.o xineOsd.o xineOsdInfoMenu.o xineOsdFunction.o Playlist.o cddb.o cdtext.o cdrom.o XineLib.o GstreamerLib.o gstTools.o ExternalLib.o `taglib-config --libs` -lxine `pkg-config --libs gstreamer-0.10` `pkg-config --libs gstreamer-interfaces-0.10` `curl-config --libs` -lcdio -lcddb -o libvdr-xinemediaplayer.so

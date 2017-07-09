@@ -1,0 +1,10 @@
+<?% IF data.title %?>
+<big><?% data.title %?></big>
+<?% END %?>
+
+<?% FOREACH l IN data.links %?>
+<?% "<b>" IF data.highlight == l.key %?>
+<a href="<?% l.value.link %?>"><?% l.value.text %?></a>
+<?% "</b>" IF data.highlight == l.key %?>
+<?% END %?>
+<p>

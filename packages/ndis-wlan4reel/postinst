@@ -1,0 +1,5 @@
+#!/bin/sh
+
+modprobe ndiswrapper
+
+exit 0

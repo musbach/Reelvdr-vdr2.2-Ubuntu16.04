@@ -1,0 +1,9 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libapt-front
+Description: Common library for writing APT frontends
+Version: @VERSION@
+Libs: -L${libdir} -lapt-front -lapt-pkg

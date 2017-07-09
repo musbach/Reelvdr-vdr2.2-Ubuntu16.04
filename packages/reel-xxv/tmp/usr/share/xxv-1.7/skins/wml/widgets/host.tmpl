@@ -1,0 +1,4 @@
+<?% data.msg | truncate(15) %?> : 
+<?% val = cgi.param(data.NAME) || data.def %?>
+<input type="text" name="<?% data.NAME | replace('__','var') %?>" value="<?% entities(val) %?>" /><br/>
+<?% global.fomularfield.push(data.NAME) %?>

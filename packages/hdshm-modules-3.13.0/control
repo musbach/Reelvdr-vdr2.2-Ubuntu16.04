@@ -1,0 +1,12 @@
+Package: hdshm-modules
+Version: 4.8.0-1.7-reel9
+Section: reel
+Priority: important
+Architecture: i386
+Depends: linux-image-generic (>= 4.4.0), ubuntu-restricted-extras
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: hdshm-modules-4.8.0
+Description: Modules needed for the Reel DeCypher Video Card.
+ Includes kernel modules
+ .                                                                                                                      
+ This package provides modules for Linux version 4.8.0 on x86/x86_64.

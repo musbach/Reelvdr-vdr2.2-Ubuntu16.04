@@ -1,0 +1,63 @@
+Index: plugin.c
+===================================================================
+--- plugin.c	(revision 15384)
++++ plugin.c	(revision 15385)
+@@ -105,6 +105,13 @@
+   return false;
+ }
+ 
++#ifdef REELVDR
++void cPlugin::SetupStore(const char *Name, const char *PluginName, int Value)
++{
++  Setup.Store(Name, Value, PluginName);
++}
++#endif /* REELVDR */
++
+ void cPlugin::SetupStore(const char *Name, const char *Value)
+ {
+   Setup.Store(Name, Value, this->Name());
+Index: plugin.h
+===================================================================
+--- plugin.h	(revision 15384)
++++ plugin.h	(revision 15385)
+@@ -48,6 +48,9 @@
+ 
+   virtual cMenuSetupPage *SetupMenu(void);
+   virtual bool SetupParse(const char *Name, const char *Value);
++#ifdef REELVDR
++  void SetupStore(const char *Name, const char *PluginName, int Value);
++#endif /* REELVDR */
+   void SetupStore(const char *Name, const char *Value = NULL);
+   void SetupStore(const char *Name, int Value);
+ 
+Index: menuitems.c
+===================================================================
+--- menuitems.c	(revision 15384)
++++ menuitems.c	(revision 15385)
+@@ -1113,3 +1113,12 @@
+   if (plugin)
+      plugin->SetupStore(Name, Value);
+ }
++
++#ifdef REELVDR
++void cMenuSetupPage::SetupStore(const char *Name, const char *PluginName, int Value)
++{
++  if (cPluginManager::GetPlugin(PluginName))
++     cPluginManager::GetPlugin(PluginName)->SetupStore(Name, PluginName, Value);
++}
++#endif /* REELVDR */
++
+Index: menuitems.h
+===================================================================
+--- menuitems.h	(revision 15384)
++++ menuitems.h	(revision 15385)
+@@ -193,6 +193,9 @@
+ protected:
+   void SetSection(const char *Section);
+   virtual void Store(void) = 0;
++#ifdef REELVDR
++  void SetupStore(const char *Name, const char *PluginName, int Value);
++#endif /* REELVDR */
+   void SetupStore(const char *Name, const char *Value = NULL);
+   void SetupStore(const char *Name, int Value);
+ public:

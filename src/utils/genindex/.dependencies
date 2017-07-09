@@ -1,0 +1,5 @@
+genindex.o: genindex.c file.h tools.h pes.h thread.h version.h
+file.o: file.c file.h tools.h
+thread.o: thread.c thread.h
+ringbuffer.o: ringbuffer.c ringbuffer.h thread.h tools.h
+pes.o: pes.c pes.h thread.h tools.h ringbuffer.h

@@ -1,0 +1,26 @@
+dvbhddevice.o: dvbhddevice.c dvbhdffdevice.h hdffcmd.h \
+ libhdffcmd/hdffcmd.h libhdffcmd/hdffcmd_av.h \
+ libhdffcmd/hdffcmd_generic.h libhdffcmd/hdffcmd_hdmi.h \
+ libhdffcmd/hdffcmd_mux.h libhdffcmd/hdffcmd_osd.h \
+ libhdffcmd/hdffcmd_remote.h menu.h setup.h
+dvbhdffdevice.o: dvbhdffdevice.c dvbhdffdevice.h hdffcmd.h \
+ libhdffcmd/hdffcmd.h libhdffcmd/hdffcmd_av.h \
+ libhdffcmd/hdffcmd_generic.h libhdffcmd/hdffcmd_hdmi.h \
+ libhdffcmd/hdffcmd_mux.h libhdffcmd/hdffcmd_osd.h \
+ libhdffcmd/hdffcmd_remote.h hdffosd.h setup.h
+hdffcmd.o: hdffcmd.c hdffcmd.h libhdffcmd/hdffcmd.h \
+ libhdffcmd/hdffcmd_av.h libhdffcmd/hdffcmd_generic.h \
+ libhdffcmd/hdffcmd_hdmi.h libhdffcmd/hdffcmd_mux.h \
+ libhdffcmd/hdffcmd_osd.h libhdffcmd/hdffcmd_remote.h
+hdffosd.o: hdffosd.c hdffosd.h hdffcmd.h libhdffcmd/hdffcmd.h \
+ libhdffcmd/hdffcmd_av.h libhdffcmd/hdffcmd_generic.h \
+ libhdffcmd/hdffcmd_hdmi.h libhdffcmd/hdffcmd_mux.h \
+ libhdffcmd/hdffcmd_osd.h libhdffcmd/hdffcmd_remote.h setup.h
+menu.o: menu.c menu.h hdffcmd.h libhdffcmd/hdffcmd.h \
+ libhdffcmd/hdffcmd_av.h libhdffcmd/hdffcmd_generic.h \
+ libhdffcmd/hdffcmd_hdmi.h libhdffcmd/hdffcmd_mux.h \
+ libhdffcmd/hdffcmd_osd.h libhdffcmd/hdffcmd_remote.h setup.h
+setup.o: setup.c setup.h hdffcmd.h libhdffcmd/hdffcmd.h \
+ libhdffcmd/hdffcmd_av.h libhdffcmd/hdffcmd_generic.h \
+ libhdffcmd/hdffcmd_hdmi.h libhdffcmd/hdffcmd_mux.h \
+ libhdffcmd/hdffcmd_osd.h libhdffcmd/hdffcmd_remote.h

@@ -1,0 +1,12 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)		dest	type	owner.group
+etc/default/reel-browser.conf	-	config
+etc/init/reel-browser.conf	-	config
+etc/init/ttyS0.conf		-	config
+etc/initramfs-tools/scripts/local-premount/reel_desaster_recovery	-	script
+etc/udev/rules.d/71-persistent-net.rules
+utils/ice/ice_wol/ice_wol			/sbin/ice_wol	exe
+utils/ice/ice_pm/ice_pm				/sbin/ice_pm	exe
+utils/ice/8051_load/load_8051			/sbin/load_8051	exe
+utils/ice/8051_fw/build/ce4200_8051_firmware.bin	/usr/share/reel/frontpanel/ice4200_8051_firmware.bin	bin

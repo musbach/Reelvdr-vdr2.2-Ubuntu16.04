@@ -1,0 +1,13 @@
+Package: reelvdr-pi-dpkg
+Version: 0.0.8
+Section: reel
+Priority: important
+Architecture: armel
+Depends: reelvdr, libapt-pkg-libc6.9-6-4.7
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-dpkg
+Conflicts: reelvdr-plugins-base (<< 1.4.18), reelvdr-langpack (<< 1.10)
+Description: Update and package management for the ReelBox
+ This is a plugin for the ReelVDR.
+ Debian package management and update tool for the ReelBox.
+ Also contains the tool for optional software components.

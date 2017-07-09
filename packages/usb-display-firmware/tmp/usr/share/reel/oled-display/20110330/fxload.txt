@@ -1,0 +1,1 @@
+sudo fxload -v -c GrauTecUSBOLED-Display160D-054B-20110330.iic -t fx2 -s Vend_Ax.hex  -I GrauTecUSBOLED-Display160D-054B-20110330.hex -D /dev/reel_oled

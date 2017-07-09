@@ -1,0 +1,20 @@
+Index: osdbase.h
+===================================================================
+--- osdbase.h	(revision 15399)
++++ osdbase.h	(revision 15400)
+@@ -33,6 +33,15 @@
+                 osSwitchDvb,
+                 osBack,
+                 osEnd,
++#ifdef REELVDR
++                osEditChannels,
++                osOSDSetup,
++                osLanguage,
++                osTimezone,
++                osTimeshift,
++                osActiveEvent,
++                osLiveBuffer,
++#endif /* REELVDR */
+                 os_User, // the following values can be used locally
+                 osUser1,
+                 osUser2,

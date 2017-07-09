@@ -1,0 +1,8 @@
+body.frame {
+margin:0;
+padding:0;
+}
+
+.push,#logo,#logo a img,#header,#headerNav,a.headerNav:active,a.headerNav:link,a.headerNav:visited,a.headerNav:hover,#sidebar,#sidebar input,#sidebar select,#shutter {
+display:none;
+}

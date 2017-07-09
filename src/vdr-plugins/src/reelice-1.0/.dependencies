@@ -1,0 +1,57 @@
+reelice.o: reelice.c reelice.h ice_types.h libgdl.h gdl.h gdl_types.h \
+ gdl_pd.h gdl_version.h ismd_demux.h osal.h osal_type.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_type.h \
+ osal_assert.h osal_config.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_config.h \
+ osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/osal_config.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_assert.h \
+ osal_char.h osal_clock.h osal_event.h osal_interrupt.h osal_lib.h \
+ osal_lock.h osal_memmap.h osal_memory.h osal_pci.h osal_sched.h \
+ osal_sema.h osal_thread.h osal_trace.h osal_irqlock.h osal_div64.h \
+ osal_list.h ismd_msg.h ismd_core.h ismd_clock_recovery.h ice_device.h
+ice_device.o: ice_device.c ice_device.h reelice.h ice_types.h libgdl.h \
+ gdl.h gdl_types.h gdl_pd.h gdl_version.h ismd_demux.h osal.h osal_type.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_type.h \
+ osal_assert.h osal_config.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_config.h \
+ osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/osal_config.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_assert.h \
+ osal_char.h osal_clock.h osal_event.h osal_interrupt.h osal_lib.h \
+ osal_lock.h osal_memmap.h osal_memory.h osal_pci.h osal_sched.h \
+ osal_sema.h osal_thread.h osal_trace.h osal_irqlock.h osal_div64.h \
+ osal_list.h ismd_msg.h ismd_core.h ismd_clock_recovery.h
+ice_osd.o: ice_osd.c reelice.h ice_types.h libgdl.h gdl.h gdl_types.h \
+ gdl_pd.h gdl_version.h ismd_demux.h osal.h osal_type.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_type.h \
+ osal_assert.h osal_config.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_config.h \
+ osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/osal_config.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_assert.h \
+ osal_char.h osal_clock.h osal_event.h osal_interrupt.h osal_lib.h \
+ osal_lock.h osal_memmap.h osal_memory.h osal_pci.h osal_sched.h \
+ osal_sema.h osal_thread.h osal_trace.h osal_irqlock.h osal_div64.h \
+ osal_list.h ismd_msg.h ismd_core.h ismd_clock_recovery.h \
+ ice_osd_reel.inc
+ice_setup.o: ice_setup.c reelice.h ice_types.h libgdl.h gdl.h gdl_types.h \
+ gdl_pd.h gdl_version.h ismd_demux.h osal.h osal_type.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_type.h \
+ osal_assert.h osal_config.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_config.h \
+ osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/osal_config.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_io.h \
+ /usr/src/reelbox/testing/packages/reelbox-devel-ice/ROOT/usr/include/intelce/linux/os/osal_assert.h \
+ osal_char.h osal_clock.h osal_event.h osal_interrupt.h osal_lib.h \
+ osal_lock.h osal_memmap.h osal_memory.h osal_pci.h osal_sched.h \
+ osal_sema.h osal_thread.h osal_trace.h osal_irqlock.h osal_div64.h \
+ osal_list.h ismd_msg.h ismd_core.h ismd_clock_recovery.h

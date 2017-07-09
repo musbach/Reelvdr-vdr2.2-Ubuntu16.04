@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/repos/dvbloop/!svn/ver/11/contrib
+END
+51-dvblo.rules
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/dvbloop/!svn/ver/11/contrib/51-dvblo.rules
+END
+load.sh
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/dvbloop/!svn/ver/11/contrib/load.sh
+END
+unload.sh
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/repos/dvbloop/!svn/ver/11/contrib/unload.sh
+END

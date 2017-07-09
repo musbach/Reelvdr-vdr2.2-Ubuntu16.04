@@ -1,0 +1,304 @@
+libapt-front (0.4.0-0.2ubuntu1) intrepid; urgency=low
+
+  * Merge with Debian, remaining change
+   - Add kubuntu_01_ddtp_translations.diff patch
+   - Use simple-patchsys.mk
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 11 Jun 2008 10:30:57 +0000
+
+libapt-front (0.4.0-0.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix g++-4.3 FTBFS, thanks to Brian M. Carlson (Closes: 441514).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 16 Mar 2008 22:23:35 +0000
+
+libapt-front (0.4.0-0.1ubuntu5) hardy; urgency=low
+
+  * Build against new libept
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Mar 2008 16:02:56 +0000
+
+libapt-front (0.4.0-0.1ubuntu4) gutsy; urgency=low
+
+  * Fix build failures with g++-4.3. LP: #138547.
+
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 14 Sep 2007 21:40:22 +0000
+
+libapt-front (0.4.0-0.1ubuntu3) gutsy; urgency=low
+
+  * rebuild against latest libept
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 03 Aug 2007 22:05:21 +0200
+
+libapt-front (0.4.0-0.1ubuntu2) gutsy; urgency=low
+
+  * Added build-dependancy on debtags, to fix FTBFS
+  * Modify Maintainer value to match Debian-Maintainer-Field Spec
+
+ -- Sarah Hobbs <hobbsee@ubuntu.com>  Sun, 22 Jul 2007 16:00:41 +1000
+
+libapt-front (0.4.0-0.1ubuntu1) gutsy; urgency=low
+
+  * Merge with Debian, remaining change:
+   - Add /usr/share/cdbs/1/rules/simple-patchsys.mk
+   - Add patch kubuntu_01_ddtp_translations.diff
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 11 Jul 2007 12:18:53 +0000
+
+libapt-front (0.4.0-0.1) unstable; urgency=low
+
+  * NMU (0-day, needed for apt transition)
+  * Fixed po/POTFILES.in to list only existing files. (Closes: #431029)
+
+ -- Marc 'HE' Brockschmidt <he@debian.org>  Sun, 01 Jul 2007 01:18:10 +0200
+
+libapt-front (0.4.0) unstable; urgency=low
+
+  * Delegate Debtags handling to libept.  Closes: bug#392794.
+  * Do not build with old libtagcoll.  Closes: bug#423786.
+  * Fixed description.  Closes: bug#357674.
+  * Fixed GCC 4.3 issues.  Closes: bug#413413.
+
+ -- Enrico Zini <enrico@debian.org>  Tue, 26 Jun 2007 18:47:50 +0100
+
+libapt-front (0.3.12ubuntu3) gutsy; urgency=low
+
+  * Rebuild to lose libtdb.la references
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 20 Jun 2007 17:19:31 +0100
+
+libapt-front (0.3.12ubuntu2) feisty; urgency=low
+
+  * Rebuild against new libapt
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 28 Feb 2007 11:44:29 +0000
+
+libapt-front (0.3.12ubuntu1) feisty; urgency=low
+
+  * Merge from debian unstable. Remaining change:
+    - translated package description support
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 23 Nov 2006 11:52:53 +0100
+
+libapt-front (0.3.12) unstable; urgency=low
+
+  * Don't build with -gstabs+ (unsupported in some arches).
+    Closes: bug#392300.
+
+ -- Enrico Zini <enrico@debian.org>  Thu,  5 Oct 2006 02:09:45 +0200
+
+libapt-front (0.3.11) unstable; urgency=low
+
+  * Do not build apt-index-watcher anymore, and call "debtags update --local"
+    to rebuild the index instead.  Closes: #377709, #361683.
+  * Updated Standards-Version.
+
+ -- Enrico Zini <enrico@debian.org>  Wed,  4 Oct 2006 22:21:09 +0200
+
+libapt-front (0.3.10) unstable; urgency=low
+
+  * Builds on IA64.  Closes: #382151
+  * Tag index access fixes.  Most notably, the works-with-format::* tags now
+    work correctly.
+
+ -- Enrico Zini <enrico@debian.org>  Thu, 14 Sep 2006 23:51:18 +0200
+
+libapt-front (0.3.9ubuntu5) edgy; urgency=low
+
+  * use /var/cache/apt-index-watcher/ to store the caches (lp: #61708)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon,  9 Oct 2006 10:35:23 +0200
+
+libapt-front (0.3.9ubuntu4) edgy; urgency=low
+
+  * make sure apt-index-watcher uses a different mmapable() cache file 
+    so that it does not corrupt the main apt mmap cache (lp: #61708)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri,  6 Oct 2006 18:43:30 +0200
+
+libapt-front (0.3.9ubuntu3) edgy; urgency=low
+
+  * Remove stop script symlinks from rc0 and rc6.
+
+ -- Scott James Remnant <scott@ubuntu.com>  Fri, 15 Sep 2006 17:22:51 +0100
+
+libapt-front (0.3.9ubuntu2) edgy; urgency=low
+
+  * fix depnds line in apt-index-watcher (fixes FTBFS)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 15 Aug 2006 17:49:54 +0200
+
+libapt-front (0.3.9ubuntu1) edgy; urgency=low
+
+  * auto-detect a apt with ddtp support and return
+    translated description in cache/components/records.cpp
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 14 Aug 2006 17:28:45 +0200
+
+libapt-front (0.3.9) unstable; urgency=low
+
+  * apt-index-watcher now runs another instance of itself to do the update.
+    Closes: #357549.
+  * Builds with GCC 4.1.  Closes: #357555.
+  * Implemented package relationships in completeRecord()
+
+ -- Enrico Zini <enrico@debian.org>  Sat, 18 Mar 2006 21:54:49 +0100
+
+libapt-front (0.3.8) unstable; urgency=low
+
+  * CHANGE: Use libtagcoll 1.6 with the new IntDiskIndex
+  * CHANGE: Components now regenerate indexes during initialization when needed
+  * CHANGE: Debtags update function no more exists: one now calls
+    debtags::fetchNewData() before instantiating the components and the
+    components will reindex as needed.
+  * Created apt-index-watcher, to keep the on-disk index up to date when
+    another application rebuilds the APT index.  Sadly, there doesn't seem to
+    be any better way in a short or medium term.
+
+ -- Enrico Zini <enrico@debian.org>  Fri,  3 Mar 2006 11:45:03 +0100
+
+libapt-front (0.3.7) unstable; urgency=low
+
+  * Install utils/comparable.h (was missing),
+  * CHANGE: the actor user-visible names changed for improved usability,
+  * CHANGE: Relation::targetPackages() now returns only those with
+    versions satisfying the constraints (as it should),
+  * NEW: Cache::isOpen() predicate,
+  * NEW: component::Desktop allows getting group list of a custom
+    entity range now (not only all groups in system),
+  * NEW: entity::{Version,Package} now have md5sum, source and fileName
+    accessors (available through component::Records)
+  * slight optimization of filteredRange,
+  * fixed intersectionRange to not walk past end of underlying range,
+  * un-optimize name() lookups in packages, reduces memory usage
+    while keeping nearly same speed,
+  * use GenericName for a description() of Desktop entries that have
+    no Comment
+
+ -- Peter Rockai <me@mornfall.net>  Sun, 19 Feb 2006 21:20:04 +0100
+
+libapt-front (0.3.6) unstable; urgency=low
+
+  * CHANGE: ranges have end() and not last(), the semantics are same,
+  * CHANGE: Range::next() is now a non-mutating successor generator,
+    Range::advance() is a mutator,
+  * CHANGE: no more Range::ensureSorted() mutator -- there's a non-mutating
+    Range::sorted() accessor that gives an instance of the same range, however
+    sorted
+  * CHANGE: a mostly-compatible refactoring of entity::Package; if you relied
+    on implementation details, your code may break now
+  * CHANGE: entity::Relation::targetPackages() now traverses Provides:, as it should
+  * CHANGE: no more cache::component::Packages::packages( iterator ), use
+    packagesBegin() and packagesEnd() or the range accessors instead,
+  * NEW: cache::component::Desktop -- parse .desktop files with special X-AppInstall-*
+    entries, associate them with their packages, have entity::Desktop to manipulate
+    them
+  * NEW: SortedRange and UniqueRange adaptors, which present their underlying
+    range in a sorted and in the latter case uniquized manner
+  * NEW: Range::contains( element ) -- generic implementation only, O(n) so far
+    (will optimize later)
+  * NEW: aptFront::utils::Comparable mixin (implements > and == in terms of <)
+  * NEW: cache::component::Packages::sorted() now gives a name-sorted range of
+    entity::Package instances
+  * NEW: cache::component::State::{installSize{,String},downloadSize{,String}}
+    accessors -- what is needed to get system into currently marked up state
+  * NEW: all cache::component implementations now have a Cache &cache() accessor
+  * NEW: GeneratedRange, a range defined by a successor functor and a end-test
+    functor
+  * NEW: cache::component::State::{revert(),replay( range )}, former restores
+    state that corresponds to current system and replay( range ) runs a list
+    of actions recorded in the range (only one notification is fired)
+  * (compatible) rewrite of component::History, more reliable now
+  * reduce test data set, remove the download hacks,
+  * gettextize, wrap strings that are intended for presentation in gettext() calls,
+  * set debugger with DEBUGGER={valgrind,gdb --args} for make test,
+
+ -- Peter Rockai <me@mornfall.net>  Mon, 13 Feb 2006 11:25:27 +0100
+
+libapt-front (0.3.5) unstable; urgency=low
+
+  [ Enrico Zini ]
+  * Added architecture to Version::completeRecord.
+  
+  [ Peter Rockai ]
+  * Test suite should not produce ansi-colorized output by default anymore
+    (broke buildd logs),
+  * entity::Package::versions() now returns a Range instead of taking an
+    output iterator,
+  * reduce noise in debtags update code (this will need fixng later),
+  * new handling of fallback arguments for getters,
+  * templatize Version (work in progress, currently backwards compatible),
+  * libapt-front-devel@l.a.d.o is the new maintainer,
+  * new Version::installedSize{,String}() getters, added to completeRecord(),
+  * first go at implementing entity::Relation,
+  * new TagSet matcher to check a whole tagset at once (and-ed),
+  * support purge and reinstall actions on packages,
+  * entity::Named is a new interface, to be implemented by entities with
+    name() accessor,
+  * MultiType's isType< type >() predicate renamed to is< type >(),
+  * support for cancelled download in Manager, throws OperationCancelled,
+  * fix make clean to reduce trash that gets into distribution tarballs,
+  * fix copy constructor of PackagePolicy to actually work as it should
+    (and not cause random memory to be used by libapt-pkg, which probably
+    caused some segfaults)
+
+ -- Peter Rockai <me@mornfall.net>  Mon, 23 Jan 2006 13:54:31 +0100
+
+libapt-front (0.3.4) unstable; urgency=low
+
+  * Works with tags which are 1 character long (such as langdevel::c)
+  * Allows to use file:// URIs in /etc/debtags/sources.list
+  * Debtags test data is now provided in the package
+
+ -- Enrico Zini <enrico@debian.org>  Fri, 11 Nov 2005 17:42:19 +0100
+
+libapt-front (0.3.3) unstable; urgency=low
+
+  * Fix sources.list parsing of cdrom entries
+  * Support changing of installation media.
+  * Fix Depends: for libapt-front-dev.
+
+ -- Peter Rockai <me@mornfall.net>  Wed, 28 Sep 2005 16:49:38 +0200
+
+libapt-front (0.3.2) unstable; urgency=low
+
+  * Fixes in broken package handling
+  * Use exception handling in the Manager -- should be safer now
+
+ -- Peter Rockai <me@mornfall.net>  Sun, 25 Sep 2005 12:36:29 +0200
+
+libapt-front (0.3.1) experimental; urgency=low
+
+  * Compile with -fPIC, some architectures apparently don't support
+    shared libraries with non-PIC code.
+
+ -- Peter Rockai <me@mornfall.net>  Mon, 12 Sep 2005 10:54:42 +0200
+
+libapt-front (0.3) experimental; urgency=low
+
+  [ Peter Rockai ]
+  * improved actor code
+  * component::History improvements/fixes
+  * utils::Range improvements and fixes
+  * some unit test work
+  * implement sources.list parser
+  * general cleanups and fixes all over the code
+
+  [ Enrico Zini ]
+  * Merged libdebtags into libapt-front.
+
+ -- Peter Rockai <me@mornfall.net>  Fri,  9 Sep 2005 15:47:56 +0200
+
+libapt-front (0.2) experimental; urgency=low
+
+  * New upstream version
+
+ -- Enrico Zini <enrico@debian.org>  Mon, 22 Aug 2005 23:41:07 +0200
+
+libapt-front (0.1) experimental; urgency=low
+
+  * Initial Release
+
+ -- Enrico Zini <enrico@debian.org>  Sun, 12 Nov 2004 22:02:42 +0100
+

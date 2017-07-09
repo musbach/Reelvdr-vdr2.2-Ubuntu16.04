@@ -1,0 +1,9 @@
+Package: reelbox-devel-mini-common
+Version: 0.3
+Section: reel
+Priority: optional
+Architecture: i386
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-devel-mini-common
+Description: Development package for ReelBox Mini. contains header and symbol files.
+ This package contains development files needed for the ReelBox Mini.

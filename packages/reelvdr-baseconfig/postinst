@@ -1,0 +1,30 @@
+#!/bin/sh
+
+
+myln () {
+    src="$2"
+    target="$3"
+
+	if [ ! -L $target ]; then
+		ln -f $*
+	fi
+}
+
+echo "creating init levels for ReelVDR"
+if [ ! -L /etc/rc2.d/S19reelvdr ] && [ -L /etc/rc2.d/S??reelvdr ] ; then
+	update-rc.d -f reelvdr remove
+fi
+
+#only for distributions < Ubuntu 10.04
+if [ ! -x /usr/bin/lsb_release ] || [ $(lsb_release -rs | cut -f1 -d.) -lt 10 ]; then
+     update-rc.d reelvdr defaults 19 81
+fi
+
+sed -i /shoutcast.genre/d /var/lib/dpkg/info/reelvdr-baseconfig.list
+
+myln /etc/samba/smb.conf /etc/default/
+
+# installation scripts should always exit with 0. Otherwise it will create ugly
+#  kinds of problems for the end-user.
+
+exit 0

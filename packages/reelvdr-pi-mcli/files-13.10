@@ -1,0 +1,36 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#
+#valid types:
+# script - for scripts, default 755, root.root
+# exe    - like script, but will be stripped on packaging
+# sexe   - setuid root executeable, 4755, root.root, strip
+# lib	 - library,     755, root.root, no strip
+# cfg    - config file, 644, root.root
+# bin    - binaries, i.e. firmware, 644, root.root
+# any other files will be installed "as they are", so be careful about permissions!
+#
+# src rel. to $(SRCDIR)			dest					type	owner	group
+vdr-plugins/lib/libvdr-mcli.so.1.7.28.6	usr/lib/vdr/libvdr-mcli.so.1.7.28.6	lib	-
+#vdr-1.7.28/locale/ca_ES/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/ca_ES/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/cs_CZ/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/cs_CZ/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/da_DK/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/da_DK/LC_MESSAGES/vdr-mcli.mo
+vdr-1.7.28/locale/de_DE/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/de_DE/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/el_GR/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/el_GR/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/es_ES/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/es_ES/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/et_EE/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/et_EE/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/fi_FI/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/fi_FI/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/fr_FR/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/fr_FR/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/hr_HR/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/hr_HR/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/hu_HU/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/hu_HU/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/it_IT/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/it_IT/LC_MESSAGES/vdr-mcli.mo
+vdr-1.7.28/locale/nl_NL/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/nl_NL/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/nn_NO/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/nn_NO/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/pl_PL/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/pl_PL/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/pt_PT/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/pt_PT/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/ro_RO/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/ro_RO/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/ru_RU/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/ru_RU/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/sl_SI/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/sl_SI/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/sv_SE/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/sv_SE/LC_MESSAGES/vdr-mcli.mo
+#vdr-1.7.28/locale/tr_TR/LC_MESSAGES/vdr-mcli.mo	usr/share/locale/tr_TR/LC_MESSAGES/vdr-mcli.mo
+

@@ -1,0 +1,20 @@
+Index: vdr.c
+===================================================================
+--- vdr.c	(revision 15382)
++++ vdr.c	(revision 15383)
+@@ -919,6 +919,15 @@
+      alarm(WatchdogTimeout); // Initial watchdog timer start
+      }
+ 
++#ifdef REELVDR
++/*  if(!requestQuickStandby)*/ {
++    int On = 1;
++    cPluginManager::CallAllServices("ToggleVideoOutput", &On);
++    cPluginManager::CallAllServices("ReInit", NULL);
++  } //else
++//    isyslog("\n ---- started in quick standby ----");
++#endif /* REELVDR */
++
+   // Main program loop:
+ 
+ #define DELETE_MENU ((IsInfoMenu &= (Menu == NULL)), delete Menu, Menu = NULL)

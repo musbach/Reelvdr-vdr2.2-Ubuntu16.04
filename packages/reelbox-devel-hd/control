@@ -1,0 +1,14 @@
+Package: reelbox-devel-hd
+Version: 1.7-reel0
+Section: reel
+Priority: optional
+Architecture: all
+Depends: bison, flex, crosstool-gcc-3.3.4-glibc-2.3.2-mipsel-linux-gnu, gawk
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-devel-hd
+Description: Development package for ReelBox HD extension
+ This package depends on all of the packages needed to develop for the ReelBox HD extension.
+ It also contains the header files for development for the Reel HD Extension
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.

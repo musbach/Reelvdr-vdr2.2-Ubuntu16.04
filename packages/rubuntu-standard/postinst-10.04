@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# ucf is a crazy tool used in configurations scripts that checks for "old"
+# configuration files and asks silly questions if to overwrite
+# we don't want this
+if ! grep -q ^conf_force_conffold /etc/ucf.conf ; then
+    echo "conf_force_conffold=YES" >> /etc/ucf.conf
+fi
+
+. /etc/default/globals
+
+if RbMini ; then
+    sed -i s/NEED_IDMAPD=.*/NEED_IDMAPD=no/ /etc/default/nfs-common
+fi
+
+#check for nfs_kernel_server if it supports newer kernels like on RB ICE
+if grep -q nfsd_serv /etc/init.d/nfs-kernel-server ; then
+    echo "patching /etc/init.d/nfs-kernel-server for kernels >= 2.6.39"
+    sed -i s/nfsd_serv\\t/nfsd_create_serv/ /etc/init.d/nfs-kernel-server
+fi
+
+
+if [ -f /etc/apt/sources.list.reel ] ; then
+    cp -a /etc/apt/sources.list.reel /etc/apt/sources.list
+fi
+
+#improve boot speed by 20sec by not waiting for "stopped udevtrigger"
+#warning: could have side effects
+#if RbIce && grep -q udevtrigger /etc/init/networking.conf ; then
+if grep -q udevtrigger /etc/init/networking.conf ; then
+	sed -i s/"and stopped udevtrigger)"/")"/  /etc/init/networking.conf
+fi
+
+exit 0

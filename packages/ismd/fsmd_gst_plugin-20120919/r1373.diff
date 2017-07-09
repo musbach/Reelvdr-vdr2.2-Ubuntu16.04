@@ -1,0 +1,144 @@
+Index: ismd_gst_audio_sink.c
+===================================================================
+--- ismd_gst_audio_sink.c	(Revision 1372)
++++ ismd_gst_audio_sink.c	(Revision 1373)
+@@ -2589,6 +2589,13 @@
+   sink->hdmi_pcm_max_samplesize = 0;
+   sink->provided_clock = NULL;
+ 
++#ifndef NOT_REEL_PATCHED
++  //UGLY PATCH: Reuse the clock since we expect that the old instance will not be finalized
++  static ISmdGstAudioSink * old_sink=NULL;
++  if(old_sink) sink->provided_clock = ismd_gst_clock_reuse(old_sink->provided_clock);
++  old_sink=sink;
++#endif
++
+   sink->monitor_loop = NULL;
+   sink->monitor_mutex = g_new0 (GStaticRecMutex, 1);
+   g_static_rec_mutex_init (sink->monitor_mutex);
+Index: ismd_gst_clock.c
+===================================================================
+--- ismd_gst_clock.c	(Revision 1372)
++++ ismd_gst_clock.c	(Revision 1373)
+@@ -250,7 +250,23 @@
+   GST_OBJECT_UNLOCK (clock);
+ }
+ 
++#ifndef NOT_REEL_PATCHED
++ISmdGstClock *ismd_gst_clock_reuse(ISmdGstClock * clock) {
++  gint i;
++  if(!clock) return NULL;
+ 
++  if (clock->bufmon_handle != ISMD_DEV_HANDLE_INVALID) ismd_dev_close (clock->bufmon_handle);
++  clock->bufmon_handle = ISMD_DEV_HANDLE_INVALID;
++
++  for (i = 0; i < MAX_MONITORED_DEVICES; i++)
++    clock->bufmon_devices[i] = ISMD_DEV_HANDLE_INVALID;
++  clock->bufmon_n_devices = 0;
++
++  ismd_gst_clock_enable_bufmon (clock);
++  return gst_object_ref(clock);
++}
++#endif
++
+ static void
+ ismd_gst_clock_finalize (GObject * object)
+ {
+Index: ismd_gst_clock.h
+===================================================================
+--- ismd_gst_clock.h	(Revision 1372)
++++ ismd_gst_clock.h	(Revision 1373)
+@@ -111,6 +111,8 @@
+ void ismd_gst_clock_bufmon_add_render (ISmdGstClock * clock, ismd_dev_t rend_handle);
+ void ismd_gst_clock_bufmon_add_source (ISmdGstClock * clock, ismd_dev_t source_handle);
+ 
++#ifndef NOT_REEL_PATCHED
++ISmdGstClock *ismd_gst_clock_reuse(ISmdGstClock * clock);
++#endif
+ 
+-
+ #endif /* __ISMD_GST_CLOCK_H__ */
+Index: ismd_gst_vidsink.c
+===================================================================
+--- ismd_gst_vidsink.c	(Revision 1372)
++++ ismd_gst_vidsink.c	(Revision 1373)
+@@ -2375,6 +2375,14 @@
+   sink->setup = FALSE;
+   sink->monitor_loop = NULL;
+   sink->monitor_mutex = g_new0 (GStaticRecMutex, 1);
++#ifndef NOT_REEL_PATCHED
++  sink->provided_clock = NULL;
++//UGLY PATCH: Reuse the clock since we expect that the old instance will not be finalized
++  static ISmdGstVidsink * old_sink = NULL;
++  if(old_sink) sink->provided_clock = ismd_gst_clock_reuse(old_sink->provided_clock);
++  old_sink=sink;
++#endif
++
+   g_static_rec_mutex_init (sink->monitor_mutex);
+   sink->eos_event = ISMD_EVENT_HANDLE_INVALID;
+   sink->out_event = ISMD_EVENT_HANDLE_INVALID;
+Index: ismd_gst_element.c
+===================================================================
+--- ismd_gst_element.c	(Revision 1372)
++++ ismd_gst_element.c	(Revision 1373)
+@@ -1633,7 +1633,7 @@
+   }
+ }
+ 
+-
++#ifdef NOT_REEL_PATCHED
+ static gboolean
+ ismd_gst_element_send_eos (GstPad * pad)
+ {
+@@ -1671,7 +1671,51 @@
+   }
+   return TRUE;
+ }
++#else
++static gboolean
++ismd_gst_element_send_eos (GstPad * pad)
++{
++  gboolean ret = FALSE;
++  ismd_result_t result;
++  ismd_buffer_handle_t buffer;
++  ISmdGstElement *smd_element = ISMD_GST_ELEMENT (gst_pad_get_parent (pad));
++  ISmdGstElementClass *klass =
++      ISMD_GST_ELEMENT_CLASS (GST_ELEMENT_GET_CLASS (smd_element));
+ 
++  GST_DEBUG_OBJECT (smd_element, "injecting EOS SMD buffer");
++
++  if (klass->is_sink) {
++    GST_PAD_PREROLL_LOCK (GST_PAD (smd_element->sink_pad));
++    if (smd_element->playing_async && smd_element->need_preroll) {
++      if (G_UNLIKELY (!ismd_gst_element_commit_state (smd_element)))
++        goto beach;
++    }
++    GST_PAD_PREROLL_UNLOCK (GST_PAD (smd_element->sink_pad));
++  }
++
++  result = ismd_buffer_alloc (0, &buffer);
++  if (result != ISMD_SUCCESS) {
++    GST_ERROR_OBJECT (smd_element, "ismd_buffer_alloc failed (%d)", result);
++    goto beach;
++  }
++  result = ismd_tag_set_eos (buffer);
++  if (result != ISMD_SUCCESS) {
++    GST_ERROR_OBJECT (smd_element, "ismd_tag_set_eos failed (%d)", result);
++    goto beach;
++  }
++
++  if (!ismd_gst_element_sink_port_write (smd_element, pad, buffer)) {
++      ismd_buffer_dereference (buffer);
++      goto beach;
++  }
++  ret = TRUE;
++beach:
++  if(smd_element)
++      gst_object_unref (smd_element);
++  return ret;
++}
++#endif
++
+ /* with PREROLL_LOCK, STREAM_LOCK */
+ static gboolean
+ ismd_gst_element_commit_state (ISmdGstElement * smd_element)

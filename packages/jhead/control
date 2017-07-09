@@ -1,0 +1,9 @@
+Package: jhead
+Version: 2.90.0
+Section: reel
+Priority: optional
+Architecture: armel
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Description: process jpeg headers
+ Recomended tool for displaying images on ncl
+

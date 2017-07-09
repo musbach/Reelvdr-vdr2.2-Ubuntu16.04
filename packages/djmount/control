@@ -1,0 +1,12 @@
+Package: djmount
+Version: 0.71.0-reel1
+Section: reel
+Priority: standard
+Architecture: i386
+Depends: libc6 (>= 2.5-0ubuntu1), fuse-utils, libfuse2
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: djmount
+Description: UPnP Client
+	djmount is a UPnP AV client. It mounts as a Linux filesystem the media content of compatible UPnP AV devices.
+	Djmount discovers automatically all UPnP AV Media Servers on the network, and make the content available in a directory tree. 
+	All shared files (e.g. Audio or Video files) are directly visible and can be played using the filebrowser. 

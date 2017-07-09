@@ -1,0 +1,37 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)	dest			type	owner	group
+
+
+#graplcd config
+etc/vdr/plugins/graphlcd/fonts.conf.large
+etc/vdr/plugins/graphlcd/fonts.conf.medium
+etc/vdr/plugins/graphlcd/fonts.conf.small
+etc/vdr/plugins/graphlcd/fonts.conf.tiny
+etc/vdr/plugins/graphlcd/fonts.conf.ttf
+etc/vdr/plugins/graphlcd/fonts/Vera.ttf
+etc/vdr/plugins/graphlcd/fonts/VeraBd.ttf
+etc/vdr/plugins/graphlcd/fonts/f12b.fnt
+etc/vdr/plugins/graphlcd/fonts/f12b.pbm
+etc/vdr/plugins/graphlcd/fonts/f12bn.fnt
+etc/vdr/plugins/graphlcd/fonts/f12bn.pbm
+etc/vdr/plugins/graphlcd/fonts/f17b.fnt
+etc/vdr/plugins/graphlcd/fonts/f17b.pbm
+etc/vdr/plugins/graphlcd/fonts/f17bn.fnt
+etc/vdr/plugins/graphlcd/fonts/f17bn.pbm
+etc/vdr/plugins/graphlcd/fonts/f5n.fnt
+etc/vdr/plugins/graphlcd/fonts/f5n.pbm
+etc/vdr/plugins/graphlcd/fonts/f8b.fnt
+etc/vdr/plugins/graphlcd/fonts/f8b.pbm
+etc/vdr/plugins/graphlcd/fonts/f8n.fnt
+etc/vdr/plugins/graphlcd/fonts/f8n.pbm
+etc/vdr/plugins/graphlcd/fonts/sym11.fnt
+etc/vdr/plugins/graphlcd/fonts/sym11.pbm
+etc/vdr/plugins/graphlcd/fonts/sym7.fnt
+etc/vdr/plugins/graphlcd/fonts/sym7.pbm
+etc/vdr/plugins/graphlcd/fonts/verdana-018.fnt
+etc/vdr/plugins/graphlcd/fonts/verdanab-009.fnt
+etc/vdr/plugins/graphlcd/fonts/verdanab-013.fnt
+etc/vdr/plugins/graphlcd/lcd001.pnm
+etc/vdr/plugins/graphlcd/logonames.alias.1.3
+

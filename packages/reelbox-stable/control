@@ -1,0 +1,13 @@
+Package: reelbox-stable
+Version: 1.1
+Section: reel
+Priority: important
+Architecture: all
+Conflicts: reelbox-testing
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-stable
+Description: stable software tree for the reelbox
+ This package enshures that only tested ("stable") software will be installed
+ onto the ReelBox.
+ If you are a custumer and want to keep the WAF high, it is strongly re-
+ commended that you use this package.

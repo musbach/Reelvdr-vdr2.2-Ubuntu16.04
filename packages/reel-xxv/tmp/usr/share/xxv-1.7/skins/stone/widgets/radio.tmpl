@@ -1,0 +1,13 @@
+<!-- radio -->
+<?% global.widgetcount = global.widgetcount + 1 %?>
+<tr<?% ' class="two"' IF global.widgetcount mod 2 == 0 %?>>
+        <?% INCLUDE widgets/topic.inc abbr=data.msg %?>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% FOREACH wert IN data.choices %?>
+        <span style="white-space: nowrap">
+            <input type="radio" name="<?% data.NAME %?>" value="<?% wert %?>" <?% 'checked="checked"' IF val.grep("^${wert}").size %?> /><?% wert %?>
+        </span> 
+        <?% END %?>
+    </td>
+</tr>

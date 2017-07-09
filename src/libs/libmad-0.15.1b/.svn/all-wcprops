@@ -1,0 +1,371 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b
+END
+layer3.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/layer3.c
+END
+frame.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/frame.h
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/configure
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/Makefile.in
+END
+configure.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/configure.cmd
+END
+config.log
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/config.log
+END
+layer3.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/layer3.h
+END
+VERSION
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/VERSION
+END
+decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/decoder.c
+END
+depcomp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/depcomp
+END
+imdct_s.dat
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/imdct_s.dat
+END
+config.guess
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/config.guess
+END
+D.dat
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/D.dat
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/config.h
+END
+decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/decoder.h
+END
+config.sub
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/config.sub
+END
+CREDITS
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/CREDITS
+END
+ltmain.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/ltmain.sh
+END
+minimad.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/minimad.c
+END
+rq_table.dat
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/rq_table.dat
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/configure.ac
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/INSTALL
+END
+CHANGES
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/CHANGES
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/COPYING
+END
+COPYRIGHT
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/COPYRIGHT
+END
+stream.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/stream.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/Makefile
+END
+fixed.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/fixed.c
+END
+mkinstalldirs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/mkinstalldirs
+END
+qc_table.dat
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/qc_table.dat
+END
+stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/stream.h
+END
+fixed.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/fixed.h
+END
+synth.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/synth.c
+END
+global.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/global.h
+END
+sf_table.dat
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/sf_table.dat
+END
+config.status
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/config.status
+END
+stamp-h1
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/stamp-h1
+END
+synth.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/synth.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/README
+END
+bit.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/bit.c
+END
+layer12.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/layer12.c
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/config.h.in
+END
+mad.h.sed
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/mad.h.sed
+END
+timer.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/timer.c
+END
+libmad.list
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/libmad.list
+END
+bit.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/bit.h
+END
+libtool
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/libtool
+END
+huffman.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/huffman.c
+END
+layer12.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/layer12.h
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/TODO
+END
+timer.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/timer.h
+END
+version.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/version.c
+END
+libmad.list.in
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/libmad.list.in
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/Makefile.am
+END
+missing
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/missing
+END
+huffman.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/huffman.h
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/version.h
+END
+imdct_l_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/imdct_l_arm.S
+END
+frame.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/frame.c
+END
+aclocal.m4
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/aclocal.m4
+END
+install-sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libmad-0.15.1b/install-sh
+END

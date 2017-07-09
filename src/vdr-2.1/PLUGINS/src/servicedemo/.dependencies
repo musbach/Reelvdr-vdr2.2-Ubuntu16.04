@@ -1,0 +1,2 @@
+svccli.o: svccli.c
+svcsvr.o: svcsvr.c

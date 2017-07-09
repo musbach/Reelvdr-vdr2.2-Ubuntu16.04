@@ -1,0 +1,113 @@
+<h1><?% gettext("Music library") %?></h1>
+<!-- TableTemplate -->
+<form name="musicform" onSubmit="location.href = '?cmd=ml&amp;data=' + 'search:' + document.forms[0].search.value; return false">
+<table width="95%" border=1>
+<tr>
+    <th>
+    <?% gettext("Artists") %?>: <select name='artists' onChange="di('artist:' + this.form.artists.options[this.form.artists.options.selectedIndex].value, '?cmd=ml&amp;data=')">
+    <?% FOREACH ch IN param.artists %?>
+        <option value="<?% url( ch.0 ) %?>" <?% "selected" IF cgi.param('data').split(':').first == 'artist' && cgi.param('data').split(':').last == ch.0 %?>><?% ch.0 %?></option>
+    <?% END %?>
+    </select>
+    </th>
+
+    <th>
+    <?% gettext("Albums") %?>: <select name='albums' onChange="di('album:' + this.form.albums.options[this.form.albums.options.selectedIndex].value, '?cmd=ml&amp;data=')">
+    <?% FOREACH ch IN param.albums %?>
+        <option value="<?% url( ch.0 ) %?>" <?% "selected" IF cgi.param('data').split(':').first == 'album' && cgi.param('data').split(':').last == ch.0 %?>><?% chop(ch.0,50) %?></option>
+    <?% END %?>
+    </select>
+    </th>
+</tr>
+<tr>
+    <th>
+    <?% gettext("Search") %?>: <input name='search' value='<?% cgi.param('data').split(':').last IF cgi.param('data').split(':').first == 'search' %?>'><input type='button' onClick="location.href = '?cmd=ml&amp;data=' + 'search:' + document.forms[0].search.value" value="<?% gettext("Go") %?>">
+    </th>
+    <th>
+    <?% gettext("Genres") %?>: <select name='genres' onChange="di('genre:' + this.form.genres.options[this.form.genres.options.selectedIndex].value, '?cmd=ml&amp;data=')">
+    <?% FOREACH ch IN param.genres %?>
+        <option value="<?% url( ch.0 ) %?>" <?% "selected" IF cgi.param('data').split(':').first == 'genre' && cgi.param('data').split(':').last == ch.0 %?>><?% ch.0 %?></option>
+    <?% END %?>
+    </select>
+    </th>
+</tr>
+</table>
+<br>
+
+
+<b>
+<?% IF allow('mplay') %?>
+<a href="#" onClick="Play('<?% gettext("Nothing selected!") %?>',document.musicform)">
+[<?% gettext("Play selected songs") %?>]
+</a>
+<?% END %?>
+<?% IF allow('mrefresh') %?>
+<a href="?cmd=mrefresh">[<?% gettext("Update Music Database") %?>]</a>
+<?% END %?>
+<?% IF allow('mcovers') %?>
+<a href="?cmd=mcovers">[<?% gettext("Get new Covers") %?>]</a>
+<?% END %?>
+</b>
+<?% IF allow('mplay') %?>
+<br>
+<a href="#" onClick="selAll(document.musicform, 1)">[<?% gettext("Select all") %?>]</a>
+<a href="#" onClick="selAll(document.musicform, 0)">[<?% gettext("Unselect all") %?>]</a>
+<a href="#" onClick="reverse(document.musicform)">[<?% gettext("Reverse select") %?>]</a>
+<?% END %?>
+<p>
+<table border="0" width="95%">
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <?% FOREACH zeile IN data %?>
+        <?% IF !oldalbum.defined || zeile.2 != oldalbum %?>
+        <tr>
+        <td colspan=<?% zeile.size %?>>
+            &nbsp;
+        </td>
+        </tr>
+        <tr>
+        <td colspan=<?% zeile.size %?>>
+            <img class="cover" src="?cmd=mcoverimage&amp;data=<?% zeile.0 %?>" alt="<?% zeile.2 %?>" align="right" />&nbsp;
+            <?% albummark = "Album"+loop.count %?>
+            <h1>Album: <?% zeile.2 %?>&nbsp;<font size=2><a href="#" onClick="selSwitch(document.musicform, '<?% albummark %?>')">[<?% gettext("Selection") %?> album]</a></font></h1>
+            <h3>
+            <?% gettext("Artist") %?>: <?% zeile.1 %?>,&nbsp;
+            <?% gettext("Year") %?>: <?% zeile.5 %?>,&nbsp;
+            <?% gettext("Genre") %?>: <?% zeile.7 %?>,&nbsp;
+            <?% gettext("Comment") %?>: <?% chop(zeile.last,25) %?>&nbsp;
+            </h3>
+        </td>
+        </tr>
+        <tr>
+        <?% FOREACH field IN fields %?>
+        <?% NEXT IF field.match('^__') %?>
+            <th><?% field %?></th>
+        <?% END %?>
+        </tr>
+        <?% END %?>
+        <tr>
+            <?% c = -1 %?>
+            <?% FOREACH field IN zeile %?>
+                <?% c = c + 1 %?>
+                <?% NEXT IF fields.$c.match('^__') %?>
+                <?% IF c == 0; # Id Field %?>
+                <td>
+<?% IF allow('mplay') %?>
+                    <input name='<?% albummark %?>' type="checkbox" value="<?% url(field) %?>">
+<?% END %?>
+                </td>
+                <?% ELSIF c == 1 || c == 2; # Artist/Album Field %?>
+                    <?% typ = (c == 1 ? 'artist' : 'album') %?>
+                <td>
+                    <a href="?cmd=ml&data=<?% typ %?>:<?% url(field) %?>"><?% field %?></a>
+                </td>
+                <?% ELSE %?>
+                <td><?% field %?></td>
+                <?% END %?>
+            <?% END %?>
+        </tr>
+            <?% oldalbum = zeile.2 %?>
+        <?% END %?>
+<?% END %?>
+</form>
+</table>

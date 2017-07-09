@@ -1,0 +1,195 @@
+<!-- clist -->
+<div id="body">
+<?% ######################################################################## %?>
+<?% enableform = allow('cdelete') && data.size > 1  %?>
+<?% ######################################################################## %?>
+<?% IF param.sortable.defined %?>
+    <?% IF cgi.param('__sortby') %?>
+        <?% sortby = cgi.param('__sortby') %?>
+        <?% orderby = cgi.param('__desc') %?>
+    <?% END %?>
+    <?% cmd = cgi.param('cmd') %?>
+    <?% IF cgi.param('data') %?>
+        <?% daten = url( cgi.param('data') ) %?>
+        <?% daten = "&amp;data=${daten}" %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SortItem %?>
+        <tr>
+            <td width="20"><a href="?cmd=<?% cmd %?><?% daten %?>&amp;__sortby=<?% row %?>&amp;__desc=0" ><img src="images/home.<?% global.imagetyp %?>" alt="" /></a></td>
+            <td width="160">
+                <?% "<strong>" IF sortby == row %?>
+                <a href="?cmd=<?% cmd %?><?% daten %?>&amp;__sortby=<?% row %?>&amp;__desc=<?% IF sortby == row && orderby == 0 %?>1<?% ELSE %?>0<?% END %?>" >
+                <?% label %?>
+                </a>
+                <?% "</strong>" IF sortby == row %?>
+            </td>
+            <td width="20"><a href="?cmd=<?% cmd %?><?% daten %?>&amp;__sortby=<?% row %?>&amp;__desc=1" ><img src="images/down.<?% global.imagetyp %?>" alt="" /></a></td>
+        </tr>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+<?% IF allow('program') %?>
+                      <a href="?cmd=program&data=<?% id %?>">
+                          <img src="images/watch.<?% global.imagetyp %?>" alt="" title="<?% gettext("Program guide") %?>" />
+                      </a>
+<?% END %?>
+<?% IF allow('cedit') %?>
+                        <a href="?cmd=cedit&amp;data=<?% id %?>">
+                            <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit channel") %?>" />
+                        </a>
+<?% END %?>
+<?% IF allow('cdelete') %?>
+                        <a href="javascript:sure('<?% gettext("Would you like to delete this channel?") %?> : \'<?% escape( name ) %?>\' ?','?cmd=cdelete&amp;data=<?% id %?>')">
+                            <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete channel") %?>" />
+                        </a>
+<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsFlat %?>
+        <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+          <td>
+            <?% IF enableform %?>
+        			<input class="push" type="checkbox" value="<?% id %?>" name="<?% name %?>" />
+             <?% END %?>
+          </td>
+          <td>
+<?% IF allow('cedit') %?>
+            <a href="?cmd=cedit&amp;data=<?% id %?>">
+<?% END %?>
+            <?% POS %?>.<?% name %?>
+<?% IF allow('cedit') %?>
+            </a>
+<?% END %?>
+          </td>
+          <td>
+            <?% frequency %?>
+          </td>
+          <td>
+            <?% parameters %?>
+          </td>
+          <td>
+            <?% source %?>
+          </td>
+          <!--<td>
+            <?% srate %?>
+          </td>-->
+          <td>
+            <?% chop(VPID,10) %?>
+          </td>
+          <td>
+            <?% chop(APID,10) %?>
+          </td>
+          <td>
+            <?% chop(TPID,10) %?>
+          </td>
+          <td>
+            <?% chop(CA,10) %?>
+          </td>
+          <td class="push">
+            <?% PROCESS RowButtons %?>
+           </td>
+        </tr>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% IF cgi.param('data') != "" %?>
+    <?% search = cgi.param('data') %?>
+<?% END %?>
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+<h1>
+    <?% gettext("Channels") %?> ( <?% data.first.16 %?> )
+    <?% IF search.defined %?> : "<?% search %?>" 
+    <?% END %?>
+</h1>
+<form name="clist" action="">
+    <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?%- id=zeile.0;name=zeile.1;frequency=zeile.2;parameters=zeile.3;
+             source=zeile.4;srate=zeile.5;VPID=zeile.6;APID=zeile.7;TPID=zeile.8;
+             CA=zeile.9;SID=zeile.10;NID=zeile.11;TID=zeile.12;RID=zeile.13;GRP=zeile.14;
+             POS=zeile.15;CGRP=zeile.16;HOST=zeile.17; -%?>
+        <?% IF loop.count == 1 || ( !sortby.defined && ( !OLDCGRP.defined || CGRP != OLDCGRP ))  %?>
+        <?% IF OLDCGRP.defined %?>
+    </table>
+        <?% END %?>
+    <?% IF !sortby.defined  %?>
+        <?% OLDCGRP = CGRP %?>
+    <?% END %?>
+    <?% IF not sortby.defined && OLDHOST != HOST  %?>
+    <h2><?% gettext("Video disk recorder") %?> : <?% HOST %?></h2>
+    <?% OLDHOST = HOST %?>
+    <?% END %?>
+        <?% IF CGRP.defined && loop.count != 1 %?><h3><?% CGRP %?></h3><?% END %?>
+        <table summary="" width="100%">
+        <tr><th width="20"></th>
+            <th width="120"><?% gettext('Name') %?></th>
+            <th><?% gettext('Transponder frequency',6)%?></th>
+            <th><?% gettext('Various parameters, depending on signal source',8) %?></th>
+            <th><?% gettext('Signal source',6) %?></th>
+            <!--<th><?% gettext('Symbol rate',6) %?></th>-->
+            <th><?% gettext('Video PID (VPID)',10) %?></th>
+            <th><?% gettext('Audio PID (APID)',10) %?></th>
+            <th><?% gettext('Teletext PID (TPID)',10) %?></th>
+            <th><?% gettext('Conditional access (CA)',10)%?></th>
+            <th width="64" align="right"></th>
+        </tr>
+        <?% END %?>
+        <?% PROCESS ItemAsFlat %?>
+    <?% END %?>
+    </table>
+</form>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+<?% IF allow('cnew') || allow('cupdate')  %?>
+    <p class="section"><?% gettext("Channels",20) %?>
+    <p>
+<?% IF allow( 'cnew' ) %?>
+      <a href="?cmd=cnew"><img src="images/new.<?% global.imagetyp %?>" alt="" title="<?% gettext("Create new channel") %?>" /></a>&nbsp;
+      <a href="?cmd=cnew"><?% gettext("Create new channel",20) %?></a><br />
+<?% END %?>
+<?% IF allow( 'cupdate' ) %?>
+      <a title="<?% gettext("Update channels") %?>" href="?cmd=cupdate"><img src="images/refresh.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+      <a title="<?% gettext("Update channels") %?>" href="?cmd=cupdate"><?% gettext("Update channels",20) %?></a>
+<?% END %?>
+    </p>
+<?% END %?>
+<?% IF param.sortable.defined %?>
+    <p class="section"><?% gettext("Sorting") %?></td></tr>
+    <p>
+        <table summary="">
+      <?% FOREACH row IN fields %?>
+      <?% NEXT IF row.match('^__') %?>
+        <?% PROCESS SortItem label=chop(row,20) %?>
+      <?% END %?>
+      </table>
+  </p>
+<?% END %?>
+<?% IF enableform %?>
+    <p class="section"><?% gettext("Selection",20) %?></p>
+    <p>
+        <a href="javascript:selAll(document.clist,1)"><img src="images/select.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.clist,1)"><?% gettext("Select all",20) %?></a><br />
+        <a href="javascript:selAll(document.clist,0)"><img src="images/deselect.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:selAll(document.clist,0)"><?% gettext("Unselect all",20) %?></a><br />
+        <a href="javascript:reverse(document.clist)"><img src="images/invers.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:reverse(document.clist)"><?% gettext("Reverse select",20) %?></a>
+
+<?% IF allow('cdelete') %?>
+        <br /><br />
+        <a href="javascript:DeleteSelected('<?% gettext("Would you like to delete these channels?") %?>','<?% gettext("Nothing selected!") %?>','cdelete',document.clist)"><img src="images/delete.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+        <a href="javascript:DeleteSelected('<?% gettext("Would you like to delete these channels?") %?>','<?% gettext("Nothing selected!") %?>','cdelete',document.clist)"><?% gettext("Delete channels",20) %?></a><br />
+<?% END %?>
+    </p>
+<?% END %?>
+    <p class="section"><?% gettext("Search for channels",20) %?></p>
+        <form method="post" action="?cmd=clist"> 
+    <p>
+            <input type="text" name="data" size="18" <?% IF search.defined %?>value="<?% search %?>"<?% END %?> />
+    </p>
+        </form>
+</div>
+<?% global.sidebar = 1 %?>

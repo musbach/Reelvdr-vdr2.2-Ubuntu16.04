@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/.deps
+END
+testdefault.Po
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/.deps/testdefault.Po
+END
+testbincue-testbincue.Po
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/.deps/testbincue-testbincue.Po
+END
+testtoc-testtoc.Po
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/.deps/testtoc-testtoc.Po
+END
+testischar.Po
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/.deps/testischar.Po
+END
+testparanoia.Po
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/.deps/testparanoia.Po
+END
+check_sizeof.Po
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/.deps/check_sizeof.Po
+END
+testiso9660.Po
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/.deps/testiso9660.Po
+END
+testassert.Po
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/test/.deps/testassert.Po
+END

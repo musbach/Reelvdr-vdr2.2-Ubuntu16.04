@@ -1,0 +1,85 @@
+#!/bin/sh
+
+[ -r /etc/default/sysconfig ] && . /etc/default/sysconfig
+[ -r /etc/default/globals ] && . /etc/default/globals
+
+
+exec > /dev/null 2>&1
+#exec > /tmp/usbmount-reel.$$ 2>&1
+#echo $0 $*
+#set
+#set -x
+
+RECORDDIR="/media/reel/recordings"
+MEDIADIR="/media/reel"
+
+mountpoint_ipod=/media/Apple_*
+
+if [ ! -z $vendor ] ;then
+	description="${vendor} ${model}"
+else
+	description="${model}"
+fi
+
+
+if [ ! -z "${part_num}" ] ; then
+	description="$description vol. ${part_num}"
+fi
+
+echo "ACTION is $ACTION"
+
+set -x
+
+case $ACTION in
+	fsck)
+		if VdrRunning ; then
+			msg=`tl "Doing fsck for %s" | sed s/%s/"${description}"/`
+			#smesg "${msg}"
+			svdrpsend.sh mesg "${msg}"
+		fi
+		;;
+	add)
+		if VdrRunning ; then
+			msg=`tl "Added %s" | sed s/%s/"${description}"/`
+			smesg "${msg}"
+			cat /proc/mounts | grep -q "$mountpoint_ipod" # check if mounted
+			if [ $? -eq 0 ]; then
+			    svdrpsend.sh plug ipod OPEN
+			else
+			    svdrpsend.sh plug filebrowser OPEN $mountpoint
+			fi
+		fi
+		#if [ -d $RECORDDIR ]; then
+			mkdir $RECORDDIR/$mountname
+			(
+			for i in $(find $mountpoint -type d -name "*.rec" ) ; do
+				ln -s `dirname "$i"` $RECORDDIR/$mountname
+			done
+			#ln -s $mountpoint $RECORDDIR
+			for dir in music movies pictures video ; do
+				[ -d $MEDIADIR/$dir ] && [ -d $mountpoint/$dir ] && ln -s $mountpoint $MEDIADIR/$dir/
+			done
+			touch $RECORDDIR/.update
+			) 2>&1 &
+		#fi
+		;;
+	remove)
+		if [ -d $RECORDDIR ] && [ ! -z $mountname ]; then
+			rm -r $RECORDDIR/$mountname
+			touch $RECORDDIR/.update
+		fi
+
+		for dir in music movies pictures video ; do
+			if [ -d $MEDIADIR/$dir ] && [ ! -z $mountname ]; then
+				rm -f $MEDIADIR/$dir/$mountname
+			fi
+		done
+
+		if VdrRunning ; then
+			msg=`tl "Removed %s" | sed s/%s/"${mountname}"/ | sed s/_/" "/g`
+			smesg "${msg}"
+		fi
+			ipod=`cat /proc/mounts | grep "$mountpoint_ipod"` # check if mounted
+			umount $ipod
+		;;
+esac

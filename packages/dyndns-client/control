@@ -1,0 +1,9 @@
+Package: dyndns-client
+Version: 0.99.3
+Section: reel
+Priority: optional
+Architecture: all
+Conflicts: reelvdr-tools (<< 2.1), reel-dyndns, ddclient, ez-ipupdate
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: dyndns-client
+Description: provides access to dyndns and/or gnudip internet service  

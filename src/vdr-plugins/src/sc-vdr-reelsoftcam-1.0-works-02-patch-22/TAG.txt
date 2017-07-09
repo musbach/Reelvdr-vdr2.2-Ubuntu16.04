@@ -1,0 +1,16 @@
+compiles ans no runtime error
+appied:
+find ./ -name "*.c" -exec sed -i "s/PRINTF/PRINTSCF/g" {} \;
+find ./ -name "*.h" -exec sed -i "s/PRINTF/PRINTSCF/g" {} \;
+find ./ -name "*.c" -exec sed -i "s/DBG/DBSCG/g" {} \;
+find ./ -name "*.h" -exec sed -i "s/DBG/DBSCG/g" {} \;
+find ./ -name "*.c" -exec sed -i "s/MAXDVBDEVICES/MAXDEVICES/g" {} \;
+find ./ -name "*.c" -exec sed -i "s/IsTunedToTransponderConst/IsTunedToTransponder/g" {} \;
+change in Makefile:
+FFdecsa speed to "normal"
+comment everthing out: which leads to 
+1) Nicht definierter Verweis auf `vtable for cScDvbDevice'
+2) Nicht definierter Verweis auf `typeinfo for cScDvbDevice'
+
+leads to crash of vdr
+

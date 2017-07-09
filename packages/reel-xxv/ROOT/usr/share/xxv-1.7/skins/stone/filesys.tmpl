@@ -1,0 +1,91 @@
+<!-- filesys Template -->
+<?% IF ! global.bodyinc.defined;global.bodyinc = 1 %?>
+<body class="frame">
+<?% INCLUDE status.inc %?>
+<?% INCLUDE header.inc %?>
+<div id="body">
+<?% END %?>
+<?% IF param.headingText %?>
+<h1><?% param.headingText %?></h1>
+<?% END %?>
+
+
+<?%
+statusfiles = [];
+trash = param.usage.shift;
+IF param.graphic;
+  FILTER null;
+        FOREACH device IN param.usage;
+            name = reentities(device.first).split('/').last;
+            free = 100 - device.5;
+            d = [
+                [ device.3, device.4],
+                [ device.5, free],
+            ];
+            USE my_graph = GD.Graph.pie(375, 250);
+
+            label = gettext('Total space');
+            label = "${device.0} - ${device.6} - ${label} ${device.2}";
+            my_graph.set(
+                pie_height => 20,
+                axislabelclr => 'black',
+                shadow => 1,
+            );
+            my_graph.set_title_font(param.font,10);
+            my_graph.set_value_font(param.font,10);
+            my_graph.set_label_font(param.font,6);
+
+            file = writefile("status_filesys_${name}.gif", my_graph.plot(d).gif );
+            statusfiles.push([ label , file ]);
+        END;
+  END;
+%?>
+
+<?% FOREACH file IN statusfiles %?>
+<div class="areabegin">
+<table class="areatable" summary="">
+  <tr>
+    <td class="areahead">
+      <div class="areahead">
+        <?% file.0 %?>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="areatext">
+      <div style="text-align:center;" >
+        <img src="<?% file.1 %?>" alt="<?% file.0 %?>" />
+      </div>
+    </td>
+  </tr>
+  <tr><td class="areabottom"></td></tr>
+</table>
+</div>
+<?% END %?>
+
+<?% ELSE; # not param.graphic; %?>
+<table class="largetable" summary="">
+  <tr>
+    <td class="largehead">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="largetext">
+      <table summary="" width="100%">
+            <?% FOREACH field IN trash %?>
+                <th><?% field %?></th>
+            <?% END %?>
+            </tr>
+            <?% FOREACH zeile IN data %?>
+            <tr <?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+                <?% FOREACH field IN zeile %?>
+                <td><?% field %?></td>
+                <?% END %?>
+            </tr>
+            <?% END %?>
+      </table>
+    </td>
+  </tr>
+  <tr><td class="largebottom"></td></tr>
+</table>
+<?% END %?>
+<div class="areaclose"></div>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/x86/hdtsplay
+END
+hdchannel.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/x86/hdtsplay/hdchannel.c
+END
+hdtsplay.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/x86/hdtsplay/hdtsplay.c
+END
+hdshmlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/x86/hdtsplay/hdshmlib.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/x86/hdtsplay/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/utils/hdshm3/x86/hdtsplay/README
+END

@@ -1,0 +1,11 @@
+Package: reelbox-devel-ice
+Version: 25.0.15-15
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Installed-Size: 14M
+Depends: bison, build-essential, ccache, flex, gawk, gettext, libx11-dev, linux-libc-dev, pkg-config, subversion, x11proto-core-dev, zlib1g-dev, libfreetype6-dev, libglib2.0-dev, libgstreamer0.10-dev, libjpeg62-dev | libjpeg-turbo8-dev, libncurses5-dev, libpng12-dev, libusb-dev, libxml2-dev, zlib1g-dev 
+Suggests: doxygen, genisoimage, zip
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelbox-devel-ice
+Description: Development package for the next NCL II

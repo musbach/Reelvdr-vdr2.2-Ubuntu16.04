@@ -1,0 +1,125 @@
+Index: osdbase.c
+===================================================================
+--- osdbase.c	(revision 15386)
++++ osdbase.c	(revision 15387)
+@@ -193,6 +193,105 @@
+      current = Item->Index();
+ }
+ 
++#ifdef REELVDR
++// create a new string on the heap that has a maximum 'maxlen' number of
++// characters (each can span multiple bytes)
++//
++// tries to find end of words to break the string
++// returned char* (if not NULL) must be freed by caller 
++//
++// bytesCopied used by the caller to jump in the input string
++char* BreakString(const char*str, int maxlen, int &bytesCopied)
++{
++	bytesCopied = 0;
++	if (!str) return NULL;
++	
++	// number of chars
++	int symCount = Utf8StrLen(str);
++	
++	// convert UTF-8 multi-byte char to a single uint number
++	uint *inp_sym = new uint[symCount+1]; // +1 for the '\0' 
++	int inp_sym_len = Utf8ToArray(str, inp_sym, symCount+1);
++	
++	// number of chars in the string less than the maxlen
++	// TODO: if there is a '\n' in this part!
++	if (inp_sym_len <= maxlen)
++	{
++		// copy the input string	
++		bytesCopied = strlen(str);
++
++		delete[] inp_sym;
++		//printf("** just copied **\n");
++		return strdup(str);
++	}
++	
++	// create string on heap that can hold maxlen (multi-byte)chars
++	char *s = (char*) malloc((4*maxlen+1)*sizeof(char)); //+1 for '\0'
++
++	int i = 0;
++
++	// if no wordbreaks found, break after maxlen characters
++	int line_end = maxlen;
++
++	// donot show the char that was used to break the string
++	// for eg. ' ' is unnecessary at the end/beginning of a line
++	int skip_symbol = 0;
++	
++	//the string here is longer than requested. Break it down.
++	for (i = 0; i < maxlen; ++i)
++	{
++		//look for word breaks and new lines	
++		if (inp_sym[i] == '\0' || inp_sym[i] == '\n')
++		{
++			line_end = i;
++			if (inp_sym[i] != '\0')
++				skip_symbol = 1;
++			break; // found end of line exit loop
++		}
++		else if (inp_sym[i] == ' ') //space
++		{
++			line_end = i;
++			skip_symbol = 1;
++		}
++	}//for
++	
++	// create char from uint array, since the char* is large enough 
++	// 	it will be '\0' terminated
++	bytesCopied = Utf8FromArray(inp_sym, s, 4*maxlen-1,line_end);
++
++	if (skip_symbol)// jump over the last symbol since it is a ' ' or '\n'
++		++bytesCopied;	 
++	
++	delete[] inp_sym;
++	return s;
++}
++
++// breaks given text into smaller 'maxChar' length strings and 
++// displays them as unselectable text on OSD
++void cOsdMenu::AddFloatingText(const char* text, int maxChars)
++{
++	// empty string; display nothing
++	if(!text) return;
++	
++	char *p = NULL;
++	int copied = 0;
++
++	//printf("\tFloating Text (%i): '%s'\n", maxChars, text);
++	while(*text)
++	{
++		// returns a pointer to a char string with atmost maxChars characters (not bytes)
++		// p has to be freed; p is NULL if text was null
++		p = BreakString(text, maxChars, copied); 
++		text += copied; //jump bytes not chars
++		if(p)
++		{
++			Add(new cOsdItem(p, osUnknown,false)); // unselectable text
++			free(p); p = NULL;
++		}
++	}
++}
++#endif /* REELVDR */
++
+ void cOsdMenu::Display(void)
+ {
+   if (subMenu) {
+Index: osdbase.h
+===================================================================
+--- osdbase.h	(revision 15386)
++++ osdbase.h	(revision 15387)
+@@ -129,6 +129,10 @@
+   int Current(void) const { return current; }
+   void Add(cOsdItem *Item, bool Current = false, cOsdItem *After = NULL);
+   void Ins(cOsdItem *Item, bool Current = false, cOsdItem *Before = NULL);
++#ifdef REELVDR
++  void AddFloatingText(const char* text, int maxlen); 
++  // breaks the given string into smaller strings of maxlen chars and displays them as unselectable text
++#endif /* REELVDR */
+   virtual void Display(void);
+   virtual eOSState ProcessKey(eKeys Key);
+   };

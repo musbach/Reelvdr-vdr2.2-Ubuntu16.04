@@ -1,0 +1,4 @@
+tmp/etc/init.d/reeltvtv: /usr/src/reelbox/testing/src/etc/init.d/reeltvtv
+tmp/etc/tvtv/tvtvchannels.map: /usr/src/reelbox/testing/src/utils/tvtv/tvtvchannels.map
+tmp/usr/sbin/reeltvtvd: /usr/src/reelbox/testing/src/utils/tvtv/reeltvtvd
+tmp/usr/sbin/tvtv4l: /usr/src/reelbox/testing/src/utils/tvtv/tvtv4l

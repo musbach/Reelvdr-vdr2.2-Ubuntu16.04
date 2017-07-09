@@ -1,0 +1,13 @@
+Package: libssp0
+Version: 4.1.1-21
+Section: libs
+Priority: standard
+Architecture: i386
+Depends: gcc-4.1-base (= 4.1.2-16ubuntu2), libc6 (>= 2.3.6-6)
+Installed-Size: 12
+Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
+Source: gcc-4.1 (4.1.1ds2-21)
+Description: GCC stack smashing protection library
+ GCC can now emit code for protecting applications from stack-smashing attacks.
+ The protection is realized by buffer overflow detection and reordering of
+ stack variables to avoid pointer corruption.

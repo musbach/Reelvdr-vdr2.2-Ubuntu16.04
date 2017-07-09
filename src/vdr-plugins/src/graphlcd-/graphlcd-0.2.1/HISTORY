@@ -1,0 +1,61 @@
+VDR Plugin 'graphlcd' Revision History
+-------------------------------------
+
+2011-02-13: version 0.1.9
+- fixed vdr 1.6.0 combatibility and several typos
+- added SVDRP support (TomJoad): http://projects.vdr-developer.org/issues/488
+- added SPAN support (Mreimer): http://projects.vdr-developer.org/issues/523
+- new: logonames.alias is now named channels.alias, which is maintained by wbreu
+
+
+2010-11-21: version 0.1.8
+- added --exclude .git in make dist
+- code minimizing (http://www.vdrportal.de/board/thread.php?postid=955543#post955543)
+- wrong recordinglength with vdr-1.7.x (http://projects.vdr-developer.org/issues/443)
+- fixed NULL-pointer-exception when using UTF-8 and Freetype fonts (http://projects.vdr-developer.org/issues/457)
+  patches by Steve135 - http://www.vdrportal.de/board/thread.php?postid=955543#post955543
+
+
+2010-11-02: version 0.1.7
+- added wbreus logo pack (http://wbreu.htpc-forum.de/vdrplugins/vdrgraphlcdplugin/index.php)
+- added utf8 conversion for correct display (http://projects.vdr-developer.org/issues/436)
+
+
+2010-03-01: Version 0.1.6 
+- added UTF8 support (vdr-graphlcd-0.1.5-utf8_i18n.diff)
+- added include path graphlcd-base/ in Makefile
+- added -L./graphlcd-base/glcddrivers/ & glcdgraphics/ in Makefile if graphlcd-base is not installed system-wide
+- changed FRAMESPERSEC to DEFAULTFRAMESPERSECOND (vdr-1.7.x)
+- modified Makefile for vdr-1.7.13
+
+
+2007-02-25: Version 0.1.5
+- added some missing includes
+- do LCD initialisation in display thread instead of during plugin initialisation to fix some issues with direct port accesses (thanks to TomJoad from vdr-portal.de)
+
+
+2007-02-04: Version 0.1.4
+- support APIVERSION introduced with vdr 1.3.47
+- test if ChannelNumber is 0 in cGraphLCDState::SetChannel
+- Added french translations (thanks to Pierre Briec)
+- use cPlugin::MainThreadHook method to do periodic querying of replay status. So, patching vdr is no longer needed.
+- fixed volume handling for vdr 1.4.2 and up
+- now use cFont::WrapText instead of local one
+- got rid of global lcd and display objects, they are local variables of the plugin class now.
+- display thread should be proper canceled now
+- logonames.alias for VDR 1.3 and up is the default now
+- increased lineheight in some bitmap fonts to look good with new WrapText function
+- extra space between menu lines when lineheight is greater than totalheight
+- replaced uint64 with uint64_t
+- replaced unsigned long long with uint64_t
+
+
+2006-01-15: Version 0.1.3
+- Don't replace newlines with spaces in text items any longer.
+- Rewritten cGraphLCDDisplay::WrapText(). It is much faster now.
+- Increased time to wait for display task to start (thanks to Andreas
+  Brachold).
+- Explicitly set the current channel to prevent a crash if no channel logo was
+  set (thanks to Andreas Brachold).
+- Added support for VDR version 1.3.38 and up (thanks to Andreas Brachold).
+- Added logos for cable and terrestrial channels and modified some of the old

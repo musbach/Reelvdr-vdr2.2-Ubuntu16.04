@@ -1,0 +1,1 @@
+../stone/status.inc

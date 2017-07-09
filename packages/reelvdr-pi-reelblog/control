@@ -1,0 +1,14 @@
+Package: reelvdr-pi-reelblog
+Version: 1.0.10
+Section: reel
+Priority: important
+Architecture: i386
+Depends: reelvdr, libexpat1, libcurl3
+Conflicts: reelblog, reelvdr-reelblog
+Replaces: reelblog
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-reelblog
+Description: Newsfeed (RSS) plugin for ReelVDR
+ This is a RSS Newsfeed plugin for the ReelVDR
+ it gives you latest information (not only) about Reel, the ReelBox and HDTV
+ Thanks to Heiko Westphal for providing and adopting this plugin for the ReelBox

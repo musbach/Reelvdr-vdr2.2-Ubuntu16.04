@@ -1,0 +1,4 @@
+timeline.o: timeline.c checkerOsd.h config.h i18n.h
+i18n.o: i18n.c i18n.h
+checkerOsd.o: checkerOsd.c checkerOsd.h config.h
+config.o: config.c config.h

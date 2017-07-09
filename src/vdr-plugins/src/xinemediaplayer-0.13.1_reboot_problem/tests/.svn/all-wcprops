@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/xinemediaplayer-0.13/tests
+END
+m3u_parser_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/xinemediaplayer-0.13/tests/m3u_parser_test.c
+END
+offending.m3u
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/xinemediaplayer-0.13/tests/offending.m3u
+END

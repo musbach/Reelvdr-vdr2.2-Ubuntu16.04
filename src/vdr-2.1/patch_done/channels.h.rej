@@ -1,0 +1,14 @@
+--- channels.h	(revision 15380)
++++ channels.h	(revision 15381)
+@@ -34,7 +34,11 @@
+ #define MAXAPIDS 32 // audio
+ #define MAXDPIDS 16 // dolby (AC3 + DTS)
+ #define MAXSPIDS 32 // subtitles
++#ifdef REELVDR
++#define MAXCAIDS 256 // conditional access
++#else
+ #define MAXCAIDS  8 // conditional access
++#endif /*REELVDR*/
+ 
+ #define MAXLANGCODE1 4 // a 3 letter language code, zero terminated
+ #define MAXLANGCODE2 8 // up to two 3 letter language codes, separated by '+' and zero terminated

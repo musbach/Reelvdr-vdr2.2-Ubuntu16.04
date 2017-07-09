@@ -1,0 +1,148 @@
+VDR Plugin 'osdpip' Revision History
+------------------------------------
+
+2012-05-16: Version 0.1.2
+- Adapted for VDR 1.7.27 (Closes #981, #964, #902)
+- Dropped VDR 1.6 support
+- Added some new resolutions:
+  4:3 - 450x360, 600x480
+  16:9 - 320x180, 480x270, 640x360
+
+2012-02-12: Version 0.1.1
+
+- Fixed compile error with newer ffmpeg versions >= svn 20100426 (closes #345)
+- Replaced deprected ffmpeg calls (Patch provided by mnival) (closes #690)
+- Updated french translation (Patch provided by mnival) (closes #691)
+- Avoid segfault at stop replay with keystroke '0' (Patch provided by
+  Andreas Brachold) (closes #592)
+
+2010-03-28: Version 0.1.0
+
+- Moved to http://projects.vdr-developer.org/projects/show/plg-osdpip
+  as community maintained project using a GIT repository
+- Committed old releases to the GIT repository
+- Updated project homepage url in README
+- Updated FSF address in the license information
+- Added support for VDR >= 1.7.13 (Make.global)
+- Use pkg-config to find compilation flags, libs etc for ffmpeg
+- Fixed ffmpeg compatibility issues with newer ffmpeg versions
+- Improved copyright and license information in the header of all source files
+
+2010-01-01: Version 0.0.10a
+- added support for VDR 1.7.x
+- added PIP while replaying
+- added italian translations (thanks to Diego Pierotto)
+
+2008-05-03: Version 0.0.10 (written by Andreas Regel)
+- support swscale functions of recent FFMPEG versions. Have a look at
+  README to see how to deactivate it for older FFPMEG versions.
+- support changed header file structure of recent FFMPEG versions. Have
+  a look at README to see how to activate this.
+- added zapping through PiP channel based on a patch by pinky666 from
+  vdr-portal. You can activate it via the green button.
+
+2008-04-27: Version 0.0.9 (written by Andreas Regel)
+- dropped support for VDR version lower than 1.3.47.
+- Now using palette replacemen introduced in VDR 1.4.27, so palette
+  setting workaround is not needed any longer. This simplifies code a
+  bit.
+- added support for VDR 1.6. Now 1.4 and 1.6 are supported (tested with
+  1.4.7 and 1.6.0)
+- added gettext localization support introduced with VDR 1.5.7.
+- Do not decode B frames when dropping them.
+- Use cCondWait::SleepMs instead of usleep.
+- Fixed automatic closing of OSD after some minutes.
+- Fixed showing wrong channel information.
+- Added missing inclusion of <vdr/device.h>.
+- Added new colour reduction mode using 256 dithered colours (thanks to
+  Martin Wache).
+- Added french translations (thanks to micky979 at vdrportal.de)
+
+
+2005-05-15: Version 0.0.8 (written by Andreas Regel)
+- Added Navigation through channel in a way like with ordinary VDR. Use
+  the Left/Right keys to select channel groups, OK to choose one or the
+  number keys to directly enter a channel number. All this only works
+  with enabled info window.
+- Extended the info window to contain more information. The amount of
+  information shown can be chosen through the setup menu. This directly
+  affects the height of the info window.
+- Using the info window to show vdr messages if they occur.
+- Changed the manner the moving of the PiP window works. Now move mode
+  is enabled or disabled by pressing the green button. In move mode,
+  the cursor keys can be used to move the PiP window.
+- Added some more predefined PiP window sizes. You have to reset your
+  size in setup menu.
+- Added support for ffmpeg 0.4.9 (should work with 0.4.8, too)
+- Updated finnish translations (thanks to Rolf Ahrenberg)
+- Cleaned up, dropped support for vdr versions older than 1.3.8
+
+
+2005-02-03: Version 0.0.7.2
+- adapted to VDR 1.3.19+ (should work with older versions, too)
+
+
+2005-01-09: Version 0.0.7.1
+- adapted to VDR 1.3.18+ (should work with older versions, too)
+
+
+2004-10-26: Version 0.0.7
+- adapted to VDR 1.3.13+ (should work with older versions, too)
+
+
+2004-08-01: Version 0.0.6 (written by Andreas Regel)
+- added channel swapping. It is now possible to swap the currently viewed
+  channel with the pip channel by pressing the red key. (thanks to Sascha
+  Volkenandt)
+- added support for other aspect ratios than 4:3. Image is now correctly
+  scaled and black border is added when necessary.
+- added automatic frame dropping that always takes the last frame from
+  the ringbuffer.
+- added -D_GNU_SOURCE to DEFINES in Makefile
+- fixed a memory leak: missing deletion of frame ringbuffer
+- fixed a memory leak: missing frame deletion in case of a full ringbuffer
+- small speedup through just putting relevant frames to ringbuffer
+- updated finnish translations (thanks to Rolf Ahrenberg)
+
+
+2004-06-13: Version 0.0.5 (written by Andreas Regel)
+- added support for VDR version 1.3.7 and later (VDR 1.2.6 is still
+  supported, no guarantee for 1.3.0-1.3.6)
+- no patching required any longer with 1.3.7 and later
+- fixed info window colors if palette patch is not applied (VDR up to 1.3.6,
+  index patch must be applied)
+- added german translations
+- added finnish translations (thanks to Rolf Ahrenberg)
+
+
+2004-02-04: Version 0.0.4 (written by Andreas Regel)
+
+- a second osd window with some information about the viewed channel and
+  event is now shown on screen
+
+
+2004-01-24: Version 0.0.3 (written by Andreas Regel)
+
+- new TS->ES remuxer: now using VDR's cRemux for TS->PES and some own code
+  for PES->ES
+- now using libavcodec from ffmpeg instead of mpeg2dec
+- frames to decode configurable (I-frames, I-/P-frames, all frames)
+- frame dropping configurable
+- added new color depths:
+ - 128 shades greyscale
+ - 128 colors with variable palette using Wu's quantizer (patch needed)
+- changed osd size setting to 6 configurable values
+
+
+2004-01-03: Version 0.0.2
+
+- Added setup menu
+- OSD depth, size and position configurable (see README)
+- OSD crop dimensions configurable
+- OSD window size is calculated dynamically depending on stream dimensions
+- Added translations
+
+
+2004-01-02: Version 0.0.1
+
+- Initial revision.

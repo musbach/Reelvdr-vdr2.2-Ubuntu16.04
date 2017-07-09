@@ -1,0 +1,12 @@
+Package: xine-reel-ehd
+Version: 1.1.8-0.2.99.39
+Section: reel
+Priority: important
+Provides: xineplug-reel-decypher
+Conflicts: xineplug-reel-decypher
+Replaces: xineplug-reel-decypher
+Architecture: i386
+Depends: libxine1 (>= 1.1.8-reel4), libxine1-ffmpeg (>= 1.1.8-reel4)
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: xine-reel-ehd
+Description: Xine-plugin for the Reel extension HD (decypher) card

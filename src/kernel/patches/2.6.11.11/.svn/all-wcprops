@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11.11
+END
+acx100.diff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11.11/acx100.diff
+END
+Makefile.diff
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11.11/Makefile.diff
+END
+ftdi_sio.diff
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11.11/ftdi_sio.diff
+END
+amd-geode-ide.diff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11.11/amd-geode-ide.diff
+END
+ac97.diff
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11.11/ac97.diff
+END
+frontend.h.diff
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11.11/frontend.h.diff
+END
+binutils-seg-5.diff
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/kernel/patches/2.6.11.11/binutils-seg-5.diff
+END

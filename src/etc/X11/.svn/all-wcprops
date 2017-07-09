@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/reelbox/!svn/ver/1/testing/src/etc/X11
+END
+xorg.conf.ati
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/etc/X11/xorg.conf.ati
+END
+xorg.conf.hde.1080
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/etc/X11/xorg.conf.hde.1080
+END
+xorg.conf.hde.720
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/etc/X11/xorg.conf.hde.720
+END
+xorg.conf.intel
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/etc/X11/xorg.conf.intel
+END

@@ -1,0 +1,455 @@
+burn.o: burn.c burn.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/i18n.h \
+ gdwrapper.h /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h logger-vdr.h proctools/logger.h \
+ proctools/startable.h manager.h jobs.h common.h etsi-const.h \
+ proctools/functions.h setup.h forward.h proctools/property.h \
+ ../../../vdr/include/vdr/menuitems.h skins.h tracks.h \
+ ../../../vdr/include/vdr/epg.h proctools/format.h proctools/process.h \
+ proctools/environment.h proctools/functions.h \
+ ../../../vdr/include/vdr/thread.h menuburn.h menubase.h menuitems.h \
+ i18n.h ../../../vdr/include/vdr/osdbase.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/videodir.h
+chain-vdr.o: chain-vdr.c chain-vdr.h common.h etsi-const.h \
+ proctools/functions.h jobs.h setup.h forward.h proctools/property.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h skins.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h proctools/chain.h proctools/process.h \
+ proctools/shellescape.h ../../../vdr/include/vdr/thread.h chain-dvd.h \
+ logger-vdr.h proctools/logger.h proctools/startable.h menuburn.h \
+ menubase.h menuitems.h i18n.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/osdbase.h proctools/shellprocess.h \
+ proctools/shellescape.h ../../../vdr/include/vdr/config.h
+chain-dvd.o: chain-dvd.c chain-dvd.h chain-vdr.h common.h etsi-const.h \
+ proctools/functions.h jobs.h setup.h forward.h proctools/property.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h skins.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h proctools/chain.h proctools/process.h \
+ proctools/shellescape.h ../../../vdr/include/vdr/thread.h burn.h \
+ ../../../vdr/include/vdr/plugin.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/i18n.h logger-vdr.h proctools/logger.h \
+ proctools/startable.h render.h config.h ../../../vdr/include/vdr/tools.h \
+ menuburn.h menubase.h menuitems.h i18n.h \
+ ../../../vdr/include/vdr/osdbase.h filter.h proctools/shellescape.h \
+ proctools/shellprocess.h ../../../vdr/include/vdr/recording.h
+jobs.o: jobs.c burn.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/i18n.h \
+ common.h etsi-const.h proctools/functions.h jobs.h setup.h forward.h \
+ proctools/property.h ../../../vdr/include/vdr/menuitems.h skins.h \
+ gdwrapper.h /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h scanner.h ../../../vdr/include/vdr/recording.h \
+ ../../../vdr/include/vdr/remux.h chain-dvd.h chain-vdr.h \
+ proctools/chain.h proctools/process.h proctools/shellescape.h \
+ ../../../vdr/include/vdr/thread.h adaptor.h \
+ ../../../vdr/include/vdr/tools.h filter.h logger-vdr.h \
+ proctools/logger.h proctools/startable.h \
+ ../../../vdr/include/vdr/videodir.h
+logger-vdr.o: logger-vdr.c logger-vdr.h proctools/logger.h \
+ proctools/startable.h proctools/format.h \
+ ../../../vdr/include/vdr/tools.h
+skins.o: skins.c burn.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/i18n.h \
+ skins.h common.h etsi-const.h proctools/functions.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h proctools/logger.h proctools/format.h \
+ ../../../vdr/include/vdr/tools.h
+chain-archive.o: chain-archive.c burn.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/i18n.h \
+ chain-archive.h chain-vdr.h common.h etsi-const.h proctools/functions.h \
+ jobs.h setup.h forward.h proctools/property.h \
+ ../../../vdr/include/vdr/menuitems.h skins.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h proctools/chain.h proctools/process.h \
+ proctools/shellescape.h ../../../vdr/include/vdr/thread.h \
+ proctools/shellescape.h proctools/shellprocess.h proctools/logger.h
+manager.o: manager.c chain-vdr.h common.h etsi-const.h \
+ proctools/functions.h jobs.h setup.h forward.h proctools/property.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h skins.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h proctools/chain.h proctools/process.h \
+ proctools/shellescape.h ../../../vdr/include/vdr/thread.h manager.h \
+ proctools/startable.h proctools/logger.h \
+ ../../../vdr/include/vdr/skins.h
+menuburn.o: menuburn.c common.h etsi-const.h proctools/functions.h \
+ manager.h jobs.h setup.h forward.h proctools/property.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h skins.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h proctools/startable.h \
+ ../../../vdr/include/vdr/thread.h menuburn.h menubase.h menuitems.h \
+ i18n.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/osdbase.h filter.h proctools/logger.h \
+ ../../../vdr/include/vdr/interface.h ../../../vdr/include/vdr/remote.h \
+ ../../../vdr/include/vdr/svdrp.h ../../../vdr/include/vdr/videodir.h \
+ ../../../vdr/include/vdr/menu.h ../../../vdr/include/vdr/dvbplayer.h \
+ ../../../vdr/include/vdr/player.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/recorder.h ../../../vdr/include/vdr/receiver.h \
+ ../../../vdr/include/vdr/submenu.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/../tinyxml/tinyxml.h ../../../vdr/../tinyxml/tinystr.h \
+ ../../../vdr/include/vdr/livebuffer.h ../../../vdr/include/vdr/status.h
+menubase.o: menubase.c menubase.h jobs.h common.h etsi-const.h \
+ proctools/functions.h setup.h forward.h proctools/property.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h skins.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h menuitems.h i18n.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/osdbase.h manager.h proctools/startable.h \
+ ../../../vdr/include/vdr/thread.h menuburn.h proctools/logger.h \
+ ../../../vdr/include/vdr/interface.h ../../../vdr/include/vdr/remote.h \
+ ../../../vdr/include/vdr/svdrp.h
+etsi-const.o: etsi-const.c etsi-const.h
+tracks.o: tracks.c tracks.h common.h etsi-const.h proctools/functions.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/vdr/channels.h \
+ ../../../vdr/include/vdr/config.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/libsi/section.h ../../../vdr/include/libsi/si.h \
+ ../../../vdr/include/libsi/util.h ../../../vdr/include/libsi/headers.h \
+ adaptor.h ../../../vdr/include/vdr/tools.h filter.h setup.h forward.h \
+ proctools/property.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/positioner.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h proctools/logger.h \
+ ../../../vdr/include/vdr/i18n.h
+scanner.o: scanner.c adaptor.h ../../../vdr/include/vdr/epg.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/tools.h \
+ scanner.h jobs.h common.h etsi-const.h proctools/functions.h setup.h \
+ forward.h proctools/property.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/positioner.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h skins.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h proctools/format.h \
+ proctools/process.h proctools/environment.h proctools/functions.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/remux.h \
+ filter.h proctools/logger.h genindex/pes.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/libsi/si.h
+gdwrapper.o: gdwrapper.c common.h etsi-const.h proctools/functions.h \
+ gdwrapper.h /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h iconvwrapper.h proctools/format.h \
+ proctools/logger.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h
+iconvwrapper.o: iconvwrapper.c iconvwrapper.h
+menuitems.o: menuitems.c menuitems.h common.h etsi-const.h \
+ proctools/functions.h i18n.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/tools.h jobs.h setup.h forward.h \
+ proctools/property.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/font.h \
+ ../../../vdr/include/vdr/sources.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/ci.h ../../../vdr/include/vdr/dvbsubtitle.h \
+ ../../../vdr/include/vdr/osd.h ../../../vdr/include/vdr/eit.h \
+ ../../../vdr/include/vdr/filter.h ../../../vdr/include/vdr/nit.h \
+ ../../../vdr/include/vdr/sdt.h ../../../vdr/include/vdr/pat.h \
+ ../../../vdr/include/vdr/positioner.h ../../../vdr/include/vdr/remux.h \
+ ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h skins.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h ../../../vdr/include/vdr/remote.h \
+ ../../../vdr/include/vdr/status.h ../../../vdr/include/vdr/player.h
+setup.o: setup.c setup.h common.h etsi-const.h proctools/functions.h \
+ forward.h proctools/property.h ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h manager.h jobs.h skins.h gdwrapper.h \
+ /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h proctools/startable.h \
+ ../../../vdr/include/vdr/thread.h menuburn.h menubase.h menuitems.h \
+ i18n.h ../../../vdr/include/vdr/i18n.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/videodir.h
+common.o: common.c burn.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/i18n.h \
+ common.h etsi-const.h proctools/functions.h iconvwrapper.h setup.h \
+ forward.h proctools/property.h ../../../vdr/include/vdr/menuitems.h \
+ proctools/logger.h proctools/format.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/config.h
+config.o: config.c config.h burn.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/i18n.h \
+ common.h etsi-const.h proctools/functions.h jobs.h setup.h forward.h \
+ proctools/property.h ../../../vdr/include/vdr/menuitems.h skins.h \
+ gdwrapper.h /usr/include/libwmf/gd/gd.h /usr/include/libwmf/gd/gd_io.h \
+ /usr/include/libwmf/gd/gd_clip.h tracks.h ../../../vdr/include/vdr/epg.h \
+ proctools/format.h proctools/process.h proctools/environment.h \
+ proctools/functions.h proctools/logger.h \
+ ../../../vdr/include/vdr/tools.h filter.h \
+ ../../../vdr/include/vdr/config.h
+render.o: render.c burn.h ../../../vdr/include/vdr/plugin.h \
+ ../../../vdr/include/vdr/i18n.h ../../../vdr/include/vdr/tools.h \
+ ../../../vdr/include/vdr/menuitems.h \
+ ../../../vdr/include/vdr/dvbdevice.h ../../../vdr/include/vdr/device.h \
+ ../../../vdr/include/vdr/channels.h ../../../vdr/include/vdr/config.h \
+ ../../../vdr/include/vdr/font.h ../../../vdr/include/vdr/sources.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/ci.h \
+ ../../../vdr/include/vdr/dvbsubtitle.h ../../../vdr/include/vdr/osd.h \
+ ../../../vdr/include/vdr/eit.h ../../../vdr/include/vdr/filter.h \
+ ../../../vdr/include/vdr/nit.h ../../../vdr/include/vdr/sdt.h \
+ ../../../vdr/include/vdr/pat.h ../../../vdr/include/vdr/positioner.h \
+ ../../../vdr/include/vdr/remux.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/sections.h ../../../vdr/include/vdr/spu.h \
+ ../../../vdr/include/vdr/osdbase.h ../../../vdr/include/vdr/skins.h \
+ ../../../vdr/include/vdr/epg.h ../../../vdr/include/libsi/section.h \
+ ../../../vdr/include/libsi/si.h ../../../vdr/include/libsi/util.h \
+ ../../../vdr/include/libsi/headers.h ../../../vdr/include/vdr/keys.h \
+ ../../../vdr/include/vdr/recording.h ../../../vdr/include/vdr/timers.h \
+ ../../../vdr/include/vdr/themes.h ../../../vdr/include/vdr/i18n.h \
+ chain-vdr.h common.h etsi-const.h proctools/functions.h jobs.h setup.h \
+ forward.h proctools/property.h ../../../vdr/include/vdr/menuitems.h \
+ skins.h gdwrapper.h /usr/include/libwmf/gd/gd.h \
+ /usr/include/libwmf/gd/gd_io.h /usr/include/libwmf/gd/gd_clip.h tracks.h \
+ ../../../vdr/include/vdr/epg.h proctools/format.h proctools/process.h \
+ proctools/environment.h proctools/functions.h proctools/chain.h \
+ proctools/process.h proctools/shellescape.h \
+ ../../../vdr/include/vdr/thread.h config.h proctools/logger.h \
+ ../../../vdr/include/vdr/tools.h render.h iconvwrapper.h \
+ proctools/shellprocess.h
+pes.o: genindex/pes.c genindex/pes.h ../../../vdr/include/vdr/thread.h \
+ ../../../vdr/include/vdr/tools.h ../../../vdr/include/vdr/ringbuffer.h \
+ ../../../vdr/include/vdr/thread.h ../../../vdr/include/vdr/tools.h

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+
+myln () {
+src="$2"
+target="$3"
+
+	if [ ! -L $target ]; then
+		ln -f $*
+	fi
+}
+
+echo "Linking skins"
+ln -sf /usr/share/reel/skinreel/Black /etc/vdr/themes/Black
+ln -sf /usr/share/reel/skinreel/Green /etc/vdr/themes/Green
+
+exit 0

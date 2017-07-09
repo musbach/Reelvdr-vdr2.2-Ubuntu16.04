@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2
+END
+device.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/device.c
+END
+packetbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/packetbuffer.c
+END
+device.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/device.h
+END
+packetbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/packetbuffer.h
+END
+defs2.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/defs2.h
+END
+mcli_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcli_service.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/README
+END
+HISTORY
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/HISTORY
+END
+def.h.defs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/def.h.defs
+END
+mcli.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcli.c
+END
+cam_menu.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/cam_menu.c
+END
+filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/filter.c
+END
+mcliheaders.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcliheaders.h
+END
+wait4ncv.diff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/wait4ncv.diff
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/COPYING
+END
+mcli-i18n.diff
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcli-i18n.diff
+END
+mcli.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcli.h
+END
+cam_menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/cam_menu.h
+END
+filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/filter.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/Makefile
+END

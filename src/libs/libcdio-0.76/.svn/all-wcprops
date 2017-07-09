@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76
+END
+libcdio_paranoia.pc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libcdio_paranoia.pc
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/configure
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/Makefile.in
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/AUTHORS
+END
+config.log
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/config.log
+END
+libcdio_paranoia.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libcdio_paranoia.pc.in
+END
+libcdio_cdda.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libcdio_cdda.pc.in
+END
+depcomp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/depcomp
+END
+compile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/compile
+END
+THANKS
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/THANKS
+END
+libpopt.m4
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libpopt.m4
+END
+config.guess
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/config.guess
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/config.h
+END
+config.sub
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/config.sub
+END
+ltmain.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/ltmain.sh
+END
+README.libcdio
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/README.libcdio
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/configure.ac
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/INSTALL
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/COPYING
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/NEWS
+END
+libiso9660.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libiso9660.pc.in
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/Makefile
+END
+libcdio_cdda.pc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libcdio_cdda.pc
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/ChangeLog
+END
+config.status
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/config.status
+END
+stamp-h1
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/stamp-h1
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/README
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/config.h.in
+END
+libtool
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libtool
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/TODO
+END
+libcdio.pc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libcdio.pc
+END
+libiso9660.pc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libiso9660.pc
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/Makefile.am
+END
+missing
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/missing
+END
+libcdio.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/libcdio.pc.in
+END
+aclocal.m4
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/aclocal.m4
+END
+install-sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/install-sh
+END

@@ -1,0 +1,89 @@
+<script language="javascript" type="text/javascript">
+<!--
+    <?% INCLUDE javascript/records.js %?>
+-->
+</SCRIPT>
+<!-- TableTemplate -->
+<?%
+    USE date( );
+    zeitformat = gettext("%A the %D at %H:%M o'clock");
+    IF cgi.param('data') && cgi.param('data') > 2400;
+        t = date.format(cgi.param('data'), '%H:%M');
+        day = date.format(cgi.param('data'), zeitformat, locale) ;
+    ELSIF cgi.param('data') && param.zeit;
+        t = date.format(param.zeit, '%H:%M', locale);
+        day = date.format(param.zeit, zeitformat, locale) ;
+    ELSE;
+        t = date.format(date.now, '%H:%M', locale);
+        day = date.format(date.now, zeitformat, locale) ;
+        now = 1;
+    END;
+%?>
+<h1><?% IF cgi.param('cmd') == 'next' %?>
+    <?% gettext("What is running at next") %?>
+    <?% ELSIF now %?>
+    <?% gettext("What is running now") %?>
+    <?% ELSE %?>
+    <?% gettext("What is running at") %?>&nbsp;<?% day %?>
+    <?% END %?>
+</h1>
+
+<div id="navcontainer">
+<form>
+<ul id="navlist">
+    <li><a href="#" onclick="suche('<?% gettext('Please put a time in XX:XX format:') %?>', '?cmd=now&data=', '<?% t %?>', '&__cgrp=<?% cgi.param('__cgrp') %?>')"><?% gettext("Choose time") %?></a></li>
+    <li>
+        <select name='cgroups' onChange="di(this.form.cgroups.options[this.form.cgroups.options.selectedIndex].value, '?cmd=<?% cgi.param("cmd") %?>&amp;data=<?% param.zeitvon || cgi.param('data') %?>&amp;__cgrp=')">
+        <?% FOREACH cgrp IN param.cgroups %?>
+            <option value='<?% cgrp.last %?>' <?% "selected" IF param.channelgroup == cgrp.last %?>><?% cgrp.first %?>
+        <?% END %?>
+        </select>
+    </li>
+</ul>
+</form>
+</div>
+
+<table border="0" width="95%">
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <tr>
+        <?% FOREACH field IN fields %?>
+            <?% NEXT IF field.match('^__') %?>
+            <th><?% field %?></th>
+        <?% END %?>
+        </tr>
+        <?% FOREACH zeile IN data %?>
+        <?% id=zeile.0;title=zeile.1;subtitle=zeile.2;sender=zeile.3;channel=zeile.4;group=zeile.5;start=zeile.6;stop=zeile.7;desc=zeile.8;duration=zeile.9 %?>
+            <?% IF group != old %?>
+                <tr><td colspan="6" bgcolor='#DDDDDD'>
+                <b><?% group %?></b>
+                </td></tr>
+            <?% END %?>
+        <tr class="<?% myclass %?>" <?% IF (loop.count mod 2) == 0 %?>bgcolor='#F5F5F5'<?% END %?>>
+                <td><nobr>
+                <?% INCLUDE 'bloecke/event_links.tmpl' data=zeile switch=1 timerid=zeile.10 level=zeile.14 %?>
+                </td>
+                <td>
+                    <?% IF zeile.11 %?><b><?% END %?>
+                    <?% INCLUDE bloecke/tooltip.tmpl cmd="display" eventid=id linkid=id ttp_offset=0 %?><?% title %?></a>
+                    <?% IF subtitle != "" %?>
+                    <br><small><?% subtitle %?></small>
+                    <?% END %?>
+                </td>
+                <td>
+                    <?% IF zeile.11 %?><b><?% END %?>
+                    <a href="?cmd=program&amp;data=<?% channel %?>"><?% sender %?></a>
+                </td>
+                <td><?% IF zeile.11 %?><b><?% END %?><?% start %?><?% IF zeile.11 %?></b><?% END %?></td>
+                <td><?% IF zeile.11 %?><b><?% END %?><?% stop %?><?% IF zeile.11 %?></b><?% END %?></td>
+                <?% UNLESS duration > 100 OR duration <= 0 %?>
+                <td width="100" valign='bottom'><nobr>
+                    <?% per = (100 - duration) + 0.999 div 1; per = (per > 100 ? 100 : per)  %?>
+                    <?% INCLUDE 'bloecke/percentbar.tmpl' barwidth=100 percent=per color_switch=1 %?>
+                </td>
+                <?% END %?>
+        </tr>
+        <?% old = group %?>
+        <?% END %?>
+<?% END %?>
+</table>

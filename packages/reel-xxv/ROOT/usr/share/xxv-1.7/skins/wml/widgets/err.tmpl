@@ -1,0 +1,21 @@
+<?% trimmed = data FILTER trim %?>
+<?% IF data.size > 1 || trimmed != "" %?>
+<?% IF global.wml_card.defined %?>
+<card id="message<?% global.wml_card %?>" title="<?% gettext("Error") %?>">
+<?% global.wml_card = global.wml_card + 1 %?>
+<?% ELSE %?>
+<card id="first" title="<?% gettext("Error") %?>">
+<?% global.wml_card = 1 %?>
+<?% END %?>
+<p>
+        <?% IF data.size <= 0 %?>
+            <?% data | html %?>
+        <?% ELSE %?>
+            <?% FOREACH zeile IN data %?>
+                    <?% zeile %?><br />
+             <?% END %?>
+        <?% END %?>
+<a href="#index"><img src="images/home.wbm" alt="<?% gettext("Menu") %?>" /></a>
+</p>
+</card>
+<?% END %?>

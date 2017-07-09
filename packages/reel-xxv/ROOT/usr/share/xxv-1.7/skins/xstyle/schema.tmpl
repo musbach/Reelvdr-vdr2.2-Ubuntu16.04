@@ -1,0 +1,162 @@
+<?%-
+USE date;
+zeitformat = gettext("%A the %D at %H:%M o'clock");
+day = date.format(param.zeitvon, zeitformat);
+
+Duration = param.zeitbis - param.zeitvon;
+
+# seconds in pixel
+sec_height = 0.1;
+
+-%?>
+<form>
+
+<script language="javascript" type="text/javascript">
+<!--
+
+    <?% INCLUDE javascript/records.js %?>
+
+-->
+</script>
+
+<script language="javascript" type="text/javascript">
+    var interval = 300
+
+    function reload() {
+        Now = new Date();
+        location.href = window.location.href;
+    }
+
+    inter = interval * 1000;
+    aktiv = window.setTimeout("reload()", inter);
+</script>
+
+<h1><?% gettext("What is running at") %?>&nbsp;<?% day %?><br/>
+<?% gettext('Display') %?>&nbsp;<?% gettext('from') %?>&nbsp;<?% date.format(param.zeitvon, '%H:%M') %?>&nbsp;<?% gettext('to') %?>&nbsp;<?% date.format(param.zeitbis, '%H:%M') %?>&nbsp;<?% gettext("o'clock") %?>
+</h1>
+
+
+<div id="navcontainer">
+<ul id="navlist">
+    <li><a href='?cmd=schema&amp;data=<?% (param.zeitvon - Duration) %?>&amp;__cgrp=<?% param.channelgroup %?>'><?% tt=param.zeitvon - Duration;date.format(tt, '%H:%M') %?>-<?% date.format(param.zeitvon, '%H:%M') %?></a></li>
+    <li>
+        <select name='cgroups' onChange="di(this.form.cgroups.options[this.form.cgroups.options.selectedIndex].value, '?cmd=schema&amp;data=<?% param.zeitvon %?>&amp;__cgrp=')">
+            <?% FOREACH cgrp IN param.cgroups %?>
+            <option value='<?% cgrp.last %?>' <?% "selected" IF param.channelgroup == cgrp.last %?>><?% cgrp.first %?>
+            <?% END %?>
+        </select>
+    </li>
+    <li><a href='?cmd=schema&amp;data=<?% (param.zeitvon + Duration) %?>&amp;__cgrp=<?% param.channelgroup %?>'><?% tt=param.zeitvon + Duration;date.format(tt, '%H:%M') %?>-<?% tt=tt + Duration;date.format(tt, '%H:%M') %?></a></li>
+</ul>
+</div>
+
+<style>
+/* Schema */
+#channelcontainer
+{
+    height: <?% Duration * sec_height %?>px;
+}
+<?% ttm = date.now - param.zeitvon;
+    ttm = ttm * sec_height;
+%?>
+#timemarker
+{
+    top: <?% ttm | format('%d') %?>px;
+}
+</style>
+<table width='<?% (data.keys.size * 210) %?>'><td>
+<?% FOREACH cpos IN data.keys.nsort %?>
+<?% channelName = data.$cpos.first.3;
+    channelId = data.$cpos.first.4;
+    oldend = 0;
+%?>
+<div id=channel>
+    <div id=channeltitle><a href="?cmd=program&data=<?% channelId %?>"><?% channelName %?></a></div>
+    <div id=channelcontainer>
+        <?% FOREACH event IN data.$cpos %?>
+            <?% INCLUDE eventbox e=event o=oldend %?>
+            <?% oldend = event.10 %?>
+        <?% END %?>
+        <div id=timemarker><?% date.format(date.now, '%H:%M') %?></div>
+    </div>
+</div>
+
+<?% END %?>
+</td></table>
+
+<?% BLOCK eventbox;
+    epgId       = e.0;
+    epgTitle    = e.1;
+    epgSubTitle = e.2;
+    chName      = e.3;
+    chPos       = e.4;
+    epgStart    = e.5;
+    epgStop     = e.6;
+    epgPercent  = e.7;
+    epgDesc     = e.8;
+    second_start= e.9;
+    second_stop = e.10;
+    image       = e.11;
+    timerid     = e.12;
+    recording   = e.13;
+    running     = e.14;
+
+    # Schon früher angefangende Sendung ...
+    IF second_start < param.zeitvon;
+        second_start = param.zeitvon;
+    END;
+
+    # Sendung die anfängt wenn das schema endet ..
+    IF second_start >= param.zeitbis;
+        RETURN;
+    END;
+
+    # Sendung die endet wenn das schema anfängt ..
+    IF second_stop <= param.zeitvon;
+        RETURN;
+    END;
+
+    # Sendung mit gleicher Endzeit als alte ..
+    IF second_stop == o;
+        RETURN;
+    END;
+
+    # Dauer der Sendung ...
+    durat = second_stop - second_start;
+
+    # 2.Sendung in Zeitleiste
+    IF o;
+        startt = second_start - o;
+    ELSIF second_start > param.zeitvon;
+        startt = second_start - param.zeitvon;
+    END;
+ %?>
+
+<div id='eventbox' style="<?% IF timerid && recording %?>border-color:#F00;<?% END %?><?% IF running %?>border-color:#0F0;<?% END %?>height: <?% (durat * sec_height) | format('%d') %?>px;<?%- IF date.now < second_start || date.now > second_stop -%?>color : #777;<?%- END -%?>
+<?%- IF second_start == param.zeitvon -%?>
+top: 0px;border-top-style:dashed;border-top-color:green;border-top-width:2px;
+<?%- ELSE -%?>
+top: <?% (startt * sec_height)  %?>px;
+<?%- END -%?>">
+    <div id='eventbox_time'>
+    <?% epgStart %?><br/><?% epgStop %?><br/>
+
+    <?% INCLUDE 'bloecke/event_links.tmpl' data=e umbruch='<br/>' switch=1 timerid=e.14 %?>
+
+    </div>
+    <div id='eventbox_title'>
+      <?% d=[epgStart, " - ", epgStop ,"<br />", epgDesc ];desc=d.join("") %?>
+      <?% INCLUDE bloecke/tooltip.tmpl cmd="display" title=epgTitle subtitle=epgSubTitle eventid=epgId linkid=epgId ttp_offset=-200 %?>
+      <?% epgTitle %?>
+      </a>
+    </div>
+    <?% IF image %?>
+    <div id='eventbox_bild'><img src='?cmd=eimage&data=<?% image.split("\n").first %?>'></div>
+    <?% END %?>
+    <div id='eventbox_subtitle'><?% epgSubtitle %?></div>
+    <div id='eventbox_text'><?% epgDesc %?></div>
+</div>
+    <?% oldend = second_stop %?>
+<?% END %?>
+
+</form>

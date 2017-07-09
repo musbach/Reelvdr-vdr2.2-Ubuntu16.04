@@ -1,0 +1,121 @@
+#!/bin/sh
+
+REELFPCTL="/sbin/reelfpctl"
+
+if [ ! -L /etc/rc2.d/S17reelbox-control ] && [ -L /etc/rc2.d/S??reelbox-control ] ; then
+        update-rc.d -f reelbox-control remove
+fi
+
+if [ -x /usr/bin/lsb_release ] && [ $(lsb_release -rs | cut -f1 -d.) -ge 10 ]; then
+        UBUNTU10="true"
+else
+        UBUNTU10="false"
+fi
+
+#only for distributions < Ubuntu 10.04
+if ! $UBUNTU10 ; then
+	echo "creating init levels for ReelBox control"
+	update-rc.d reelbox-control defaults 17 80
+
+	echo "creating init levels for frontpanel LEDs"
+	#update-rc.d fpleds defaults 01 99
+fi
+
+echo "stopping reelbox-control"
+if $UBUNTU10 ; then
+    stop reelbox-control
+else
+    /etc/init.d/reelbox-control stop
+fi
+
+[ -L /dev/frontpanel ] || /sbin/dev_frontpanel.sh
+
+#update frontpanel firmware
+if false ; then
+    # we cannot do the frontpanel flash while graphlcd is active.
+    # this code was already working, but we have to find a solution to disable the graphlcd
+    # until then, we have to do the flash when vdr is inactive (system start)
+    #
+    # firmware update is disabled for now but we want to restart reelbox-control anyway
+
+version=""
+c=0
+while [ -z $version ] ; do
+    version=$(reelfpctl -getversion | tr -d " ")
+    c=$((c+1))
+    if [ $c -gt 20 ]; then
+        echo "Frontpanel doesn't answer after 20 tries. No frontpanel in this box? Giving up."
+        version=999
+    fi
+done
+
+# check for latest frontpanel firmware. This must be loaded before reelbox-control is started
+firm=`ls /usr/share/reel/frontpanel/main.flash-*`
+new_version=`echo $firm | tr -d [A-Za-z-/.]`
+
+
+if [ $new_version -gt $version ]; then
+        echo "New version of frontpanel firmware available. Doing update."
+        mv $REELFPCTL $REELFPCTL.disabled
+        if nice -15 avr_flasher -c $new_version -w $firm ; then
+                echo "Successfully written new frontpanel firmware $new_firm to AVR."
+                sleep 7  # wait for frontpanel to reboot
+        fi
+        mv $REELFPCTL.disabled $REELFPCTL
+fi
+#firmware update end
+
+fi ## false - firmware update disabled
+
+echo "starting reelbox-control again"
+if $UBUNTU10 $; then
+	start reelbox-control
+else
+	/etc/init.d/reelbox-control start
+fi
+
+
+#only load sensor modules on AVGI+II
+echo "checking /etc/modules for sensors"
+if grep -q 808627a0 /proc/bus/pci/devices || grep -q 10027910 /proc/bus/pci/devices ; then
+    if ! grep -q "sensors version 2" /etc/modules ; then
+	    echo "add sensor modules to /etc/modules"
+	    #delete old version
+	    sed -i /sensors/,/sensors/d /etc/modules
+	    cat << EOF >> /etc/modules
+#---- sensors version 2 ----
+# I2C adapter drivers
+i2c-i801
+# Chip drivers
+eeprom
+#AVGI temp sensor
+w83627hf
+#AVGII temp sensor
+w83627ehf
+#---- end sensors ----
+EOF
+    fi
+else
+    sed -i /sensors/,/sensors/d /etc/modules
+fi
+
+#delete old entry
+echo "updating /etc/init.d/rc for frontpanel progress"
+if  grep -q "reel_fp_progress"  /etc/init.d/rc ; then
+	sed "\%reel_fp_progress%d" -i /etc/init.d/rc
+fi
+
+if ! grep -q "test -f /sbin/reel_fp_progress && . /sbin/reel_fp_progress"  /etc/init.d/rc ; then
+	echo "patching /etc/init.d/rc"
+	# patch for 8.04
+	sed -i "/    fi/a\    test -f /sbin/reel_fp_progress && . /sbin/reel_fp_progress" /etc/init.d/rc
+	# patch for 10.04
+	sed -i "/$debug splash_progress/a\\\ttest -f /sbin/reel_fp_progress && . /sbin/reel_fp_progress" /etc/init.d/rc
+fi
+
+#set WOL init script. It starts in runlevel 0 after local filesystems are unmounted
+#update-rc.d set_wol start 99 0 .
+
+# always exit cleanly
+
+exit 0

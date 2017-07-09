@@ -1,0 +1,9 @@
+Package: libmcli
+Version: 0.99.37
+Section: reel
+Priority: required
+Architecture: armel
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: vdr-mcli-plugin/mcast/client
+Description: libmcli is required for Reel mcli-plugin or mcli-daemon
+Description-de: die libmcli wird vom Reel mcli-plugin oder daemon verwendet

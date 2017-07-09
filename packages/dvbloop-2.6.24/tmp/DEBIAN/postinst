@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "creating module entries for netceiver module (dvbloop)"
+#create /etc/modules entry
+if ! grep -q dvbloop /etc/modules ; then
+        echo dvbloop >> /etc/modules
+fi
+
+lrm-manager --kver=2.6.24-16-generic
+lrm-manager --kver=2.6.24-21-generic
+
+depmod -a 2.6.24-16-generic
+depmod -a 2.6.24-21-generic
+depmod -a 2.6.24-23-generic
+depmod -a 2.6.24-24-generic

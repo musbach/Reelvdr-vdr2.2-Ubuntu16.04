@@ -1,0 +1,202 @@
+body{
+ font-family:Verdana, Arial, sans-serif;
+ font-size:80%;
+ border: #005199 1px dashed ;
+ color:#000064;
+ margin:10px;
+ padding:10px;
+}
+
+/* Überschriften */
+h1 { font-size:1.3em;margin-top:0px;}
+h2 { font-size:1.1em;}
+h3 { font-size:1em; margin-top:0px; margin-bottom:0px;}
+h4 { font-size:1em;}
+h2,h4 { margin-top:0px;margin-bottom:0px; }
+h1,h2,h3,h4 { color:#e88229;}
+
+/* Keine Rahmen um Grafiken als Link */
+a img {border-width:0px;}
+
+/* Standard Hyperlinks */
+a:link, a:visited, a:hover, a:active{
+ text-decoration:none;
+ color:#005199;
+ background-color:inherit;
+}
+a:visited { color:#0075e3; }
+a:hover, a:active {
+ color:#770;
+ text-decoration:underline;
+}
+
+/* Tabelle auf den Referenzseiten */
+table {
+    font-size:1em;
+    border:1px solid #000000;
+    }
+td,th {
+    vertical-align:top;
+    border: #eeeeee 1px solid;
+}
+th, .th{
+  background-color:#efefef;
+  border: #eeeeee 1px solid;
+  padding:3px;
+  text-align:left;
+}
+
+.tableheader{
+  padding:3px;
+  text-align:left;
+}
+
+/* funktioniert leider nur im neuesten Firefox fehlerfrei ;(
+input:focus, textarea:focus, select:focus {
+  border: #FF0000 1px solid;
+  background-color:#ffff99;
+}
+*/
+
+input[type~=text],input[type~=password]  {
+    width : 200px;
+}
+
+select  {
+    width : 205px;
+}
+
+.footer {
+ font-size:0.6em;
+}
+
+.timer_On {
+ color:green;
+}
+
+.timer_Off{
+ color:red;
+}
+
+.menu{
+  background-color:#efefef;
+  padding:10px;
+  text-align:left;
+}
+
+.normal{
+    color:#000064;
+    font-weight:normal;
+}
+
+.refresh{
+    color:#0000FF;
+    font-weight:normal;
+}
+
+.deactive{
+    color:#aaaaaa;
+}
+
+.active{
+    color:#00aa00;
+    font-weight:bold;
+}
+
+.problem{
+    color:#ff0000;
+}
+
+.noproblem{
+    color:#00AA00;
+}
+
+.problemred{
+    color:#ff0000;
+    font-weight:bold;
+}
+
+.fastproblem{
+    color:#990000;
+    font-weight:bold;
+}
+
+.fastproblemgreen{
+    font-weight:bold;
+}
+
+.error{
+    color:#ff0000;
+    font-weight:bold;
+}
+
+.good{
+    color:#009900;
+    font-weight:normal;
+}
+
+.schema_normal{
+    font-size:0.9em;
+    border:1px solid #666666;
+    border-right:0px;
+}
+
+.schema_record_plan{
+    font-size:0.9em;
+    font-weight:bold;
+    border:1px solid;
+    border-right:0px;
+}
+
+.schema_record_now{
+    font-size:0.9em;
+    font-weight:bold;
+    border:1px solid #006600;
+    border-right:0px;
+    background-color: #DDFFDD;
+}
+
+.schema_record_conflict{
+    font-size:0.9em;
+    font-weight:bold;
+    border:1px solid #006600;
+    border-right:0px;
+    background-color: #DDFFDD;
+}
+
+.light{
+    background-color: #F5F5F5;
+}
+
+.dark{
+    background-color: #EEEEEE;
+}
+
+
+#TOOLTIP {
+  position:absolute; 
+  width: 400px; 
+  z-index:5; 
+  visibility:hidden;
+}
+
+#ttwindow {
+	width: 400px;
+  font-size: 12px;
+  border:1px solid #666666;
+}
+
+#ttwindow p.topic {
+	text-align: left;
+	font-weight: bold;
+	padding: 3px;
+	color:              #000064;
+	background-color:   #DDDDDD;
+  margin: 0px;
+}
+
+#ttwindow p.description {
+	padding: 5px;
+  margin: 0px;
+	background-color:   #ffffff;
+}

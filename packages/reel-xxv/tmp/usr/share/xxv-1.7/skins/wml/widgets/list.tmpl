@@ -1,0 +1,27 @@
+<?% data.msg | truncate(15) %?> :
+<?% val = cgi.param(data.NAME) || data.def %?>
+<?% UNLESS val.max %?>
+<?% values = val.join(',').split(',') %?>
+<?% ELSE %?>
+<?% values = val %?>
+<?% END %?>
+<?% select = [] %?>
+<?% FOREACH valch IN values;
+        FOREACH l IN data.choices;
+            IF valch == l.1;
+                select.push(loop.count);
+                LAST;
+            END;
+        END;
+    END %?>
+<?% IF data.options == 'multi' %?>
+<select name="<?% data.NAME | replace('__','var') %?>" multiple="true" ivalue="<?% select.join(';') %?>" >
+<?% ELSE %?>
+<select name="<?% data.NAME | replace('__','var') %?>" ivalue="<?% select.join(';') %?>">
+<?% END %?>
+<?% FOREACH l IN data.choices %?>
+    <option value='<?% l.1 %?>'><?% entities(l.0) %?></option>
+    <?% IF data.NAME == "__ChannelID" && loop.count >= global.MaxChannelsTimer;LAST;END %?>
+<?% END %?>
+</select><br/>
+<?% global.fomularfield.push(data.NAME) %?>

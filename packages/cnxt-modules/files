@@ -1,0 +1,6 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)			dest			type	owner.group
+#etc/default/cnxt
+etc/init.d/cnxt-modules				-	script
+utils/hdfbshot/hdfbshot		usr/sbin/hdfbshot	exe

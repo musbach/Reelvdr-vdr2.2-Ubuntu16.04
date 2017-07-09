@@ -1,0 +1,2009 @@
+--- menu.c	(revision 15412)
++++ menu.c	(revision 15413)
+@@ -8,6 +8,9 @@
+  */
+ 
+ #include "menu.h"
++#ifdef USE_WAREAGLEICON
++#include "iconpatch.h"
++#endif /* WAREAGLEICON */
+ #include <ctype.h>
+ #include <limits.h>
+ #include <math.h>
+@@ -31,6 +34,9 @@
+ #include "timers.h"
+ #include "transfer.h"
+ #include "videodir.h"
++#ifdef USE_MENUORG
++#include "menuorgpatch.h"
++#endif /* MENUORG */
+ 
+ #define MAXWAIT4EPGINFO   3 // seconds
+ #define MODETIMEOUT       3 // seconds
+@@ -203,6 +209,9 @@
+ public:
+   cMenuEditChannel(cChannel *Channel, bool New = false);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuEditChannel"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuEditChannel::cMenuEditChannel(cChannel *Channel, bool New)
+@@ -250,6 +259,9 @@
+   Add(new cMenuEditIntItem( tr("Tid"),          &data.tid, 0));
+   Add(new cMenuEditIntItem( tr("Rid"),          &data.rid, 0));
+   XXX*/
++#ifdef USE_CHANNELBIND
++  Add(new cMenuEditIntItem( tr("Rid"),          &data.rid, 0)); // channel binding patch
++#endif /* CHANNELBIND */
+   // Parameters for specific types of sources:
+   sourceParam = SourceParams.Get(**cSource::ToString(data.source));
+   if (sourceParam) {
+@@ -350,6 +362,16 @@
+   if (!channel->GroupSep()) {
+      if (sortMode == csmProvider)
+         buffer = cString::sprintf("%d\t%s - %s", channel->Number(), channel->Provider(), channel->Name());
++#ifdef USE_WAREAGLEICON
++     else if (Setup.WarEagleIcons) {
++        if (channel->Vpid() == 1 || channel->Vpid() == 0)
++           buffer = cString::sprintf("%d\t%s %-30s", channel->Number(), IsLangUtf8() ? ICON_RADIO_UTF8 : ICON_RADIO, channel->Name());
++        else if (channel->Ca() == 0)
++           buffer = cString::sprintf("%d\t%s %-30s", channel->Number(), IsLangUtf8() ? ICON_TV_UTF8 : ICON_TV, channel->Name());
++        else
++           buffer = cString::sprintf("%d\t%s %-30s", channel->Number(), IsLangUtf8() ? ICON_TV_CRYPTED_UTF8 : ICON_TV_CRYPTED, channel->Name());
++        }
++#endif /* WAREAGLEICON */
+      else
+         buffer = cString::sprintf("%d\t%s", channel->Number(), channel->Name());
+      }
+@@ -380,6 +402,9 @@
+   cMenuChannels(void);
+   ~cMenuChannels();
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuChannels"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuChannels::cMenuChannels(void)
+@@ -918,6 +943,17 @@
+      Add(new cMenuEditBitItem( tr("VPS"),          &data.flags, tfVps));
+      Add(new cMenuEditIntItem( tr("Priority"),     &data.priority, 0, MAXPRIORITY));
+      Add(new cMenuEditIntItem( tr("Lifetime"),     &data.lifetime, 0, MAXLIFETIME));
++#ifdef USE_PINPLUGIN
++     if (cOsd::pinValid || !data.fskProtection) Add(new cMenuEditBoolItem(tr("Childlock"),&data.fskProtection));
++     else {
++        char* buf = 0;
++        if (asprintf(&buf, "%s\t%s", tr("Childlock"), data.fskProtection ? tr("yes") : tr("no")) > 0) {
++           Add(new cOsdItem(buf));
++           free(buf);
++           }
++        }
++
++#endif /* PINPLUGIN */
+      Add(file = new cMenuEditStrItem( tr("File"),   data.file, sizeof(data.file)));
+      SetFirstDayItem();
+      }
+@@ -1018,8 +1054,14 @@
+ class cMenuTimerItem : public cOsdItem {
+ private:
+   cTimer *timer;
++#ifdef USE_TIMERINFO
++  char diskStatus;
++#endif /* TIMERINFO */
+ public:
+   cMenuTimerItem(cTimer *Timer);
++#ifdef USE_TIMERINFO
++  void SetDiskStatus(char DiskStatus);
++#endif /* TIMERINFO */
+   virtual int Compare(const cListObject &ListObject) const;
+   virtual void Set(void);
+   cTimer *Timer(void) { return timer; }
+@@ -1028,6 +1070,9 @@
+ cMenuTimerItem::cMenuTimerItem(cTimer *Timer)
+ {
+   timer = Timer;
++#ifdef USE_TIMERINFO
++  diskStatus = ' ';
++#endif /* TIMERINFO */
+   Set();
+ }
+ 
+@@ -1058,8 +1103,31 @@
+      File++;
+   else
+      File = timer->File();
++#ifdef USE_WAREAGLEICON
++#ifdef USE_TIMERINFO
++  cCharSetConv csc("ISO-8859-1", cCharSetConv::SystemCharacterTable());
++  char diskStatusString[2] = { diskStatus, 0 };
++  SetText(cString::sprintf("%s%s\t%d\t%s%s%s\t%02d:%02d\t%02d:%02d\t%s",
++                    csc.Convert(diskStatusString),
++#else
++  SetText(cString::sprintf("%s\t%d\t%s%s%s\t%02d:%02d\t%02d:%02d\t%s",
++#endif /* TIMERINFO */
++#else
++#ifdef USE_TIMERINFO
++  cCharSetConv csc("ISO-8859-1", cCharSetConv::SystemCharacterTable());
++  char diskStatusString[2] = { diskStatus, 0 };
++  SetText(cString::sprintf("%s%c\t%d\t%s%s%s\t%02d:%02d\t%02d:%02d\t%s",
++                    csc.Convert(diskStatusString),
++#else
+   SetText(cString::sprintf("%c\t%d\t%s%s%s\t%02d:%02d\t%02d:%02d\t%s",
++#endif /* TIMERINFO */
++#endif /* WAREAGLEICON */
++#ifdef USE_WAREAGLEICON
++                    !(timer->HasFlags(tfActive)) ? " " : timer->FirstDay() ? Setup.WarEagleIcons ? IsLangUtf8() ? ICON_ARROW_UTF8 : ICON_ARROW : "!" : timer->Recording() ? Setup.WarEagleIcons ? IsLangUtf8() ? ICON_REC_UTF8 : ICON_REC : "#" : Setup.WarEagleIcons ? IsLangUtf8() ? ICON_CLOCK_UTF8 : ICON_CLOCK : ">",
++
++#else
+                     !(timer->HasFlags(tfActive)) ? ' ' : timer->FirstDay() ? '!' : timer->Recording() ? '#' : '>',
++#endif /* WAREAGLEICON */
+                     timer->Channel()->Number(),
+                     *name,
+                     *name && **name ? " " : "",
+@@ -1071,6 +1139,58 @@
+                     File));
+ }
+ 
++#ifdef USE_TIMERINFO
++void cMenuTimerItem::SetDiskStatus(char DiskStatus)
++{
++  diskStatus = DiskStatus;
++  Set();
++}
++
++// --- cTimerEntry -----------------------------------------------------------
++
++class cTimerEntry : public cListObject {
++private:
++  cMenuTimerItem *item;
++  const cTimer *timer;
++  time_t start;
++public:
++  cTimerEntry(cMenuTimerItem *item) : item(item), timer(item->Timer()), start(timer->StartTime()) {}
++  cTimerEntry(const cTimer *timer, time_t start) : item(NULL), timer(timer), start(start) {}
++  virtual int Compare(const cListObject &ListObject) const;
++  bool active(void) const { return timer->HasFlags(tfActive); }
++  time_t startTime(void) const { return start; }
++  int priority(void) const { return timer->Priority(); }
++  int duration(void) const;
++  bool repTimer(void) const { return !timer->IsSingleEvent(); }
++  bool isDummy(void) const { return item == NULL; }
++  const cTimer *Timer(void) const { return timer; }
++  void SetDiskStatus(char DiskStatus);
++  };
++
++int cTimerEntry::Compare(const cListObject &ListObject) const
++{
++  cTimerEntry *entry = (cTimerEntry *)&ListObject;
++  int r = startTime() - entry->startTime();
++  if (r == 0)
++     r = entry->priority() - priority();
++  return r;
++}
++
++int cTimerEntry::duration(void) const
++{
++  int dur = (timer->Stop()  / 100 * 60 + timer->Stop()  % 100) -
++            (timer->Start() / 100 * 60 + timer->Start() % 100);
++  if (dur < 0)
++     dur += 24 * 60;
++  return dur;
++}
++
++void cTimerEntry::SetDiskStatus(char DiskStatus)
++{
++  if (item)
++     item->SetDiskStatus(DiskStatus);
++}
++#endif /* TIMERINFO */
+ // --- cMenuTimers -----------------------------------------------------------
+ 
+ class cMenuTimers : public cOsdMenu {
+@@ -1083,14 +1203,25 @@
+   eOSState Info(void);
+   cTimer *CurrentTimer(void);
+   void SetHelpKeys(void);
++#ifdef USE_TIMERINFO
++  void ActualiseDiskStatus(void);
++  bool actualiseDiskStatus;
++#endif /* TIMERINFO */
+ public:
+   cMenuTimers(void);
+   virtual ~cMenuTimers();
++#ifdef USE_TIMERINFO
++  virtual void Display(void);
++#endif /* TIMERINFO */
+   virtual eOSState ProcessKey(eKeys Key);
+   };
+ 
+ cMenuTimers::cMenuTimers(void)
++#ifdef USE_TIMERINFO
++:cOsdMenu(tr("Timers"), 3, CHNUMWIDTH, 10, 6, 6)
++#else
+ :cOsdMenu(tr("Timers"), 2, CHNUMWIDTH, 10, 6, 6)
++#endif /* TIMERINFO */
+ {
+   helpKeys = -1;
+   for (cTimer *timer = Timers.First(); timer; timer = Timers.Next(timer)) {
+@@ -1101,6 +1232,9 @@
+   SetCurrent(First());
+   SetHelpKeys();
+   Timers.IncBeingEdited();
++#ifdef USE_TIMERINFO
++  actualiseDiskStatus = true;
++#endif /* TIMERINFO */
+ }
+ 
+ cMenuTimers::~cMenuTimers()
+@@ -1139,7 +1273,11 @@
+      timer->OnOff();
+      timer->SetEventFromSchedule();
+      RefreshCurrent();
++#ifdef USE_TIMERINFO
++     Display();
++#else
+      DisplayCurrent(true);
++#endif /* TIMERINFO */
+      if (timer->FirstDay())
+         isyslog("timer %s first day set to %s", *timer->ToDescr(), *timer->PrintFirstDay());
+      else
+@@ -1198,6 +1336,68 @@
+   return osContinue;
+ }
+ 
++#ifdef USE_TIMERINFO
++void cMenuTimers::ActualiseDiskStatus(void)
++{
++  if (!actualiseDiskStatus || !Count())
++     return;
++
++  // compute free disk space
++  int freeMB, freeMinutes, runshortMinutes;
++  VideoDiskSpace(&freeMB);
++  freeMinutes = int(double(freeMB) * 1.1 / MB_PER_MINUTE); // overestimate by 10 percent
++  runshortMinutes = freeMinutes / 5; // 20 Percent
++
++  // fill entries list
++  cTimerEntry *entry;
++  cList<cTimerEntry> entries;
++  for (cOsdItem *item = First(); item; item = Next(item))
++     entries.Add(new cTimerEntry((cMenuTimerItem *)item));
++
++  // search last start time
++  time_t last = 0;
++  for (entry = entries.First(); entry; entry = entries.Next(entry))
++     last = max(entry->startTime(), last);
++
++  // add entries for repeating timers
++  for (entry = entries.First(); entry; entry = entries.Next(entry))
++     if (entry->repTimer() && !entry->isDummy())
++        for (time_t start = cTimer::IncDay(entry->startTime(), 1);
++             start <= last;
++             start = cTimer::IncDay(start, 1))
++           if (entry->Timer()->DayMatches(start))
++              entries.Add(new cTimerEntry(entry->Timer(), start));
++
++  // set the disk-status
++  entries.Sort();
++  for (entry = entries.First(); entry; entry = entries.Next(entry)) {
++     char status = ' ';
++     if (entry->active()) {
++        freeMinutes -= entry->duration();
++        status = freeMinutes > runshortMinutes ? '+' : freeMinutes > 0 ? 177 /* +/- */ : '-';
++        }
++     entry->SetDiskStatus(status);
++#ifdef DEBUG_TIMER_INFO
++     dsyslog("timer-info: %c | %d | %s | %s | %3d | %+5d -> %+5d",
++             status,
++             entry->startTime(),
++             entry->active() ? "aktiv " : "n.akt.",
++             entry->repTimer() ? entry->isDummy() ? "  dummy  " : "mehrmalig" : "einmalig ",
++             entry->duration(),
++             entry->active() ? freeMinutes + entry->duration() : freeMinutes,
++             freeMinutes);
++#endif
++     }
++
++  actualiseDiskStatus = false;
++}
++
++void cMenuTimers::Display(void)
++{
++  ActualiseDiskStatus();
++  cOsdMenu::Display();
++}
++#endif /* TIMERINFO */
+ eOSState cMenuTimers::ProcessKey(eKeys Key)
+ {
+   int TimerNumber = HasSubMenu() ? Count() : -1;
+@@ -1206,18 +1406,36 @@
+   if (state == osUnknown) {
+      switch (Key) {
+        case kOk:     return Edit();
++#ifdef USE_TIMERINFO
++       case kRed:    actualiseDiskStatus = true;
++                     state = OnOff(); break; // must go through SetHelpKeys()!
++#else
+        case kRed:    state = OnOff(); break; // must go through SetHelpKeys()!
++#endif /* TIMERINFO */
+        case kGreen:  return New();
++#ifdef USE_TIMERINFO
++       case kYellow: actualiseDiskStatus = true;
++                     state = Delete(); break;
++#else
+        case kYellow: state = Delete(); break;
++#endif /* TIMERINFO */
+        case kInfo:
+        case kBlue:   return Info();
+                      break;
+        default: break;
+        }
+      }
++#ifdef USE_TIMERINFO
++  if (TimerNumber >= 0 && !HasSubMenu()) {
++     if (Timers.Get(TimerNumber)) // a newly created timer was confirmed with Ok
++        Add(new cMenuTimerItem(Timers.Get(TimerNumber)), true);
++     Sort();
++     actualiseDiskStatus = true;
++#else
+   if (TimerNumber >= 0 && !HasSubMenu() && Timers.Get(TimerNumber)) {
+      // a newly created timer was confirmed with Ok
+      Add(new cMenuTimerItem(Timers.Get(TimerNumber)), true);
++#endif /* TIMERINFO */
+      Display();
+      }
+   if (Key != kNone)
+@@ -1247,6 +1465,9 @@
+ {
+   cOsdMenu::Display();
+   DisplayMenu()->SetEvent(event);
++#ifdef USE_GRAPHTFT
++  cStatus::MsgOsdSetEvent(event);
++#endif /* GRAPHTFT */
+   if (event->Description())
+      cStatus::MsgOsdTextItem(event->Description());
+ }
+@@ -1294,7 +1515,12 @@
+   const cChannel *channel;
+   bool withDate;
+   int timerMatch;
++#ifdef USE_LIEMIEXT
++  bool withBar;
++  cMenuScheduleItem(const cEvent *Event, cChannel *Channel = NULL, bool WithDate = false, bool WithBar = false);
++#else
+   cMenuScheduleItem(const cEvent *Event, cChannel *Channel = NULL, bool WithDate = false);
++#endif /* LIEMIEXT */
+   static void SetSortMode(eScheduleSortMode SortMode) { sortMode = SortMode; }
+   static void IncSortMode(void) { sortMode = eScheduleSortMode((sortMode == ssmAllAll) ? ssmAllThis : sortMode + 1); }
+   static eScheduleSortMode SortMode(void) { return sortMode; }
+@@ -1304,12 +1530,19 @@
+ 
+ cMenuScheduleItem::eScheduleSortMode cMenuScheduleItem::sortMode = ssmAllThis;
+ 
++#ifdef USE_LIEMIEXT
++cMenuScheduleItem::cMenuScheduleItem(const cEvent *Event, cChannel *Channel, bool WithDate, bool WithBar)
++#else
+ cMenuScheduleItem::cMenuScheduleItem(const cEvent *Event, cChannel *Channel, bool WithDate)
++#endif /* LIEMIEXT */
+ {
+   event = Event;
+   channel = Channel;
+   withDate = WithDate;
+   timerMatch = tmNone;
++#ifdef USE_LIEMIEXT
++  withBar = WithBar;
++#endif /* LIEMIEXT */
+   Update(true);
+ }
+ 
+@@ -1324,8 +1557,31 @@
+   return r;
+ }
+ 
++#ifdef USE_WAREAGLEICON
++static const char *TimerMatchChars[9] =
++{
++  " ", "t", "T",
++  ICON_BLANK, ICON_CLOCK_UH, ICON_CLOCK,
++  ICON_BLANK_UTF8, ICON_CLOCK_UH_UTF8, ICON_CLOCK_UTF8
++};
++#else
+ static const char *TimerMatchChars = " tT";
++#endif /* WAREAGLEICON */
+ 
++#ifdef USE_LIEMIEXT
++static const char * const ProgressBar[7] =
++{
++  "[      ]",
++  "[|     ]",
++  "[||    ]",
++  "[|||   ]",
++  "[||||  ]",
++  "[||||| ]",
++  "[||||||]"
++};
++
++#endif /* LIEMIEXT */
++
+ bool cMenuScheduleItem::Update(bool Force)
+ {
+   bool result = false;
+@@ -1333,17 +1589,54 @@
+   Timers.GetMatch(event, &timerMatch);
+   if (Force || timerMatch != OldTimerMatch) {
+      cString buffer;
++#ifdef USE_WAREAGLEICON
++     const char *t = Setup.WarEagleIcons ? IsLangUtf8() ? TimerMatchChars[timerMatch+6] : TimerMatchChars[timerMatch+3] : TimerMatchChars[timerMatch];
++     const char *v = event->Vps() && (event->Vps() - event->StartTime()) ? Setup.WarEagleIcons ? IsLangUtf8() ? ICON_VPS_UTF8 : ICON_VPS : "V" : " ";
++     const char *r = event->SeenWithin(30) && event->IsRunning() ? Setup.WarEagleIcons ? IsLangUtf8() ? ICON_RUNNING_UTF8 : ICON_RUNNING : "*" : " ";
++#else
+      char t = TimerMatchChars[timerMatch];
+      char v = event->Vps() && (event->Vps() - event->StartTime()) ? 'V' : ' ';
+      char r = event->SeenWithin(30) && event->IsRunning() ? '*' : ' ';
++#endif /* WAREAGLEICON */
+      const char *csn = channel ? channel->ShortName(true) : NULL;
+      cString eds = event->GetDateString();
+      if (channel && withDate)
++#ifdef USE_WAREAGLEICON
++        buffer = cString::sprintf("%d\t%.*s\t%.*s\t%s\t%s%s%s\t%s", channel->Number(), Utf8SymChars(csn, 6), csn, Utf8SymChars(eds, 6), *eds, *event->GetTimeString(), t, v, r, event->Title());
++#else
+         buffer = cString::sprintf("%d\t%.*s\t%.*s\t%s\t%c%c%c\t%s", channel->Number(), Utf8SymChars(csn, 6), csn, Utf8SymChars(eds, 6), *eds, *event->GetTimeString(), t, v, r, event->Title());
++#endif /* WAREAGLEICON */
+      else if (channel)
++#ifdef USE_LIEMIEXT
++        if (Setup.ShowProgressBar && withBar) {
++           int progress = (int)roundf( (float)(time(NULL) - event->StartTime()) / (float)(event->Duration()) * 6.0 );
++           if (progress < 0) progress = 0;
++           else if (progress > 6) progress = 6;
++#ifdef USE_WAREAGLEICON
++           buffer = cString::sprintf("%d\t%.*s\t%s\t%s\t%s%s%s\t%s", channel->Number(), Utf8SymChars(csn, 6), csn, *event->GetTimeString(), ProgressBar[progress], t, v, r, event->Title());
++#else
++           buffer = cString::sprintf("%d\t%.*s\t%s\t%s\t%c%c%c\t%s", channel->Number(), Utf8SymChars(csn, 6), csn, *event->GetTimeString(), ProgressBar[progress], t, v, r, event->Title());
++#endif /* WAREAGLEICON */
++           }
++        else
++#ifdef USE_WAREAGLEICON
++        buffer = cString::sprintf("%d\t%.*s\t%s\t%s%s%s\t%s", channel->Number(), Utf8SymChars(csn, 6), csn, *event->GetTimeString(), t, v, r, event->Title());
++#else
+         buffer = cString::sprintf("%d\t%.*s\t%s\t%c%c%c\t%s", channel->Number(), Utf8SymChars(csn, 6), csn, *event->GetTimeString(), t, v, r, event->Title());
++#endif /* WAREAGLEICON */
++#else
++#ifdef USE_WAREAGLEICON
++        buffer = cString::sprintf("%d\t%.*s\t%s\t%s%s%s\t%s", channel->Number(), Utf8SymChars(csn, 6), csn, *event->GetTimeString(), t, v, r, event->Title());
++#else
++        buffer = cString::sprintf("%d\t%.*s\t%s\t%c%c%c\t%s", channel->Number(), Utf8SymChars(csn, 6), csn, *event->GetTimeString(), t, v, r, event->Title());
++#endif /* WAREAGLEICON */
++#endif /* LIEMIEXT */
+      else
++#ifdef USE_WAREAGLEICON
++        buffer = cString::sprintf("%.*s\t%s\t%s%s%s\t%s", Utf8SymChars(eds, 6), *eds, *event->GetTimeString(), t, v, r, event->Title());
++#else
+         buffer = cString::sprintf("%.*s\t%s\t%c%c%c\t%s", Utf8SymChars(eds, 6), *eds, *event->GetTimeString(), t, v, r, event->Title());
++#endif /* WAREAGLEICON */
+      SetText(buffer);
+      result = true;
+      }
+@@ -1369,13 +1662,21 @@
+   static void SetCurrentChannel(int ChannelNr) { currentChannel = ChannelNr; }
+   static const cEvent *ScheduleEvent(void);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return now ? "MenuWhatsOnNow" : "MenuWhatsOnNext"; }
++  virtual void Display(void);
++#endif /* GRAPHTFT */
+   };
+ 
+ int cMenuWhatsOn::currentChannel = 0;
+ const cEvent *cMenuWhatsOn::scheduleEvent = NULL;
+ 
+ cMenuWhatsOn::cMenuWhatsOn(const cSchedules *Schedules, bool Now, int CurrentChannelNr)
++#ifdef USE_LIEMIEXT
++:cOsdMenu(Now ? tr("What's on now?") : tr("What's on next?"), CHNUMWIDTH, 7, 6, 4, 4)
++#else
+ :cOsdMenu(Now ? tr("What's on now?") : tr("What's on next?"), CHNUMWIDTH, 7, 6, 4)
++#endif /* LIEMIEXT */
+ {
+   now = Now;
+   helpKeys = -1;
+@@ -1387,7 +1688,11 @@
+          if (Schedule) {
+             const cEvent *Event = Now ? Schedule->GetPresentEvent() : Schedule->GetFollowingEvent();
+             if (Event)
++#ifdef USE_LIEMIEXT
++               Add(new cMenuScheduleItem(Event, Channel, false, Now), Channel->Number() == CurrentChannelNr);
++#else
+                Add(new cMenuScheduleItem(Event, Channel), Channel->Number() == CurrentChannelNr);
++#endif /* LIEMIEXT */
+             }
+          }
+       }
+@@ -1396,6 +1701,20 @@
+   SetHelpKeys();
+ }
+ 
++#ifdef USE_GRAPHTFT
++void cMenuWhatsOn::Display(void)
++{
++   cOsdMenu::Display();
++
++   if (Count() > 0) {
++      int ni = 0;
++      for (cOsdItem *item = First(); item; item = Next(item)) {
++         cStatus::MsgOsdEventItem(((cMenuScheduleItem*)item)->event, item->Text(), ni++, Count());
++      }
++   }
++}
++#endif /* GRAPHTFT */
++
+ bool cMenuWhatsOn::Update(void)
+ {
+   bool result = false;
+@@ -1536,6 +1855,10 @@
+   cMenuSchedule(void);
+   virtual ~cMenuSchedule();
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuSchedule"; }
++  virtual void Display(void);
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuSchedule::cMenuSchedule(void)
+@@ -1561,6 +1884,20 @@
+   cMenuWhatsOn::ScheduleEvent(); // makes sure any posted data is cleared
+ }
+ 
++#ifdef USE_GRAPHTFT
++void cMenuSchedule::Display(void)
++{
++   cOsdMenu::Display();
++
++   if (Count() > 0) {
++      int ni = 0;
++      for (cOsdItem *item = First(); item; item = Next(item)) {
++         cStatus::MsgOsdEventItem(((cMenuScheduleItem*)item)->event, item->Text(), ni++, Count());
++      }
++   }
++}
++#endif /* GRAPHTFT */
++
+ void cMenuSchedule::PrepareScheduleAllThis(const cEvent *Event, const cChannel *Channel)
+ {
+   Clear();
+@@ -1916,6 +2253,9 @@
+   cMenuCam(cCamSlot *CamSlot);
+   virtual ~cMenuCam();
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuCam"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuCam::cMenuCam(cCamSlot *CamSlot)
+@@ -2095,6 +2435,9 @@
+   cMenuRecording(const cRecording *Recording, bool WithButtons = false);
+   virtual void Display(void);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuRecording"; }
++#endif /* GRAPHTFT */
+ };
+ 
+ cMenuRecording::cMenuRecording(const cRecording *Recording, bool WithButtons)
+@@ -2110,6 +2453,9 @@
+ {
+   cOsdMenu::Display();
+   DisplayMenu()->SetRecording(recording);
++#ifdef USE_GRAPHTFT
++  cStatus::MsgOsdSetRecording(recording);
++#endif /* GRAPHTFT */
+   if (recording->Info()->Description())
+      cStatus::MsgOsdTextItem(recording->Info()->Description());
+ }
+@@ -2170,7 +2516,11 @@
+   fileName = strdup(Recording->FileName());
+   name = NULL;
+   totalEntries = newEntries = 0;
++#ifdef USE_LIEMIEXT
++  SetText(Recording->Title('\t', true, Level, false));
++#else
+   SetText(Recording->Title('\t', true, Level));
++#endif /* LIEMIEXT */
+   if (*Text() == '\t')
+      name = strdup(Text() + 2); // 'Text() + 2' to skip the two '\t'
+ }
+@@ -2186,13 +2536,183 @@
+   totalEntries++;
+   if (New)
+      newEntries++;
++#ifdef USE_LIEMIEXT
++  switch (Setup.ShowRecTime + Setup.ShowRecDate + Setup.ShowRecLength) {
++     case 0:
++          SetText(cString::sprintf("%s", name));
++          break;
++     case 1:
++          SetText(cString::sprintf("%d\t%s", totalEntries, name));
++          break;
++     case 2:
++     default:
++          SetText(cString::sprintf("%d\t%d\t%s", totalEntries, newEntries, name));
++          break;
++     case 3:
++          SetText(cString::sprintf("%d\t%d\t\t%s", totalEntries, newEntries, name));
++          break;
++     }
++}
++
++// --- cMenuRenameRecording --------------------------------------------------
++
++class cMenuRenameRecording : public cOsdMenu {
++private:
++  char name[MaxFileName];
++  cMenuEditStrItem *file;
++  cOsdItem *marksItem, *resumeItem;
++  bool isResume, isMarks;
++  cRecording *recording;
++  void SetHelpKeys(void);
++  eOSState SetFolder(void);
++public:
++  cMenuRenameRecording(cRecording *Recording);
++  virtual eOSState ProcessKey(eKeys Key);
++};
++
++cMenuRenameRecording::cMenuRenameRecording(cRecording *Recording)
++:cOsdMenu(tr("Rename recording"), 12)
++{
++  cMarks marks;
++
++  file = NULL;
++  recording = Recording;
++  
++  if (recording) {
++     Utf8Strn0Cpy(name, recording->Name(), sizeof(name));
++     Add(file = new cMenuEditStrItem(tr("File"), name, sizeof(name)));
++
++     Add(new cOsdItem("", osUnknown, false));
++
++     Add(new cOsdItem(cString::sprintf("%s:\t%s", tr("Date"), *DayDateTime(recording->start)), osUnknown, false));
++
++     cChannel *channel = Channels.GetByChannelID(((cRecordingInfo *)recording->Info())->ChannelID());
++     if (channel)
++        Add(new cOsdItem(cString::sprintf("%s:\t%s", tr("Channel"), *ChannelString(channel, 0)), osUnknown, false));
++
++     int recLen = cIndexFile::Length(recording->FileName(), recording->IsPesRecording());
++     if (recLen >= 0)
++        Add(new cOsdItem(cString::sprintf("%s:\t%s", tr("Length"), *IndexToHMSF(recLen, false, recording->FramesPerSecond())), osUnknown, false));
++     else
++        recLen = 0;
++
++     int dirSize = DirSizeMB(recording->FileName());
++     double seconds = recLen / recording->FramesPerSecond();
++     cString bitRate = seconds ? cString::sprintf(" (%.2f MBit/s)", 8.0 * dirSize / seconds) : cString("");
++     Add(new cOsdItem(cString::sprintf("%s:\t%s", tr("Format"), recording->IsPesRecording() ? tr("PES") : tr("TS")), osUnknown, false));
++     Add(new cOsdItem((dirSize > 9999) ? cString::sprintf("%s:\t%.2f GB%s", tr("Size"), dirSize / 1024.0, *bitRate) : cString::sprintf("%s:\t%d MB%s", tr("Size"), dirSize, *bitRate), osUnknown, false));
++
++     Add(new cOsdItem("", osUnknown, false));
++
++     isMarks = marks.Load(recording->FileName(), recording->FramesPerSecond(), recording->IsPesRecording()) && marks.Count();
++     marksItem = new cOsdItem(tr("Delete marks information?"), osUser1, isMarks);
++     Add(marksItem);
++
++     cResumeFile ResumeFile(recording->FileName(), recording->IsPesRecording());
++     isResume = (ResumeFile.Read() != -1);
++     resumeItem = new cOsdItem(tr("Delete resume information?"), osUser2, isResume);
++     Add(resumeItem);
++     }
++
++  SetHelpKeys();
++}
++
++void cMenuRenameRecording::SetHelpKeys(void)
++{
++  SetHelp(tr("Button$Folder"));
++}
++
++eOSState cMenuRenameRecording::SetFolder(void)
++{
++  cMenuFolder *mf = (cMenuFolder *)SubMenu();
++  if (mf) {
++     cString Folder = mf->GetFolder();
++     char *p = strrchr(name, FOLDERDELIMCHAR);
++     if (p)
++        p++;
++     else
++        p = name;
++     if (!isempty(*Folder))
++        strn0cpy(name, cString::sprintf("%s%c%s", *Folder, FOLDERDELIMCHAR, p), sizeof(name));
++     else if (p != name)
++        memmove(name, p, strlen(p) + 1);
++     SetCurrent(file);
++     Display();
++     }
++  return CloseSubMenu();
++}
++
++eOSState cMenuRenameRecording::ProcessKey(eKeys Key)
++{
++  eOSState state = cOsdMenu::ProcessKey(Key);
++
++  if (state == osUnknown) {
++     switch (Key) {
++       case kOk:
++            if (recording->Rename(name)) {
++               Recordings.ChangeState();
++               Recordings.TouchUpdate();
++               return osRecordings;
++               }
++            else
++               Skins.Message(mtError, tr("Error while accessing recording!"));
++            break;
++       case kRed:
++            return AddSubMenu(new cMenuFolder(tr("Select folder"), &Folders, name));
++            break;
++       default:
++            break;
++       }
++     if (Key != kNone)
++        SetHelpKeys();
++     return osContinue;
++     }
++  else if (state == osEnd && HasSubMenu())
++     state = SetFolder();
++  else if (state == osUser1) {
++     if (isMarks && Interface->Confirm(tr("Delete marks information?"))) {
++        cMarks marks;
++        marks.Load(recording->FileName(), recording->FramesPerSecond(), recording->IsPesRecording());
++        cMark *mark = marks.First();
++        while (mark) {
++          cMark *nextmark = marks.Next(mark);
++          marks.Del(mark);
++          mark = nextmark;
++          }
++        marks.Save();
++        isMarks = false;
++        marksItem->SetSelectable(isMarks);
++        SetCurrent(First());
++        Display();
++        }
++     return osContinue;
++     }
++  else if (state == osUser2) {
++     if (isResume && Interface->Confirm(tr("Delete resume information?"))) {
++        cResumeFile ResumeFile(recording->FileName(), recording->IsPesRecording());
++        ResumeFile.Delete();
++        isResume = false;
++        resumeItem->SetSelectable(isResume);
++        SetCurrent(First());
++        Display();
++        }
++     return osContinue;
++     }
++
++  return state;
++#else
+   SetText(cString::sprintf("%d\t%d\t%s", totalEntries, newEntries, name));
++#endif /* LIEMIEXT */
+ }
+ 
+ // --- cMenuRecordings -------------------------------------------------------
+ 
+ cMenuRecordings::cMenuRecordings(const char *Base, int Level, bool OpenSubMenus)
++#ifdef USE_LIEMIEXT
++:cOsdMenu(Base ? Base : tr("Recordings"), 9, 7, 7)
++#else
+ :cOsdMenu(Base ? Base : tr("Recordings"), 9, 7)
++#endif /* LIEMIEXT */
+ {
+   base = Base ? strdup(Base) : NULL;
+   level = Setup.RecordingDirs ? Level : -1;
+@@ -2270,7 +2790,13 @@
+   for (cRecording *recording = Recordings.First(); recording; recording = Recordings.Next(recording)) {
+       if (!base || (strstr(recording->Name(), base) == recording->Name() && recording->Name()[strlen(base)] == FOLDERDELIMCHAR)) {
+          cMenuRecordingItem *Item = new cMenuRecordingItem(recording, level);
++#ifdef USE_PINPLUGIN
++         if ((*Item->Text() && (!LastItem || strcmp(Item->Text(), LastItemText) != 0))
++            && (!cStatus::MsgReplayProtected(GetRecording(Item), Item->Name(), base,
++                                             Item->IsDirectory(), true))) {
++#else
+          if (*Item->Text() && (!LastItem || strcmp(Item->Text(), LastItemText) != 0)) {
++#endif /* PINPLUGIN */
+             Add(Item);
+             LastItem = Item;
+             free(LastItemText);
+@@ -2320,6 +2846,11 @@
+ {
+   cMenuRecordingItem *ri = (cMenuRecordingItem *)Get(Current());
+   if (ri) {
++#ifdef USE_PINPLUGIN
++     if (cStatus::MsgReplayProtected(GetRecording(ri), ri->Name(), base,
++                                     ri->IsDirectory()) == true)
++        return osContinue;
++#endif /* PINPLUGIN */
+      if (ri->IsDirectory())
+         Open();
+      else {
+@@ -2427,6 +2958,21 @@
+   return osContinue;
+ }
+ 
++#ifdef USE_LIEMIEXT
++eOSState cMenuRecordings::Rename(void)
++{
++  if (HasSubMenu() || Count() == 0)
++     return osContinue;
++  cMenuRecordingItem *ri = (cMenuRecordingItem *)Get(Current());
++  if (ri && !ri->IsDirectory()) {
++     cRecording *recording = GetRecording(ri);
++     if (recording)
++        return AddSubMenu(new cMenuRenameRecording(recording));
++     }
++  return osContinue;
++}
++#endif /* LIEMIEXT */
++
+ eOSState cMenuRecordings::ProcessKey(eKeys Key)
+ {
+   bool HadSubMenu = HasSubMenu();
+@@ -2441,7 +2987,16 @@
+        case kYellow: return Delete();
+        case kInfo:
+        case kBlue:   return Info();
++#ifdef USE_LIEMIEXT
++       case k0:      DirOrderState = !DirOrderState;
++                     Set(true);
++                     return osContinue;
++       case k8:      return Rename();
++       case k9:
++       case k1...k7: return Commands(Key);
++#else
+        case k1...k9: return Commands(Key);
++#endif /* LIEMIEXT */
+        case kNone:   if (Recordings.StateChanged(recordingsState))
+                         Set(true);
+                      break;
+@@ -2506,6 +3061,9 @@
+   cMenuSetupOSD(void);
+   virtual ~cMenuSetupOSD();
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuSetupOsd"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuSetupOSD::cMenuSetupOSD(void)
+@@ -2547,6 +3105,9 @@
+   Add(new cMenuEditStraItem(tr("Setup.OSD$Skin"),                   &skinIndex, numSkins, skinDescriptions));
+   if (themes.NumThemes())
+   Add(new cMenuEditStraItem(tr("Setup.OSD$Theme"),                  &themeIndex, themes.NumThemes(), themes.Descriptions()));
++#ifdef USE_WAREAGLEICON
++  Add(new cMenuEditBoolItem(tr("Setup.OSD$WarEagle icons"),         &data.WarEagleIcons));
++#endif /* WAREAGLEICON */
+   Add(new cMenuEditPrcItem( tr("Setup.OSD$Left (%)"),               &data.OSDLeftP, 0.0, 0.5));
+   Add(new cMenuEditPrcItem( tr("Setup.OSD$Top (%)"),                &data.OSDTopP, 0.0, 0.5));
+   Add(new cMenuEditPrcItem( tr("Setup.OSD$Width (%)"),              &data.OSDWidthP, 0.5, 1.0));
+@@ -2570,6 +3131,12 @@
+   Add(new cMenuEditBoolItem(tr("Setup.OSD$Recording directories"),  &data.RecordingDirs));
+   Add(new cMenuEditBoolItem(tr("Setup.OSD$Folders in timer menu"),  &data.FoldersInTimerMenu));
+   Add(new cMenuEditBoolItem(tr("Setup.OSD$Number keys for characters"), &data.NumberKeysForChars));
++#ifdef USE_LIEMIEXT
++  Add(new cMenuEditBoolItem(tr("Setup.OSD$Main menu command position"), &data.MenuCmdPosition, tr("bottom"), tr("top")));
++#endif /* LIEMIEXT */
++#ifdef USE_VALIDINPUT
++  Add(new cMenuEditBoolItem(tr("Setup.OSD$Show valid input"),       &data.ShowValidInput));
++#endif /* VALIDINPUT */
+   SetCurrent(Get(current));
+   Display();
+ }
+@@ -2643,13 +3210,16 @@
+ private:
+ #ifdef USE_NOEPG
+   const char *noEPGModes[2];
+-#endif /* USE_NOEPG */
++#endif /* NOEPG */
+   int originalNumLanguages;
+   int numLanguages;
+   void Setup(void);
+ public:
+   cMenuSetupEPG(void);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuSetupEpg"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuSetupEPG::cMenuSetupEPG(void)
+@@ -2669,13 +3239,16 @@
+ #ifdef USE_NOEPG
+   noEPGModes[0] = tr("blacklist");
+   noEPGModes[1] = tr("whitelist");
+-#endif /* USE_NOEPG */
++#endif /* NOEPG */
+ 
+   Clear();
+ 
+   Add(new cMenuEditIntItem( tr("Setup.EPG$EPG scan timeout (h)"),      &data.EPGScanTimeout));
+   Add(new cMenuEditIntItem( tr("Setup.EPG$EPG bugfix level"),          &data.EPGBugfixLevel, 0, MAXEPGBUGFIXLEVEL));
+   Add(new cMenuEditIntItem( tr("Setup.EPG$EPG linger time (min)"),     &data.EPGLinger, 0));
++#ifdef USE_LIEMIEXT
++  Add(new cMenuEditBoolItem(tr("Setup.EPG$Show progress bar"),         &data.ShowProgressBar));
++#endif /* LIEMIEXT */
+   Add(new cMenuEditBoolItem(tr("Setup.EPG$Set system time"),           &data.SetSystemTime));
+   if (data.SetSystemTime)
+      Add(new cMenuEditTranItem(tr("Setup.EPG$Use time from transponder"), &data.TimeTransponder, &data.TimeSource));
+@@ -2684,9 +3257,15 @@
+   for (int i = 0; i < numLanguages; i++)
+       // TRANSLATORS: note the singular!
+       Add(new cMenuEditStraItem(tr("Setup.EPG$Preferred language"),    &data.EPGLanguages[i], I18nLanguages()->Size(), &I18nLanguages()->At(0)));
++#ifdef USE_DDEPGENTRY
++  Add(new cMenuEditIntItem(tr("Setup.EPG$Period for double EPG search(min)"), &data.DoubleEpgTimeDelta));
++  Add(new cMenuEditBoolItem(tr("Setup.EPG$extern double Epg entry"),   &data.DoubleEpgAction, "adjust", "delete"));
++  Add(new cMenuEditBoolItem(tr("Setup.EPG$Mix intern and extern EPG"), &data.MixEpgAction));
++  Add(new cMenuEditBoolItem(tr("Setup.EPG$Disable running VPS event"), &data.DisableVPS));
++#endif /* DDEPGENTRY */
+ #ifdef USE_NOEPG
+   Add(new cMenuEditStraItem(tr("Setup.EPG$Mode of noEPG-Patch"),       &data.noEPGMode, 2, noEPGModes));
+-#endif /* USE_NOEPG */
++#endif /* NOEPG */
+ 
+   SetCurrent(Get(current));
+   Display();
+@@ -2753,6 +3332,9 @@
+ public:
+   cMenuSetupDVB(void);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuSetupDvb"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuSetupDVB::cMenuSetupDVB(void)
+@@ -2783,12 +3365,18 @@
+ 
+   Clear();
+ 
++#ifdef USE_CHANNELPROVIDE
++  Add(new cMenuEditBoolItem(tr("Setup.DVB$Use DVB receivers"),      &data.LocalChannelProvide));
++#endif /* CHANNELPROVIDE */
+   Add(new cMenuEditIntItem( tr("Setup.DVB$Primary DVB interface"), &data.PrimaryDVB, 1, cDevice::NumDevices()));
+   Add(new cMenuEditBoolItem(tr("Setup.DVB$Video format"),          &data.VideoFormat, "4:3", "16:9"));
+   if (data.VideoFormat == 0)
+      Add(new cMenuEditStraItem(tr("Setup.DVB$Video display format"), &data.VideoDisplayFormat, 3, videoDisplayFormatTexts));
+   Add(new cMenuEditBoolItem(tr("Setup.DVB$Use Dolby Digital"),     &data.UseDolbyDigital));
+   Add(new cMenuEditStraItem(tr("Setup.DVB$Update channels"),       &data.UpdateChannels, 6, updateChannelsTexts));
++#ifdef USE_CHANNELBIND
++  Add(new cMenuEditBoolItem(tr("Setup.DVB$channel binding by Rid"),&data.ChannelBindingByRid));
++#endif /* CHANNELBIND */
+   Add(new cMenuEditIntItem( tr("Setup.DVB$Audio languages"),       &numAudioLanguages, 0, I18nLanguages()->Size()));
+   for (int i = 0; i < numAudioLanguages; i++)
+       Add(new cMenuEditStraItem(tr("Setup.DVB$Audio language"),    &data.AudioLanguages[i], I18nLanguages()->Size(), &I18nLanguages()->At(0)));
+@@ -2801,6 +3389,9 @@
+      Add(new cMenuEditIntItem( tr("Setup.DVB$Subtitle foreground transparency"), &data.SubtitleFgTransparency, 0, 9));
+      Add(new cMenuEditIntItem( tr("Setup.DVB$Subtitle background transparency"), &data.SubtitleBgTransparency, 0, 10));
+      }
++#ifdef USE_TTXTSUBS
++  Add(new cMenuEditBoolItem(tr("Setup.DVB$Enable teletext support"), &data.SupportTeletext));
++#endif /* TTXTSUBS */
+ 
+   SetCurrent(Get(current));
+   Display();
+@@ -2882,6 +3473,9 @@
+ public:
+   cMenuSetupLNB(void);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuSetupLnb"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuSetupLNB::cMenuSetupLNB(void)
+@@ -2896,6 +3490,23 @@
+ 
+   Clear();
+ 
++#ifdef USE_LNBSHARE
++  int numSatDevices = 0;
++  for (int i = 0; i < cDevice::NumDevices(); i++) {
++     	if (cDevice::GetDevice(i)->ProvidesSource(cSource::stSat)) numSatDevices++;
++  }     		
++  if (numSatDevices > 1) {
++  	 char tmp[40];
++     for (int i = 1; i <= cDevice::NumDevices(); i++) {
++     	if (cDevice::GetDevice(i - 1)->ProvidesSource(cSource::stSat)) {
++        	snprintf( tmp, 40, tr("Setup.LNB$DVB device %d uses LNB No."), i);
++        	Add(new cMenuEditIntItem( tmp, &data.CardUsesLnbNr[i - 1], 1, numSatDevices ));
++        }
++     }
++   }
++  Add(new cMenuEditBoolItem(tr("Setup.LNB$Log LNB usage"), &data.VerboseLNBlog));
++#endif /* LNBSHARE */
++  
+   Add(new cMenuEditBoolItem(tr("Setup.LNB$Use DiSEqC"),               &data.DiSEqC));
+   if (!data.DiSEqC) {
+      Add(new cMenuEditIntItem( tr("Setup.LNB$SLOF (MHz)"),               &data.LnbSLOF));
+@@ -2912,6 +3523,10 @@
+   int oldDiSEqC = data.DiSEqC;
+   eOSState state = cMenuSetupBase::ProcessKey(Key);
+ 
++#ifdef USE_LNBSHARE
++  if (Key == kOk) cDevice::SetLnbNr();
++#endif /* LNBSHARE */
++  
+   if (Key != kNone && data.DiSEqC != oldDiSEqC)
+      Setup();
+   return state;
+@@ -2962,6 +3577,9 @@
+ public:
+   cMenuSetupCAM(void);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuSetupCam"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuSetupCAM::cMenuSetupCAM(void)
+@@ -3038,12 +3656,49 @@
+ private:
+   const char *pauseKeyHandlingTexts[3];
+   const char *delTimeshiftRecTexts[3];
++#ifdef USE_DVLVIDPREFER
++  void Set(void);
++  int tmpNVidPrefer,
++      tmpUseVidPrefer;
++#endif /* DVLVIDPREFER */
+ public:
+   cMenuSetupRecord(void);
++#ifdef USE_DVLVIDPREFER
++  eOSState ProcessKey(eKeys key);
++#endif /* DVLVIDPREFER */
+   };
+ 
+ cMenuSetupRecord::cMenuSetupRecord(void)
+ {
++#ifdef USE_DVLVIDPREFER
++  Set();
++}
++
++eOSState cMenuSetupRecord::ProcessKey(eKeys key)
++{
++  eOSState s = cMenuSetupBase::ProcessKey(key);;
++
++  if (key != kNone) {
++    if (tmpNVidPrefer != data.nVidPrefer || tmpUseVidPrefer != data.UseVidPrefer) {
++      int cur = Current();
++
++      tmpNVidPrefer = data.nVidPrefer;
++      tmpUseVidPrefer = data.UseVidPrefer;
++
++      Clear();
++      Set();
++      SetCurrent(Get(cur));
++      Display();
++      cMenuSetupBase::ProcessKey(kNone);
++      return osContinue;
++      }
++   }
++   return s;
++}
++
++void cMenuSetupRecord::Set(void)
++{
++#endif /* DVLVIDPREFER */
+   pauseKeyHandlingTexts[0] = tr("do not pause live video");
+   pauseKeyHandlingTexts[1] = tr("confirm pause live video");
+   pauseKeyHandlingTexts[2] = tr("pause live video");
+@@ -3059,6 +3714,22 @@
+   Add(new cMenuEditStraItem(tr("Setup.Recording$Pause key handling"),        &data.PauseKeyHandling, 3, pauseKeyHandlingTexts));
+   Add(new cMenuEditIntItem( tr("Setup.Recording$Pause priority"),            &data.PausePriority, 0, MAXPRIORITY));
+   Add(new cMenuEditIntItem( tr("Setup.Recording$Pause lifetime (d)"),        &data.PauseLifetime, 0, MAXLIFETIME));
++#ifdef USE_DVLVIDPREFER
++  tmpNVidPrefer = data.nVidPrefer;
++  tmpUseVidPrefer = data.UseVidPrefer;
++
++  Add(new cMenuEditBoolItem(tr("Setup.Recording$Video directory policy"),    &data.UseVidPrefer));
++  if (data.UseVidPrefer != 0) {
++     char tmp[ 64 ];
++     Add(new cMenuEditIntItem(tr("Setup.Recording$Number of video directories"), &data.nVidPrefer, 1, DVLVIDPREFER_MAX));
++     for (int zz = 0; zz < data.nVidPrefer; zz++) {
++         sprintf(tmp, tr("Setup.Recording$Video %d priority"), zz);
++         Add(new cMenuEditIntItem(tmp, &data.VidPreferPrio[ zz ], 0, 99));
++         sprintf(tmp, tr("Setup.Recording$Video %d min. free MB"), zz);
++         Add(new cMenuEditIntItem(tmp, &data.VidPreferSize[ zz ], -1, 99999));
++         }
++     }
++#endif /* DVLVIDPREFER */
+   Add(new cMenuEditBoolItem(tr("Setup.Recording$Use episode name"),          &data.UseSubtitle));
+   Add(new cMenuEditBoolItem(tr("Setup.Recording$Use VPS"),                   &data.UseVps));
+   Add(new cMenuEditIntItem( tr("Setup.Recording$VPS margin (s)"),            &data.VpsMargin, 0));
+@@ -3066,7 +3737,16 @@
+   Add(new cMenuEditStrItem( tr("Setup.Recording$Name instant recording"),     data.NameInstantRecord, sizeof(data.NameInstantRecord)));
+   Add(new cMenuEditIntItem( tr("Setup.Recording$Instant rec. time (min)"),   &data.InstantRecordTime, 1, MAXINSTANTRECTIME));
+   Add(new cMenuEditIntItem( tr("Setup.Recording$Max. video file size (MB)"), &data.MaxVideoFileSize, MINVIDEOFILESIZE, MAXVIDEOFILESIZETS));
++#ifdef USE_HARDLINKCUTTER
++  Add(new cMenuEditIntItem( tr("Setup.Recording$Max. recording size (GB)"),  &data.MaxRecordingSize, MINRECORDINGSIZE, MAXRECORDINGSIZE));
++  Add(new cMenuEditBoolItem(tr("Setup.Recording$Hard Link Cutter"),          &data.HardLinkCutter));
++#endif /* HARDLINKCUTTER */
+   Add(new cMenuEditBoolItem(tr("Setup.Recording$Split edited files"),        &data.SplitEditedFiles));
++#ifdef USE_LIEMIEXT
++  Add(new cMenuEditBoolItem(tr("Setup.Recording$Show date"),                 &data.ShowRecDate));
++  Add(new cMenuEditBoolItem(tr("Setup.Recording$Show time"),                 &data.ShowRecTime));
++  Add(new cMenuEditBoolItem(tr("Setup.Recording$Show length"),               &data.ShowRecLength));
++#endif /* LIEMIEXT */
+   Add(new cMenuEditStraItem(tr("Setup.Recording$Delete timeshift recording"),&data.DelTimeshiftRec, 3, delTimeshiftRecTexts));
+ }
+ 
+@@ -3085,6 +3765,17 @@
+   Add(new cMenuEditBoolItem(tr("Setup.Replay$Multi speed mode"), &data.MultiSpeedMode));
+   Add(new cMenuEditBoolItem(tr("Setup.Replay$Show replay mode"), &data.ShowReplayMode));
+   Add(new cMenuEditIntItem(tr("Setup.Replay$Resume ID"), &data.ResumeID, 0, 99));
++#ifdef USE_JUMPINGSECONDS
++  Add(new cMenuEditIntItem( tr("Setup.Recording$Jump Seconds"),              &data.JumpSeconds));
++  Add(new cMenuEditIntItem( tr("Setup.Recording$Jump Seconds Slow"),         &data.JumpSecondsSlow));
++  Add(new cMenuEditIntItem( tr("Setup.Recording$Jump Seconds (Repeat)"),     &data.JumpSecondsRepeat));
++#endif /* JUMPINGSECONDS */
++#ifdef USE_JUMPPLAY
++  Add(new cMenuEditBoolItem(tr("Setup.Replay$Jump&Play"), &data.JumpPlay));
++  Add(new cMenuEditBoolItem(tr("Setup.Replay$Play&Jump"), &data.PlayJump));
++  Add(new cMenuEditBoolItem(tr("Setup.Replay$Pause at last mark"), &data.PauseLastMark));
++  Add(new cMenuEditBoolItem(tr("Setup.Replay$Reload marks"), &data.ReloadMarks));
++#endif /* JUMPPLAY */
+ }
+ 
+ void cMenuSetupReplay::Store(void)
+@@ -3097,13 +3788,48 @@
+ // --- cMenuSetupMisc --------------------------------------------------------
+ 
+ class cMenuSetupMisc : public cMenuSetupBase {
++#ifdef USE_VOLCTRL
++private:
++  const char *lrChannelGroupsTexts[3];
++  const char *lrForwardRewindTexts[3];
++  void Setup(void);
++#endif /* VOLCTRL */
+ public:
+   cMenuSetupMisc(void);
++#ifdef USE_VOLCTRL
++  virtual eOSState ProcessKey(eKeys Key);
++#endif /* VOLCTRL */
+   };
+ 
+ cMenuSetupMisc::cMenuSetupMisc(void)
+ {
++#ifdef USE_VOLCTRL
++  lrChannelGroupsTexts[0] = tr("no");
++  lrChannelGroupsTexts[1] = tr("Setup.Miscellaneous$only in channelinfo");
++  lrChannelGroupsTexts[2] = tr("yes");
++  lrForwardRewindTexts[0] = tr("no");
++  lrForwardRewindTexts[1] = tr("Setup.Miscellaneous$only in progress display");
++  lrForwardRewindTexts[2] = tr("yes");
++#endif /* VOLCTRL */
+   SetSection(tr("Miscellaneous"));
++#ifdef USE_VOLCTRL
++  Setup();
++}
++
++eOSState cMenuSetupMisc::ProcessKey(eKeys Key)
++{
++  int newLRVolumeControl = data.LRVolumeControl;
++  eOSState state = cMenuSetupBase::ProcessKey(Key);
++  if (Key != kNone && data.LRVolumeControl != newLRVolumeControl)
++     Setup();
++  return state;
++}
++
++void cMenuSetupMisc::Setup(void)
++{
++  int current = Current();
++  Clear();
++#endif /* VOLCTRL */
+   Add(new cMenuEditIntItem( tr("Setup.Miscellaneous$Min. event timeout (min)"),   &data.MinEventTimeout));
+   Add(new cMenuEditIntItem( tr("Setup.Miscellaneous$Min. user inactivity (min)"), &data.MinUserInactivity));
+   Add(new cMenuEditIntItem( tr("Setup.Miscellaneous$SVDRP timeout (s)"),          &data.SVDRPTimeout));
+@@ -3113,6 +3839,20 @@
+   Add(new cMenuEditIntItem( tr("Setup.Miscellaneous$Initial volume"),             &data.InitialVolume, -1, 255, tr("Setup.Miscellaneous$as before")));
+   Add(new cMenuEditBoolItem(tr("Setup.Miscellaneous$Channels wrap"),              &data.ChannelsWrap));
+   Add(new cMenuEditBoolItem(tr("Setup.Miscellaneous$Emergency exit"),             &data.EmergencyExit));
++#ifdef USE_LIRCSETTINGS
++  Add(new cMenuEditIntItem( tr("Setup.Miscellaneous$Lirc repeat delay"),          &data.LircRepeatDelay, 0, 1000));
++  Add(new cMenuEditIntItem( tr("Setup.Miscellaneous$Lirc repeat freq"),           &data.LircRepeatFreq, 0, 1000));
++  Add(new cMenuEditIntItem( tr("Setup.Miscellaneous$Lirc repeat timeout"),        &data.LircRepeatTimeout, 0, 5000));
++#endif /* LIRCSETTINGS */
++#ifdef USE_VOLCTRL
++  Add(new cMenuEditBoolItem(tr("Setup.Miscellaneous$Volume ctrl with left/right"),     &data.LRVolumeControl));
++  if (data.LRVolumeControl) {
++     Add(new cMenuEditStraItem(tr("Setup.Miscellaneous$Channelgroups with left/right"),   &data.LRChannelGroups, 3, lrChannelGroupsTexts));
++     Add(new cMenuEditStraItem(tr("Setup.Miscellaneous$Search fwd/back with left/right"), &data.LRForwardRewind, 3, lrForwardRewindTexts));
++     }
++  SetCurrent(Get(current));
++  Display();
++#endif /* VOLCTRL */
+ }
+ 
+ // --- cMenuSetupPluginItem --------------------------------------------------
+@@ -3137,6 +3877,9 @@
+ public:
+   cMenuSetupPlugins(void);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuSetupPlugins"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuSetupPlugins::cMenuSetupPlugins(void)
+@@ -3186,6 +3929,9 @@
+ public:
+   cMenuSetup(void);
+   virtual eOSState ProcessKey(eKeys Key);
++#ifdef USE_GRAPHTFT
++  virtual const char* MenuKind() { return "MenuSetup"; }
++#endif /* GRAPHTFT */
+   };
+ 
+ cMenuSetup::cMenuSetup(void)
+@@ -3282,26 +4028,58 @@
+      menuXML = cString::sprintf("%s/setup/vdr-menu.xml", cPlugin::ConfigDirectory());
+   subMenu.LoadXml(menuXML);
+   nrDynamicMenuEntries = 0;
+-#endif /* USE_SETUP */
++#endif /* SETUP */
+ 
+   replaying = false;
+   stopReplayItem = NULL;
+   cancelEditingItem = NULL;
+   stopRecordingItem = NULL;
+   recordControlsState = 0;
++
++#ifdef USE_MENUORG
++  MenuOrgPatch::EnterRootMenu();
++#endif /* MENUORG */
+   Set();
+ 
+   // Initial submenus:
++#ifdef USE_MAINMENUHOOKS
++  cOsdMenu *menu = NULL;
++#endif /* MAINMENUHOOKS */
+ 
+   switch (State) {
++#ifdef USE_MAINMENUHOOKS
++    case osSchedule:
++        if (!cPluginManager::CallFirstService("MainMenuHooksPatch-v1.0::osSchedule", &menu))
++            menu = new cMenuSchedule;
++        break;
++    case osChannels:
++        if (!cPluginManager::CallFirstService("MainMenuHooksPatch-v1.0::osChannels", &menu))
++            menu = new cMenuChannels;
++        break;
++    case osTimers:
++        if (!cPluginManager::CallFirstService("MainMenuHooksPatch-v1.0::osTimers", &menu))
++            menu = new cMenuTimers;
++        break;
++    case osRecordings:
++        if (!cPluginManager::CallFirstService("MainMenuHooksPatch-v1.0::osRecordings", &menu))
++            menu = new cMenuRecordings(NULL, 0, true);
++        break;
++    case osSetup:      menu = new cMenuSetup; break;
++    case osCommands:   menu = new cMenuCommands(tr("Commands"), &Commands); break;
++#else
+     case osSchedule:   AddSubMenu(new cMenuSchedule); break;
+     case osChannels:   AddSubMenu(new cMenuChannels); break;
+     case osTimers:     AddSubMenu(new cMenuTimers); break;
+     case osRecordings: AddSubMenu(new cMenuRecordings(NULL, 0, true)); break;
+     case osSetup:      AddSubMenu(new cMenuSetup); break;
+     case osCommands:   AddSubMenu(new cMenuCommands(tr("Commands"), &Commands)); break;
++#endif /* MAINMENUHOOKS */
+     default: break;
+     }
++#ifdef USE_MAINMENUHOOKS
++  if (menu)
++      AddSubMenu(menu);
++#endif /* MAINMENUHOOKS */
+ }
+ 
+ cOsdObject *cMenuMain::PluginOsdObject(void)
+@@ -3321,6 +4099,30 @@
+   SetTitle("VDR");
+   SetHasHotkeys();
+ 
++#ifdef USE_MENUORG
++  if (MenuOrgPatch::IsCustomMenuAvailable()) {
++     MenuItemDefinitions* menuItems = MenuOrgPatch::MainMenuItems();
++     for (MenuItemDefinitions::iterator i = menuItems->begin(); i != menuItems->end(); i++) {
++        cOsdItem* osdItem = NULL;
++        if ((*i)->IsCustomOsdItem()) {
++           osdItem = (*i)->CustomOsdItem();
++           if (osdItem &&  !(*i)->IsSeparatorItem())
++              osdItem->SetText(hk(osdItem->Text()));
++           }
++        else if ((*i)->IsPluginItem()) {
++           const char *item = (*i)->PluginMenuEntry();
++           if (item)
++              osdItem = new cMenuPluginItem(hk(item), (*i)->PluginIndex());
++           }
++        if (osdItem) {
++           Add(osdItem);
++           if ((*i)->IsSelected())
++              SetCurrent(osdItem);
++           }
++        }
++     }
++  else {
++#endif /* MENUORG */
+ #ifdef USE_SETUP
+   stopReplayItem = NULL;
+   cancelEditingItem = NULL;
+@@ -3385,34 +4187,59 @@
+      SetCurrent(Get(current));
+      }
+ 
+-#else /* NO USE_SETUP */
++#else /* NO SETUP */
++
+   // Basic menu items:
+ 
++#ifdef USE_PINPLUGIN
++  if (!cStatus::MsgMenuItemProtected("Schedule", true))   Add(new cOsdItem(hk(tr("Schedule")),   osSchedule));
++  if (!cStatus::MsgMenuItemProtected("Channels", true))   Add(new cOsdItem(hk(tr("Channels")),   osChannels));
++  if (!cStatus::MsgMenuItemProtected("Timers", true))     Add(new cOsdItem(hk(tr("Timers")),     osTimers));
++  if (!cStatus::MsgMenuItemProtected("Recordings", true)) Add(new cOsdItem(hk(tr("Recordings")), osRecordings));
++#else
+   Add(new cOsdItem(hk(tr("Schedule")),   osSchedule));
+   Add(new cOsdItem(hk(tr("Channels")),   osChannels));
+   Add(new cOsdItem(hk(tr("Timers")),     osTimers));
+   Add(new cOsdItem(hk(tr("Recordings")), osRecordings));
++#endif /* PINPLUGIN */
+ 
+   // Plugins:
+ 
+   for (int i = 0; ; i++) {
+       cPlugin *p = cPluginManager::GetPlugin(i);
+       if (p) {
++#ifdef USE_PINPLUGIN
++         if (!cStatus::MsgPluginProtected(p, true)) {
++#endif /* PINPLUGIN */
+          const char *item = p->MainMenuEntry();
+          if (item)
+             Add(new cMenuPluginItem(hk(item), i));
+          }
++#ifdef USE_PINPLUGIN
++         }
++#endif /* PINPLUGIN */
+       else
+          break;
+       }
+ 
+   // More basic menu items:
+ 
++#ifdef USE_PINPLUGIN
++  if (!cStatus::MsgMenuItemProtected("Setup", true)) Add(new cOsdItem(hk(tr("Setup")), osSetup));
++#else
+   Add(new cOsdItem(hk(tr("Setup")),      osSetup));
++#endif /* PINPLUGIN */
+   if (Commands.Count())
++#ifdef USE_PINPLUGIN
++     if (!cStatus::MsgMenuItemProtected("Commands", true))
++#endif /* PINPLUGIN */
+      Add(new cOsdItem(hk(tr("Commands")),  osCommands));
+-#endif /* USE_SETUP */   
++#endif /* SETUP */   
+ 
++#ifdef USE_MENUORG
++  }
++#endif /* MENUORG */
++
+   Update(true);
+ 
+   Display();
+@@ -3421,16 +4248,16 @@
+ bool cMenuMain::Update(bool Force)
+ {
+   bool result = false;
++  
+ #ifdef USE_SETUP
+   cOsdItem *fMenu = NULL;
+   if (Force && subMenu.isTopMenu()) {
+      fMenu = First();
+      nrDynamicMenuEntries = 0;
+      }
+- 
++
+   if (subMenu.isTopMenu()) {
+ #endif /* SETUP */
+-
+   // Title with disk usage:
+   if (FreeDiskSpace.HasChanged(Force)) {
+      //XXX -> skin function!!!
+@@ -3443,7 +4270,7 @@
+      SetTitle(cString::sprintf("%s  -  %s", tr("VDR"), subMenu.GetParentMenuTitel()));
+      result = true;
+      }
+-#endif /* USE_SETUP */
++#endif /* SETUP */
+ 
+   bool NewReplaying = cControl::Control() != NULL;
+   if (Force || NewReplaying != replaying) {
+@@ -3451,6 +4278,9 @@
+      // Replay control:
+      if (replaying && !stopReplayItem)
+         // TRANSLATORS: note the leading blank!
++#ifdef USE_LIEMIEXT
++        if (Setup.MenuCmdPosition) Ins(stopReplayItem = new cOsdItem(tr(" Stop replaying"), osStopReplay)); else
++#endif /* LIEMIEXT */
+         Add(stopReplayItem = new cOsdItem(tr(" Stop replaying"), osStopReplay));
+      else if (stopReplayItem && !replaying) {
+         Del(stopReplayItem->Index());
+@@ -3465,6 +4295,9 @@
+   bool CutterActive = cCutter::Active();
+   if (CutterActive && !cancelEditingItem) {
+      // TRANSLATORS: note the leading blank!
++#ifdef USE_LIEMIEXT
++     if (Setup.MenuCmdPosition) Ins(cancelEditingItem = new cOsdItem(tr(" Cancel editing"), osCancelEdit)); else
++#endif /* LIEMIEXT */
+      Add(cancelEditingItem = new cOsdItem(tr(" Cancel editing"), osCancelEdit));
+      result = true;
+      }
+@@ -3485,17 +4318,21 @@
+      while ((s = cRecordControls::GetInstantId(s)) != NULL) {
+            cOsdItem *item = new cOsdItem(osStopRecord);
+            item->SetText(cString::sprintf("%s%s", tr(STOP_RECORDING), s));
++#ifdef USE_LIEMIEXT
++           if (Setup.MenuCmdPosition) Ins(item); else
++#endif /* LIEMIEXT */
+            Add(item);
+            if (!stopRecordingItem)
+               stopRecordingItem = item;
+            }
+      result = true;
+      }
++
+ #ifdef USE_SETUP
+   // adjust nrDynamicMenuEntries
+   if (fMenu != NULL)
+      nrDynamicMenuEntries = fMenu->Index();
+-#endif /* USE_SETUP */
++#endif /* SETUP */
+ 
+   return result;
+ }
+@@ -3507,13 +4344,53 @@
+   eOSState state = cOsdMenu::ProcessKey(Key);
+   HadSubMenu |= HasSubMenu();
+ 
++#ifdef USE_MAINMENUHOOKS
++  cOsdMenu *menu = NULL;
++#endif /* MAINMENUHOOKS */
++#ifdef USE_PINPLUGIN
++  cOsdItem* item = Get(Current());
++
++  if (item && item->Text() && state != osContinue && state != osUnknown && state != osBack)
++     if (cStatus::MsgMenuItemProtected(item->Text()))
++        return osContinue;
++#endif /* PINPLUGIN */
++
+   switch (state) {
++#ifdef USE_MAINMENUHOOKS
++    case osSchedule:
++        if (!cPluginManager::CallFirstService("MainMenuHooksPatch-v1.0::osSchedule", &menu))
++            menu = new cMenuSchedule;
++        else
++            state = osContinue;
++        break;
++    case osChannels:
++        if (!cPluginManager::CallFirstService("MainMenuHooksPatch-v1.0::osChannels", &menu))
++            menu = new cMenuChannels;
++        else
++            state = osContinue;
++        break;
++    case osTimers:
++        if (!cPluginManager::CallFirstService("MainMenuHooksPatch-v1.0::osTimers", &menu))
++            menu = new cMenuTimers;
++        else
++            state = osContinue;
++        break;
++    case osRecordings:
++        if (!cPluginManager::CallFirstService("MainMenuHooksPatch-v1.0::osRecordings", &menu))
++            menu = new cMenuRecordings;
++        else
++            state = osContinue;
++        break;
++    case osSetup:      menu = new cMenuSetup; break;
++    case osCommands:   menu = new cMenuCommands(tr("Commands"), &Commands); break;
++#else
+     case osSchedule:   return AddSubMenu(new cMenuSchedule);
+     case osChannels:   return AddSubMenu(new cMenuChannels);
+     case osTimers:     return AddSubMenu(new cMenuTimers);
+     case osRecordings: return AddSubMenu(new cMenuRecordings);
+     case osSetup:      return AddSubMenu(new cMenuSetup);
+     case osCommands:   return AddSubMenu(new cMenuCommands(tr("Commands"), &Commands));
++#endif /* MAINMENUHOOKS */
+     case osStopRecord: if (Interface->Confirm(tr("Stop recording?"))) {
+                           cOsdItem *item = Get(Current());
+                           if (item) {
+@@ -3532,6 +4409,9 @@
+                          if (item) {
+                             cPlugin *p = cPluginManager::GetPlugin(item->PluginIndex());
+                             if (p) {
++#ifdef USE_PINPLUGIN
++                               if (!cStatus::MsgPluginProtected(p)) {
++#endif /* PINPLUGIN */
+                                cOsdObject *menu = p->MainMenuAction();
+                                if (menu) {
+                                   if (menu->IsMenu())
+@@ -3541,11 +4421,51 @@
+                                      return osPlugin;
+                                      }
+                                   }
++#ifdef USE_PINPLUGIN
+                                }
++#endif /* PINPLUGIN */
+                             }
++                         }
+                          state = osEnd;
+                        }
+                        break;
++#ifdef USE_MENUORG
++    case osBack:       {
++                          if (MenuOrgPatch::IsCustomMenuAvailable())
++                          {
++                              bool leavingMenuSucceeded = MenuOrgPatch::LeaveSubMenu();
++                              Set();
++                              stopReplayItem = NULL;
++                              cancelEditingItem = NULL;
++                              stopRecordingItem = NULL;
++                              recordControlsState = 0;
++                              Update(true);
++                              Display();
++                              if (leavingMenuSucceeded)
++                                 return osContinue;
++                              else
++                                 return osEnd;
++                          }
++                       }
++                       break;
++    case osUser1:      {
++                          if (MenuOrgPatch::IsCustomMenuAvailable()) {
++                             MenuOrgPatch::EnterSubMenu(Get(Current()));
++                             Set();
++                             return osContinue;
++                          }
++                       }
++                       break;
++    case osUser2:      {
++                          if (MenuOrgPatch::IsCustomMenuAvailable()) {
++                             cOsdMenu* osdMenu = MenuOrgPatch::Execute(Get(Current()));
++                             if (osdMenu)
++                                return AddSubMenu(osdMenu);
++                             return osEnd;
++                          }
++                       }
++                       break;
++#endif /* MENUORG */
+ #ifdef USE_SETUP
+     case osBack:       {
+                          int newCurrent = 0;
+@@ -3557,7 +4477,7 @@
+                             return osEnd;
+                        }
+                        break;
+-#endif /* USE_SETUP */
++#endif /* SETUP */
+     default: switch (Key) {
+                case kRecord:
+                case kRed:    if (!HadSubMenu)
+@@ -3623,10 +4543,14 @@
+                                 return osContinue;
+                                 }
+                              break;
+-#endif /* USE_SETUP */
+-             default:      break;
++#endif /* SETUP */
++               default:      break;
+                }
+     }
++#ifdef USE_MAINMENUHOOKS
++  if (menu)
++      return AddSubMenu(menu);
++#endif /* MAINMENUHOOKS */
+   if (!HasSubMenu() && Update(HadSubMenu))
+      Display();
+   if (Key != kNone) {
+@@ -3773,6 +4697,9 @@
+   if (Direction) {
+      while (Channel) {
+            Channel = Direction > 0 ? Channels.Next(Channel) : Channels.Prev(Channel);
++#ifdef USE_PINPLUGIN
++        if (cStatus::MsgChannelProtected(0, Channel) == false)
++#endif /* PINPLUGIN */
+            if (!Channel && Setup.ChannelsWrap)
+               Channel = Direction > 0 ? Channels.First() : Channels.Last();
+            if (Channel && !Channel->GroupSep() && cDevice::GetDevice(Channel, 0, true))
+@@ -3833,6 +4760,13 @@
+     case kLeft:
+     case kRight|k_Repeat:
+     case kRight:
++#ifdef USE_VOLCTRL
++         if (Setup.LRVolumeControl && !Setup.LRChannelGroups) {
++            cRemote::Put(NORMALKEY(Key) == kLeft ? kVolDn : kVolUp, true);
++            break;
++            }
++         // else fall through
++#endif /* VOLCTRL */
+     case kNext|k_Repeat:
+     case kNext:
+     case kPrev|k_Repeat:
+@@ -3992,6 +4926,17 @@
+ eOSState cDisplayVolume::ProcessKey(eKeys Key)
+ {
+   switch (Key) {
++#ifdef USE_VOLCTRL
++    case kLeft|k_Repeat:
++    case kLeft:
++    case kRight|k_Repeat:
++    case kRight:
++         if (Setup.LRVolumeControl) {
++            cRemote::Put(NORMALKEY(Key) == kLeft ? kVolDn : kVolUp, true);
++            break;
++            }
++         // else fall through
++#endif /* VOLCTRL */
+     case kVolUp|k_Repeat:
+     case kVolUp:
+     case kVolDn|k_Repeat:
+@@ -4239,8 +5184,16 @@
+ 
+ // --- cRecordControl --------------------------------------------------------
+ 
++#ifdef USE_ALTERNATECHANNEL
++cRecordControl::cRecordControl(cDevice *Device, cTimer *Timer, bool Pause, cChannel *Channel)
++#else
+ cRecordControl::cRecordControl(cDevice *Device, cTimer *Timer, bool Pause)
++#endif /* ALTERNATECHANNEL */
+ {
++#ifdef USE_DVLRECSCRIPTADDON
++  const cChannel *recChan = NULL;
++  char *chanName = NULL;
++#endif /* DVLRECSCRIPTADDON */
+   // We're going to manipulate an event here, so we need to prevent
+   // others from modifying any EPG data:
+   cSchedulesLock SchedulesLock;
+@@ -4285,12 +5238,29 @@
+      return;
+      }
+ 
++#ifdef USE_DVLRECSCRIPTADDON
++  if (timer)
++     if ((recChan = timer->Channel()) != NULL)
++        chanName = strdup(recChan->Name());
++  if (chanName != NULL) {
++     cRecordingUserCommand::InvokeCommand(RUC_BEFORERECORDING, fileName, chanName);
++     free(chanName);
++     }
++  else
++#endif /* DVLRECSCRIPTADDON */
+   cRecordingUserCommand::InvokeCommand(RUC_BEFORERECORDING, fileName);
+   isyslog("record %s", fileName);
+   if (MakeDirs(fileName, true)) {
++#ifdef USE_ALTERNATECHANNEL
++     const cChannel *ch = Channel ? Channel : timer->Channel();
++     if (ch)
++        recorder = new cRecorder(fileName, ch, timer->Priority());
++     if (ch && device->AttachReceiver(recorder)) {
++#else
+      const cChannel *ch = timer->Channel();
+      recorder = new cRecorder(fileName, ch, timer->Priority());
+      if (device->AttachReceiver(recorder)) {
++#endif /* ALTERNATECHANNEL */
+         Recording.WriteInfo();
+         cStatus::MsgRecording(device, Recording.Name(), Recording.FileName(), true);
+         if (!Timer && !cReplayControl::LastReplayed()) // an instant recording, maybe from cRecordControls::PauseLiveVideo()
+@@ -4299,7 +5269,12 @@
+         return;
+         }
+      else
++#ifdef USE_ALTERNATECHANNEL
++        if (ch)
+         DELETENULL(recorder);
++#else
++        DELETENULL(recorder);
++#endif /* ALTERNATECHANNEL */
+      }
+   if (!Timer) {
+      Timers.Del(timer);
+@@ -4347,12 +5322,26 @@
+ void cRecordControl::Stop(bool ExecuteUserCommand)
+ {
+   if (timer) {
++#ifdef USE_DVLRECSCRIPTADDON
++     char *chanName = NULL;
++     const cChannel *recChan = NULL;
++
++     recChan = timer -> Channel();
++     if (recChan != NULL)
++        chanName = strdup(recChan -> Name());
++#endif /* DVLRECSCRIPTADDON */
+      DELETENULL(recorder);
+      timer->SetRecording(false);
+      timer = NULL;
+      cStatus::MsgRecording(device, NULL, fileName, false);
+      if (ExecuteUserCommand)
++#ifdef USE_DVLRECSCRIPTADDON
++        cRecordingUserCommand::InvokeCommand(RUC_AFTERRECORDING, fileName, chanName);
++     if (chanName != NULL)
++        free(chanName);
++#else
+         cRecordingUserCommand::InvokeCommand(RUC_AFTERRECORDING, fileName);
++#endif /* DVLRECSCRIPTADDON */
+      }
+ }
+ 
+@@ -4398,8 +5387,32 @@
+   if (channel) {
+      int Priority = Timer ? Timer->Priority() : Pause ? Setup.PausePriority : Setup.DefaultPriority;
+      cDevice *device = cDevice::GetDevice(channel, Priority, false);
++
++#ifdef USE_ALTERNATECHANNEL
++     if (!device && channel->AlternativeChannelID().Valid()) {// check for alternatives
++        dsyslog("prepare to use alternative channel for channel %d", channel->Number());
++        channel = Channels.GetByChannelID(channel->AlternativeChannelID());
++        device = cDevice::GetDevice(channel, Priority, false);
++        if (device)
++            dsyslog("use of alternative channel %d successfully initiated", channel->Number());
++        }
++#endif /* ALTERNATECHANNEL */
++
+      if (device) {
+         dsyslog("switching device %d to channel %d", device->DeviceNumber() + 1, channel->Number());
++#ifdef USE_LNBSHARE
++        cDevice *tmpDevice;
++        while ((tmpDevice = device->GetBadDevice(channel))) {
++          if (tmpDevice->Replaying() == false) {
++            Stop(tmpDevice);
++            if (tmpDevice->CardIndex() == tmpDevice->ActualDevice()->CardIndex())
++              tmpDevice->SwitchChannelForced(channel, true);
++            else
++              tmpDevice->SwitchChannelForced(channel, false);
++          } else
++                 tmpDevice->SwitchChannelForced(channel, false);
++           }
++#endif /* LNBSHARE */
+         if (!device->SwitchChannel(channel, false)) {
+            ShutdownHandler.RequestEmergencyExit();
+            return false;
+@@ -4407,7 +5420,14 @@
+         if (!Timer || Timer->Matches()) {
+            for (int i = 0; i < MAXRECORDCONTROLS; i++) {
+                if (!RecordControls[i]) {
++#ifdef USE_ALTERNATECHANNEL
++                  RecordControls[i] = new cRecordControl(device, Timer, Pause, channel);
++#else
+                   RecordControls[i] = new cRecordControl(device, Timer, Pause);
++#endif /* ALTERNATECHANNEL */
++#ifdef USE_PINPLUGIN
++                  cStatus::MsgRecordingFile(RecordControls[i]->FileName());
++#endif /* PINPLUGIN */
+                   return RecordControls[i]->Process(time(NULL));
+                   }
+                }
+@@ -4443,6 +5463,21 @@
+       }
+ }
+ 
++#ifdef USE_LNBSHARE
++void cRecordControls::Stop(cDevice *Device)
++{
++  ChangeState();
++  for (int i = 0; i < MAXRECORDCONTROLS; i++) {
++      if (RecordControls[i]) {
++         if (RecordControls[i]->Device() == Device) {
++            isyslog("stopping recording on DVB device %d due to higher priority", Device->CardIndex() + 1);
++            RecordControls[i]->Stop();
++            }
++         }
++      }
++}
++#endif /* LNBSHARE */
++
+ bool cRecordControls::PauseLiveVideo(void)
+ {
+   Skins.Message(mtStatus, tr("Pausing live video..."));
+@@ -4546,12 +5581,22 @@
+ 
+ // --- cReplayControl --------------------------------------------------------
+ 
++#ifdef USE_LIEMIEXT
++#define REPLAYCONTROLSKIPLIMIT   9    // s
++#define REPLAYCONTROLSKIPSECONDS 90   // s
++#define REPLAYCONTROLSKIPTIMEOUT 5000 // ms
++#endif /* LIEMIEXT */
++
+ cReplayControl *cReplayControl::currentReplayControl = NULL;
+ char *cReplayControl::fileName = NULL;
+ char *cReplayControl::title = NULL;
+ 
+ cReplayControl::cReplayControl(void)
++#ifdef USE_JUMPPLAY
++:cDvbPlayerControl(fileName), marks(fileName)
++#else
+ :cDvbPlayerControl(fileName)
++#endif /* JUMPPLAY */
+ {
+   currentReplayControl = this;
+   displayReplay = NULL;
+@@ -4559,11 +5604,18 @@
+   lastCurrent = lastTotal = -1;
+   lastPlay = lastForward = false;
+   lastSpeed = -2; // an invalid value
++#ifdef USE_LIEMIEXT
++  lastSkipKey = kNone;
++  lastSkipSeconds = REPLAYCONTROLSKIPSECONDS;
++  lastSkipTimeout.Set(0);
++#endif /* LIEMIEXT */
+   timeoutShow = 0;
+   timeSearchActive = false;
+   cRecording Recording(fileName);
+   cStatus::MsgReplaying(this, Recording.Name(), Recording.FileName(), true);
++#ifndef USE_JUMPPLAY
+   marks.Load(fileName, Recording.FramesPerSecond(), Recording.IsPesRecording());
++#endif /* JUMPPLAY */
+   SetTrackDescriptions(false);
+ }
+ 
+@@ -4823,8 +5875,16 @@
+         ShowTimed(2);
+         bool Play, Forward;
+         int Speed;
++#ifdef USE_JUMPPLAY
++        if (GetReplayMode(Play, Forward, Speed) && !Play) {
++#else
+         if (GetReplayMode(Play, Forward, Speed) && !Play)
++#endif /* JUMPPLAY */
+            Goto(Current, true);
++#ifdef USE_JUMPPLAY
++           displayFrames = true;
++           }
++#endif /* JUMPPLAY */
+         }
+      marks.Save();
+      }
+@@ -4837,8 +5897,22 @@
+      if (GetIndex(Current, Total)) {
+         cMark *m = Forward ? marks.GetNext(Current) : marks.GetPrev(Current);
+         if (m) {
++#ifdef USE_JUMPPLAY
++           bool Play2, Forward2;
++           int Speed;
++           if (Setup.JumpPlay && GetReplayMode(Play2, Forward2, Speed) &&
++               Play2 && Forward && m->position < Total - SecondsToFrames(3, FramesPerSecond())) {
++              Goto(m->position);
++              Play();
++              }
++           else {
++              Goto(m->position, true);
++              displayFrames = true;
++              }
++#else
+            Goto(m->position, true);
+            displayFrames = true;
++#endif /* JUMPPLAY */
+            }
+         }
+      }
+@@ -4893,7 +5967,11 @@
+      if (!m)
+         m = marks.GetNext(Current);
+      if (m) {
++#ifdef USE_JUMPPLAY
++        if ((m->Index() & 0x01) != 0 && !Setup.PlayJump)
++#else
+         if ((m->Index() & 0x01) != 0)
++#endif /* JUMPPLAY */
+            m = marks.Next(m);
+         if (m) {
+            Goto(m->position - SecondsToFrames(3, FramesPerSecond()));
+@@ -4915,6 +5993,9 @@
+ {
+   if (!Active())
+      return osEnd;
++#ifdef USE_JUMPPLAY
++  marks.Reload();
++#endif /* JUMPPLAY */
+   if (visible) {
+      if (timeoutShow && time(NULL) > timeoutShow) {
+         Hide();
+@@ -4933,6 +6014,22 @@
+      return osContinue;
+      }
+   bool DoShowMode = true;
++#ifdef USE_VOLCTRL
++  if (Setup.LRVolumeControl && (!Setup.LRForwardRewind || (Setup.LRForwardRewind == 1 && !visible))) {
++     switch (Key) {
++       // Left/Right volume control
++       case kLeft|k_Repeat:
++       case kLeft:
++       case kRight|k_Repeat:
++       case kRight:
++            cRemote::Put(NORMALKEY(Key) == kLeft ? kVolDn : kVolUp, true);
++            return osContinue;
++            break;
++       default:
++            break;
++       }
++     }
++#endif /* VOLCTRL */
+   switch (Key) {
+     // Positioning:
+     case kPlay:
+@@ -4950,25 +6047,73 @@
+     case kFastFwd:
+     case kRight:   Forward(); break;
+     case kRed:     TimeSearch(); break;
++#ifdef USE_JUMPINGSECONDS
++    case kGreen|k_Repeat: 
++                   SkipSeconds(-(Setup.JumpSecondsRepeat)); break;
++    case kGreen:   SkipSeconds(-(Setup.JumpSeconds)); break;
++    case k1|k_Repeat:
++    case k1:       SkipSeconds(-Setup.JumpSecondsSlow); break;
++    case k3|k_Repeat:
++    case k3:       SkipSeconds( Setup.JumpSecondsSlow); break;
++    case kYellow|k_Repeat: 
++                   SkipSeconds(Setup.JumpSecondsRepeat); break;
++    case kYellow:  SkipSeconds(Setup.JumpSeconds); break;
++#else
+     case kGreen|k_Repeat:
+     case kGreen:   SkipSeconds(-60); break;
+     case kYellow|k_Repeat:
+     case kYellow:  SkipSeconds( 60); break;
++#endif /* JUMPINGSECONDS */
++#ifdef USE_LIEMIEXT
++#ifndef USE_JUMPINGSECONDS
++    case k1|k_Repeat:
++    case k1:       SkipSeconds(-20); break;
++    case k3|k_Repeat:
++    case k3:       SkipSeconds( 20); break;
++#endif /* JUMPINGSECONDS */
++    case kPrev|k_Repeat:
++    case kPrev:    if (lastSkipTimeout.TimedOut()) {
++                      lastSkipSeconds = REPLAYCONTROLSKIPSECONDS;
++                      lastSkipKey = kPrev;
++                   }
++                   else if (RAWKEY(lastSkipKey) != kPrev && lastSkipSeconds > (2 * REPLAYCONTROLSKIPLIMIT)) {
++                      lastSkipSeconds /= 2;
++                      lastSkipKey = kNone;
++                   }
++                   lastSkipTimeout.Set(REPLAYCONTROLSKIPTIMEOUT);
++                   SkipSeconds(-lastSkipSeconds); break;
++    case kNext|k_Repeat:
++    case kNext:    if (lastSkipTimeout.TimedOut()) {
++                      lastSkipSeconds = REPLAYCONTROLSKIPSECONDS;
++                      lastSkipKey = kNext;	
++                   }
++                   else if (RAWKEY(lastSkipKey) != kNext && lastSkipSeconds > (2 * REPLAYCONTROLSKIPLIMIT)) {
++                      lastSkipSeconds /= 2;
++                      lastSkipKey = kNone;
++                   }
++                   lastSkipTimeout.Set(REPLAYCONTROLSKIPTIMEOUT);
++                   SkipSeconds(lastSkipSeconds); break;
++#endif /* LIEMIEXT */
+     case kStop:
+     case kBlue:    Hide();
+                    Stop();
+                    return osEnd;
++
+     default: {
+       DoShowMode = false;
+       switch (Key) {
+         // Editing:
+         case kMarkToggle:      MarkToggle(); break;
++#ifndef USE_LIEMIEXT
+         case kPrev|k_Repeat:
+         case kPrev:
++#endif /* LIEMIEXT */
+         case kMarkJumpBack|k_Repeat:
+         case kMarkJumpBack:    MarkJump(false); break;
++#ifndef USE_LIEMIEXT
+         case kNext|k_Repeat:
+         case kNext:
++#endif /* LIEMIEXT */
+         case kMarkJumpForward|k_Repeat:
+         case kMarkJumpForward: MarkJump(true); break;
+         case kMarkMoveBack|k_Repeat:

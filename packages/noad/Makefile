@@ -1,0 +1,25 @@
+#
+# Makefile for ReelBox packages
+#
+#
+
+VERSION=0.8.5
+
+include ../Make.common
+
+all: $(TARGET)
+clean: clean-noad
+
+$(TARGET): $(VROOT)/usr/sbin/noad
+
+$(VROOT)/usr/sbin/noad: $(SRCDIR)/utils/noad-$(VERSION)/noad
+	$(install_exe) -D $< $@
+
+$(SRCDIR)/utils/noad-$(VERSION)/noad: $(SRCDIR)/utils/noad-$(VERSION)/Makefile
+	make -C $(@D) clean all
+
+$(SRCDIR)/utils/noad-$(VERSION)/Makefile: control
+	cd $(@D) && aclocal && ./configure
+
+clean-noad:
+	-make -C $(SRCDIR)/utils/noad-$(VERSION) distclean

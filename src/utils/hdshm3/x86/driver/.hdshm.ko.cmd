@@ -1,0 +1,1 @@
+cmd_/usr/src/reelbox/testing/src/utils/hdshm3/x86/driver/hdshm.ko := ld -r -m elf_i386 -T ./scripts/module-common.lds --build-id  -o /usr/src/reelbox/testing/src/utils/hdshm3/x86/driver/hdshm.ko /usr/src/reelbox/testing/src/utils/hdshm3/x86/driver/hdshm.o /usr/src/reelbox/testing/src/utils/hdshm3/x86/driver/hdshm.mod.o

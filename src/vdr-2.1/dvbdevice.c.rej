@@ -1,0 +1,142 @@
+--- dvbdevice.c	(revision 15412)
++++ dvbdevice.c	(revision 15413)
+@@ -284,6 +284,9 @@
+ class cDvbTuner : public cThread {
+ private:
+   enum eTunerStatus { tsIdle, tsSet, tsTuned, tsLocked };
++#ifdef USE_ROTOR
++ bool SendDiseqc;
++#endif /* ROTOR */
+   int device;
+   int fd_frontend;
+   int adapter, frontend;
+@@ -297,6 +300,9 @@
+   cMutex mutex;
+   cCondVar locked;
+   cCondVar newSet;
++#ifdef USE_ROTOR
++  dvb_diseqc_master_cmd diseqc_cmd;
++#endif /* ROTOR */
+   bool GetFrontendStatus(fe_status_t &Status, int TimeoutMs = 0);
+   bool SetFrontend(void);
+   virtual void Action(void);
+@@ -306,6 +312,9 @@
+   const cChannel *GetTransponder(void) const { return &channel; }
+   bool IsTunedTo(const cChannel *Channel) const;
+   void Set(const cChannel *Channel);
++#ifdef USE_ROTOR
++  bool SendDiseqcCmd(dvb_diseqc_master_cmd cmd);
++#endif /* ROTOR */
+   bool Locked(int TimeoutMs = 0);
+   };
+ 
+@@ -313,6 +322,9 @@
+ {
+   device = Device;
+   fd_frontend = Fd_Frontend;
++#ifdef USE_ROTOR
++  SendDiseqc=false;
++#endif /* ROTOR */
+   adapter = Adapter;
+   frontend = Frontend;
+   frontendType = FrontendType;
+@@ -367,6 +379,19 @@
+   return tunerStatus >= tsLocked;
+ }
+ 
++#ifdef USE_ROTOR
++bool cDvbTuner::SendDiseqcCmd(dvb_diseqc_master_cmd cmd)
++{
++  cMutexLock MutexLock(&mutex);
++  if ((frontendType!=SYS_DVBS2 && frontendType!=SYS_DVBS) || SendDiseqc)
++    return false;
++  diseqc_cmd=cmd;
++  SendDiseqc=true;
++  newSet.Broadcast();
++  return true;
++}
++#endif /* ROTOR */
++
+ bool cDvbTuner::GetFrontendStatus(fe_status_t &Status, int TimeoutMs)
+ {
+   if (TimeoutMs) {
+@@ -558,6 +583,12 @@
+         if (GetFrontendStatus(NewStatus, 10))
+            Status = NewStatus;
+         cMutexLock MutexLock(&mutex);
++#ifdef USE_ROTOR
++        if (SendDiseqc) {
++           CHECK(ioctl(fd_frontend, FE_DISEQC_SEND_MASTER_CMD, &diseqc_cmd));
++           SendDiseqc=false;
++           }
++#endif /* ROTOR */
+         switch (tunerStatus) {
+           case tsIdle:
+                break;
+@@ -712,6 +743,12 @@
+ 
+   fd_dvr = -1;
+ 
++#ifdef USE_LNBSHARE
++  lnbState = -1;
++  SetLnbNrFromSetup();
++  lnbSource = NULL;
++#endif /* LNBSHARE */
++
+   // We only check the devices that must be present - the others will be checked before accessing them://XXX
+ 
+   if (fd_frontend >= 0) {
+@@ -960,10 +997,25 @@
+ 
+ bool cDvbDevice::ProvidesChannel(const cChannel *Channel, int Priority, bool *NeedsDetachReceivers) const
+ {
++#ifdef USE_CHANNELPROVIDE
++  if (Setup.LocalChannelProvide != 1)
++     return false;
++#endif /* CHANNELPROVIDE */
+   bool result = false;
+   bool hasPriority = Priority < 0 || Priority > this->Priority();
+   bool needsDetachReceivers = false;
+ 
++#ifdef USE_CHANNELBIND
++  if (Setup.ChannelBindingByRid && Channel->Rid()) {
++    if (0 == ((unsigned) Channel->Rid() & (1<<(unsigned) CardIndex())) ) {
++      #if 0
++      printf("device %d doesn't provide channel %s", CardIndex(), *Channel->ToText());
++      #endif
++      return false;
++      }
++    }
++#endif /* CHANNELBIND */
++
+   if (ProvidesTransponder(Channel)) {
+      result = hasPriority;
+      if (Priority >= 0 && Receiving(true)) {
+@@ -987,6 +1039,9 @@
+            needsDetachReceivers = true;
+         }
+      }
++#ifdef USE_LNBSHARE
++  if(Priority >= 0 && result && !(Receiving(true) && dvbTuner->IsTunedTo(Channel)) && GetMaxBadPriority(Channel) >= Priority) result = false;
++#endif /* LNBSHARE */
+   if (NeedsDetachReceivers)
+      *NeedsDetachReceivers = needsDetachReceivers;
+   return result;
+@@ -1010,6 +1065,17 @@
+ bool cDvbDevice::SetChannelDevice(const cChannel *Channel, bool LiveView)
+ {
+   dvbTuner->Set(Channel);
++#ifdef USE_LNBSHARE
++  cDvbTransponderParameters dtp(Channel->Parameters());
++ 
++  if (Channel->Frequency() >= Setup.LnbSLOF) {
++     lnbState = 1;
++  } else {
++     lnbState = 0;
++  }
++  if (dtp.Polarization() == 'v' || dtp.Polarization() == 'V') lnbState += 2;
++  lnbSource = (int*) Diseqcs.Get(CardIndex() + 1, Channel->Source(), Channel->Frequency(), dtp.Polarization());
++#endif /* LNBSHARE */
+   return true;
+ }
+ 

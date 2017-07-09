@@ -1,0 +1,20 @@
+/** \defgroup component Cache components
+
+Cache components are the main information sources for libapt-front.
+
+\par Adding an information source
+
+These are instructions on how to add support for a new information source:
+
+\li Create a new component in apt-front/cache/component.  Take the
+    component::Tags component (\see debtags.h) as an example.
+\li The new component needs to be instantiated and initialised in
+    cache::Cache (\see cache.h)
+\li The API to query about packages goes into cache::entity::Package
+    or cache::entity::Version.
+\li New search functions can be added to aptFront::predicate (\see
+    predicate/predicate.h)
+\li Alternatively, a generator can be provided to select packages from cache
+    by certain criteria (this is yet to be implmented and details decided
+    upon...  probably consult the mailing list)
+*/

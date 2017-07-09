@@ -1,0 +1,11 @@
+--2014-07-13 18:22:07--  http://projects.vdr-developer.org/attachments/download/1765/vdr-plugin-mcli-2.1.x.patch
+Resolving projects.vdr-developer.org (projects.vdr-developer.org)... 85.214.78.111
+Connecting to projects.vdr-developer.org (projects.vdr-developer.org)|85.214.78.111|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 35484 (35K) [application/octet-stream]
+Saving to: ‘vdr-plugin-mcli-2.1.x.patch’
+
+80% [==============================>        ] 28.476       110KB/s             100%[======================================>] 35.484       126KB/s   in 0,3s   
+
+2014-07-13 18:22:08 (126 KB/s) - ‘vdr-plugin-mcli-2.1.x.patch’ saved [35484/35484]
+

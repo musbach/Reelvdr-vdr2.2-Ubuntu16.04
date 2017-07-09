@@ -1,0 +1,83 @@
+<!-- help -->
+<body class="frame">
+<div id="body">
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsArea %?>
+      <div class="areabegin">
+        <table class="fieldtable" summary="" >
+          <tr>
+            <td class="fieldhead">
+            <a href="javascript:popupcmd('<?% short %?>',620,670,0)">
+                <?% long %?> ( <?% short %?> )
+            </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldtext" height="40">
+                  <a title="" href="?cmd=<?% short %?>" class="fieldinline">
+                     <?% desc %?>
+                  </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="fieldtext">
+              <table class="fieldinline" summary="">
+                <tr>
+                    <td valign="middle" align="left" class="fieldinline" >
+
+                    </td>
+                    <td class="fieldinline push">
+                        <a href="javascript:popupcmd('<?% short %?>',620,670,0)">
+                            <img src="images/watch.<?% global.imagetyp %?>" alt="" />
+                        </a>
+                    </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+             <td class="fieldbottom"></td>
+          </tr>
+        </table>
+      </div>
+<?% END %?>
+<?% ######################################################################## %?>
+<h1>XXV - Version <?% version %?></h1>
+<p><?% data.shift %?></p>
+<?% IF data.size > 1 %?>
+    <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?% short=zeile.0;long=zeile.1;modul=zeile.2;desc=zeile.3 %?>
+       <?% IF allow(long) %?>
+		<?% IF !old.defined || modul != old %?>
+        <div class="areaclose"></div>
+        <h2>
+            <a href="javascript:popup('doc','<?% modul %?>',620,670,0)">
+                <?% modul %?>
+            </a>
+        </h2>
+        <?% END %?>
+       <?% PROCESS ItemAsArea %?>
+       <?% END %?>
+       <?% old = modul %?>
+    <?% END %?>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Search",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+        <form method="post" action="?cmd=search">
+            <input type="text" name="data" size='18' />
+        </form>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

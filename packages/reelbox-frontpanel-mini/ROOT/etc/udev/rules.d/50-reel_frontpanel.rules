@@ -1,0 +1,3 @@
+# Rules for ReelBox frontpanel
+
+KERNEL=="ttyS1", SUBSYSTEM=="tty", ACTION=="add",    RUN+="/sbin/dev_frontpanel.sh"

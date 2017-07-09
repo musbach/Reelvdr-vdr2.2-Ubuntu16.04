@@ -1,0 +1,246 @@
+--- device.c	(revision 15412)
++++ device.c	(revision 15413)
+@@ -18,6 +18,9 @@
+ #include "receiver.h"
+ #include "status.h"
+ #include "transfer.h"
++#ifdef USE_TTXTSUBS
++#include "vdrttxtsubshooks.h"
++#endif /* TTXTSUBS */
+ 
+ // --- cLiveSubtitle ---------------------------------------------------------
+ 
+@@ -267,6 +279,9 @@
+   int NumCamSlots = CamSlots.Count();
+   int SlotPriority[NumCamSlots];
+   int NumUsableSlots = 0;
++#ifdef USE_MCLI
++  bool InternalCamNeeded = false;
++#endif /* MCLI */
+   if (Channel->Ca() >= CA_ENCRYPTED_MIN) {
+      for (cCamSlot *CamSlot = CamSlots.First(); CamSlot; CamSlot = CamSlots.Next(CamSlot)) {
+          SlotPriority[CamSlot->Index()] = MAXPRIORITY + 1; // assumes it can't be used
+@@ -280,7 +295,11 @@
+             }
+          }
+      if (!NumUsableSlots)
++#ifdef USE_MCLI
++        InternalCamNeeded = true; // no CAM is able to decrypt this channel
++#else
+         return NULL; // no CAM is able to decrypt this channel
++#endif /* MCLI */
+      }
+ 
+   bool NeedsDetachReceivers = false;
+@@ -296,11 +315,21 @@
+              continue; // this device shall be temporarily avoided
+           if (Channel->Ca() && Channel->Ca() <= CA_DVB_MAX && Channel->Ca() != device[i]->CardIndex() + 1)
+              continue; // a specific card was requested, but not this one
++#ifdef USE_MCLI
++          if (InternalCamNeeded && !device[i]->HasInternalCam())
++             continue; // no CAM is able to decrypt this channel and the device uses vdr handled CAMs
++          if (NumUsableSlots && !device[i]->HasInternalCam() && !CamSlots.Get(j)->Assign(device[i], true))
++#else
+           if (NumUsableSlots && !CamSlots.Get(j)->Assign(device[i], true))
++#endif /* MCLI */
+              continue; // CAM slot can't be used with this device
+           bool ndr;
+           if (device[i]->ProvidesChannel(Channel, Priority, &ndr)) { // this device is basicly able to do the job
++#ifdef USE_MCLI
++             if (NumUsableSlots && !device[i]->HasInternalCam() && device[i]->CamSlot() && device[i]->CamSlot() != CamSlots.Get(j))
++#else
+              if (NumUsableSlots && device[i]->CamSlot() && device[i]->CamSlot() != CamSlots.Get(j))
++#endif /* MCLI */
+                 ndr = true; // using a different CAM slot requires detaching receivers
+              // Put together an integer number that reflects the "impact" using
+              // this device would have on the overall system. Each condition is represented
+@@ -314,19 +343,48 @@
+              imp <<= 1; imp |= device[i]->Receiving();                                                               // avoid devices that are receiving
+              imp <<= 4; imp |= GetClippedNumProvidedSystems(4, device[i]) - 1;                                       // avoid cards which support multiple delivery systems
+              imp <<= 1; imp |= device[i] == cTransferControl::ReceiverDevice();                                      // avoid the Transfer Mode receiver device
++#ifdef USE_LNBSHARE
++             int badPriority = device[i]->GetMaxBadPriority(Channel);
++             if (badPriority < 0 )                  // a device receiving with lower priority would need to be stopped
++             {
++                imp <<= 8; imp |= min(max(device[i]->Priority() + MAXPRIORITY, 0), 0xFF);                       // use the device with the lowest priority (+MAXPRIORITY to assure that values -99..99 can be used)
++             } else {
++                imp <<= 8; imp |= min(max(max(device[i]->Priority(), badPriority) + MAXPRIORITY, 0), 0xFF);          // use the device with the lowest priority (+MAXPRIORITY to assure that values -99..99 can be used)
++             }
++#else
+              imp <<= 8; imp |= min(max(device[i]->Priority() + MAXPRIORITY, 0), 0xFF);                               // use the device with the lowest priority (+MAXPRIORITY to assure that values -99..99 can be used)
++#endif /* LNBSHARE */
++#ifdef USE_MCLI
++             imp <<= 8; imp |= min(max(((NumUsableSlots && !device[i]->HasInternalCam()) ? SlotPriority[j] : 0) + MAXPRIORITY, 0), 0xFF);              // use the CAM slot with the lowest priority (+MAXPRIORITY to assure that values -99..99 can be used)
++#else
+              imp <<= 8; imp |= min(max((NumUsableSlots ? SlotPriority[j] : 0) + MAXPRIORITY, 0), 0xFF);              // use the CAM slot with the lowest priority (+MAXPRIORITY to assure that values -99..99 can be used)
++#endif /* MCLI */
+              imp <<= 1; imp |= ndr;                                                                                  // avoid devices if we need to detach existing receivers
+              imp <<= 1; imp |= device[i]->IsPrimaryDevice();                                                         // avoid the primary device
++#ifdef USE_LNBSHARE
++             imp |= (badPriority == -1);                                                                               // avoid cards where the actual device needs to be switched
++#endif /* LNBSHARE */
++#ifdef USE_MCLI
++             imp <<= 1; imp |= (NumUsableSlots || InternalCamNeeded) ? 0 : device[i]->HasCi();                       // avoid cards with Common Interface for FTA channels
++#else
+              imp <<= 1; imp |= NumUsableSlots ? 0 : device[i]->HasCi();                                              // avoid cards with Common Interface for FTA channels
++#endif /* MCLI */
+              imp <<= 1; imp |= device[i]->HasDecoder();                                                              // avoid full featured cards
++#ifdef USE_MCLI
++             imp <<= 1; imp |= (NumUsableSlots && !device[i]->HasInternalCam()) ? !ChannelCamRelations.CamDecrypt(Channel->GetChannelID(), j + 1) : 0; // prefer CAMs that are known to decrypt this channel
++#else
+              imp <<= 1; imp |= NumUsableSlots ? !ChannelCamRelations.CamDecrypt(Channel->GetChannelID(), j + 1) : 0; // prefer CAMs that are known to decrypt this channel
++#endif /* MCLI */
+              if (imp < Impact) {
+                 // This device has less impact than any previous one, so we take it.
+                 Impact = imp;
+                 d = device[i];
+                 NeedsDetachReceivers = ndr;
++#ifdef USE_MCLI
++                if (NumUsableSlots && !device[i]->HasInternalCam())
++#else
+                 if (NumUsableSlots)
++#endif /* MCLI */
+                    s = CamSlots.Get(j);
+                 }
+              }
+@@ -640,7 +705,11 @@
+ bool cDevice::ProvidesTransponderExclusively(const cChannel *Channel) const
+ {
+   for (int i = 0; i < numDevices; i++) {
++#ifdef USE_LNBSHARE
++      if (device[i] && device[i] != this && device[i]->ProvidesTransponder(Channel) && device[i]->IsShareLnb(this)  )
++#else
+       if (device[i] && device[i] != this && device[i]->ProvidesTransponder(Channel))
++#endif /* LNBSHARE */
+          return false;
+       }
+   return true;
+@@ -673,6 +742,24 @@
+ 
+ bool cDevice::SwitchChannel(const cChannel *Channel, bool LiveView)
+ {
++
++#ifdef USE_LNBSHARE
++  cDevice *tmpDevice;
++       if (this->GetMaxBadPriority(Channel) >= 0) {
++               Skins.Message(mtInfo, tr("Channel locked by LNB!"));
++               return false;
++       }
++       while ((tmpDevice = GetBadDevice(Channel)) != NULL) {
++               if (tmpDevice->IsPrimaryDevice() && LiveView)
++                       tmpDevice->SwitchChannelForced(Channel, true);
++               else
++                       tmpDevice->SwitchChannelForced(Channel, false);
++       }
++    return SwitchChannelForced(Channel, LiveView);
++}
++bool cDevice::SwitchChannelForced(const cChannel *Channel, bool LiveView)
++{
++#endif /* LNBSHARE */
+   if (LiveView) {
+      isyslog("switching to channel %d", Channel->Number());
+      cControl::Shutdown(); // prevents old channel from being shown too long if GetDevice() takes longer
+@@ -703,6 +790,9 @@
+      cChannel *channel;
+      while ((channel = Channels.GetByNumber(n, Direction)) != NULL) {
+            // try only channels which are currently available
++#ifdef USE_PINPLUGIN
++        if (cStatus::MsgChannelProtected(0, channel) == false)
++#endif /* PINPLUGIN */
+            if (GetDevice(channel, 0, true))
+               break;
+            n = channel->Number() + Direction;
+@@ -722,8 +812,53 @@
+   return result;
+ }
+ 
++#ifdef USE_LNBSHARE
++cDevice *cDevice::GetBadDevice(const cChannel *Channel)
++{
++  if(!cSource::IsSat(Channel->Source())) return NULL;  // no conflict if the new channel is not on sat
++  if(!ProvidesSource(cSource::stSat)) return NULL;     // no conflict if this device is not on sat
++  for (int i = 0; i < numDevices; i++) {
++    if (this != device[i] && device[i]->IsShareLnb(this) &&  device[i]->IsLnbConflict(Channel) ) {
++    	// there is a conflict between device[i] and 'this' if we tune this to Channel
++      if (Setup.VerboseLNBlog) {
++        isyslog("LNB %d: Device check for channel %d on device %d. LNB or DiSEq conflict with device %d", LnbNr(), Channel->Number(), this->DeviceNumber(), i);
++      }
++      return device[i];
++    }
++  }
++  if (Setup.VerboseLNBlog) { 
++    isyslog("LNB %d: Device check for for channel %d on device %d. OK", LnbNr(), Channel->Number(), this->DeviceNumber());
++  }
++  return NULL;
++}
++
++int cDevice::GetMaxBadPriority(const cChannel *Channel) const
++{                                
++  if(!cSource::IsSat(Channel->Source())) return -2;  // no conflict if the new channel is not on sat
++  if(!ProvidesSource(cSource::stSat)) return -2;     // no conflict if this device is not on sat
++
++  int maxBadPriority = -2;
++  for (int i = 0; i < numDevices; i++) {
++    if (this != device[i] && device[i]->IsShareLnb(this) && device[i]->IsLnbConflict(Channel) ) {
++    	// there is a conflict between device[i] and 'this' if we tune this to Channel
++      if (device[i]->Receiving() && device[i]->Priority() > maxBadPriority) maxBadPriority = device[i]->Priority();
++      if (i == ActualDevice()->CardIndex() && maxBadPriority < -1 ) maxBadPriority = -1;
++    }
++  }
++
++  if (Setup.VerboseLNBlog) { 
++    isyslog("LNB %d: Request for channel %d on device %d. MaxBadPriority is %d", LnbNr(), Channel->Number(), this->DeviceNumber(), maxBadPriority);
++  }
++  return maxBadPriority;
++}
++#endif /* LNBSHARE */
+ eSetChannelResult cDevice::SetChannel(const cChannel *Channel, bool LiveView)
+ {
++#ifdef USE_PINPLUGIN
++  if (LiveView && cStatus::MsgChannelProtected(this, Channel) == true)
++     return scrNotAvailable;
++#endif /* PINPLUGIN */
++
+   if (LiveView) {
+      StopReplay();
+      DELETENULL(liveSubtitle);
+@@ -735,6 +870,12 @@
+   bool NeedsTransferMode = Device != this;
+ 
+   eSetChannelResult Result = scrOk;
++  
++#ifdef USE_LNBSHARE
++  if (Setup.VerboseLNBlog) {
++    isyslog("LNB %d: Switching device %d to channel %d", LnbNr(), this->DeviceNumber(), Channel->Number());
++  }
++#endif /* LNBSHARE */
+ 
+   // If this DVB card can't receive this channel, let's see if we can
+   // use the card that actually can receive it and transfer data from there:
+@@ -1050,6 +1191,10 @@
+      int LanguagePreference = INT_MAX; // higher than the maximum possible value
+      for (int i = ttSubtitleFirst; i <= ttSubtitleLast; i++) {
+          const tTrackId *TrackId = GetTrack(eTrackType(i));
++#ifdef USE_LIEMIEXT
++         if (TrackId && TrackId->id && (I18nIsPreferredLanguage(Setup.SubtitleLanguages, TrackId->language, LanguagePreference) ||
++             ((i == ttSubtitleFirst + 8) && !(*TrackId->language) && (LanguagePreference == INT_MAX))))
++#endif /* LIEMIEXT */
+          if (TrackId && TrackId->id && I18nIsPreferredLanguage(Setup.SubtitleLanguages, TrackId->language, LanguagePreference))
+             PreferredTrack = eTrackType(i);
+          }
+@@ -1261,6 +1406,15 @@
+                   }
+                break;
+           case 0xBD: { // private stream 1
++#ifdef USE_TTXTSUBS
++               // EBU Teletext data, ETSI EN 300 472
++               // if PES data header length = 24 and data_identifier = 0x10..0x1F (EBU Data)
++               if (Data[8] == 0x24 && Data[45] >= 0x10 && Data[45] < 0x20) {
++                  cVDRTtxtsubsHookListener::Hook()->PlayerTeletextData((uint8_t*)Data, Length);
++                  break;
++                  }
++#endif /* TTXTSUBS */
++
+                int PayloadOffset = Data[8] + 9;
+ 
+                // Compatibility mode for old subtitles plugin:

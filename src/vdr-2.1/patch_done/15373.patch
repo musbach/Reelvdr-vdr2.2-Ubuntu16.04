@@ -1,0 +1,71 @@
+Index: Makefile
+===================================================================
+--- Makefile	(revision 15372)
++++ Makefile	(revision 15373)
+@@ -58,6 +58,12 @@
+ DEFINES += -DBIDI
+ LIBS += -lfribidi
+ endif
++ifdef USE_TINYXML
++LIBS += -Ltinyxml -ltinyxml
++TINYXMLLIB = tinyxml/libtinyxml.a
++$(TINYXMLLIB):
++	@make -C tinyxml
++endif
+ 
+ LIRC_DEVICE ?= /dev/lircd
+ RCU_DEVICE  ?= /dev/ttyS1
+@@ -94,7 +100,7 @@
+ 
+ # The main program:
+ 
+-vdr: $(OBJS) $(SILIB)
++vdr: $(OBJS) $(SILIB) $(TINYXMLLIB)
+ 	$(CXX) $(CXXFLAGS) -rdynamic $(OBJS) $(LIBS) $(LIBDIRS) $(SILIB) -o vdr
+ 
+ # The libsi library:
+@@ -138,6 +144,10 @@
+ 	@(cd include/vdr; for i in ../../*.h; do ln -fs $$i .; done)
+ 	@mkdir -p include/libsi
+ 	@(cd include/libsi; for i in ../../libsi/*.h; do ln -fs $$i .; done)
++ifdef USE_TINYXML
++	@mkdir -p include/tinyxml
++	@(cd include/tinyxml; for i in ../../tinyxml/*.h; do ln -fs $$i .; done)
++endif
+ 
+ # Plugins:
+ 
+Index: tinyxml/Makefile
+===================================================================
+--- tinyxml/Makefile	(revision 15372)
++++ tinyxml/Makefile	(revision 15373)
+@@ -81,7 +81,8 @@
+ # Targets of the build
+ #****************************************************************************
+ 
+-OUTPUT := xmltest
++#OUTPUT := xmltest
++OUTPUT := libtinyxml.a
+ 
+ all: ${OUTPUT}
+ 
+@@ -90,7 +91,8 @@
+ # Source files
+ #****************************************************************************
+ 
+-SRCS := tinyxml.cpp tinyxmlparser.cpp xmltest.cpp tinyxmlerror.cpp tinystr.cpp
++#SRCS := tinyxml.cpp tinyxmlparser.cpp xmltest.cpp tinyxmlerror.cpp tinystr.cpp
++SRCS := tinyxml.cpp tinyxmlparser.cpp tinyxmlerror.cpp tinystr.cpp
+ 
+ # Add on the sources for libraries
+ SRCS := ${SRCS}
+@@ -102,7 +104,8 @@
+ #****************************************************************************
+ 
+ ${OUTPUT}: ${OBJS}
+-	${LD} -o $@ ${LDFLAGS} ${OBJS} ${LIBS} ${EXTRA_LIBS}
++#	${LD} -o $@ ${LDFLAGS} ${OBJS} ${LIBS} ${EXTRA_LIBS}
++	${AR} $@ ${OBJS}
+ 
+ #****************************************************************************
+ # common rules

@@ -1,0 +1,2 @@
+tmp/usr/lib/vdr/libvdr-reelice.so.2.1.6: /usr/src/reelbox/testing/src/vdr-plugins/lib/libvdr-reelice.so.2.1.6
+tmp/usr/share/locale/de_DE/LC_MESSAGES/vdr-reelice.mo: /usr/src/reelbox/testing/src/vdr-2.1.6/locale/de_DE/LC_MESSAGES/vdr-reelice.mo

@@ -1,0 +1,4 @@
+/etc/acpi/resume.d/49-915-resolution-set.sh
+/etc/default/915resolution
+/etc/init.d/915resolution
+/etc/X11/xorg.conf

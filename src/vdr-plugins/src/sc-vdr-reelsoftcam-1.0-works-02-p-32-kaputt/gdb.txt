@@ -1,0 +1,70 @@
+Reading symbols from /usr/sbin/vdr...done.
+No source file named cam.c.
+Make breakpoint pending on future shared library load? (y or [n]) Haltepunkt 1 (cam.c:2672) anstehend.
+Starting program: /usr/sbin/vdr --config=/etc/vdr --shutdown=/usr/sbin/mvdrshutdown --video=/media/reel/recordings --buffer=/media/hd/recordings -L /usr/lib/vdr channels.conf -E /var/tmp/epg.data -r /usr/sbin/reccommand.sh -w 60 -l 3 --vfat --localedir=/usr/share/locale -p 2001 '-Pmcli  --ifname eth0' '-Preelbox --fbdev /dev/fb1' '-Premote -i /dev/input/rbfp0 -p tcp:2002' -Psetup -Pextrecmenu -Pundelete -Pfilebrowser -Pepgsearch -Pepgtimers -Pepgsearchonly -Pfemon -Parghdirector -P 'osdteletext -d /tmp/tmpfs/vtx' -P 'sleeptimer -e /usr/sbin/sleeptimer.sh' -Ppremiereepg -Pinstall -Pnetcv -Pbgprocess -Pamarokstarter -Paudioplayer -Pavahi -Pbouquets -P 'burn -d /media/reel/recordings -D /dev/dvd --iso=/media/reel/video/dvd' -Pchannelscan -Pdpkg -Pdpkgopt -P 'dvdswitch -r /usr/sbin/dvdswitch_read.sh -w /usr/sbin/dvdswitch_write.sh -i /media/reel/video/dvd' -Peepg -Pformatdisk -P 'graphlcd -c /etc/graphlcd.conf -d reel_usbfp' -Pimageplayer -Pipod -P 'mediad -m /usr/sbin/pmount.sh' -Pnetcvupdate '-Pnetwatcher -i eth0' -Posdpip -Pradio -Preelblog -Preelchannellist -Preelepg -Pripit -Pshoutcast '-Pskinreel3 -f /usr/share/reel/skinfonts -l /usr/share/reel/channellogos ' -Pstreamdev-client '-Pstreamdev-server --remux=/usr/sbin/externremux.sh' -Ptimeline -Pvideoplayer -Pwebbrowser -Pxepg –Pxinemediaplayer
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/i386-linux-gnu/libthread_db.so.1".
+[New Thread 0xb36abb40 (LWP 25384)]
+[New Thread 0xb2eaab40 (LWP 25385)]
+[New Thread 0xb24ffb40 (LWP 25386)]
+[Thread 0xb2eaab40 (LWP 25385) exited]
+[Thread 0xb36abb40 (LWP 25384) exited]
+[New Thread 0xb36abb40 (LWP 25387)]
+[New Thread 0xb2eaab40 (LWP 25388)]
+[New Thread 0xb1affb40 (LWP 25389)]
+[New Thread 0xb10ffb40 (LWP 25390)]
+[New Thread 0xb04ffb40 (LWP 25391)]
+[New Thread 0xafcfeb40 (LWP 25392)]
+[New Thread 0xaf0fcb40 (LWP 25393)]
+[New Thread 0xae4fab40 (LWP 25394)]
+[New Thread 0xad8f8b40 (LWP 25395)]
+[New Thread 0xaccf6b40 (LWP 25396)]
+[New Thread 0xac0f4b40 (LWP 25397)]
+[New Thread 0xab4f2b40 (LWP 25398)]
+[New Thread 0xaa8f0b40 (LWP 25399)]
+[New Thread 0xa9affb40 (LWP 25402)]
+[New Thread 0xa92feb40 (LWP 25403)]
+[New Thread 0xa88ffb40 (LWP 25404)]
+[New Thread 0xa80feb40 (LWP 25405)]
+[New Thread 0xa78fdb40 (LWP 25406)]
+[New Thread 0xa70fcb40 (LWP 25407)]
+[New Thread 0xa68fbb40 (LWP 25408)]
+[New Thread 0xa60fab40 (LWP 25409)]
+[New Thread 0xa58f9b40 (LWP 25410)]
+[New Thread 0xa50f8b40 (LWP 25411)]
+[New Thread 0xa3322b40 (LWP 25412)]
+[New Thread 0xa2b21b40 (LWP 25413)]
+[New Thread 0xa2320b40 (LWP 25414)]
+[New Thread 0xa19ffb40 (LWP 25415)]
+[New Thread 0xa11feb40 (LWP 25416)]
+[New Thread 0xa09fdb40 (LWP 25417)]
+[Thread 0xb24ffb40 (LWP 25386) exited]
+[New Thread 0xb24ffb40 (LWP 25427)]
+[New Thread 0xa0031b40 (LWP 25428)]
+[New Thread 0x9f6ffb40 (LWP 25429)]
+[New Thread 0x9dafeb40 (LWP 25432)]
+[New Thread 0x9d2fdb40 (LWP 25433)]
+[New Thread 0x9cafcb40 (LWP 25435)]
+[Thread 0x9d2fdb40 (LWP 25433) exited]
+[New Thread 0x9d2fdb40 (LWP 25457)]
+[New Thread 0x9bb62b40 (LWP 25470)]
+
+Program received signal SIGPIPE, Broken pipe.
+[Switching to Thread 0x9bb62b40 (LWP 25470)]
+0xb7fdd428 in __kernel_vsyscall ()
+Continuing.
+[Thread 0x9bb62b40 (LWP 25470) exited]
+[Thread 0xa2b21b40 (LWP 25413) exited]
+[Thread 0x9d2fdb40 (LWP 25457) exited]
+[New Thread 0x9d2fdb40 (LWP 25605)]
+[New Thread 0xa2b21b40 (LWP 25609)]
+[New Thread 0x9bb62b40 (LWP 25610)]
+
+Program received signal SIGINT, Interrupt.
+[Switching to Thread 0xb77c1700 (LWP 25374)]
+0xb7fdd428 in __kernel_vsyscall ()
+A debugging session is active.
+
+	Inferior 1 [process 25374] will be killed.
+
+Quit anyway? (y or n) 

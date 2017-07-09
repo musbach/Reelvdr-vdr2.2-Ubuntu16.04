@@ -1,0 +1,7 @@
+hdchannel.o: hdchannel.c ../../src/include/hdchannel.h \
+ ../../src/include/hdshmlib.h ../../src/include/../driver/hdshm.h \
+ ../../src/include/hdshm_user_structs.h
+hdshmlib.o: hdshmlib.c ../driver/hdshm.h
+shmnetd.o: shmnetd.c ../../src/include/hdchannel.h \
+ ../../src/include/hdshmlib.h ../../src/include/../driver/hdshm.h \
+ ../../src/include/hdshm_user_structs.h

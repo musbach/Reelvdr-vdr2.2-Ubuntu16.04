@@ -1,0 +1,36 @@
+# X.Org X server configuration file
+
+Section "Device"
+	Identifier	"Video Device"
+	Driver     	"pvr"
+	Option		"FlipChain"	"true"
+	Option		"NoAccel"	"false"
+	Option		"Plane" 	"UPP_B"
+
+	## Plane IAP_B is always on top of UPP_* planes 
+	## so do not draw the X-cursor on it
+	## since it is then always visible even when liveTV is running.
+	#Option		"CursorPlane"	"IAP_B"
+EndSection
+
+Section "Monitor"
+	Identifier	"Monitor"
+EndSection
+
+Section "Screen"
+	Identifier	"Screen"
+	Monitor		"Monitor"
+	Device		"Video Device"
+EndSection
+
+Section "DRI"
+	Mode 0666
+EndSection
+
+Section "ServerFlags"
+	Option      	"UseSIGIO"   "false"
+        Option          "BlankTime"     "0"
+        Option          "StandbyTime"   "0"
+        Option          "SuspendTime"   "0"
+        Option          "OffTime"       "0"
+EndSection

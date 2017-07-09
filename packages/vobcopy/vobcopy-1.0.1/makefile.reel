@@ -1,0 +1,17 @@
+#just for the reelbox package build-system
+
+package := $(shell grep Package debian/control | cut -f2 -d" ")
+version := $(shell dpkg-parsechangelog | grep Version: | cut -f2 -d" ")
+
+
+all: build-stamp
+
+build-stamp:
+	echo "this here is really really experimental..."
+	./configure.sh
+	make 
+	dpkg-buildpackage -rfakeroot -us -uc #-tc
+
+clean:
+	-sudo $(MAKE) -f debian/rules clean
+	-$(MAKE) distclean

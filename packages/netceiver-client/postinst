@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "creating init levels for multicast client"
+update-rc.d -f mcli remove >/dev/null
+update-rc.d -f mcli-init remove >/dev/null
+
+if [ ! -f /lib/init/upstart-job ]; then
+	update-rc.d mcli defaults 11 89
+	/etc/init.d/mcli restart
+fi
+
+#create /etc/modules entry
+#if ! grep -q dvbloop /etc/modules ; then
+#	echo dvbloop >> /etc/modules
+#fi

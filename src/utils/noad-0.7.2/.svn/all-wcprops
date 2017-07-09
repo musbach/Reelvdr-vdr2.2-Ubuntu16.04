@@ -1,0 +1,341 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/17/testing/src/utils/noad-0.7.2
+END
+tools.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/tools.cpp
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/17/testing/src/utils/noad-0.7.2/configure
+END
+stat2html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/stat2html
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/Makefile.in
+END
+statupd
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/statupd
+END
+mystat.HTML
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/mystat.HTML
+END
+allnewnoad
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/allnewnoad
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/AUTHORS
+END
+depcomp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/depcomp
+END
+cchecklogo.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/cchecklogo.h
+END
+svdrpc.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/svdrpc.h
+END
+cgetlogo.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/cgetlogo.h
+END
+showindex.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/showindex.cpp
+END
+vdr_cl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/vdr_cl.cpp
+END
+mpeg2wrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/mpeg2wrap.h
+END
+markpics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/markpics.cpp
+END
+tnoad.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/tnoad.h
+END
+noaddata.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/noaddata.cpp
+END
+README.en
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/README.en
+END
+audiotools.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/audiotools.cpp
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/configure.ac
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/main.cpp
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/INSTALL
+END
+noad.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/noad.h
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/COPYING
+END
+ccontrol.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/ccontrol.h
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/NEWS
+END
+ctoolbox.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/ctoolbox.h
+END
+mkinstalldirs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/mkinstalldirs
+END
+cchecklogo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/cchecklogo.cpp
+END
+svdrpc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/svdrpc.cpp
+END
+cgetlogo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/cgetlogo.cpp
+END
+mpeg2wrap.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/mpeg2wrap.cpp
+END
+noadcall.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/noadcall.sh
+END
+tnoad.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/tnoad.cpp
+END
+tools.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/tools.h
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/ChangeLog
+END
+allnoaduncut
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/allnoaduncut
+END
+clearlogos
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/clearlogos
+END
+videodir.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/videodir.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/README
+END
+vdr_cl.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/17/testing/src/utils/noad-0.7.2/vdr_cl.h
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/17/testing/src/utils/noad-0.7.2/config.h.in
+END
+noaddata.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/noaddata.h
+END
+noad.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/noad.cpp
+END
+ccontrol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/ccontrol.cpp
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/TODO
+END
+audiotools.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/audiotools.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/Makefile.am
+END
+allnoadnice
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/allnoadnice
+END
+missing
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/missing
+END
+ctoolbox.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/ctoolbox.cpp
+END
+allnoad
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/allnoad
+END
+noadifnew
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/noadifnew
+END
+aclocal.m4
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/17/testing/src/utils/noad-0.7.2/aclocal.m4
+END
+install-sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/utils/noad-0.7.2/install-sh
+END

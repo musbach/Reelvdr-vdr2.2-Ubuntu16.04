@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/reelbox/!svn/ver/8/testing/src/libs/reelaudiodb-0.1
+END
+crawler_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/8/testing/src/libs/reelaudiodb-0.1/crawler_test.c
+END
+crawler.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/crawler.c
+END
+crawler.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/crawler.h
+END
+analyzer_daemon.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/7/testing/src/libs/reelaudiodb-0.1/analyzer_daemon.c
+END
+databaseschema.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/databaseschema.c
+END
+sqlitedatabase.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/7/testing/src/libs/reelaudiodb-0.1/sqlitedatabase.c
+END
+databasereader.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/databasereader.c
+END
+databaseschema.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/databaseschema.h
+END
+mysqldatabase.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/mysqldatabase.c
+END
+sqlitedatabase.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/sqlitedatabase.h
+END
+databasereader.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/databasereader.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/Makefile
+END
+databasecleaner.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/7/testing/src/libs/reelaudiodb-0.1/databasecleaner.c
+END
+commondefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/commondefs.h
+END
+searchapi.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/searchapi.c
+END
+mysqldatabase.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/mysqldatabase.h
+END
+tools.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/tools.c
+END
+databasewriter.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/databasewriter.c
+END
+removedirectorytree.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/removedirectorytree.c
+END
+databasecleaner.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/databasecleaner.h
+END
+database.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/database.c
+END
+searchapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/searchapi.h
+END
+query.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/query.c
+END
+tools.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/tools.h
+END
+databasewriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/databasewriter.h
+END
+thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/thread.c
+END
+database.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/database.h
+END
+query.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/query.h
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/thread.h
+END
+createdatabaseinstance.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/createdatabaseinstance.c
+END
+sqlutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/sqlutils.c
+END
+createdatabaseinstance.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/createdatabaseinstance.h
+END
+sqlutils.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/sqlutils.h
+END
+analyzer.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/7/testing/src/libs/reelaudiodb-0.1/analyzer.c
+END
+analyzer.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/analyzer.h
+END
+databasecleaner_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/reelaudiodb-0.1/databasecleaner_test.c
+END

@@ -1,0 +1,8 @@
+spatializer/libspatializer_plugin_la-comb.lo: spatializer/comb.cpp \
+ /usr/include/stdc-predef.h spatializer/comb.hpp spatializer/denormals.h
+
+/usr/include/stdc-predef.h:
+
+spatializer/comb.hpp:
+
+spatializer/denormals.h:

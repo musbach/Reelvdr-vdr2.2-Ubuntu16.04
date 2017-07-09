@@ -1,0 +1,17 @@
+#!/bin/sh                                                                                                              
+set -e
+
+echo "creating init levels for DVB firmware"
+update-rc.d dvb-firmware defaults 4 96
+
+
+#link firmware to installed kernels
+#FIXME: dirty hack, should be done on startup, not on installation
+
+#targetf=dvb-ttpci-01.fw
+#targetd=/lib/firmware/dvb
+
+#for i in `ls -d /lib/firmware/2.6*`; do
+#	[ -f $i/$targetf ] && rm $i/$targetf
+#	ln -s $targetd/$targetf $i
+#done

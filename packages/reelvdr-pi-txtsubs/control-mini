@@ -1,0 +1,13 @@
+Package: teletextsubs
+Version: 0.2.4.0
+Section: reel-opt
+Priority: optional
+Architecture: armel
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/ttxtsubs
+Description: displays, records and replaying of teletext based subtitles
+  This plug-in implements displaying, recording and replaying teletext
+  based subtitles using the on screen display.
+Description-de: Zeigt Teletext-Untertitel, nimmt diese auf und gibt sie wieder
+  Dieses Plugin beinhaltet die Anzeige, Aufnahme und Wiedergabe von
+  Teletext basierten Untertiteln

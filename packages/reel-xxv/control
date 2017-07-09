@@ -1,0 +1,10 @@
+Package: reel-xxv
+Version: 1.7-reel-3
+Section: reel
+Priority: optional
+Conflicts: reel-vdradmin
+Architecture: i386
+Depends: libavcodec52, libavformat52, libavutil49, libconfig-tiny-perl, libdate-manip-perl, libdbd-mysql-perl, libencode-detect-perl, libevent-perl, libfont-ttf-perl, libhtml-template-perl, libhtml-tree-perl, libio-socket-inet6-perl, libjson-perl, liblinux-inotify2-perl, liblocale-gettext-perl, libmp3-info-perl, libnet-amazon-perl, libnet-dns-perl, libnet-telnet-perl, libnet-xmpp-perl, liboil0.3, libproc-processtable-perl, libsoap-lite-perl, libswscale0, libtemplate-plugin-gd-perl, libxml-rss-perl, mysql-server, perl, perl-base, perl-modules, txt2html, perlmagick
+Maintainer: schlue
+Source: xxvd
+Description: Xtreme eXtension for VDR

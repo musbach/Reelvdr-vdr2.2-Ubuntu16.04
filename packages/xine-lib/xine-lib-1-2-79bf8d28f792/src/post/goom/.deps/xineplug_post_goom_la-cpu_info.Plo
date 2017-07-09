@@ -1,0 +1,6 @@
+xineplug_post_goom_la-cpu_info.lo: cpu_info.c /usr/include/stdc-predef.h \
+ cpu_info.h
+
+/usr/include/stdc-predef.h:
+
+cpu_info.h:

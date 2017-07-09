@@ -1,0 +1,11 @@
+Package: xserver-xorg-video-ice
+Version: 1.0.5-19
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 83K
+Depends: xserver-xorg
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: xserver-xorg-video-ice
+Description: X.Org X server -- Intel CE display driver
+Description-de: X.Org X server -- Intel CE display Treiber

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms
+END
+parse.y
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/parse.y
+END
+genksyms.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/genksyms.c
+END
+lex.l
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/lex.l
+END
+lex.c_shipped
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/lex.c_shipped
+END
+genksyms.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/genksyms.h
+END
+keywords.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/keywords.c
+END
+parse.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/parse.c
+END
+parse.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/parse.h
+END
+genksyms
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/genksyms
+END
+keywords.c_shipped
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/keywords.c_shipped
+END
+parse.c_shipped
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/parse.c_shipped
+END
+lex.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/lex.c
+END
+keywords.gperf
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/keywords.gperf
+END
+parse.h_shipped
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/parse.h_shipped
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/genksyms/Makefile
+END

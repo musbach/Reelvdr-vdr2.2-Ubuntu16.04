@@ -1,0 +1,10 @@
+Package: reelvdr-pi-mcli
+Version: 0.9.1-5
+Section: reel
+Priority: required
+Architecture: i386
+Installed-Size: 180K
+Depends: libmcli, libxml2
+Maintainer: Reel Multimedia Development Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/mcli
+Description: Netceiver client, VDR plugin

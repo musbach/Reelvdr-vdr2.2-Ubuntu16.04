@@ -1,0 +1,12 @@
+ttxtsubsdisplayer.o: ttxtsubsdisplayer.c ttxtsubsdisplayer.h \
+ ttxtsubsdisplay.h teletext.h utils.h ttxtsubsglobals.h ttxtaudio.h
+ttxtsubsdisplay.o: ttxtsubsdisplay.c ttxtsubsglobals.h ttxtsubsdisplay.h \
+ teletext.h utils.h
+teletext.o: teletext.c teletext.h teletext-tables.h teletext-chars.h \
+ utils.h
+ttxtsubspagemenu.o: ttxtsubspagemenu.c ttxtsubschannelsettings.h \
+ ttxtsubspagemenu.h ttxtsubsglobals.h
+ttxtsubschannelsettings.o: ttxtsubschannelsettings.c \
+ ttxtsubschannelsettings.h
+ttxtsubslivereceiver.o: ttxtsubslivereceiver.c ttxtsubslivereceiver.h
+ttxtaudio.o: ttxtaudio.c ttxtaudio.h

@@ -1,0 +1,2 @@
+tmp/etc/X11/xorg.conf.ati: /usr/src/reelbox/testing/src/etc/X11/xorg.conf.ati
+tmp/etc/X11/xorg.conf.intel: /usr/src/reelbox/testing/src/etc/X11/xorg.conf.intel

@@ -1,0 +1,16 @@
+Package: reelbox-standard
+Version: 1.4
+Section: reel-essential
+Priority: required
+Essential: yes
+Architecture: armel
+Depends: avahi-autoipd, cron, dosfstools, file, fuse-utils, httping, hdparm, imagemagick, iptables, jfsutils, jhead, lshw, lsof, netceiver-client, nfs-common, psmisc, pwgen, reelbox, reelbox-stable | reelbox-testing, reelvdr, reiserfsprogs, smbfs, strace, tftp, time, wget, wpasupplicant, xfsprogs
+Recommends: bftpd, kernel-production, mtr-tiny, netceiver-firmware, nfs-kernel-server, openssh-client, openssh-server, telnetd-reel, usbmount-reel
+Suggests: afpfs-ng, tvtv, libxine1, telnet
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: rubuntu-standard
+Description: The ReelBox standard system
+ This package depends on all of the packages in the ReelBox standard system.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.

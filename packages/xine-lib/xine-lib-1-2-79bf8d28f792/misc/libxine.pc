@@ -1,0 +1,28 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+xinelibdir=${libdir}/xine
+xinedatadir=${datadir}/xine
+
+acflags=-I ${prefix}/share/aclocal
+plugindir=${xinelibdir}/plugins/2.5
+scriptdir=${xinedatadir}/scripts
+localedir=${datadir}/locale
+objcflags=  -pipe  -Wall -Wformat=2 -Wno-format-zero-length -Wmissing-format-attribute -Werror-implicit-function-declaration -Wstrict-aliasing=2 -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wwrite-strings -Wpointer-arith -g 
+
+xine_list=${bindir}/xine-list-1.2
+
+Name: libxine
+Description: The xine engine library
+Version: 1.2.6
+Requires.private: 
+Libs: -L${libdir} -lxine
+Libs.private:  -lz -lresolv -lnsl  -pthread  -lrt
+Cflags: -I${includedir}
+Cflags.private: 

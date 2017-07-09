@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mingw
+END
+build.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mingw/build.cmd
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/client/mingw/Makefile
+END

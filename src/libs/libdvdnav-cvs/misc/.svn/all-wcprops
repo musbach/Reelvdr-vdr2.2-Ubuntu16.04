@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/misc
+END
+Makefile.common
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/misc/Makefile.common
+END
+relchk.sh.in
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/misc/relchk.sh.in
+END
+libdvdnav.spec.in
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/misc/libdvdnav.spec.in
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/misc/Makefile.am
+END
+dvdnav-config.in
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/misc/dvdnav-config.in
+END

@@ -1,0 +1,50 @@
+Das ist ein Template-basierter Skin für das Projekt xxv.
+http://xpix.dieserver.de/content/vdr/xxv/
+
+Die Installation erfolgt durch entpacken,
+innerhalb des xxv-skin Verzeichnisses. 
+
+dann den Konfigurationsparameter in xxvd.cfg anpassen
+
+[HTTPD]
+HtmlRoot=myskin
+
+--
+
+In der Datei skin.cfg enthalt ein paar globale 
+Variablen mit der das Aussehen des Skin angepasst 
+werden kann.
+
+
+-- 
+HOTKEY/accesskey
+
+n : Now
+p : Programmguide
+a : Autotimer
+t : Timer
+r : Recordings
+v : Teletext
+f : Remote
+m : Music
+s : Status
+u : User/Personality
+c : Preferences
+q : Logout
+h : Help
+x : Close I-Frame (nur stone/snow/blue)
+
+<Quelle SelfHtml>
+Bei den meisten Browsern ist es so geregelt, der dann mit [Alt] und der Taste 
+für den Buchstaben direkt anwählbar ist. In Opera erreichen Sie die Ziele, 
+indem sie zuvor die Tastenkombination [Shift][Esc] betätigen. 
+Safari benutzt statt der [Alt]-Taste die Taste [Ctrl].
+</Quelle SelfHtml>
+
+
+--
+LCARS arbeitet optimal mit Zeichensatz "ds9.ttf" (Trek) von tuxbox (www.tuxbox.org)
+der seperat geladen werden muss, und ins lokale Fontinstallationsverzeichnis kopiert werden muss.
+
+http://cvs.tuxbox.org/cgi-bin/viewcvs.cgi/*checkout*/tuxbox/apps/tuxbox/lcars/data/fonts/ds9.ttf
+

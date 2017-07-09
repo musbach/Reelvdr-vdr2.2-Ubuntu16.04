@@ -1,0 +1,10 @@
+Package: telnetd-reel
+Version: 1.0
+Section: reel
+Priority: optional 
+Architecture: all
+Depends: busybox
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: telnetd-reel
+Description: Telnet Deamon over BusyBox
+

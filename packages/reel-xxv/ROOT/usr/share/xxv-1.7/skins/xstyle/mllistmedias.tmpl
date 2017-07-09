@@ -1,0 +1,49 @@
+<?% IF data.size %?>
+<!-- TableTemplate -->
+<?% WHILE data.size %?>
+    <?% fields = data.shift %?>
+        <?% IF fields.0 %?>
+        <div style="float:left;height:150px;width:325px;overflow:hidden">
+        <table width="100%">
+            <tr>
+                <td>
+                    <a href='?cmd=mldisplay&data=<?% fields.0 %?>&__range=<?% param.range %?>'>
+                    <img src='<?% IF param.usecache == "y" %?>?cmd=mlcache&__source=<?% END %?><?% fields.1 %?>' alt="" border="0" width="97" height="144" align="left">
+                </td>
+                <td width="100%">
+                    <b>
+                    <a href='?cmd=mldisplay&data=<?% fields.0 %?>&__range=<?% param.range %?>'>
+                    <?% fields.2 %?>
+                    <?% IF fields.3 %?>
+                    - <?% fields.3 %?>
+                    <?% END %?>
+                    </a>
+                    </b><br>
+                    <?% IF fields.4 && fields.5 %?>
+                    <font size="-2">[
+                    <?% IF fields.4 %?><a href="?cmd=mlsearch&__search&__selfields=year&__searchitem=<?% fields.4 %?>"><?% fields.4 %?></a><?% END %?>
+                    <?% IF fields.4 && fields.5 %?>;<?% END %?>
+                    <?% IF fields.5 %?>
+                        <?% mydirectors = [] %?>
+                        <?% FOREACH director IN fields.5.split(',') %?>
+                            <?% director = director.replace('^\s+|\s+$','') %?>
+                            <?% director = "<a href=\"?cmd=mlsearch&__search&__selfields=director&__searchitem=$director\">$director</a>" %?>
+                            <?% mydirectors.push(director) %?>
+                        <?% END %?>
+                        <?% mydirectors.join(', ') %?>
+                    <?% END %?>]
+                    </font><br>
+                    <?% END %?>
+                    <font size="-4">
+                    <?% fields.6 %?>...
+                    <a href='?cmd=mldisplay&data=<?% fields.0 %?>&__range=<?% param.range %?>'>
+                    <b><?% gettext("more") %?></b>
+                    </a>
+                    </font>
+                </td>
+            </tr>
+        </table>
+        </div>
+        <?% END %?>
+    <?% END %?>
+<?% END %?>

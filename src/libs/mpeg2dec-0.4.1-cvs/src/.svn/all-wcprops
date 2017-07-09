@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/Makefile.in
+END
+gettimeofday.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/gettimeofday.c
+END
+extract_mpeg2.1
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/extract_mpeg2.1
+END
+getopt.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/getopt.c
+END
+configure.incl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/configure.incl
+END
+extract_mpeg2.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/extract_mpeg2.c
+END
+mpeg2dec.1
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/mpeg2dec.1
+END
+dump_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/dump_state.c
+END
+gettimeofday.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/gettimeofday.h
+END
+mpeg2dec.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/mpeg2dec.c
+END
+getopt.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/getopt.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/Makefile.am
+END
+corrupt_mpeg2.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/mpeg2dec-0.4.1-cvs/src/corrupt_mpeg2.c
+END

@@ -1,0 +1,10 @@
+Package: ndis-wlan4reel
+Version: 0.0.1
+Section: reel
+Priority: optional
+Architecture: i386
+Depends: ndiswrapper-common, ndiswrapper-utils-1.9
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: ndis-wlan4reel
+Description: Wlan Ndis Driver
+

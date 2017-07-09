@@ -1,0 +1,10 @@
+Package: dvb-firmware
+Version: 0.2-20
+Section: base
+Priority: optional
+Architecture: i386
+Installed-Size: 532K
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Source: dvb-firmware
+Description: DVB firmware needed by TT DVB cards
+ includes firmware, just for testing purposes

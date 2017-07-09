@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb
+END
+reel_core.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/reel_core.c
+END
+tda10021.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/tda10021.h
+END
+pll_tda6651.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/pll_tda6651.c
+END
+reel_ci.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/reel_ci.c
+END
+pll_tda6509.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/pll_tda6509.c
+END
+pll_stb6000.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/pll_stb6000.c
+END
+pll_tua6100.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/pll_tua6100.c
+END
+reelfpga_regs.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/reelfpga_regs.h
+END
+MAKEDEV-DVB.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/MAKEDEV-DVB.sh
+END
+pll_cx24116.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/pll_cx24116.c
+END
+reel_i2c.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/reel_i2c.c
+END
+reel_fpga.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/reel_fpga.c
+END
+reel_hw.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/reel_hw.c
+END
+reel_frontend.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/reel_frontend.c
+END
+reeldvb.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/reeldvb.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/kernel/reeldvb/Makefile
+END

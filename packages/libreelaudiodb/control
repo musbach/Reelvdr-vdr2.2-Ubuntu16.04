@@ -1,0 +1,10 @@
+Package: libreelaudiodb
+Version: 0.1.2
+Section: reel
+Priority: important
+Architecture: i386
+Depends: libmysqlclient18, libc6, libtag1c2a, libsqlite3-0, libmagic1, libjpeg62, zlib1g, libgcc1, libstdc++6, mysql-server
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: libreelaudiodb
+Description: 
+	shared library and header file to access reel's media database

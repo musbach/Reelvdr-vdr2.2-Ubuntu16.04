@@ -1,0 +1,14 @@
+common.o: common.c common.h config.h
+config.o: config.c common.h config.h drivers.h
+driver.o: driver.c common.h driver.h
+drivers.o: drivers.c drivers.h simlcd.h driver.h gu140x32f.h \
+ gu256x64-372.h gu256x64-3900.h hd61830.h ks0108.h sed1330.h sed1520.h \
+ t6963c.h framebuffer.h image.h noritake800.h avrctl.h serdisp.h \
+ st7565_reel.h reel_usbfp.h
+port.o: port.c port.h
+framebuffer.o: framebuffer.c common.h config.h framebuffer.h driver.h
+st7565_reel.o: st7565_reel.c common.h config.h st7565_reel.h driver.h \
+ port.h
+reel_usbfp.o: reel_usbfp.c common.h config.h port.h reel_usbfp.h driver.h \
+ st7565_reel.h
+image.o: image.c common.h config.h image.h driver.h

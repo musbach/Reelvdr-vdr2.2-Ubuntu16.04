@@ -1,0 +1,9 @@
+Package: reel-keyring
+Version: 1.0
+Section: reel
+Priority: important
+Architecture: all
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reel-keyring
+Description: contains gpg key for secure installations/updates of ReelBox software
+

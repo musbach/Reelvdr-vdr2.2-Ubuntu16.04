@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/contrib/dirent
+END
+dirent.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/contrib/dirent/dirent.c
+END
+dirent.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/contrib/dirent/dirent.h
+END

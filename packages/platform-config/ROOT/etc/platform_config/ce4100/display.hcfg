@@ -1,0 +1,28 @@
+/** Supported display modes
+ *
+ *	"1920x1080p59"
+ *	"1920x1080p50"
+ *	"1920x1080p30"
+ *	"1920x1080p29"
+ *	"1920x1080p24"
+ *	"1920x1080p23"
+ *
+ *	"1920x1080i59"
+ *	"1920x1080i50"
+ *
+ *	"1280x720p59"
+ *	"1280x720p50"
+ *	"1280x720p30"
+ *	"1280x720p29"
+ *	"1280x720p24"
+ *	"1280x720p23"
+ *
+ *	"off"		- do not turn on display on power-on
+ */
+mode = "off"
+
+/** Example: Enable HDMI Audio Output */
+hdmi_audio_enable = 1
+
+/** Example: Userdata bits in HDMI Audio output (Device ID String) */
+hdmi_audio_userdata = "Intel CE Device"

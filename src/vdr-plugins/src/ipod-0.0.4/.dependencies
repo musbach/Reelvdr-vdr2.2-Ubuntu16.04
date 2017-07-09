@@ -1,0 +1,88 @@
+ipod.o: ipod.cc menu.hpp ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h common.hpp itunes.hpp list.hpp ipod.hpp \
+ ../../../vdr/../vdr/plugin.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h status.hpp \
+ ../../../vdr/../vdr/status.h ../../../vdr/../vdr/player.h setupmenu.hpp \
+ ../../../vdr/../vdr/remote.h
+menu.o: menu.cc ../../../vdr/../vdr/interface.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/i18n.h \
+ ../../../vdr/../vdr/tools.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/remote.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h \
+ ../../../vdr/../vdr/svdrp.h ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/osdbase.h ipod.hpp ../../../vdr/../vdr/plugin.h \
+ ../../../vdr/../vdr/menuitems.h itunes.hpp common.hpp list.hpp \
+ status.hpp ../../../vdr/../vdr/status.h ../../../vdr/../vdr/player.h \
+ menu.hpp
+parser.o: parser.cc itunes.hpp common.hpp list.hpp
+list.o: list.cc list.hpp common.hpp
+itunes.o: itunes.cc itunes.hpp common.hpp list.hpp
+setupmenu.o: setupmenu.cc ../../../vdr/../vdr/menuitems.h \
+ ../../../vdr/../vdr/dvbdevice.h ../../../vdr/../vdr/device.h \
+ ../../../vdr/../vdr/channels.h ../../../vdr/../vdr/config.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/font.h ../../../vdr/../vdr/sources.h \
+ ../../../vdr/../vdr/thread.h ../../../vdr/../vdr/ci.h \
+ ../../../vdr/../vdr/dvbsubtitle.h ../../../vdr/../vdr/osd.h \
+ ../../../vdr/../vdr/eit.h ../../../vdr/../vdr/filter.h \
+ ../../../vdr/../vdr/nit.h ../../../vdr/../vdr/sdt.h \
+ ../../../vdr/../vdr/pat.h ../../../vdr/../vdr/positioner.h \
+ ../../../vdr/../vdr/remux.h ../../../vdr/../vdr/ringbuffer.h \
+ ../../../vdr/../vdr/sections.h ../../../vdr/../vdr/spu.h \
+ ../../../vdr/../vdr/osdbase.h ../../../vdr/../vdr/skins.h \
+ ../../../vdr/../vdr/epg.h ../../../vdr/../vdr/libsi/section.h \
+ ../../../vdr/../vdr/libsi/si.h ../../../vdr/../vdr/libsi/util.h \
+ ../../../vdr/../vdr/libsi/headers.h ../../../vdr/../vdr/keys.h \
+ ../../../vdr/../vdr/recording.h ../../../vdr/../vdr/timers.h \
+ ../../../vdr/../vdr/themes.h setupmenu.hpp ../../../vdr/../vdr/plugin.h \
+ ../../../vdr/../vdr/menuitems.h ipod.hpp itunes.hpp common.hpp list.hpp \
+ status.hpp ../../../vdr/../vdr/status.h ../../../vdr/../vdr/player.h
+playlist.o: playlist.cc ipod.hpp ../../../vdr/../vdr/plugin.h \
+ ../../../vdr/../vdr/i18n.h ../../../vdr/../vdr/tools.h \
+ ../../../vdr/../vdr/menuitems.h ../../../vdr/../vdr/dvbdevice.h \
+ ../../../vdr/../vdr/device.h ../../../vdr/../vdr/channels.h \
+ ../../../vdr/../vdr/config.h ../../../vdr/../vdr/font.h \
+ ../../../vdr/../vdr/sources.h ../../../vdr/../vdr/thread.h \
+ ../../../vdr/../vdr/ci.h ../../../vdr/../vdr/dvbsubtitle.h \
+ ../../../vdr/../vdr/osd.h ../../../vdr/../vdr/eit.h \
+ ../../../vdr/../vdr/filter.h ../../../vdr/../vdr/nit.h \
+ ../../../vdr/../vdr/sdt.h ../../../vdr/../vdr/pat.h \
+ ../../../vdr/../vdr/positioner.h ../../../vdr/../vdr/remux.h \
+ ../../../vdr/../vdr/ringbuffer.h ../../../vdr/../vdr/sections.h \
+ ../../../vdr/../vdr/spu.h ../../../vdr/../vdr/osdbase.h \
+ ../../../vdr/../vdr/skins.h ../../../vdr/../vdr/epg.h \
+ ../../../vdr/../vdr/libsi/section.h ../../../vdr/../vdr/libsi/si.h \
+ ../../../vdr/../vdr/libsi/util.h ../../../vdr/../vdr/libsi/headers.h \
+ ../../../vdr/../vdr/keys.h ../../../vdr/../vdr/recording.h \
+ ../../../vdr/../vdr/timers.h ../../../vdr/../vdr/themes.h itunes.hpp \
+ common.hpp list.hpp status.hpp ../../../vdr/../vdr/status.h \
+ ../../../vdr/../vdr/player.h
+common.o: common.cc common.hpp

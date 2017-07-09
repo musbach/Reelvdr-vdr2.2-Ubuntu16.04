@@ -1,0 +1,15 @@
+Package: reelvdr-external-epg
+Version: 1.0.4-12
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Installed-Size: 253K
+Depends: libcurl3 | libcurl3-gnutls
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-external-epg
+Description: loads international EPG data from Satellite and Internet
+ Special EPG-Data that is not broadcasted by a standard way. Mostly used
+ by Sky Programs (Mediahighway)
+Description-de: Lädt internationale EPG-Daten über Satellite und Internet
+ Spezielle EPG-Daten die nicht über den Standard-DVB-Weg übermittelt
+ werden. Wird hauptsächlich von den Sky-Programmen (Mediahighway) benutzt.

@@ -1,0 +1,147 @@
+<!-- tlist -->
+<?% enableform = allow('tdelete') || allow('ttoggle');
+	rest = param.capacity;
+%?>
+
+<?% IF data.size <= 1 %?>
+<h1><?% gettext("Planned recordings") %?></h1>
+<?% ELSE %?>
+<h1><?% gettext("Planned recordings") %?> - <?% data.1.4 %?></h1>
+<?% END %?>
+
+<?% IF allow('tnew') %?>
+<a href="?cmd=tnew">[<?% gettext("Create new timer") %?>]</a>
+<?% END %?>
+<?% IF allow('tupdate') %?>
+<a href="javascript:tostatus('?cmd=tupdate')">[<?% gettext("Update timers") %?>]</a>
+<?% END %?>
+<form name='Timer'>
+<?% INCLUDE 'widgets/referer.tmpl' %?>
+
+<?% IF allow('ttoggle') %?>
+<a href="#" onClick="Toggle('<?% gettext("Nothing selected!") %?>',document.TimerList)">
+    [<?% gettext("Toggle timer") %?>]
+</a>
+<?% END %?>
+<?% IF allow('tdelete') %?>
+<a href="#" onClick="Delete('<?% gettext("Would you like to delete these timers?") %?>',
+'<?% gettext("Nothing selected!") %?>','tdelete',document.TimerList)">
+    [<?% gettext("Delete timer") %?>]
+</a>
+&nbsp;
+<?% END %?>
+	    <?% gettext("Search for timers") %?>:
+        <input type="hidden" name="cmd" value='tsearch' >
+        <input type="text" name="data" size='18' <?% IF cgi.param('cmd')=='ts' || cgi.param('cmd')=='tsearch' %?>value='<?% cgi.param('data')%?>'<?% END %?>>
+</form>
+<?% IF enableform %?>
+<form name='TimerList'>
+    <?% INCLUDE 'widgets/referer.tmpl' %?>
+<?% END %?>
+<table border="0" width="95%">
+        <tr>
+        <?% fields = data.shift %?>
+        <?% c = -1 %?>
+        <?% FOREACH field IN fields %?>
+            <?% c = c + 1 %?>
+            <?% NEXT IF field.match('^__') or c == 4 %?>
+            <th><?% field %?></th>
+        <?% END %?>
+<?% IF param.recorder > 1 %?>
+            <th><?% gettext("Video disk recorder") %?></th>
+<?% END %?>
+<?% IF enableform %?>
+            <th width="64"><?% gettext("Selection",7) %?></th>
+<?% END %?>
+        </tr>
+        <?% FOREACH zeile IN data %?>
+            <?% aktiv= ( zeile.1 ? zeile.1 mod 2 : 0 );
+                pdc= ( zeile.1 ? zeile.1 mod 8 div 4 : 0 );
+                day = zeile.4;
+                IF aktiv; rest = rest - zeile.12; END;
+            %?>
+            <?% IF oldDay != day %?>
+            <tr><td colspan='<?% zeile.size %?>' bgcolor='#DDDDDD'><b><?% day %?></b></td><tr>
+            <?% END %?>
+            <?% myclass = "normal" %?>
+            <?% UNLESS aktiv %?>
+                <?% myclass = "deactive" %?>
+            <?% ELSIF zeile.9 %?>
+                <?% myclass = 'problem' %?>
+            <?% ELSIF zeile.14 %?>
+                <?% myclass = "active" %?>
+            <?% END %?>
+            <tr class="<?% myclass %?>" <?% IF (loop.count mod 2) == 0 %?>bgcolor='#F5F5F5'<?% END %?>>
+                <?% c = -1 %?>
+                <?% FOREACH field IN zeile %?>
+                    <?% c = c + 1 %?>
+                    <?% NEXT IF fields.$c.match('^__') or c == 4 %?>
+                    <?% IF c == 0; # Id Field %?>
+                    <td nowrap><nobr>
+                        <a href="?cmd=search&amp;data=<?% url( zeile.7.split('~').last ) %?>" title="<?% gettext("Search for repeats") %?>"><div class="<?% myclass %?>">[R]</div></a>
+    <?% IF allow('tedit') %?>
+                        <a href="?cmd=tedit&amp;data=<?% zeile.0 %?>" title="<?% gettext("Edit this timer") %?>"><div class="<?% myclass %?>">[E]</div></a>
+    <?% END %?>
+    <?% IF allow('tdelete') %?>
+                        <a href="javascript:sure(document.TimerList, '<?% gettext("Would you like to delete this timer?") %?> : <?% escape(zeile.7.split('~').first)  %?>','?cmd=tdelete&amp;data=<?% zeile.0 %?>')" title="<?% gettext("Would you like to delete this timer?") %?>"><div class="<?% myclass %?>">[D]</div></a>
+    <?% END %?>
+                    </td>
+                    <?% ELSIF c == 1; # Id Status %?>
+                    <td>
+                        <?% aus = gettext('Off') %?>
+                        <?% an = gettext('On') %?>
+    <?% IF allow('ttoggle') %?>
+            			<a name='<?% zeile.0 %?>' href="javascript:tostatus('?cmd=ttoggle&amp;data=<?% zeile.0 %?>')" title="<?% gettext("Toggle timer") %?>&nbsp;<?% aktiv ? aus : an %?>"><div class="<?% myclass %?>">[<?% aktiv ? an : aus %?>]</div></a>
+            			<?% IF pdc;'(';gettext('PDC');')';END %?>
+                        <?% IF zeile.11 && allow('aedit') %?>
+            			<a href="?cmd=aedit&amp;data=<?% zeile.11 %?>" title="<?% gettext("Edit autotimer") %?>"><div class="<?% myclass %?>">(AT)</div></a><br>
+                        <?% END %?>
+                        <?% IF rest <= 0 %?><a href="javascript:alert('<?% gettext("Not enough space to record this timer!") %?>')">(!)</a><br/><?% END %?>
+    <?% ELSE %?>
+            			[<?% aktiv ? aus : an %?>]<?% IF pdc;'&nbsp;(';gettext('PDC');')';END %?>
+    <?% END %?>
+                		</td>
+                    <?% ELSIF c == 2; # Channel Field %?>
+                    <td nowrap>
+                        <a href="?cmd=program&amp;data=<?% zeile.3 %?>" title="<?% gettext("Jump to program:") %?> <?% field %?>"><div class="<?% myclass %?>"><?% field %?></div></a>
+                    </td>
+                    <?% ELSIF c == 7; # Title %?>
+                    <td>
+                        <?% IF zeile.10 %?><?% INCLUDE bloecke/tooltip.tmpl cmd="display" title=field desc=zeile.13 eventid=zeile.10 linkid=zeile.10 ttp_offset=0 %?><?% END %?>
+                        <?% FOREACH f IN field.split('~') %?>
+                            <div class="<?% myclass %?>"><?% f %?></div>
+                        <?% END %?>
+                        <?% IF zeile.10 %?></a><?% END %?>
+                    </td>
+                    <?% ELSIF c == 8; # Prio %?>
+                    <td>
+                        <?% IF myclass == 'fastproblem' %?>
+                        <div class="fastproblemgreen"><?% field %?></div>
+                        <?% ELSIF myclass == 'problem' %?>
+                        <div class="problemred"><?% field %?></div>
+                        <?% ELSE %?>
+                        <?% field %?>
+                        <?% END %?>
+                    </td>
+                    <?% ELSE %?>
+                    <td><?% field %?></td>
+                    <?% END %?>
+                <?% END %?>
+<?% IF param.recorder > 1 %?>
+               <td><div class="<?% myclass %?>"><?% zeile.15 %?></div></td>
+<?% END %?>
+    <?% IF enableform %?>
+                    <td>
+                        <input type="checkbox" value="<?% zeile.0 %?>" name="<?% zeile.7 | replace('~',' ') %?>" />
+                    </td>
+    <?% END %?>
+            </tr>
+            <?% oldDay = day %?>
+        <?% END %?>
+</table>
+<?% IF enableform %?>
+</form>
+<a href="#" onClick="selAll(document.TimerList, 1)">[<?% gettext("Select all") %?>]</a>
+<a href="#" onClick="selAll(document.TimerList, 0)">[<?% gettext("Unselect all") %?>]</a>
+<a href="#" onClick="reverse(document.TimerList)">[<?% gettext("Reverse select") %?>]</a>
+<?% END %?>

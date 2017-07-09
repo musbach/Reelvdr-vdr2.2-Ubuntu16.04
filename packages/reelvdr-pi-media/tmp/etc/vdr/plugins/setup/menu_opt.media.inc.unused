@@ -1,0 +1,3 @@
+    <plugin name="audioplayer" info="Shows your collection of audio-files"/>
+    <plugin name="imageplayer" info="Shows your collection of pictures"/>
+    <plugin name="videoplayer" info="Shows your collection of Movies"/>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/dvbloop
+END
+dvblo_adap.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/dvbloop/dvblo_adap.h
+END
+dvblo_adap_ca.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/dvbloop/dvblo_adap_ca.h
+END
+dvblo_ioctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/dvbloop/dvblo_ioctl.h
+END
+dvblo_char.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/dvbloop/dvblo_char.h
+END
+dvblo_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/dvbloop/dvblo_util.h
+END
+dvblo_adap_fe.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/dvbloop/dvblo_adap_fe.h
+END
+dvblo.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/bm2lts-develop/!svn/ver/3/src/vdr-plugins/src/mcli-2/mcast/dvbloop/dvblo.h
+END

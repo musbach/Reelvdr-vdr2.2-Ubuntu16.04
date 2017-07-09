@@ -1,0 +1,253 @@
+<!-- player -->
+<?% width = param.width %?>
+<?% height = param.height %?>
+<?% widget = param.widget %?>
+
+<div id="body">
+<h1><?% param.title %?></h1>
+
+<?% IF info.http_useragent.match('.*MSIE.*') && !info.http_useragent.match('.*Opera.*');
+    msie = 1;
+ELSE;
+    msie = 0;
+END %?>
+
+<?% IF widget == 'vlc' && !msie %?>
+
+<!-- vlc with mozilla -->
+<script language="javascript">
+   function volume_up()
+   {
+    var previous =  document.vlc.get_volume();
+        var newvolume = previous + 10;
+    if( newvolume > 200 )  newvolume = 200;
+    document.vlc.set_volume( newvolume );
+    var volume = document.getElementById("volume_status");
+    var current =  document.vlc.get_volume();
+    volume.innerHTML = current + " %";
+   }
+
+   function volume_down()
+   {
+    var previous =  document.vlc.get_volume();
+        var newvolume = previous - 10;
+    if( newvolume < 0 )  newvolume = 0;
+    document.vlc.set_volume( newvolume );
+    var current =  document.vlc.get_volume();
+    volume.innerHTML = current + " %";
+   }
+   function status()
+   {
+        var play_status = document.getElementById("play_status");
+        play_status.innerHTML = document.vlc.isplaying() 
+          ? "<?% gettext("Playing") %?>" 
+          : "<?% gettext("Not playing") %?>";
+        setTimeout("status()", 1000 );
+   }
+</script>
+<p align='center'>
+          <embed type="application/x-vlc-plugin"
+            pluginspage="http://www.videolan.org/vlc"
+            name="vlc"
+            autoplay="yes" loop="no" height="<?% height %?>" width="<?% width %?>"
+            target="<?% data %?>" />
+
+        <table class="rcbutton" summary="">
+            <tr>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Playback") %?>" class="rcbutton" href="javascript:document.vlc.play();">
+                        <img src="images/play.<?% global.imagetyp %?>" alt="" title="<?% gettext("Playback") %?>" />
+                   </a>
+                </td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Pause") %?>" class="rcbutton" href="javascript:document.vlc.pause();">
+                        <img src="images/pause.<?% global.imagetyp %?>" alt="" title="<?% gettext("Pause") %?>" />
+                   </a>
+                </td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Stop") %?>" class="rcbutton" href="javascript:document.vlc.stop();">
+                        <img src="images/stop.<?% global.imagetyp %?>" alt="" title="<?% gettext("Stop") %?>" />
+                    </a>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                  <a title="<?% gettext("Decrease volume") %?>" class="rcbutton" href="javascript:volume_down()">
+                    <img alt="<?% gettext("Decrease volume") %?>" src="images/quiet.<?% global.imagetyp %?>" />
+                  </a>
+                </td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                  <a title="<?% gettext("Increase volume") %?>" class="rcbutton" href="javascript:volume_up()">
+                    <img alt="<?% gettext("Increase volume") %?>" src="images/loud.<?% global.imagetyp %?>" />
+                  </a>
+                </td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Mute") %?>" class="rcbutton" href="javascript:document.vlc.mute();">
+                        <img src="images/mute.<?% global.imagetyp %?>" alt="" title="<?% gettext("Mute") %?>" />
+                    </a>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Full screen") %?>" class="rcbutton" href="javascript:document.vlc.fullscreen();">
+                        <img src="images/watch.<?% global.imagetyp %?>" alt="" title="<?% gettext("Full screen") %?>" />
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <table class="rcbutton" summary="">
+            <tr><td><?% gettext("Status") %?> : </td>
+                <td><span id="play_status"><?% gettext("Unknown") %?></span></td></tr>
+            <tr><td><?% gettext("Volume") %?> : </td><td><span id="volume_status"></span></td></tr>
+        </table>
+</p>
+
+<script language="javascript">
+  var volume = document.getElementById("volume_status");
+  var current =  document.vlc.get_volume();
+  volume.innerHTML = current + " %";
+  setTimeout("status()", 1 );
+</script>
+
+
+<?% ELSIF widget == 'vlc' %?>
+
+<!-- vlc with activeX -->
+<p align='center'>
+        <object classid="clsid:E23FE9C6-778E-49D4-B537-38FCDE4887D8" 
+          codebase="http://downloads.videolan.org/pub/videolan/vlc/latest/win32/axvlc.cab"
+          height="<?% height %?>" width="<?% width %?>" id="vlc" events="True">
+          <param name="Src" value="<?% data %?>" />
+          <param name="ShowDisplay" value="True" />
+          <param name="Loop" value="False" />
+          <param name="AutoPlay" value="True" />
+        </object>
+
+        <table class="rcbutton" summary="">
+            <tr>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Playback") %?>" class="rcbutton" href="javascript:doPlayOrPause();">
+                        <img src="images/play.<?% global.imagetyp %?>" alt="" title="<?% gettext("Playback") %?>" />
+                   </a>
+                </td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Pause") %?>" class="rcbutton" href="javascript:doPlayOrPause();">
+                        <img src="images/pause.<?% global.imagetyp %?>" alt="" title="<?% gettext("Pause") %?>" />
+                   </a>
+                </td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Stop") %?>" class="rcbutton" href="javascript:document.vlc.stop();">
+                        <img src="images/stop.<?% global.imagetyp %?>" alt="" title="<?% gettext("Stop") %?>" />
+                    </a>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Mute") %?>" class="rcbutton" href="javascript:document.vlc.toggleMute();">
+                        <img src="images/mute.<?% global.imagetyp %?>" alt="" title="<?% gettext("Mute") %?>" />
+                    </a>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="rcbutton">
+                    <a title="<?% gettext("Full screen") %?>" class="rcbutton" href="javascript:document.vlc.fullscreen();">
+                        <img src="images/watch.<?% global.imagetyp %?>" alt="" title="<?% gettext("Full screen") %?>" />
+                    </a>
+                </td>
+            </tr>
+          </table>
+          <table class="rcbutton" summary="">
+            <tr><td><?% gettext("Status") %?> : </td>
+                <td><span id="play_status"><?% gettext("Unknown") %?></span></td></tr>
+          </table>
+</p>
+
+<script LANGUAGE="JScript">
+<!--
+var sliderTimerId = 0;
+
+function onPlay() {
+    document.getElementById("play_status").value = "<?% gettext("Playing") %?>";
+};
+function onPause() {
+    document.getElementById("play_status").value = "<?% gettext("Paused") %?>";
+};
+function onStop() {
+    document.getElementById("play_status").value = "<?% gettext("Not playing") %?>";
+};
+
+function doUpdate() {
+    if( vlc.Playing ) {
+        sliderTimerId = setTimeout("doUpdate()", 1000);
+    }
+    else {
+        onStop();
+        sliderTimerId = 0;
+    }
+};
+
+function doPlayOrPause() {
+    if( document.vlc.playing ) {
+        document.vlc.pause();
+    }
+    else {
+        document.vlc.play();
+    }
+};
+function vlc::play() {
+    if( ! sliderTimerId ) {
+        sliderTimerId = setTimeout("doUpdate()", 1000);
+    }
+    onPlay();
+};
+function vlc::pause() {
+    if( sliderTimerId ) {
+        clearTimeout(sliderTimerId)
+        sliderTimerId = 0;
+    }
+    onPause();
+};
+function vlc::stop() {
+    if( sliderTimerId ) {
+        clearTimeout(sliderTimerId)
+        sliderTimerId = 0;
+    }
+    onStop();
+};
+//-->
+</script>
+<?% ELSE %?>
+<!-- media player with activeX -->
+<p align='center'>
+    <object id="mediaPlayer" width="<?% width %?>" height="<?% height %?>"
+        classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95"
+        codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701"
+        standby="Loading Microsoft Windows Media Player components..." type="application/x-oleobject">
+        <param name="fileName" value="<?% data %?>" />
+        <param name="animationatStart" value="true" />
+        <param name="transparentatStart" value="true" />
+        <param name="autoStart" value="true" />
+        <param name="showControls" value="true" />
+        <param name="loop" value="true" />
+        <embed type="application/x-mplayer2"
+            pluginspage="http://microsoft.com/windows/mediaplayer/en/download/"
+            id="mediaPlayer" name="mediaPlayer" displaysize="4" autosize="-1"
+            showcontrols="true" showtracker="-1"
+            showdisplay="0" showstatusbar="-1" videoborder3d="-1" width="<?% width %?>" height="<?% height %?>"
+            src="<?% data %?>" autostart="true" designtimesp="5311" loop="true">
+        </embed>
+    </object>
+</p>
+<?% END %?>
+
+</div>

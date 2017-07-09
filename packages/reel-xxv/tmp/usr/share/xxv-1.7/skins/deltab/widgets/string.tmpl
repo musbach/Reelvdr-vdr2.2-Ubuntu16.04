@@ -1,0 +1,16 @@
+<!-- string -->
+<tr>
+    <td valign='top'>
+        <?% data.msg %?>
+    </td>
+    <td>
+        <?% val = cgi.param(data.NAME) || data.def %?>
+        <?% IF data.readonly %?>
+        <p style="width:395px;">
+        <?% val %?>
+        </p>
+        <?% ELSE %?>
+        <input style="width:395px;" type="text" name="<?% data.NAME %?>" value="<?% val %?>" />
+        <?% END %?>
+    </td>
+</tr>

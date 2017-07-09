@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/armv4l
+END
+mpegvideo_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/armv4l/mpegvideo_arm.c
+END
+jrevdct_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/armv4l/jrevdct_arm.S
+END
+dsputil_iwmmxt_rnd.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/armv4l/dsputil_iwmmxt_rnd.h
+END
+dsputil_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/armv4l/dsputil_arm.c
+END
+mpegvideo_iwmmxt.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/armv4l/mpegvideo_iwmmxt.c
+END
+dsputil_arm_s.S
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/armv4l/dsputil_arm_s.S
+END
+dsputil_iwmmxt.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/armv4l/dsputil_iwmmxt.c
+END
+simple_idct_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/armv4l/simple_idct_arm.S
+END

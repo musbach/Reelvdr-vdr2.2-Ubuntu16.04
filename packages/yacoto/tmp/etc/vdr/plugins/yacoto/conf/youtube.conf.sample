@@ -1,0 +1,8 @@
+REMUX_TYPE="remux_convert"  #~Remux mode~F~5~ ~
+AUDIO_SOURCE="mp2"         #~Audio source~F~5~ ~
+AUDIO_CODEC="mp3lame"      #~Audio codec~F~256~a-zA-Z0-9_-~
+AUDIO_OPTS="-lameopts preset=standard"  #~Audio parms~F~256~a-zA-Z0-9_-~
+OUTPUT_OPTS="-of avi"      #~Output parms~F~256~a-zA-Z0-9_-~
+OTHER_OPTS="-vf pp=lb,scale=720:405 -ffourcc DX50"  #~Other parms~F~256~a-zA-Z0-9_-:~
+VIDEO_CODEC="lavc"         #~Video codec~F~256~a-zA-Z0-9_-~
+VIDEO_OPTS_P1="-lavcopts vcodec=mpeg4:vbitrate=1231:mbd=1:lumi_mask=0.5:scplx_mask=0.1:cmp=256:vqmin=2:vqmax=6:mbqmin=2:mbqmax=10"  #~Single pass parms~F~256~a-zA-Z0-9_-~

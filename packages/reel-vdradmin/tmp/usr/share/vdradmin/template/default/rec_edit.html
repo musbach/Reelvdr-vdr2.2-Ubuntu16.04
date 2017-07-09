@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="scroller">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=<?% charset %?>" />
+	<title>VDRAdmin-AM - <?% gettext('Rename Recording') %?></title>
+	<link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% IF usercss %?>
+		<link href="user.css" rel="stylesheet" media="screen" type="text/css" />
+	<?% END %?>
+	<script type="text/javascript" language="JavaScript1.2" src="library.js"></script>
+</head>
+
+<body id="rec_edit">
+	<form action="<?% url %?>" method="get" name="form">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="heading">
+			<tr>
+				<td class="col_title">
+					<h1><?% gettext('Rename Recording') %?></h1>
+				</td>
+			</tr>
+		</table>
+
+<?% IF error_msg %?>
+		<div class="error"><?% error_msg %?></div>
+<?% END %?>
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="content" class="group">
+			<tr class="row_odd">
+				<td class="col_label"><h5><?% gettext('Original Name of Recording:') %?></h5></td>
+				<td class="col_value"><?% title %?></td>
+			</tr>
+			<tr class="row_even">
+				<td class="col_label"><h5><?% gettext('New Name of Recording:') %?></h5></td>
+				<td class="col_value"><input type="text" name="nn" value="<?% title %?>" size="55" /></td>
+			</tr>
+			<tr class="row_odd">
+				<td class="col_label"><h5><?% gettext('Original Subtitle:') %?></h5></td>
+				<td class="col_value"><?% IF subtitle %?><?% subtitle %?><?% END %?></td>
+			</tr>
+			<tr class="row_even">
+				<td class="col_label"><h5><?% gettext('New Subtitle:') %?></h5></td>
+				<td class="col_value"><input type="text" name="ns" value="<?% IF subtitle %?><?% subtitle %?><?% END %?>" size="55" /></td>
+			</tr>
+			<tr class="row_odd">
+				<td class="col_label" valign="top"><h5><?% gettext('Summary:') %?></h5></td>
+				<td class="col_value"><?% text %?></td>
+			</tr>
+		</table>
+
+		<div id="buttons">
+			<input type="submit" class="submit" name="save" value="<?% gettext('Rename') %?>" />
+			<input type="button" class="submit" name="exit" value="<?% gettext('Cancel') %?>" Onclick="history.back();"/>
+		</div>
+		<input type="hidden" name="aktion" value="rec_rename" /> 
+		<input type="hidden" name="id" value="<?% id %?>" /> 
+		<?% IF referer %?>
+			<input type="hidden" name="referer" value="<?% referer %?>" />
+		<?% END %?>
+	</form>
+</body>
+
+</html>

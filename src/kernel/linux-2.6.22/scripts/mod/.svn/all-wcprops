@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod
+END
+empty.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/empty.c
+END
+elfconfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/elfconfig.h
+END
+mk_elfconfig
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/mk_elfconfig
+END
+mk_elfconfig.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/mk_elfconfig.c
+END
+modpost
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/modpost
+END
+modpost.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/modpost.c
+END
+modpost.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/modpost.h
+END
+sumversion.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/sumversion.c
+END
+file2alias.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/file2alias.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.22/scripts/mod/Makefile
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/bspd
+END
+videomodes.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/bspd/videomodes.c
+END
+Focus.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/bspd/Focus.c
+END
+bspshmlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/bspd/bspshmlib.c
+END
+bspd.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/bspd/bspd.c
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/bspd/config.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/bspd/Makefile
+END
+bspchannel.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/utils/bspshm/bspd/bspchannel.c
+END

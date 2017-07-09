@@ -1,0 +1,5 @@
+ctoolbox.o: ctoolbox.cpp /usr/include/stdc-predef.h ctoolbox.h
+
+/usr/include/stdc-predef.h:
+
+ctoolbox.h:

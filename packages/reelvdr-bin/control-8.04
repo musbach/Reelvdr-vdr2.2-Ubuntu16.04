@@ -1,0 +1,12 @@
+Package: reelvdr-bin
+Version: 1.4.29.16738
+Section: reel
+Priority: important
+Architecture: i386
+Depends: libcap1, libfontconfig1, libfreetype6, libjpeg62, libmysqlclient15off, ttf-dejavu-core
+Conflicts: vdr
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-bin
+Description: The ReelBox vdr
+ ReelVDR for the ReelBox.
+ .

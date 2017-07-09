@@ -1,0 +1,208 @@
+<h1><?% gettext("Recording") %?>: <?% data.Title %?></h1>
+<!-- TableTemplate -->
+<?% USE date %?>
+<?% BLOCK marks %?>
+    <?% width = data.Duration > 7200 ? 500 : 400 %?>
+    <?% bgcolor = "red" %?>
+    <table width='<?% width %?>' align='center' cellpadding=0 cellspacing=0 border=1>
+    <tr>
+        <?% c = 0 %?>
+        <?% colspan = 0 %?>
+        <?% abstand = 15 * 60; # 15 Minuten %?>
+        <?% range = (((data.Duration div abstand)+1)) * abstand ; # Aufrunden auf auf die vollen 15 Minuten %?>
+        <?% IF range < abstand ; abstand = ( ( range div 60 ) +  1) * 60 ; END  %?>
+        <?%- WHILE c < range -%?>
+            <?%-
+                 c = c + abstand;
+                 percent = (abstand / data.Duration) * width
+                 colspan = colspan + 1;
+                 Stunden = c div 3600;
+                 Minuten = c div 60 mod 60;
+            -%?>
+        <td bgcolor="white" width="<?% offset = (c % 3600 ? 1 : 2);(percent - offset) div 1 %?>" align='right'>
+            <font size='1'><?% Stunden div 1 | format('%02d') %?>:<?% Minuten div 1 | format('%02d') %?></font>
+        </td>
+        <?% END %?>
+    </tr>
+    <tr>
+        <?% c = 0 %?>
+        <?% abstand = abstand div 3 %?>
+        <td bgcolor="white" colspan="<?% colspan %?>"><nobr><?%- WHILE c < range -%?><?%- c = c + abstand; percent = (abstand / data.Duration) * width -%?><img style="background:white" src='/images/trans.gif' width="<?% offset = (c % 3600 ? 1 : 2);(percent - offset) div 1 %?>" height='10'><img style="background:<?% c % 900 ? "gray" : "black" %?>" src='/images/trans.gif' width="<?% c % 3600 ? "1" : "2" %?>" height='<?% (c % 900 ? "5" : "10") %?>'><?%- END -%?></td>
+    </tr>
+    <tr>
+        <td colspan="<?% colspan %?>"><nobr><?%- secold = 0;
+        c = -1;
+        ml = d.split(',');
+        FOREACH marker IN ml;
+                b = c;
+                c = c + 1;
+                m = marker.split(':');
+                sec = m.0 * 3600;
+                sec = sec + m.1 * 60;
+                sec = sec + m.2;
+                percent = ((sec-secold) / data.Duration) * width;
+                bgcolor = (bgcolor == 'red' ? 'white' : 'red');
+            -%?><img style="background:<?% bgcolor %?>" src='images/trans.gif' width="<?% percent div 1 %?>" height='10' title="<?% (b < 0 ? "0:00:00.00" : ml.$b) %?> - <?% ml.$c %?>">
+            <?%- secold = sec;
+            END;
+            IF data.Duration > secold;
+            bgcolor = (bgcolor == 'red' ? 'white' : 'red');
+            percent = ((data.Duration - secold) / data.Duration) * width;
+            -%?><img style="background:<?% bgcolor %?>" src="images/trans.gif" width="<?% percent div 1 %?>" height="10" title="<?% (c < 0 ? "0:00:00.00" : ml.$c) %?> - <?% data.Duration div 3600 %?>:<?% data.Duration div 60 mod 60 div 1 | format('%02d') %?>:<?% data.Duration mod 60 div 1 | format('%02d') %?>" />
+            <?% END %?>
+        </td>
+    </tr>
+    </table>
+<?% END %?>
+
+<?% BLOCK hfs # d in Sekunden %?>
+  <?% d div 3600 %?>:<?% d div 60 mod 60 | format('%02d') %?>:<?% d mod 60 | format('%02d') %?>
+<?% END %?>
+<?% BLOCK dur # d in Sekunden %?>
+<?% IF d > 1 %?>
+    <?% Stunden = d div 3600 %?>
+    <?% Minuten = d div 60 mod 60 %?>
+    <?% Sekunden =  d mod 60 %?>
+    <?% Stunden div 1 %?>:<?% Minuten div 1 | format('%02d') %?>:<?% Sekunden div 1 | format('%02d') %?>
+<?% END %?>
+<?% END %?>
+
+<?% quest=data.Title;IF data.SubTitle.length > 0;quest=data.SubTitle;END %?>
+
+<div id="navcontainer">
+<ul id="navlist">
+    <li><a href="?cmd=rlist"><?% gettext("Recording list") %?></a></li>
+<?% IF allow('rdelete') %?>
+    <li><a href="#" onclick="sure(document.RecordDisplay, '<?% gettext("Would you like to delete this recording?") %?>?','?cmd=rdelete&amp;data=<?% data.RecordId %?>')">
+    <?% gettext("Delete recording") %?>
+    </a></li>
+<?% END %?>
+<?% IF allow('rcut') %?>
+    <li><a href="?cmd=rcut&amp;data=<?% data.RecordId %?>"><?% gettext("Cut recording") %?></a></li>
+<?% END %?>
+<?% IF allow('redit') %?>
+    <li><a href="?cmd=redit&amp;data=<?% data.RecordId %?>"><?% gettext("Edit recording") %?></a></li>
+<?% END %?>
+<?% IF allow('playrecord') %?>
+    <li><a href="?cmd=playrecord&amp;data=<?% data.RecordId %?>"><?% gettext("Watch recording as web cast") %?></a></li>
+<?% END %?>
+<?% IF allow('rplay') %?>
+    <li><a href="?cmd=rplay&amp;data=<?% data.RecordId %?>"><?% gettext("Watch recording in VDR") %?></a></li>
+<?% END %?>
+    <li>
+    <a target="_blank" href="http://german.imdb.com/find?s=tt&amp;site=aka&amp;q=<?% quest %?>">
+        <?% gettext("Search with IMDb") %?>
+    </a>
+    </li>
+    <li>
+    <a target="_blank" href="http://www.ofdb.de/view.php?page=suchergebnis&Kat=Titel&SText=<?% quest %?>">
+        <?% gettext("Search with OFDb") %?>
+    </a>
+    </li>
+</ul>
+</div>
+
+<table>
+<form name='RecordDisplay'>
+<?% INCLUDE 'widgets/referer.tmpl' %?>
+
+<tr>
+    <td colspan="2">
+<?% IF allow('rconvert') %?>
+    <select name='data' onChange="di(this.form.data.options[this.form.data.options.selectedIndex].value, '?cmd=rconvert&amp;data=<?% data.RecordId %?>&amp;__action=save&amp;__cmd=')">
+        <option value='0'><?% gettext("Choose a command to edit this recording ...") %?>:</option>
+    <?% FOREACH cmd IN param.reccmds %?>
+        <option value='<?% loop.count %?>'><?% cmd %?></option>
+    <?% END %?>
+    </select>
+<?% END %?>
+    </td>
+</tr>
+<tr>
+    <td>
+	<?% files = data.preview.split(',') %?>
+  <?% IF data.Type == 'RADIO' %?>
+    <img src="images/radio.png" alt="" title="<?% gettext('Radio recording') %?>" />
+  <?% ELSIF files.size > 0; %?>
+        <table border="0" align='left'>
+    <?% FOREACH frame IN files %?>
+        <tr>
+        <td>
+          <img src="?cmd=ri&data=<?% data.RecordId %?>_<?% frame %?>" alt="" width="200" title="<?% gettext('Television recording') %?> : <?% x=frame / 25;PROCESS hfs d=x %?>" />
+        </td>
+        </tr>
+    <?% END %?>
+        </table>
+  <?% ELSE %?>
+    <img src="images/movie.png" alt="" width="200" title="<?% gettext('Television recording') %?>" />
+  <?% END; %?>
+    </td><td>
+        <table border="0">
+        <th colspan=2>
+        <?% IF data.New > 0 %?><img src="images/new.png" alt="" title="<?% gettext("New recording") %?>" /><?% END %?>
+        <?% data.Title %?><?% IF data.SubTitle %?><br><?% data.SubTitle %?><?% END %?></th>
+        <tr>
+            <td>&nbsp;</td>
+            <td><?% date.format(data.StartTime,"%A, %x",locale) %?>&nbsp;
+                &nbsp;&nbsp;&nbsp;<?% date.format(data.StartTime,"%H:%M",locale) %?>&nbsp;-&nbsp;<?% date.format(data.StopTime,"%H:%M",locale) %?>&nbsp;
+                 (<?% gettext('Duration') %?> : <?% PROCESS dur d=data.Duration %?>
+                  <?% IF ( data.cutlength + 10 ) <  data.Duration %?>&nbsp;<?% gettext("By cut") %?> : <?% PROCESS dur d=data.cutlength %?><?% END %?>
+                 )
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+            <?% data.Description %?><br>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+            <?% PROCESS marks d=data.Marks %?>
+            </td>
+        </tr>
+        <?% IF data.Channel %?>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+            <?% gettext('Channel') %?> : <?% data.Channel %?>
+            </td>
+        </tr>
+        <?% END %?>
+        <?% allowkeywords = allow('rk') %?>
+        <?% IF data.keywords && data.keywords.size > 0 %?>
+				<tr>
+          <td>&nbsp;</td>
+					<td>
+                  <?% gettext('Keywords') %?>&nbsp;:&nbsp;
+                  <?% FOREACH keyword IN data.keywords %?>
+                      <?% IF allowkeywords %?>
+                              <a href="?cmd=rk&amp;data=<?% keyword.0 %?>">
+                      <?% END %?>
+                                <?% keyword.0 %?>
+                      <?% IF allowkeywords %?>
+                              </a>
+                      <?% END %?>
+                      &nbsp;
+                  <?% END %?>
+		      </td>
+				</tr>
+        <?% END %?>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+            <?% gettext('Lifetime') %?> : <?% data.lifetime %?>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+            <?% gettext('Priority') %?> : <?% data.priority %?>
+            </td>
+        </tr>
+        </table>
+    </td>
+</tr>
+</form>
+</table>
+

@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/reelbox/!svn/ver/1/testing/src/etc/vdr
+END
+remote.conf
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/vdr/remote.conf
+END
+channels.conf
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/etc/vdr/channels.conf
+END
+keymacros.conf
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/etc/vdr/keymacros.conf
+END
+setup.conf
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/etc/vdr/setup.conf
+END
+commands.conf
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/etc/vdr/commands.conf
+END
+timers.conf
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/vdr/timers.conf
+END
+diseqc.conf
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/vdr/diseqc.conf
+END
+remote.conf.hauppauge
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/etc/vdr/remote.conf.hauppauge
+END
+reccmds.conf-mini
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/reelbox/!svn/ver/1/testing/src/etc/vdr/reccmds.conf-mini
+END
+svdrphosts.conf
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/etc/vdr/svdrphosts.conf
+END
+reccmds.conf
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/reelbox/!svn/ver/1/testing/src/etc/vdr/reccmds.conf
+END
+setup.conf.factory.ncl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/etc/vdr/setup.conf.factory.ncl
+END
+remote.conf.org
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/etc/vdr/remote.conf.org
+END
+setup.conf.factory.avg
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/etc/vdr/setup.conf.factory.avg
+END
+sources.conf
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/reelbox/!svn/ver/1/testing/src/etc/vdr/sources.conf
+END
+noepgchannels.conf
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/etc/vdr/noepgchannels.conf
+END
+providercharsets.conf
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/etc/vdr/providercharsets.conf
+END
+diseqc.conf.sample
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/etc/vdr/diseqc.conf.sample
+END

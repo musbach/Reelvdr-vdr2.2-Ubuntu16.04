@@ -1,0 +1,22 @@
+Index: remux.c
+===================================================================
+--- remux.c	(revision 15404)
++++ remux.c	(revision 15405)
+@@ -863,11 +863,16 @@
+                              frameDuration = 3600; // PAL, 25 fps, timing with jitter
+                           else if (Delta % 3003 == 0)
+                              frameDuration = 3003; // NTSC, 29.97 fps
++#ifdef NO_720P50_PATCH
+                           else if (abs(Delta - 1800) <= 1) {
+                              frameDuration = 3600; // PAL, 25 fps
+                              framesPerPayloadUnit = -2;
+                              }
+-                          else if (Delta == 1501) {
++#else
++                           else if (abs(Delta - 1800) <= 1)
++                             frameDuration = 1800; // PAL, 50 fps
++#endif
++                           else if (Delta == 1501) {
+                              frameDuration = 3003; // NTSC, 29.97 fps
+                              framesPerPayloadUnit = -2;
+                              }

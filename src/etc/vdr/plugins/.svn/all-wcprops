@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins
+END
+reelblog.conf
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/reelblog.conf
+END
+streamdevhosts.conf
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/streamdevhosts.conf
+END
+mediad.conf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/mediad.conf
+END
+eggtimer.conf
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/eggtimer.conf
+END
+mp3sources.conf
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/mp3sources.conf
+END
+shoutcast.genre
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/shoutcast.genre
+END
+prefermenu.conf
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/prefermenu.conf
+END
+rotor-positions.conf
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/etc/vdr/plugins/rotor-positions.conf
+END

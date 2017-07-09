@@ -1,0 +1,46 @@
+10
+
+dir
+189
+https://svn.baycom.de/repos/vdr-mcli-plugin/mcast
+https://svn.baycom.de/repos/vdr-mcli-plugin
+
+
+
+2013-09-19T19:26:55.964552Z
+189
+fliegl
+has-props
+
+
+svn:externals
+
+
+
+
+
+
+
+
+
+
+fc751244-6d69-0410-b144-98fd9a06952e
+
+doc
+dir
+
+netcv2dvbip
+dir
+
+common
+dir
+
+tool
+dir
+
+client
+dir
+
+dvbfuse
+dir
+

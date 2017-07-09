@@ -1,0 +1,113 @@
+Command line: --cc=/usr/bin/ccache  gcc  [/usr/bin/ccache  gcc]
+C compiler: /usr/bin/ccache  gcc
+Command line: --cxx=/usr/bin/ccache  g++  [/usr/bin/ccache  g++]
+C++ compiler: /usr/bin/ccache  g++
+Command line: --add-cflags=-I../../../vdr  [-I../../../vdr]
+CFLAGS:  -I../../../vdr
+Checking for pkg-config ... yes
+Checking for pkg-config libextractor ... adding -lextractor to LIBS_VDR
+adding -I/usr/include/gtk-3.0 to CFLAGS_VDR
+adding -I/usr/include/at-spi2-atk/2.0 to CFLAGS_VDR
+adding -I/usr/include/at-spi-2.0 to CFLAGS_VDR
+adding -I/usr/include/dbus-1.0 to CFLAGS_VDR
+adding -I/usr/lib/i386-linux-gnu/dbus-1.0/include to CFLAGS_VDR
+adding -I/usr/include/gio-unix-2.0/ to CFLAGS_VDR
+adding -I/usr/include/mirclient to CFLAGS_VDR
+adding -I/usr/include/mircommon to CFLAGS_VDR
+adding -I/usr/include/mircookie to CFLAGS_VDR
+adding -I/usr/include/cairo to CFLAGS_VDR
+adding -I/usr/include/pango-1.0 to CFLAGS_VDR
+adding -I/usr/include/harfbuzz to CFLAGS_VDR
+adding -I/usr/include/atk-1.0 to CFLAGS_VDR
+adding -I/usr/include/pixman-1 to CFLAGS_VDR
+adding -I/usr/include/freetype2 to CFLAGS_VDR
+adding -I/usr/include/libpng12 to CFLAGS_VDR
+adding -I/usr/include/gdk-pixbuf-2.0 to CFLAGS_VDR
+adding -I/usr/include/glib-2.0 to CFLAGS_VDR
+adding -I/usr/lib/i386-linux-gnu/glib-2.0/include to CFLAGS_VDR
+yes
+Checking for pkg-config libcap ... adding -lcap to LIBS_VDR
+yes
+Checking for pkg-config libbluray ... adding -lbluray to LIBS_VDR
+yes
+Checking for pkg-config libxine ... adding -lxine to LIBS_XINE
+yes
+Checking for pkg-config dlfcn ... no
+Checking for dlfcn ... yes
+adding -ldl to LIBS_DLFCN
+Checking for xine plugin directory ... /usr/lib/xine/plugins/2.5
+Checking for pkg-config libavutil ... adding -lavutil-ffmpeg to LIBS_AVUTIL
+adding -I/usr/include/i386-linux-gnu to CFLAGS_AVUTIL
+yes
+Checking for pkg-config libjpeg ... adding -ljpeg to LIBS_JPEG
+yes
+Checking for pkg-config x11 ... adding -lX11 to LIBS_X11
+yes
+Checking for pkg-config pthread ... no
+Checking for pthread ... testhdr.c: In function ‘main’:
+testhdr.c:4:3: warning: null argument where non-null required (argument 1) [-Wnonnull]
+   pthread_create(0,0,0,0); 
+   ^
+testhdr.c:4:3: warning: null argument where non-null required (argument 3) [-Wnonnull]
+yes
+adding -lpthread to LIBS_PTHREAD
+Checking for pkg-config xext ... adding -lXext to LIBS_X11
+yes
+Checking for pkg-config xshm ... no
+Checking for xshm ... yes
+Checking for pkg-config xrender ... adding -lXrender to LIBS_X11
+yes
+Checking for pkg-config xshape ... no
+Checking for xshape ... yes
+Checking for pkg-config xdpms ... no
+Checking for xdpms ... yes
+Checking for pkg-config xinerama ... adding -lXinerama to LIBS_X11
+yes
+Checking for pkg-config opengl ... no
+Checking for opengl ... yes
+adding -lGL to LIBS_X11
+adding -lGLU to LIBS_X11
+Checking for pkg-config vdpau ... adding -lvdpau to LIBS_none
+yes
+Checking for pkg-config dbus-glib-1 ... adding -ldbus-glib-1 to LIBS_X11
+adding -ldbus-1 to LIBS_X11
+adding -lgobject-2.0 to LIBS_X11
+adding -lglib-2.0 to LIBS_X11
+adding -I/usr/include/dbus-1.0 to CFLAGS_X11
+adding -I/usr/lib/i386-linux-gnu/dbus-1.0/include to CFLAGS_X11
+adding -I/usr/include/glib-2.0 to CFLAGS_X11
+adding -I/usr/lib/i386-linux-gnu/glib-2.0/include to CFLAGS_X11
+yes
+Checking for pkg-config mce-dbus-names ... no
+Checking for mce-dbus-names ... yes
+adding -lm to LIBS_X11
+adding -ldl to LIBS_X11
+adding -lpthread to LIBS_X11
+adding -ldl to LIBS_VDR
+
+Enabled features:
+  x11
+  fb
+  vdr
+  libxine
+  libextractor
+  libavutil
+  libjpeg
+  dbus_glib_1
+  xshm
+  xdpms
+  xinerama
+  xrender
+  xshape
+  opengl
+  pthread
+  dlfcn
+  vdpau
+  i18n
+  libcap
+  libbluray
+  mce-dbus-names
+Disabled features:
+
+Creating features.h ...
+Creating config.mak ...

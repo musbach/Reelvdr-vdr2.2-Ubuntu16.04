@@ -1,0 +1,81 @@
+<!-- vlist Template -->
+<div id="body">
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+<?% IF allow('vdredit') %?>
+                        <a href="?cmd=vdredit&amp;data=<?% id %?>">
+                            <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit definition of video disk recorder") %?>" />
+                        </a>
+<?% END %?>
+<?% IF allow('vdrdelete') %?>
+                        <a href="javascript:sureandreload('<?% gettext("Would you like to delete this definition of video disk recorder?") %?>','<?% escape(host) %?>','vdrdelete','<?% id %?>')">
+                            <img src="images/delete.<?% global.imagetyp %?>" alt="" title="<?% gettext("Delete definition of video disk recorder") %?>" />
+                        </a>
+<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+    <?% state = '' %?>
+    <?% UNLESS active == 'y' %?>
+        <?% state = "deactive" %?>
+    <?% ELSIF primary == 'y' %?>
+        <?% state = "running" %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% aus = gettext('Off') %?>
+<?% an = gettext('On') %?>
+<?% BLOCK StateImage %?>
+    <?% IF active == 'y' %?>
+      <img id="toggle<?% id %?>" src="images/on.<?% global.imagetyp %?>" alt="" title="<?% an %?>" />
+    <?% ELSE %?>
+      <img id="toggle<?% id %?>" src="images/off.<?% global.imagetyp %?>" alt="" title="<?% aus %?>" />
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsFlat %?>
+      <?% PROCESS SetState %?>
+        <tr<?% ' class="two"' IF loop.count mod 2 == 0 %?>>
+            <td>
+            <?% PROCESS StateImage %?>
+               <?% IF allow('vdredit') %?>
+                  <a title="<?% gettext("Edit definition of video disk recorder") %?>" href="?cmd=vdredit&amp;data=<?% id %?>">
+               <?% END %?>
+                  <font class="title<?% IF state != "";" ";state;END %?>"><?% host %?></font>
+                  <?% IF allow('vdredit') %?>
+                  </a>
+                  <?% END %?>
+            </td>
+            <td>
+                <font class="subtitle<?% IF state != "";" ";state;END %?>"><?% cards %?></font>
+            </td>
+            <td class="push">
+                <?% PROCESS RowButtons %?>
+            </td>
+        </tr>
+<?% END %?>
+<?% ######################################################################## %?>
+<h1><?% gettext("Administration of video disk recorder") %?></h1>
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+                        <table  summary="" width="100%">
+                        <tr height="0"><th></th><th></th><th width="60" align="right"></th></tr>
+    <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?% id=zeile.0;active=zeile.1;primary=zeile.2;host=zeile.3;cards=zeile.4 %?>
+        <?% PROCESS ItemAsFlat %?>
+    <?% END %?>
+                        </table>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<?% IF allow('vdrnew') %?>
+<div id="sidebar">
+    <p class="section"><?% gettext("Administration of video disk recorder",20) %?></p>
+    <p>
+      <a title="<?% gettext("Create new definition of video disk recorder") %?>" href="?cmd=vdrnew"><img src="images/new.<?% global.imagetyp %?>" alt="" title="<?% gettext("Create new definition of video disk recorder") %?>" /></a>&nbsp;
+      <a title="<?% gettext("Create new definition of video disk recorder") %?>" href="?cmd=vdrnew"><?% gettext("Create new definition of video disk recorder",20) %?></a><br />
+    </p>
+</div>
+<?% global.sidebar = 1 %?>
+<?% END %?>

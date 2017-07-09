@@ -1,0 +1,12 @@
+Package: childlock
+Version: 0.1.4
+Section: reel-opt
+Priority: optional
+Architecture: armel
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-childlock
+Conflicts: reelvdr-plugins-base (<= 1.7.21.18035), reelvdr-tools-bin (<= 1.0)
+Description: child protection for ReelBox
+ Protect recordings, menus and setup from your children
+Description-de: Kindersicherung für die ReelBox
+ Sichern Sie Aufnahmen, Menüs und Einstellungen vor Ihren Kindern

@@ -1,0 +1,2 @@
+tmp//usr/lib/libreelsearchapi.so: /usr/src/reelbox/testing/src/libs/reelaudiodb/libreelsearchapi.so
+tmp//usr/include/reel/searchapi.h: /usr/src/reelbox/testing/src/libs/reelaudiodb/searchapi.h

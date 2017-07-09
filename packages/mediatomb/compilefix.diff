@@ -1,0 +1,11 @@
+--- mediatomb-0.12.1/src/string_converter.cc.org	2008-03-01 23:48:36.000000000 +0100
++++ mediatomb-0.12.1/src/string_converter.cc	2008-04-16 17:33:52.972285183 +0200
+@@ -130,7 +130,7 @@
+     
+     //log_debug(("iconv: BEFORE: input bytes left: %d  output bytes left: %d\n",
+     //       input_bytes, output_bytes));
+-#if defined(ICONV_CONST) || defined(SOLARIS)
++#if 0 //defined(ICONV_CONST) || defined(SOLARIS)
+     ret = iconv(cd, (const char**)input_ptr, &input_bytes,
+             output_ptr, &output_bytes);
+ #else

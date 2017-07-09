@@ -1,0 +1,6 @@
+control.o: control.c control.h config.h common.h
+event.o: event.c event.h
+setup.o: setup.c setup.h event.h config.h
+config.o: config.c config.h
+i18n.o: i18n.c i18n.h
+taste.o: taste.c status.h event.h setup.h config.h i18n.h

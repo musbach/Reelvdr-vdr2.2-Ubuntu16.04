@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/image
+END
+bincue.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/image/bincue.c
+END
+nrg.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/image/nrg.c
+END
+nrg.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/image/nrg.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/image/Makefile
+END
+cdrdao.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/lib/driver/image/cdrdao.c
+END

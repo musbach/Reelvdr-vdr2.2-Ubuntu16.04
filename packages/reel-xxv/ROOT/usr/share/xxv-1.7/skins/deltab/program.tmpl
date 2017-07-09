@@ -1,0 +1,150 @@
+<!-- program -->
+<div id="body">
+<?% BLOCK dur %?>
+    <?% height=6;d = d div 1 ; IF d >= 0 and d <= 100 %?>
+        	<?% IF d >= 1 %?>
+                <?% d = d / 2 %?>
+				<img class="progressleft" src="images/blank.gif" width="<?% 50 - d %?>" height="<?% height %?>" alt="<?% 50 - d %?>%" /><img class="progressright" src="images/blank.gif" width="<?% d %?>" height="<?% height %?>" alt="" />
+            <?% ELSE %?>
+				<img class="progress" src="images/blank.gif" width="50" height="<?% height %?>" alt="" />
+            <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+    <?% state = '' %?>
+    <?% IF running %?>
+        <?% state = "running" %?>
+    <?% ELSIF timerid %?>
+      <?% UNLESS recording %?>
+        <?% state = "deactive" %?>
+      <?% ELSE %?>
+        <?% state = "active" %?>
+      <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK item %?>
+    <?% PROCESS SetState %?>
+    <td>
+        <a id="E<?% id %?>" href="?cmd=display&amp;data=<?% id %?>" title="<?% title %?>">
+            <font class="title<?% IF state != "";" ";state;END %?>"><?% title %?></font>
+            <?% IF subtitle.length > 0 %?>
+                &nbsp;<font class="subtitle<?% IF state != "";" ";state;END %?>"><?% subtitle %?></font>
+            <?% END %?>
+            <?% IF global.hideDescription != 1 && description.length > 0 %?><br /><font class="description<?% IF state != "";" ";state;END %?>"><?% chop(description,100,2) %?></font><?% END %?>
+       </a>
+    </td>
+    <td>
+        <?% start %?>&nbsp;-&nbsp;<?% stop %?>
+        <?% IF pdc && pdc != start %?> (<?% gettext("PDC") %?>:<?% pdc %?>) <?% END %?>
+    </td>
+    <td class="push">
+        <?% INCLUDE widgets/tooltip.inc cmd="display"  eventid=id linkid=id ttp_offset=-400 %?>
+        <a href="?cmd=search&amp;data=<?% url( title ) %?>">
+            <img src="images/find.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search for repeats") %?>" />
+        </a>
+        <?% IF timerid && allow('tedit') %?>
+        <a href="?cmd=tedit&amp;data=<?% timerid %?>">
+            <img src="images/onoff.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit this timer") %?>" />
+        </a>
+        <?% ELSIF allow('tnew') %?>
+        <a href="?cmd=tnew&amp;data=<?% id %?>">
+             <img src="images/record.<?% global.imagetyp %?>" alt="" title="<?% gettext("To record") %?>" />
+        </a>
+        <?% END %?>
+    </td>
+<?% END %?>
+
+<?% FOREACH ch IN param.channels %?>
+    <?% IF cgi.param('data') == ch.1 || cgi.param('data') == ch.0 || param.current == ch.1 %?>
+        <?% channel = ch.0 %?>
+        <?% channelpos = ch.1 %?>
+        <?% LAST %?>
+    <?% END %?>
+<?% END %?>
+<?% IF data.size <= 1 %?>
+<h1><?% gettext("Program guide for") %?>&nbsp;<?% channel %?></h1>
+<?% ELSE %?>
+<?% fields = data.shift %?>
+<h1><?% gettext("Program guide for") %?>&nbsp;<?% channel %?> - <?% data.first.5 %?></h1>
+	<table summary="" width="100%">
+    <tr>
+        <th></th>
+        <th width="60"></th>
+        <th width="40" align="right"></th>
+    </tr>
+
+	<?% FOREACH zeile IN data %?>
+    <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?% id=zeile.0;title=zeile.1;subtitle=zeile.2;start=zeile.3;stop=zeile.4;
+            description=zeile.6;pdc=zeile.7;timerid=zeile.8;recording=zeile.9;running=zeile.10;
+            day = zeile.5 %?>
+		<?% IF old.defined && day != old %?>
+  		<tr>
+            <td colspan="12" align="left">
+                <h2><?% day %?></h2>
+            </td>
+        </tr>
+		<?% END %?>
+        <tr<?% " class='two'" IF loop.count mod 2 == 0 %?>>
+        <?% PROCESS item %?>
+        <?% old = day %?>
+        </tr>
+    <?% END %?>
+</table>
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+<?% IF allow('switch') || allow('livestream')  %?>
+    <p class="section"><?% chop(channel,20) %?></p>
+    <p>
+<?% IF allow('switch') %?>
+        <a href="javascript:post('switch','<?% cgi.param('data') %?>')"><img src="images/watch.<?% global.imagetyp %?>" alt="" title="<?% gettext("Switch") %?>" /></a>&nbsp;
+        <a href="javascript:post('switch','<?% cgi.param('data') %?>')"><?% gettext("Switch",20) %?></a><br />
+<?% END %?>
+<?% IF allow('livestream') %?>
+        <a href="?cmd=livestream&amp;data=<?% channelpos %?>')"><img src="images/webcast.<?% global.imagetyp %?>" alt="" title="<?% gettext("Live TV web cast") %?>" /></a>&nbsp;
+        <a href="?cmd=livestream&amp;data=<?% channelpos %?>"><?% gettext("Live TV web cast",20) %?></a>
+<?% END %?>
+    </p>
+<?% END %?>
+    <p class="section"><?% gettext("Selection",20) %?></p>
+    <form action="">
+    <p>
+        <select size="15" name='data' onchange="di('?cmd=program&amp;data=',this.form.data.options[this.form.data.options.selectedIndex].value)">
+        <?% FOREACH ch IN param.channels %?>
+          <?% IF ch.2 != channelgroup %?>
+            <?% IF channelgroup %?>
+            </optgroup>
+            <?% END %?>
+            <optgroup label="<?% channelgroup = ch.2;ch.2 %?>">
+        <?% END %?>
+            <option value="<?% ch.1 %?>"<?% ' selected="selected"' IF channelpos == ch.1 %?>><?% ch.0 %?></option>
+        <?% END %?>
+          </optgroup>
+        </select>
+    </p>
+    </form>
+    <?% IF allow('cedit') %?>
+    <p class="section"><?% gettext("Channels",20) %?></p>
+    <p>
+    <a href="?cmd=clist<?% IF id > 0 %?>#<?% channelpos %?><?% END %?>">
+        <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit channels") %?>" />
+    </a>
+    &nbsp;
+    <a href="?cmd=clist<?% IF id > 0 %?>#<?% channelpos %?><?% END %?>">
+        <?% gettext("Edit channels",20) %?>
+    </a>
+    </p>
+    <?% END %?>
+    <p class="section"><?% gettext("Search on Channel",15) %?> (<?% chop(channel,10) %?>)</p>
+    <form method="post" action="?cmd=search">
+    <p>
+      <input type="hidden" name="__channel" value="<?% channelpos %?>" />
+      <input type="text" name="data" size='18' />
+    </p>
+    </form>
+</div>
+<?% global.sidebar = 1 %?>

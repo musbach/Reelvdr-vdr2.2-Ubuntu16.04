@@ -1,0 +1,69 @@
+## -*- makefile -*- ------------------------------------------------------
+##   
+##   Copyright 2001 H. Peter Anvin - All Rights Reserved
+##
+##   This program is free software available under the same license
+##   as the "OpenBSD" operating system, distributed at
+##   http://www.openbsd.org/.
+##
+## ----------------------------------------------------------------------- 
+## $Id$
+
+##
+## MCONFIG.in
+##
+## Basic Makefile definitions
+##
+
+# Source and object root
+SRCROOT	    = /usr/src/reelbox/testing/packages/tftp-hpa/tftp-hpa-0.48
+OBJROOT     = /usr/src/reelbox/testing/packages/tftp-hpa/tftp-hpa-0.48
+
+# Prefixes
+prefix      = /usr
+exec_prefix = ${prefix}
+
+# Directory for user binaries
+BINDIR  = ${exec_prefix}/bin
+
+# Man page tree
+MANDIR  = ${prefix}/man
+
+# System binaries
+SBINDIR = ${exec_prefix}/sbin
+
+# Binary suffixes
+O = o
+X = 
+
+# Install into alternate root area, e.g. for package generation
+INSTALLROOT = 
+
+# Link
+LN_S            = ln -s
+
+# Install program
+INSTALL         = /usr/bin/install -c
+INSTALL_PROGRAM = ${INSTALL}
+INSTALL_DATA    = ${INSTALL} -m 644
+
+# Compiler and compiler flags
+CC      = /usr/bin/ccache  gcc
+CFLAGS  = -O2 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Wstrict-prototypes -D_XPG4_2 -D_XOPEN_SOURCE -D__EXTENSIONS__ -D_GNU_SOURCE -D_OSF_SOURCE -D_XOPEN_SOURCE_EXTENDED -W -Wall -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wwrite-strings -Wundef -Wshadow -Wsign-compare -pipe -fno-strict-aliasing -I$(SRCROOT)
+
+# Link flags
+LDFLAGS = 
+
+# Libraries (client and server)
+TFTP_LIBS  = ../common/libcommon.a  /usr/src/reelbox/testing/packages/tftp-hpa/tftp-hpa-0.48/lib/libxtra.a 
+TFTPD_LIBS = ../common/libcommon.a -lnsl  /usr/src/reelbox/testing/packages/tftp-hpa/tftp-hpa-0.48/lib/libxtra.a 
+
+# Additional library we need to build
+LIBOBJS	=  xmalloc$U.o xstrdup$U.o
+
+# Additional tftpd objects we need to build
+TFTPDOBJS = remap.o 
+
+# ar and ranlib (for making libraries)
+AR	= ar cq
+RANLIB	= ranlib

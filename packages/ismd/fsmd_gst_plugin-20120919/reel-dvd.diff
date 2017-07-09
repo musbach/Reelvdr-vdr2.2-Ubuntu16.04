@@ -1,0 +1,98 @@
+Index: ismd_gst_vidrend_sink.c
+===================================================================
+--- ismd_gst_vidrend_sink.c	(Revision 18951)
++++ ismd_gst_vidrend_sink.c	(Arbeitskopie)
+@@ -74,6 +74,8 @@
+  * This sink element provides generic NV16/I420 video rendering
+  */
+ 
++#include <gst/interfaces/navigation.h>
++
+ #include <string.h>
+ #include <gst/gstmarshal.h>
+ #include <ismd_core.h>
+@@ -134,10 +136,15 @@
+ #define UPDATE_RUNNING_AVG_N(avg,val) DO_RUNNING_AVG(avg,val,4)
+ 
+ static void
++ismd_gst_vidrend_sink_init_interfaces (GType type);
++
++static void
+ _do_init (GType ismd_gst_debug_type)
+ {
+   GST_DEBUG_CATEGORY_INIT (ismd_gst_vidrend_sink_debug, "ISMD_VIDREND_SINK",
+       (GST_DEBUG_BOLD | GST_DEBUG_FG_GREEN), "ismdgstvidrendsink element");
++  
++  ismd_gst_vidrend_sink_init_interfaces (ismd_gst_debug_type);
+ }
+ 
+ /* Call Boilerplate to declare the base_init, class_init and init functions
+@@ -145,7 +152,31 @@
+ GST_BOILERPLATE_FULL (ISmdGstVidrendSink, ismd_gst_vidrend_sink, ISmdGstElement,
+     ISMD_GST_TYPE_ELEMENT, _do_init);
+ 
++
++static void 
++ismd_gst_vidrend_sink_navigation_send_event (GstNavigation * navigation,
++                                             GstStructure * structure)
++{
++    ISmdGstElement *smd_element = ISMD_GST_ELEMENT (navigation);
++
++    GstPad *peer = gst_pad_get_peer (GST_PAD (smd_element->sink_pad));
++    
++    if (peer) {
++      GstEvent *event = gst_event_new_navigation (structure);
++      
++      if (GST_IS_PAD(peer) && GST_IS_EVENT(event))
++        gst_pad_send_event (peer, event);
++      gst_object_unref (peer);
++    }
++}
++
+ static void
++ismd_gst_vidrend_sink_navigation_init (GstNavigationInterface * iface)
++{
++  iface->send_event = ismd_gst_vidrend_sink_navigation_send_event;
++}
++
++static void
+ ismd_gst_vidrend_sink_reset_qos (ISmdGstVidrendSink * sink)
+ {
+   gint i;
+@@ -1481,6 +1512,23 @@
+ }
+ 
+ static void
++ismd_gst_vidrend_sink_init_interfaces (GType type)
++{
++  static const GInterfaceInfo navigation_info = {
++    (GInterfaceInitFunc) ismd_gst_vidrend_sink_navigation_init,
++    NULL,
++    NULL,
++  };
++  g_type_add_interface_static (type, GST_TYPE_NAVIGATION, &navigation_info);
++
++  /* register type and create class in a more safe place instead of at
++   * runtime since the type registration and class creation is not
++   * threadsafe. */
++  g_type_class_ref (ISMD_GST_TYPE_ELEMENT);
++}
++
++
++static void
+ ismd_gst_vidrend_sink_base_init (gpointer g_class)
+ {
+   static const GstElementDetails ismd_gst_vidrend_sink_details =
+Index: ismd_gst_vidsink.c
+===================================================================
+--- ismd_gst_vidsink.c	(Revision 18951)
++++ ismd_gst_vidsink.c	(Arbeitskopie)
+@@ -122,7 +122,7 @@
+ #define ISMD_GST_VIDSINK_CAPS \
+            "video/x-decoded-ismd; " \
+            "video/x-raw-yuv, " \
+-           "  format = (fourcc) {NV12}, "\
++           "  format = (fourcc) {NV12, YV12, I420}, "\
+            "  width = (int) [16,1920], " \
+            "  height = (int) [16,1088]; " \
+            "video/x-raw-yuv, " \

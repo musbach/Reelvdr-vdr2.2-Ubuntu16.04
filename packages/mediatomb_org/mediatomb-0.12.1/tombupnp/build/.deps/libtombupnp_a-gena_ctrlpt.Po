@@ -1,0 +1,9 @@
+libtombupnp_a-gena_ctrlpt.o: ../upnp/src/gena/gena_ctrlpt.c \
+ /usr/include/stdc-predef.h ../../autoconfig.h \
+ ../../tombupnp/upnp/src/inc/config.h
+
+/usr/include/stdc-predef.h:
+
+../../autoconfig.h:
+
+../../tombupnp/upnp/src/inc/config.h:

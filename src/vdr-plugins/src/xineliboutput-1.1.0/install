@@ -1,0 +1,129 @@
+xine=/usr/lib/libxine.so.2
+PLUGIN = xineliboutput
+
+VDRDIR  ?= ../../../vdr
+LIBDIR  ?= ../../lib
+TMPDIR  ?= /tmp
+BINDIR  ?= /usr/bin
+#DESTDIR ?= /
+
+INSTALL ?= install
+
+VDRINCDIR ?= $(VDRDIR)/include
+
+ARCHIVE = xineliboutput-$(VERSION)
+PACKAGE = vdr-$(ARCHIVE)
+
+VDRPLUGIN            = libvdr-xineliboutput.so.2.1.6
+VDRPLUGIN_SXFE       = libxineliboutput-sxfe.so.$(VERSION)
+VDRPLUGIN_FBFE       = libxineliboutput-fbfe.so.$(VERSION)
+VDRSXFE              = vdr-sxfe
+VDRFBFE              = vdr-fbfe
+XINEINPUTVDR         = xineplug_inp_vdr.so
+XINEPOSTAUTOCROP     = xineplug_post_autocrop.so
+XINEPOSTSWSCALE      = xineplug_post_swscale.so
+XINEPOSTAUDIOCHANNEL = xineplug_post_audiochannel.so
+
+TARGETS_VDR  =
+TARGETS_FE   =
+TARGETS_XINE =
+ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+    TARGETS_VDR += $(VDRPLUGIN)
+endif
+ifeq ($(XINELIBOUTPUT_XINEPLUGIN), yes)
+    TARGETS_XINE += xineplug_inp_vdr.so xineplug_post_autocrop.so xineplug_post_swscale.so xineplug_post_audiochannel.so
+endif
+ifeq ($(XINELIBOUTPUT_X11), yes)
+    TARGETS_FE += $(VDRSXFE)
+    ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+        TARGETS_VDR += $(VDRPLUGIN_SXFE)
+    endif
+endif
+ifeq ($(XINELIBOUTPUT_FB), yes)
+    TARGETS_FE += $(VDRFBFE)
+    ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+        TARGETS_VDR += $(VDRPLUGIN_FBFE)
+    endif
+endif
+
+PODIR     = po
+LOCALEDIR ?= $(VDRDIR)/locale
+I18Npo    = $(wildcard $(PODIR)/*.po)
+I18Nmsgs  = $(addprefix $(LOCALEDIR)/, $(addsuffix /LC_MESSAGES/vdr-xineliboutput.mo, $(notdir $(foreach file, $(I18Npo), $(basename $(file))))))
+I18Npot   = $(PODIR)/xineliboutput.pot
+
+#
+# install
+#
+
+install: all
+ifeq ($(XINELIBOUTPUT_XINEPLUGIN), yes)
+	@mkdir -p /usr/lib/xine/plugins/2.3/post
+	@echo Installing /usr/lib/xine/plugins/2.3/xineplug_inp_vdr.so
+	@-rm -rf /usr/lib/xine/plugins/2.3/xineplug_inp_vdr.so
+	@$(INSTALL) -m 0644 xineplug_inp_vdr.so /usr/lib/xine/plugins/2.3/xineplug_inp_vdr.so
+	@echo Installing /usr/lib/xine/plugins/2.3/post/xineplug_post_autocrop.so
+	@-rm -rf /usr/lib/xine/plugins/2.3/post/xineplug_post_autocrop.so
+	@$(INSTALL) -m 0644 xineplug_post_autocrop.so /usr/lib/xine/plugins/2.3/post/xineplug_post_autocrop.so
+	@echo Installing /usr/lib/xine/plugins/2.3/post/xineplug_post_swscale.so
+	@-rm -rf /usr/lib/xine/plugins/2.3/post/xineplug_post_swscale.so
+	@$(INSTALL) -m 0644 xineplug_post_swscale.so /usr/lib/xine/plugins/2.3/post/xineplug_post_swscale.so
+	@echo Installing /usr/lib/xine/plugins/2.3/post/xineplug_post_audiochannel.so
+	@-rm -rf /usr/lib/xine/plugins/2.3/post/xineplug_post_audiochannel.so
+	@$(INSTALL) -m 0644 xineplug_post_audiochannel.so /usr/lib/xine/plugins/2.3/post/xineplug_post_audiochannel.so
+endif
+ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+  ifeq ($(VDR_TREE), no)
+	@echo Installing $(LIBDIR)/$(VDRPLUGIN)
+	@mkdir -p $(LIBDIR)
+	@-rm -rf $(LIBDIR)/$(VDRPLUGIN)
+	@$(INSTALL) -D -m 0755 $(VDRPLUGIN) $(LIBDIR)/$(VDRPLUGIN)
+  endif
+endif
+ifeq ($(XINELIBOUTPUT_FB), yes)
+	@echo Installing /$(BINDIR)/vdr-fbfe
+	@mkdir -p /$(BINDIR)
+	@-rm -rf /$(BINDIR)/vdr-fbfe
+	@$(INSTALL) -m 0755 vdr-fbfe /$(BINDIR)/vdr-fbfe
+  ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+    ifeq ($(VDR_TREE), no)
+	@echo Installing $(LIBDIR)/$(VDRPLUGIN_FBFE)
+	@mkdir -p $(LIBDIR)
+	@-rm -rf $(LIBDIR)/$(VDRPLUGIN_FBFE)
+	@$(INSTALL) -m 0755 $(VDRPLUGIN_FBFE) $(LIBDIR)/$(VDRPLUGIN_FBFE)
+    endif
+  endif
+endif
+ifeq ($(XINELIBOUTPUT_X11), yes)
+	@echo Installing /$(BINDIR)/vdr-sxfe
+	@mkdir -p /$(BINDIR)
+	@-rm -rf /$(BINDIR)/vdr-sxfe
+	@$(INSTALL) -m 0755 vdr-sxfe /$(BINDIR)/vdr-sxfe
+  ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+    ifeq ($(VDR_TREE), no)
+	@echo Installing $(LIBDIR)/$(VDRPLUGIN_SXFE)
+	@mkdir -p $(LIBDIR)
+	@-rm -rf $(LIBDIR)/$(VDRPLUGIN_SXFE)
+	@$(INSTALL) -m 0755 $(VDRPLUGIN_SXFE) $(LIBDIR)/$(VDRPLUGIN_SXFE)
+    endif
+  endif
+endif
+
+dist: clean
+	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+	@mkdir $(TMPDIR)/$(ARCHIVE)
+	@cp -a * $(TMPDIR)/$(ARCHIVE)
+	@tar czf $(PACKAGE).tgz --exclude=CVS -C $(TMPDIR) $(ARCHIVE)
+	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+	@echo Distribution package created as $(PACKAGE).tgz
+
+
+clean:
+	@-rm -f $(DEPFILE) *.so* *.o *.tgz core* *~ *.flc *.bak \
+		tools/*.o tools/*~ tools/*.flc xine/*.o xine/*~ \
+		xine/*.flc $(VDR_FBFE) $(VDR_SXFE) mpg2c black_720x576.c \
+		nosignal_720x576.c vdrlogo_720x576.c vdr-sxfe vdr-fbfe \
+		features.h config.mak configure.log
+ifeq ($(HAVE_I18N), yes)
+	@-rm -f $(PODIR)/*.mo $(PODIR)/*.pot
+endif

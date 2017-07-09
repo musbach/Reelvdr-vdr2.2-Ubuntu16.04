@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/isdn
+END
+capiutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/isdn/capiutil.h
+END
+capilli.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/isdn/capilli.h
+END
+capicmd.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/isdn/capicmd.h
+END
+Kbuild
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/isdn/Kbuild
+END

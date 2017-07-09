@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src
+END
+ihw_usb.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/ihw_usb.c
+END
+acx100_conv.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/acx100_conv.c
+END
+Makefile2.6
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/Makefile2.6
+END
+acx100_usb.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/acx100_usb.c
+END
+acx100_ioctl.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/acx100_ioctl.c
+END
+ihw.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/ihw.c
+END
+setrate.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/setrate.c
+END
+idma.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/idma.c
+END
+acx100_helper.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/acx100_helper.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/Makefile
+END
+acx100.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/acx100.c
+END
+acx80211frm.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/acx80211frm.c
+END
+ioregister.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/ioregister.c
+END
+acx100_helper2.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/src/acx100_helper2.c
+END

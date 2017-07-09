@@ -1,0 +1,82 @@
+<?%
+    USE date;
+    statusfiles = {};
+
+    FILTER null;
+        name = 'vitals';
+        loaddata = [];
+        utildata = [];
+        userdata = [];
+        timestamps = [];
+        FOREACH item IN param.stack;
+            t = date.format(item.timestamp, '%H:%M:%S');
+            timestamps.push(t);
+            l = item.load.first * 10;
+            loaddata.push(l);
+            utildata.push(item.util);
+            userdata.push(item.users);
+        END;
+
+        # Maximum wert
+        max = loaddata.nsort.last;
+        IF utildata.nsort.last > max;
+            max = utildata.nsort.last;
+        END;
+        IF userdata.nsort.last > max;
+            max = userdata.nsort.last;
+        END;
+        max = max + (max div 10) + 0.9 | format('%d');
+
+        # Data ...
+        d = [
+             timestamps ,
+             loaddata ,
+             userdata ,
+             utildata ,
+        ];
+
+        USE my_graph = GD.Graph.lines(500,300);
+
+        # Xsteps
+        steps = param.stack.size / 5 | format('%d');
+        my_graph.set(
+                x_label_skip => steps,
+                x_long_ticks => 1,
+
+                y_label => gettext('Average load'),
+                y_long_ticks => 1,
+                y_max_value => max,
+
+                line_width   => 2,
+                box_axis     => 1,
+                boxclr       => '#FFFFCC',
+                fgclr        => '#BBBBBB'
+                legend_placement => 'RD',
+                legend_spacing => 5,
+        );
+        my_graph.set_title_font(param.font,10);
+        my_graph.set_y_label_font(param.font,10);
+        my_graph.set_x_label_font(param.font,10);
+        my_graph.set_x_axis_font(param.font,6);
+        my_graph.set_y_axis_font(param.font,6);
+        my_graph.set_legend( 'Load (x10)', 'User', 'Util');
+        statusfiles.load = writefile("status_${name}.png", my_graph.plot(d).gif );
+        END;
+ %?>
+<!-- Vitals Template -->
+<?% IF param.headingText %?>
+<h3><?% param.headingText %?></h3>
+<?% END %?>
+<table border="0" width="95%">
+<?% FOREACH name IN data.keys.sort %?>
+<tr>
+    <td><?% name %?></td>
+    <td><?% data.$name %?></td>
+</tr>
+<?% END %?>
+<tr>
+    <td colspan=2 align=center>
+        <img src="<?% statusfiles.load %?>">
+    </td>
+</tr>
+</table>

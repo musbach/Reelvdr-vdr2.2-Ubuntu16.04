@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: <http://www.vdr-developer.org/mantisbt/>\n"
+"POT-Creation-Date: 2015-12-30 23:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "VDR Streaming Server"
+msgstr ""
+
+msgid "Streaming active"
+msgstr ""
+
+msgid "Streamdev Connections"
+msgstr ""
+
+msgid "Disconnect"
+msgstr ""
+
+msgid "Suspend"
+msgstr ""
+
+msgid "Common Settings"
+msgstr ""
+
+msgid "Hide Mainmenu Entry"
+msgstr ""
+
+msgid "Maximum Number of Clients"
+msgstr ""
+
+msgid "VDR-to-VDR Server"
+msgstr ""
+
+msgid "Start VDR-to-VDR Server"
+msgstr ""
+
+msgid "VDR-to-VDR Server Port"
+msgstr ""
+
+msgid "Bind to IP"
+msgstr ""
+
+msgid "Legacy Client Priority"
+msgstr ""
+
+msgid "Client may suspend"
+msgstr ""
+
+msgid "Loop Prevention"
+msgstr ""
+
+msgid "HTTP Server"
+msgstr ""
+
+msgid "Start HTTP Server"
+msgstr ""
+
+msgid "HTTP Server Port"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "HTTP Streamtype"
+msgstr ""
+
+msgid "Multicast Streaming Server"
+msgstr ""
+
+msgid "Start IGMP Server"
+msgstr ""
+
+msgid "Multicast Client Port"
+msgstr ""
+
+msgid "Multicast Streamtype"
+msgstr ""

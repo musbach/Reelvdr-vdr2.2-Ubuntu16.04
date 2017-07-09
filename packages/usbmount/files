@@ -1,0 +1,7 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)	dest				type	owner.group
+etc/init.d/remove-symlinks	etc/init.d/remove-symlinks	script
+etc/usbmount/usbmount.conf
+sbin/PTPCameraMount.sh	/usr/sbin/PTPCameraMount.sh	script
+sbin/usbmount		/usr/share/usbmount/usbmount 	script

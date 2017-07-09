@@ -1,0 +1,6 @@
+tmp/etc/reel/p.remote.conf: /usr/src/reelbox/testing/src/etc/reel/p.remote.conf
+tmp/etc/vdr/remote.conf: /usr/src/reelbox/testing/src/etc/vdr/remote.conf
+tmp/etc/vdr/remote.conf.org: /usr/src/reelbox/testing/src/etc/vdr/remote.conf.org
+tmp/etc/vdr/remote.conf.hauppauge: /usr/src/reelbox/testing/src/etc/vdr/remote.conf.hauppauge
+tmp/etc/vdr/plugins/remote/hauppauge-novat.rc5: /usr/src/reelbox/testing/src/etc/vdr/plugins/remote/hauppauge-novat.rc5
+tmp/usr/lib/vdr/libvdr-remote.so.2.2.0: /usr/src/reelbox/testing/src/vdr-plugins/lib/libvdr-remote.so.2.2.0

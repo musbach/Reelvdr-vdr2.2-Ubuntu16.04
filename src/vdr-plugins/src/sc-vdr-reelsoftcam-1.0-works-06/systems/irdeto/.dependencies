@@ -1,0 +1,13 @@
+irdeto.o: irdeto.c ../../system-common.h ../../data.h \
+ ../../../../../vdr/../vdr/thread.h ../../../../../vdr/../vdr/tools.h \
+ ../../misc.h ../../system.h irdeto.h log-irdeto.h ../../log-sys.h \
+ ../../log.h ../../version.h
+irdeto1.o: irdeto1.c ../../system-common.h ../../data.h \
+ ../../../../../vdr/../vdr/thread.h ../../../../../vdr/../vdr/tools.h \
+ ../../misc.h ../../system.h ../../data.h ../../parse.h ../../misc.h \
+ irdeto.h log-irdeto.h ../../log-sys.h ../../log.h
+irdeto2.o: irdeto2.c ../../system-common.h ../../data.h \
+ ../../../../../vdr/../vdr/thread.h ../../../../../vdr/../vdr/tools.h \
+ ../../misc.h ../../system.h ../../data.h ../../parse.h ../../helper.h \
+ ../../misc.h ../../openssl-compat.h irdeto.h log-irdeto.h \
+ ../../log-sys.h ../../log.h

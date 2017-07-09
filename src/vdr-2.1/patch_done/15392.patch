@@ -1,0 +1,82 @@
+Index: osdbase.c
+===================================================================
+--- osdbase.c	(revision 15391)
++++ osdbase.c	(revision 15392)
+@@ -13,6 +13,9 @@
+ #include "i18n.h"
+ #include "remote.h"
+ #include "status.h"
++#ifdef REELVDR
++#include "help.h"
++#endif /*REELVDR*/
+ 
+ // --- cOsdItem --------------------------------------------------------------
+ 
+@@ -582,6 +585,43 @@
+   return osContinue; // convenience return value
+ }
+ 
++#ifdef REELVDR
++//#define SEPARATORS ":-\0"
++#define SEPARATORS ":-"
++///< take menu-title substrings befor one of this chars
++
++eOSState cOsdMenu::DisplayHelpMenu(const char *Title)
++{
++  char title[128];
++  // if we get Menu at first we assume Main Menu
++  if (strstr(Title,tr("Main Menu")) == Title)
++  {
++     strncpy(title,tr("Main Menu"),128);
++  }
++  else
++  {
++     const char *sep =  SEPARATORS;
++     while (*sep != '\0')
++     {
++        //printf (" \t\t --- sep %c   \n", *sep);
++        char *s = NULL;
++        strncpy(title,Title,128);
++        title[127] = '\0';
++
++        s = strchr(title,*sep);
++        if (s)
++        {
++           *s = '\0';
++           //break;
++        }
++     sep++;
++     }
++  }
++  cHelpSection *hs = HelpMenus.GetSectionByTitle(title);
++  return AddSubMenu(new cMenuHelp(hs, title));
++}
++#endif /* REELVDR */
++
+ eOSState cOsdMenu::ProcessKey(eKeys Key)
+ {
+   if (subMenu) {
+@@ -611,6 +651,9 @@
+     case kRight|k_Repeat:
+     case kRight: PageDown(); break;
+     case kBack: return osBack;
++#ifdef REELVDR
++    case kInfo: return DisplayHelpMenu(title);
++#endif /* REELVDR */
+     case kOk:   if (marked >= 0) {
+                    SetStatus(NULL);
+                    if (marked != current)
+Index: osdbase.h
+===================================================================
+--- osdbase.h	(revision 15391)
++++ osdbase.h	(revision 15392)
+@@ -115,6 +115,9 @@
+   void Mark(void);
+   eOSState HotKey(eKeys Key);
+   eOSState AddSubMenu(cOsdMenu *SubMenu);
++#ifdef REELVDR
++  eOSState DisplayHelpMenu(const char *Title);
++#endif /* REELVDR */
+   eOSState CloseSubMenu();
+   bool HasSubMenu(void) { return subMenu; }
+   cOsdMenu *SubMenu(void) { return subMenu; }

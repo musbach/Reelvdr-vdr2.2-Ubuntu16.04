@@ -1,0 +1,10 @@
+Package: reel-wlan
+Version: 0.0.3-20
+Section: reel
+Priority: optional
+Architecture: i386
+Installed-Size: 17K
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reel-wlan
+Description: start setup-net wlan
+

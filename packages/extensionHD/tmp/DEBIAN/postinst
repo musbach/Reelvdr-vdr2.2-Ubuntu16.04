@@ -1,0 +1,27 @@
+#!/bin/sh
+
+#only for distributions < Ubuntu 10.04
+if [ ! -x /usr/bin/lsb_release ] || [ $(lsb_release -rs | cut -f1 -d.) -lt 10 ]; then
+
+echo "creating init levels for HDTV extension modules"
+update-rc.d decypher start 18 S .
+
+else # Ubuntu 10.04 or greater
+	sed -i s/^TFTP_DIRECTORY.*/"TFTP_DIRECTORY=\"\/usr\/share\/reel\""/ /etc/default/tftpd-hpa
+fi
+
+#create /etc/modules entry
+if ! grep -q hdshm /etc/modules ; then
+	echo hdshm >> /etc/modules
+fi
+
+#install hdshm modules for dkms
+
+sudo dkms remove -m extensionhd -v 3.0 --all
+if ! dkms status -m extensionhd | grep -q installed ; then
+	sudo dkms add -m extensionhd -v 3.0
+	sudo dkms build -m extensionhd -v 3.0
+	sudo dkms install -m extensionhd -v 3.0
+fi
+
+exit 0

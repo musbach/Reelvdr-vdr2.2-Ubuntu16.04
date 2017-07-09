@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "trying to repair broken netceiver"
+/root/bin/netcvfix.sh
+
+exit

@@ -1,0 +1,282 @@
+Release 1.6
+* add formbased login
+* redesign teletext widget (show any subpages as same time)
+  Remove embedded image, use css sprite for faster pages rendering
+  use css class to highlight search text
+* adapt command rconvert to common method
+* MEDIALIB: hide usable media search button
+
+Release 1.4
+
+* widget/time.tmpl : Add widget for input time based values
+* rdisplay: transmit keywords as data
+
+Release 1.2
+
+* In Datei "skin.cfg" entfällt der Parameter "global.playbackmode", 
+  Neu "global.preferedlocal" um als "Default" eher lokal oder Web angezeigt wird
+    now   - switch/livestream - Umschalten im VDR / Live TV Stream
+    rlist - rplay/playrecord  - Zeigen der Aufnahme im VDR / Aufnahme als Stream
+  (in display / rdisplay sind beide Optionen verfügbar)
+
+Release 1.0
+
+Neue Feature :
+
+* In Datei "skin.cfg" entfällt der Parameter "global.cfgTableColumn", 
+   + Im Modus Area passt sich die Darstellung automatisch der Fensterbreite an 
+   + Modus Flat in separate Skins (stone_flat, snow_flat, ... ) verlagert.
+
+* RECORDS:      REQUEST[182] Aufnahmen können jetzt auch rekursiv gelöscht werden.
+* REMOTE:       Monitor ausblendbar
+* TIMER:        Anzeige eine Warnung, wenn die verfügbare Aufnahmekapazität überschritten wird
+* display/rdisplay: REQUEST[229] Link zu Titelsuche mit imdb/ofdb.
+* EPG:          erestart hinzugefügt
+* WAIT:         Anzeige der Restzeit
+* EPG:          schema mit Direktanwahl mit Uhrzeit im HH:MM Format aufrufbar
+* TIMER/RECORDS: Anzeige einer Kurzfassung der EPG-Beschreibung
+* EPG/TIMER/RECORDS: Anzeige der EPG-Beschreibung als Tooltip (i)
+* RECORDS:      Request[196] Anzeige der Startzeit der Aufnahmen
+* Status:       Ansicht überarbeitet
+* clist:        Auswahl von Kanalgruppen, zum Löschen, ermöglicht
+* mllist:       Template um Anzeige der Medienbibliothek erweitert.
+* a-/ttoggle:   Umschalten und Aktualisierung der Anzeige erfolgt per AJAX.
+* vtx:          Suche zeigt mehrere Seiten nebeneinander an.
+* widgets/Forms per in anders farbigen Hintergrund in jeder zweiten Zeile besser lesbar gemacht.
+* Skin blue     Gestaltung überarbeitet
+* Suchfunktion  Suggest - Vorschläge während der Eingabe via AJAX
+* rdisplay      Anzeige der Vorschaubilder als Bildliste
+* alist         Verlinkung der durch den Autotimer hinzufügten Timer
+* delete        Sicherheitsabfrage im per DHTML - Design in Skinstil
+* Navigationselemente : an fixierte Position (weniger Scrollen, erfolgt CSS Compl. Browser)
+
+Fixes :
+
+* css:          Typo/Syntaxfehler beseitigt
+* global.js:    Beim Schliessen des IFrame, wurde bei Mozilla(Gecko1.8) 
+                der letzte Request nochmals ausgeführt
+* rlist/mlist:  Anpassung an neue Kodierung in XXV von Sonderzeichen mit Entries.
+* alist/topten: BUG[210] Kanäle wurden nicht angezeigt.
+* tlist:        Start/Stopzeiten zur Mitternacht wurden nicht angezeigt
+* rlist:        Sortierung in Unterverzeichnissen nicht möglich
+* now:          Fortschrittsbalken wurde unter Umständen zu früh ausgeblendet 
+* Status:       Dateisysteme mit "/" im Name des Device wurden graphisch nicht angezeigt 
+* Warnmeldungen behoben "Argument "" isn't numeric in ..."
+* tupdate:      Aktualisierung der Timer, zieht keinen kompletten Reload der Grafikelemente mehr nach sich.
+* popup:        Schliessen mit ESC-Taste
+
+Release 0.80
+
+Neue Feature :
+
+* rlist/rsearch: Anzeige der freien Kapazität
+
+Fixes :
+
+* MUSIC: Javascript MUSIC::PROXY fehlt beim abspielen mehrerer Titel
+* music: Wiedergabe ohne Proxy per Javascript unter IE schlägt fehlt 
+         "Fehlermeldung: 'length' ist NULL oder kein Objekt" (berichtet von Andreas Wellmann)
+
+
+Release 0.71
+
+Neue Feature :
+
+* topten: angelegt
+* search: Advanced Search mode
+* CSS für Ausdruck ohne Navigationselememte hinzugefügt
+* rlist: Kennzeichung von Audioaufnahmen
+* rsearch: Kennzeichung von Audioaufnahmen
+* now/next/program/search/display: Ausgabe der VPS Startzeit, wenn verfügbar bzw. von der normalen Zeit abweicht.
+* asearch hinzugefügt
+* rdisplay : Anzeige des Kanal auf dem die Aufnahme getätigt wurde.
+
+Fixes :
+
+* vitals/network/memory/filesys: Ausgabe der Charts als GIF - Siehe Bugreport[154]
+* mlist: Genreauswahl aktualisiert
+* rlist: Nicht mehr Anzeige des letzten Previewbilder, sondern eines Bild aus der Mitte bei verfügbaren mehreren Bildern
+* mlist Ersten Jahreszahl nicht mehr hardcodiert
+* schema Tooltips mit Zeilenumbrüchen
+* global.js ungenutzte Variablen entfernt
+* widget url.tmpl von xstyle übernommen
+* widget/wait.tmpl: Titelzeile auf 80 Zeichen begrenzt.
+* alist/clist/rlist: Startsortierung asc/desc anpasst 
+* widget date.tmpl von xstyle übernommen
+* MUSIC: im Javascript MUSIC::PROXY in URL eingefügt siehe cmd=mplaylist ... &binary=1
+* now/next Ausgabe mit CHANNELSGROUPS - FEATUREREQUSEST[145]
+
+
+Release 0.60 Fixes:
+
+* widget - Feldbeschreibungen werden abgekürzt, und optional als Tooltip angezeigt
+* all - validierung
+* blue(remote) - Pixmap für Cursor aktualisiert
+
+Release 0.52 Fixes:
+
+* now - Auswahlfeld für Zeitpunkte optimiert
+* display - seperate CSS Style für epgimages
+* Alternative Implentierung des "Schließen Symbol" von Inlinefenstern
+* filesys - Bug(113) Tortendiagramme in Status::Filesystem sind teilweise falsch
+* alist - Export/Import autotimer
+* AUTOTIMER : Bugfix(117) Erstellen von Autotimern für Kanäle möglich, die von Autotimersuche ausgeschlossen wurden
+* MUSIC : Falsche Anzeige der Abspielzeit von Titeln >= 1 Std
+* schema : Spezielle Anpassungen für IE
+* rdisplay : reccmds Auswahl nur anzeigen, wenn auch Kommandos vorhanden sind.
+* Nutzung der von HTTPD::debug statt der Option global.debug in skin.cfg
+* skin.cfg/global.inline_css_and_js_files entfernt da HTTPD jetzt EXPIRES-Header sendet, und damit den Browsercache bedient
+
+Release 0.50
+
+* Neues Skinthema: "LCARS" und zwar in Anlehnung an TNG, (siehe README)
+
+Neues Feature : 
+
+* Umstellung des System nach dem Elemente nach Userlevel ein- und ausgeblendet werden.
+  (IF userlevel > xx => IF allow('cmd')) damit werden jetzt inaktive Elemente auch ausgeblendet.
+* Stylesheet & Javascript werden als Serverside-include direkt gesendet, um den Rendervorgang zu beschleunigen
+* RECORDS: Löschen von mehreren Aufnahmen in einem Durchgang
+* RECORDS: Anzeige der Festplattenkapazität
+* RECORDS/AUTOTIMER : Listen sortierbar
+  rlist/alist Sortierung wird durch Hervorhebung des Suchbegriffes markiert.
+  rlist Sortierung bleibt bei Navigation durch die Ebenen erhalten.
+* Icons für rlist/tlist/mlist unter "Select" hinzugefügt
+* HOTKEY/accesskey für die wichtigsten Funktionen (siehe README)
+* rlist: Markierung von neuen Aufnahmen
+* mlist: Anzeige der Gesamtzeit der Alben, einer Suchabfrage.
+* mlist: Auswahl über die Jahrszahl des Album
+* clist: neues Wigdet zum Editeren von Kanälen
+* display: Anzeige von EPG-Bildern
+* rlist/rdisplay: Wiedergabe von Aufnahmen via SVDRP ( ab VDR 1.3.31 )
+    dafür wurde in skin.cfg Option "global.streamwithffmpeg" in "global.playbackmode" umgenannt
+* rdisplay: Starten des Schnittvorganges ( ab VDR 1.3.31 )
+* tlist/search: Link des Programmes eines Timer mit EventID gekoppelt
+* schema: Linie zum Erfassen der aktuelle Zeitposition
+* schema/now/next : wird jetzt nach den ChannelGroups angezeigt
+* Anwenderverwaltung und Kanaleditor nach Einstellungen verschoben
+* Report/Logread
+
+Fixes:
+
+* tlist Titel und Subtitel wurden falsch umgebrochen wenn Titel aus mehreren Ebene bestand.
+* tlist Toggle als Mehrfachauswahl
+* string Textarea produzierte zusätzliche Zeilenumbruch und Leerzeichen.
+* Layout von stone/blue korrigiert, Texte waren teilweise größer als die Zellen
+* Schreibweise von Singlequote (') bei Löschen von AT/T/R vereinheitlicht
+* help: Zeigte inaktive Module an
+* mlist: Formatierungsfehler Combobox + IE
+* tlist: Anzeige bei Konflikten nicht vollständig
+* link: Links innerhalb iframe führten zur "Fraktal-Effekt" der Fenster (hannsens)
+* remote: kleines Speedup, nicht mehr automatisch nach jedem Tastendruck, eine Screenshot holen
+* mlist: Anzeige von Covern mit "Sonderzeichen" im Titel
+* message: Anzeige von vorformatieren Text(Dokumentation) funktionierte nicht wie gewünscht
+* display: Das Programmieren von Timer aus dem EPG-Schema heraus, war bisher nicht möglich
+* rdisplay: Darstellung der Schnittmarken korrigiert
+* wait: style an Skins angepasst
+
+Release 0.42
+
+Fixes:
+
+* Layout zwischen den einzelen Seiten angeglichen (Doppelte Überschriften entfernt)
+* CSS und Layout Korrekturen für Opera/IE
+* widget/string.tmpl Anzeige als mehrzeiliges Feld durch xxv ermöglicht
+* widget/password.tmpl : Unveränderte Übernahme des alten Passwort bei leerem Feld durch falsche Anzeige vereitelt
+
+Release 0.40
+
+Fixes:
+
+* Bug 25: Gruppieren in rlist präziser gemacht
+
+Release 0.35
+
+Neues Feature : 
+
+* schema.tmpl anzeige der Programmübersicht (basierend auf xpix Standardskin html)
+  (Skin deltab css funktioniert nicht 100%)
+* Streammodus der Aufnahmewiedergabe Samba/ffmpeg umschaltbar skin.cfg => global.streamwithffmpeg
+* Livestream in Programmübersicht
+* Vereinfachte Suche innerhalb der Musiklisten (über Künstlernamen bzw. Titel)
+
+Fixes:
+
+* tlist: Konflikte auch bei laufenden Timern anzeigen
+* Bug8: Mehrere DVB Karten und deren Kollisionserkennung verbessert.
+* Bug22: Zeitintervall Änderung mit der Enter-Taste funktioniert nicht.
+* templates w3c konformer gemacht
+* list.tmpl select funktionierte in vollständig
+* rlist.tmpl erhalten des Bildformates bei 16:9 Aufnahmen 
+* now.tmpl erzeugen von leeren <font>-tags unterdrückt, wenn keine Beschreibung vorliegt
+* rlist.tmpl zeigte fallback Bild nicht an
+* rdisplay.tmpl Zusammenfassung aller Bearbeitungsschritte zu einem Kommando
+* string.tmpl berücksichtigt jetzt vorhanden Zeilenumbrüche
+* remote.tmpl neue Bilder für record/play/pause/stop
+* err.tmpl wurde ohne Rahmen dargestellt
+* remote.tmpl Intervall einstellbar (basierend auf xpix Standardskin html)
+* Button für Streaming hinzugefügt
+* Identische Bilddateien gelöscht und nach stone/images verlinkt
+* Unlesbare Schriftgröße der Kopfzeile im IE
+* Aktualisierung für Running Next
+* Kollisionsanzeige der Timer aktualisiert
+* Fehlende Übersetzungen in Widget 
+* Doppeltes Include des Menu bei 'cmd=sa -> Status' ausgeschlossen
+* Schliessen den Hilfsframe liefert jetzt statt blank.gif einfach 'about:blank'
+* STATUS auf Stand wie im Skin-HTML gebracht
+* wait.tmpl Reimplement für Server-Push
+* now.tmpl Parameter für Laufzeiten nach "periods" umbenannt, um Verwechslungen mit timers zu vermeiden
+
+Release 0.31
+
+Neues Feature : 
+* Flacher Modus der Skins wenn skin.cfg => global.cfgTableColumn = 0
+* Browserabhängige Auslieferung der Icons (MSIE=>gif, der Rest=>png, da MSIE kein png-Alphablending kann)
+* Zur Lokalisierung wird auf die XXV-gettext Datenbank zugegriffen
+
+Fixes: 
+* mlist Update
+* URL ins Skins => Nutzung im Skins der Funktion url(xxx)
+* Layout widget checkbox von untereinander in nebeneinander geändert
+* Lokaliserung begonnen
+* program,now,search Anzeige des Descriptiontext (konfigurierbar)
+* mlist: Update
+* rdisplay: Button für reditdesc, reditmarks
+* rdisplay: Anzeige von Marks.vdr von xpix übernommen und angepasst
+* tlist: Datumsformat angepasst
+* aedit/tedit: update für Autotimer/Timer -> Channel wählt nur anhand des Name die Selection aus, nicht anhand der POS
+* EPG:now/program/search -> timer werden angzeigt und können direkt editiert werden
+
+Release 0.20
+
+* tlist -> "VPS"-Anzeige, On/Off-Anzeige von inaktiven Timer mit VPS/Instant korrigiert
+
+0.17k
+
+* Umstellung auf XHTML
+* Vollständiges Update/Rewrite des Skin deltab
+
+0.17g
+
+* ulist -> udelete Fehler im Javascript verhindert löschen von User
+* ulist -> widget uedit hatte falsche Größe
+
+0.17d
+
+* Anzeige der Aufnahmedauer im Format HH:MM:SS
+* Remotetaste '0' sendet jetzt 'Null'
+
+0.17
+
+* Darstellungsfehler im IE bei remote.tmpl in Kopfzeile korrigiert
+
+0.16f
+
+* Ein paar Fehler im Zusammenhang mit den internen Frames ausgemerzt. 
+* Bei größeren Feldern tauchten unnötiger Weise Scrollbalken auf.
+* IFrames werden jetzt transparent dargestellt und tauchen nicht mehr als leere Backgroundfläche auf.
+* Die Widget "message/table/player" werden jetzt ebenfalls im jeweiligen "Common-Style" dargestellt.
+* Jetzt ist ein funktionsfähiges favicon.ico im Paket enthalten, und 
+  dieses wird nun auch als shortcut-Icon im template verwendet.
+  Das bisherige favicon.png wurde vom IE nicht dargestellt.
+* Der Unicode der Remote-Buttons wurde durch Images ersetzt.

@@ -1,0 +1,1838 @@
+Facet: accessibility
+Description: Accessibility support provided
+Nature: energy
+Status: needing-review
+
+Tag: accessibility::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: accessibility::input
+Description: Alternative input systems
+ Applies to input methods for non-latin languages as well as special input
+ systems.
+
+Tag: accessibility::ocr
+Description: Optical Character Recognition (OCR)
+
+Tag: accessibility::screen-magnify
+Description: Screen Magnifiers
+
+Tag: accessibility::screen-reader
+Description: Screen Readers
+
+Tag: accessibility::speech
+Description: Speech synthesizers
+
+Tag: accessibility::speech-recognition
+Description: Speech Recognition
+
+Facet: admin
+Description: Administration and System Maintenance
+Nature: energy
+Status: needing-review
+
+Tag: admin::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: admin::accounting
+Description: Accounting
+
+Tag: admin::backup
+Description: Backup and restoration of data
+
+Tag: admin::benchmarking
+Description: Assessment of system performances
+
+Tag: admin::boot
+Description: Boot process related
+
+Tag: admin::cluster
+Description: Clustering software
+
+Tag: admin::configuring
+Description: System configuration tools
+
+Tag: admin::file-distribution
+Description: File distribution and copying
+
+Tag: admin::filesystem
+Description: Creation, maintenance, and use of filesystems
+
+Tag: admin::forensics
+Description: Recovering lost or damaged data
+
+Tag: admin::hardware
+Description: Hardware support
+
+Tag: admin::kernel
+Description: Kernel and kernel modules
+
+Tag: admin::logging
+Description: Logging
+
+Tag: admin::login
+Description: Logging into the system
+
+Tag: admin::monitoring
+Description: Monitoring
+
+Tag: admin::package-management
+Description: Package management
+
+Tag: admin::power-management
+Description: Power management
+
+Tag: admin::user-management
+Description: User management and privileges
+
+Facet: culture
+Description: Culture for which the package provides special support
+Nature: space
+Status: complete
+
+Tag: culture::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: culture::afrikaans
+Description: Afrikaans localization
+
+Tag: culture::arabic
+Description: Arabic localization
+
+Tag: culture::basque
+Description: Basque localization
+
+Tag: culture::bengali
+Description: Bengali localization
+
+Tag: culture::bokmaal
+Description: Norwegian Bokmaal localization
+
+Tag: culture::bosnian
+Description: Bosnian localization
+
+Tag: culture::brazilian
+Description: Brazilian localization
+Responsible: stratus@acm.org
+
+Tag: culture::bulgarian
+Description: Bulgarian localization
+
+Tag: culture::catalan
+Description: Catalan localization
+
+Tag: culture::chinese
+Description: Chinese localization
+
+Tag: culture::croatian
+Description: Croatian localization
+
+Tag: culture::czech
+Description: Czech localization
+
+Tag: culture::danish
+Description: Danish localization
+
+Tag: culture::dutch
+Description: Dutch localization
+
+Tag: culture::esperanto
+Description: Esperanto localization
+
+Tag: culture::estonian
+Description: Estonian localization
+
+Tag: culture::faroese
+Description: Faroese localization
+
+Tag: culture::farsi
+Description: Farsi localization
+
+Tag: culture::finnish
+Description: Finnish localization
+
+Tag: culture::french
+Description: French localization
+
+Tag: culture::german
+Description: German localization
+
+Tag: culture::greek
+Description: Greek localization
+
+Tag: culture::hebrew
+Description: Hebrew localization
+
+Tag: culture::hindi
+Description: Hindi localization
+
+Tag: culture::hungarian
+Description: Hungarian localization
+
+Tag: culture::icelandic
+Description: Icelandic localization
+
+Tag: culture::irish
+Description: Irish (Gaeilge) localization
+
+Tag: culture::italian
+Description: Italian localization
+
+Tag: culture::japanese
+Description: Japanese localization
+
+Tag: culture::korean
+Description: Korean localization
+
+Tag: culture::mongolian
+Description: Mongolian localization
+
+Tag: culture::norwegian
+Description: Norwegian localization
+
+Tag: culture::nynorsk
+Description: Norwegian Nynorsk localization
+
+Tag: culture::polish
+Description: Polish localization
+
+Tag: culture::portuguese
+Description: Portuguese localization
+
+Tag: culture::punjabi
+Description: Punjabi localization
+
+Tag: culture::romanian
+Description: Romanian localization
+
+Tag: culture::russian
+Description: Russian localization
+
+Tag: culture::serbian
+Description: Serbian localization
+
+Tag: culture::slovak
+Description: Slovak localization
+
+Tag: culture::spanish
+Description: Spanish localization
+
+Tag: culture::swedish
+Description: Swedish localization
+
+Tag: culture::taiwanese
+Description: Taiwanese localization
+
+Tag: culture::tajik
+Description: Tajik localization
+
+Tag: culture::tamil
+Description: Tamil localization
+
+Tag: culture::turkish
+Description: Turkish localization
+
+Tag: culture::ukrainian
+Description: Ukrainian localization
+
+Tag: culture::uzbek
+Description: Uzbek localization
+
+Tag: culture::welsh
+Description: Welsh localization
+
+Facet: devel
+Description: Software development / programming
+Nature: energy
+Status: needing-review
+
+Tag: devel::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: devel::bugtracker
+Description: Bug tracking tools
+Implies: devel
+
+Tag: devel::buildtools
+Description: Build tools
+Implies: devel
+
+Tag: devel::code-generator
+Description: Parser, lexer, and other code-generators
+Implies: devel
+
+Tag: devel::compiler
+Description: Compiler
+Implies: devel
+
+Tag: devel::debian
+Description: Debian specific development
+ Tools, documentation, etc. of use primarily to Debian developers.
+Implies: devel
+
+Tag: devel::debugger
+Description: Debugging
+Implies: devel
+
+Tag: devel::doc
+Description: Developer's documentation
+Implies: devel
+
+Tag: devel::docsystem
+Description: Literate Programming tools and auto-documenters
+Implies: devel
+
+Tag: devel::editor
+Description: Software development editor
+Implies: devel
+
+Tag: devel::examples
+Description: Examples
+Implies: devel
+
+Tag: devel::i18n
+Description: Internationalization
+Implies: devel
+
+Tag: devel::ide
+Description: Integrated development environment
+Implies: devel
+
+Tag: devel::interpreter
+Description: Interpreter
+Implies: devel
+
+Tag: devel::library
+Description: Software Libraries
+Implies: devel
+
+Tag: devel::machinecode
+Description: Assembly and machine code development
+Implies: devel
+
+Tag: devel::packaging
+Description: Software packaging tool
+Implies: devel
+
+Tag: devel::prettyprint
+Description: Pretty-printers and reformatters
+Implies: devel
+
+Tag: devel::profiler
+Description: Application profiling and optimization
+Implies: devel
+
+Tag: devel::rcs
+Description: Source revision control
+Implies: devel
+
+Tag: devel::rpc
+Description: Remote Procedure Call / Network transparent programming
+Implies: devel
+
+Tag: devel::runtime
+Description: Runtime environment
+Implies: devel
+
+Tag: devel::testing-qa
+Description: Testing and Quality Assurance
+Implies: devel
+
+Tag: devel::ui-builder
+Description: User Interface Builder
+Implies: devel
+
+Facet: field
+Comment: how broad is the definition of a "field"?
+Description: Special field that the package belongs to
+Nature: space
+Status: controversial
+
+Tag: field::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: field::arts
+Description: Arts
+
+Tag: field::astronomy
+Description: Astronomy
+
+Tag: field::biology
+Description: Biology
+
+Tag: field::chemistry
+Description: Chemistry
+
+Tag: field::electronics
+Description: Circuit editors and other electronics-related software
+
+Tag: field::finance
+Description: Accounting and financial software
+
+Tag: field::genealogy
+Description: Genealogy
+
+Tag: field::geography
+Description: Geography
+
+Tag: field::geology
+Description: Geology
+
+Tag: field::mathematics
+Description: Mathematics
+
+Tag: field::physics
+Description: Physics
+
+Tag: field::statistics
+Description: Statistics
+
+Facet: filetransfer
+Description: File transfer systems
+Nature: matter
+Status: draft
+
+Tag: filetransfer::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: filetransfer::dcc
+Description: IRC Direct Client to Client protocol
+
+Tag: filetransfer::ftp
+Description: File Transfer Protocol (FTP)
+Implies: filetransfer
+
+Tag: filetransfer::http
+Description: HTTP HyperText Transport Protocol
+Implies: protocol
+
+Tag: filetransfer::sftp
+Description: Secure File Transfer Protocol
+
+Tag: filetransfer::smb
+Description: Windows file and printer sharing (SMB)
+Implies: filetransfer
+
+Facet: game
+Description: Games, fun and entertainment
+Nature: energy
+Status: needing-review
+
+Tag: game::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: game::adventure
+Description: Adventure games
+
+Tag: game::arcade
+Description: Action and arcade games
+
+Tag: game::board
+Description: Board games
+
+Tag: game::board:chess
+Description: Chess Games
+
+Tag: game::card
+Description: Card games
+
+Tag: game::demos
+Description: Demo programs
+
+Tag: game::mud
+Description: MUDs, MOOs, and other multiplayer RPGs
+
+Tag: game::platform
+Description: Platform games
+
+Tag: game::puzzle
+Description: Puzzle games
+
+Tag: game::rpg
+Description: Role-playing and adventure games
+
+Tag: game::rpg:rogue
+Description: Rogue-Like RPG games (Nethack, Angband etc.)
+
+Tag: game::simulation
+Description: Simulation games
+
+Tag: game::strategy
+Description: Strategy games
+
+Tag: game::tetris
+Description: Tetris-like games
+
+Tag: game::toys
+Description: Toy and Gimmick
+
+Tag: game::typing
+Description: Typing tutor programs
+
+Facet: hardware
+Description: Hardware-related functionality
+Nature: energy
+Status: draft
+
+Tag: hardware::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: hardware::camera
+Description: Digital cameras and webcams
+
+Tag: hardware::detection
+Description: Hardware detection
+
+Tag: hardware::embedded
+Description: Embedded
+
+Tag: hardware::emulation
+Description: Hardware emulation
+
+Tag: hardware::hamradio
+Description: Ham Radio
+
+Tag: hardware::input
+Description: Input devices
+
+Tag: hardware::input:joystick
+Description: Joystick
+
+Tag: hardware::input:mouse
+Description: Mouse
+
+Tag: hardware::joystick
+Description: Joystick (legacy)
+
+Tag: hardware::laptop
+Description: Laptop
+
+Tag: hardware::modem
+Description: Modem
+
+Tag: hardware::modem:dsl
+Description: xDSL communication technology
+
+Tag: hardware::power
+Description: Power supply and management
+
+Tag: hardware::power:acpi
+Description: ACPI power management
+
+Tag: hardware::power:apm
+Description: APM power management
+
+Tag: hardware::power:ups
+Description: UPS - Uninterruptible Power Supply
+
+Tag: hardware::printer
+Description: Printing hardware
+
+Tag: hardware::storage
+Description: Data storage
+
+Tag: hardware::storage:cd
+Description: CD - Compact Disc
+
+Tag: hardware::storage:dvd
+Description: DVD - Digital Video Disc
+
+Tag: hardware::usb
+Description: USB - Universal Serial Bus
+
+Tag: hardware::video
+Description: Video boards
+
+Facet: interface
+Description: Kind of user interface
+Nature: personality
+Status: needing-review
+
+Tag: interface::3d
+Description: Three-dimensional interface
+
+Tag: interface::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: interface::commandline
+Description: Command line interface
+
+Tag: interface::daemon
+Description: Daemons (no interface)
+
+Tag: interface::framebuffer
+Description: Framebuffer user interface
+
+Tag: interface::shell
+Description: Command Shells
+
+Tag: interface::svga
+Description: SVGA user interface
+
+Tag: interface::text-mode
+Description: Other interactive console interface
+
+Tag: interface::web
+Description: Web user interface
+
+Tag: interface::x11
+Description: X11 user interface
+
+Facet: junior
+Description: [Junior] Applications recommended for younger users
+Nature: personality
+Status: draft
+
+Tag: junior::arcade
+Description: Argade games for Debian-Junior
+Implies: junior
+
+Tag: junior::games-gl
+Description: Three-dimensional games for Debian Junior
+Implies: junior
+
+Tag: junior::meta
+Description: Debian-Junior metapackages
+Implies: junior
+
+Facet: langdevel
+Description: Language that the package supports development for
+Nature: energy
+Status: complete
+
+Tag: langdevel::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: langdevel::ada
+Description: Ada Development
+
+Tag: langdevel::c
+Description: C Development
+
+Tag: langdevel::c++
+Description: C++ Development
+
+Tag: langdevel::fortran
+Description: Fortran Development
+
+Tag: langdevel::haskell
+Description: Haskell Development
+
+Tag: langdevel::java
+Description: Java Development
+
+Tag: langdevel::lisp
+Description: Lisp Development
+
+Tag: langdevel::lua
+Description: Lua Development
+
+Tag: langdevel::ml
+Description: ML
+
+Tag: langdevel::objc
+Description: Objective C Development
+
+Tag: langdevel::ocaml
+Description: Ocaml Development
+Responsible: zack@debian.org
+
+Tag: langdevel::pascal
+Description: Pascal Development
+
+Tag: langdevel::perl
+Description: Perl Development
+
+Tag: langdevel::php
+Description: PHP Development
+
+Tag: langdevel::pike
+Description: Pike Development
+
+Tag: langdevel::python
+Description: Python Development
+
+Tag: langdevel::r
+Description: GNU R Development
+
+Tag: langdevel::ruby
+Description: Ruby Development
+
+Tag: langdevel::scheme
+Description: Scheme Development
+
+Tag: langdevel::tcl
+Description: TCL Tool Command Language Development
+
+Facet: legacy
+
+Tag: legacy::bbs
+Description: Bulletin Board Systems
+
+Tag: legacy::data-exchange
+Description: Data exchange
+Implies: foreignos
+
+Tag: legacy::desktop
+Description: Desktop Environment
+Flags: empty, expand
+
+Tag: legacy::educational
+Description: [Edu] Educational Software
+Flags: empty, expand
+
+Tag: legacy::file-formats
+Description: File formats
+
+Tag: legacy::foreignos
+Description: Foreign OS and Hardware
+
+Tag: legacy::net
+Description: IP Networking
+Implies: netcomm
+
+Tag: legacy::netcomm
+Description: Network and Communication
+
+Tag: legacy::numerical
+Description: Calculation and numerical computation
+
+Tag: legacy::office
+Description: Office software
+Flags: empty, expand
+Implies: application
+
+Tag: legacy::protocols
+Description: IP protocol support
+
+Tag: legacy::science
+Description: Science
+
+Tag: legacy::system
+Description: System software and maintainance
+
+Tag: legacy::vi
+Description: VI editor
+
+Tag: legacy::x11
+Description: X Windowing System
+Status: draft
+
+Facet: made-of
+Description: The languages or data formats used to make the package
+Nature: matter
+Status: needing-review
+
+Tag: made-of::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: made-of::data:dictionary
+Description: Dictionary
+
+Tag: made-of::data:font
+Description: Font
+
+Tag: made-of::data:html
+Description: HTML Hypertext Markup Language
+
+Tag: made-of::data:icons
+Description: Icons
+
+Tag: made-of::data:info
+Description: Documentation in Info format
+
+Tag: made-of::data:pdf
+Description: PDF Documents
+
+Tag: made-of::data:postscript
+Description: Postscript
+
+Tag: made-of::data:sgml
+Description: SGML, Standard Generalized Markup Language
+
+Tag: made-of::data:svg
+Description: SVG, Scalable Vector Graphics
+
+Tag: made-of::data:tex
+Description: TeX, LaTeX and DVI
+
+Tag: made-of::data:vrml
+Description: VRML Virtual Reality Markup Language
+
+Tag: made-of::data:xml
+Description: XML
+
+Tag: made-of::lang:ada
+Description: Ada
+
+Tag: made-of::lang:c
+Description: C
+
+Tag: made-of::lang:c++
+Description: C++
+
+Tag: made-of::lang:c-sharp
+Description: C#
+
+Tag: made-of::lang:fortran
+Description: Fortran
+
+Tag: made-of::lang:haskell
+Description: Haskell
+
+Tag: made-of::lang:java
+Description: Java
+
+Tag: made-of::lang:lisp
+Description: Lisp
+
+Tag: made-of::lang:lua
+Description: Lua
+
+Tag: made-of::lang:ml
+Description: ML
+
+Tag: made-of::lang:objc
+Description: Objective C
+
+Tag: made-of::lang:ocaml
+Description: Ocaml
+Responsible: zack@debian.org
+
+Tag: made-of::lang:perl
+Description: Perl
+
+Tag: made-of::lang:php
+Description: PHP
+
+Tag: made-of::lang:pike
+Description: Pike
+
+Tag: made-of::lang:python
+Description: Python
+
+Tag: made-of::lang:r
+Description: GNU R
+
+Tag: made-of::lang:ruby
+Description: Ruby
+
+Tag: made-of::lang:scheme
+Description: Scheme
+
+Tag: made-of::lang:shell
+Description: sh, bash, ksh, tcsh and other shells
+
+Tag: made-of::lang:tcl
+Description: TCL Tool Command Language
+
+Facet: mail
+Description: How the package is related to handling e-mail
+Nature: personality
+Status: controversial
+
+Tag: mail::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: mail::delivery-agent
+Description: Mail delivery agent
+ Software that delivers mail to users' mailboxes.
+
+Tag: mail::filters
+Description: Filters
+
+Tag: mail::imap
+Description: Mail access via IMAP
+
+Tag: mail::list
+Description: Mailing Lists
+
+Tag: mail::notification
+Description: Notification
+
+Tag: mail::pop
+Description: Mail access via POP3
+
+Tag: mail::smtp
+Description: Mail transfer via SMTP
+
+Tag: mail::transport-agent
+Description: Mail transport agent
+ Software that routes and transmits mail accross the system and the network.
+
+Tag: mail::user-agent
+Description: Mail user agent
+ Software that allows users to access e-mail.
+
+Facet: network
+Description: Networking
+Nature: personality
+Status: draft
+
+Tag: network::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: network::configuration
+Description: Network configuration
+
+Tag: network::firewall
+Description: Firewall
+
+Tag: network::hiavailability
+Description: High-availability network services
+Responsible: miope@miope.org
+
+Tag: network::load-balancing
+Description: Load balancing
+
+Tag: network::routing
+Description: Network routing
+
+Tag: network::scanner
+Description: Network scanner
+
+Tag: network::service
+Description: Network service
+
+Tag: network::vpn
+Description: VPN and tunneling
+
+Facet: protocol
+Description: Network protocol
+Nature: matter
+Status: draft
+
+Tag: protocol::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: protocol::aol-messenger
+Description: AOL Instant Message
+
+Tag: protocol::atm
+Description: ATM network protocol
+ Asynchronous Transfer Mode network protocol
+
+Tag: protocol::corba
+Description: CORBA
+ Orbs, development libraries, IDL compilers, and other packages
+ related to the Common Object Request Broker Architecture (CORBA).
+
+Tag: protocol::dhcp
+Description: IP auto configuration with DHCP and BOOTP
+
+Tag: protocol::dns
+Description: Domain Name System (DNS)
+
+Tag: protocol::ethernet
+Description: Ethernet protocol
+
+Tag: protocol::fidonet
+Description: Fidonet
+
+Tag: protocol::finger
+Description: Finger
+
+Tag: protocol::ftp
+Description: File Transfer Protocol (FTP)
+
+Tag: protocol::http
+Description: HTTP HyperText Transport Protocol
+
+Tag: protocol::icq
+Description: ICQ Instant Message
+
+Tag: protocol::ident
+Description: Ident
+
+Tag: protocol::imap
+Description: IMAP
+
+Tag: protocol::ip
+Description: IP Internet Protocol
+
+Tag: protocol::ipv6
+Description: Next Generation IP Internet Protocol
+ Use this for packages that can use the IPv6 protocol
+
+Tag: protocol::irc
+Description: Internet Relay Chat (IRC)
+
+Tag: protocol::jabber
+Description: Jabber Instant Message
+
+Tag: protocol::kerberos
+Description: Kerberos authentication
+
+Tag: protocol::lp
+Description: Unix lp printing protocol
+
+Tag: protocol::msn-messenger
+Description: MSN Instant Message
+
+Tag: protocol::nntp
+Description: News (NNTP, USENET)
+
+Tag: protocol::pop
+Description: Mail access via POP3
+
+Tag: protocol::radius
+Description: RADIUS authentication
+
+Tag: protocol::sftp
+Description: Secure File Transfer Protocol
+
+Tag: protocol::smb
+Description: Windows file and printer sharing (SMB)
+
+Tag: protocol::smtp
+Description: SMTP Simple Mail Transport Protocol
+
+Tag: protocol::ssl
+Description: SSL Secure Socket Layer
+
+Tag: protocol::voip
+Description: Telephony and Voice-over-IP software
+
+Tag: protocol::webdav
+Description: WebDAV
+
+Tag: protocol::yahoo-messenger
+Description: Yahoo Instant Message
+
+Facet: role
+Description: Role of the package in the system
+Nature: personality
+Status: draft
+
+Tag: role::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: role::aux:dummy
+Description: (Auxiliary) Dummy package used for upgrades
+
+Tag: role::aux:metapackage
+Description: (Auxiliary) Dependency metapackage
+
+Tag: role::content:data
+Description: (Auxiliary) Application-specific data
+
+Tag: role::content:doc
+Description: (Content) Documentation
+
+Tag: role::content:text
+Description: (Content) Books and text documents
+
+Tag: role::sw:application
+Description: (Software) Applications
+ A program that provides the user with tools to accomplish a task.
+ .
+ Real programs to enter new data, edit documents, paint pictures from
+ scratch.  Not small utilities to merely convert files or do small
+ modifications.
+
+Tag: role::sw:client
+Description: (Software) Client applications
+ Also clients for local daemons
+
+Tag: role::sw:devel-lib
+Description: (Software) Development libraries
+
+Tag: role::sw:plugin
+Description: (Software) Plugin
+
+Tag: role::sw:server
+Description: (Software) Servers
+Equates: x11::server || mail::server || web::server
+
+Tag: role::sw:shlib
+Description: (Auxiliary) Shared library
+
+Tag: role::sw:source
+Description: (Software) Source code
+
+Tag: role::sw:utility
+Description: (Software) Utilities
+ A program designed for general support of the processes of a computer.
+ .
+ Applications which are useful to attain a goal, but which are not
+ the specific application to use to solve that goal
+
+Facet: security
+Description: How the package is related to system security
+Nature: energy
+Status: needing-review
+
+Tag: security::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: security::antivirus
+Description: Anti-virus
+Implies: security
+
+Tag: security::authentication
+Description: Authentication
+Implies: security
+
+Tag: security::cryptography
+Description: Cryptography and privacy tools
+Implies: security
+
+Tag: security::firewall
+Description: Firewall
+Implies: security
+
+Tag: security::ids
+Description: Intrusion Detection System
+Implies: security
+
+Tag: security::integrity
+Description: File integrity verification
+Implies: security
+
+Tag: security::log-analyzer
+Description: Log file analyzer
+Implies: security
+
+Facet: sound
+Description: Sound and music
+Nature: energy
+Responsible: free@agnula.org
+Status: needing-review
+
+Tag: sound::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: sound::compression
+Description: Sound compression
+Implies: sound
+
+Tag: sound::midi
+Description: MIDI Music Software
+Implies: sound
+
+Tag: sound::mixer
+Description: Sound mixing
+Implies: sound
+
+Tag: sound::player
+Description: Sound playback
+Equates: use::playing && works-with::audio
+
+Tag: sound::recorder
+Description: Sound recording
+Implies: sound
+
+Tag: sound::sequencer
+Description: MIDI sequencers
+Implies: sound
+
+Tag: sound::speech
+Description: Speech synthesizers
+Implies: sound
+
+Facet: special
+Description: Service tags
+Status: draft
+
+Tag: special::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: special::auto-inst-parts
+Description: Secondary packages users won't install directly
+Implies: special
+
+Tag: special::completely-tagged
+Description: Package has been tagged with full care
+ This package has been tagged by carefully checking and pondering tags from
+ every facet, and it can be used as an example of good tagging and to train
+ probabilistic tag inference altorithms.
+ .
+ This tag will also be automatically removed from all packages after vocabulary
+ updates.
+
+Tag: special::invalid-tag
+Description: Invalid tag
+ This tag means that the tag database contains a tag which is not present in
+ the tag vocabulary.  The presence of this tag indicates a software bug: this
+ should never show up.
+
+Tag: special::ipv6-nosupport
+Description: NO IPv6 support
+ Use this for packages that cannot yet or will never support IPv6.
+
+Tag: special::meta
+Description: Meta Packages for fast installation
+Implies: special
+
+Tag: special::not-yet-tagged
+Description: !Not yet tagged packages!
+Implies: special
+
+Tag: special::not-yet-tagged::a
+Description: Not yet tagged packages with a
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::b
+Description: Not yet tagged packages with b
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::c
+Description: Not yet tagged packages with c
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::d
+Description: Not yet tagged packages with d
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::e
+Description: Not yet tagged packages with e
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::f
+Description: Not yet tagged packages with f
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::g
+Description: Not yet tagged packages with g
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::h
+Description: Not yet tagged packages with h
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::i
+Description: Not yet tagged packages with i
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::j
+Description: Not yet tagged packages with j
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::k
+Description: Not yet tagged packages with k
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::l
+Description: Not yet tagged packages with l
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::m
+Description: Not yet tagged packages with m
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::n
+Description: Not yet tagged packages with n
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::o
+Description: Not yet tagged packages with o
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::p
+Description: Not yet tagged packages with p
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::q
+Description: Not yet tagged packages with q
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::r
+Description: Not yet tagged packages with r
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::s
+Description: Not yet tagged packages with s
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::t
+Description: Not yet tagged packages with t
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::u
+Description: Not yet tagged packages with u
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::v
+Description: Not yet tagged packages with v
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::w
+Description: Not yet tagged packages with w
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::x
+Description: Not yet tagged packages with x
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::y
+Description: Not yet tagged packages with y
+Implies: special, special::not-yet-tagged
+
+Tag: special::not-yet-tagged::z
+Description: Not yet tagged packages with z
+Implies: special, special::not-yet-tagged
+
+Tag: special::obsolete
+Description: Obsolete Packages
+ Packages that are not used any longer, also packages only left for upgrade
+ purposes (merged / split packages)
+Implies: special
+
+Facet: suite
+Comment: What is considered a 'suite'?  So far the idea was to just use tags in
+ this facet to group together related packages.
+Description: The package is related to a bigger group of packages
+Nature: personality
+Status: controversial
+
+Tag: suite::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: suite::apache
+Description: Apache
+
+Tag: suite::debian
+Description: Debian specific
+
+Tag: suite::emacs
+Description: Emacs
+
+Tag: suite::gforge
+Description: GForge collaborative development
+
+Tag: suite::gimp
+Description: The GNU Image Manipulation Program
+
+Tag: suite::gkrellm
+Description: The GNU (or GTK) Krell Monitors (or Meters)
+
+Tag: suite::gnome
+Description: GNOME
+
+Tag: suite::gnustep
+Description: GNUStep Desktop and WindowMaker
+
+Tag: suite::kde
+Description: KDE
+
+Tag: suite::mozilla
+Description: Mozilla Webbrowser (and extensions)
+
+Tag: suite::netscape
+Description: Netscape Navigator (pre-6.0 versions)
+
+Tag: suite::openoffice
+Description: The OpenOffice suite
+
+Tag: suite::opie
+Description: Open Palmtop (OPIE)
+
+Tag: suite::roxen
+Description: Roxen
+
+Tag: suite::samba
+Description: The SAMBA suite
+
+Tag: suite::webmin
+Description: Webmin
+
+Tag: suite::xfce
+Description: XFCE Desktop Environment
+
+Tag: suite::xmms
+Description: X MultiMedia System (XMMS)
+
+Tag: suite::zope
+Description: Z Object Publishing Environment (ZOPE)
+ The zope (web) publishing platform.
+
+Facet: uitoolkit
+Description: User interface toolkit
+Nature: matter
+Status: needing-review
+
+Tag: uitoolkit::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: uitoolkit::athena
+Description: Athena Widgets user interface
+Implies: uitoolkit
+
+Tag: uitoolkit::gtk
+Description: GTK user interface
+Implies: uitoolkit
+
+Tag: uitoolkit::motif
+Description: Lesstif/Motif user interface
+Implies: uitoolkit
+
+Tag: uitoolkit::ncurses
+Description: Ncurses text user interface
+Implies: uitoolkit
+
+Tag: uitoolkit::qt
+Description: QT user interface
+Implies: uitoolkit
+
+Tag: uitoolkit::sdl
+Description: SDL user interface
+Implies: uitoolkit
+
+Tag: uitoolkit::tk
+Description: TK (for TCL) user interface
+Implies: uitoolkit
+
+Tag: uitoolkit::wxwindows
+Description: WxWindows user interface
+Implies: uitoolkit
+
+Facet: use
+Description: Purpose of the package
+Nature: energy
+Status: controversial
+
+Tag: use::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: use::browsing
+Description: Browsing
+
+Tag: use::chatting
+Description: Chat applications
+
+Tag: use::checking
+Description: Checking
+
+Tag: use::compressing
+Description: Compressing
+
+Tag: use::configuring
+Description: Configuring software
+
+Tag: use::converting
+Description: Converting data
+Implies: file-formats, application
+
+Tag: use::dialing
+Description: Dialup internet
+
+Tag: use::downloading
+Description: Downloading
+
+Tag: use::driver
+Description: Driving hardware
+
+Tag: use::editing
+Description: Editing
+
+Tag: use::gameplaying
+Description: Game playing
+
+Tag: use::learning
+Description: Learning
+
+Tag: use::login
+Description: Login
+
+Tag: use::monitor
+Description: Monitoring
+
+Tag: use::organizing
+Description: Organizing data
+
+Tag: use::playing
+Description: Playing audio, video or other media
+
+Tag: use::printing
+Description: Printing
+
+Tag: use::proxying
+Description: Proxying
+
+Tag: use::routing
+Description: Routing
+
+Tag: use::scanning
+Description: Scanning
+
+Tag: use::searching
+Description: Search
+
+Tag: use::storing
+Description: Storing
+
+Tag: use::synchronizing
+Description: Synchronizing/mirroring
+
+Tag: use::timekeeping
+Description: Clock and timekeeping programs
+
+Tag: use::transmission
+Description: Transmission
+
+Tag: use::typesetting
+Description: Typesetting
+
+Tag: use::viewing
+Description: Data visualization
+
+Facet: web
+Description: World Wide Web (HTTP)
+Nature: personality
+Status: draft
+
+Tag: web::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: web::application
+Description: Web application
+
+Tag: web::appserver
+Description: Web application server
+
+Tag: web::blog
+Description: Weblog web application
+
+Tag: web::browser
+Description: Web browser
+
+Tag: web::cgi
+Description: CGI related
+
+Tag: web::cms
+Description: Content Management System
+
+Tag: web::scripting
+Description: Web scripting
+
+Tag: web::server
+Description: Web server
+
+Tag: web::wiki
+Description: Wiki-Wiki collaborative web editing
+ Wiki software, servers, utilities and plug-ins.
+
+Facet: works-with
+Description: What the package can work with
+ These tags describe what is the kind of data (or even processes, or people)
+ that the package can work with.
+Nature: energy
+Status: needing-review
+
+Tag: works-with::3dmodel
+Description: 3D model
+Implies: works-with
+
+Tag: works-with::3dmodel:vrml
+Description: VRML Virtual Reality Markup Language
+
+Tag: works-with::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: works-with::archive
+Description: Archive
+Implies: works-with
+
+Tag: works-with::archive:iso9660
+Description: ISO 9660 CD Filesystem
+
+Tag: works-with::archive:tar
+Description: Tar archives
+
+Tag: works-with::archive:zip
+Description: Zip archives
+
+Tag: works-with::audio
+Description: Audio
+
+Tag: works-with::audio:mp3
+Description: MP3 Audio
+
+Tag: works-with::audio:oggvorbis
+Description: Ogg Vorbis Audio
+
+Tag: works-with::audio:wav
+Description: Wave uncompressed audio format
+
+Tag: works-with::bugs
+Description: Software bugs or other issues
+
+Tag: works-with::db
+Description: Database
+
+Tag: works-with::db:ldap
+Description: LDAP database
+
+Tag: works-with::db:sql
+Description: SQL database
+
+Tag: works-with::dictionary
+Description: Dictionary
+
+Tag: works-with::dtp
+Description: Desktop Publishing (DTP)
+
+Tag: works-with::fax
+Description: Fax
+
+Tag: works-with::file
+Description: Any file
+
+Tag: works-with::font
+Description: Fonts
+
+Tag: works-with::image
+Description: Images
+
+Tag: works-with::image:raster
+Description: Images made of dots, such as photos and scans
+
+Tag: works-with::image:raster:jpg
+Description: JPEG, Joint Picture Expert Group
+
+Tag: works-with::image:raster:png
+Description: PNG, Portable Network Graphics
+
+Tag: works-with::image:vector
+Description: Images made of lines, such as graphs or most clipart
+
+Tag: works-with::image:vector:svg
+Description: SVG, Scalable Vector Graphics
+
+Tag: works-with::logfile
+Description: System logs
+
+Tag: works-with::mail
+Description: Email
+
+Tag: works-with::music-notation
+Description: Music notation
+
+Tag: works-with::people
+Description: People
+
+Tag: works-with::pim
+Description: Personal data
+
+Tag: works-with::software:package
+Description: Packaged software
+
+Tag: works-with::software:running
+Description: Running programs
+
+Tag: works-with::software:source
+Description: Source code
+
+Tag: works-with::spreadsheet
+Description: Spreadsheet
+
+Tag: works-with::text
+Description: Text
+
+Tag: works-with::text:docbook
+Description: Docbook
+
+Tag: works-with::text:formatted
+Description: Complex text document
+
+Tag: works-with::text:html
+Description: HTML Hypertext Markup Language
+
+Tag: works-with::text:info
+Description: Documentation in Info format
+
+Tag: works-with::text:man
+Description: Manpages
+
+Tag: works-with::text:pdf
+Description: PDF Documents
+
+Tag: works-with::text:plain
+Description: Plain text
+
+Tag: works-with::text:postscript
+Description: Postscript
+
+Tag: works-with::text:sgml
+Description: SGML, Standard Generalized Markup Language
+
+Tag: works-with::text:tex
+Description: TeX, LaTeX and DVI
+
+Tag: works-with::text:unicode
+Description: Unicode
+ Please do not tag programs with simple unicode support,
+ doing so would make this tag useless.
+ Ultimately all applications should have unicode support.
+
+Tag: works-with::textdocument
+Description: Complex text document (obsolete tag)
+
+Tag: works-with::video
+Description: Video and Animation
+
+Tag: works-with::video:oggtheora
+Description: Ogg Theora Video
+
+Tag: works-with::xml
+Description: XML
+
+Tag: works-with::xml:rss
+Description: RSS Rich Site Summary
+ XML dialect used to describe resources and websites.
+
+Facet: x11
+
+Tag: x11::TODO
+Description: Need an extra tag
+ The package can be categorised along this facet, but the right tag for it is
+ missing.
+ .
+ Mark a package with this tag to signal the vocabulary maintainers of cases
+ where the current tag set is lacking.
+
+Tag: x11::applet
+Description: X-Windows applet
+
+Tag: x11::application
+Description: X-Windows application
+
+Tag: x11::display-manager
+Description: Display managers (graphical login screens)
+
+Tag: x11::font
+Description: X-Windows fonts
+
+Tag: x11::library
+Description: X-Windows library
+
+Tag: x11::screensaver
+Description: Screen savers
+
+Tag: x11::terminal
+Description: Terminal Emulators
+
+Tag: x11::theme
+Description: Themes
+
+Tag: x11::window-manager
+Description: Window Managers
+
+Tag: x11::xserver
+Description: X Servers
+

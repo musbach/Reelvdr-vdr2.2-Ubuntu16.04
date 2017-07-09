@@ -1,0 +1,361 @@
+diff -Nur -x .svn mjpegtools-1.9.0rc3-orig/configure mjpegtools-1.9.0rc3/configure
+--- mjpegtools-1.9.0rc3-orig/configure	2007-12-04 20:13:25.000000000 +0100
++++ mjpegtools-1.9.0rc3/configure	2008-08-11 18:30:22.000000000 +0200
+@@ -27022,7 +27022,7 @@
+ 	;;
+ esac
+ 
+-                                                                                                                                                                                                                            ac_config_files="$ac_config_files Makefile debian/Makefile debian/control docs/Makefile lavtools/Makefile yuvcorrect/Makefile yuvdenoise/Makefile yuvdeinterlace/Makefile yuvscaler/Makefile y4munsharp/Makefile y4mutils/Makefile yuvfilters/Makefile mpeg2enc/Makefile aenc/Makefile mplex/Makefile scripts/Makefile utils/Makefile utils/altivec/Makefile utils/mmxsse/Makefile y4mdenoise/Makefile mjpegtools.pc mjpegtools.spec"
++                                                                                                                                                                                                                            ac_config_files="$ac_config_files Makefile docs/Makefile lavtools/Makefile yuvcorrect/Makefile yuvdenoise/Makefile yuvdeinterlace/Makefile yuvscaler/Makefile y4munsharp/Makefile y4mutils/Makefile yuvfilters/Makefile mpeg2enc/Makefile aenc/Makefile mplex/Makefile scripts/Makefile utils/Makefile utils/altivec/Makefile utils/mmxsse/Makefile y4mdenoise/Makefile mjpegtools.pc mjpegtools.spec"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -27679,8 +27679,6 @@
+   case "$ac_config_target" in
+   # Handling of arguments.
+   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+-  "debian/Makefile" ) CONFIG_FILES="$CONFIG_FILES debian/Makefile" ;;
+-  "debian/control" ) CONFIG_FILES="$CONFIG_FILES debian/control" ;;
+   "docs/Makefile" ) CONFIG_FILES="$CONFIG_FILES docs/Makefile" ;;
+   "lavtools/Makefile" ) CONFIG_FILES="$CONFIG_FILES lavtools/Makefile" ;;
+   "yuvcorrect/Makefile" ) CONFIG_FILES="$CONFIG_FILES yuvcorrect/Makefile" ;;
+diff -Nur -x .svn mjpegtools-1.9.0rc3-orig/debian/bts mjpegtools-1.9.0rc3/debian/bts
+--- mjpegtools-1.9.0rc3-orig/debian/bts	1970-01-01 01:00:00.000000000 +0100
++++ mjpegtools-1.9.0rc3/debian/bts	2008-08-12 13:00:45.000000000 +0200
+@@ -0,0 +1 @@
++Send-To: marillat@free.fr
+diff -Nur -x .svn mjpegtools-1.9.0rc3-orig/debian/changelog mjpegtools-1.9.0rc3/debian/changelog
+--- mjpegtools-1.9.0rc3-orig/debian/changelog	2007-03-11 07:34:33.000000000 +0100
++++ mjpegtools-1.9.0rc3/debian/changelog	1970-01-01 01:00:00.000000000 +0100
+@@ -1,64 +0,0 @@
+-mjpegtools (1.9.0-0) unstable; urgency=low
+-
+-  * New upstream release.
+-
+- -- Kawamata/Hitoshi <hitoshi.kawamata@nifty.com>  Wed,  7 Mar 2007 17:03:26 +0100
+-
+-
+-mjpegtools (1.7.0-1) unstable; urgency=low
+-
+-  * New upstream release.
+-
+- -- Kawamata/Hitoshi <hitoshi.kawamata@nifty.com>  Sun,  5 Sep 2004 17:16:43 +0900
+-
+-mjpegtools (1.6.3-2) unstable; urgency=low
+-
+-  * Configure option --enable-cmov-extension has been removed,
+-    so use --host to specify cpu.
+-  * For now, --enable-zalpha causes compiling error, so remove it.
+-
+- -- Kawamata/Hitoshi <hitoshi.kawamata@nifty.com>  Wed,  5 May 2004 11:11:06 +0900
+-
+-mjpegtools (1.6.3-1) unstable; urgency=low
+-
+-  * New upstream release.
+-  * Remove mjpegtools.{postinst,prerm} because now START-INFO-DIR-ENTRY available.
+-
+- -- Kawamata/Hitoshi <hitoshi.kawamata@nifty.com>  Sat, 28 Feb 2004 11:13:13 +0900
+-
+-mjpegtools (1.6.2-1) unstable; urgency=low
+-
+-  * New upstream release.
+-
+- -- Kawamata/Hitoshi <hitoshi.kawamata@nifty.com>  Wed,  4 Feb 2004 10:19:29 +0900
+-
+-mjpegtools (1.6.1.93-3) unstable; urgency=low
+-
+-  * remove libquicktime4linux-dev from Build-Depends, need libquicktime-dev even on woody.
+-
+- -- Kawamata/Hitoshi <hitoshi.kawamata@nifty.com>  Thu, 29 Jan 2004 10:50:16 +0900
+-
+-mjpegtools (1.6.1.93-2) unstable; urgency=low
+-
+-  * Using libtool -release, rename package libmjpegtools0 to libmjpegtools-1.6.
+-
+- -- Kawamata/Hitoshi <hitoshi.kawamata@nifty.com>  Sun, 25 Jan 2004 16:27:05 +0900
+-
+-mjpegtools (1.6.1.93-1) unstable; urgency=low
+-
+-  * Add mjpegtools.{postinst,prerm} to use install-info without automatically adding by dh_installinfo.
+-  * Limit Build-Depends libjpeg-mmx-dev [i386] to libjpeg-mmx-dev (>= 0.1.4) [i386].
+-
+- -- Kawamata/Hitoshi <hitoshi.kawamata@nifty.com>  Mon, 29 Dec 2003 14:33:58 +0900
+-
+-mjpegtools (1.6.1.93-0) unstable; urgency=low
+-
+-  * New upstream release.
+-
+- -- KAWAMATA Hitoshi <hitoshi.kawamata@nifty.com>  Tue, 23 Dec 2003 15:00:33 +0900
+-
+-mjpegtools (1.6.1.92-0) unstable; urgency=low
+-
+-  * Initial Release.
+-
+- -- KAWAMATA Hitoshi <hitoshi.kawamata@nifty.com>  Sat, 20 Dec 2003 09:00:00 +0900
+diff -Nur -x .svn mjpegtools-1.9.0rc3-orig/debian/compat mjpegtools-1.9.0rc3/debian/compat
+--- mjpegtools-1.9.0rc3-orig/debian/compat	1970-01-01 01:00:00.000000000 +0100
++++ mjpegtools-1.9.0rc3/debian/compat	2008-08-12 13:00:45.000000000 +0200
+@@ -0,0 +1 @@
++4
+diff -Nur -x .svn mjpegtools-1.9.0rc3-orig/debian/copyright mjpegtools-1.9.0rc3/debian/copyright
+--- mjpegtools-1.9.0rc3-orig/debian/copyright	2003-12-21 15:33:06.000000000 +0100
++++ mjpegtools-1.9.0rc3/debian/copyright	2008-08-12 12:04:19.000000000 +0200
+@@ -1,16 +1,13 @@
+-This package was debianized by KAWAMATA Hitoshi <hitoshi.kawamata@nifty.com>
+-on Sat, 13 Dec 2003 16:43:50 +0900.
++This package was debianized by Christian Marillat <marillat@debian.org> on
++Fri, 25 Jan 2002 15:09:47 +0100.
+ 
+-It was downloaded from mjpeg.sourceforge.net
++It was downloaded from http://mjpeg.sourceforge.net/
+ 
+-Upstream Author(s): see AUTHORS file
++Upstream Authors: See AUTHORS file
+ 
+-Copyright:
++Copyright: 
+ 
+-You are free to distribute this software under the terms of
+-the GNU General Public License.
+-On Debian systems, the complete text of the GNU General Public
+-License can be found in /usr/share/common-licenses/GPL file.
+-
+-However, some sections of the software implement algorithms that may
+-fall under multiple Patents in various jurisdictions.
++  You should have received a copy of the GNU General Public License with the
++  Debian GNU/Linux distribution in file /usr/share/common-licenses/GPL; if
++  not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
++  MA 02110-1301, USA.
+diff -Nur -x .svn mjpegtools-1.9.0rc3-orig/debian/mjpegtools.files mjpegtools-1.9.0rc3/debian/mjpegtools.files
+--- mjpegtools-1.9.0rc3-orig/debian/mjpegtools.files	2003-12-21 15:33:06.000000000 +0100
++++ mjpegtools-1.9.0rc3/debian/mjpegtools.files	2008-08-12 12:04:19.000000000 +0200
+@@ -1 +1,3 @@
+ usr/bin
++usr/share/man
++usr/share/info
+diff -Nur -x .svn mjpegtools-1.9.0rc3-orig/debian/rules mjpegtools-1.9.0rc3/debian/rules
+--- mjpegtools-1.9.0rc3-orig/debian/rules	2007-03-11 07:34:33.000000000 +0100
++++ mjpegtools-1.9.0rc3/debian/rules	2008-08-12 12:04:19.000000000 +0200
+@@ -1,96 +1,76 @@
+ #!/usr/bin/make -f
+-# Sample debian/rules that uses debhelper.
+-# GNU copyright 1997 to 1999 by Joey Hess.
+ 
+-# Uncomment this to turn on verbose mode.
+ #export DH_VERBOSE=1
+ 
+-# This is the debhelper compatibility version to use.
+-export DH_COMPAT=4
++include /usr/share/dpatch/dpatch.make
+ 
+-# These are used for cross-compiling and for saving the configure script
+-# from having to guess our platform (since we know it already)
+-#DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+-DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+-
+-DEB_HOST_GNU_CPU    ?= $(shell dpkg-architecture -qDEB_HOST_GNU_CPU)
+-DEB_HOST_GNU_SYSTEM ?= $(shell dpkg-architecture -qDEB_HOST_GNU_SYSTEM)
+-HOST_CPUS += $(DEB_HOST_GNU_CPU)
+-ifeq ($(DEB_HOST_GNU_CPU),i386)
+-	HOST_CPUS += i686
++version := $(shell sed -n 's/Package: \(.*\)/\1/p' debian/control | head -n 1)
++
++DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
++DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
++
++ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
++	CFLAGS += -O0
++else
++	CFLAGS += -O2
+ endif
+ 
+-ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
+-	CFLAGS += -g
++ifneq (powerpc, $(DEB_BUILD_ARCH))
++	CFLAGS += -Wall -g
++else
++	CFLAGS += -Wall
+ endif
+-ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+-	INSTALL_PROGRAM += -s
++
++ifeq (amd64, $(DEB_BUILD_ARCH))
++	CFLAGS += -fPIC -DPIC
+ endif
+ 
+-# shared library versions, option 1
+-#version=2.0.5
+-#major=2
+-# option 2, assuming the library is created as src/.libs/libfoo.so.2.0.5 or so
+-#version=`ls src/.libs/lib*.so.* | \
+-# awk '{if (match($$0,/[0-9]+\.[0-9]+\.[0-9]+$$/)) print substr($$0,RSTART)}'`
+-#major=`ls src/.libs/lib*.so.* | \
+-# awk '{if (match($$0,/\.so\.[0-9]+$$/)) print substr($$0,RSTART+4)}'`
++configure: configure-stamp
++configure-stamp: patch-stamp
++	dh_testdir
++
++	CFLAGS="$(CFLAGS)" ./configure --prefix=/usr \
++	--mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
++	--host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE)
+ 
+-LT_RELEASE = $(shell sed -n -e 's/^Package: libmjpegtools-\([.0-9]\+\)$$/\1/p' debian/control)
++	perl -i -pe 's/^(hardcode_libdir_flag_spec\s*=\s*).+$$/$$1" -D__LIBTOOL_IS_A_FOOL__ "/' libtool
+ 
+-config-stamp: configure
+-	dh_testdir
+-	# Add here commands to configure the package.
+-#	./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info
+-# --enable-zalpha
+-	for cpu in $(HOST_CPUS); do \
+-		mkdir debian/build-$$cpu; \
+-		cd debian/build-$$cpu; \
+-		../../configure --host=$$cpu-$(DEB_HOST_GNU_SYSTEM) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
+-				--srcdir=../.. --with-dv-yv12; \
+-		cd ../..; \
+-	done
+-	touch config-stamp
++	touch configure-stamp
+ 
+ build: build-stamp
+-build-stamp: config-stamp
++build-stamp: configure-stamp 
+ 	dh_testdir
+ 
+-	# Add here commands to compile the package.
+-#	$(MAKE)
+-	for cpu in $(HOST_CPUS); do cd debian/build-$$cpu; $(MAKE); cd ../..; done
++# -j doesn't work
++	$(MAKE)
+ 
+ 	touch build-stamp
+ 
+ clean:
+ 	dh_testdir
+ 	dh_testroot
++	rm -f build-stamp configure-stamp
+ 
+-	# Add here commands to clean up after the build process.
+-#	-$(MAKE) distclean
+-#	-for cpu in $(HOST_CPUS); do cd debian/build-$$cpu; $(MAKE) distclean; cd ../..; done
+-	for cpu in $(HOST_CPUS); do rm -rf debian/*-$$cpu*; done
+-	rm -f config-stamp build-stamp install-stamp debian/libmjpegtools-$(LT_RELEASE).files
+-#	-test -r /usr/share/misc/config.sub && \
+-#	  cp -f /usr/share/misc/config.sub config.sub
+-#	-test -r /usr/share/misc/config.guess && \
+-#	  cp -f /usr/share/misc/config.guess config.guess
++	[ ! -f Makefile ] || $(MAKE) distclean
+ 
+-	dh_clean
++	debian/rules unpatch
+ 
+-install: install-stamp
+-install-stamp: build-stamp
++	dh_clean debian/Makefile.* debian/libmjpegtools0c2a.files \
++	debian/mjpegtools.info debian/mjpegtools.docs debian/control.in \
++	debian/libmjpegtools.files
++
++install: build
+ 	dh_testdir
+ 	dh_testroot
+ 	dh_clean -k
+ 	dh_installdirs
+ 
+-	# Add here commands to install the package into debian/tmp
+-#	$(MAKE) install prefix=$(CURDIR)/debian/tmp/usr
+-	for cpu in $(HOST_CPUS); do cd debian/build-$$cpu; $(MAKE) install prefix=$(CURDIR)/debian/inst-$$cpu/usr; cd ../..; done
++	$(MAKE) install prefix=$(CURDIR)/debian/${version}/usr
++	cp mpeg2enc/mpeg2syntaxcodes.h $(CURDIR)/debian/${version}/usr/include/mjpegtools/mpeg2enc
+ 
+-	touch install-stamp
++	dh_movefiles --sourcedir=debian/${version}
+ 
++	find debian -type d | xargs rmdir -p --ignore-fail-on-non-empty
+ 
+ # Build architecture-independent files here.
+ binary-indep: build install
+@@ -100,61 +80,22 @@
+ binary-arch: build install
+ 	dh_testdir
+ 	dh_testroot
+-	dh_clean -k
+-	rm -f install-stamp
+-#	dh_movefiles
+-	cp -f debian/libmjpegtools.files debian/libmjpegtools-$(LT_RELEASE).files
+-	for cpu in $(HOST_CPUS); do \
+-		case $$cpu in \
+-		$(DEB_HOST_GNU_CPU)) \
+-			dh_movefiles --sourcedir=debian/inst-$$cpu ;; \
+-		*) \
+-			cd debian; \
+-			rm -f *-$$cpu*.{docs,manpages,info}; \
+-			for f in *.{docs,manpages,info}; do ln -sfn $$f `echo $$f | sed -e s/mjpegtools/mjpegtools-$$cpu/`; done; \
+-			cd ..; \
+-			for f in debian/*.files; do mv $$f `echo $$f | sed -e s/mjpegtools/mjpegtools-$$cpu/`; done; \
+-			dh_movefiles --sourcedir=debian/inst-$$cpu; \
+-			for f in debian/*.files; do mv $$f `echo $$f | sed -e s/mjpegtools-$$cpu/mjpegtools/`; done ;; \
+-		esac; \
+-	done
+-#	dh_installdebconf
+-	dh_installdocs
++	dh_installdocs -A AUTHORS
+ #	dh_installexamples
+ #	dh_installmenu
+-#	dh_installlogrotate
+-#	dh_installemacsen
+-#	dh_installpam
+-#	dh_installmime
+-#	dh_installinit
+-#	dh_installcron
+-	dh_installman
++#	dh_installman
+ 	dh_installinfo
+-#	dh_undocumented
+ 	dh_installchangelogs ChangeLog
+ 	dh_link
+-#	dh_strip
+-	dh_strip -X.a
++	dh_strip -Xdebian/libmjpegtools-dev/usr/lib/libmpeg2encpp.a -Xdebian/libmjpegtools-dev/usr/lib/libmplex2.a
+ 	dh_compress
+ 	dh_fixperms
+ 	dh_makeshlibs -V
+ 	dh_installdeb
+-#	dh_perl
+-#	dh_shlibdeps
+-	for cpu in $(HOST_CPUS); do \
+-		case $$cpu in \
+-		$(DEB_HOST_GNU_CPU)) \
+-			n=mjpegtools ;; \
+-		*) \
+-			n=mjpegtools-$$cpu ;; \
+-		esac; \
+-		l=lib$${n}-$(LT_RELEASE); \
+-		LD_LIBRARY_PATH=debian/$$l/usr/lib dpkg-shlibdeps -Ldebian/$$l/DEBIAN/shlibs -Tdebian/$$n.substvars debian/$$n/usr/bin/*; \
+-		LD_LIBRARY_PATH=debian/$$l/usr/lib dpkg-shlibdeps -Ldebian/$$l/DEBIAN/shlibs -Tdebian/$$l.substvars debian/$$l/usr/lib/*.so.*.*.*; \
+-	done
++	dh_shlibdeps -l debian/${version}/usr/lib
+ 	dh_gencontrol
+ 	dh_md5sums
+ 	dh_builddeb
+ 
+ binary: binary-indep binary-arch
+-.PHONY: build clean binary-indep binary-arch binary install 
++.PHONY: build clean binary-indep binary-arch binary install configure patch unpatch
+diff -Nur -x .svn mjpegtools-1.9.0rc3-orig/debian/watch mjpegtools-1.9.0rc3/debian/watch
+--- mjpegtools-1.9.0rc3-orig/debian/watch	1970-01-01 01:00:00.000000000 +0100
++++ mjpegtools-1.9.0rc3/debian/watch	2008-08-12 13:00:45.000000000 +0200
+@@ -0,0 +1,3 @@
++version=3
++
++http://prdownloads.sourceforge.net/mjpeg/mjpegtools-([\d.]*).tar.gz
+--- mjpegtools-1.9.0rc3-orig/debian/Makefile	1970-01-01 01:00:00.000000000 +0100
++++ mjpegtools-1.9.0rc3/debian/Makefile	2008-08-12 15:27:24.000000000 +0200
+@@ -0,0 +1,8 @@
++all:
++
++clean:
++
++distclean:
++
++install:
++

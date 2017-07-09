@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="<?% charset %?>"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?% INCLUDE skin.cfg %?>
+<?% lang = locale.split('_') %?>
+<html xmlns="http://www.w3.org/1999/xhtml" <?% IF lang.1 %?>xml:lang="<?% lang.0 %?>" lang="<?% lang.0 %?>"<?% ELSE %?>xml:lang="en" lang="en"<?% END %?>>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="print.css" media="print" />
+<?% IF call == 'vtxpage' %?>
+    <link rel="stylesheet" type="text/css" href="vtxgfx.css" media="all" />
+<?% END %?>
+    <title><?% IF param.title.defined;param.title;ELSE %?>XXV<?% END %?></title>
+    <meta name="generator" content="XXV System - Version: <?% version %?>" />
+    <meta http-equiv="content-type" content="text/html; charset=<?% charset %?>" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="robots" content="noindex,noarchive,nofollow" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script language="JavaScript" type="text/javascript" src="tooltip.js"></script>
+    <script language="JavaScript" type="text/javascript" src="global.js"></script>
+<?% IF allow("request") %?>
+    <link rel="alternate" type="application/rss+xml" title="RSS-News" href="?cmd=request&amp;data=rss" />
+<?% END %?>
+    <link rel="search" type="application/opensearchdescription+xml" href="?cmd=opensearch" title="<?% gettext("Search with XXV") %?>" />
+</head>
+<?% IF info.http_useragent.match('.*MSIE.*') && !info.http_useragent.match('.*Opera.*');
+    global.imagetyp = "gif";
+ELSE;
+    global.imagetyp = "png";
+END %?>
+
+<body id="frame">

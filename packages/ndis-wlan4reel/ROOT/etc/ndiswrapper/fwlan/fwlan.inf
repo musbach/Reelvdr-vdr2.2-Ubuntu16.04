@@ -1,0 +1,37 @@
+[Version]
+Signature = "$CHICAGO$"
+DriverVer = Texas Instruments
+[Manufacturer]
+%V_AVM% = AVM
+[AVM]
+%FWLAN.DeviceDesc% = FWLAN, USB\VID_057C&PID_5601
+%FWLAN.DeviceDesc2% = FWLAN, USB\VID_057C&PID_6201
+[FWLAN.NT]
+BusType         = 15
+AddReg          = Parameter
+Characteristics = 0x84
+CopyFiles       = Treiber
+[Treiber]
+Fwusb1b.bin
+fwlanusb.sys
+[Parameter]
+HKR, ,dot11SupportedRateMask,,"8"
+HKR, ,dot11BasicRateMask,,"1"
+HKR,NDI\params\Mode4x,ParamDesc,, "Mode4x"
+HKR,NDI\params\Mode4x,type,,"enum"
+HKR,NDI\params\Mode4x,default,,"1"
+HKR,NDI\params\dot11NetworkType,ParamDesc,, "Network Type"
+HKR,NDI\params\dot11NetworkType,type,,"enum"
+HKR,NDI\params\dot11NetworkType,default,,"3"
+HKR,NDI\params\dot11PowerMode,ParamDesc,,"Power Mode"
+HKR,NDI\params\dot11PowerMode,type,,"enum"
+HKR,NDI\params\dot11PowerMode,default,,"0"
+HKR, ,dot11DesiredChannel,,1
+HKR, ,dot11DesiredBSSType,, "1"
+HKR, ,DisableSsidPending,, "1"
+HKR, Ndi\Params\dot11FragmentationThreshold, ParamDesc, ,"Fragmentation Threshold"
+HKR, Ndi\Params\dot11FragmentationThreshold, Type, , "int"
+HKR, Ndi\Params\dot11FragmentationThreshold, Default, , "4096"
+HKR, Ndi\Params\dot11RTSThreshold, ParamDesc, ,"RTS Threshold"
+HKR, Ndi\Params\dot11RTSThreshold, Type, , "int"
+HKR, Ndi\Params\dot11RTSThreshold, Default, , "4096"

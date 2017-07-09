@@ -1,0 +1,241 @@
+<!-- program -->
+<body class="frame">
+<div id="body">
+<?% ######################################################################## %?>
+<?% BLOCK dur %?>
+    <?% height=6;d = d div 1 ; IF d >= 0 and d <= 100 %?>
+        	<?% IF d >= 1 %?>
+				<img class="progressleft" src="images/blank.gif" width="<?% 100 - d %?>" height="<?% height %?>" alt="<?% 100 - d %?>%" /><img class="progressright" src="images/blank.gif" width="<?% d %?>" height="<?% height %?>" alt="" />
+            <?% ELSE %?>
+				<img class="progress" src="images/blank.gif" width="100" height="<?% height %?>" alt="" />
+            <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK RowButtons %?>
+                        <a href="?cmd=search&amp;data=<?% url( title ) %?>">
+                            <img src="images/find.<?% global.imagetyp %?>" alt="" title="<?% gettext("Search for repeats") %?>" />
+                        </a>
+                        <?% IF timerid && allow('tedit') %?>
+                        <a href="javascript:popup('tedit','<?% timerid %?>',620,670,1)">
+                            <img src="images/onoff.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit this timer") %?>" />
+                        </a>
+                        <?% ELSIF allow('tnew') %?>
+                        <a href="javascript:popup('tnew','<?% id %?>',620,670,1)">
+                            <img src="images/record.<?% global.imagetyp %?>" alt="" title="<?% gettext("To record") %?>" />
+                        </a>
+                        <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK SetState %?>
+    <?% state = '' %?>
+    <?% IF running %?>
+        <?% state = "running" %?>
+    <?% ELSIF timerid %?>
+      <?% UNLESS recording %?>
+        <?% state = "deactive" %?>
+      <?% ELSE %?>
+        <?% state = "active" %?>
+      <?% END %?>
+    <?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<?% BLOCK ItemAsFlat %?>
+      <?% PROCESS SetState %?>
+        <tr<?% ' class="two"' IF z mod 2 == 0 %?>>
+            <td class="fieldinline<?% IF state != "";" ";state;END %?>"><?% start %?>&nbsp;-&nbsp;<?% stop %?>
+            <?% IF pdc && pdc != start %?> (<?% gettext("PDC") %?>:<?% pdc %?>) <?% END %?>
+            </td>
+            <td class="fieldinline">
+                  <a id="E<?% id %?>" href="javascript:popup('display','<?% id %?>',620,670,0)" class="fieldinline">
+                  <font class="title<?% IF state != "";" ";state;END %?>"><?% chop(title,45) %?></font>
+                  <?% IF subtitle.length > 0 %?><font class="subtitle<?% IF state != "";" ";state;END %?>">&nbsp;-&nbsp;<?% chop(subtitle,55) %?></font><?% END %?>
+				  </a>
+            </td>
+            <td class="fieldinline push">
+                <?% INCLUDE widgets/tooltip.inc cmd="display" eventid=id linkid=id ttp_offset=-300 %?>
+                <?% PROCESS RowButtons %?>
+            </td>
+        </tr>
+        <?% IF global.hideDescription != 1 && description.length > 0 %?>
+        <tr<?% ' class="two"' IF z mod 2 == 0 %?>>
+            <td class="fieldinline" >&nbsp;</td>
+            <td class="fieldinline" colspan="3">
+                  <a href="javascript:popup('display','<?% id %?>',620,670,0)" class="fieldinline">
+                  <font class="description<?% IF state != "";" ";state;END %?>"><?% chop(description,100,1) %?></font>
+				  </a>
+            </td>
+        </tr>
+        <?% END %?>
+<?% END %?>
+<?% ######################################################################################
+    channelpos=0;priorchannel=0;nextchannel=0;priortitle="";nexttitle="";
+    FOREACH ch IN param.channels;
+        IF cgi.param('data') == ch.1 || cgi.param('data') == ch.0 || param.current == ch.1;
+            channel = ch.0;
+            channelpos = ch.1;
+        ELSE;
+            IF channelpos==0;
+                priorchannel=ch.1;
+                priortitle=ch.0;
+            END;
+        END;
+        IF channelpos!=0 && channelpos != ch.1 && nextchannel==0;
+            nextchannel=ch.1;
+            nexttitle=ch.0;
+            LAST;
+        END;
+    END; 
+%?>
+<h1><?% gettext("Program guide for") %?>&nbsp;<?% channel %?></h1>
+<?% IF data.size > 1 %?>
+<?% fields = data.shift %?>
+    <?% z = 0 %?>
+    <?% FOREACH zeile IN data %?>
+        <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+        <?% id=zeile.0;title=zeile.1;subtitle=zeile.2;start=zeile.3;stop=zeile.4;
+            description=zeile.6;pdc=zeile.7;timerid=zeile.8;recording=zeile.9;running=zeile.10;
+            day = zeile.5 %?>
+        <?% IF !old.defined || day != old %?>
+            <?% IF old.defined  %?>
+            </table>
+            </td>
+        </tr>
+    <tr><td class="largebottom"></td></tr>
+</table> 
+            <?% END %?>
+<table class="largetable" summary="">
+    <tr><td class="largehead"><?% day %?></td></tr>
+        <tr>
+            <td class="largetext" align="left">
+            <table summary="" width="100%">
+            <?% z = 1 %?>
+            <tr><th width="140"></th><th></th><th width="40" align="right"></th></tr>
+        <?% END %?>
+        <?% old = day %?>
+        <?% PROCESS ItemAsFlat %?>
+        <?% z = z + 1 %?>
+    <?% END %?>
+            </table>
+            </td>
+        </tr>
+    <tr><td class="largebottom"></td></tr>
+</table> 
+<?% END %?>
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+<?% IF allow('switch') || allow('livestream') %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% chop(channel,20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <?% IF allow('switch') %?>
+    <a href="javascript:post('switch','<?% channelpos %?>')"><img src="images/watch.<?% global.imagetyp %?>" alt="" title="<?% gettext("Switch") %?>" /></a>&nbsp;
+    <a href="javascript:post('switch','<?% channelpos %?>')"><?% gettext("Switch") %?></a><br />
+    <?% END %?>
+    <?% IF allow('livestream') %?>
+    <?% IF getModule('STREAM').widget == 'external' %?>
+      <a href="?cmd=livestream&amp;data=<?% channelpos %?>">
+        <img src="images/webcast.<?% global.imagetyp %?>" alt="" title="<?% gettext("Live TV web cast") %?>" /></a>&nbsp;
+      <a href="?cmd=livestream&amp;data=<?% channelpos %?>">
+        <?% gettext("Live TV web cast") %?></a>
+      <?% ELSE %?>
+      <a href="javascript:popup('livestream','<?% channelpos %?>',620,670,0)">
+        <img src="images/webcast.<?% global.imagetyp %?>" alt="" title="<?% gettext("Live TV web cast") %?>" /></a>&nbsp;
+      <a href="javascript:popup('livestream','<?% channelpos %?>',620,670,0)">
+        <?% gettext("Live TV web cast") %?></a>
+      <?% END %?>
+    <?% END %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Selection",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <form action="">
+        <select size="15" name="data" onchange="di('?cmd=program&amp;data=',this.form.data.options[this.form.data.options.selectedIndex].value)">
+        <?% FOREACH ch IN param.channels %?>
+          <?% IF ch.2 != channelgroup %?>
+            <?% IF channelgroup %?>
+            </optgroup>
+            <?% END %?>
+            <optgroup label="<?% channelgroup = ch.2;ch.2 %?>">
+        <?% END %?>
+            <option value="<?% ch.1 %?>"<?% ' selected="selected"' IF channelpos == ch.1 %?>><?% ch.0 %?></option>
+        <?% END %?>
+          </optgroup>
+        </select>
+    </form>
+    <?% ####################################################################### %?>
+<?% BLOCK ChannelItem %?>    
+        <?% IF chpos != 0 %?>
+        <a href="?cmd=program&amp;data=<?% chpos %?>">
+            <img src="images/<?% image %?>.<?% global.imagetyp %?>" alt="" title="<?% label %?>" />
+        </a>
+        &nbsp;
+        <a href="?cmd=program&amp;data=<?% chpos %?>">
+            <?% chop(label,20) %?>
+        </a>
+    <?% ELSE %?>
+            <img src="images/<?% image %?>.<?% global.imagetyp %?>" alt="" title="" />
+            &nbsp;
+            <font class="deactive">
+                <?% gettext("No channel defined!",20) %?>
+            </font>
+    <?% END %?>
+    <br />
+<?% END %?>    
+    <?% PROCESS ChannelItem chpos=priorchannel    image='home' label=priortitle %?>
+    <?% PROCESS ChannelItem chpos=nextchannel     image='down' label=nexttitle %?>
+    <?% ####################################################################### %?>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% IF allow('cedit') %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Channels",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <a href="?cmd=clist<?% IF id > 0 %?>#<?% channelpos %?><?% END %?>">
+        <img src="images/edit.<?% global.imagetyp %?>" alt="" title="<?% gettext("Edit channels") %?>" />
+    </a>
+    &nbsp;
+    <a href="?cmd=clist<?% IF id > 0 %?>#<?% channelpos %?><?% END %?>">
+        <?% gettext("Edit channels",20) %?>
+    </a>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+<?% END %?>
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Search on Channel",15) %?> (<?% chop(channel,7) %?>)</td></tr>
+    <tr>
+    <td class="sidetext">
+    <form method="post" action="?cmd=search" name="searchform">
+        <input type="hidden" name="__channel" value="<?% channelpos %?>" />
+        <input type="text" id="epgtext" name="data" alt="<?% gettext("Search") %?>" 
+               onkeyup="suggest('esuggest&__channel=<?% channelpos %?>','epgtext','epgsuggest');" 
+               autocomplete="off" />
+        <br /><div class="suggestbox" id="epgsuggest"></div>
+    </form>
+    </td>
+    </tr>
+    <tr>
+    <td class="sidebottom"></td>
+    </tr>
+  </table>
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/doc
+END
+firmware_versions.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/doc/firmware_versions.txt
+END
+glossary
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/doc/glossary
+END
+usb_info
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/doc/usb_info
+END
+devel_info.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/doc/devel_info.txt
+END
+general_info
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/doc/general_info
+END
+iwpriv.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/reelbox/!svn/ver/1/testing/src/kernel/acx100/doc/iwpriv.txt
+END

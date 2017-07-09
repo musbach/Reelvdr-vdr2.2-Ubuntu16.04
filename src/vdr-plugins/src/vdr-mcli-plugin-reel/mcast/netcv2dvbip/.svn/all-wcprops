@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/vdr-mcli-plugin/!svn/ver/188/mcast/netcv2dvbip
+END
+channels.conf
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/vdr-mcli-plugin/!svn/ver/72/mcast/netcv2dvbip/channels.conf
+END
+stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/netcv2dvbip/stream.h
+END
+misc.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/netcv2dvbip/misc.h
+END
+igmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/igmp.h
+END
+mclilink.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/188/mcast/netcv2dvbip/mclilink.c
+END
+thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/thread.c
+END
+iface.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/iface.c
+END
+parse.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/parse.c
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/thread.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/166/mcast/netcv2dvbip/README
+END
+crc32.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/72/mcast/netcv2dvbip/crc32.c
+END
+iface.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/126/mcast/netcv2dvbip/iface.h
+END
+.indent.pro
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/72/mcast/netcv2dvbip/.indent.pro
+END
+clist.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/125/mcast/netcv2dvbip/clist.c
+END
+headers.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/72/mcast/netcv2dvbip/headers.h
+END
+streamer.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/streamer.c
+END
+clist.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/vdr-mcli-plugin/!svn/ver/125/mcast/netcv2dvbip/clist.h
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/main.c
+END
+dvbipstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/vdr-mcli-plugin/!svn/ver/186/mcast/netcv2dvbip/dvbipstream.h
+END
+streamer.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/vdr-mcli-plugin/!svn/ver/184/mcast/netcv2dvbip/streamer.h
+END
+siparser.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/vdr-mcli-plugin/!svn/ver/72/mcast/netcv2dvbip/siparser.c
+END
+misc.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/misc.c
+END
+stream.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/stream.c
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/makefile
+END
+igmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/vdr-mcli-plugin/!svn/ver/187/mcast/netcv2dvbip/igmp.c
+END

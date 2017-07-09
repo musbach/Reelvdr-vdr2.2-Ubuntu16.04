@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# GDL server
+# 
+
+# RC: triggered by udev / gdl_mm module
+
+pre_start () { 
+    echo "GDL-server: pre-start"
+    #modprobe gdl_mm
+    rm -rf /dev/gdl/ || true
+    mkdir -p /dev/gdl
+    count=0
+    echo waiting for gdl module to appear
+    while ! grep -q gdl /proc/devices ; do
+	sleep 1
+	count=`expr $count + 1`
+    done
+    echo waited ${count}sec for gdl to appear
+    /sbin/create_dev.sh make_dev gdl gdl/0
+    /sbin/create_dev.sh make_dev gdl_track gdl/track
+
+    chmod 666 /dev/gdl/*
+
+    ulimit -c unlimited
+}
+
+post_start () {
+    sleep 2
+    echo "load component TV encoder..."
+    load_pd /usr/lib/pd_inttvenc_comp.so
+
+    echo "load composite pd..."
+    load_pd /usr/lib/pd_inttvenc_cvbs.so
+
+    # Complete graphics driver initialization
+#    echo "initialize graphics driver"
+#    pvrsrvinit
+
+    # Load HDMI driver
+    # RC: now done in /sbin/load_hdmi.sh, started by udev when sec_kernel module is loaded
+    #echo "load HDMI driver"
+    #load_pd /usr/lib/pd_hdmi.so
+}
+#end script
+
+case $1 in
+	""|start)
+		pre_start && \
+		gdl_server && \
+		post_start
+		;;
+	stop)
+		killall gdl_server
+		;;
+	*)
+		echo "no such option $1. Use 'stop' or 'start'"
+		;;
+esac
+
+

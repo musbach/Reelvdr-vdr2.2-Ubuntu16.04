@@ -1,0 +1,965 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec
+END
+dvbsubdec.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dvbsubdec.c
+END
+ffv1.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ffv1.c
+END
+mjpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mjpeg.c
+END
+vp3data.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vp3data.h
+END
+vcr1.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vcr1.c
+END
+vqavideo.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vqavideo.c
+END
+indeo2.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/indeo2.c
+END
+mpegaudiodectab.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpegaudiodectab.h
+END
+ac3dec.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ac3dec.c
+END
+wmadata.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/wmadata.h
+END
+truemotion1data.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/truemotion1data.h
+END
+cljr.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/cljr.c
+END
+pnm.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/pnm.c
+END
+vc9data.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vc9data.h
+END
+svq1_vlc.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/svq1_vlc.h
+END
+resample.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/resample.c
+END
+vp3.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vp3.c
+END
+dv.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dv.c
+END
+sonic.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sonic.c
+END
+idcinvideo.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/idcinvideo.c
+END
+qdrw.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/qdrw.c
+END
+libgsm.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/libgsm.c
+END
+mem.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mem.c
+END
+mpegvideo.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpegvideo.c
+END
+h263data.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/h263data.h
+END
+shorten.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/shorten.c
+END
+xl.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/xl.c
+END
+mpegvideo.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpegvideo.h
+END
+truemotion1.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/truemotion1.c
+END
+dvdsub.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dvdsub.c
+END
+mdct.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mdct.c
+END
+rv10.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/rv10.c
+END
+cabac.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/cabac.c
+END
+faac.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/faac.c
+END
+mpeg12.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpeg12.c
+END
+qpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/qpeg.c
+END
+cabac.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/cabac.h
+END
+h263dec.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/h263dec.c
+END
+xvmcvideo.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/xvmcvideo.c
+END
+jfdctfst.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/jfdctfst.c
+END
+rpza.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/rpza.c
+END
+motion_est.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/motion_est.c
+END
+indeo3.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/indeo3.c
+END
+h263.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/h263.c
+END
+mpegaudiodec.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpegaudiodec.c
+END
+snow.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/snow.c
+END
+dct-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dct-test.c
+END
+svq1.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/svq1.c
+END
+simple_idct.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/simple_idct.c
+END
+simple_idct.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/simple_idct.h
+END
+ac3tab.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ac3tab.h
+END
+w32thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/w32thread.c
+END
+flicvideo.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/flicvideo.c
+END
+asv1.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/asv1.c
+END
+mpegaudio.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpegaudio.c
+END
+msmpeg4data.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/msmpeg4data.h
+END
+fraps.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/fraps.c
+END
+amr.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/amr.c
+END
+mpegaudio.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpegaudio.h
+END
+dsputil.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dsputil.c
+END
+g726.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/g726.c
+END
+xan.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/xan.c
+END
+ulti_cb.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ulti_cb.h
+END
+eval.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/eval.c
+END
+qtrle.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/qtrle.c
+END
+dsputil.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dsputil.h
+END
+allcodecs.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/allcodecs.c
+END
+wmv2.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/wmv2.c
+END
+faad.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/faad.c
+END
+error_resilience.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/error_resilience.c
+END
+interplayvideo.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/interplayvideo.c
+END
+utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/utils.c
+END
+imgresample.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/imgresample.c
+END
+dvdata.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dvdata.h
+END
+rangecoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/rangecoder.c
+END
+motion_est_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/motion_est_template.c
+END
+adx.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/adx.c
+END
+8bps.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/8bps.c
+END
+msmpeg4.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/msmpeg4.c
+END
+imgconvert_template.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/imgconvert_template.h
+END
+rangecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/rangecoder.h
+END
+golomb.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/golomb.c
+END
+h264.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/h264.c
+END
+png.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/png.c
+END
+golomb.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/golomb.h
+END
+apiexample.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/apiexample.c
+END
+roqvideo.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/roqvideo.c
+END
+mpeg12data.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpeg12data.h
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/.cvsignore
+END
+fft-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/fft-test.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/Makefile
+END
+alac.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/alac.c
+END
+faandct.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/faandct.c
+END
+oggvorbis.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/oggvorbis.c
+END
+jrevdct.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/jrevdct.c
+END
+x264.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/x264.c
+END
+sp5x.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sp5x.h
+END
+faandct.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/faandct.h
+END
+mpegaudiotab.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpegaudiotab.h
+END
+mdec.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mdec.c
+END
+4xm.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/4xm.c
+END
+avcodec.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/avcodec.h
+END
+lcl.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/lcl.c
+END
+ac3.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ac3.h
+END
+imgconvert.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/imgconvert.c
+END
+h261data.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/h261data.h
+END
+indeo3data.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/indeo3data.h
+END
+smc.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/smc.c
+END
+xvidff.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/xvidff.c
+END
+raw.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/raw.c
+END
+bitstream.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/bitstream.c
+END
+wnv1.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/wnv1.c
+END
+parser.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/parser.c
+END
+ratecontrol.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ratecontrol.c
+END
+bitstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/bitstream.h
+END
+vc9.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vc9.c
+END
+a52dec.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/a52dec.c
+END
+svq1_cb.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/svq1_cb.h
+END
+vorbis.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vorbis.c
+END
+flac.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/flac.c
+END
+dtsdec.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dtsdec.c
+END
+vorbis.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vorbis.h
+END
+cinepak.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/cinepak.c
+END
+fdctref.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/fdctref.c
+END
+oggtheora.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/oggtheora.c
+END
+fft.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/fft.c
+END
+h261.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/h261.c
+END
+mp3lameaudio.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mp3lameaudio.c
+END
+msrle.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/msrle.c
+END
+dpcm.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dpcm.c
+END
+cyuv.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/cyuv.c
+END
+pthread.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/pthread.c
+END
+ra144.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ra144.c
+END
+ws-snd1.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ws-snd1.c
+END
+huffyuv.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/huffyuv.c
+END
+loco.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/loco.c
+END
+svq3.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/svq3.c
+END
+tscc.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/tscc.c
+END
+ra144.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ra144.h
+END
+wmadec.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/wmadec.c
+END
+ra288.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ra288.c
+END
+motion_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/motion_test.c
+END
+jfdctint.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/jfdctint.c
+END
+mace.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mace.c
+END
+aasc.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/aasc.c
+END
+ra288.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ra288.h
+END
+mpeg4data.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/mpeg4data.h
+END
+ulti.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ulti.c
+END
+vmdav.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vmdav.c
+END
+vp3dsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/vp3dsp.c
+END
+pcm.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/pcm.c
+END
+indeo2data.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/indeo2data.h
+END
+beosthread.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/beosthread.c
+END
+h264data.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/h264data.h
+END
+adpcm.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/adpcm.c
+END
+dvbsub.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/dvbsub.c
+END
+h264idct.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/h264idct.c
+END
+msvideo1.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/msvideo1.c
+END
+resample2.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/resample2.c
+END
+ac3enc.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/ac3enc.c
+END

@@ -1,0 +1,15 @@
+--- receiver.c	(revision 15412)
++++ receiver.c	(revision 15413)
+@@ -82,7 +82,12 @@
+             (Channel->Ppid() == Channel->Vpid() || AddPid(Channel->Ppid())) &&
+             AddPids(Channel->Apids()) &&
+             AddPids(Channel->Dpids()) &&
++#ifdef USE_TTXTSUBS
++            AddPids(Channel->Spids()) &&
++            (!Setup.SupportTeletext || AddPid(Channel->Tpid()));
++#else
+             AddPids(Channel->Spids());
++#endif /* TTXTSUBS */
+      }
+ return true;
+ }

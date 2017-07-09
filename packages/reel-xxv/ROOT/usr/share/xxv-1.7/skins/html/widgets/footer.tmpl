@@ -1,0 +1,61 @@
+<?% IF !global.hidefooter %?>
+<?% IF verbose %?>
+    <?% data = bench %?>
+
+<div class="tab-pane" id="tabPane1">
+
+	<div class="tab-page" id="tabPage1">
+		<h2 class="tab">Last Logs</h2>
+
+		<table>
+        <?% FOREACH logline IN llog(5) %?>
+        <tr><td>
+            <div style='font-size:10px'><?% logline %?><br></div>
+        </td></tr>
+        <?% END %?>
+		</table>
+
+	</div>
+
+	<div class="tab-page" id="tabPage2">
+		<h2 class="tab">Benchmark</h2>
+            <table width=100%>
+                <?% FOREACH n IN data.keys.sort %?>
+                    <?% NEXT IF data.$n > 1000 %?>
+                    <?% ges = data.$n + ges %?>
+                <tr>
+                    <td><div style='font-size:10px'><?% n %?></div></td>
+                    <td><div style='font-size:10px'><?% data.$n %?></div></td>
+                </tr>
+                <?% END %?>
+                <tr>
+                    <td><b><div style='font-size:10px'>Summary:</div></b></td>
+                    <td><b><div style='font-size:10px'><?% ges %?></div></b></td>
+                </tr>
+            </table>
+	</div>
+
+	<div class="tab-page" id="tabPage3">
+		<h2 class="tab">Variables</h2>
+
+		<table><tr><td>
+        <pre><?% PERL %?>
+use Data::Dumper;
+print Dumper($stash->_dump_frame(5));
+        <?% END %?></pre>
+		</td></tr></table>
+
+	</div>
+
+</div>
+<?% END %?>
+
+<!-- ###### Tooltips ###### -->
+<div id="TOOLTIP"></div>
+
+<center class='footer'>
+<a href="http://projects.vdr-developer.org/projects/xxv">XXV System</a> -- Version: <?% version %?>
+</center>
+<?% END; #global.hidefooter %?>
+    </body>
+</HTML>

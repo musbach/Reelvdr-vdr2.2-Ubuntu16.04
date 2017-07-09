@@ -1,0 +1,49 @@
+cc -MM -MG  -D__LINUX__ -I../../src/include -I../../src/driver -I/usr/mips-linux-gnu/include -I/usr/src/linux-4.8/arch/x86/include *.c > .dependencies
+cc -D__LINUX__ -I../../src/include -I../../src/driver -I/usr/mips-linux-gnu/include -I/usr/src/linux-4.8/arch/x86/include -O2 -Wall -c hdboot.c
+In file included from /usr/src/linux-4.8/arch/x86/include/asm/pgtable_types.h:5:0,
+                 from /usr/src/linux-4.8/arch/x86/include/asm/pat.h:5,
+                 from /usr/src/linux-4.8/arch/x86/include/asm/mtrr.h:27,
+                 from hdboot.c:27:
+/usr/src/linux-4.8/arch/x86/include/asm/page_types.h:61:15: error: unknown type name ‘phys_addr_t’
+ static inline phys_addr_t get_max_mapped(void)
+               ^
+/usr/src/linux-4.8/arch/x86/include/asm/page_types.h: In function ‘get_max_mapped’:
+/usr/src/linux-4.8/arch/x86/include/asm/page_types.h:63:10: error: ‘phys_addr_t’ undeclared (first use in this function)
+  return (phys_addr_t)max_pfn_mapped << PAGE_SHIFT;
+          ^
+/usr/src/linux-4.8/arch/x86/include/asm/page_types.h:63:10: note: each undeclared identifier is reported only once for each function it appears in
+/usr/src/linux-4.8/arch/x86/include/asm/page_types.h:63:22: error: expected ‘;’ before ‘max_pfn_mapped’
+  return (phys_addr_t)max_pfn_mapped << PAGE_SHIFT;
+                      ^
+/usr/src/linux-4.8/arch/x86/include/asm/page_types.h: At top level:
+/usr/src/linux-4.8/arch/x86/include/asm/page_types.h:66:1: error: unknown type name ‘bool’
+ bool pfn_range_is_mapped(unsigned long start_pfn, unsigned long end_pfn);
+ ^
+In file included from /usr/src/linux-4.8/arch/x86/include/asm/pgtable_types.h:5:0,
+                 from /usr/src/linux-4.8/arch/x86/include/asm/pat.h:5,
+                 from /usr/src/linux-4.8/arch/x86/include/asm/mtrr.h:27,
+                 from hdboot.c:27:
+/usr/src/linux-4.8/arch/x86/include/asm/pgtable_types.h: In function ‘pgd_flags’:
+/usr/src/linux-4.8/arch/x86/include/asm/page_types.h:18:28: error: ‘phys_addr_t’ undeclared (first use in this function)
+ #define __PHYSICAL_MASK  ((phys_addr_t)((1ULL << __PHYSICAL_MASK_SHIFT) - 1))
+                            ^
+/usr/src/linux-4.8/arch/x86/include/asm/page_types.h:24:56: note: in expansion of macro ‘__PHYSICAL_MASK’
+ #define PHYSICAL_PAGE_MASK (((signed long)PAGE_MASK) & __PHYSICAL_MASK)
+                                                        ^
+/usr/src/linux-4.8/arch/x86/include/asm/pgtable_types.h:248:34: note: in expansion of macro ‘PHYSICAL_PAGE_MASK’
+ #define PTE_PFN_MASK  ((pteval_t)PHYSICAL_PAGE_MASK)
+                                  ^
+/usr/src/linux-4.8/arch/x86/include/asm/pgtable_types.h:254:27: note: in expansion of macro ‘PTE_PFN_MASK’
+ #define PTE_FLAGS_MASK  (~PTE_PFN_MASK)
+                           ^
+/usr/src/linux-4.8/arch/x86/include/asm/pgtable_types.h:272:31: note: in expansion of macro ‘PTE_FLAGS_MASK’
+  return native_pgd_val(pgd) & PTE_FLAGS_MASK;
+                               ^
+In file included from /usr/src/linux-4.8/arch/x86/include/asm/pat.h:5:0,
+                 from /usr/src/linux-4.8/arch/x86/include/asm/mtrr.h:27,
+                 from hdboot.c:27:
+/usr/src/linux-4.8/arch/x86/include/asm/pgtable_types.h: At top level:
+/usr/src/linux-4.8/arch/x86/include/asm/pgtable_types.h:288:39: fatal error: asm-generic/pgtable-nopud.h: Datei oder Verzeichnis nicht gefunden
+compilation terminated.
+Makefile:20: die Regel für Ziel „hdboot.o“ scheiterte
+make: *** [hdboot.o] Fehler 1

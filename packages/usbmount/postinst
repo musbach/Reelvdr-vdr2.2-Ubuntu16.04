@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# If /etc/usbmount/.create_rules_symlink exists when the package is
+# configured, create /etc/udev/rules.d/z60_usbmount.rules ->
+# ../usbmount.rules symlink unless /etc/udev/rules.d/z60_usbmount.rules
+# already exists.
+
+[ -r /etc/usbmount/mount.d/reelvdr ] && [ ! -L /etc/usbmount/umount.d/reelvdr ] && ln -s /etc/usbmount/mount.d/reelvdr /etc/usbmount/umount.d
+
+echo "create init links for remove-symlinks"
+update-rc.d remove-symlinks stop 85 0 6 .
+
+exit 0

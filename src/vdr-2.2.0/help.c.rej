@@ -1,0 +1,14 @@
+--- help.c	(revision 15426)
++++ help.c	(revision 15427)
+@@ -1,4 +1,4 @@
+-
++#ifdef REELVDR
+ #include <string>
+ #include <vector>
+ 
+@@ -491,4 +491,4 @@
+      }
+   return state;
+ }
+-
++#endif /*REELVDR*/

@@ -1,0 +1,46 @@
+10
+
+dir
+42
+http://svn.fatfred.net/reelbox/testing/src/utils/hdshm3/src
+http://svn.fatfred.net/reelbox
+
+
+
+2013-12-17T02:04:25.664639Z
+41
+fatfred
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+e2ffd91c-8621-430f-88b3-1f27d54bd9e4
+
+shmnetd
+dir
+
+include
+dir
+
+hdchannel
+dir
+
+hdctrld
+dir
+
+hostlib
+dir
+
+driver
+dir
+

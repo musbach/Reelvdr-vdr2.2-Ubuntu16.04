@@ -1,0 +1,17 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "purge" ]
+then
+	update-rc.d -f fpleds remove
+	update-rc.d -f reelbox-control remove
+fi
+
+[ -L /etc/init.d/fpleds ] && rm /etc/init.d/fpleds
+
+update-rc.d -f set_wol remove
+
+#always exit cleanly
+
+exit 0

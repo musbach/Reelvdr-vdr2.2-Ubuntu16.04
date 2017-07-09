@@ -1,0 +1,13 @@
+Package: reelvdr-tools
+Version: 2.9
+Section: reel
+Priority: important
+Architecture: all
+Depends: bridge-utils, exiftags, nfs-common, nmap, parted, reelvdr-tools-bin, smbclient, vlan
+Recommends: dyndns-client, gettext
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Conflicts: network-manager
+Source: reelvdr-tools
+Description: Tools and scripts needed by the ReelBox vdr
+ Required tools for the ReelVDR
+

@@ -1,0 +1,183 @@
+<script language="javascript" type="text/javascript">
+<!--
+
+    <?% INCLUDE javascript/records.js %?>
+
+-->
+</SCRIPT>
+<?% enableform = ( allow('tnew') ) && data.size > 1 %?>
+<h1><?% gettext("Advanced Search") %?>&nbsp;
+<?% IF data.size %?>
+    <?% found = data.size - 1 %?>
+   :&nbsp;<?% gettext("Found %s items") | replace("%s", found ) %?>
+<?% END %?>
+</h1>
+
+<table border="0" width="95%">
+<form method='get' name='searchparam'>
+    <input type='hidden' name='cmd' value='search'>
+    <input type='hidden' name='limit' value='100'>
+    <input type='hidden' name='__action' value='save'>
+<tr>
+    <td><?% gettext('Search text') %?>:</td>
+    <td><input type="text" name="data" value="<?% cgi.param('data') || cgi.param('data') %?>"></td>
+</tr>
+<tr>
+    <td><?% gettext('Search in fields') %?>:</td>
+    <td>
+        <input type="radio" name="__Where" value="all" <?% IF ! cgi.param('__Where') || cgi.param('__Where') == 'all' %?>checked<?% END %?>><?% gettext('All') %?>&nbsp;
+        <input type="radio" name="__Where" value="title" <?% IF cgi.param('__Where') == 'title' %?>checked<?% END %?>><?% gettext('Only in title') %?>&nbsp;
+        <input type="radio" name="__Where" value="titlesubtitle" <?% IF cgi.param('__Where') == 'titlesubtitle' %?>checked<?% END %?>><?% gettext('Only in title and subtitle') %?>&nbsp;
+    </td>
+</tr>
+<tr>
+    <td><?% gettext('Minimum length (in minutes)') %?>:</td>
+    <td>
+        <input type="text" name="__MinLength" value="<?% cgi.param('__MinLength') %?>">
+    </td>
+</tr>
+<tr>
+    <td><?% gettext('Channel') %?>:</td>
+    <td>
+    <select name='__channel'>
+        <option value="0"><?% gettext('All channels') %?>
+    <?% FOREACH ch IN param.channels %?>
+      <?% IF ch.2 && ch.2 != channelgroup %?>
+        <?% IF channelgroup %?>
+        </optgroup>
+        <?% END %?>
+        <optgroup label="<?% channelgroup = ch.2;ch.2 %?>">
+    <?% END %?>
+        <option value="<?% ch.1 %?>"<?% ' selected="selected"' IF cgi.param('__channel') == ch.1 %?>><?% ch.0 %?></option>
+    <?% END %?>
+    <?% IF channelgroup %?>
+      </optgroup>
+    <?% END %?>
+    </select>
+    </td>
+</tr>
+<tr>
+    <td><?% gettext('Content') %?>:</td>
+    <td>
+            <select name='__contentid'>
+                <option value="0"><?% gettext('All contents') %?></option>
+                <?% h = 1;WHILE h < 16 %?>
+                    <?% c = h | format "%x" %?>
+                    <?% ct = getModule('EPG').content(c) %?>
+                    <?% IF ct %?>
+                      <optgroup label="<?% ct %?>">
+                      <option value="<?% c %?>"<?% ' selected="selected"' IF cgi.param('__contentid') == c %?>><?% gettext('All')%?> - <?% ct %?></option>
+                      <?% l = 0;WHILE l < 16 %?>
+                      <?% c = ((16 * h) + l) | format "%x" %?>
+                      <?% ct = getModule('EPG').content(c) %?>
+                        <?% IF ct %?>
+                          <option value="<?% c %?>"<?% ' selected="selected"' IF cgi.param('__contentid') == c %?>><?% ct %?></option>
+                        <?% END %?>
+                      <?% l = l + 1 %?>
+                      <?% END %?>
+                      </optgroup>
+                    <?% END %?>
+                  <?% h = h + 1 %?>
+                <?% END %?>
+            </select>
+    </td>
+</tr>
+<tr>
+    <td colspan=2>
+        <input type='submit' value='<?% gettext('Search') %?>'>&nbsp;
+        <input type='reset' value='<?% gettext('Reset') %?>'>&nbsp;
+    </td>
+</tr>
+</form>
+</table>
+
+
+<?% IF data.size > 1 %?>
+
+<?% IF enableform %?>
+<div id="navcontainer">
+<ul id="navlist">
+<li><a href="#" onClick="Delete('<?% gettext("Would you like to record these events?") %?>',
+'<?% gettext("Nothing selected!") %?>','tnew&__fast=1',document.searchlist)">
+    <?% gettext("Record selected events") %?>
+</a></li>
+<li><a href="#" onClick="selAll(document.searchlist, 1)"><?% gettext("Select all") %?></a></li>
+<li><a href="#" onClick="selAll(document.searchlist, 0)"><?% gettext("Unselect all") %?></a></li>
+<li><a href="#" onClick="reverse(document.searchlist)"><?% gettext("Reverse select") %?></a></li>
+</ul>
+</div>
+
+<form name='searchlist'>
+    <?% INCLUDE 'widgets/referer.tmpl' %?>
+<?% END %?>
+
+<table border="0" width="95%">
+<?% IF data.size %?>
+    <?% fields = data.shift %?>
+        <tr>
+            <?% IF enableform %?>
+              <th></th>
+            <?% END %?>
+        <?% FOREACH field IN fields %?>
+            <?% NEXT IF field.match('^__') || loop.count == 8 || loop.count == 9 %?>
+            <th><?% field %?></th>
+        <?% END %?>
+        </tr>
+        <?% FOREACH zeile IN data %?>
+            <?% c = -1 %?>
+            <?% day = zeile.7 %?>
+            <?% IF !oldday.defined || day != oldday %?>
+                <tr><td colspan="<?% zeile.size %?>" bgcolor='#DDDDDD'>
+                <b><?% day %?></b>
+                </td></tr>
+            <?% END %?>
+            <tr class="<?% myclass %?>"<?% IF (loop.count mod 2) == 0 %?> bgcolor='#F5F5F5'<?% END %?>>
+            <?% FOREACH field IN zeile %?>
+                <?% c = c + 1 %?>
+                <?% NEXT IF fields.$c.match('^__') %?>
+                <?% IF c == 0; # Id Field %?>
+                <?% IF enableform %?>
+                <td>
+                <?% IF !zeile.10 %?>
+            			<input type="checkbox" value="<?% zeile.0 %?>" name="<?% zeile.1 %?><?% IF zeile.2 != "";"~";zeile.2;END %?>" />
+	              <?% END %?>
+                </td>
+	              <?% END %?>
+                <td>
+                <?% INCLUDE 'bloecke/event_links.tmpl' data=zeile timerid=zeile.10 level=zeile.15 %?>
+                </td>
+                <?% ELSIF c == 1; # Text Field %?>
+                <td>
+                    <?% INCLUDE bloecke/tooltip.tmpl cmd="display" title=field subtitle=zeile.2 desc=zeile.8 eventid=zeile.0 linkid=zeile.0 ttp_offset=0 %?>
+                    <?% IF zeile.11 %?>
+                    <b><?% field %?></b>
+                    <?% ELSE %?>
+                    <?% field %?>
+                    <?% END %?>
+                    <?% IF zeile.2 != "" %?>
+                    <br><small><?% zeile.2 %?></small>
+                    <?% END %?>
+                    <?% IF zeile.8.length > 0 %?>
+                    <br><small><em><?% chop(zeile.8,80) | replace('<br />',' ') %?></em></small>
+                    <?% END %?>
+                    </a>
+                </td>
+                <?% ELSIF c == 3; # Channel Field %?>
+                <td>
+                    <a href="?cmd=program&amp;data=<?% zeile.4 %?>"><?% field %?></a>
+                </td>
+                <?% ELSIF c == 7; # Day Field %?>
+                <?% ELSIF c == 8; # Desc Field %?>
+                <?% ELSE %?>
+                <td><?% field %?></td>
+                <?% END %?>
+            <?% END %?>
+        </tr>
+        <?% oldday = day %?>
+        <?% END %?>
+<?% END %?>
+</table>
+<?% IF enableform %?>
+</form>
+<?% END %?>
+<?% END %?>

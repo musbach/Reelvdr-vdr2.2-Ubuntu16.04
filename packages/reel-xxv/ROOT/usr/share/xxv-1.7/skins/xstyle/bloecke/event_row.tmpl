@@ -1,0 +1,38 @@
+<?% FOREACH field IN fielddata %?>
+    <?% c = c + 1 %?>
+    <?% IF c == 1; # Id Field %?>
+    <td>
+    <?% INCLUDE 'bloecke/event_links.tmpl' data=zeile umbruch='' %?>
+    </td>
+    <?% ELSIF c == 2; # Text Field %?>
+    <td>
+        <?% INCLUDE bloecke/tooltip.tmpl cmd="display" title=field subtitle=fielddata.2 desc=fielddata.4 eventid=fielddata.0 linkid=fielddata.0 ttp_offset=0 %?>
+        <?% IF timerid %?>
+        <b><?% field %?></b>
+        <?% ELSE %?>
+        <?% field %?>
+        <?% END %?>
+        <?% IF fielddata.2.length > 0  %?>
+        <br><small><?% fielddata.2 %?></small>
+        <?% END %?>
+        </a>
+        <?% IF fielddata.3.length > 0 %?>
+        <br><small><em><?% chop(fielddata.4,300) | replace('<br />',' ') %?></em></small>
+        <?% END %?>
+    </td>
+    <?% ELSIF c == 3; # Subtitle Field %?>
+
+    <?% ELSIF c == 4; # Channel field %?>
+    <td>
+    <a href='?cmd=program&data=<?% channel %?>'><?% sender %?></a>
+    </td>
+    <?% ELSIF c == 5; # Desc Field %?>
+
+    <?% ELSE %?>
+        <?% IF timerid && recording %?>
+                <td><b><?% field %?></b></td>
+        <?% ELSE %?>
+                <td><?% field %?></td>
+        <?% END %?>
+    <?% END %?>
+<?% END %?>

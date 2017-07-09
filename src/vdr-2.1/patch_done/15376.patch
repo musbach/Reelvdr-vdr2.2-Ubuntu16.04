@@ -1,0 +1,152 @@
+Index: osd.c
+===================================================================
+--- osd.c	(revision 15375)
++++ osd.c	(revision 15376)
+@@ -892,6 +892,18 @@
+       bitmaps[i]->DrawSlope(x1, y1, x2, y2, Color, Type);
+ }
+ 
++#ifdef REELVDR
++void cOsd::DrawImage(u_int imageId, int x, int y, bool blend, int horRepeat, int vertRepeat)
++{
++  // No implementation.
++}
++
++void cOsd::SetImagePath(u_int imageId, char const *path)
++{
++  // No implementation.
++}
++#endif /* REELVDR */
++
+ void cOsd::Flush(void)
+ {
+ }
+@@ -914,6 +926,13 @@
+   osdProvider = NULL;
+ }
+ 
++#ifdef REELVDR
++cOsd *cOsdProvider::CreateTrueColorOsd(int Left, int Top, uint Level)
++{
++  return CreateOsd(Left, Top, Level);
++}
++#endif /* REELVDR */
++
+ cOsd *cOsdProvider::NewOsd(int Left, int Top, uint Level)
+ {
+   if (Level == OSD_LEVEL_DEFAULT && cOsd::IsOpen())
+@@ -933,6 +952,33 @@
+   return new cOsd(Left, Top, 999); // create a dummy cOsd, so that access won't result in a segfault
+ }
+ 
++#ifdef REELVDR
++cOsd *cOsdProvider::NewTrueColorOsd(int Left, int Top, int Random, uint Level, bool dontHide) // GT: True color osd support.
++{
++  if (Random) {
++     //  Left+=(rand()%Random)-(Random/2);
++     //  Top+=(rand()%Random)-(Random/2);
++     Left+=(rand()%10)-(10/2);
++     Top+=(rand()%20)-(20/2);
++  }
++  if ( Level == OSD_LEVEL_DEFAULT && cOsd::IsOpen())
++    esyslog("ERROR: attempt to open OSD while it is already open - using dummy OSD!");
++  else if (osdProvider) {
++    cOsd *ActiveOsd = cOsd::Osds.Size() ? cOsd::Osds[0] : NULL;
++    cOsd *Osd = osdProvider->CreateTrueColorOsd(Left, Top, Level);
++    if (Osd == cOsd::Osds[0]) {
++        if (ActiveOsd)
++           ActiveOsd->SetActive(false);
++        Osd->SetActive(true);
++        }
++    return Osd;
++    } 
++  else
++    esyslog("ERROR: no OSD provider available - using dummy OSD!");
++  return new cOsd(Left, Top, 999); // create a dummy cOsd, so that access won't result in a segfault
++}
++#endif /* REELVDR */
++
+ void cOsdProvider::UpdateOsdSize(bool Force)
+ {
+   int Width;
+Index: osd.h
+===================================================================
+--- osd.h	(revision 15375)
++++ osd.h	(revision 15376)
+@@ -151,6 +151,17 @@
+   int Y0(void) const { return y0; }
+   int Width(void) const { return width; }
+   int Height(void) const { return height; }
++#ifdef REELVDR
++  inline void SetSizeWithoutRealloc(int Width, int Height)
++  {
++       width = Width;
++       height = Height;
++       dirtyX1 = 0;
++       dirtyY1 = 0;
++       dirtyX2 = width - 1;
++       dirtyY2 = height - 1;
++  }
++#endif /* REELVDR */
+   void SetSize(int Width, int Height);
+        ///< Sets the size of this bitmap to the given values. Any previous
+        ///< contents of the bitmap will be lost. If Width and Height are the same
+@@ -267,7 +278,13 @@
+   cBitmap *savedRegion;
+   cBitmap *bitmaps[MAXOSDAREAS];
+   int numBitmaps;
++#ifdef REELVDR
++protected:
++#endif /* REELVDR */
+   int left, top, width, height;
++#ifdef REELVDR
++private:
++#endif /* REELVDR */
+   uint level;
+   bool active;
+ protected:
+@@ -374,6 +391,13 @@
+        ///< will be drawn into a rectangle with the given size and the given
+        ///< Alignment (default is top-left). If ColorBg is clrTransparent, no
+        ///< background pixels will be drawn, which allows drawing "transparent" text.
++#ifdef REELVDR
++  virtual void DrawImage(u_int imageId, int x, int y, bool blend, int horRepeat = 1, int vertRepeat = 1);
++       ///< Draws a 32-Bit true color image at (x, y) (upper left).
++  virtual void DrawCropImage(u_int imageId, int x, int y, int x0, int y0, int x1, int y1, bool blend){};
++       ///< Puts a 32-Bit true color image at coordinates (x,y), but only draws pixels
++       ///< within the rectangle defined by (x0,y0) and (x1,y1)
++#endif /* REELVDR */
+   virtual void DrawRectangle(int x1, int y1, int x2, int y2, tColor Color);
+        ///< Draws a filled rectangle defined by the upper left (x1, y1) and lower right
+        ///< (x2, y2) corners with the given Color.
+@@ -399,6 +423,10 @@
+        ///< 5: vertical,   rising,  upper
+        ///< 6: vertical,   falling, lower
+        ///< 7: vertical,   falling, upper
++#ifdef REELVDR
++  virtual void SetImagePath(u_int imageId, char const *path);
++       ///< Set the path of an image to be user later with DrawImage().
++#endif /* REELVDR */
+   virtual void Flush(void);
+        ///< Actually commits all data to the OSD hardware.
+   };
+@@ -413,6 +441,9 @@
+   virtual cOsd *CreateOsd(int Left, int Top, uint Level) = 0;
+       ///< Returns a pointer to a newly created cOsd object, which will be located
+       ///< at the given coordinates.
++#ifdef REELVDR
++  virtual cOsd *CreateTrueColorOsd(int Left, int Top, uint Level);
++#endif /* REELVDR */
+ public:
+   cOsdProvider(void);
+       //XXX maybe parameter to make this one "sticky"??? (frame-buffer etc.)
+@@ -423,6 +454,9 @@
+       ///< caller must delete it. If the OSD is already in use, or there is no OSD
+       ///< provider, a dummy OSD is returned so that the caller may always use the
+       ///< returned pointer without having to check it every time it is accessed.
++#ifdef REELVDR
++  static cOsd *NewTrueColorOsd(int Left, int Top, int Random, uint Level= OSD_LEVEL_DEFAULT, bool dontHide = false);
++#endif /* REELVDR */
+   static void UpdateOsdSize(bool Force = false);
+       ///< Inquires the actual size of the video display and adjusts the OSD and
+       ///< font sizes accordingly. If Force is true, all settings are recalculated,

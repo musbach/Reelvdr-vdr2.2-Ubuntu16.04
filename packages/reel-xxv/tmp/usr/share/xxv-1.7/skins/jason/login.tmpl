@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="<?% charset %?>"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?% verbose = 0 %?>
+<?% compressed = 0 %?>
+<?% lang = locale.split('_') %?>
+<html xmlns="http://www.w3.org/1999/xhtml" <?% IF lang.1 %?>xml:lang="<?% lang.0 %?>" lang="<?% lang.0 %?>"<?% ELSE %?>xml:lang="en" lang="en"<?% END %?>>
+<head>
+    <link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="extjs/resources/css/xtheme-default.css" id="theme" />
+    <link rel="stylesheet" type="text/css" href="jason.css" />
+    <meta name="generator" content="XXV System - Version: <?% version %?>" />
+    <meta http-equiv="content-type" content="text/html; charset=<?% charset %?>" />
+    <meta http-equiv="cache-control" content="cache" />
+    <meta http-equiv="pragma" content="cache" />
+    <meta name="robots" content="noindex,noarchive,nofollow" />
+    <title>JaSON</title>
+</head>
+<body scroll="no">
+<?% IF verbose == 0 %?>
+<div id="loading-mask">
+<div class="ext-el-mask-msg" id="loading">
+<div class="loading-indicator"><img src="extjs/resources/images/default/shared/blue-loading.gif" width="32" height="32" style="margin-right:8px;" align="absmiddle"/>
+<span id="loading-text">
+<?% gettext("Please wait ...") %?>
+</span>
+</div>
+</div>
+</div>
+
+<?% END %?>
+<?% scripts = [ 'extjs/adapter/ext/ext-base.js', 'extjs/ext-all.js','login.js' ] %?>
+<?% IF verbose != 0;scripts.1 = "ext-3.0.0/ext-all-debug.js";END %?>
+<?% FOREACH script IN scripts %?>
+<script type="text/javascript" src="<?% script %?>"></script>
+<?% END %?>
+<?% IF lang.1 %?>
+<!-- Use : <?% lang.0 %?> -->
+<script type="text/javascript" src="extjs/locale/ext-lang-<?% lang.0 %?>.js"></script>
+<script type="text/javascript" src="locale/login-<?% lang.0 %?>.js"></script>
+<?% END %?>
+</body>
+</html>

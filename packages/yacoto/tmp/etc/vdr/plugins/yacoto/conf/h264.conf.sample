@@ -1,0 +1,11 @@
+REMUX_TYPE="remux_convert"  #~Remux mode~F~5~ ~
+AUDIO_SOURCE="mp2"         #~Audio source~F~5~ ~
+AUDIO_BITRATE="96"         #~Audio bitrate~I~3~64,256~
+VIDEO_BITRATE="700"        #~Video bitrate~I~5~100,2000~
+AUDIO_CODEC="faac"         #~Audio codec~F~256~a-zA-Z0-9_-~
+AUDIO_OPTS="-faacopts mpeg=4:raw:br=${AUDIO_BITRATE}"  #~Audio parms~F~256~a-zA-Z0-9_-~
+OUTPUT_OPTS="-of avi"      #~Output parms~F~256~a-zA-Z0-9_-~
+OTHER_OPTS="-vf scale=720:-10"  #~Other parms~F~256~a-zA-Z0-9_-:~
+VIDEO_CODEC="x264"         #~Video codec~F~256~a-zA-Z0-9_-~
+VIDEO_OPTS_P1="-x264encopts pass=1:bitrate=${VIDEO_BITRATE}:turbo=2"  #~Video parms pass 1~F~256~a-zA-Z0-9_-~
+VIDEO_OPTS_P2="-x264encopts pass=2:bitrate=${VIDEO_BITRATE}:frameref=5"  #~Video parms pass 2~F~256~a-zA-Z0-9_-~

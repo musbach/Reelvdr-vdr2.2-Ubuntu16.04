@@ -1,0 +1,86 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-03-10 13:30+0100\n"
+"PO-Revision-Date: 2009-05-28 14:05+0100\n"
+"Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
+"Language-Team: Ukrainian <vdr@linuxtv.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Teletext subtitles"
+msgstr "Телетекст-субтитри"
+
+msgid "Hide teletext subtitles"
+msgstr "Сховати субтитри"
+
+msgid "Display teletext subtitles"
+msgstr "Показувати субтитри"
+
+msgid "deprecated"
+msgstr ""
+
+msgid "Page Selection"
+msgstr "Вибір сторінки"
+
+msgid "Display on/off"
+msgstr "включити/виключити"
+
+#, fuzzy
+msgid "4:3/Letterbox (deprecated)"
+msgstr "4:3/широкий екран"
+
+msgid "Page Mode"
+msgstr "Режим сторінки"
+
+msgid "Center"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Display Subtitles"
+msgstr "Показувати субтитри"
+
+msgid "Main Menu Alternative"
+msgstr "Команда в головному меню"
+
+msgid "Font Size (pixel)"
+msgstr "Размір фонта (пікселі)"
+
+#, fuzzy
+msgid "Font OutlineWidth (pixel)"
+msgstr "Размір фонта (пікселі)"
+
+msgid "Subtitles alignment"
+msgstr ""
+
+msgid "Language"
+msgstr "Мова"
+
+msgid "Hearing Impaired"
+msgstr "Для слабочуючих"
+
+msgid "Subtitle Page Settings"
+msgstr "Настройки сторінки субтитрів"
+
+msgid "Auto"
+msgstr "Авто"
+
+msgid "Manual"
+msgstr "Ручн."
+
+msgid "Disabled"
+msgstr "Виключено"
+
+msgid "Subtitle Mode"
+msgstr "Режим субтитрів"
+
+msgid "Manual Subtitle Page"
+msgstr "Ручной вибір сторінки"

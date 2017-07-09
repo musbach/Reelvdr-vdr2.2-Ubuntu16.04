@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ -f /usr/share/reel/skinreelng2/colors.txt ]; then
+    rm -f /usr/share/reel/skinreelng2/*.png
+    rm -f /usr/share/reel/skinreelng2/*.txt
+fi
+
+# that version never existed so the path is wrong. clean up
+[ -d /usr/share/reel/skinreelng2/channellogos ] && rm -rf /usr/share/reel/skinreelng2
+
+
+# create dir for channel logos
+if ! [ -d /usr/share/reel/channellogos ]; then
+    mkdir -p /usr/share/reel/channellogos
+fi
+
+cp -f /etc/vdr/themes/Reel-Blue.theme-used /etc/vdr/themes/Reel-Blue.theme || true
+rm -f /etc/vdr/themes/Reel-Blue.theme-used || true
+rm -f /etc/vdr/themes/Reel-Black.theme-unused || true
+
+exit 0

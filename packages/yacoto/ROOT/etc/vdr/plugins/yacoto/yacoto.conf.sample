@@ -1,0 +1,12 @@
+CONFIG="ipod_menc"         #~Configuration~L~0~3gp,divx,divx_ffmpeg,divx_mobile,dvd,h264,ipod_ffmpeg,ipod_menc,ipod_nano,mp3,mpeg2,ogg,youtube~
+NICE_LEVEL="10"            #~Priority(Min=19)~I~3~-19,19~
+VDR_VIDEO="/video"         #~VDR video dir~F~256~ ~
+TARGET_VIDEO="/film"       #~Target video dir~L~256~SOURCE,/film,/tmp,/video~
+TARGET_AUDIO="/audio/yacoto"  #~Target audio dir~L~256~/audio/yacoto,/tmp~
+KEEP_DIRS="1"              #~Keep dir structure~B~0~ ~
+NAMING_CONVENTION="NameCfgDate"  #~Naming convention~L~256~NameCfgDate,NameCfgRDate,NameDate,NameRDate,NameCfg,Name~
+TEMP_DIR="/tmp"            #~Temp directory~L~256~/tmp,/var/tmp~
+KEEP_LOGS="1"              #~Keep logfiles~B~0~ ~
+LOG_DIR="/var/log/yacoto"  #~LogFile directory~L~256~/var/log/yacoto,/tmp~
+CUT_RECS="0"               #~Cut recordings~B~0~ ~
+PARALLEL_EXECUTIONS="0"    #~Parallel conversion~B~0~ ~

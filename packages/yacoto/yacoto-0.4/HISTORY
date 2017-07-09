@@ -1,0 +1,55 @@
+VDR Plugin 'yacoto' Revision History
+------------------------------------
+
+2010-10-27: Version 0.4
+
+- Scripte wieder im Plugin integriert
+- http://redmine.gen2vdr.org/projects/vdr-plugin--yacoto/roadmap?tracker_ids[]=1&tracker_ids[]=2
+
+
+2010-04-08: Version 0.3.0
+
+- vdr-1.7 kompatibel (erkennt TS und h264 files)
+- Namen im Menu korrigiert
+
+
+2008-12-18: Version 0.2.1
+
+- http://bugs.htpc-forum.de/changelog_page.php (Projekt Yacoto)
+
+
+2008-10-06: Version 0.2.0
+
+- http://bugs.htpc-forum.de/changelog_page.php (Projekt Yacoto)
+- yacoto-scripts Paket vom Plugin separiert !!!
+- Bereits konvertierte Aufnahmen werden gekennzeichnet
+- Unterstuetzung der WarEagle Icons
+- und sonst noch ein paar Kleinigkeiten ...
+
+
+2008-08-24: Version 0.1.0
+
+- http://bugs.htpc-forum.de/changelog_page.php (Projekt Yacoto)
+- README erweitert
+- README.en hinzugefuegt
+- USE_SORTRECORDS und USE_LIEMIKUUTIO fuer Sort eingefuehrt.
+- Italian translation ( Thanks to Diego Pierotto )
+- und sonst noch ein paar Kleinigkeiten ;)
+
+
+2008-08-15: Version 0.0.3
+
+- http://bugs.htpc-forum.de/changelog_page.php (Projekt Yacoto)
+- README erweitert
+- Deutsche Uebersetzung (auch fuer conf Eintraege)
+- und sonst noch ein paar Kleinigkeiten ;)
+
+
+2008-08-07: Version 0.0.2
+
+- Jede Menge Neues :)
+
+
+2008-07-10: Version 0.0.1
+
+- initial revision.

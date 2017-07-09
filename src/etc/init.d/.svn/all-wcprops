@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/reelbox/!svn/ver/1/testing/src/etc/init.d
+END
+smb_client
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/reelbox/!svn/ver/1/testing/src/etc/init.d/smb_client
+END
+cnxt-modules
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/etc/init.d/cnxt-modules
+END
+setup-shares
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/reelbox/!svn/ver/1/testing/src/etc/init.d/setup-shares
+END
+skeleton
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/init.d/skeleton
+END
+mcli
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/reelbox/!svn/ver/1/testing/src/etc/init.d/mcli
+END
+sanitycheck-reel
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/etc/init.d/sanitycheck-reel
+END
+shmnet
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/1/testing/src/etc/init.d/shmnet
+END
+netserver_wol
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/reelbox/!svn/ver/1/testing/src/etc/init.d/netserver_wol
+END
+mount_prep_local
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/1/testing/src/etc/init.d/mount_prep_local
+END
+reelvdr
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/etc/init.d/reelvdr
+END
+decypher
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/init.d/decypher
+END
+remove-symlinks
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/etc/init.d/remove-symlinks
+END
+dvbloop
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/etc/init.d/dvbloop
+END
+fpleds-mini
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/reelbox/!svn/ver/1/testing/src/etc/init.d/fpleds-mini
+END
+reeltvtv
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/reelbox/!svn/ver/1/testing/src/etc/init.d/reeltvtv
+END
+set_wol
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/reelbox/!svn/ver/1/testing/src/etc/init.d/set_wol
+END
+fpleds
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/reelbox/!svn/ver/1/testing/src/etc/init.d/fpleds
+END
+reelbox-control
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/reelbox/!svn/ver/1/testing/src/etc/init.d/reelbox-control
+END

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "$0 $@ called" >> /tmp/vlc-repack.log
+
+INPUT="$1"
+OUTPUT="$2"
+VIDEO_ENCODER="ffmpeg"
+VIDEO_CODEC="mp2v"
+VIDEO_BITRATE="4096"
+VIDEO_FPS="25"
+VIDEO_KEYINTERVAL="15"
+AUDIO_ENCODER="ffmpeg"
+AUDIO_CODEC="a52"
+AUDIO_BITRATE="192"
+AUDIO_SAMPLERATE="48000"
+AUDIO_CHANNELS="2"
+MUXER="ts"
+
+exec /usr/bin/vlc -I dummy "${INPUT}" --sout \
+"#standard{access=file,mux=${MUXER},dst=${OUTPUT}}" vlc:quit \
+>/dev/null 2>&1
+

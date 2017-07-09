@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sh4
+END
+dsputil_align.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sh4/dsputil_align.c
+END
+idct_sh4.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sh4/idct_sh4.c
+END
+qpel.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sh4/qpel.c
+END
+dsputil_sh4.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/reelbox/!svn/ver/1/testing/src/libs/ffmpeg-cvs/libavcodec/sh4/dsputil_sh4.c
+END

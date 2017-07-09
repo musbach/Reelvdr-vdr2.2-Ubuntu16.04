@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/reelbox/!svn/ver/32/testing/src/vdr-plugins/src/dpkg-0.0.3
+END
+mainmenu.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/reelbox/!svn/ver/32/testing/src/vdr-plugins/src/dpkg-0.0.3/mainmenu.h
+END
+i18n.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/dpkg-0.0.3/i18n.c
+END
+HISTORY
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/dpkg-0.0.3/HISTORY
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/dpkg-0.0.3/TODO
+END
+i18n.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/dpkg-0.0.3/i18n.h
+END
+dpkg.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/dpkg-0.0.3/dpkg.c
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/dpkg-0.0.3/COPYING
+END
+dpkgopt.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/dpkg-0.0.3/dpkgopt.c
+END
+mainmenu.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/dpkg-0.0.3/mainmenu.c
+END
+dpkg.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/vdr-plugins/src/dpkg-0.0.3/dpkg.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/reelbox/!svn/ver/32/testing/src/vdr-plugins/src/dpkg-0.0.3/Makefile
+END

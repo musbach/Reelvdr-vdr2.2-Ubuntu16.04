@@ -1,0 +1,8 @@
+Package: reelvdr-pi-bouquets
+Version: 0.2.7
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/bouquets
+Description: Channels / bouquets

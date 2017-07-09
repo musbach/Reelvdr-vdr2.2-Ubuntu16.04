@@ -1,0 +1,82 @@
+<!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+
+  <!ENTITY dhfirstname "<firstname>Marc</firstname>">
+  <!ENTITY dhsurname   "<surname>Leeman</surname>">
+  <!ENTITY dhdate      "<date>Fri Dec 30 19:47:26 CET 2005</date>">
+  <!ENTITY dhsection   "<manvolnum>1</manvolnum>">
+  <!ENTITY dhemail     "<email>marc.leeman@gmail.com</email>">
+  <!ENTITY dhusername  "Marc Leeman">
+  <!ENTITY dhucpackage "<refentrytitle>dvdunauthor</refentrytitle>">
+  <!ENTITY dhpackage   "dvdunauthor">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+  <!ENTITY gpl         "&gnu; <acronym>GPL</acronym>">
+]>
+<refentry>
+  <refentryinfo>
+    <address>
+      &dhemail;
+    </address>
+    <author>
+      &dhfirstname;
+      &dhsurname;
+    </author>
+    <copyright>
+      <year>2003</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>
+    &dhucpackage;
+
+    &dhsection;
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+	<refpurpose>
+	Removes DVD-Video file structure
+	</refpurpose>
+</refnamediv>
+<refsynopsisdiv>
+	<cmdsynopsis>
+	<command>dvdunauthor</command>
+<arg>path</arg>
+	</cmdsynopsis>
+</refsynopsisdiv>
+<refsect1>
+	<title>DESCRIPTION</title>
+	<para>
+	<command>dvdunauthor</command> removes the DVD-Video file structure
+	</para>
+</refsect1>
+<refsect1>
+	<title>USAGE</title>
+	<para>
+	<command>dvdunauthor</command> path 
+	</para>
+</refsect1>
+<refsect1>
+	<title>CAVEATS</title>
+	<para>
+	None.
+	</para>
+</refsect1>
+<refsect1>
+	<title>BUGS</title>
+	<para>
+	None.
+	</para>
+</refsect1>
+<refsect1>
+	<title>AUTHOR</title>
+	<para>
+	<author>
+		<firstname>Marc</firstname>
+		<surname>Leeman</surname>
+		<contrib>This manual page was written by Marc Leeman &#60;marc.leeman@gmail.com&#62;, for the Debian GNU/Linux system (but may be used by others).</contrib>
+	</author>
+	</para>
+</refsect1>
+</refentry>

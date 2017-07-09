@@ -1,0 +1,9 @@
+Package: reelvdr-pi-pip
+Version: 0.0.8.19453
+Section: reel
+Priority: optional
+Architecture: i386
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: plugins/osdpip
+Description: Picture-in-Picture for the ReelBox
+Description-de: Bild-in-Bild für den ReelVDR

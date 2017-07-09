@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/contrib
+END
+getopt.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/contrib/getopt.c
+END
+dlfcn.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/contrib/dlfcn.c
+END
+bcopy.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/reelbox/!svn/ver/1/testing/src/libs/libdvdnav-cvs/msvc/contrib/bcopy.c
+END

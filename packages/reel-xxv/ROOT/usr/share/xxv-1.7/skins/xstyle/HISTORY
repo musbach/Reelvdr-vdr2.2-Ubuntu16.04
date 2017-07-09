@@ -1,0 +1,87 @@
+Release 1.6
+* add formbased login
+* redesign teletext widget (show any subpages as same time)
+  Remove embedded image, use css sprite for faster pages rendering
+  use css class to highlight search text
+* adapt command rconvert to common method
+* adjust checkvalue function to new notation [ Bug #16669 ]
+* MEDIALIB: hide usable media search button
+* footer updated
+* css fix correct z-index on schema for timemarker
+
+Release 1.4
+* widget/time.tmpl : Add widget for input time based values
+* rdisplay: transmit keywords as data
+
+Release 1.0
+* no broken pics in schema on IE
+* add support for IE7
+* Added support for MEDIALIB
+* little Changes for better cosmetic
+* roter Rahmen (geplanter Record) Grüner Rahmen (Aufnahme)
+* Edit Autotimer aus Übersichtg geplante Aufnahmen - falsches Data
+* Kürzen des title Tags für Collisionen
+* Bug[210] Kanäle wurden nicht angezeigt.
+* Bug[203] - falsche Prozentanzeige in display
+* Schema: Kanaele werden jetzt nebeneinander dargestellt
+* debug ausgabe entfernt in tlist.tmpl
+* add warning.png
+* Records koennen jetzt rekursiv geloescht werden
+* uebersichtlichere Records anordung
+* entities eintraege entfernt
+
+Release 0.4
+
+* vps icon
+* umbruch in tlist
+* Umbruch bei einem Pipezeichen im Description text
+* Anspassungen und Fixes
+* Bugfix[189] Gewählte Zeit wurde nicht beachtet bei Gruppenwechsel.
+* Anzeige der Bilder von tvm2vdr
+* Bugfix[186] Quotes in den Channelnamen jetzt mit einem '-' ersetzt.
+* ajax : pfade angepasst
+* vitals : png m> gif
+* uerberlappung von verschiedenen Versionen
+* templates nachgeruestet fuer proxy eintrag
+* menues gefixt, erschienen nicht wenn gescrollt wurde
+* Records title wurden manchmal nicht angezeigt
+* STATUS : Grafiken von PNG auf GIF umgestellt.
+* EPG : EPG Restart ins menu aufgenommen
+* neues Template topten.tmpl
+* HTML   : schema, zusätzlicher Button switch
+* HTML   : Richtigen Zeichensatz im header gesetzt.
+* anzeige des Audio sowie videoformats
+* Titel in schema verlinkt
+* zweiten RSS Feed eingetragen
+* den pulldowns in mlist einen leereintrag gegönnt
+* neue Grafiken
+* Skin:     Anzeige des Levels in default und xstyle eingebaut.
+* STATUS : Featurerequest[152] Option damit statt der Tortengrafiken auch eine Tabelle angezeigt werden kann.
+* STATUS : Featurerequest[152] Die gemounteten Filesysteme werden jetzt mit angezeigt.
+* Logging jetzt bei status
+* Stars fuer bewertung werden angezeit
+* add display a link in alist to discover the timers was programmed from aid
+* neues Widget url.tmpl
+* rlist.tmpl && rdisplay.tmpl :
+    - Radiorecords werden jetzt als solche gekennzeichnet
+    - NoPreview Bilder erneuert
+* schema.tmpl :
+    - timemarker
+
+Release 0.3
+* schema.tmpl :
+    - bugfixing on mass
+    - icons für funktionen
+* *.tmpl
+    - icons statt text
+    - bugfixing
+    - kosmetik
+* html: FEATUREREQUEST[147] day mit weekdays
+* AUTOTIMER: FEATUREREQUSEST[146] neues Kommando asearch
+* Nowmenu ist in groups aufgeteilt
+* Nextmenu ist in groups aufgeteilt
+* Programmenu ist in groups aufgeteilt
+* skin.cfg : global.cfgMaxChannelMenuEntrys = 40
+* schema : Endlich! Eine Spaltenansicht die man von Fernsehzeitschriften gewöhnt ist
+* *.tmpl : kleinere änderungen
+

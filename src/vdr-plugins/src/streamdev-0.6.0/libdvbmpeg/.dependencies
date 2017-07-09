@@ -1,0 +1,4 @@
+ctools.o: ctools.c ctools.h ringbuffy.h transform.h remux.h
+remux.o: remux.c remux.h ringbuffy.h ctools.h transform.h
+ringbuffy.o: ringbuffy.c ringbuffy.h
+transform.o: transform.c transform.h remux.h ringbuffy.h ctools.h

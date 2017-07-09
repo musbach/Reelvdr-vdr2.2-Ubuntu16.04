@@ -1,0 +1,12 @@
+Package: ash-busybox
+Version: 0.2
+Section: reel
+Priority: standard
+Architecture: all
+Depends: busybox | busybox-static
+Maintainer: Reel Multimedia Team <reelbox-devel@mailings.reelbox.org>
+Replaces: ash
+Source: ash-busybox
+Description: ash shell provided through busybox
+  This package just creates a symlink from busybox to ash to provide 
+  compatibility for scripts with the ReelBox Lite

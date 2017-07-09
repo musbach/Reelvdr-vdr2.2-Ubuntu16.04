@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia
+END
+pod2c.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/pod2c.pl
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/Makefile.in
+END
+usage.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/usage.txt
+END
+getopt.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/getopt.c
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/utils.h
+END
+usage.txt.in
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/usage.txt.in
+END
+getopt.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/getopt.h
+END
+usage.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/usage.h
+END
+report.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/report.c
+END
+cd-paranoia.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/cd-paranoia.c
+END
+report.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/report.h
+END
+usage-copy.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/usage-copy.h
+END
+buffering_write.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/buffering_write.c
+END
+getopt1.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/getopt1.c
+END
+buffering_write.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/buffering_write.h
+END
+header.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/header.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/Makefile.am
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/version.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/Makefile
+END
+header.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/reelbox/!svn/ver/1/testing/src/libs/libcdio-0.76/src/cd-paranoia/header.h
+END

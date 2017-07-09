@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd
+END
+nfsd.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/nfsd.h
+END
+xdr.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/xdr.h
+END
+stats.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/stats.h
+END
+interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/interface.h
+END
+auth.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/auth.h
+END
+cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/cache.h
+END
+nfsfh.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/nfsfh.h
+END
+syscall.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/syscall.h
+END
+xdr3.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/xdr3.h
+END
+state.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/state.h
+END
+xdr4.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/xdr4.h
+END
+export.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/export.h
+END
+Kbuild
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/Kbuild
+END
+debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/debug.h
+END
+const.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/reelbox/!svn/ver/1/testing/src/kernel/linux-2.6.18.5/include/linux/nfsd/const.h
+END

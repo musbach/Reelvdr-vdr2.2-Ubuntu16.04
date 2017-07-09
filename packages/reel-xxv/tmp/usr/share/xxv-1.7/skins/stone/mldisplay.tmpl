@@ -1,0 +1,200 @@
+<!--media display -->
+<body class="frame">
+<div id="body">
+
+
+<?% f = data.shift;
+id = f.0;
+title = f.2;
+subtitle = f.3;
+language = f.4;
+diskid = f.5
+comment = f.6;
+year = f.9;
+imgurl = f.10;
+director = f.11;
+runtime = f.13;
+country = f.14;
+plot = f.15;
+filename = f.16;
+filesize = f.17;
+filedate = f.18;
+audiocodec = f.19;
+videocodec = f.20;
+video_width = f.21;
+video_height = f.22;
+tvepisode = f.23;
+seen = f.25;
+%?>
+<?% ######################################################################## %?>
+<?% BLOCK item %?>
+<?% IF value %?>
+  <a href="?cmd=mlsearch&__search&__selfields=<?% topic %?>&__searchitem=<?% value %?>">
+    <?% value %?>
+  </a>
+<?% END %?>
+<?% END %?>
+<?% ######################################################################## %?>
+<h1><?% gettext("Media details for") %?>: <?% PROCESS item topic="title" value=title %?><?% IF subtitle %?> - <?% PROCESS item topic="subtitle" value=subtitle %?><?% END %?></h1>
+    <table class="largetable" summary="">
+        <tr>
+          <td class="largehead">
+            <font class="title">
+              <?% PROCESS item topic="title" value=title %?><?% IF subtitle %?> - <?% PROCESS item topic="subtitle" value=subtitle %?><?% END %?>
+            </font>
+          </td>
+        </tr>
+        <tr>    
+        <td class="largetext">
+            <div class="media" style="float:left; margin:10px">
+              <img class="media" src='<?% IF param.usecache == "y" %?>?cmd=mlcache&__source=<?% END %?><?% imgurl %?>'>
+            </div>
+            <div>
+              <table summary="">
+                <tr><th width="10%">&nbsp;</th><th width="40%">&nbsp;</th>
+                    <th width="10%">&nbsp;</th><th width="40%">&nbsp;</th></tr>
+
+                <tr><td><?% gettext("Year") %?>:</td><td><?% PROCESS item topic="year" value=year %?></td>
+                    <td><?% gettext("Runtime") %?>:</td><td><?% IF runtime;runtime;END %?></td></tr>
+                <tr class="two"><td><?% gettext("Director") %?>:</td><td><?% PROCESS item topic="director" value=director %?></td>
+                    <td><?% gettext("Language") %?>:</td><td><?% PROCESS item topic="language" value=language %?></td></tr>
+                <tr><td><?% gettext("Country") %?>:</td><td><?% PROCESS item topic="country" value=country %?></td>
+                    <td><?% gettext("Mediatype") %?>:</td><td><?% PROCESS item topic="mediatype" value=param.mediatype %?></td></tr>
+                <tr class="two"><td><?% gettext("DiskID") %?>:</td><td><?% PROCESS item topic="diskid" value=diskid %?></td>
+                    <td></td><td></td></tr>
+                <tr><td><?% gettext("TV-Episode") %?>:</td><td><input type=checkbox disabled="1" value="<?% tvepisode %?>" /></td>
+                    <td><?% gettext("Seen") %?>:</td><td><input type=checkbox disabled="1" value="<?% seen %?>" /></td></tr>
+
+                <tr class="two"><td><?% gettext("Filename") %?>:</td><td><?% IF filename;filename;END %?></td>
+                    <td><?% gettext("Filesize") %?>:</td><td><?% IF filesize;filesize;END %?></td></tr>
+                <tr><td><?% gettext("Filedate") %?>:</td><td><?% IF filedate;filedate;END %?></td>
+                    <td><?% gettext("Size") %?>:</td><td><?% IF video_width && video_width;video_width %?>&nbsp;x&nbsp;<?% video_width;END %?></td></tr>
+
+                <tr class="two"><td><?% gettext("Audio Codec") %?>:</td><td><?% IF audiocodec;audiocodec;END %?></td>
+                    <td><?% gettext("Video Codec") %?>:</td><td><?% IF videocodec;videocodec;END %?></td></tr>
+
+<?% IF param.genres_sel.0 %?>
+                <tr><td><?% gettext("Genres") %?>:</td><td colspan="3">
+                    <?% selection = param.genres_sel %?>
+                    <?% genres = param.genres_all %?>
+                    <?% FOREACH x IN selection %?>
+                    <?% genres.$x.name %?>&nbsp;
+                    <?% END %?>
+                </td></tr>
+<?% END %?>
+
+              </table>
+            </div>
+
+        </td>
+      </tr>
+<tr><td class="largebottom"></td></tr>
+</table>
+<?% IF plot %?>
+<table class="largetable" summary="">
+  <tr>
+    <td class="largehead">
+      <?% gettext("Plot") %?>
+    </td>
+  </tr>     
+  <tr>    
+    <td class="largetext">
+        <?% plot %?>
+    </td>
+</tr>
+<tr><td class="largebottom"></td></tr>
+</table>
+<?% END %?>
+<?% IF comment %?>
+<table class="largetable" summary="">
+  <tr>
+    <td class="largehead">
+      <?% gettext("Comment") %?>
+    </td>
+  </tr>     
+  <tr>    
+    <td class="largetext">
+        <?% comment %?>
+    </td>
+  </tr>
+  <tr><td class="largebottom"></td></tr>
+</table>
+<?% END %?>
+
+<?% IF param.actors.0.0 %?>
+<h2><?% gettext("Actors") %?></h2>
+<?% FOREACH zeile IN param.actors %?>
+  <?% IF verbose;"<!-- Item: ";FOREACH x IN zeile;loop.count - 1;":";x.replace("-"," ");"|";END;"-->";END %?>
+    <?% actor = zeile.0;imgurl=zeile.1 %?>
+    <div class="areabegin">
+      <table class="fieldtable" summary="">
+        <tr>
+          <td class="fieldhead">
+            <div class="fieldhead">
+              <?% PROCESS item topic="actors" value=actor %?>
+            </div>
+        </tr>
+    <tr>
+      <td class="fieldtext">
+        <div class="actor">
+          <a href="?cmd=mlsearch&__search&__selfields=actors&__searchitem=<?% actor %?>">
+          <?% IF imgurl %?>
+            <img class="actor" src="?cmd=mlcache&__source=<?% imgurl %?>" alt="<?% actor %?>" />
+          <?% ELSE %?>
+            <img class="actor" src="images/noactor.<?% global.imagetyp %?>" alt="<?% actor %?>" />
+          <?% END %?>
+          </a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="fieldbottom"></td>
+    </tr>
+  </table>
+</div>
+<?% END %?>
+<div class="areaclose"></div>
+<?% END %?>
+
+</div>
+<!-- ###### Seite ###### -->
+<div id="sidebar">
+  <table summary="">
+    <tr><td class="sidehead"><?% gettext("Media library",20) %?></td></tr>
+    <tr>
+    <td class="sidetext">
+    <?% IF allow('mllist') %?>
+    <a title="<?% gettext("Back") %?>" href="?cmd=mllist&amp;__range=<?% param.range %?>"><img src="images/back.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+    <a title="<?% gettext("Back") %?>" href="?cmd=mllist&amp;__range=<?% param.range %?>"><?% gettext("Back",18) %?></a><br />
+    <?% END %?>
+
+
+    <?% IF allow('mledit') %?>
+    <a title="<?% gettext("New") %?>" href="?cmd=mledit&amp;__range=<?% param.range %?>"><img src="images/new.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+    <a title="<?% gettext("New") %?>" href="?cmd=mledit&amp;__range=<?% param.range %?>"><?% gettext("New",18) %?></a><br />
+    <?% END %?>
+
+    <?% IF allow('mlcopy') %?>
+    <a title="<?% gettext("Copy") %?>" href="?cmd=mlcopy&amp;data=<?% id %?>"><img src="images/new.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+    <a title="<?% gettext("Copy") %?>" href="?cmd=mlcopy&amp;data=<?% id %?>"><?% gettext("Copy",18) %?></a><br />
+    <?% END %?>
+
+    <?% IF allow('mledit') %?>
+    <a title="<?% gettext("Edit") %?>" href="?cmd=mledit&amp;data=<?% id %?>"><img src="images/edit.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+    <a title="<?% gettext("Edit") %?>" href="?cmd=mledit&amp;data=<?% id %?>"><?% gettext("Edit",18) %?></a><br />
+    <?% END %?>
+
+    <?% IF allow('mldelete') %?>
+    <a href="javascript:surecmd('<?% gettext("You will delete this media") %?>','<?% escape(title) %?>','mldelete','<?% id %?>',620,670)"><img src="images/delete.<?% global.imagetyp %?>" alt="" /></a>&nbsp;
+    <a href="javascript:surecmd('<?% gettext("You will delete this media") %?>','<?% escape(title) %?>','mldelete','<?% id %?>',620,670)"><?% gettext("Delete",18) %?></a><br />
+    <?% END %?>
+
+    </td>
+    </tr>
+    <tr><td class="sidebottom"></td></tr>
+  </table>
+
+
+  <p id="sidefooter">&nbsp;</p>
+</div>
+<?% INCLUDE header.inc %?>

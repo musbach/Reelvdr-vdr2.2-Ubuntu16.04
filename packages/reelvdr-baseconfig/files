@@ -1,0 +1,47 @@
+#enter all files here that have to be copied from the SRCDIR to the package root
+#note: use only tabs and only one tab between fields!
+#src rel. to $(SRCDIR)	dest			type	owner	group
+
+etc/bash_completion.d/reel
+etc/default/globals
+etc/default/hdparm
+etc/default/setup-shares
+etc/default/sysconfig
+etc/default/sysconfig.factory.avg	etc/default/sysconfig.factory   cfg
+etc/default/tftpd-hpa.conf
+etc/exports
+etc/init/prepare-mountpoints.conf
+#etc/init.d/mount_prep_local
+etc/init.d/netserver_wol	-	script
+etc/init/reelvdr.conf		-	cfg
+etc/init.d/sanitycheck-reel	-	script
+etc/profile
+etc/reel/reelvdr
+etc/samba/smb.conf
+etc/samba/smbpasswd
+#etc/pam.d/common-auth
+etc/vdr/commands.conf
+etc/vdr/diseqc.conf
+etc/vdr/diseqc.conf.sample
+etc/vdr/keymacros.conf
+etc/vdr/noepgchannels.conf
+etc/vdr/reccmds.conf
+etc/vdr/providercharsets.conf
+etc/vdr/setup.conf
+etc/vdr/setup.conf.factory.avg	etc/vdr/setup.conf.factory
+etc/vdr/svdrphosts.conf
+etc/vdr/sources.conf
+etc/vdr/timers.conf
+etc/vdr/plugins/epgsearch/epgsearchcmds.conf
+etc/vdr/plugins/streamdevhosts.conf
+#etc/vdr/plugins/loadepg/loadepg.equiv
+#etc/vdr/plugins/loadepg/loadepg.conf
+etc/vdr/plugins/eggtimer.conf
+etc/vdr/plugins/setup/help/help.deu.xml
+etc/vdr/plugins/setup/vdr-setup.xml
+etc/vdr/plugins/setup/vdr-menu.xml
+etc/vdr/plugins/xepg/url.list
+sbin/factorysettings.sh		root/bin/factorysettings.sh	script
+sbin/mvdrshutdown	usr/sbin/mvdrshutdown	script	-
+sbin/reelvdrd		usr/sbin/reelvdrd	script	daemon	daemon
+sbin/setup-mediadir	usr/sbin/setup-mediadir	script

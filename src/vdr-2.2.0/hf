@@ -1,0 +1,19 @@
+bindir=/usr/bin
+mandir=/usr/share/man
+videodir=/media/reel/recordings
+configdir=/var/lib/vdr
+argsdir=
+cachedir=/var/cache/vdr
+resdir=/usr/share/vdr
+libdir=/usr/lib/vdr
+locdir=/usr/share/locale
+plgcfg=
+apiversion=2.2.0
+cflags=-O2 -g -pg -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -fPIC -fpermissive -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-4.4.0-53-generic/include/config/dvb 
+cxxflags=-g3 -funroll-loops -fomit-frame-pointer -m32 -march=pentium3 -mmmx -msse -mfpmath=sse -Wall -Woverloaded-virtual  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -g3 -fPIC -fpermissive  -Wformat-security -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -I/usr/src/linux-headers-4.4.0-53-generic/include/config/dvb 
+
+Name: VDR
+Description: Video Disk Recorder
+URL: http://www.tvdr.de/
+Version: 2.2.0
+Cflags: ${cflags}

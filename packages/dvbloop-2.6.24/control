@@ -1,0 +1,13 @@
+Package: dvbloop-2.6.24
+Version: 0.9.4.5
+Section: reel
+Priority: important
+Architecture: i386
+Depends: linux-image-generic (>= 2.6.24-16), module-init-tools
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: dvbloop-2.6.24
+Description: DVB loop driver
+ Needed for inserting a dvb stream into the kernel that doesn't
+ come from a real dvb card
+ .
+ This package provides modules for Linux version 2.6.24 on x86/x86_64.

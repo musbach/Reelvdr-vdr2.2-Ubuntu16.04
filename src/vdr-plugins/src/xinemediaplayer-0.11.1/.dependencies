@@ -1,0 +1,73 @@
+xinemediaplayer.o: xinemediaplayer.c cddb.h xinemediaplayer.h xineOsd.h \
+ Control.h Reel.h XineLib.h XineEvent.h VdrXineMpIf.h VideoOverlay.h \
+ ../reelbox-3/VdrXineMpIf.h SpuDecode.h Mutex.h xineOsdInfoMenu.h \
+ ../filebrowser/servicestructs.h Player.h item_tree.h tree.hh services.h \
+ m3u_parser.h pls_parser.h timecounter.h Playlist.h
+Control.o: Control.c Player.h Reel.h XineLib.h XineEvent.h VdrXineMpIf.h \
+ VideoOverlay.h ../reelbox-3/VdrXineMpIf.h SpuDecode.h Mutex.h \
+ item_tree.h tree.hh Control.h xineOsdInfoMenu.h xineOsd.h \
+ ../filebrowser/servicestructs.h timecounter.h
+Player.o: Player.c Player.h Reel.h XineLib.h XineEvent.h VdrXineMpIf.h \
+ VideoOverlay.h ../reelbox-3/VdrXineMpIf.h SpuDecode.h Mutex.h \
+ item_tree.h tree.hh Control.h xineOsdInfoMenu.h xineOsd.h \
+ ../filebrowser/servicestructs.h Utils.h curl_download.h
+Reel.o: Reel.c Reel.h
+SpuDecode.o: SpuDecode.c XineLib.h Reel.h XineEvent.h VdrXineMpIf.h \
+ VideoOverlay.h ../reelbox-3/VdrXineMpIf.h SpuDecode.h Mutex.h
+Utils.o: Utils.c Utils.h Reel.h
+curl_download.o: curl_download.c
+imagetools.o: imagetools.c ../filebrowser/convert.c \
+ ../filebrowser/convert.h ../filebrowser/filecache.h ../filebrowser/def.h \
+ ../filebrowser/stringtools.h ../filebrowser/filetools.h \
+ ../filebrowser/filecache.c ../filebrowser/filetools.c
+item_tree.o: item_tree.c item_tree.h tree.hh Player.h Reel.h XineLib.h \
+ XineEvent.h VdrXineMpIf.h VideoOverlay.h ../reelbox-3/VdrXineMpIf.h \
+ SpuDecode.h Mutex.h pls_parser.h m3u_parser.h curl_download.h
+m3u_parser.o: m3u_parser.c m3u_parser.h
+pls_parser.o: pls_parser.c pls_parser.h
+timecounter.o: timecounter.c timecounter.h
+xineOsd.o: xineOsd.c xineOsd.h Control.h Reel.h XineLib.h XineEvent.h \
+ VdrXineMpIf.h VideoOverlay.h ../reelbox-3/VdrXineMpIf.h SpuDecode.h \
+ Mutex.h xineOsdInfoMenu.h ../filebrowser/servicestructs.h Player.h \
+ item_tree.h tree.hh timecounter.h xinemediaplayer.h \
+ /usr/include/taglib/fileref.h /usr/include/taglib/tfile.h \
+ /usr/include/taglib/taglib_export.h /usr/include/taglib/taglib.h \
+ /usr/include/taglib/taglib_config.h /usr/include/taglib/tag.h \
+ /usr/include/taglib/tstring.h /usr/include/taglib/tbytevector.h \
+ /usr/include/taglib/tiostream.h /usr/include/taglib/tstringlist.h \
+ /usr/include/taglib/tlist.h /usr/include/taglib/tlist.tcc \
+ /usr/include/taglib/trefcounter.h /usr/include/taglib/tbytevectorlist.h \
+ /usr/include/taglib/audioproperties.h /usr/include/taglib/tag.h \
+ /usr/include/taglib/id3v2tag.h /usr/include/taglib/tmap.h \
+ /usr/include/taglib/tmap.tcc /usr/include/taglib/id3v2framefactory.h \
+ /usr/include/taglib/id3v2frame.h /usr/include/taglib/id3v2header.h \
+ /usr/include/taglib/id3v2frame.h \
+ /usr/include/taglib/attachedpictureframe.h /usr/include/taglib/tfile.h \
+ /usr/include/taglib/mpegproperties.h /usr/include/taglib/mpegheader.h \
+ /usr/include/taglib/mpegfile.h /usr/include/taglib/mpegproperties.h \
+ ../filebrowser/convert.h ../filebrowser/filecache.h \
+ ../filebrowser/filetools.h ../filebrowser/stringtools.h \
+ ../filebrowser/def.h xineOsdFunction.h
+xineOsdInfoMenu.o: xineOsdInfoMenu.c /usr/include/taglib/tag.h \
+ /usr/include/taglib/taglib_export.h /usr/include/taglib/tstring.h \
+ /usr/include/taglib/taglib.h /usr/include/taglib/taglib_config.h \
+ /usr/include/taglib/tbytevector.h /usr/include/taglib/fileref.h \
+ /usr/include/taglib/tfile.h /usr/include/taglib/tag.h \
+ /usr/include/taglib/tiostream.h /usr/include/taglib/tstringlist.h \
+ /usr/include/taglib/tlist.h /usr/include/taglib/tlist.tcc \
+ /usr/include/taglib/trefcounter.h /usr/include/taglib/tbytevectorlist.h \
+ /usr/include/taglib/audioproperties.h /usr/include/taglib/mpegfile.h \
+ /usr/include/taglib/mpegproperties.h /usr/include/taglib/mpegheader.h \
+ xineOsdInfoMenu.h
+xineOsdFunction.o: xineOsdFunction.c xineOsdFunction.h xineOsd.h \
+ Control.h Reel.h XineLib.h XineEvent.h VdrXineMpIf.h VideoOverlay.h \
+ ../reelbox-3/VdrXineMpIf.h SpuDecode.h Mutex.h xineOsdInfoMenu.h \
+ ../filebrowser/servicestructs.h xinemediaplayer.h
+Playlist.o: Playlist.c Playlist.h
+cddb.o: cddb.c cddb.h cdtext.h cdrom.h
+cdtext.o: cdtext.c cdtext.h cdrom.h
+cdrom.o: cdrom.c cdrom.h
+XineLib.o: XineLib.c Utils.h Reel.h XineLib.h XineEvent.h VdrXineMpIf.h \
+ VideoOverlay.h ../reelbox-3/VdrXineMpIf.h Player.h SpuDecode.h Mutex.h \
+ item_tree.h tree.hh timecounter.h xineOsd.h Control.h xineOsdInfoMenu.h \
+ ../filebrowser/servicestructs.h

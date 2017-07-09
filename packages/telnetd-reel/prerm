@@ -1,0 +1,4 @@
+#! /bin/sh
+
+/etc/init.d/telnetd-reel stop
+exit 0

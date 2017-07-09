@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: libapt-front-devel@lists.alioth.debian.org\n"
+"POT-Creation-Date: 2008-06-11 10:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apt-front/cache/entity/version.cpp:57
+msgid "not available"
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:72
+msgid ""
+"\n"
+"Priority: not available"
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:73
+msgid ""
+"\n"
+"Section: "
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:74
+msgid ""
+"\n"
+"Installed-Size: "
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:75
+msgid ""
+"\n"
+"Maintainer: "
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:76
+msgid ""
+"\n"
+"Architecture: "
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:77
+msgid ""
+"\n"
+"Version: "
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:79
+msgid ""
+"\n"
+"Filename: "
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:80
+msgid ""
+"\n"
+"Size: not available"
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:81
+msgid ""
+"\n"
+"MD5Sum: "
+msgstr ""
+
+#: apt-front/cache/entity/version.cpp:82
+msgid ""
+"\n"
+"Description: "
+msgstr ""
+
+#: apt-front/cache/entity/package.h:416
+msgid "Request Install"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:423
+msgid "Request Removal"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:430
+msgid "Request Upgrade"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:437
+msgid "Cancel Changes"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:444
+msgid "Request Purging"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:524
+msgid "BROKEN"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:528
+msgid "upgradable"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:530
+msgid "installed"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:531
+msgid "not installed"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:544
+msgid "BREAK"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:548
+msgid "upgrade"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:550
+msgid "reinstall"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:552
+msgid "install"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:554
+msgid "purge"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:556
+msgid "remove"
+msgstr ""
+
+#: apt-front/cache/entity/package.h:558
+msgid "no change"
+msgstr ""
+
+#: apt-front/cache/component/packages.cpp:125
+msgid "Sorting"
+msgstr ""
+
+#: apt-front/actor.cpp:30
+msgid "Safe Upgrade"
+msgstr ""

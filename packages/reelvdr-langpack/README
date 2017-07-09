@@ -1,0 +1,7 @@
+make tmp
+cd vdr
+make i18n
+
+for i in `grep making files-tmp | cut -d/ -f4-99 | grep -v making` ; do echo -n $i ; echo -n "    usr/share/" ; echo $i | cut -d/ -f2-99; done
+
+for i in `cat files-vdr | cut -d/ -f2-99 | cut -d" " -f2` ; do echo -n "vdr/"$i ; echo "   usr/share/"$i; done

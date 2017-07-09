@@ -1,0 +1,20 @@
+Package: reelvdr-pi-games
+Version: 0.6.2.3-21
+Section: reel-opt
+Priority: optional
+Architecture: i386
+Installed-Size: 336K
+Maintainer: RMM Team <reelbox-devel@mailings.reelbox.org>
+Source: reelvdr-pi-games
+Description: little games for the ReelVDR
+ This is the new vdr OSD games collection formaly known as the tetris plugin.
+ The collection currently contains Tetris, Tron, TicTacToe, Snake and
+ Minesweeper, more to come. ;-)
+ .
+ Written by:                  Clemens Kirchgatterer <clemens@1541.org>
+ Project's homepage:          http://www.1541.org
+Description-de: kleine Spielesammlung für den ReelVDR
+ Spiele wie Tetris, Tron, TicTacToe, Snake und Minesweeper für die Werbepause
+ .
+ Written by:                  Clemens Kirchgatterer <clemens@1541.org>
+ Project's homepage:          http://www.1541.org
