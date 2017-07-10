@@ -1,5 +1,0 @@
-sc-viaccess.o: sc-viaccess.c ../../system-common.h ../../data.h \
- ../../misc.h ../../system.h ../../smartcard.h ../../crypto.h \
- ../../crypto-bn.h ../../support/idea.h ../../parse.h ../../opts.h \
- ../../i18n.h ../../misc.h ../../log-sc.h ../../log.h ../../log-core.h \
- ../../version.h
