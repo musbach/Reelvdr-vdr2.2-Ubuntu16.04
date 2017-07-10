@@ -1,3 +1,0 @@
-doesn't compiles
-IsTunedToTransponderConst -> IsTunedToTransponder
-Ready() -> to be commented out

@@ -1,8 +1,0 @@
-constcw.o: constcw.c ../../../../../vdr/../vdr/channels.h \
- ../../../../../vdr/../vdr/config.h ../../../../../vdr/../vdr/i18n.h \
- ../../../../../vdr/../vdr/tools.h ../../../../../vdr/../vdr/font.h \
- ../../../../../vdr/../vdr/sources.h ../../../../../vdr/../vdr/thread.h \
- ../../../../../vdr/../vdr/sources.h ../../system.h \
- ../../../../../vdr/../vdr/tools.h ../../data.h \
- ../../../../../vdr/../vdr/thread.h ../../misc.h ../../system-common.h \
- ../../system.h ../../data.h ../../misc.h ../../version.h

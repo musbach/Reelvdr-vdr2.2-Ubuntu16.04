@@ -1,9 +1,0 @@
-sc-nagra.o: sc-nagra.c ../../system-common.h ../../data.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../misc.h ../../system.h ../../smartcard.h ../../parse.h \
- ../../crypto.h ../../crypto-bn.h ../../support/idea.h ../../helper.h \
- ../../opts.h ../../i18n.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../log-sc.h ../../log.h ../../log-core.h ../../version.h

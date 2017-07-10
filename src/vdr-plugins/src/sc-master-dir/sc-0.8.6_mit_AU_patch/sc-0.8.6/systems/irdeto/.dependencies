@@ -1,7 +1,0 @@
-irdeto.o: irdeto.c ../../system-common.h ../../data.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../misc.h ../../system.h ../../log-core.h ../../log.h ../../i18n.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../data.h ../../parse.h ../../misc.h ../../log-sys.h

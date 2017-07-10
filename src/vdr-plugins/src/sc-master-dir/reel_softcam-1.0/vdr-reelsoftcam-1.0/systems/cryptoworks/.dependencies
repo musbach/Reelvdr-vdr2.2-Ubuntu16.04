@@ -1,8 +1,0 @@
-cryptoworks.o: cryptoworks.c ../../system-common.h ../../data.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../misc.h ../../system.h ../../data.h ../../opts.h ../../i18n.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../helper.h ../../crypto.h ../../crypto-bn.h ../../support/idea.h \
- ../../misc.h ../../log-sys.h ../../log.h ../../version.h

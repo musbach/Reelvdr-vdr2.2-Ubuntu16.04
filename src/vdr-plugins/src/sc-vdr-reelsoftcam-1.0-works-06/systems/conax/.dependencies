@@ -1,5 +1,0 @@
-conax.o: conax.c ../../system-common.h ../../data.h \
- ../../../../../vdr/../vdr/thread.h ../../../../../vdr/../vdr/tools.h \
- ../../misc.h ../../system.h ../../crypto.h ../../crypto-bn.h \
- ../../support/idea.h ../../data.h ../../misc.h ../../log-sys.h \
- ../../log.h ../../version.h

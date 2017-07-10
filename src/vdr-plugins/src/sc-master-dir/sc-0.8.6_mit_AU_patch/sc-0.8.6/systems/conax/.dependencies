@@ -1,9 +1,0 @@
-conax.o: conax.c ../../system.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../data.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
- ../../misc.h ../../log-core.h ../../log.h ../../i18n.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/i18n.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../system-common.h ../../system.h ../../crypto.h ../../crypto-bn.h \
- ../../support/idea.h ../../data.h ../../misc.h ../../log-sys.h

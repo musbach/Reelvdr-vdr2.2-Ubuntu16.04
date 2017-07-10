@@ -1,4 +1,0 @@
-sc-irdeto.o: sc-irdeto.c ../../system-common.h ../../data.h ../../misc.h \
- ../../system.h ../../smartcard.h ../../crypto.h ../../crypto-bn.h \
- ../../support/idea.h ../../data.h ../../misc.h ../../parse.h \
- ../../log-sc.h ../../log.h ../../log-core.h ../../version.h

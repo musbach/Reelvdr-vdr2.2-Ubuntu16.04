@@ -1,7 +1,0 @@
-sc-irdeto.o: sc-irdeto.c ../../system-common.h ../../data.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../misc.h ../../system.h ../../smartcard.h ../../crypto.h \
- ../../crypto-bn.h ../../support/idea.h ../../data.h ../../misc.h \
- ../../parse.h ../../log-sc.h ../../log.h ../../log-core.h \
- ../../version.h

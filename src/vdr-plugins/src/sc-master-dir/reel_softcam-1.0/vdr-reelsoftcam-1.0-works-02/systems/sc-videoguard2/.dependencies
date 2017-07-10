@@ -1,7 +1,0 @@
-sc-videoguard2.o: sc-videoguard2.c ../../system-common.h ../../data.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/thread.h \
- /usr/src/reelbox/testing/src/vdr-1.7.28//include/vdr/tools.h \
- ../../misc.h ../../system.h ../../smartcard.h ../../data.h \
- ../../crypto.h ../../crypto-bn.h ../../support/idea.h ../../misc.h \
- ../../parse.h ../../helper.h ../../log-sc.h ../../log.h ../../log-core.h \
- ../../version.h
