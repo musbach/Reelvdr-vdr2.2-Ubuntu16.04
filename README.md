@@ -10,3 +10,8 @@ aptitude install git vim vsftpd curl curl-dev libcurl-dev bash-completion auto-c
 insert into /etc/default/grub:
 GRUB_CMDLINE_LINUX_DEFAULT="nomodeset quiet splash video=uvesafb"
 GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0 acpi_enforce_resources=lax acpi=ht"
+
+# update modules
+insert into /etc/modules
+hdshm  //without "has_fb=1"
+8021q
